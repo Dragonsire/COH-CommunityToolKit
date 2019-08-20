@@ -49,7 +49,7 @@ Namespace Utilities
 
 #Region "Create New Instance"
         Sub New()
-            Me.New(New COH_Serialization_Settings(True))
+            Me.New(New COH_Serialization_Settings(True, Structures.COH_Struct.COH_ExportFormat.CrypticS_TextFormat))
         End Sub
         Public Sub New(ByRef Settings As COH_Serialization_Settings)
             mOptions = Settings
@@ -97,7 +97,9 @@ Namespace Utilities
             Return mStringBuilder.ToString
         End Function
         Private Sub Write_Property(ByRef CurrentWriter As StringBuilder, ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, IsAttribute As Boolean, ByVal Padding As Integer)
-            If SingleProperty.PropertyType.IsArray = True Then
+            If SingleProperty.PropertyType.IsEnum = True Then
+                Write_Property_Enum(CurrentWriter, Source, SingleProperty, Padding)
+            ElseIf SingleProperty.PropertyType.IsArray = True Then
                 Dim TheTypeCode As TypeCode = Type.GetTypeCode(SingleProperty.PropertyType.GetElementType)
                 Select Case TheTypeCode
                     Case TypeCode.Object
@@ -254,8 +256,6 @@ Namespace Utilities
             Dim TempLen As Integer = 0
             Dim AllowWrite As Boolean = True
             For Each SingleProperty As PropertyDescriptor In theProperties
-
-
                 TempLen = Retrieve_PropertyName(Source, SingleProperty).Length
                 If TempLen > LongestName Then LongestName = TempLen
             Next
@@ -331,6 +331,13 @@ Namespace Utilities
             WriteString(CurrentWriter, PropertyName, TheStringArray, Padding, False)
         End Sub
         Private Sub Write_Property_PrimitiveArray(ByRef CurrentWriter As StringBuilder, ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, TheTypeCode As TypeCode, IsAttribute As Boolean, Padding As Integer)
+            If SingleProperty.PropertyType.HasElementType = True Then
+                Dim D1 = SingleProperty.PropertyType.GetElementType
+                If D1.IsEnum = True Then
+                    Write_Property_EnumArray(CurrentWriter, Source, SingleProperty, TheTypeCode, D1, Padding)
+                    Exit Sub
+                End If
+            End If
             Dim PropertyName As String = SingleProperty.Name
             Dim Value As String = ""
             If SingleProperty.PropertyType.UnderlyingSystemType = GetType(Single()) Then
@@ -397,6 +404,61 @@ Namespace Utilities
         End Sub
 #End Region
 
+#Region "Write Enums"
+        Private Sub Write_Property_Enum(ByRef CurrentWriter As StringBuilder, ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, Padding As Integer)
+            Dim DefaultValue As Object = Retrieve_DefaultValue(Source, SingleProperty)
+            Dim PropertyName As String = Retrieve_PropertyName(Source, SingleProperty)
+            Dim TheValue2 As [Enum] = SingleProperty.GetValue(Source)
+            If Retrieve_EnumFlagAttribute(Source, SingleProperty) = True Then
+                Write_Property_Enum_Flag(CurrentWriter, PropertyName, DefaultValue, Padding, TheValue2)
+            Else
+                Write_Property_PrimitiveItem(CurrentWriter, PropertyName, Retrieve_EnumString(TheValue2), DefaultValue, TypeCode.String, Padding)
+            End If
+        End Sub
+        Private Sub Write_Property_Enum_Flag(ByRef CurrentWriter As StringBuilder, PropertyName As String, DefaultValue As Object, Padding As Integer, CurrentEnum As [Enum])
+            Dim TheValues As String() = CurrentEnum.ToString.Split(", ")
+            If TheValues.Count <= 1 Then
+                Write_Property_PrimitiveItem(CurrentWriter, PropertyName, Retrieve_EnumString(CurrentEnum), DefaultValue, TypeCode.String, Padding)
+            Else
+                Dim NewValues As String() = New String(TheValues.Count - 1) {}
+                For X = 0 To TheValues.Count - 1
+                    Dim TheEnum As [Enum] = [Enum].Parse(CurrentEnum.GetType, TheValues(X).Trim)
+                    NewValues(X) = Retrieve_EnumString(TheEnum)
+                Next
+                Write_Property_PrimitiveItem(CurrentWriter, PropertyName, String.Join(", ", NewValues), DefaultValue, TypeCode.String, Padding)
+            End If
+        End Sub
+        Private Function Retrieve_EnumString(TheEnum As [Enum]) As String
+            Dim EnumV As COH_DefEnum = Nothing
+            If Settings.Option_Export_DontWriteEnumOverrides = False AndAlso Retrieve_EnumDescription(TheEnum, EnumV) = True Then
+                Return EnumV.DefName
+            Else
+                Return TheEnum.ToString
+            End If
+        End Function
+        Private Sub Write_Property_EnumArray(ByRef CurrentWriter As StringBuilder, ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, TheTypeCode As TypeCode, EnumType As Type, Padding As Integer)
+            Dim DefaultValue As Object = Retrieve_DefaultValue(Source, SingleProperty)
+            Dim PropertyName As String = Retrieve_PropertyName(Source, SingleProperty)
+            Dim ItemName As String = Retrieve_PropertyName_ArrayItem(Source, SingleProperty)
+            Dim TheArray As Array = SingleProperty.GetValue(Source)
+            If TheArray Is Nothing OrElse TheArray.Length = 0 Then
+                WriteEmptyTag(CurrentWriter, PropertyName, Padding, True)
+                Exit Sub
+            End If
+            Dim IsFlag As Boolean = Retrieve_EnumFlagAttribute(Source, SingleProperty)
+
+            WriteString_TOK_StructStart(CurrentWriter, PropertyName, False)
+            For X = 0 To TheArray.Length - 1
+                Dim TheValue As [Enum] = TheArray.GetValue(X)
+                If IsFlag = True Then
+                    Write_Property_Enum_Flag(CurrentWriter, ItemName, DefaultValue, Padding, TheValue)
+                Else
+                    Write_Property_PrimitiveItem(CurrentWriter, ItemName, Retrieve_EnumString(TheValue), DefaultValue, TypeCode.String, Padding)
+                End If
+            Next
+            WriteString_TOKFinish(CurrentWriter)
+        End Sub
+#End Region
 
 #Region "Write Primitives"
         Private Sub Write_Property_Primitive(ByRef CurrentWriter As StringBuilder, ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, TheTypeCode As TypeCode, ByVal Padding As Integer)
@@ -679,9 +741,6 @@ Namespace Utilities
             'Return(value, XmlDateTimeSerializationMode.RoundtripKind)
         End Function
 #End Region
-
-
-
 
 #Region "OLD"
         Private Function WriteString_SingleStructName(ByRef CurrentWriter As Text.StringBuilder, ByRef CurrentIndentLevel As Integer, Name As String) As Boolean

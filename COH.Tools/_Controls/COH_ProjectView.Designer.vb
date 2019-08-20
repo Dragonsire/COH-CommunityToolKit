@@ -27,6 +27,8 @@ Namespace Controls.Forms
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(COH_ProjectView))
             Me.TabControl1 = New System.Windows.Forms.TabControl()
             Me.Tab_Preview = New System.Windows.Forms.TabPage()
+            Me.Label5 = New System.Windows.Forms.Label()
+            Me.Edit_Description = New System.Windows.Forms.TextBox()
             Me.Edit_ReleaseDate = New System.Windows.Forms.DateTimePicker()
             Me.Label4 = New System.Windows.Forms.Label()
             Me.Label3 = New System.Windows.Forms.Label()
@@ -44,8 +46,6 @@ Namespace Controls.Forms
             Me.Button1 = New System.Windows.Forms.Button()
             Me.Button2 = New System.Windows.Forms.Button()
             Me.Button3 = New System.Windows.Forms.Button()
-            Me.Edit_Description = New System.Windows.Forms.TextBox()
-            Me.Label5 = New System.Windows.Forms.Label()
             Me.TabControl1.SuspendLayout()
             Me.Tab_Preview.SuspendLayout()
             Me.TabPage1.SuspendLayout()
@@ -89,6 +89,25 @@ Namespace Controls.Forms
             Me.Tab_Preview.TabIndex = 1
             Me.Tab_Preview.Text = "Project Details"
             Me.Tab_Preview.UseVisualStyleBackColor = True
+            '
+            'Label5
+            '
+            Me.Label5.AutoSize = True
+            Me.Label5.Location = New System.Drawing.Point(36, 162)
+            Me.Label5.Name = "Label5"
+            Me.Label5.Size = New System.Drawing.Size(75, 14)
+            Me.Label5.TabIndex = 53
+            Me.Label5.Text = "Description :"
+            '
+            'Edit_Description
+            '
+            Me.Edit_Description.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.Edit_Description.Location = New System.Drawing.Point(120, 159)
+            Me.Edit_Description.Multiline = True
+            Me.Edit_Description.Name = "Edit_Description"
+            Me.Edit_Description.Size = New System.Drawing.Size(451, 120)
+            Me.Edit_Description.TabIndex = 52
             '
             'Edit_ReleaseDate
             '
@@ -256,25 +275,6 @@ Namespace Controls.Forms
             Me.Button3.TabIndex = 38
             Me.Button3.Text = "Create Mod Package"
             Me.Button3.UseVisualStyleBackColor = True
-            '
-            'Edit_Description
-            '
-            Me.Edit_Description.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-            Me.Edit_Description.Location = New System.Drawing.Point(120, 159)
-            Me.Edit_Description.Multiline = True
-            Me.Edit_Description.Name = "Edit_Description"
-            Me.Edit_Description.Size = New System.Drawing.Size(451, 120)
-            Me.Edit_Description.TabIndex = 52
-            '
-            'Label5
-            '
-            Me.Label5.AutoSize = True
-            Me.Label5.Location = New System.Drawing.Point(36, 162)
-            Me.Label5.Name = "Label5"
-            Me.Label5.Size = New System.Drawing.Size(75, 14)
-            Me.Label5.TabIndex = 53
-            Me.Label5.Text = "Description :"
             '
             'COH_ProjectView
             '

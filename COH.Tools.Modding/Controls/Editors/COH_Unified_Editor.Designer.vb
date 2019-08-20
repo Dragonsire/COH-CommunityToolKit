@@ -26,12 +26,11 @@ Namespace Editors
         'Do not modify it using the code editor.
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
-            Me.components = New System.ComponentModel.Container()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(COH_EditModdableContent))
             Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-            Me.TreeView1 = New System.Windows.Forms.TreeView()
-            Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
             Me.Edit_ShowAllPowers = New System.Windows.Forms.CheckBox()
+            Me.TreeView1 = New System.Windows.Forms.TreeView()
+            Me.ImageList1 = New System.Windows.Forms.ImageList()
             CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SplitContainer1.Panel1.SuspendLayout()
             Me.SplitContainer1.SuspendLayout()
@@ -57,6 +56,17 @@ Namespace Editors
             Me.SplitContainer1.SplitterDistance = 250
             Me.SplitContainer1.TabIndex = 29
             '
+            'Edit_ShowAllPowers
+            '
+            Me.Edit_ShowAllPowers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Me.Edit_ShowAllPowers.AutoSize = True
+            Me.Edit_ShowAllPowers.Location = New System.Drawing.Point(3, 502)
+            Me.Edit_ShowAllPowers.Name = "Edit_ShowAllPowers"
+            Me.Edit_ShowAllPowers.Size = New System.Drawing.Size(117, 18)
+            Me.Edit_ShowAllPowers.TabIndex = 0
+            Me.Edit_ShowAllPowers.Text = "Show All Powers"
+            Me.Edit_ShowAllPowers.UseVisualStyleBackColor = True
+            '
             'TreeView1
             '
             Me.TreeView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -75,17 +85,6 @@ Namespace Editors
             Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
             Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
             Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-            '
-            'Edit_ShowAllPowers
-            '
-            Me.Edit_ShowAllPowers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.Edit_ShowAllPowers.AutoSize = True
-            Me.Edit_ShowAllPowers.Location = New System.Drawing.Point(3, 502)
-            Me.Edit_ShowAllPowers.Name = "Edit_ShowAllPowers"
-            Me.Edit_ShowAllPowers.Size = New System.Drawing.Size(117, 18)
-            Me.Edit_ShowAllPowers.TabIndex = 0
-            Me.Edit_ShowAllPowers.Text = "Show All Powers"
-            Me.Edit_ShowAllPowers.UseVisualStyleBackColor = True
             '
             'COH_EditModdableContent
             '

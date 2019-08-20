@@ -59,7 +59,7 @@
             Me.Label1.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.Label1.Location = New System.Drawing.Point(95, 9)
             Me.Label1.Name = "Label1"
-            Me.Label1.Size = New System.Drawing.Size(323, 25)
+            Me.Label1.Size = New System.Drawing.Size(324, 25)
             Me.Label1.TabIndex = 2
             Me.Label1.Text = "City of Heroes Community Toolkit"
             '

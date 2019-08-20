@@ -52,7 +52,7 @@ Namespace Utilities
 
 #Region "Create New Instance"
         Sub New()
-            Me.New(New COH_Serialization_Settings(True))
+            Me.New(New COH_Serialization_Settings(True, Structures.COH_Struct.COH_ExportFormat.XML))
         End Sub
         Public Sub New(ByRef Settings As COH_Serialization_Settings)
             mOptions = Settings
@@ -336,27 +336,6 @@ Namespace Utilities
                 mCurrentWriter.WriteEndElement()
             End If
         End Sub
-        Private Sub Write_Property_EnumArray(ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, TheTypeCode As TypeCode, IsAttribute As Boolean, EnumType As Type)
-            Dim DefaultValue As Object = Retrieve_DefaultValue(Source, SingleProperty)
-            Dim PropertyName As String = Retrieve_PropertyName(Source, SingleProperty)
-            Dim ItemName As String = Retrieve_PropertyName_ArrayItem(Source, SingleProperty)
-            Dim TheArray As Array = SingleProperty.GetValue(Source)
-            If TheArray Is Nothing OrElse TheArray.Length = 0 Then
-                WriteEmptyTag(PropertyName, False, "")
-                Exit Sub
-            End If
-            Dim IsFlag As Boolean = Retrieve_EnumFlagAttribute(Source, SingleProperty)
-            mCurrentWriter.WriteStartElement(PropertyName)
-            For X = 0 To TheArray.Length - 1
-                Dim TheValue As [Enum] = TheArray.GetValue(X)
-                If IsFlag = True Then
-                    Write_Property_Enum_Flag(ItemName, DefaultValue, IsAttribute, TheValue)
-                Else
-                    Write_Property_PrimitiveItem(ItemName, Retrieve_EnumString(TheValue), DefaultValue, TypeCode.String, IsAttribute)
-                End If
-            Next
-            mCurrentWriter.WriteEndElement()
-        End Sub
 #End Region
 
 #Region "Write Enums"
@@ -391,6 +370,27 @@ Namespace Utilities
                 Return TheEnum.ToString
             End If
         End Function
+        Private Sub Write_Property_EnumArray(ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor, TheTypeCode As TypeCode, IsAttribute As Boolean, EnumType As Type)
+            Dim DefaultValue As Object = Retrieve_DefaultValue(Source, SingleProperty)
+            Dim PropertyName As String = Retrieve_PropertyName(Source, SingleProperty)
+            Dim ItemName As String = Retrieve_PropertyName_ArrayItem(Source, SingleProperty)
+            Dim TheArray As Array = SingleProperty.GetValue(Source)
+            If TheArray Is Nothing OrElse TheArray.Length = 0 Then
+                WriteEmptyTag(PropertyName, False, "")
+                Exit Sub
+            End If
+            Dim IsFlag As Boolean = Retrieve_EnumFlagAttribute(Source, SingleProperty)
+            mCurrentWriter.WriteStartElement(PropertyName)
+            For X = 0 To TheArray.Length - 1
+                Dim TheValue As [Enum] = TheArray.GetValue(X)
+                If IsFlag = True Then
+                    Write_Property_Enum_Flag(ItemName, DefaultValue, IsAttribute, TheValue)
+                Else
+                    Write_Property_PrimitiveItem(ItemName, Retrieve_EnumString(TheValue), DefaultValue, TypeCode.String, IsAttribute)
+                End If
+            Next
+            mCurrentWriter.WriteEndElement()
+        End Sub
 #End Region
 
 #Region "Write Primitives"

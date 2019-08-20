@@ -138,6 +138,7 @@ Namespace Utilities
         Public Sub New(Reset_Defaults As Boolean, Format As COH_ExportFormat, ByRef Localize_Controller As ISupport_COH_LocalizeContent)
             If Reset_Defaults = True Then ResetDefaults()
             mFormat = Format
+            If mFormat = COH_TextFormat.CrypticS_TextFormat Then mExportOption_DontWriteEnumOverrides = False
             mLocalizeController = Localize_Controller
         End Sub
         Public Sub ResetDefaults()
