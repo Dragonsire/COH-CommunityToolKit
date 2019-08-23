@@ -382,11 +382,13 @@ Namespace Utilities
             Dim IsFlag As Boolean = Retrieve_EnumFlagAttribute(Source, SingleProperty)
             mCurrentWriter.WriteStartElement(PropertyName)
             For X = 0 To TheArray.Length - 1
-                Dim TheValue As [Enum] = TheArray.GetValue(X)
+                Dim TheValue As Integer = TheArray.GetValue(X)
+                Dim TheEnum = [Enum].ToObject(EnumType, TheValue )
+
                 If IsFlag = True Then
-                    Write_Property_Enum_Flag(ItemName, DefaultValue, IsAttribute, TheValue)
+                    Write_Property_Enum_Flag(ItemName, DefaultValue, IsAttribute, TheEnum)
                 Else
-                    Write_Property_PrimitiveItem(ItemName, Retrieve_EnumString(TheValue), DefaultValue, TypeCode.String, IsAttribute)
+                    Write_Property_PrimitiveItem(ItemName, Retrieve_EnumString(TheEnum), DefaultValue, TypeCode.String, IsAttribute)
                 End If
             Next
             mCurrentWriter.WriteEndElement()
