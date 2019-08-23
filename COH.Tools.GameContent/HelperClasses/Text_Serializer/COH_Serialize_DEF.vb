@@ -449,11 +449,12 @@ Namespace Utilities
 
             WriteString_TOK_StructStart(CurrentWriter, PropertyName, False)
             For X = 0 To TheArray.Length - 1
-                Dim TheValue As [Enum] = TheArray.GetValue(X)
+                Dim TheValue As Integer = TheArray.GetValue(X)
+                Dim TheEnum = [Enum].ToObject(EnumType, TheValue)
                 If IsFlag = True Then
-                    Write_Property_Enum_Flag(CurrentWriter, ItemName, DefaultValue, Padding, TheValue)
+                    Write_Property_Enum_Flag(CurrentWriter, ItemName, DefaultValue, Padding, TheEnum)
                 Else
-                    Write_Property_PrimitiveItem(CurrentWriter, ItemName, Retrieve_EnumString(TheValue), DefaultValue, TypeCode.String, Padding)
+                    Write_Property_PrimitiveItem(CurrentWriter, ItemName, Retrieve_EnumString(TheEnum), DefaultValue, TypeCode.String, Padding)
                 End If
             Next
             WriteString_TOKFinish(CurrentWriter)
