@@ -29,7 +29,12 @@ BEFORE YOU START
 5.	I25 MultiRootBins, Not Working
 
 
-###<B>Version 1.0.Alpha.93– 8/23/2019</B>
+### Change Logs
+
+<B>Version 1.0.Alpha.94– 8/26/2019</B>
+</BR>•	Added Update Checking for Release Builds (Very Basic)
+
+<B>Version 1.0.Alpha.93– 8/23/2019</B>
 </BR>•	Fixed Enum Array Int32 Casting to Enum for DEF/XML Serializing
 
-###<B>Version 1.0.Alpha.0 - 1.0.0.92 - See MasterSource if Interested in these Boring Change Details</B>
+<B>Version 1.0.Alpha.0 - 1.0.0.92 - See MasterSource if Interested in these Boring Change Details</B>
