@@ -275,9 +275,20 @@
 #End Region
 
 #Region "About"
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+    Private Sub AboutToolKitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolKitToolStripMenuItem.Click
         UpdateCursor(True)
         COH_ContentController.Instance.OpenAboutBox()
+        UpdateCursor(False)
+    End Sub
+    Private Sub CheckForUpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdateToolStripMenuItem.Click
+        UpdateCursor(True)
+        COH_ContentController.Instance.CheckUpdate(True)
+        UpdateCursor(False)
+    End Sub
+    Private Sub UpdateLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles UpdateLink.LinkClicked
+        If String.IsNullOrEmpty(UpdateLink.Tag) = True Then Exit Sub
+        UpdateCursor(True)
+        System.Diagnostics.Process.Start(UpdateLink.Tag)
         UpdateCursor(False)
     End Sub
 #End Region
@@ -307,19 +318,5 @@
         COH_ContentController.Instance.OpenEditor_ModdableContentEditor()
         UpdateCursor(False)
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #End Region
 End Class

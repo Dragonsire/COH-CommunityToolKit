@@ -34,6 +34,7 @@
             PrepareUsage(InstalledProgramPath)
             If PrepareCache = True Then CacheFiles()
             SplashScreen_Destroy()
+            CheckUpdate()
         End Sub
         Private Sub PrepareUsage(InstalledProgramPath As String)
             sInstance = Me
@@ -99,6 +100,87 @@
         Protected Friend Sub LoadScreen_AddMessage(message As String)
             If mLoadScreenVisible = False Then Exit Sub
         End Sub
+#End Region
+
+#Region "Update"
+        Private Sub Check_Update(AtomFeed As String, Optional ForceShow As Boolean = False, Optional UpdateLinkLabel As LinkLabel = Nothing)
+            Dim Message As String = "", Link As String = ""
+            Dim UpdateFound As Boolean = Check_UpdateInfo(AtomFeed, Message, Link)
+            If UpdateFound = True Then
+                ShowMessage_Simple(Message & Environment.NewLine & Link)
+                If Not (UpdateLinkLabel Is Nothing) Then
+                    UpdateLinkLabel.Text = "Version : Update Available"
+                    UpdateLinkLabel.LinkArea = New LinkArea(10, 16)
+                    UpdateLinkLabel.Tag = Link
+                End If
+            ElseIf ForceShow = True Then
+                ShowMessage_Simple(Message)
+                If Not (UpdateLinkLabel Is Nothing) Then
+                    UpdateLinkLabel.Text = "Version : Current"
+                    UpdateLinkLabel.LinkArea = New LinkArea(0, 0)
+                    UpdateLinkLabel.Tag = ""
+                End If
+            End If
+        End Sub
+        Private Function Check_UpdateInfo(AtomFeed As String, ByRef Message As String, ByRef Link As String) As Boolean
+            If My.Computer.Network.IsAvailable = False Then
+                Message = "No Internet Connection"
+                Return False
+            End If
+            Dim UpdateFound As Boolean = False
+            If String.IsNullOrEmpty(AtomFeed) = True Then AtomFeed = "https://github.com/Dragon-Sire/COH-CommunityToolKit/releases.atom"
+            Using reader As Xml.XmlReader = Xml.XmlReader.Create(AtomFeed)
+                Dim feed As ServiceModel.Syndication.SyndicationFeed = ServiceModel.Syndication.SyndicationFeed.Load(reader)
+                'Console.WriteLine(feed.Title.Text)
+                'Console.WriteLine(feed.Links(0).Uri)
+
+                'For Each item As ServiceModel.Syndication.SyndicationItem In feed.Items
+                Dim item As ServiceModel.Syndication.SyndicationItem = feed.Items(0)
+                Dim LastUpdated As Date = item.LastUpdatedTime.DateTime
+                Link = item.Links(0).Uri.ToString
+                Dim ID As String = item.Id ' "tag:github.com,2008:Repository/203834544/v1.0.0.93"
+                If Parse_VersionGit(ID) = True Then
+                    Message = "There is a newer version available!"
+                    UpdateFound = True
+                Else
+                    Message = "Current Version is Latest Release"
+                End If
+                'Next
+            End Using
+            Return UpdateFound
+        End Function
+        Private Function Parse_VersionGit(Source As String) As Boolean
+            'Dim VersionMajor As Integer = 0, VersionMinor As Integer = 0, VersionStatus As Integer = 0, VersionRevision As Integer = 0
+            If Source.Contains("/v") = False Then Return False
+            Dim VString As String = Source.Substring(Source.IndexOf("/v") + 2)
+            Dim Values As String() = VString.Split(".")
+
+            If My.Application.Info.Version.Major < Values(0) Then
+                Return True
+            ElseIf My.Application.Info.Version.Major > Values(0) Then
+                Return False
+            End If
+
+            If My.Application.Info.Version.MajorRevision < Values(1) Then
+                Return True
+            ElseIf My.Application.Info.Version.MajorRevision > Values(1) Then
+                Return False
+            End If
+
+            If My.Application.Info.Version.Minor < Values(2) Then
+                Return True
+            ElseIf My.Application.Info.Version.Minor > Values(2) Then
+                Return False
+            End If
+
+            If My.Application.Info.Version.MinorRevision < Values(3) Then
+                Return True
+            ElseIf My.Application.Info.Version.MinorRevision > Values(3) Then
+                Return False
+            Else
+                Return False
+            End If
+        End Function
 #End Region
 
     End Class

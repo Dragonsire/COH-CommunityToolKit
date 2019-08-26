@@ -71,6 +71,11 @@ Namespace Internal.ContentController
             NewEditor.DisplayDetails(My.Resources.Logo, ProgramFolders.LookupFolder(COH_ProgramPaths.Root) & "ChangeLog.rtf", My.Application.Info.Version.ToString)
             ShowWindow(NewEditor, True)
         End Sub
+        Public Sub CheckUpdate(Optional ForceShowMessage As Boolean = False)
+            '#If Not DEBUG Then
+            Check_Update(Settings.GitReleaseFeed, ForceShowMessage, sMainForm.CoH_Menu1.UpdateLink)
+            '#End If
+        End Sub
         Public Sub OpenCRCTool()
             Dim NewEditor As New COH_CRC_Tool(Me)
             ShowWindow(NewEditor, True)

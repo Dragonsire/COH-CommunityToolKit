@@ -26,6 +26,22 @@
                 mOuroborosRepoPath = value
             End Set
         End Property
+        Public Property GitReleaseFeed As String
+            Get
+                Return mGitReleaseFeed
+            End Get
+            Set(value As String)
+                mGitReleaseFeed = value
+            End Set
+        End Property
+        Public Property GitReleaseDate As Date
+            Get
+                Return mGitReleaseDate
+            End Get
+            Set(value As Date)
+                mGitReleaseDate = value
+            End Set
+        End Property
         ReadOnly Property CurrentProject_FilePath As String
             Get
                 Return mCurrentProjectRoot & mCurrentProjectFileName
@@ -46,6 +62,8 @@
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentProjectFileName As String
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpdate_Bin_TimeStamps As Boolean
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOuroborosRepoPath As String
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGitReleaseFeed As String
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGitReleaseDate As Date
 #End Region
 
 #Region "Create New Instance"
@@ -59,6 +77,8 @@
             Reset_ToDefaultProject(False)
         End Sub
         Public Sub Reset_ToDefaultProject(Optional SaveFile As Boolean = True)
+            mGitReleaseFeed = "https://github.com/Dragon-Sire/COH-CommunityToolKit/releases.atom"
+            mGitReleaseDate = "01/01/2019"
             mCurrentProjectFileName = "CityofHeroes_StandardProject.xml"
             mCurrentProjectRoot = COH_ContentController.Instance.ProgramFolders.LookupFolder(COH_ProgramPaths.ProgramData) & "StandardPackage\"
             mOuroborosRepoPath = COH_ContentController.Instance.ProgramFolders.LookupFolder(COH_ProgramPaths.Repo)
