@@ -117,7 +117,10 @@ Partial Class COH_Menu
         Me.DViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextureViewerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckForUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolKitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.UpdateLink = New System.Windows.Forms.LinkLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -711,9 +714,22 @@ Partial Class COH_Menu
         '
         'AboutToolStripMenuItem
         '
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckForUpdateToolStripMenuItem, Me.AboutToolKitToolStripMenuItem})
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(55, 21)
         Me.AboutToolStripMenuItem.Text = "&About"
+        '
+        'CheckForUpdateToolStripMenuItem
+        '
+        Me.CheckForUpdateToolStripMenuItem.Name = "CheckForUpdateToolStripMenuItem"
+        Me.CheckForUpdateToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.CheckForUpdateToolStripMenuItem.Text = "Check for Update"
+        '
+        'AboutToolKitToolStripMenuItem
+        '
+        Me.AboutToolKitToolStripMenuItem.Name = "AboutToolKitToolStripMenuItem"
+        Me.AboutToolKitToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.AboutToolKitToolStripMenuItem.Text = "About ToolKit"
         '
         'Label2
         '
@@ -727,6 +743,22 @@ Partial Class COH_Menu
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Alpha"
         '
+        'UpdateLink
+        '
+        Me.UpdateLink.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UpdateLink.BackColor = System.Drawing.Color.Transparent
+        Me.UpdateLink.ForeColor = System.Drawing.Color.White
+        Me.UpdateLink.LinkArea = New System.Windows.Forms.LinkArea(10, 9)
+        Me.UpdateLink.LinkColor = System.Drawing.Color.Yellow
+        Me.UpdateLink.Location = New System.Drawing.Point(1023, 0)
+        Me.UpdateLink.Name = "UpdateLink"
+        Me.UpdateLink.Size = New System.Drawing.Size(382, 17)
+        Me.UpdateLink.TabIndex = 6
+        Me.UpdateLink.TabStop = True
+        Me.UpdateLink.Text = "Version : Current"
+        Me.UpdateLink.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.UpdateLink.UseCompatibleTextRendering = True
+        '
         'COH_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
@@ -735,6 +767,7 @@ Partial Class COH_Menu
         Me.BackgroundImage = Global.COH.Tools.My.Resources.Resources.CityofHeroesToolKit_Banner
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.UpdateLink)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label2)
         Me.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -843,4 +876,7 @@ Partial Class COH_Menu
     Friend WithEvents ToolStripSeparator14 As ToolStripSeparator
     Friend WithEvents Binpiggi25ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BinpowerspiggToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolKitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckForUpdateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdateLink As LinkLabel
 End Class

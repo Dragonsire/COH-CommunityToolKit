@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("City of Heroes Toolkit")>
+<Assembly: AssemblyTitle("City of Heroes Community Toolkit")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("Community")>
-<Assembly: AssemblyProduct("City of Heroes Toolkit")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyProduct("City of Heroes Community Toolkit")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.93")>
-<Assembly: AssemblyFileVersion("1.0.0.93")>
+<Assembly: AssemblyVersion("1.0.0.94")>
+<Assembly: AssemblyFileVersion("1.0.0.94")>
