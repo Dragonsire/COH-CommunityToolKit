@@ -10,7 +10,7 @@ BEFORE YOU START
 5.	***Note Not all Pigg Files are Extracted in Regards to Textures (YET)
 
 ## FEATURES
-</BR>•	Pigg Viewer - BINs, GEO, Textures (DDS/TGA), MessageStores
+•	Pigg Viewer - BINs, GEO, Textures (DDS/TGA), MessageStores
 </BR>•	Cryptics Bin Viewer i24 / 100+ Bin Types Supported (Parse 6)
 </BR>•	Cryptics Bin Viewer i25 / Unknown Number Bins Supported (Parse 7)
 </BR>•	MesageStore Lookup /Edit
@@ -28,9 +28,7 @@ BEFORE YOU START
 4.	Not ALL UI Editors Enable/Disable Appropriately
 5.	I25 MultiRootBins, Not Working
 
-
-### Change Logs
-
+## Change Logs
 <B>Version 1.0.Alpha.94– 8/26/2019</B>
 </BR>•	Added Update Checking for Release Builds (Very Basic)
 
