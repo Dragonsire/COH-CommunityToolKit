@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_GroupSaveInfo_LibEntry
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -83,7 +83,7 @@
 #Region "Clone"
         Public Function Clone() As COH_GroupSaveInfo_LibEntry
             Dim Result As COH_GroupSaveInfo_LibEntry = New COH_GroupSaveInfo_LibEntry
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mInitialValue = mInitialValue

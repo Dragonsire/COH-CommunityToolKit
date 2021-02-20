@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam_Behavior
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ModParam_Behavior
             Dim Result As COH_ModParam_Behavior = New COH_ModParam_Behavior
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mBehavior = CloneStrings(mBehavior)
                 Return Result

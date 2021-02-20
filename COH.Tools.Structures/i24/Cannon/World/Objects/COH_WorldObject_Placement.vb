@@ -1,6 +1,6 @@
 ﻿Namespace World.Objects
     Public NotInheritable Class COH_GameObject_Placement
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -92,7 +92,7 @@
 #Region "Clone"
         Public Function Clone() As COH_GameObject_Placement
             Dim Result As COH_GameObject_Placement = New COH_GameObject_Placement
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDisplayName = String.Copy(mDisplayName)

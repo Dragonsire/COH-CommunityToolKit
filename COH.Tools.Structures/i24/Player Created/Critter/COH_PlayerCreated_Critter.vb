@@ -2,7 +2,7 @@
 
 Namespace PlayerCreated.Critter
     Public NotInheritable Class COH_PlayerCreated_Critter
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -226,7 +226,7 @@ Namespace PlayerCreated.Critter
 #Region "Clone"
         Public Function Clone() As COH_PlayerCreated_Critter
             Dim Result As COH_PlayerCreated_Critter = New COH_PlayerCreated_Critter
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mReferenceFile = String.Copy(mReferenceFile)
                 .mName = String.Copy(mName)

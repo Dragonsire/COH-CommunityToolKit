@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Tailor
     Public NotInheritable Class COH_Costum_PowerCustomize_Menu
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -78,7 +78,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Costum_PowerCustomize_Menu
             Dim Result As COH_Costum_PowerCustomize_Menu = New COH_Costum_PowerCustomize_Menu
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCategory = String.Copy(mCategory)
                 .mSets = mSets.CloneTheStrings

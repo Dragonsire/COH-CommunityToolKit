@@ -1,6 +1,6 @@
 ﻿Namespace World.DayJobs
     Public NotInheritable Class COH_DayJob_Power
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -116,7 +116,7 @@
 #Region "Clone"
         Public Function Clone() As COH_DayJob_Power
             Dim Result As COH_DayJob_Power = New COH_DayJob_Power
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mPower = String.Copy(mPower)
                 .mSalvage = String.Copy(mSalvage)

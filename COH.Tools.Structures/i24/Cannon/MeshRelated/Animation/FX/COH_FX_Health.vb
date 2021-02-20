@@ -1,6 +1,6 @@
 ﻿Namespace Animation.FX
     Public NotInheritable Class COH_FX_Health
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -97,7 +97,7 @@
 #Region "Clone"
         Public Function Clone() As COH_FX_Health
             Dim Result As COH_FX_Health = New COH_FX_Health
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mRange = mRange
                 .mLibraryPiece = mLibraryPiece.CloneTheStrings

@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_TextureOptions_Fallback
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -125,7 +125,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TextureOptions_Fallback
             Dim Result As COH_TextureOptions_Fallback = New COH_TextureOptions_Fallback
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mScaleST = mScaleST
                 .mBase = String.Copy(mBase)

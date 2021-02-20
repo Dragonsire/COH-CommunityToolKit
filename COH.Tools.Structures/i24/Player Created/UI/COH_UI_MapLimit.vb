@@ -1,6 +1,6 @@
 ﻿Namespace PlayerCreated.UI
     Public NotInheritable Class COH_UI_PlayerCreated_MapLimit
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -116,7 +116,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UI_PlayerCreated_MapLimit
             Dim Result As COH_UI_PlayerCreated_MapLimit = New COH_UI_PlayerCreated_MapLimit
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mregular_only = New Int32(mregular_only.Count - 1) {} : mregular_only.CopyTo(.mregular_only, 0)
                 .maround_only = New Int32(maround_only.Count - 1) {} : maround_only.CopyTo(.maround_only, 0)

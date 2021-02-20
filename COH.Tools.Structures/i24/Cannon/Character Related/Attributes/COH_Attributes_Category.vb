@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public Class COH_AttributesCategory
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -56,7 +56,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AttributesCategory
             Dim Result As COH_AttributesCategory = New COH_AttributesCategory
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mAttrib = New COH_AttributeDescription(mAttrib.Count - 1) {}

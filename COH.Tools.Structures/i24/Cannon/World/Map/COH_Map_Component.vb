@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_Map_Component
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -95,7 +95,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Map_Component
             Dim Result As COH_Map_Component = New COH_Map_Component
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMapImage = String.Copy(mMapImage)
                 .mTextNotImage = mTextNotImage

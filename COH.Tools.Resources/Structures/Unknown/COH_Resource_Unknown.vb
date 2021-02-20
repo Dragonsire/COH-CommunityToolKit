@@ -1,6 +1,6 @@
 ﻿Namespace Structures.Other
     Public Class COH_Resource_Unknown
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -37,7 +37,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Resource_Unknown
             Dim Result As COH_Resource_Unknown = New COH_Resource_Unknown
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mRawBytes = New Byte(mRawBytes.Length - 1) {}
                 Array.Copy(mRawBytes, .mRawBytes, mRawBytes.Length)

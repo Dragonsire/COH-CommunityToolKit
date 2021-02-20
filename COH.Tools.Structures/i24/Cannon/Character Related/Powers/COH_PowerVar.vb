@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public Class COH_PowerVar
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String

@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public Class COH_ProductCatalogItem
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -168,7 +168,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ProductCatalogItem
             Dim Result As COH_ProductCatalogItem = New COH_ProductCatalogItem
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mInventoryType = mInventoryType

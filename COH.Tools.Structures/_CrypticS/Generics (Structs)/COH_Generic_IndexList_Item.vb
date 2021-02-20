@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public NotInheritable Class COH_Generic_IndexList_Item
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Generic_IndexList_Item
             Dim Result As COH_Generic_IndexList_Item = New COH_Generic_IndexList_Item
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mIndex = mIndex
                 .mName = String.Copy(mName)

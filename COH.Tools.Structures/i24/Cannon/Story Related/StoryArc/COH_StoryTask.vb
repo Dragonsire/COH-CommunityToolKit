@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public NotInheritable Class COH_StoryTask
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -1081,7 +1081,7 @@
 #Region "Clone"
         Public Function Clone() As COH_StoryTask
             Dim Result As COH_StoryTask = New COH_StoryTask
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTaskType = mTaskType
                 .mTaskFlag = mTaskFlag

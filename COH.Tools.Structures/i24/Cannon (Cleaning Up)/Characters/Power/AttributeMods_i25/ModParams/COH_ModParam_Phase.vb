@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam_Phase
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -77,7 +77,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ModParam_Phase
             Dim Result As COH_ModParam_Phase = New COH_ModParam_Phase
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCombatPhases = New Int32(mCombatPhases.Count - 1) {} : mCombatPhases.CopyTo(.mCombatPhases, 0)
                 .mVisionPhases = New Int32(mVisionPhases.Count - 1) {} : mVisionPhases.CopyTo(.mVisionPhases, 0)

@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_Command
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Command
             Dim Result As COH_Command = New COH_Command
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDisplayName = String.Copy(mDisplayName)
                 .mCommand = New COH_CommandString(mCommand.Count - 1) {}

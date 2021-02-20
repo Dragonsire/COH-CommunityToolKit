@@ -2,7 +2,7 @@
 
 Namespace Animation
     Public NotInheritable Class COH_FX_Particle_ColorNav
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -108,7 +108,7 @@ Namespace Animation
 #Region "Clone"
         Public Function Clone() As COH_FX_Particle_ColorNav
             Dim Result As COH_FX_Particle_ColorNav = New COH_FX_Particle_ColorNav
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mBeColor = mBeColor
                 .mByTime = mByTime

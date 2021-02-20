@@ -1,6 +1,6 @@
 ﻿Namespace Textures
     Public NotInheritable Class COH_TextWord_Layer_Size
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -66,7 +66,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TextWord_Layer_Size
             Dim Result As COH_TextWord_Layer_Size = New COH_TextWord_Layer_Size
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mWidth = mWidth
                 .mHeight = mHeight

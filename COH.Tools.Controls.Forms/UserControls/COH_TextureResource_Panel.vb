@@ -55,7 +55,7 @@ Public Class COH_TextureResource_Panel
 #End Region
 
 #Region "Usage"
-    Public Sub Populate_List(ByRef GEO As COH_Resource_GEO, Index As Integer, ByRef Linked_Textures As Dictionary(Of String, COH_Struct)) ',ByRef Assets As COH_ResourceAssets_Controller,)
+    Public Sub Populate_List(ByRef GEO As COH_Resource_GEO, Index As Integer, ByRef Linked_Textures As Dictionary(Of String, COH_FileStructure)) ',ByRef Assets As COH_ResourceAssets_Controller,)
         For x = MaterialList.Controls.Count - 1 To 0 Step -1
             MaterialList.Controls(x).Dispose()
         Next
@@ -65,7 +65,7 @@ Public Class COH_TextureResource_Panel
             Dim TheName As String = IO.Path.GetFileNameWithoutExtension(GEO.Models(Index).Mesh.TextureNames(X))
             Dim NumCoords As Integer = GEO.Models(Index).Mesh.TextureSTSCounts(X)
 
-            Dim Found As COH_Struct = Nothing
+            Dim Found As COH_FileStructure = Nothing
             If Linked_Textures.TryGetValue(TheName, Found) Then
                 MyThumb.Prepare_Usage(Me, X, TheName, NumCoords, Found)
                 MaterialList.Controls.Add(MyThumb)

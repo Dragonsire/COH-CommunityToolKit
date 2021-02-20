@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Mesh
     Public NotInheritable Class COH_CostumeFaceScale
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -150,7 +150,7 @@
 #Region "Clone"
         Public Function Clone() As COH_CostumeFaceScale
             Dim Result As COH_CostumeFaceScale = New COH_CostumeFaceScale
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDisplayName = String.Copy(mDisplayName)
                 .mHead = mHead

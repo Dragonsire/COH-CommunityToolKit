@@ -2,7 +2,7 @@
 
 Namespace Structures.Anim
     Public Class COH_Resource_Anim
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -118,7 +118,7 @@ Namespace Structures.Anim
 #Region "Clone"
         Public Function Clone() As COH_Resource_Anim
             Dim Result As COH_Resource_Anim = New COH_Resource_Anim
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
             End With
             Return Result

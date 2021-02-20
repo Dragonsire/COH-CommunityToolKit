@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_UI_KeyBind
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UI_KeyBind
             Dim Result As COH_UI_KeyBind = New COH_UI_KeyBind
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mkey = String.Copy(mkey)
                 .mcommand = String.Copy(mcommand)

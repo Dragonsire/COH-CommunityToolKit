@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -19,11 +19,11 @@
                 SetValue(mType, value)
             End Set
         End Property
-        <DefaultValue(5)> Property Param As COH_Struct
+        <DefaultValue(5)> Property Param As COH_FileStructure
             Get
                 Return mStruct
             End Get
-            Set(value As COH_Struct)
+            Set(value As COH_FileStructure)
                 SetValue(mStruct, value)
             End Set
         End Property
@@ -34,7 +34,7 @@
 
 #Region "Private Properties"
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_AttribModParamType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStruct As COH_Struct
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStruct As COH_FileStructure
 #End Region
 
 #Region "Create New Instance"
@@ -68,10 +68,10 @@
 #Region "Clone"
         Public Function Clone() As COH_ModParam
             Dim Result As COH_ModParam = New COH_ModParam
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mType = mType
-                If Not (mStruct Is Nothing) Then .mStruct = mStruct.CloneMe
+                ' If Not (mStruct Is Nothing) Then .mStruct = mStruct.CloneMe
                 Return Result
             End With
         End Function

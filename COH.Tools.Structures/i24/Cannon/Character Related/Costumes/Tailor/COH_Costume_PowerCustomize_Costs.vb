@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Tailor
     Public NotInheritable Class COH_Costum_PowerCustomize_Costs
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -93,7 +93,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Costum_PowerCustomize_Costs
             Dim Result As COH_Costum_PowerCustomize_Costs = New COH_Costum_PowerCustomize_Costs
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMinLevel = mMinLevel
                 .mMaxLevel = mMaxLevel

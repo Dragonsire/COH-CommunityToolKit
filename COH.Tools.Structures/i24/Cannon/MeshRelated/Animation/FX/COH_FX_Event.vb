@@ -4,7 +4,7 @@ Imports COH.GameContent.Structures.Shared.Drawing
 
 Namespace Animation.FX
     Public NotInheritable Class COH_FX_Event
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -453,7 +453,7 @@ Namespace Animation.FX
 #Region "Clone"
         Public Function Clone() As COH_FX_Event
             Dim Result As COH_FX_Event = New COH_FX_Event
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mEName = String.Copy(mEName)
                 .mType = mType

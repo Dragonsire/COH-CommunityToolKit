@@ -38,7 +38,7 @@
         End Sub
         Private Sub PrepareUsage(InstalledProgramPath As String)
             sInstance = Me
-            mCached_Structs = New Dictionary(Of COH_ProjectContent, List(Of COH_Struct))
+            mCached_Structs = New Dictionary(Of COH_ProjectContent, List(Of COH_FileStructure))
             SplashScreen_Create()
             SplashScreen_Update("Initializing", 5, True)
             mCached_ProjectMapping = CreateListProjectMapping()

@@ -1,5 +1,5 @@
-﻿Imports System.Xml
-Imports System.Xml.Serialization
+﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+Imports COH.GameContent.CodeManagement.Interfaces.TOKs
 
 Namespace HelperFunctions.Interfaces
 
@@ -31,7 +31,7 @@ Namespace HelperFunctions.Interfaces
         Public Function Determine_Interface_FromTokType(Tok As StructTokenType, ByRef Result As Type) As Boolean
             Select Case Tok
                 Case StructTokenType.TOK_STRING_X
-                    Result = GetType(GameContent.Interfaces.ISupport_COH_TOK_String)
+                    Result = GetType(ISupport_COH_TOK_String)
                     Return True
                 Case Else
                     Return False

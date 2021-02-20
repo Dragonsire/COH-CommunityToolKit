@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_GEO_Beacon
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@
 #Region "Clone"
         Public Function Clone() As COH_GEO_Beacon
             Dim Result As COH_GEO_Beacon = New COH_GEO_Beacon
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mRadius = mRadius

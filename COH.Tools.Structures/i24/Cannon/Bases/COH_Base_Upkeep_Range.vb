@@ -1,6 +1,6 @@
 ﻿Namespace Bases
     Public NotInheritable Class COH_Base_UpkeepRange
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -61,7 +61,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Base_UpkeepRange
             Dim Result As COH_Base_UpkeepRange = New COH_Base_UpkeepRange
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mRentMax = mRentMax
                 .mRate = mRate

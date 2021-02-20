@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public NotInheritable Class COH_Mission_MapTime
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Mission_MapTime
             Dim Result As COH_Mission_MapTime = New COH_Mission_MapTime
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMapTime = mMapTime
                 .mMap = New COH_Mission_Map(mMap.Count - 1) {}

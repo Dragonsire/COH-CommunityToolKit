@@ -1,6 +1,6 @@
 ﻿Namespace Enviroment.Sound
     Public NotInheritable Class COH_SOUND_INFO
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -77,7 +77,7 @@
 #Region "Clone"
         Public Function Clone() As COH_SOUND_INFO
             Dim Result As COH_SOUND_INFO = New COH_SOUND_INFO
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mmaxInstances = mmaxInstances

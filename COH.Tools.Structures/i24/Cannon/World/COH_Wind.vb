@@ -1,6 +1,6 @@
 ﻿Namespace World
     Public NotInheritable Class COH_Enviroment_Wind
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -121,7 +121,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Enviroment_Wind
             Dim Result As COH_Enviroment_Wind = New COH_Enviroment_Wind
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mWorldFactor = mWorldFactor
                 .mLocalFactor = mLocalFactor

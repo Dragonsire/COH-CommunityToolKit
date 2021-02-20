@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public NotInheritable Class COH_Power_NameMap
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_NameMap
             Dim Result As COH_Power_NameMap = New COH_Power_NameMap
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mOld = String.Copy(mOld)
                 .mNew = String.Copy(mNew)

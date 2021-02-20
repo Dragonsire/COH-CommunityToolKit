@@ -45,11 +45,11 @@
 
 #Region "Export CrypticsS - Contents"
         Private Function RebuildContents_SingleItem_ImportXML(ByRef Source As COH_CrypticS, SupportedType As Type, ByRef ContentEntry As COH_CrypticS_FileContentDetails, ByRef CurrentWriter As COH_BinaryWriter, Optional ShowProgress As Boolean = False) As Boolean
-            Dim ExistingSource As COH_Struct = Nothing
-            If COH_Struct.Import_COHStruct_FromXMLFile(ContentEntry.XML_RelativePath, SupportedType, ExistingSource) = False Then Return False
+            Dim ExistingSource As COH_FileStructure = Nothing
+            If COH_FileStructure.Import_COHStruct_FromXMLFile(ContentEntry.XML_RelativePath, SupportedType, ExistingSource) = False Then Return False
             Return RebuildContents_SingleItem(ExistingSource, CurrentWriter, ShowProgress)
         End Function
-        Private Function RebuildContents_SingleItem(ByRef ExistingSource As COH_Struct, ByRef CurrentWriter As COH_BinaryWriter, Optional ShowProgress As Boolean = False) As Boolean
+        Private Function RebuildContents_SingleItem(ByRef ExistingSource As COH_FileStructure, ByRef CurrentWriter As COH_BinaryWriter, Optional ShowProgress As Boolean = False) As Boolean
             Dim ResultSucceed As Boolean = True
             Dim TheStream As IO.MemoryStream = Nothing
             ResultSucceed = ExistingSource.Export_To_MemoryStream(TheStream, CurrentWriter.Settings) '//Version)

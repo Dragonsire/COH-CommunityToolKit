@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_Stores
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -105,7 +105,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Stores
             Dim Result As COH_Stores = New COH_Stores
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mSell = New COH_Stores_Markup(mSell.Count - 1) {}

@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated.Textures
     Public Class COH_TextureOptions_ScrollScales
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Enums"
         Public Overrides ReadOnly Property InternalDisplayName As String

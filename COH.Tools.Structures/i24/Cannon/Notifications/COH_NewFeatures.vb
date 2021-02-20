@@ -1,6 +1,6 @@
 ﻿Namespace Notifications
     Public NotInheritable Class COH_NewFeatures
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -77,7 +77,7 @@
 #Region "Clone"
         Public Function Clone() As COH_NewFeatures
             Dim Result As COH_NewFeatures = New COH_NewFeatures
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mID = mID
                 .mDescription = String.Copy(mDescription)

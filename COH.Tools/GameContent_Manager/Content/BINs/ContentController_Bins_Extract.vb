@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.COH_CrypticS_Settings
+Imports COH.GameContent.Storage.Serialization.Configuration.COH_Serialization_Settings
 Imports COH.Tools.Utilities
 
 Namespace Internal.ContentController
@@ -59,16 +60,16 @@ Namespace Internal.ContentController
                 SplashScreen_Update("Extracting Origins", 5, False)
                 If ExtractBin_AllOrigins(False) = False Then Result = False
                 SplashScreen_Update("Extracting Attributes", 5, False)
-            If ExtractBin_AllAttribs(False) = False Then Result = False
-            SplashScreen_Update("Extracting Powers", 20, False)
-            If ExtractBin_Powers(False) = False Then Result = False
-            SplashScreen_Update("Extracting Power Categories", 5, False)
-            If ExtractBin_PowerCategories(False) = False Then Result = False
-            SplashScreen_Update("Extracting PowerSets", 5, False)
-            If ExtractBin_PowerSets(False) = False Then Result = False
-            SplashScreen_Update("Extracting Character Classes", 5, False)
-            If ExtractBin_AllCharacterClasses(False) = False Then Result = False
-            SplashScreen_Update("Extracting Tricks & Texture Options", 5, False)
+                If ExtractBin_AllAttribs(False) = False Then Result = False
+                SplashScreen_Update("Extracting Powers", 20, False)
+                If ExtractBin_Powers(False) = False Then Result = False
+                SplashScreen_Update("Extracting Power Categories", 5, False)
+                If ExtractBin_PowerCategories(False) = False Then Result = False
+                SplashScreen_Update("Extracting PowerSets", 5, False)
+                If ExtractBin_PowerSets(False) = False Then Result = False
+                SplashScreen_Update("Extracting Character Classes", 5, False)
+                If ExtractBin_AllCharacterClasses(False) = False Then Result = False
+                SplashScreen_Update("Extracting Tricks & Texture Options", 5, False)
                 ' If ExtractBin_TricksANDTextureOptions(False) = False Then Result = False
             End If
             If Result = False Then
@@ -115,7 +116,7 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Extract - Contents"
-        Private Function ExtractBin_CrypticS(FileSource As String, ByRef Result As COH_Struct(), ByRef Info As COH_CrypticS) As Boolean
+        Private Function ExtractBin_CrypticS(FileSource As String, ByRef Result As COH_FileStructure(), ByRef Info As COH_CrypticS) As Boolean
             If IO.File.Exists(FileSource) = False Then
                 If LocateFile(IO.Path.GetFileName(FileSource), FileSource) = False Then
                     ShowMessage_SimpleError("File Not Found : " & IO.Path.GetFileName(FileSource))
@@ -130,7 +131,7 @@ Namespace Internal.ContentController
             mBinTool_CrypticS = Nothing
             Return ExtractResult
         End Function
-        Private Function ExtractBin_CrypticS(FileSource As String, ByRef Result As COH_Struct()(), ByRef Info As COH_CrypticS) As Boolean
+        Private Function ExtractBin_CrypticS(FileSource As String, ByRef Result As COH_FileStructure()(), ByRef Info As COH_CrypticS) As Boolean
             If IO.File.Exists(FileSource) = False Then
                 If LocateFile(IO.Path.GetFileName(FileSource), FileSource) = False Then
                     ShowMessage_SimpleError("File Not Found : " & IO.Path.GetFileName(FileSource))
@@ -151,7 +152,7 @@ Namespace Internal.ContentController
         Public Function ExtractBin(ShowMessage As Boolean, SelectedType As COH_ProjectContent) As Boolean
             Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24) & "bin\" & Retrieve_FileName(SelectedType)
             Dim Destination As String = ProgramFolders.LookupFolder_ProjectFile(SelectedType)
-            Dim Results As COH_Struct() = Nothing
+            Dim Results As COH_FileStructure() = Nothing
             Dim Info As COH_CrypticS = Nothing
             If ExtractBin_CrypticS(FileSource, Results, Info) = False Then Return False
 
@@ -164,7 +165,7 @@ Namespace Internal.ContentController
         End Function
         Public Function ExtractBin(ShowMessage As Boolean, SelectedType As COH_ProjectContent, SubTypes As COH_ProjectContent()) As Boolean
             Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24) & "bin\" & Retrieve_FileName(SelectedType)
-            Dim Results As COH_Struct()() = Nothing
+            Dim Results As COH_FileStructure()() = Nothing
             Dim Info As COH_CrypticS = Nothing
             If ExtractBin_CrypticS(FileSource, Results, Info) = False Then Return False
             Dim ModType As Type = Nothing
@@ -179,7 +180,7 @@ Namespace Internal.ContentController
             If ShowMessage = True Then ShowMessage_Simple("Extract " & SelectedType.ToString & " Complete")
             Return True
         End Function
-        Private Function WriteModdingFile(FileSource As String, Destination As String, ByRef Info As COH_CrypticS, ByRef Structs As COH_Struct(), TheType As Type, Optional WriteIndex As Boolean = True) As Boolean
+        Private Function WriteModdingFile(FileSource As String, Destination As String, ByRef Info As COH_CrypticS, ByRef Structs As COH_FileStructure(), TheType As Type, Optional WriteIndex As Boolean = True) As Boolean
             ProgressDisplay_Create("Writing Modable Content", 0, Structs.Count, 0)
             For X = 0 To Structs.Count - 1
                 Dim NFO As New Modding.COH_ModableContent
@@ -188,7 +189,7 @@ Namespace Internal.ContentController
                 NFO.RelativePath_Originol = Structs(0).Retrieve_OriginolSourceReference
                 Dim XMLPath As String = Destination & NFO.RelativePath_Current
                 Me.ProgressDisplay_Update(IO.Path.GetFileName(XMLPath), 1)
-                Structs(X).Export_To_File(IO.Path.GetFileName(XMLPath), IO.Path.GetDirectoryName(XMLPath), COH_Struct.COH_ExportFormat.XML)
+                Structs(X).Export_To_File(IO.Path.GetFileName(XMLPath), IO.Path.GetDirectoryName(XMLPath), COH_ExportFormat.XML)
                 '//COH.Tools.Modding.COH_ModableContent.Export_ToXMLFile(XMLPath.Replace(".XML", ".PF"), NewItem)
             Next
             ProgressDisplay_Destroy()

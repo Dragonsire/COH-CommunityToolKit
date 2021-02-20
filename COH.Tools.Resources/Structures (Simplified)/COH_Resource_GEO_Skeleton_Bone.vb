@@ -1,6 +1,6 @@
 ﻿Namespace Structures_Simplified
     Public NotInheritable Class COH_Resource_GEO_SkeletonBone
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -50,7 +50,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Resource_GEO_SkeletonBone
             Dim Result As COH_Resource_GEO_SkeletonBone = New COH_Resource_GEO_SkeletonBone
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
                 .BoneIndex = BoneIndex
                 .ParentIndex = ParentIndex

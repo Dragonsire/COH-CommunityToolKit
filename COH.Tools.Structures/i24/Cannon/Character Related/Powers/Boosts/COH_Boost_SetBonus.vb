@@ -1,6 +1,6 @@
 ﻿Namespace Powers.Boosts
     Public NotInheritable Class COH_Boost_SetBonus
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -105,7 +105,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Boost_SetBonus
             Dim Result As COH_Boost_SetBonus = New COH_Boost_SetBonus
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDisplayText = String.Copy(mDisplayText)
                 .mMinBoosts = mMinBoosts

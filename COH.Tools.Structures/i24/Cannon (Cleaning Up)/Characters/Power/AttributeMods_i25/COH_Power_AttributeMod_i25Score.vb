@@ -4,7 +4,7 @@ Imports COH.GameContent.Structures.Powers
 
 Namespace Characters.Powers
     Public NotInheritable Class COH_Power_AttributeMod_i25_Score
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -313,7 +313,7 @@ Namespace Characters.Powers
 #Region "Clone"
         Public Function Clone() As COH_Power_AttributeMod_i25_Score
             Dim Result As COH_Power_AttributeMod_i25_Score = New COH_Power_AttributeMod_i25_Score
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mAttrib = New Int32(mAttrib.Count - 1) {} : mAttrib.CopyTo(.mAttrib, 0)
                 .mAspect = mAspect
@@ -353,7 +353,7 @@ Namespace Characters.Powers
                     .mFX(X) = mFX(X).Clone
                 Next
                 .mFlags = mFlags
-                If Not mParam Is Nothing Then .mParam = mParam.CloneMe
+                'If Not mParam Is Nothing Then .mParam = mParam.CloneMe
                 Return Result
             End With
         End Function

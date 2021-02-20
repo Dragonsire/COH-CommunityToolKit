@@ -3,7 +3,7 @@ Imports System.Xml.Serialization
 Imports COH.GameContent
 Imports COH.GameContent.Internal.Events
 Imports COH.GameContent.Structures
-Imports COH.GameContent.Structures.COH_Struct
+Imports COH.GameContent.Structures.COH_FileStructure
 Imports COH.GameContent.Utilities
 
 Public NotInheritable Class COH_ModableContent
@@ -55,7 +55,7 @@ Public NotInheritable Class COH_ModableContent
             Return mFullPath
         End Get
     End Property
-    <XmlIgnore> Public Property Content As COH_Struct Implements ISupport_COH_OriginolSources.Content
+    <XmlIgnore> Public Property Content As COH_FileStructure Implements ISupport_COH_OriginolSources.Content
 #End Region
 
 #Region "Private Properties"

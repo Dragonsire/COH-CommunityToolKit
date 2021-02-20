@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.HelperClasses.Wrappers
+Imports COH.GameContent.Storage.Structures.CrypticsS
 
 Namespace ProjectFiles
     Public Class COH_ProjectFile

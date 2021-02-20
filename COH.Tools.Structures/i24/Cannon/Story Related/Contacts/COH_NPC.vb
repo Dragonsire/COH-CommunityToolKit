@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public Class COH_NPC
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
         Const DEFAULT_SHOUT_FREQUENCY = 5
         Const DEFAULT_SHOUT_VARIATION = 10
@@ -282,7 +282,7 @@
 #Region "Clone"
         Public Function Clone() As COH_NPC
             Dim Result As COH_NPC = New COH_NPC
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mCurrentFile = String.Copy(mCurrentFile)

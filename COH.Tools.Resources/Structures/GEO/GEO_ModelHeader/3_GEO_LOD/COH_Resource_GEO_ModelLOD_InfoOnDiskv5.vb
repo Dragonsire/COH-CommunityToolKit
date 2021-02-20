@@ -1,6 +1,6 @@
 ﻿Namespace Structures.GEO
     Public NotInheritable Class COH_Resource_GEO_ModelLOD_OnDiskv5
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -60,7 +60,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Resource_GEO_ModelLOD_OnDiskv5
             Dim Result As COH_Resource_GEO_ModelLOD_OnDiskv5 = New COH_Resource_GEO_ModelLOD_OnDiskv5
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mNumberLOD = mNumberLOD
                 .mLods = New COH_Resource_GEO_AutoLOD_OnDiskv5(5) {}

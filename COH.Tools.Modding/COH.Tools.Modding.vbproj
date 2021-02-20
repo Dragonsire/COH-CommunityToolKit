@@ -58,12 +58,24 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="COH.GameContent.CodeManagement.Attributes" />
+    <Import Include="COH.GameContent.CodeManagement.Enums.Structures" />
+    <Import Include="COH.GameContent.CodeManagement.Enums.Toks" />
+    <Import Include="COH.GameContent.CodeManagement.Extentions" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces.Structures" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces.TOKs" />
     <Import Include="COH.GameContent.Interfaces" />
     <Import Include="COH.GameContent.Internal.Attributes" />
     <Import Include="COH.GameContent.Internal.DeveloperOptions" />
     <Import Include="COH.GameContent.Internal.Extentions" />
     <Import Include="COH.GameContent.Internal.Structures" />
     <Import Include="COH.GameContent.ProjectFiles" />
+    <Import Include="COH.GameContent.Storage.Serialization" />
+    <Import Include="COH.GameContent.Storage.Serialization.Configuration" />
+    <Import Include="COH.GameContent.Storage.Structures" />
+    <Import Include="COH.GameContent.Storage.Structures.CrypticsS" />
+    <Import Include="COH.GameContent.Storage.Structures.Generics" />
     <Import Include="COH.Tools.Controls.WinForms.Extentsions" />
     <Import Include="COH.Tools.Controls.WinForms.HelperFunctions.GEO" />
     <Import Include="COH.Tools.Controls.WinForms.HelperFunctions.Lists" />

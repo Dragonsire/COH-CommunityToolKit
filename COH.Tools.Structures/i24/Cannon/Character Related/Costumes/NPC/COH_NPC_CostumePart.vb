@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.NPC
     Public NotInheritable Class COH_CostumeNPC_Part
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -69,7 +69,7 @@
 #Region "Clone"
         Public Function Clone() As COH_CostumeNPC_Part
             Dim Result As COH_CostumeNPC_Part = New COH_CostumeNPC_Part
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mRegion = String.Copy(mRegion)
                 .mColor1 = mColor1

@@ -1,7 +1,5 @@
 ﻿Imports COH.GameContent.Enums
-Imports COH.GameContent.Structures
-Imports COH.GameContent.Utilities
-Imports COH.Tools.Controls.WinForms
+
 Public Class COH_ModdableContent_Editor
 
 #Region "Properties"
@@ -13,7 +11,7 @@ Public Class COH_ModdableContent_Editor
             mModDetails = value
         End Set
     End Property
-    Protected Overridable ReadOnly Property Current_Struct As COH_Struct
+    Protected Overridable ReadOnly Property Current_Struct As COH_FileStructure
         Get
             Return Nothing
         End Get
@@ -46,12 +44,12 @@ Public Class COH_ModdableContent_Editor
     Public Sub New(ByRef TheContentController As ISupport_MasterController)
         MyBase.New(TheContentController)
         InitializeComponent()
-        mSettings_DEF = New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.CrypticS_TextFormat)
+        mSettings_DEF = New COH_Serialization_Settings(True, COH_ExportFormat.CrypticS_TextFormat)
         mSettings_DEF.Option_Export_DontWriteDebug = True
         mSettings_DEF.Option_Export_DontWriteDefaults = True
         mSettings_DEF.Option_Export_DontWriteEmpty = True
         mSettings_DEF.Option_Export_DontWriteProject = True
-        mSettings_XML = New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.XML)
+        mSettings_XML = New COH_Serialization_Settings(True, COH_ExportFormat.XML)
         mSettings_XML.Option_Export_DontWriteDebug = True
         mSettings_XML.Option_Export_DontWriteDefaults = False
         mSettings_XML.Option_Export_DontWriteEmpty = False
@@ -187,16 +185,16 @@ Public Class COH_ModdableContent_Editor
     End Sub
     Private Sub ExportCurrentAsXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportCurrentAsXMLToolStripMenuItem.Click
         If Changes_Locked = True Then Exit Sub
-        Dim ExportFilePath As String = IO.Path.GetFileName(Current_Struct.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.XML, False))
+        Dim ExportFilePath As String = IO.Path.GetFileName(Current_Struct.Determine_DefaultRelativeFilePath(COH_ExportFormat.XML, False))
         If COH.Tools.Controls.WinForms.HelperFunctions.General.LocateFilePath("Export XML", "XML File|*.XML", ExportFilePath) = False Then Exit Sub
-        If Current_Content.Content.Export_To_File(IO.Path.GetFileName(ExportFilePath), IO.Path.GetDirectoryName(ExportFilePath), New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.XML)) = False Then Exit Sub
+        If Current_Content.Content.Export_To_File(IO.Path.GetFileName(ExportFilePath), IO.Path.GetDirectoryName(ExportFilePath), New COH_Serialization_Settings(True, COH_ExportFormat.XML)) = False Then Exit Sub
         GameContent.ShowMessage("Export Complete")
     End Sub
     Private Sub ExportCurrentAsDEFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportCurrentAsDEFToolStripMenuItem.Click
         If Changes_Locked = True Then Exit Sub
-        Dim ExportFilePath As String = IO.Path.GetFileName(Current_Struct.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.CrypticS_TextFormat, False))
+        Dim ExportFilePath As String = IO.Path.GetFileName(Current_Struct.Determine_DefaultRelativeFilePath(COH_ExportFormat.CrypticS_TextFormat, False))
         If COH.Tools.Controls.WinForms.HelperFunctions.General.LocateFilePath("Export DEF", "DEF File|*.DEF", ExportFilePath) = False Then Exit Sub
-        If Current_Content.Content.Export_To_File(IO.Path.GetFileName(ExportFilePath), IO.Path.GetDirectoryName(ExportFilePath), New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.CrypticS_TextFormat)) = False Then Exit Sub
+        If Current_Content.Content.Export_To_File(IO.Path.GetFileName(ExportFilePath), IO.Path.GetDirectoryName(ExportFilePath), New COH_Serialization_Settings(True, COH_ExportFormat.CrypticS_TextFormat)) = False Then Exit Sub
         GameContent.ShowMessage("Export Complete")
     End Sub
     Private Sub Image_Locked_Click(sender As Object, e As EventArgs) Handles Image_Locked.Click

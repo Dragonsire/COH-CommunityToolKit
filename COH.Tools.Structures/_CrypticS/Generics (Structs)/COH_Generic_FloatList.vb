@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public NotInheritable Class COH_Generic_FloatArray
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Generic_FloatArray
             Dim Result As COH_Generic_FloatArray = New COH_Generic_FloatArray
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            ''MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mItems = New Single(mItems.Count - 1) {}
                 For X = 0 To mItems.Count - 1

@@ -1,6 +1,6 @@
 ﻿Namespace Enemies
     Public Class COH_EnemyVillain_Level
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -79,7 +79,7 @@
 #Region "Clone"
         Public Function Clone() As COH_EnemyVillain_Level
             Dim Result As COH_EnemyVillain_Level = New COH_EnemyVillain_Level
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mLevel = mLevel
                 .mDisplayNames = mDisplayNames.CloneTheStrings

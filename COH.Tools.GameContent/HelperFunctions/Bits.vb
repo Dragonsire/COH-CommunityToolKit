@@ -1,4 +1,6 @@
-﻿Namespace HelperFunctions.Bits
+﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+
+Namespace HelperFunctions.Bits
     <HideModuleName()> Public Module COH_Bit_HelperFunctions
 
 #Region "Enums"

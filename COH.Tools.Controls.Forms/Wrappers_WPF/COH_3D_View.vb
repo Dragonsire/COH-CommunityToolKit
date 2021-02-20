@@ -25,7 +25,7 @@
 #Region "Prepare Usage"
         Public Sub Prepare_Editor(FilePath As String)
             Dim GEO As New GameContent.Resources.Structures.GEO.COH_Resource_GEO
-            GEO.Import_From_File(FilePath, New GameContent.Utilities.COH_Serialization_Settings(True) With {.Option_SelectedFormat = GameContent.Structures.COH_Struct.COH_ExportFormat.Binary})
+            GEO.Import_From_File(FilePath, New COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_ExportFormat.Binary})
             CoH_GeoModelViewer1.LoadModel(GEO)
         End Sub
         Public Sub Prepare_Editor(ByRef GEO As GameContent.Resources.Structures.GEO.COH_Resource_GEO)

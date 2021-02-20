@@ -7,7 +7,7 @@ Namespace Controls.Forms
 #Region "Private Properties"
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrentProject As COH_ProjectFile
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rExportProject As COH_ProjectFile
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrent As COH_Struct
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrent As COH_FileStructure
 #End Region
 
 #Region "Initialize"
@@ -64,7 +64,7 @@ Namespace Controls.Forms
             If e.Node.Name.Contains("_Folder_") = True Then Exit Sub
             Dim Parts As String() = e.Node.Name.Split("!")
             Dim FileName As String = Parts(1)
-            COH_ContentController.Instance.Retrieve_Content_FromFileName_RelativePath(Parts(0), Parts(1), COH_Struct.COH_ExportFormat.XML, rCurrent)
+            COH_ContentController.Instance.Retrieve_Content_FromFileName_RelativePath(Parts(0), Parts(1), COH_ExportFormat.XML, rCurrent)
             If rCurrent Is Nothing Then
                 PropertyGrid1.SelectedObject = Nothing
             Else

@@ -1,6 +1,6 @@
 ﻿Namespace Characters
     Public NotInheritable Class COH_Proficiency
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -87,7 +87,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Proficiency
             Dim Result As COH_Proficiency = New COH_Proficiency
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mUI_Details = mUI_Details.Clone

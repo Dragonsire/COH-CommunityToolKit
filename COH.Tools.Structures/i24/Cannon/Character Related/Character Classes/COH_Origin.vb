@@ -1,6 +1,6 @@
 ﻿Namespace Characters
     Public NotInheritable Class COH_Origin
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -146,7 +146,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Origin
             Dim Result As COH_Origin = New COH_Origin
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDisplayName = String.Copy(mDisplayName)

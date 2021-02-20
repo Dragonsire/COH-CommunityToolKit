@@ -1,6 +1,6 @@
 ﻿Namespace World.Maps
     Public NotInheritable Class COH_UniqueMap_File
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -79,7 +79,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UniqueMap_File
             Dim Result As COH_UniqueMap_File = New COH_UniqueMap_File
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDisplayName = String.Copy(mDisplayName)
                 .mDisplayNameKey = String.Copy(mDisplayNameKey)

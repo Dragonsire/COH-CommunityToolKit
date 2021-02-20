@@ -2,7 +2,7 @@
 
 Namespace Characters.Powers
     Public NotInheritable Class COH_PowerEffectGroup
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -154,7 +154,7 @@ Namespace Characters.Powers
 #Region "Clone"
         Public Function Clone() As COH_PowerEffectGroup
             Dim Result As COH_PowerEffectGroup = New COH_PowerEffectGroup
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTag = CloneStrings(mTag)
                 .mChance = mChance

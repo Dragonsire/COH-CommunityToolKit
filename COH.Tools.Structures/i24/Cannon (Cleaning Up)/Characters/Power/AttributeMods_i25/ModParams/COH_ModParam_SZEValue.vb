@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam_SizeValue
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ModParam_SizeValue
             Dim Result As COH_ModParam_SizeValue = New COH_ModParam_SizeValue
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mScriptID = CloneStrings(mScriptID)
                 .mScriptValue = CloneStrings(mScriptValue)

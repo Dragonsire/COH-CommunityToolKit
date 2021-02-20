@@ -3,7 +3,7 @@
 
 #Region "Retrieve Content"
 
-        Function Retrieve_ModableContent(ByRef Search As String, ContentType As COH_ProjectContent) As Interfaces.ISupport_COH_OriginolSources Implements ISupport_MasterController.Retrieve_ModableContent
+        Function Retrieve_ModableContent(ByRef Search As String, ContentType As COH_ProjectContent) As ISupport_COH_OriginolSources Implements ISupport_MasterController.Retrieve_ModableContent
             Dim Details As COH_CrypticS_FileContentDetails = Nothing
             If mCached_CurrentProjectFile.Retrieve_Details(Search, ContentType, Details) = False Then Return Nothing
 
@@ -15,7 +15,7 @@
             If Retrieve_MapToType(ContentType, Nothing, Index, TheType) = False Then Return Nothing
             Dim ModType As Type = Nothing
             If Retrieve_MapToModType(ContentType, ModType) = False Then Return Nothing
-            Dim NewItem As Interfaces.ISupport_COH_OriginolSources = Nothing
+            Dim NewItem As ISupport_COH_OriginolSources = Nothing
             If Retrieve_ModableContent_FromFileName(ModType, Destination, NewItem) = False Then Return Nothing
             NewItem.RelativePath_Current = Details.XML_RelativePath
             NewItem.IsCustom = Details.IsCustom
@@ -24,8 +24,8 @@
             NewItem.FullName = Details.REF_FullName
             Return NewItem
         End Function
-        Public Function Retrieve_ModableContent(ContentType As COH_ProjectContent) As List(Of Interfaces.ISupport_COH_OriginolSources) Implements ISupport_MasterController.Retrieve_ModableContent
-            Dim Results = New List(Of Interfaces.ISupport_COH_OriginolSources)
+        Public Function Retrieve_ModableContent(ContentType As COH_ProjectContent) As List(Of ISupport_COH_OriginolSources) Implements ISupport_MasterController.Retrieve_ModableContent
+            Dim Results = New List(Of ISupport_COH_OriginolSources)
             Dim TheType As Type = Nothing
             Dim Index As Integer = 0
             If Retrieve_MapToType(ContentType, Nothing, Index, TheType) = False Then Return Nothing
@@ -33,7 +33,7 @@
             Dim ModType As Type = Nothing
             If Retrieve_MapToModType(ContentType, ModType) = False Then Return Nothing
             For Each File In TheList
-                Dim NewItem As Interfaces.ISupport_COH_OriginolSources = Nothing
+                Dim NewItem As ISupport_COH_OriginolSources = Nothing
                 Dim FilePath As String = ProgramFolders.LookupFolder_ProjectFile(ContentType) & File.XML_RelativePath
                 If Retrieve_ModableContent_FromFileName(ModType, FilePath, NewItem) = True Then
                     NewItem.IsCustom = File.IsCustom
@@ -47,8 +47,8 @@
             Return Results
         End Function
         Public Function Retrieve_ModableContent_FromFileName(TheType As Type, FilePath As String, ByRef Result As Modding.COH_ModableContent) As Boolean
-            Dim Content As COH_Struct = Nothing
-            If COH_Struct.Import_COHStruct_FromXMLFile(FilePath, TheType, Content) = False Then
+            Dim Content As COH_FileStructure = Nothing
+            If COH_FileStructure.Import_COHStruct_FromXMLFile(FilePath, TheType, Content) = False Then
                 Return False
             End If
             Result = New Modding.COH_ModableContent

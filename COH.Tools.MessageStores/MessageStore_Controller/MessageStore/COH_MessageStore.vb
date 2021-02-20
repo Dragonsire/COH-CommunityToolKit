@@ -1,7 +1,10 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
+Imports COH.GameContent.CodeManagement.Enums.Structures
 Imports COH.GameContent.HelperClasses.Wrappers
-Imports COH.GameContent.Structures.COH_Struct
+Imports COH.GameContent.Storage.Serialization
+Imports COH.GameContent.Storage.Serialization.Configuration
+Imports COH.GameContent.Structures.COH_FileStructure
 Imports COH.GameContent.Utilities
 
 Namespace Structures.LanguageFiles

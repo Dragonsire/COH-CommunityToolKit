@@ -1,6 +1,6 @@
 ﻿Namespace Spawns
     Public NotInheritable Class COH_NictusOptions
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -85,7 +85,7 @@
 #Region "Clone"
         Public Function Clone() As COH_NictusOptions
             Dim Result As COH_NictusOptions = New COH_NictusOptions
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMissionAdd = mMissionAdd
                 .mZoneAdd = mZoneAdd

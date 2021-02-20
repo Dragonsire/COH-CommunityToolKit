@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Tailor
     Public NotInheritable Class COH_Costume_TailorCosts
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -147,7 +147,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Costume_TailorCosts
             Dim Result As COH_Costume_TailorCosts = New COH_Costume_TailorCosts
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMinLevel = mMinLevel
                 .mMaxLevel = mMaxLevel

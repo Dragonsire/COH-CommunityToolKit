@@ -1,6 +1,6 @@
 ﻿Namespace Structures.GEO
     Public Class COH_Resource_GEO_PackBlockonDiskv2
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Proporties - Identifier"
         <Category("_Identifier")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -54,7 +54,7 @@
             Return Destination
         End Function
         Public Overloads Sub CloneTo(ByRef Destination As COH_Resource_GEO_PackBlockonDiskv2)
-            MyBase.CloneTo(TryCast(Destination, COH_Struct))
+            'MyBase.CloneTo(TryCast(Destination, COH_FileStructure))
             With Destination
                 .Triangles = Triangles.clone
                 .Vertices = Vertices.clone

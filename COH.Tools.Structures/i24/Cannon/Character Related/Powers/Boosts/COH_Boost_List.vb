@@ -1,6 +1,6 @@
 ﻿Namespace Powers.Boosts
     Public NotInheritable Class COH_Boost_List
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Boost_List
             Dim Result As COH_Boost_List = New COH_Boost_List
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mBoosts = mBoosts.CloneTheStrings
                 Return Result

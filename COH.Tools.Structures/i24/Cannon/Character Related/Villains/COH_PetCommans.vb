@@ -1,6 +1,6 @@
 ﻿Namespace Enemies
     Public Class COH_PetCommands
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -149,7 +149,7 @@
 #Region "Clone"
         Public Function Clone() As COH_PetCommands
             Dim Result As COH_PetCommands = New COH_PetCommands
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mPassive = mPassive.CloneTheStrings
                 .mDefensive = mDefensive.CloneTheStrings

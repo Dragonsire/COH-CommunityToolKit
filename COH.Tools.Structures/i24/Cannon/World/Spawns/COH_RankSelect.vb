@@ -1,6 +1,6 @@
 ﻿Namespace Spawns
     Public NotInheritable Class COH_RankSelect
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -75,7 +75,7 @@
 #Region "Clone"
         Public Function Clone() As COH_RankSelect
             Dim Result As COH_RankSelect = New COH_RankSelect
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTeamSize = mTeamSize
                 .mBossChance = mBossChance

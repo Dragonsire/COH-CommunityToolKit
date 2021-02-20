@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public Class COH_PowerName
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -99,7 +99,7 @@
 #Region "Clone"
         Public Function Clone() As COH_PowerName
             Dim Result As COH_PowerName = New COH_PowerName
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mPowerCategory = String.Copy(mPowerCategory)
                 .mPowerSet = String.Copy(mPowerSet)

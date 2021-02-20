@@ -16,6 +16,12 @@
 
   <ItemGroup>
     <Import Include="COH.GameContent.BinaryStreams" />
+    <Import Include="COH.GameContent.CodeManagement.Attributes" />
+    <Import Include="COH.GameContent.CodeManagement.Enums.Structures" />
+    <Import Include="COH.GameContent.CodeManagement.Enums.Toks" />
+    <Import Include="COH.GameContent.CodeManagement.Extentions" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces.Structures" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces.TOKs" />
     <Import Include="COH.GameContent.Enums" />
     <Import Include="COH.GameContent.HelperClasses" />
     <Import Include="COH.GameContent.HelperClasses.Wrappers" />
@@ -30,6 +36,11 @@
     <Import Include="COH.GameContent.Internal.Events" />
     <Import Include="COH.GameContent.Internal.Extentions" />
     <Import Include="COH.GameContent.Shared" />
+    <Import Include="COH.GameContent.Storage.Serialization" />
+    <Import Include="COH.GameContent.Storage.Serialization.Configuration" />
+    <Import Include="COH.GameContent.Storage.Structures" />
+    <Import Include="COH.GameContent.Storage.Structures.CrypticsS" />
+    <Import Include="COH.GameContent.Storage.Structures.Generics" />
     <Import Include="COH.GameContent.Structures" />
     <Import Include="COH.GameContent.Structures.Shared" />
     <Import Include="COH.GameContent.Utilities" />

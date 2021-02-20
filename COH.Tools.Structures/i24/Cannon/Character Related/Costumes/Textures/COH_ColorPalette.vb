@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Textures
     Public NotInheritable Class COH_ColorPalette
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -59,7 +59,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ColorPalette
             Dim Result As COH_ColorPalette = New COH_ColorPalette
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mColor = New COH_COLOR(mColor.Count - 1) {}
                 For X = 0 To mColor.Count - 1

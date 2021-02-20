@@ -1,6 +1,6 @@
 ﻿Namespace Animation.FX
     Public NotInheritable Class COH_FX_Event_Splat
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_FX_Event_Splat
             Dim Result As COH_FX_Event_Splat = New COH_FX_Event_Splat
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTexture1 = String.Copy(mTexture1)
                 .mTexture2 = String.Copy(mTexture2)

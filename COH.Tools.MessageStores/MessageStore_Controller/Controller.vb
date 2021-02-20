@@ -1,4 +1,6 @@
-﻿Namespace Structures.LanguageFiles
+﻿Imports COH.GameContent.CodeManagement.Interfaces.Structures
+
+Namespace Structures.LanguageFiles
     Public Class COH_LocalizeContent_Controller
         Implements ISupport_COH_LocalizeContent
 

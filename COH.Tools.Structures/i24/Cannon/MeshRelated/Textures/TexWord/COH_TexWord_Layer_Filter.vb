@@ -1,6 +1,6 @@
 ﻿Namespace Textures
     Public NotInheritable Class COH_TexWord_Layer_Filter
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -113,7 +113,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TexWord_Layer_Filter
             Dim Result As COH_TexWord_Layer_Filter = New COH_TexWord_Layer_Filter
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mType = mType
                 .mMagnitude = mMagnitude

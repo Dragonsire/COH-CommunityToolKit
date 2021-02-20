@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public Class COH_AttributeNameTable
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String

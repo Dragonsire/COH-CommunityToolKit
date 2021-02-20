@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public NotInheritable Class COH_Generic_StringTableArray
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Generic_StringTableArray
             Dim Result As COH_Generic_StringTableArray = New COH_Generic_StringTableArray
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mItems = New COH_Generic_StringArray(mItems.Count - 1) {}
                 For X = 0 To mItems.Count - 1

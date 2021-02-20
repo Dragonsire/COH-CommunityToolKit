@@ -1,6 +1,6 @@
 ﻿Namespace Structures.Anim
     Public Class COH_Skeleton_Hierarchy_BoneLink
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -36,7 +36,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Skeleton_Hierarchy_BoneLink
             Dim Result As COH_Skeleton_Hierarchy_BoneLink = New COH_Skeleton_Hierarchy_BoneLink
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
                 .ID = ID
                 .Child = Child

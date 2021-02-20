@@ -1,6 +1,6 @@
 ﻿Namespace Inventory
     Public NotInheritable Class COH_Power_Required
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_Required
             Dim Result As COH_Power_Required = New COH_Power_Required
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mAmount = mAmount
                 .mSalvage = String.Copy(mSalvage)

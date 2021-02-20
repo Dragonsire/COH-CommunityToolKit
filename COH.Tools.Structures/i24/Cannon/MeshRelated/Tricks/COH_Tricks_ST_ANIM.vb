@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_Tricks_ST_Anim
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -76,7 +76,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Tricks_ST_Anim
             Dim Result As COH_Tricks_ST_Anim = New COH_Tricks_ST_Anim
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
                 .mSpeedScale = mSpeedScale
                 .mSTScale = mSTScale

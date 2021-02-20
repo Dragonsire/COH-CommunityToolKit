@@ -44,7 +44,7 @@ Namespace Utilities
             ExtractAllFiles_ToDirectory(mCurrentReader, RootPath, mPiggInfo, ProcessRecord, ShowProgress)
             Return True
         End Function
-        Public Function ExtractEntry(Index As Integer, ByRef Result As COH_Struct) As Boolean
+        Public Function ExtractEntry(Index As Integer, ByRef Result As COH_FileStructure) As Boolean
             Return Extract_Entry(mCurrentReader, mPiggInfo, Index, Result)
         End Function
 #End Region

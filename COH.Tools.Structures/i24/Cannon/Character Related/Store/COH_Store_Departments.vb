@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_Store_Departments
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -57,7 +57,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Store_Departments
             Dim Result As COH_Store_Departments = New COH_Store_Departments
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDepartment = New COH_Store_Department(mDepartment.Count - 1) {}
                 For X = 0 To mDepartment.Count - 1

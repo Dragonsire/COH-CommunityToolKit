@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_UnlockableContent
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UnlockableContent
             Dim Result As COH_UnlockableContent = New COH_UnlockableContent
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mTokenName = String.Copy(mTokenName)

@@ -1,6 +1,6 @@
 ﻿Namespace Animation.FX
     Public NotInheritable Class COH_FX_Event_Sound
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -85,7 +85,7 @@
 #Region "Clone"
         Public Function Clone() As COH_FX_Event_Sound
             Dim Result As COH_FX_Event_Sound = New COH_FX_Event_Sound
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mSoundName = String.Copy(mSoundName)
                 .mRadius = mRadius

@@ -1,6 +1,6 @@
 ﻿Namespace PlayerCreated.UI
     Public NotInheritable Class COH_UI_PlayerCreated_Region_Button
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -169,7 +169,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UI_PlayerCreated_Region_Button
             Dim Result As COH_UI_PlayerCreated_Region_Button = New COH_UI_PlayerCreated_Region_Button
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mSpecialAction = String.Copy(mSpecialAction)

@@ -31,7 +31,7 @@ Namespace HelperFunctions.Compression
             Dim ByteResult As Byte() = Nothing
             ByteResult = DecompressBytes_Method1(Buffer)
             If ByteResult Is Nothing Then ByteResult = DecompressBytes_Method2(RawData)
-            If ByteResult Is Nothing Then ShowErrorOccured("Unable to DecompressBytes - Method1/2")
+            'If ByteResult Is Nothing Then ShowErrorOccured("Unable to DecompressBytes - Method1/2")
             Return ByteResult
         End Function
         Private Function DecompressBytes_Method1(ByRef Buffer As IO.MemoryStream) As Byte()
@@ -80,7 +80,7 @@ Namespace HelperFunctions.Compression
                 Try
                     Output.Write(Buffer, 0, MaxSize)
                 Catch ex As Exception
-                    ShowErrorOccured_Exception(COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to DecompressBytes", ex, True)
+                    ' ShowErrorOccured_Exception(COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to DecompressBytes", ex, True)
                     Output.Flush()
                     Return False
                 End Try

@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers
     Public NotInheritable Class COH_AttribMod_i25Score_FX
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -88,7 +88,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AttribMod_i25Score_FX
             Dim Result As COH_AttribMod_i25Score_FX = New COH_AttribMod_i25Score_FX
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mContinuingBits = New Int32(mContinuingBits.Count - 1) {} : mContinuingBits.CopyTo(.mContinuingBits, 0)
                 .mContinuingFX = CloneString(mContinuingFX)

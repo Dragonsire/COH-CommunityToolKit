@@ -268,7 +268,7 @@ Namespace Dialogs
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOption_AdjustModelPositions As Boolean = False
         '//ORIGINOL FILES
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentGEO As COH_Resource_GEO
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Textures As Dictionary(Of String, COH_Struct)
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Textures As Dictionary(Of String, COH_FileStructure)
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Tricks_Tex As Dictionary(Of String, COH_TextureOptions)
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Tricks As Dictionary(Of String, COH_Trick)
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrentTextureStreams As List(Of System.IO.MemoryStream)
@@ -429,7 +429,7 @@ Namespace Dialogs
             If ComboBox1.Items.Count >= 0 Then ComboBox1.SelectedIndex = 0
         End Sub
         Private Function ImportSkeleton(Name As String) As Boolean
-            Dim Skeleton = ContentController.TheController_Assets.RetrieveAsset(Name, GameContent.Enums.COH_Supported_ContentType.XML_SpecialCase_Bone)
+            Dim Skeleton = ContentController.TheController_Assets.RetrieveAsset(Name, COH_Supported_ContentType.XML_SpecialCase_Bone)
             If Skeleton Is Nothing Then Return False
             rLinked_Skeletons.Add(Name, Skeleton)
             ComboBox1.Items.Add(Name)
@@ -444,14 +444,14 @@ Namespace Dialogs
             Return True
         End Function
         Private Function ImportSkeletonAnimation(Name As String, ByRef Result As COH_Resource_Anim) As Boolean
-            Dim FileName As String = ContentController.TheController_Assets.RetrieveAsset_FilePath(Name, GameContent.Enums.COH_Supported_ContentType.Resource_ANIMATION)
+            Dim FileName As String = ContentController.TheController_Assets.RetrieveAsset_FilePath(Name, COH_Supported_ContentType.Resource_ANIMATION)
             If String.IsNullOrEmpty(FileName) = True Then Return False
             Result = New COH_Resource_Anim
-            If Result.Import_From_File(FileName, New GameContent.Utilities.COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_Struct.COH_ExportFormat.Binary}) = False Then Return False
+            If Result.Import_From_File(FileName, New COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_ExportFormat.Binary}) = False Then Return False
             Return True
         End Function
         Private Sub Retrieve_LinkedAssets_Textures()
-            rLinked_Textures = New Dictionary(Of String, COH_Struct) ' New GameContent.Resources.Structures.Textures.COH_Resource_Texture(mCurrentGEO.Header.TextureNames_Count - 1) {}
+            rLinked_Textures = New Dictionary(Of String, COH_FileStructure) ' New GameContent.Resources.Structures.Textures.COH_Resource_Texture(mCurrentGEO.Header.TextureNames_Count - 1) {}
             For X = 0 To mCurrentGEO.Header.TextureNames_Count - 1
                 Dim FileName As String = ContentController.TheController_Assets.RetrieveAsset_FilePath(System.IO.Path.GetFileNameWithoutExtension(mCurrentGEO.Header.TextureNames(X)))
                 If rLinked_Textures.ContainsKey(System.IO.Path.GetFileNameWithoutExtension(FileName)) = False Then
@@ -560,7 +560,7 @@ Namespace Dialogs
             Dim CurrentTrick As COH_Trick = Nothing
             If rLinked_Tricks.TryGetValue(TrickName, CurrentTrick) Then
                 Dim XMLString As String = ""
-                If CurrentTrick.Export_to_TextFormat(XMLString, New GameContent.Utilities.COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_Struct.COH_ExportFormat.XML}) = True Then
+                If CurrentTrick.Export_to_TextFormat(XMLString, New COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_ExportFormat.XML}) = True Then
                     XML_View.ViewText(XMLString)
                 Else
                     XML_View.ViewText("ERROR")

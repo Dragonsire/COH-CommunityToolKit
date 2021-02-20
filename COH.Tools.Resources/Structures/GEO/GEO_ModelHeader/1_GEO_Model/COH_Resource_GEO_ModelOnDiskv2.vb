@@ -2,7 +2,7 @@
 
 Namespace Structures.GEO
     Public Class COH_Resource_GEO_ModelonDiskv2
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Proporties - Identifier"
         <Category("_Identifier")> Public Overrides ReadOnly Property InternalDisplayName As String

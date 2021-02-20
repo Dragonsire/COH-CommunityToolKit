@@ -1,6 +1,6 @@
 ﻿Namespace [Shared]
     Public NotInheritable Class COH_Generic_StringTable
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Enum"
         Public Enum InternalVerions
@@ -64,7 +64,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Generic_StringTable
             Dim Result As COH_Generic_StringTable = New COH_Generic_StringTable
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mItems = New COH_Generic_StringClass(mItems.Count - 1) {}
                 For X = 0 To mItems.Count - 1

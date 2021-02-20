@@ -1,6 +1,6 @@
 ﻿Namespace World.Monorail
     Public NotInheritable Class COH_Monorail_LineStop
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -87,7 +87,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Monorail_LineStop
             Dim Result As COH_Monorail_LineStop = New COH_Monorail_LineStop
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDescription = String.Copy(mDescription)

@@ -1,5 +1,7 @@
-﻿Imports System.Xml
+﻿Imports System.ComponentModel
+Imports System.Xml
 Imports System.Xml.Serialization
+Imports COH.GameContent.CodeManagement.Attributes
 
 Namespace HelperFunctions.Attributes
     <HideModuleName()> Public Module COH_Attributes_Helper

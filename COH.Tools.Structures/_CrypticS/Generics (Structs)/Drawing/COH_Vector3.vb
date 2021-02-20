@@ -1,6 +1,6 @@
 ﻿Namespace [Shared].Drawing
     Public NotInheritable Class COH_Vector3
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Enum"
         Public Enum InternalVerions
@@ -59,7 +59,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Vector3
             Dim Result As COH_Vector3 = New COH_Vector3
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .X = X
                 .Y = Y

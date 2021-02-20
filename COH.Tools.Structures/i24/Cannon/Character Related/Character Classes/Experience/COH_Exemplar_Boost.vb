@@ -1,6 +1,6 @@
 ﻿Namespace Characters
     Public NotInheritable Class COH_Exemplar_Boost
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -88,7 +88,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Exemplar_Boost
             Dim Result As COH_Exemplar_Boost = New COH_Exemplar_Boost
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mLimits = New Single(mLimits.Count - 1) {} : mLimits.CopyTo(.mLimits, 0)
                 .mWeights = New Single(mWeights.Count - 1) {} : mWeights.CopyTo(.mWeights, 0)

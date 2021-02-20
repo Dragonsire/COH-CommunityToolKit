@@ -1,6 +1,6 @@
 ﻿Namespace Inventory
     Public NotInheritable Class COH_Salvage
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -228,7 +228,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Salvage
             Dim Result As COH_Salvage = New COH_Salvage
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDisplayTabName = String.Copy(mDisplayTabName)

@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_Store_SuperPackCard
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -173,7 +173,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Store_SuperPackCard
             Dim Result As COH_Store_SuperPackCard = New COH_Store_SuperPackCard
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mNumber = mNumber
                 .mRarity = String.Copy(mRarity)

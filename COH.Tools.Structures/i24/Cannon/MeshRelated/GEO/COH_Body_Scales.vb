@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_Body_Scales
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -120,7 +120,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Body_Scales
             Dim Result As COH_Body_Scales = New COH_Body_Scales
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mGlobal = mGlobal
                 .mBone = mBone

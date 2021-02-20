@@ -59,7 +59,7 @@ Namespace Utilities
 #Region "Extract Files"
         Public Shared Function ExtractAllFiles_ToDirectory(ByRef CurrentReader As COH_BinaryReader, RootPath As String, ByRef Source As COH_Pigg_Info, Optional ProcessEntry As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
-            CurrentReader.Settings.Option_SelectedFormat = COH_Struct.COH_ExportFormat.Binary
+            CurrentReader.Settings.Option_SelectedFormat = COH_ExportFormat.Binary
             For X = 0 To Source.Directories.Count - 1
                 If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, "Extracting PIGG - " & Source.StringTable.Items(X))
                 Dim DestinationFile As String = DeterminePath(RootPath, Source, X)
@@ -69,9 +69,9 @@ Namespace Utilities
                 If Not Result Is Nothing Then
                     WriteData(Result, DestinationFile)
                     If ProcessEntry = True Then
-                        Dim ResourceResult As COH_Struct = Nothing
+                        Dim ResourceResult As COH_FileStructure = Nothing
                         If Process_Entry(Result, Source, X, ResourceResult) = True Then
-                            ResourceResult.Export_To_File(IO.Path.GetFileNameWithoutExtension(DestinationFile) & "." & ResourceResult.Default_BinaryExtention, IO.Path.GetDirectoryName(DestinationFile), COH_Struct.COH_StreamFormat.Binary)
+                            ResourceResult.Export_To_File(IO.Path.GetFileNameWithoutExtension(DestinationFile) & "." & ResourceResult.Default_BinaryExtention, IO.Path.GetDirectoryName(DestinationFile), COH_StreamFormat.Binary)
                         End If
                     End If
                     If Source.Directories(X).SecondarySlotIndex >= 0 Then
@@ -85,7 +85,7 @@ Namespace Utilities
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
             Return True
         End Function
-        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_Struct, Optional ShowProgress As Boolean = False) As Boolean
+        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_FileStructure, Optional ShowProgress As Boolean = False) As Boolean
             Dim RawBytes As Byte() = Nothing
             Dim Slot As Contents.COH_PIGG_SlotTableEntry = Nothing
             If Extract_Entry(CurrentReader, Source, Index, RawBytes, Slot) Then
@@ -93,7 +93,7 @@ Namespace Utilities
             End If
             Return True
         End Function
-        Public Shared Function Process_Entry(ByRef RawBytes As Byte(), ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Process_Entry(ByRef RawBytes As Byte(), ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_FileStructure) As Boolean
             Select Case Source.Directories(Index).EntryType
                 Case COH_Supported_ContentType.Resource_Texture
                     Return Extract_Entry_Resource_Texture(RawBytes, Result)
@@ -142,37 +142,37 @@ Namespace Utilities
 #End Region
 
 #Region "Extract Single Resources"
-        Public Shared Function Extract_Entry_Resource_TGA(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_TGA(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_TGA()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_Unknown(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_Unknown(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_Unknown()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_Texture(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_Texture(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_Texture()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_BIN(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_BIN(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_BIN()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_GEO(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_GEO(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_GEO()
             NewResource.Import_From_Buffer(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_ANIM(ByRef RawBytes As Byte(), ByRef Result As COH_Struct) As Boolean
+        Public Shared Function Extract_Entry_Resource_ANIM(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_Anim()
             NewResource.Import_From_Buffer(RawBytes)
             Result = NewResource

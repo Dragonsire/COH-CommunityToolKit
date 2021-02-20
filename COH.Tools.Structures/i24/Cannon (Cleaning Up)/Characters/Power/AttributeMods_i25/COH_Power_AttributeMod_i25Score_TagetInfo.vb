@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers
     Public NotInheritable Class COH_AttribMod_i25Score_TagetInfo
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AttribMod_i25Score_TagetInfo
             Dim Result As COH_AttribMod_i25Score_TagetInfo = New COH_AttribMod_i25Score_TagetInfo
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMarker = CloneStrings(mMarker)
                 .mCount = New Int32(mCount.Count - 1) {} : mCount.CopyTo(.mCount, 0)

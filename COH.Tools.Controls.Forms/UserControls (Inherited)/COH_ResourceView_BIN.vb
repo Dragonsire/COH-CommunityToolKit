@@ -10,11 +10,11 @@ Namespace UserControls
 #Region "Private Properties"
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileSource As String
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBinTool As Utilities.COH_BinTool_CrypticS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings As GameContent.Utilities.COH_Serialization_Settings
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings As COH_Serialization_Settings
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileIndex As Integer
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContentIndex As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentStruct As COH_Struct
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMenuItems As List(Of GameContent.Structures.COH_Struct.DynamicMenu_Cmmand)
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentStruct As COH_FileStructure
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMenuItems As List(Of COH_FileStructure.DynamicMenu_Cmmand)
 #End Region
 
 #Region "Initialize"
@@ -32,7 +32,7 @@ Namespace UserControls
         Public Sub Prepare_Editor(FilePath As String)
             Select Case COH.Tools.Utilities.Identify_BinType(FilePath)
                 Case COH_Supported_ContentType.Resource_BIN_CrypticS
-                    mSettings = New GameContent.Utilities.COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.XML, ContentController.TheController_Localize)  ' //THIS SHOULD GET PASSED FROM MAIN CONTROLLER AND STORED
+                    mSettings = New COH_Serialization_Settings(True, COH_ExportFormat.XML, ContentController.TheController_Localize)  ' //THIS SHOULD GET PASSED FROM MAIN CONTROLLER AND STORED
                     mBinTool = New Utilities.COH_BinTool_CrypticS(ContentController.TheController_Localize, ContentController.TheController_SupportedStructures)
                     mBinTool.OpenExisting_BinFile(FilePath, New COH_CrypticS_Settings(False, False), False)
                     mSettings.Option_Version = mBinTool.Content.ParseVersion
@@ -43,7 +43,7 @@ Namespace UserControls
             Select Case EntryType
                 Case COH_Supported_ContentType.Resource_BIN_CrypticS
                     mContentIndex = 0
-                    mSettings = New GameContent.Utilities.COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.XML, ContentController.TheController_Localize) ' //THIS SHOULD GET PASSED FROM MAIN CONTROLLER AND STORED
+                    mSettings = New COH_Serialization_Settings(True, COH_ExportFormat.XML, ContentController.TheController_Localize) ' //THIS SHOULD GET PASSED FROM MAIN CONTROLLER AND STORED
                     mBinTool = New Utilities.COH_BinTool_CrypticS(ContentController.TheController_Localize, ContentController.TheController_SupportedStructures)
                     mBinTool.OpenExisting_BinFile(Name, Bytes, New COH_CrypticS_Settings(False, False), False)
                     mSettings.Option_Version = mBinTool.Content.ParseVersion
@@ -160,11 +160,11 @@ Namespace UserControls
                 XML_View2.ViewText("ERROR")
             Else
                 Dim ResultString As String = ""
-                mSettings.Option_SelectedFormat = COH_Struct.COH_ExportFormat.XML
+                mSettings.Option_SelectedFormat = COH_ExportFormat.XML
                 mCurrentStruct.Export_To_TextFormat_XML(ResultString, mSettings)
                 XML_View2.ViewText(ResultString)
 
-                mSettings.Option_SelectedFormat = COH_Struct.COH_ExportFormat.CrypticS_TextFormat
+                mSettings.Option_SelectedFormat = COH_ExportFormat.CrypticS_TextFormat
                 mCurrentStruct.Export_To_TextFormat_CrypticS(ResultString, mSettings)
                 TextBox1.Text = ResultString
 
@@ -189,7 +189,7 @@ Namespace UserControls
 #Region "Menus"
         Private Sub ExportDEFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportDEFToolStripMenuItem.Click
             If Changes_Locked = True Then Exit Sub
-            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.XML, False))
+            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_ExportFormat.XML, False))
             If COH.Tools.Controls.WinForms.HelperFunctions.General.LocateFilePath("Export XML", "XML File|*.XML", ExportFilePath) = False Then Exit Sub
             File.WriteAllText(ExportFilePath, XML_View2.Content)
             GameContent.ShowMessage("Export Complete")
@@ -197,14 +197,14 @@ Namespace UserControls
 
         Private Sub ExportCurrentAsDEFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportXMLToolStripMenuItem.Click
             If Changes_Locked = True Then Exit Sub
-            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.CrypticS_TextFormat, False))
+            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_ExportFormat.CrypticS_TextFormat, False))
             If COH.Tools.Controls.WinForms.HelperFunctions.General.LocateFilePath("Export DEF", "DEF File|*.DEF", ExportFilePath) = False Then Exit Sub
             File.WriteAllText(ExportFilePath, TextBox1.Text)
             GameContent.ShowMessage("Export Complete")
         End Sub
         Private Sub ExportCurrentAsRAWToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportRAWToolStripMenuItem.Click
             If Changes_Locked = True Then Exit Sub
-            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.CrypticS_BINFormat, False))
+            Dim ExportFilePath As String = IO.Path.GetFileName(mCurrentStruct.Determine_DefaultRelativeFilePath(COH_ExportFormat.CrypticS_BINFormat, False))
             If COH.Tools.Controls.WinForms.HelperFunctions.General.LocateFilePath("Export RAW", "RAW File|*.RAW", ExportFilePath) = False Then Exit Sub
             CoH_BytesViewer1.CoH_VirtualByte_Viewer1.Export_ToFile(ExportFilePath)
             GameContent.ShowMessage("Export Complete")

@@ -1,6 +1,6 @@
 ﻿Namespace Costumes
     Public NotInheritable Class COH_Chest_GeoLink
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -78,7 +78,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Chest_GeoLink
             Dim Result As COH_Chest_GeoLink = New COH_Chest_GeoLink
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mBonesetName = String.Copy(mBonesetName)
                 .mGeoStrings = mGeoStrings.CloneTheStrings

@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public NotInheritable Class COH_Power_AttribReturns_Set
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -76,7 +76,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_AttribReturns_Set
             Dim Result As COH_Power_AttribReturns_Set = New COH_Power_AttribReturns_Set
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDefault = mDefault
                 .mAttrib = mAttrib

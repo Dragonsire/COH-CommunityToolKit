@@ -4,7 +4,7 @@ Namespace UserControls
 
 #Region "Private"
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As GameContent.Structures.COH_Struct
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As COH_FileStructure
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImage As Bitmap
 #End Region
 
@@ -30,15 +30,15 @@ Namespace UserControls
         Public Sub Loadtexture(FileName As String)
             If FileName.ToLower.Contains(".texture") Then
                 Dim Result As New GameContent.Resources.Structures.Textures.COH_Resource_Texture
-                Result.Import_From_File(IO.Path.GetFileName(FileName), IO.Path.GetDirectoryName(FileName), COH_Struct.COH_ExportFormat.Binary)
+                Result.Import_From_File(IO.Path.GetFileName(FileName), IO.Path.GetDirectoryName(FileName), COH_ExportFormat.Binary)
                 Loadtexture(FileName, Result)
             ElseIf FileName.ToLower.Contains(".tga") Then
                 Dim Result As New GameContent.Resources.Structures.Textures.COH_Resource_TGA
-                Result.Import_From_File(IO.Path.GetFileName(FileName), IO.Path.GetDirectoryName(FileName), COH_Struct.COH_ExportFormat.Binary)
+                Result.Import_From_File(IO.Path.GetFileName(FileName), IO.Path.GetDirectoryName(FileName), COH_ExportFormat.Binary)
                 Loadtexture(FileName, Result)
             End If
         End Sub
-        Public Sub Loadtexture(Name As String, ByRef TheResource As COH_Struct)
+        Public Sub Loadtexture(Name As String, ByRef TheResource As COH_FileStructure)
             mResource = TheResource
             mName = Name
             If mResource Is Nothing Then

@@ -2,7 +2,7 @@
     Partial Public Class COH_DefReader
 
 #Region "Properties"
-        Public ReadOnly Property Entries As List(Of COH_Struct)
+        Public ReadOnly Property Entries As List(Of COH_FileStructure)
             Get
                 Return mEntries
             End Get
@@ -11,7 +11,7 @@
 
 #Region "Private Properties"
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileNames As List(Of String)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntries As List(Of COH_Struct)
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntries As List(Of COH_FileStructure)
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLineBuffer As String = Nothing
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStringBuffer1 As String = Nothing
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStringBuffer2 As String = Nothing
@@ -25,17 +25,17 @@
             ResetDefaults()
             mFileNames = New List(Of String)
             mFileNames.Add(FileName)
-            mEntries = New List(Of COH_Struct)
+            mEntries = New List(Of COH_FileStructure)
         End Sub
         Private Sub ResetDefaults()
-            mEntries = New List(Of COH_Struct)
+            mEntries = New List(Of COH_FileStructure)
         End Sub
 #End Region
 
 #Region "Process Files"
         Private Function ProcessFiles() As Boolean
             Dim Line As String = ""
-            mEntries = New List(Of COH_Struct)
+            mEntries = New List(Of COH_FileStructure)
             For Each File In mFileNames
                 Using CurrentReader As IO.StreamReader = My.Computer.FileSystem.OpenTextFileReader(File, Text.Encoding.UTF8)
                     Return ProcessFile(CurrentReader)

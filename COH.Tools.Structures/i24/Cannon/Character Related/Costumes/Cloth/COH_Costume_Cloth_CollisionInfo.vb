@@ -1,6 +1,6 @@
 ﻿Namespace Costumes.Cloth
     Public NotInheritable Class COH_Costume_Cloth_CollisionInfo
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -68,7 +68,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Costume_Cloth_CollisionInfo
             Dim Result As COH_Costume_Cloth_CollisionInfo = New COH_Costume_Cloth_CollisionInfo
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mType = String.Copy(mType)
                 .mLOD = New COH_Costume_Cloth_CollisionInfoLOD(mLOD.Count - 1) {}

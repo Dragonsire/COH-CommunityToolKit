@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers
     Public NotInheritable Class COH_AttribMod_i25Score_Messages
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -84,7 +84,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AttribMod_i25Score_Messages
             Dim Result As COH_AttribMod_i25Score_Messages = New COH_AttribMod_i25Score_Messages
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDisplayAttackerHit = mDisplayAttackerHit.Clone
                 .mDisplayVictimHit = mDisplayVictimHit.Clone

@@ -1,6 +1,6 @@
 ﻿Namespace Animation
     Public NotInheritable Class COH_Animation_GFX
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -170,7 +170,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Animation_GFX
             Dim Result As COH_Animation_GFX = New COH_Animation_GFX
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mFileName = String.Copy(mFileName)
                 .mAnim = New COH_Animation_AnimP(mAnim.Count - 1) {}

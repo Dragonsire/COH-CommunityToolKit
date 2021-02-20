@@ -1,4 +1,5 @@
-﻿Imports COH.Tools.Controls.WinForms.Enums
+﻿Imports COH.GameContent.CodeManagement.Interfaces
+Imports COH.Tools.Controls.WinForms.Enums
 Imports COH.Tools.Controls.WinForms.Settings
 
 Public Class COH_UserControl_Template

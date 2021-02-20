@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam_EntCreate
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -138,7 +138,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ModParam_EntCreate
             Dim Result As COH_ModParam_EntCreate = New COH_ModParam_EntCreate
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mEntityDef = CloneString(mEntityDef)
                 .mClass = CloneString(mClass)

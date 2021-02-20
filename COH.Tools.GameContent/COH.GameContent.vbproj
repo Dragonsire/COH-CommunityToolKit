@@ -31,7 +31,7 @@
     <Import Include="COH.GameContent.HelperFunctions.StringsAndThings" />
     <Import Include="COH.GameContent.HelperFunctions.XML" />
     <Import Include="COH.GameContent.Interfaces" />
-    <Import Include="COH.GameContent.Internal.Attributes" />
+    <Import Include="COH.GameContent.CodeManagement.Attributes" />
     <Import Include="COH.GameContent.Internal.DeveloperOptions" />
     <Import Include="COH.GameContent.Internal.Events" />
     <Import Include="COH.GameContent.Internal.Extentions" />

@@ -1,6 +1,6 @@
 ﻿Namespace Structures.Anim
     Public Class COH_Skeleton_BoneLocation
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -36,7 +36,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Skeleton_BoneLocation
             Dim Result As COH_Skeleton_BoneLocation = New COH_Skeleton_BoneLocation
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
             End With
             Return Result

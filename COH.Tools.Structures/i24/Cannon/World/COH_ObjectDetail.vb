@@ -2,7 +2,7 @@
 
 Namespace World
     Public NotInheritable Class COH_ObjectDetail
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -467,7 +467,7 @@ Namespace World
 #Region "Clone"
         Public Function Clone() As COH_ObjectDetail
             Dim Result As COH_ObjectDetail = New COH_ObjectDetail
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCategory = String.Copy(mCategory)
                 .mDisplayTabName = String.Copy(mDisplayTabName)

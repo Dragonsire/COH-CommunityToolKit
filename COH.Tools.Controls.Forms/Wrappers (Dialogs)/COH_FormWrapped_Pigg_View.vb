@@ -3,6 +3,7 @@ Imports COH.GameContent.Resources.Structures.Anim
 Imports COH.GameContent.Resources.Structures.BIN
 Imports COH.GameContent.Resources.Structures.GEO
 Imports COH.GameContent.Resources.Structures.Textures
+Imports COH.GameContent.Storage.Controllers
 Imports COH.Tools.Controls.WinForms.UserControls
 
 Namespace Dialogs
@@ -12,7 +13,7 @@ Namespace Dialogs
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileSource As String
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTool As Utilities.COH_PiggTool
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPreviewControl As Control
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentResource As GameContent.Structures.COH_Struct
+        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentResource As COH_FileStructure
         <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
 #End Region
 
@@ -44,7 +45,7 @@ Namespace Dialogs
             Changes_Locked = True
             HelperFunctions.TreeViews.Fill_TreeView(Me.TreeView1, mTool.Content.StringTable.Items, "/", "Root", ".")
             For Each node As TreeNode In Me.TreeView1.Nodes(0).Nodes(0).Nodes
-                Dim TheType As GameContent.Internal.Structures.COH_FSI_Entry = Nothing
+                Dim TheType As COH_FSI_Entry = Nothing
                 If ContentController.TheController_SupportedStructures.Retrieve_SupportedType(node.Text, TheType) = False Then
                     If node.Text.ToUpper.Contains(".GEO") Then
                         node.ForeColor = Color.Green

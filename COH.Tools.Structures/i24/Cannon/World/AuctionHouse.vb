@@ -1,6 +1,6 @@
 ﻿Namespace AuctionHouse
     Public NotInheritable Class COH_AunctionHouse_Fee
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -53,14 +53,14 @@
         Public Sub New(SetDefaults As Boolean, Optional Version As Integer = 0, Optional BuildType As COH_BuildType = COH_BuildType.Either)
             MyBase.New(SetDefaults, Version)
         End Sub
-        Public Sub New(ByRef Buffer As Byte(), Optional Settings as COH_Serialization_Settings = Nothing)
+        Public Sub New(ByRef Buffer As Byte(), Optional Settings As COH_Serialization_Settings = Nothing)
             MyBase.New(Buffer, Settings)
         End Sub
-        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings as COH_Serialization_Settings = Nothing)
-             MyBase.New(Stream, Settings)
+        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings As COH_Serialization_Settings = Nothing)
+            MyBase.New(Stream, Settings)
         End Sub
         Public Sub New(ByRef CurrentReader As COH_BinaryReader)
-             MyBase.New(CurrentReader)
+            MyBase.New(CurrentReader)
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
@@ -75,7 +75,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AunctionHouse_Fee
             Dim Result As COH_AunctionHouse_Fee = New COH_AunctionHouse_Fee
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mSellFeePercent = mSellFeePercent
                 .mBuyFeePercent = mBuyFeePercent

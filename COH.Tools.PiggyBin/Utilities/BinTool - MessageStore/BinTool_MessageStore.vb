@@ -48,7 +48,7 @@ Namespace Utilities
 #End Region
 
 
-        Public Function RebuildBin(ByRef CurrentWriter As COH_BinaryWriter, ByRef Sources() As COH_Struct) As Boolean
+        Public Function RebuildBin(ByRef CurrentWriter As COH_BinaryWriter, ByRef Sources() As COH_FileStructure) As Boolean
             Throw New NotImplementedException()
         End Function
 

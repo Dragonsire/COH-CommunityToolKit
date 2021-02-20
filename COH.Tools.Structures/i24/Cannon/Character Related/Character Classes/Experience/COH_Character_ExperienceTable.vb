@@ -1,6 +1,6 @@
 ﻿Namespace Characters
     Public NotInheritable Class COH_ExperienceTable
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ExperienceTable
             Dim Result As COH_ExperienceTable = New COH_ExperienceTable
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mExperienceRequired = New Int32(mExperienceRequired.Count - 1) {} : mExperienceRequired.CopyTo(.mExperienceRequired, 0)
                 .mDefeatPenalty = New Int32(mDefeatPenalty.Count - 1) {} : mDefeatPenalty.CopyTo(.mDefeatPenalty, 0)

@@ -2,7 +2,7 @@
 
 Namespace Costumes.Textures
     Public NotInheritable Class COH_Color
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -71,7 +71,7 @@ Namespace Costumes.Textures
 #Region "Clone"
         Public Function Clone() As COH_Color
             Dim Result As COH_Color = New COH_Color
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mColor1 = mColor1
                 .mColor2 = mColor2

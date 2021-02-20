@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public NotInheritable Class COH_StoryReward_ItemChance
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -152,7 +152,7 @@
 #Region "Clone"
         Public Function Clone() As COH_StoryReward_ItemChance
             Dim Result As COH_StoryReward_ItemChance = New COH_StoryReward_ItemChance
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mChance = mChance
                 .mAddRemove = mAddRemove

@@ -7,7 +7,7 @@ Namespace Editors
     Public Class COH_CategoryEditor
 
 #Region "Properties"
-        Protected Overrides ReadOnly Property Current_Struct As COH_Struct
+        Protected Overrides ReadOnly Property Current_Struct As COH_FileStructure
             Get
                 Return mCurrent
             End Get

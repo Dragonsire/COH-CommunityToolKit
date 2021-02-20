@@ -2,7 +2,7 @@
 
 Namespace MeshRelated
     Public NotInheritable Class COH_TrickList
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -53,7 +53,7 @@ Namespace MeshRelated
 #Region "Clone"
         Public Function Clone() As COH_TrickList
             Dim Result As COH_TrickList = New COH_TrickList
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTexture = mTexture.Clone
                 .mTrick = mTrick.Clone

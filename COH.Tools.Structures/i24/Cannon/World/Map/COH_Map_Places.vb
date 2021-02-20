@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_Map_PlaceStats
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -122,7 +122,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Map_PlaceStats
             Dim Result As COH_Map_PlaceStats = New COH_Map_PlaceStats
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mplace = mplace
                 .mgenericEncounterCount = mgenericEncounterCount

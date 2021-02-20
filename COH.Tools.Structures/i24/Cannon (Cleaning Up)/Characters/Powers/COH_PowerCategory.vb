@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers
     Public NotInheritable Class COH_PowerCategory
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -114,7 +114,7 @@
 #Region "Clone"
         Public Function Clone() As COH_PowerCategory
             Dim Result As COH_PowerCategory = New COH_PowerCategory
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mSourceFile = String.Copy(mSourceFile)
                 .mName = String.Copy(mName)

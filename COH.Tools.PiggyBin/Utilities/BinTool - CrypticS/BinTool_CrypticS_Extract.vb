@@ -1,4 +1,6 @@
-﻿Namespace Utilities
+﻿Imports COH.GameContent.CodeManagement.Enums
+
+Namespace Utilities
     Partial Public NotInheritable Class COH_BinTool_CrypticS
 
 #Region "Extract Contents"
@@ -24,20 +26,20 @@
             Return Export_ToStream_Files(Source, CurrentWriter, ShowProgress)
             Return True
         End Function
-        Private Function ExtractContents(ByRef Source As COH_CrypticS, ByRef CurrentReader As COH_BinaryReader, ByRef Results As List(Of COH_Struct), Optional UpdateName As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
-            Results = New List(Of COH_Struct)
+        Private Function ExtractContents(ByRef Source As COH_CrypticS, ByRef CurrentReader As COH_BinaryReader, ByRef Results As List(Of COH_FileStructure), Optional UpdateName As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
+            Results = New List(Of COH_FileStructure)
             For X = 0 To Source.FilesCount - 1
                 If ExtractContents(Source, Source.Files(X), CurrentReader, Results, UpdateName, ShowProgress) = False Then Return False
             Next
             Return True
         End Function
-        Private Function ExtractContents(ByRef Source As COH_CrypticS, ByRef SourceFile As COH_CrypticS_File, ByRef CurrentReader As COH_BinaryReader, ByRef Results As List(Of COH_Struct), Optional UpdateName As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
-            If Results Is Nothing Then Results = New List(Of COH_Struct)
+        Private Function ExtractContents(ByRef Source As COH_CrypticS, ByRef SourceFile As COH_CrypticS_File, ByRef CurrentReader As COH_BinaryReader, ByRef Results As List(Of COH_FileStructure), Optional UpdateName As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
+            If Results Is Nothing Then Results = New List(Of COH_FileStructure)
             Dim UpdateInterval As Integer = ProgressUpdate_UpdateInterval(Source.Entries.Count, ShowProgress)
             Dim UpdateStep As Integer = 0
             Dim UpdateProgressBar As Boolean = False
             For X = 0 To SourceFile.Details.Count - 1
-                Dim NewItem As COH_Struct = Nothing
+                Dim NewItem As COH_FileStructure = Nothing
                 UpdateStep += 1
                 If UpdateStep = UpdateInterval Then
                     UpdateStep = 0
@@ -54,7 +56,7 @@
             Next
             Return True
         End Function
-        Private Function ExtractContent(ByRef Source As COH_CrypticS, SupportedType As Type, ByRef ContentEntry As COH_CrypticS_FileContentDetails, ByRef CurrentReader As COH_BinaryReader, ByRef Result As COH_Struct, Optional ShowProgress As Boolean = False) As Boolean
+        Private Function ExtractContent(ByRef Source As COH_CrypticS, SupportedType As Type, ByRef ContentEntry As COH_CrypticS_FileContentDetails, ByRef CurrentReader As COH_BinaryReader, ByRef Result As COH_FileStructure, Optional ShowProgress As Boolean = False) As Boolean
             Dim ResultSucceed As Boolean = False
             CurrentReader.Position = ContentEntry.Offset
             If SupportedType Is Nothing Then Return False
@@ -63,7 +65,7 @@
             Result.UpdateLocalizations(CurrentReader.Settings.LocalizeController)
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, Result.InternalDisplayName)
             ResultSucceed = True
-            ContentEntry.XML_RelativePath = Result.Determine_DefaultRelativeFilePath(COH_Struct.COH_ExportFormat.XML)
+            ContentEntry.XML_RelativePath = Result.Determine_DefaultRelativeFilePath(COH_ExportFormat.XML)
             ContentEntry.REF_OriginolPath = Result.Retrieve_OriginolSourceReference
             ContentEntry.REF_FullName = Result.Retrieve_LookupName
             Return ResultSucceed
@@ -78,7 +80,7 @@
 #End Region
 
 #Region "Combine Structures"
-        Private Function CombineAllRecords(ByRef Source As COH_CrypticS, TheType As Type, ByRef Results As List(Of COH_Struct)) As Object
+        Private Function CombineAllRecords(ByRef Source As COH_CrypticS, TheType As Type, ByRef Results As List(Of COH_FileStructure)) As Object
             Dim TheList As Object() = Array.CreateInstance(TheType, Results.Count)
             For X = 0 To Results.Count - 1
                 '//TheList(X) = DirectCast(Results(X))

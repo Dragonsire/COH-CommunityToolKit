@@ -1,6 +1,6 @@
 ﻿Namespace Inventory
     Public NotInheritable Class COH_ConversionSets
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -85,7 +85,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ConversionSets
             Dim Result As COH_ConversionSets = New COH_ConversionSets
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mInSet = mInSet

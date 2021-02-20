@@ -1,4 +1,6 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.GameContent.Storage.Controllers
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Properties"
@@ -126,7 +128,7 @@
         End Function
         Public Function Retrieve_MapToType(Selected As COH_ProjectContent, ByRef FileName As String, ByRef Index As Integer, ByRef TheType As Type, Optional ByRef RootType As COH_ProjectContent = Nothing) As Boolean
             If Retrieve_FileName(Selected, FileName, Index, RootType) = False Then Return Nothing
-            Dim Found As GameContent.Internal.Structures.COH_FSI_Entry = Nothing
+            Dim Found As COH_FSI_Entry = Nothing
             If mStruct_Controller.Retrieve_SupportedType(FileName, Found) Then
                 TheType = Found.Sections(Index).SectionType
                 Return True

@@ -1,10 +1,11 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.GameContent.CodeManagement.Interfaces
+Imports COH.GameContent.Enums
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Powers
 Imports COH.GameContent.Structures.Powers
 
 Namespace HelperFunctions.Structs
-    <HideModuleName> Public Module COH_QuickControlHelpers_COH_Structs
+    <HideModuleName> Public Module COH_QuickControlHelpers_COH_FileStructures
 
 #Region "Unified"
         Public Sub Display_InTreeView_Unified(ByRef Tree As TreeView, ByRef Controller As ISupport_MasterController, Optional ShowPowers As Boolean = False)

@@ -1,0 +1,2 @@
+﻿Namespace Enums
+End Namespace

@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_Loyalty_RewardTree
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -95,7 +95,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Loyalty_RewardTree
             Dim Result As COH_Loyalty_RewardTree = New COH_Loyalty_RewardTree
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTier = New COH_Loyalty_RewardTier(mTier.Count - 1) {}
                 For X = 0 To mTier.Count - 1

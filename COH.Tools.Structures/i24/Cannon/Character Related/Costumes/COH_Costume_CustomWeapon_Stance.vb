@@ -1,6 +1,6 @@
 ﻿Namespace Costumes
     Public NotInheritable Class COH_CostumeWeapon_Stance
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_CostumeWeapon_Stance
             Dim Result As COH_CostumeWeapon_Stance = New COH_CostumeWeapon_Stance
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mWeapon = String.Copy(mWeapon)
                 .mStanceType = mStanceType

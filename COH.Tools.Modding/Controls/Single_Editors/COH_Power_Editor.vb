@@ -7,7 +7,7 @@ Namespace Editors
     Public Class COH_Power_Editor
 
 #Region "Properties"
-        Protected Overrides ReadOnly Property Current_Struct As COH_Struct
+        Protected Overrides ReadOnly Property Current_Struct As COH_FileStructure
             Get
                 Return mCurrent
             End Get
@@ -123,7 +123,7 @@ Namespace Editors
         Private Sub Display_Power_Icon()
             Dim FileNAme = ContentController.TheController_Assets.RetrieveAsset_FilePath(IO.Path.GetFileNameWithoutExtension(mCurrent.IconName), COH_Supported_ContentType.Unknown)
             If String.IsNullOrEmpty(FileNAme) = False Then
-                Dim theResource As COH_Struct = ContentController.TheController_Assets.RetrieveAsset_ImageStruct(FileNAme)
+                Dim theResource As COH_FileStructure = ContentController.TheController_Assets.RetrieveAsset_ImageStruct(FileNAme)
                 If TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_Texture Then
                     mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_Texture).Extract_Resource_Texture)
                 ElseIf TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_TGA Then

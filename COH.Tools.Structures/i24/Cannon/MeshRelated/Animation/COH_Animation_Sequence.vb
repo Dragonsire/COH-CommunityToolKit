@@ -2,7 +2,7 @@
 
 Namespace Animation
     Public NotInheritable Class COH_Animation_Sequence
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -90,7 +90,7 @@ Namespace Animation
 #Region "Clone"
         Public Function Clone() As COH_Animation_Sequence
             Dim Result As COH_Animation_Sequence = New COH_Animation_Sequence
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mTypeDef = New COH_Animation_Sequence_DEF_P(mTypeDef.Count - 1) {}

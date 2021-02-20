@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated
     Public NotInheritable Class COH_TrickNode
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -66,7 +66,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TrickNode
             Dim Result As COH_TrickNode = New COH_TrickNode
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mBytes = mBytes
                 Return Result

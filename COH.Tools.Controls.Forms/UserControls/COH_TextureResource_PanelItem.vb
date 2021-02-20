@@ -29,7 +29,7 @@ Public Class COH_TextureResource_PanelItem
     <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As Integer = 0
     <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mThumbnail_Size As Size = New Size(175, 175)
     <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As GameContent.Structures.COH_Struct
+    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As COH_FileStructure
     <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImage As Bitmap
 #End Region
 
@@ -44,7 +44,7 @@ Public Class COH_TextureResource_PanelItem
 #End Region
 
 #Region "Prepare Usage"
-    Public Sub Prepare_Usage(Parent As COH_TextureResource_Panel, ID As Integer, Name As String, NumCoords As Integer, ByRef TheResource As COH_Struct)
+    Public Sub Prepare_Usage(Parent As COH_TextureResource_Panel, ID As Integer, Name As String, NumCoords As Integer, ByRef TheResource As COH_FileStructure)
         mResource = TheResource
         mName = Name
         mParent = Parent

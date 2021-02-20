@@ -2,7 +2,7 @@
 
 Namespace PlayerCreated.UI
     Public NotInheritable Class COH_UI_PlayerCreated_ElementList
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -369,7 +369,7 @@ Namespace PlayerCreated.UI
 #Region "Clone"
         Public Function Clone() As COH_UI_PlayerCreated_ElementList
             Dim Result As COH_UI_PlayerCreated_ElementList = New COH_UI_PlayerCreated_ElementList
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mTemplate = String.Copy(mTemplate)

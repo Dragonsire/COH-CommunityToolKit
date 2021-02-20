@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public NotInheritable Class COH_CutScene_Event
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -244,7 +244,7 @@
 #Region "Clone"
         Public Function Clone() As COH_CutScene_Event
             Dim Result As COH_CutScene_Event = New COH_CutScene_Event
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTime = mTime
                 .mActor = String.Copy(mActor)

@@ -1,6 +1,6 @@
 ﻿Namespace Store
     Public NotInheritable Class COH_Loyalty_RewardNodeName
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -67,7 +67,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Loyalty_RewardNodeName
             Dim Result As COH_Loyalty_RewardNodeName = New COH_Loyalty_RewardNodeName
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mIndex = mIndex

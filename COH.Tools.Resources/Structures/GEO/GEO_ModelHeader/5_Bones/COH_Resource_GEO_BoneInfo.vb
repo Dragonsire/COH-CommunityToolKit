@@ -1,6 +1,6 @@
 ﻿Namespace Structures.Resources
     Public Class COH_Resource_GEO_BoneInfo
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Proporties - Identifier"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String

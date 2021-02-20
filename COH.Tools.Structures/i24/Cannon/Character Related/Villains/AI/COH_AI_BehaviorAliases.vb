@@ -1,6 +1,6 @@
 ﻿Namespace Enemies.AI
     Public NotInheritable Class COH_AI_BehaviorAlias
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -78,7 +78,7 @@
 #Region "Clone"
         Public Function Clone() As COH_AI_BehaviorAlias
             Dim Result As COH_AI_BehaviorAlias = New COH_AI_BehaviorAlias
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mAlias = String.Copy(mAlias)
                 .mResolve = String.Copy(mResolve)

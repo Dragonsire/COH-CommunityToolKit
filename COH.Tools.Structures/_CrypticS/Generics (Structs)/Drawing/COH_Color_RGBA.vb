@@ -2,7 +2,7 @@
 
 Namespace [Shared].Drawing
     Public NotInheritable Class COH_Color_RGBA
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -103,7 +103,7 @@ Namespace [Shared].Drawing
 #Region "Clone"
         Public Function Clone() As COH_Color_RGBA
             Dim Result As COH_Color_RGBA = New COH_Color_RGBA
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
                 .mRed = mRed
                 .mGreen = mGreen

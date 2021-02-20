@@ -2,7 +2,7 @@
 
 Namespace Powers
     Public Class COH_PowerCustomFX
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String

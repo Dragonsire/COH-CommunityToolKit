@@ -1,6 +1,6 @@
 ﻿Namespace Inventory
     Public NotInheritable Class COH_Recipe
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -436,7 +436,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Recipe
             Dim Result As COH_Recipe = New COH_Recipe
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mSourceFile = String.Copy(mSourceFile)
                 .mName = String.Copy(mName)

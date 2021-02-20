@@ -1,5 +1,4 @@
-﻿Imports COH.GameContent.Internal.Structures
-Imports COH.GameContent.Structures.LanguageFiles
+﻿Imports COH.GameContent.Storage.Controllers
 
 Namespace Utilities
     Public NotInheritable Class COH_BinTool_CrypticS
@@ -35,7 +34,7 @@ Namespace Utilities
             If IO.File.Exists(FilePath) = False Then Return False
             Dim CurrentStream As New IO.FileStream(FilePath, IO.FileMode.Open)
             mCurrentReader = New COH_BinaryReader(CurrentStream, Text.Encoding.UTF8)
-            mCurrentReader.Settings = New GameContent.Utilities.COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.CrypticS_BINFormat, mLanguageMaps)
+            mCurrentReader.Settings = New COH_Serialization_Settings(True, COH_ExportFormat.CrypticS_BINFormat, mLanguageMaps)
             mCrypticS_Info = New COH_CrypticS(IO.Path.GetFileName(FilePath), Settings, mFileStructs)
             mValid = mCrypticS_Info.Import_FromStream(mCurrentReader, ShowProgress)
             Return mValid
@@ -43,7 +42,7 @@ Namespace Utilities
         Public Function OpenExisting_BinFile(Name As String, ByRef Bytes As Byte(), Optional Settings As COH_CrypticS_Settings = Nothing, Optional ShowProgress As Boolean = False) As Boolean
             Dim CurrentStream As New IO.MemoryStream(Bytes)
             mCurrentReader = New COH_BinaryReader(CurrentStream, Text.Encoding.UTF8)
-            mCurrentReader.Settings = New GameContent.Utilities.COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.CrypticS_BINFormat, mLanguageMaps)
+            mCurrentReader.Settings = New COH_Serialization_Settings(True, COH_ExportFormat.CrypticS_BINFormat, mLanguageMaps)
             mCrypticS_Info = New COH_CrypticS(Name, Settings, mFileStructs)
             mValid = mCrypticS_Info.Import_FromStream(mCurrentReader, ShowProgress)
             Return mValid
@@ -77,18 +76,18 @@ Namespace Utilities
 #End Region
 
 #Region "Extract"
-        Public Function ExtractFromBin_Items(Title As String, ByRef Results As COH_Struct(), Optional FileIndex As Integer = 0, Optional ShowProgress As Boolean = True) As Boolean
-            Dim TempList = New List(Of COH_Struct)
+        Public Function ExtractFromBin_Items(Title As String, ByRef Results As COH_FileStructure(), Optional FileIndex As Integer = 0, Optional ShowProgress As Boolean = True) As Boolean
+            Dim TempList = New List(Of COH_FileStructure)
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Retrieve_TotalNumberEntries, "Extracting Contents - " & Title)
             If ExtractContents(mCrypticS_Info, mCurrentReader, TempList, True, ShowProgress) = False Then Return False
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
             Results = TempList.ToArray
             Return True
         End Function
-        Public Function ExtractFromBin_Items(Title As String, ByRef Results As COH_Struct()(), Optional ShowProgress As Boolean = True) As Boolean
-            Results = New COH_Struct(mCrypticS_Info.Files.Count - 1)() {}
+        Public Function ExtractFromBin_Items(Title As String, ByRef Results As COH_FileStructure()(), Optional ShowProgress As Boolean = True) As Boolean
+            Results = New COH_FileStructure(mCrypticS_Info.Files.Count - 1)() {}
             For X = 0 To mCrypticS_Info.Files.Count - 1
-                Dim TempList = New List(Of COH_Struct)
+                Dim TempList = New List(Of COH_FileStructure)
                 If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Retrieve_TotalNumberEntries, "Extracting Contents - " & Title)
                 If ExtractContents(mCrypticS_Info, mCrypticS_Info.Files(X), mCurrentReader, TempList, True, ShowProgress) = False Then Return False
                 If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
@@ -101,7 +100,7 @@ Namespace Utilities
 
 #Region "Export"
         Public Function ExtractFromBin_WriteXML(Title As String, Folder As String, Optional FileIndex As Integer = 0, Optional ShowProgress As Boolean = True) As Boolean
-            Dim TempList = New List(Of COH_Struct)
+            Dim TempList = New List(Of COH_FileStructure)
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Retrieve_TotalNumberEntries, "Extracting Contents - " & Title)
             If ExtractContents(mCrypticS_Info, mCurrentReader, TempList, True, ShowProgress) = False Then Return False
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
@@ -119,9 +118,9 @@ Namespace Utilities
             Return True
         End Function
         Public Function ExtractFromBin_WriteXML(Title As String, RootFolder As String, SubFolders As String(), Optional ShowProgress As Boolean = True) As Boolean
-            Dim TempList As List(Of COH_Struct)
+            Dim TempList As List(Of COH_FileStructure)
             For X = 0 To mCrypticS_Info.Files.Count - 1
-                TempList = New List(Of COH_Struct)
+                TempList = New List(Of COH_FileStructure)
                 If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Retrieve_TotalNumberEntries, "Extracting Contents - " & Title)
                 If ExtractContents(mCrypticS_Info, mCrypticS_Info.Files(X), mCurrentReader, TempList, True, ShowProgress) = False Then Return False
                 If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
@@ -143,19 +142,19 @@ Namespace Utilities
             Export_XMLFile(FilePath, mCrypticS_Info)
             Return True
         End Function
-        Public Function ExtractFromBin_Item(FileIndex As Integer, ContentIndex As Integer, ByRef Result As COH_Struct, ByRef LanguageMaps As ISupport_COH_LocalizeContent) As Boolean
+        Public Function ExtractFromBin_Item(FileIndex As Integer, ContentIndex As Integer, ByRef Result As COH_FileStructure, ByRef LanguageMaps As ISupport_COH_LocalizeContent) As Boolean
             Return ExtractContent(mCrypticS_Info, mCrypticS_Info.Files(FileIndex).SupportedType, mCrypticS_Info.Files(FileIndex).Details(ContentIndex), mCurrentReader, Result, False)
         End Function
         Public Function ExtractFromBin_RawBytes(FileIndex As Integer, ContentIndex As Integer, ByRef Result As Byte(), ByRef LanguageMaps As ISupport_COH_LocalizeContent) As Boolean
             Return ExtractContent(mCrypticS_Info, mCrypticS_Info.Files(FileIndex).SupportedType, mCrypticS_Info.Files(FileIndex).Details(ContentIndex), mCurrentReader, Result, False)
         End Function
-        Public Function RebuildBin(ByRef CurrentWriter As COH_BinaryWriter, ByRef Sources() As COH_Struct) As Boolean
+        Public Function RebuildBin(ByRef CurrentWriter As COH_BinaryWriter, ByRef Sources() As COH_FileStructure) As Boolean
             Throw New NotImplementedException()
         End Function
 #End Region
 
 #Region "Convert to XML"
-        Private Shared Function Export_ToXML(Title As String, ByRef Entries As List(Of COH_Struct), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
+        Private Shared Function Export_ToXML(Title As String, ByRef Entries As List(Of COH_FileStructure), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
             Dim results As New List(Of String)
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Entries.Count, "Writing XML - " & Title)
             Dim UpdateInterval As Integer = ProgressUpdate_UpdateInterval(Entries.Count, ShowProgress)
@@ -170,13 +169,13 @@ Namespace Utilities
                 Else
                     UpdateProgressBar = False
                 End If
-                item.Export_To_File(Nothing, Folder, COH_Struct.COH_ExportFormat.XML)
+                item.Export_To_File(Nothing, Folder, COH_ExportFormat.XML)
                 If UpdateProgressBar = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, UpdateInterval, item.InternalDisplayName)
             Next
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
             Return True
         End Function
-        Private Shared Function Export_ToXML_Combined(Title As String, ByRef Entries As List(Of COH_Struct), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
+        Private Shared Function Export_ToXML_Combined(Title As String, ByRef Entries As List(Of COH_FileStructure), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
             Dim results As New List(Of String)
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, 1, "Writing XML - " & Title)
             GameContent.HelperFunctions.XML.Export_XMLFile(Folder, Entries, True)
@@ -192,7 +191,7 @@ Namespace Utilities
 
 #Region "Export - DEF"
         Public Function ExtractFromBin_WriteDEF(Title As String, Folder As String, Optional FileIndex As Integer = 0, Optional ShowProgress As Boolean = True) As Boolean
-            Dim TempList = New List(Of COH_Struct)
+            Dim TempList = New List(Of COH_FileStructure)
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Retrieve_TotalNumberEntries, "Extracting Contents - " & Title)
             If ExtractContents(mCrypticS_Info, mCurrentReader, TempList, True, ShowProgress) = False Then Return False
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
@@ -208,7 +207,7 @@ Namespace Utilities
             End Select
             Return True
         End Function
-        Private Shared Function Export_ToDEF(Title As String, ByRef Entries As List(Of COH_Struct), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
+        Private Shared Function Export_ToDEF(Title As String, ByRef Entries As List(Of COH_FileStructure), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
             Dim results As New List(Of String)
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Entries.Count, "Writing DEF - " & Title)
             Dim UpdateInterval As Integer = ProgressUpdate_UpdateInterval(Entries.Count, ShowProgress)
@@ -223,7 +222,7 @@ Namespace Utilities
                 Else
                     UpdateProgressBar = False
                 End If
-                item.Export_To_File(Nothing, Folder, COH_Struct.COH_ExportFormat.CrypticS_TextFormat)
+                item.Export_To_File(Nothing, Folder, COH_ExportFormat.CrypticS_TextFormat)
                 If UpdateProgressBar = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, UpdateInterval, item.InternalDisplayName)
             Next
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)

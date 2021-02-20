@@ -1,6 +1,6 @@
 ﻿Namespace Textures
     Public NotInheritable Class COH_TexWord_Layer_Offset
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -66,7 +66,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TexWord_Layer_Offset
             Dim Result As COH_TexWord_Layer_Offset = New COH_TexWord_Layer_Offset
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mOffset1 = mOffset1
                 .mOffset2 = mOffset2

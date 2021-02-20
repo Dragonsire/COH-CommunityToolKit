@@ -1,6 +1,6 @@
 ﻿Namespace Enemies
     Public NotInheritable Class COH_Enemies_GroupList
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -78,7 +78,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Enemies_GroupList
             Dim Result As COH_Enemies_GroupList = New COH_Enemies_GroupList
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mVG = New COH_Enemy_GroupMM(mVG.Count - 1) {}
                 For X = 0 To mVG.Count - 1

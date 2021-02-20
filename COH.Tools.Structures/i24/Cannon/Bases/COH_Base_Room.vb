@@ -3,7 +3,7 @@ Imports COH.GameContent.Structures.World
 
 Namespace Bases
     Public NotInheritable Class COH_Base_Room
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -154,7 +154,7 @@ Namespace Bases
 #Region "Clone"
         Public Function Clone() As COH_Base_Room
             Dim Result As COH_Base_Room = New COH_Base_Room
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mLength = mLength
                 .mWidth = mWidth

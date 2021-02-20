@@ -1,4 +1,6 @@
-﻿Namespace HelperFunctions.Bytes
+﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+
+Namespace HelperFunctions.Bytes
     <HideModuleName> Public Module DS_HelperFunctions_ByteFunctions
 
 #Region "Random"

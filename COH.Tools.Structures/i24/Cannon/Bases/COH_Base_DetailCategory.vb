@@ -2,7 +2,7 @@
 
 Namespace Bases
     Public NotInheritable Class COH_Base_DetailCategory
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -88,7 +88,7 @@ Namespace Bases
 #Region "Clone"
         Public Function Clone() As COH_Base_DetailCategory
             Dim Result As COH_Base_DetailCategory = New COH_Base_DetailCategory
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mEnergyPriority = mEnergyPriority
                 .mControlPriority = mControlPriority

@@ -1,6 +1,6 @@
 ﻿Namespace Textures
     Public NotInheritable Class COH_TextWord_Layer_Font
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -104,7 +104,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TextWord_Layer_Font
             Dim Result As COH_TextWord_Layer_Font = New COH_TextWord_Layer_Font
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mSize = mSize

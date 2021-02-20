@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public NotInheritable Class COH_Mission
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -446,7 +446,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Mission
             Dim Result As COH_Mission = New COH_Mission
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCurrentFile = String.Copy(mCurrentFile)
                 .mEntryString = String.Copy(mEntryString)

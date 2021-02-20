@@ -2,7 +2,7 @@
 
 Namespace Structures.Anim
     Public Class COH_Resource_ANIM_BoneTrack
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Proporties - Identifier"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -58,7 +58,7 @@ Namespace Structures.Anim
 #Region "Clone"
         Public Function Clone() As COH_Resource_ANIM_BoneTrack
             Dim Result As COH_Resource_ANIM_BoneTrack = New COH_Resource_ANIM_BoneTrack
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
             End With
             Return Result

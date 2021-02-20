@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public NotInheritable Class COH_Power_DiminishingReturns
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -75,7 +75,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_DiminishingReturns
             Dim Result As COH_Power_DiminishingReturns = New COH_Power_DiminishingReturns
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mStart = mStart
                 .mHandicap = mHandicap

@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Attributes
     Public NotInheritable Class COH_CharacterClass_AttributesTable
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -1199,7 +1199,7 @@
 #Region "Clone"
         Public Function Clone() As COH_CharacterClass_AttributesTable
             Dim Result As COH_CharacterClass_AttributesTable = New COH_CharacterClass_AttributesTable
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mSmashing = New Single(mSmashing.Count - 1) {} : mSmashing.CopyTo(.mSmashing, 0)
                 .mLethal = New Single(mLethal.Count - 1) {} : mLethal.CopyTo(.mLethal, 0)

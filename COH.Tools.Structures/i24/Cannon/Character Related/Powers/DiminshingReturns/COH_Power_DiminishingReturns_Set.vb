@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public NotInheritable Class COH_Power_DiminishingReturns_Set
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -77,7 +77,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_DiminishingReturns_Set
             Dim Result As COH_Power_DiminishingReturns_Set = New COH_Power_DiminishingReturns_Set
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDefault = mDefault
                 .mBoost = New Int32(mBoost.Count - 1) {} : mBoost.CopyTo(.mBoost, 0)

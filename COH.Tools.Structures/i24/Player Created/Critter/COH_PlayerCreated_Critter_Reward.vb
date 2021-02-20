@@ -1,6 +1,6 @@
 ﻿Namespace PlayerCreated.Critter
     Public NotInheritable Class COH_PlayerCreated_Critter_Reward
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -87,7 +87,7 @@
 #Region "Clone"
         Public Function Clone() As COH_PlayerCreated_Critter_Reward
             Dim Result As COH_PlayerCreated_Critter_Reward = New COH_PlayerCreated_Critter_Reward
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mDifficultyMod = New Single(mDifficultyMod.Count - 1) {} : mDifficultyMod.CopyTo(.mDifficultyMod, 0)
                 .mMissingRankPenalty = New Single(mMissingRankPenalty.Count - 1) {} : mMissingRankPenalty.CopyTo(.mMissingRankPenalty, 0)

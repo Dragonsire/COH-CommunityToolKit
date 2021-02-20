@@ -18,7 +18,7 @@ Namespace UserControls
         Private Sub DisplayInfo()
             Cursor.Current = Cursors.WaitCursor
             Dim TheXML As String = Nothing
-            If mAnimation.Export_to_TextFormat(TheXML, New GameContent.Utilities.COH_Serialization_Settings(True) With {.Option_SelectedFormat = GameContent.Structures.COH_Struct.COH_ExportFormat.XML}) = False Then
+            If mAnimation.Export_to_TextFormat(TheXML, New COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_ExportFormat.XML}) = False Then
                 XML_View.ViewText("ERROR")
             Else
                 XML_View.ViewText(TheXML)
@@ -28,7 +28,7 @@ Namespace UserControls
             If Skeleton Is Nothing Then
                 CoH_XML_Viewer1.ViewText("NOT A BASE SKELETON")
             Else
-                If Skeleton.Export_to_TextFormat(TheXML, New GameContent.Utilities.COH_Serialization_Settings(True) With {.Option_SelectedFormat = GameContent.Structures.COH_Struct.COH_ExportFormat.XML}) = False Then
+                If Skeleton.Export_to_TextFormat(TheXML, New COH_Serialization_Settings(True) With {.Option_SelectedFormat = COH_ExportFormat.XML}) = False Then
                     CoH_XML_Viewer1.ViewText("ERROR")
                 Else
                     CoH_XML_Viewer1.ViewText(TheXML)

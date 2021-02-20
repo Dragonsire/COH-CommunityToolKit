@@ -2,7 +2,7 @@
 
 Namespace [Shared].Drawing
     Public NotInheritable Class COH_Color_RGB
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Enum"
         Public Enum InternalVerions
@@ -94,7 +94,7 @@ Namespace [Shared].Drawing
 #Region "Clone"
         Public Function Clone() As COH_Color_RGB
             Dim Result As COH_Color_RGB = New COH_Color_RGB
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
                 .mRed = mRed
                 .mGreen = mGreen

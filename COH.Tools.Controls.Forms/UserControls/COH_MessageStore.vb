@@ -31,7 +31,7 @@ Namespace UserControls
         End Sub
         Private Sub DisplayInfo()
             Cursor.Current = Cursors.WaitCursor
-            Dim Result As COH_Struct = Nothing
+            Dim Result As COH_FileStructure = Nothing
             Dim TheXML As String = Nothing
             If mMessageTool.MessageStore.Export_ToTextString_XMLFormat(TheXML) = False Then
                 XML_View.ViewText("ERROR")

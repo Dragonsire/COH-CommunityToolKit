@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_MiniMap_Header
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -88,7 +88,7 @@
 #Region "Clone"
         Public Function Clone() As COH_MiniMap_Header
             Dim Result As COH_MiniMap_Header = New COH_MiniMap_Header
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mMap = String.Copy(mMap)
                 .mFloorMap = New COH_Map_SubMap(mFloorMap.Count - 1) {}

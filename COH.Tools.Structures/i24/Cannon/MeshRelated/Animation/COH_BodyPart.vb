@@ -1,6 +1,6 @@
 ﻿Namespace Body
     Public NotInheritable Class COH_BodyPart
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -156,7 +156,7 @@
 #Region "Clone"
         Public Function Clone() As COH_BodyPart
             Dim Result As COH_BodyPart = New COH_BodyPart
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mSourceFile = String.Copy(mSourceFile)

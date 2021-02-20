@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Internal.Structures
+Imports COH.GameContent.Storage.Controllers
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController

@@ -110,7 +110,7 @@ Public Class COH_ResourceAssets_Controller
 #End Region
 
 #Region "Search"
-    Public Function RetrieveAsset(ByRef Search As String) As COH_Struct Implements ISupport_COH_AssetRetrieval.RetrieveAsset
+    Public Function RetrieveAsset(ByRef Search As String) As COH_FileStructure Implements ISupport_COH_AssetRetrieval.RetrieveAsset
     End Function
     Public Function RetrieveAsset(ByRef Search As String, Type As COH_Supported_ContentType) As Object Implements ISupport_COH_AssetRetrieval.RetrieveAsset
         Select Case Type
@@ -134,15 +134,15 @@ Public Class COH_ResourceAssets_Controller
     End Function
     Public Function RetrieveAsset_Texture(FilePath As String) As Structures.Textures.COH_Resource_Texture
         Dim Result = New Structures.Textures.COH_Resource_Texture
-        Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.Binary))
+        Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_ExportFormat.Binary))
         Return Result
     End Function
     Public Function RetrieveAsset_TGA(FilePath As String) As Structures.Textures.COH_Resource_TGA
         Dim Result = New Structures.Textures.COH_Resource_TGA
-        Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_Struct.COH_ExportFormat.Binary))
+        Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_ExportFormat.Binary))
         Return Result
     End Function
-    Public Function RetrieveAsset_ImageStruct(FilePath As String) As COH_Struct Implements ISupport_COH_AssetRetrieval.RetrieveAsset_ImageStruct
+    Public Function RetrieveAsset_ImageStruct(FilePath As String) As COH_FileStructure Implements ISupport_COH_AssetRetrieval.RetrieveAsset_ImageStruct
         If String.IsNullOrEmpty(FilePath) = True Then Return Nothing
         If FilePath.ToLower.Contains(".tga") Then
             Return RetrieveAsset_TGA(FilePath)
@@ -185,7 +185,7 @@ Public Class COH_ResourceAssets_Controller
         If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Files.Count, "Searching ANIM Files For Skeletons")
         For Each File In Files
             Dim Existing As New Structures.Anim.COH_Resource_Anim
-            If Existing.Import_From_File(IO.Path.GetFileName(File), IO.Path.GetDirectoryName(File), COH_Struct.COH_ExportFormat.Binary) = True Then
+            If Existing.Import_From_File(IO.Path.GetFileName(File), IO.Path.GetDirectoryName(File), COH_ExportFormat.Binary) = True Then
                 If Not (Existing.SkeletonTrack.Skeleton_Heirarchy Is Nothing) Then
                     SkelName = Existing.SkeletonTrack.Name_BaseAnimation
                     If FoundBones.ContainsKey(SkelName) = False Then
@@ -196,7 +196,7 @@ Public Class COH_ResourceAssets_Controller
                         FoundBones.Add(SkelName, Skeleton)
                         Dim ExportFile As String = SkelName.Replace("/", "_")
 
-                        Skeleton.Export_To_File(ExportFile & ".xml", mBonesFolder, COH_Struct.COH_ExportFormat.XML)
+                        Skeleton.Export_To_File(ExportFile & ".xml", mBonesFolder, COH_ExportFormat.XML)
                     End If
                 End If
             End If

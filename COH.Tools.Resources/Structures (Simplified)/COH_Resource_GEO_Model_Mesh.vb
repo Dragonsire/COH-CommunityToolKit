@@ -1,6 +1,6 @@
 ﻿Namespace Structures.GEO
     Public Class COH_Resource_GEO_Model_MeshDetails
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties"
         <Category("_ProjectFile")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -41,7 +41,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Resource_GEO_Model_MeshDetails
             Dim Result As COH_Resource_GEO_Model_MeshDetails = New COH_Resource_GEO_Model_MeshDetails
-            MyBase.CloneTo(Result)
+            'MyBase.CloneTo(Result)
             With Result
             End With
             Return Result

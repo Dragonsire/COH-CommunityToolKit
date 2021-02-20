@@ -1,6 +1,6 @@
 ﻿Namespace UI
     Public NotInheritable Class COH_UI_PopHelp
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -128,7 +128,7 @@
 #Region "Clone"
         Public Function Clone() As COH_UI_PopHelp
             Dim Result As COH_UI_PopHelp = New COH_UI_PopHelp
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mTag = String.Copy(mTag)
                 .mInYourFace = mInYourFace

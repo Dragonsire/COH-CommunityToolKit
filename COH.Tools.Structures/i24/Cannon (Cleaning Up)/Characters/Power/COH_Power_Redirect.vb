@@ -1,6 +1,6 @@
 ﻿Namespace Characters.Powers
     Public NotInheritable Class COH_PowerRedirect
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -77,7 +77,7 @@
 #Region "Clone"
         Public Function Clone() As COH_PowerRedirect
             Dim Result As COH_PowerRedirect = New COH_PowerRedirect
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mPower = CloneString(mPower)
                 .mRequires = CloneStrings(mRequires)

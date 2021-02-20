@@ -1,6 +1,6 @@
 ﻿Namespace Powers
     Public NotInheritable Class COH_Power_Schedules
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -57,7 +57,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Power_Schedules
             Dim Result As COH_Power_Schedules = New COH_Power_Schedules
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mPowers = mPowers
                 Return Result

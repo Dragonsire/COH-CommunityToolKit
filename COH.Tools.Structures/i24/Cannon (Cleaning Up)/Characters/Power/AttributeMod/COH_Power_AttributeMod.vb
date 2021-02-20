@@ -2,7 +2,7 @@
 
 Namespace Characters.Powers
     Public NotInheritable Class COH_Power_AttributeMod
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -644,7 +644,7 @@ Namespace Characters.Powers
 #Region "Clone"
         Public Function Clone() As COH_Power_AttributeMod
             Dim Result As COH_Power_AttributeMod = New COH_Power_AttributeMod
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = CloneString(mName)
                 .mDisplayAttackerHit = mDisplayAttackerHit.Clone

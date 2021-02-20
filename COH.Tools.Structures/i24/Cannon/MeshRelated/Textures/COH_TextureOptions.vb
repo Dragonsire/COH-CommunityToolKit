@@ -1,6 +1,6 @@
 ﻿Namespace MeshRelated.Textures
     Public Class COH_TextureOptions
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -210,7 +210,7 @@
 #Region "Clone"
         Public Function Clone() As COH_TextureOptions
             Dim Result As COH_TextureOptions = New COH_TextureOptions
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 Return Result
             End With

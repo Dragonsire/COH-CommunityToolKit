@@ -1,6 +1,6 @@
 ﻿Namespace World
     Public NotInheritable Class COH_ObjectDetail_CategoryLimit
-        inherits COH_Struct
+        inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -61,7 +61,7 @@
 #Region "Clone"
         Public Function Clone() As COH_ObjectDetail_CategoryLimit
             Dim Result As COH_ObjectDetail_CategoryLimit = New COH_ObjectDetail_CategoryLimit
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCategory = String.Copy(mCategory)
                 .mLimit = mLimit

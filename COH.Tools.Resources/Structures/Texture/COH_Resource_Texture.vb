@@ -2,7 +2,7 @@
 
 Namespace Structures.Textures
     Public Class COH_Resource_Texture
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
         Public Overrides ReadOnly Property InternalDisplayName As String
             Get
@@ -124,7 +124,7 @@ Namespace Structures.Textures
 #Region "Clone"
         Public Function Clone() As COH_Resource_Texture
             Dim Result As COH_Resource_Texture = New COH_Resource_Texture
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
             End With
             Return Result

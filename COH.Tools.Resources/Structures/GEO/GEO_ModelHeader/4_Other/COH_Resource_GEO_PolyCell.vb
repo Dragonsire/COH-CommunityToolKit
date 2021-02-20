@@ -1,6 +1,6 @@
 ﻿Namespace Structures.GEO
     Public Class COH_Resource_GenericMesh_PolyCell
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Proporties - Identifier"
         <Category("_Identifier")> Public Overrides ReadOnly Property InternalDisplayName As String
@@ -41,7 +41,7 @@
             Return Destination
         End Function
         Public Overloads Sub CloneTo(ByRef Destination As COH_Resource_GenericMesh_PolyCell)
-            MyBase.CloneTo(TryCast(Destination, COH_Struct))
+            'MyBase.CloneTo(TryCast(Destination, COH_FileStructure))
             With Destination
                 If Not .Children Is Nothing Then
                     .Children = Children.Clone

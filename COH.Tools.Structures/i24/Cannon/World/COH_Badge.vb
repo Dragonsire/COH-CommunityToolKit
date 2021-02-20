@@ -2,7 +2,7 @@
 
 Namespace World
     Public NotInheritable Class COH_Badge
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -321,7 +321,7 @@ Namespace World
 #Region "Clone"
         Public Function Clone() As COH_Badge
             Dim Result As COH_Badge = New COH_Badge
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mCurrentFile = String.Copy(mCurrentFile)
                 .mName = String.Copy(mName)

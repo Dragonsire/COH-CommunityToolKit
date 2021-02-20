@@ -1,6 +1,6 @@
 ﻿Namespace Story
     Public Class COH_Contact
-        Inherits COH_Struct
+        Inherits COH_FileStructure
 
 #Region "Properties - Override"
         Public Overrides ReadOnly Property InternalDisplayName As String
@@ -1005,7 +1005,7 @@
 #Region "Clone"
         Public Function Clone() As COH_Contact
             Dim Result As COH_Contact = New COH_Contact
-            MyBase.CloneTo(TryCast(Result, COH_Struct))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 Return Result
             End With

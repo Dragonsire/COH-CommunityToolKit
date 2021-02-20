@@ -1,4 +1,6 @@
-﻿Namespace HelperFunctions.StringsAndThings
+﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+
+Namespace HelperFunctions.StringsAndThings
     <HideModuleName> Public Module COH_HelperFunctions_StringFunctions
         Public Const StringEncoding_FallBack As COH_Supported_StringEncoding = COH_Supported_StringEncoding.UTF8
         Public Const VisibleCharacters_UTF As String = "`~!@#$%^&*()-_+=|\1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ[]{};:',.<>/?abcdefghijklmnopqrstuvwxyzÇüéâäàåçêëèïîìÄÅÉæôöòûùÿÖÜ¢£¥₧ƒáíóúñÑ½¼" & ChrW(34)
