@@ -211,19 +211,19 @@
       <Project>{b8773f03-fb3b-4266-88f0-3edc4d0dc976}</Project>
       <Name>COH.Tools.Controls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.GameContent\COH.GameContent.vbproj">
+    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj">
       <Project>{446d94a0-82ba-42cc-b9c2-11435d598ea1}</Project>
       <Name>COH.GameContent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.MessageStores\COH.GameContent.MessageStores.vbproj">
+    <ProjectReference Include="..\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj">
       <Project>{cd3b9490-5b13-47a0-a034-c8deb7a473c5}</Project>
       <Name>COH.GameContent.MessageStores</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.Resources\COH.GameContent.Resources.vbproj">
+    <ProjectReference Include="..\COH.GameContent.Resources\COH.GameContent.Resources.vbproj">
       <Project>{ab288625-aa81-433e-b9f2-e9115ba5eb90}</Project>
       <Name>COH.GameContent.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.Structures\COH.GameContent.Structures.vbproj">
+    <ProjectReference Include="..\COH.GameContent.Structures\COH.GameContent.Structures.vbproj">
       <Project>{8ddc90c2-0164-4361-be3e-25d9b5a32c88}</Project>
       <Name>COH.GameContent.Structures</Name>
     </ProjectReference>

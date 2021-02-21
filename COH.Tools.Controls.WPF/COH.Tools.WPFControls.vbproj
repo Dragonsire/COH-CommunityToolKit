@@ -159,11 +159,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\COH.Tools.GameContent\COH.GameContent.vbproj">
+    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj">
       <Project>{446d94a0-82ba-42cc-b9c2-11435d598ea1}</Project>
       <Name>COH.GameContent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.MessageStores\COH.GameContent.MessageStores.vbproj">
+    <ProjectReference Include="..\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj">
       <Project>{cd3b9490-5b13-47a0-a034-c8deb7a473c5}</Project>
       <Name>COH.GameContent.MessageStores</Name>
     </ProjectReference>
@@ -171,7 +171,7 @@
       <Project>{da8fb134-e99e-4c74-8f9e-a1688e31de9b}</Project>
       <Name>COH.Tools.PiggyBin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\COH.Tools.Resources\COH.GameContent.Resources.vbproj">
+    <ProjectReference Include="..\COH.GameContent.Resources\COH.GameContent.Resources.vbproj">
       <Project>{ab288625-aa81-433e-b9f2-e9115ba5eb90}</Project>
       <Name>COH.GameContent.Resources</Name>
     </ProjectReference>
