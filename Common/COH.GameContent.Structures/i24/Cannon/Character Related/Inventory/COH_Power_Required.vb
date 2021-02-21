@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAmount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSalvage As String
+       Private mAmount As Int32
+       Private mSalvage As String
 #End Region
 
 #Region "Create New Instance"

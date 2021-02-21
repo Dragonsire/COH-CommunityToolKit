@@ -32,8 +32,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExperienceRequired As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefeatPenalty As Int32()
+       Private mExperienceRequired As Int32()
+       Private mDefeatPenalty As Int32()
 #End Region
 
 #Region "Create New Instance"

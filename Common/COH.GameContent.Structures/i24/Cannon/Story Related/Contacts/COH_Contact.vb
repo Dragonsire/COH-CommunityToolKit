@@ -862,121 +862,121 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGender As COH_Enum_Genders
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStatus As COH_Enum_Status
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlliance As COH_Enum_ContactAlliance
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUniverse As COH_Enum_ContactUniverse
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTipType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescriptionString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProfessionString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHelloString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLHelloString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIDontKnowYouString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLIDontKnowYouString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFirstVisitString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLFirstVisitString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoTasksRemainingString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLNoTasksRemainingString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayerBusyString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLPlayerBusyString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mComeBackLaterString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLComeBackLaterString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZeroContactPointsString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLZeroContactPointsString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeverIssuedTaskString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLNeverIssuedTaskString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWrongAllianceString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLWrongAllianceString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWrongUniverseString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLWrongUniverseString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCallTextOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAskAboutTextOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeaveTextOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImageOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissOptionOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissConfirmTextOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissConfirmYesOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissConfirmNoOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissSuccessOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissUnableOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskDeclineOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoCellOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinutesTillExpire As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRelationshipChangeString_ToFriend As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRelationshipChangeString_ToConfidant As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroAcceptString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLIntroSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroduceOneContact As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroduceTwoContacts As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFailSafeLevelString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLFailSafeLevelString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocationString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSubContacts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSubContactsDisplay As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractionRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractionRequiresText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequiredBadge As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeNeededString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLBadgeNeededString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeFirstTick As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeSecondTick As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeThirdTick As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeFourthTick As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapTokenRequired As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequiredToken As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDontHaveToken As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLDontHaveToken As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayerLevelTooLow As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayerLevelTooHigh As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeedLargeTeam As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeedTeamLeader As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeedTeamOnMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadTeamLevel As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceInvite As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceRewardRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceRewardRequiresText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceLevelAdjust As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreTitleString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreYouBoughtXXXString As String
+       Private mCurrentFile As String
+       Private mName As String
+       Private mGender As COH_Enum_Genders
+       Private mStatus As COH_Enum_Status
+       Private mAlliance As COH_Enum_ContactAlliance
+       Private mUniverse As COH_Enum_ContactUniverse
+       Private mTipType As String
+       Private mDescriptionString As String
+       Private mProfessionString As String
+       Private mHelloString As String
+       Private mSOLHelloString As String
+       Private mIDontKnowYouString As String
+       Private mSOLIDontKnowYouString As String
+       Private mFirstVisitString As String
+       Private mSOLFirstVisitString As String
+       Private mNoTasksRemainingString As String
+       Private mSOLNoTasksRemainingString As String
+       Private mPlayerBusyString As String
+       Private mSOLPlayerBusyString As String
+       Private mComeBackLaterString As String
+       Private mSOLComeBackLaterString As String
+       Private mZeroContactPointsString As String
+       Private mSOLZeroContactPointsString As String
+       Private mNeverIssuedTaskString As String
+       Private mSOLNeverIssuedTaskString As String
+       Private mWrongAllianceString As String
+       Private mSOLWrongAllianceString As String
+       Private mWrongUniverseString As String
+       Private mSOLWrongUniverseString As String
+       Private mCallTextOverride As String
+       Private mAskAboutTextOverride As String
+       Private mLeaveTextOverride As String
+       Private mImageOverride As String
+       Private mDismissOptionOverride As String
+       Private mDismissConfirmTextOverride As String
+       Private mDismissConfirmYesOverride As String
+       Private mDismissConfirmNoOverride As String
+       Private mDismissSuccessOverride As String
+       Private mDismissUnableOverride As String
+       Private mTaskDeclineOverride As String
+       Private mNoCellOverride As String
+       Private mMinutesTillExpire As Single
+       Private mRelationshipChangeString_ToFriend As String
+       Private mRelationshipChangeString_ToConfidant As String
+       Private mIntroString As String
+       Private mIntroAcceptString As String
+       Private mIntroSendoffString As String
+       Private mSOLIntroSendoffString As String
+       Private mIntroduceOneContact As String
+       Private mIntroduceTwoContacts As String
+       Private mFailSafeLevelString As String
+       Private mSOLFailSafeLevelString As String
+       Private mLocationString As String
+       Private mSubContacts As String()
+       Private mSubContactsDisplay As String()
+       Private mInteractionRequires As String()
+       Private mInteractionRequiresText As String
+       Private mRequiredBadge As String
+       Private mBadgeNeededString As String
+       Private mSOLBadgeNeededString As String
+       Private mBadgeFirstTick As String
+       Private mBadgeSecondTick As String
+       Private mBadgeThirdTick As String
+       Private mBadgeFourthTick As String
+       Private mMapTokenRequired As String
+       Private mRequiredToken As String
+       Private mDontHaveToken As String
+       Private mSOLDontHaveToken As String
+       Private mPlayerLevelTooLow As String
+       Private mPlayerLevelTooHigh As String
+       Private mNeedLargeTeam As String
+       Private mNeedTeamLeader As String
+       Private mNeedTeamOnMap As String
+       Private mBadTeamLevel As String
+       Private mTaskForceInvite As String
+       Private mTaskForceRewardRequires As String()
+       Private mTaskForceRewardRequiresText As String
+       Private mTaskForceName As String
+       Private mTaskForceLevelAdjust As Int32
+       Private mStoreTitleString As String
+       Private mIcon As String
+       Private mStoreYouBoughtXXXString As String
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskDef As COH_None()
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskInclude As COH_None()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIndex As Int32
+       Private mAutoIndex As Int32
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoryArc As COH_None()
-        ' <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As COH_None()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStature As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStatureSet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextStatureSet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextStatureSet2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContactsAtOnce As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFriendCP As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConfidantCP As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCompleteCP As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeistCP As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCompletePlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFailsafePlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStores As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAccessibleContact As Int32
+        'Private mDialog As COH_None()
+       Private mStature As Int32
+       Private mStatureSet As String
+       Private mNextStatureSet As String
+       Private mNextStatureSet2 As String
+       Private mContactsAtOnce As Int32
+       Private mFriendCP As Int32
+       Private mConfidantCP As Int32
+       Private mCompleteCP As Int32
+       Private mHeistCP As Int32
+       Private mCompletePlayerLevel As Int32
+       Private mFailsafePlayerLevel As Int32
+       Private mMinPlayerLevel As Int32
+       Private mMaxPlayerLevel As Int32
+       Private mStoreCount As Int32
+       Private mStores As String()
+       Private mAccessibleContact As Int32
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKnownVillainGroups As COH_Enum_ParseVillainGroup()
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismissReward As COH_None()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeprecated As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSupergroupContact As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanTrain As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTutorialContact As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeleportOnComplete As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIssueContact As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoHideContact As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskForceContact As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoFriendIntroduction As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinTaskForceSize As Int32
+       Private mDeprecated As Boolean
+       Private mSupergroupContact As Boolean
+       Private mCanTrain As Boolean
+       Private mTutorialContact As Boolean
+       Private mTeleportOnComplete As Boolean
+       Private mAutoIssueContact As Boolean
+       Private mAutoHideContact As Boolean
+       Private mTaskForceContact As Boolean
+       Private mNoFriendIntroduction As Boolean
+       Private mMinTaskForceSize As Int32
         '{ "Flags",						TOK_FLAGARRAY(ContactDef,flags,CONTACT_DEF_FLAGS_SIZE),	ParseContactFlag },
         '
         '{ "}",							TOK_END,			0},

@@ -321,44 +321,44 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModel As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectInActive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectRequires As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectActive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectCooldown As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectCompletion As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectFailure As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSingularDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivateOnObjectiveComplete As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCharRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCharRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModelDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumber As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_ObjectiveFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractDelay As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSimultaneousObjective As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractBeginString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractCompleteString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractInterruptedString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractActionString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractResetString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractWaitingString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractOutcome As COH_Enum_InteractOutcome
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceFieldVillain As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceFieldRespawn As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceFieldObjective As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocationName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocation As COH_Enum_LocationType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionPlacement As COH_Enum_MissionPlace
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSkillCheck As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScriptControlled As Boolean
+       Private mName As String
+       Private mGroupName As String
+       Private mFilename As String
+       Private mModel As String
+       Private mEffectInActive As String
+       Private mEffectRequires As String
+       Private mEffectActive As String
+       Private mEffectCooldown As String
+       Private mEffectCompletion As String
+       Private mEffectFailure As String
+       Private mDescription As String
+       Private mSingularDescription As String
+       Private mDescRequires As String()
+       Private mActivateOnObjectiveComplete As String()
+       Private mCharRequires As String()
+       Private mCharRequiresFailedText As String
+       Private mModelDisplayName As String
+       Private mNumber As Int32
+       Private mReward As COH_StoryReward()
+       Private mLevel As Int32
+       Private mFlags As COH_Enum_ObjectiveFlags
+       Private mInteractDelay As Int32
+       Private mSimultaneousObjective As Boolean
+       Private mInteractBeginString As String
+       Private mInteractCompleteString As String
+       Private mInteractInterruptedString As String
+       Private mInteractActionString As String
+       Private mInteractResetString As String
+       Private mInteractWaitingString As String
+       Private mInteractOutcome As COH_Enum_InteractOutcome
+       Private mForceFieldVillain As String
+       Private mForceFieldRespawn As Int32
+       Private mForceFieldObjective As String
+       Private mLocationName As String
+       Private mLocation As COH_Enum_LocationType
+       Private mMissionPlacement As COH_Enum_MissionPlace
+       Private mSkillCheck As Boolean
+       Private mScriptControlled As Boolean
 #End Region
 
 #Region "Create New Instance"

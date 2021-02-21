@@ -27,19 +27,19 @@
                 mFilename = value
             End Set
         End Property
-        Property ShieldXYZ As Vector3
+        Property ShieldXYZ As COH_Struct_Vector3
             Get
                 Return mShieldXYZ
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShieldXYZ = value
             End Set
         End Property
-        Property ShieldPYR As Vector3
+        Property ShieldPYR As COH_Struct_Vector3
             Get
                 Return mShieldPYR
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShieldPYR = value
             End Set
         End Property
@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShieldXYZ As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShieldPYR As Vector3
+       Private mName As String
+       Private mFilename As String
+       Private mShieldXYZ As COH_Struct_Vector3
+       Private mShieldPYR As COH_Struct_Vector3
 #End Region
 
 #Region "Create New Instance"
@@ -66,8 +66,8 @@
             MyBase.ResetDefaults()
             mName = String.Empty
             mFilename = String.Empty
-            mShieldXYZ = New Vector3  ' No Default Defined
-            mShieldPYR = New Vector3  ' No Default Defined
+            mShieldXYZ = New COH_Struct_Vector3  ' No Default Defined
+            mShieldPYR = New COH_Struct_Vector3  ' No Default Defined
         End Sub
 #End Region
 

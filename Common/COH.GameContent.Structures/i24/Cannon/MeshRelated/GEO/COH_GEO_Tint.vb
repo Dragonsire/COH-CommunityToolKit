@@ -32,8 +32,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor2 As Drawing.Color
+       Private mColor1 As Drawing.Color
+       Private mColor2 As Drawing.Color
 #End Region
 
 #Region "Create New Instance"

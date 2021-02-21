@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFloorMap As COH_Map_SubMap()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItemMap As COH_Map_SubMap()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnMap As COH_Map_SubMap()
+       Private mMap As String
+       Private mFloorMap As COH_Map_SubMap()
+       Private mItemMap As COH_Map_SubMap()
+       Private mSpawnMap As COH_Map_SubMap()
 #End Region
 
 #Region "Create New Instance"

@@ -17,9 +17,9 @@ Namespace Utilities
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPiggInfo As COH_Pigg_Info
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentReader As COH_BinaryReader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValid As Boolean
+       Private mPiggInfo As COH_Pigg_Info
+       Private mCurrentReader As COH_BinaryReader
+       Private mValid As Boolean
 #End Region
 
 #Region "Create New Instance"

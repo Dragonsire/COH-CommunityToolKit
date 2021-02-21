@@ -44,11 +44,11 @@ Namespace Structures
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeader As COH_PIGG_FileHeader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirectories As List(Of COH_PIGG_DirectoryEntry)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStringTable As COH_PIGG_StringTable
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSlotTable As COH_PIGG_SlotTable
+       Private mFileName As String
+       Private mHeader As COH_PIGG_FileHeader
+       Private mDirectories As List(Of COH_PIGG_DirectoryEntry)
+       Private mStringTable As COH_PIGG_StringTable
+       Private mSlotTable As COH_PIGG_SlotTable
 #End Region
 
 #Region "Create New Instance"

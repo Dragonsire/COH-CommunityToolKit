@@ -10,9 +10,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRoot As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFolders As Dictionary(Of COH_ProgramPaths, String)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRelativeFolders As Dictionary(Of COH_ProjectContent, String)
+       Private mRoot As String
+       Private mFolders As Dictionary(Of COH_ProgramPaths, String)
+       Private mRelativeFolders As Dictionary(Of COH_ProjectContent, String)
 #End Region
 
 #Region "Initialize"

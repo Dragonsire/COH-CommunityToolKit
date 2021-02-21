@@ -55,14 +55,14 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLastSearchIndex As Integer = -1
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfileSource As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVersion As UInteger
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumBytes As UInteger
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessages As List(Of String)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVariables As List(Of String)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageDetails As COH_MessageStore_Dictionary
+       Private mLastSearchIndex As Integer = -1
+       Private mfileSource As String
+       Private mName As String
+       Private mVersion As UInteger
+       Private mNumBytes As UInteger
+       Private mMessages As List(Of String)
+       Private mVariables As List(Of String)
+       Private mMessageDetails As COH_MessageStore_Dictionary
 #End Region
 
 #Region "Create New Instance"

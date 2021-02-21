@@ -40,9 +40,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextureName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReplacementName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mComposite As Int32
+       Private mTextureName As String
+       Private mReplacementName As String
+       Private mComposite As Int32
 #End Region
 
 #Region "Create New Instance"

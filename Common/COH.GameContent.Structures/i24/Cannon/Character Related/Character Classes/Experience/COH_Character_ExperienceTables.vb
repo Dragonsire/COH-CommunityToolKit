@@ -24,7 +24,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTables As COH_ExperienceTable
+       Private mTables As COH_ExperienceTable
 #End Region
 
 #Region "Create New Instance"

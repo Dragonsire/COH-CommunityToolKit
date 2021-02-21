@@ -126,18 +126,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSKU As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInventoryType As COH_Enum_InventoryType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProductFlags As COH_Enum_AccountProductFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInventoryCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGrantLimit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExpirationSecs As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGlobal As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuthBit As COH_Enum_Product_AuthBit
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRecipe As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStartDate As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEndDate As Int32
+       Private mName As String
+       Private mSKU As String
+       Private mInventoryType As COH_Enum_InventoryType
+       Private mProductFlags As COH_Enum_AccountProductFlags
+       Private mInventoryCount As Int32
+       Private mGrantLimit As Int32
+       Private mExpirationSecs As Int32
+       Private mGlobal As Boolean
+       Private mAuthBit As COH_Enum_Product_AuthBit
+       Private mRecipe As String
+       Private mStartDate As Int32
+       Private mEndDate As Int32
 #End Region
 
 #Region "Create New Instances"

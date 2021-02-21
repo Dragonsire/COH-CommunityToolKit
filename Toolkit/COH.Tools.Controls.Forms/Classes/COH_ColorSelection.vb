@@ -33,8 +33,8 @@ Public Class COH_ColorSelection
 #End Region
 
 #Region "Private Properties"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelectedColor As Color
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomColor As Color
+   Private mSelectedColor As Color
+   Private mCustomColor As Color
 #End Region
 
 #Region "Usage"

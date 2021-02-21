@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSets As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHideIf As String
+       Private mCategory As String
+       Private mSets As String()
+       Private mHideIf As String
 #End Region
 
 #Region "Create New Instance"

@@ -337,46 +337,46 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_Details As UI.COH_UI_Widget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTabName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDetailIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorkshop As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSalvage As COH_Salvage_Required()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerComponent As COH_Power_Required()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAdditionalComponents As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDetail As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEnhancement As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRecipe As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerReward As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIncarnateReward As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRarity As COH_Enum_RecipeRarity
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevelMin As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevelMax As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreationCost As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSellToVendor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuyFromVendor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumUses As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_RecipeType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxInvAmount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreatesEnhancement As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreatesInspiration As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreatesSalvage As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreatesRecipe As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreatesRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReceiveRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeverReceiveRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuctionRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayCreatesRequiresFail As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayReceiveRequiresFail As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayReceive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAccountItemPurchase As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayClaimConfirmation As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_Recipe
+       Private mSourceFile As String
+       Private mName As String
+       Private mUI_Details As UI.COH_UI_Widget
+       Private mDisplayTabName As String
+       Private mDetailIcon As String
+       Private mWorkshop As String()
+       Private mSalvage As COH_Salvage_Required()
+       Private mPowerComponent As COH_Power_Required()
+       Private mAdditionalComponents As String()
+       Private mDetail As String
+       Private mReward As String()
+       Private mEnhancement As String
+       Private mRecipe As String
+       Private mPowerReward As String
+       Private mIncarnateReward As String
+       Private mRequires As String()
+       Private mRarity As COH_Enum_RecipeRarity
+       Private mLevel As Int32
+       Private mLevelMin As Int32
+       Private mLevelMax As Int32
+       Private mCreationCost As String()
+       Private mSellToVendor As Int32
+       Private mBuyFromVendor As Int32
+       Private mNumUses As Int32
+       Private mType As COH_Enum_RecipeType
+       Private mMaxInvAmount As Int32
+       Private mCreatesEnhancement As Int32
+       Private mCreatesInspiration As Int32
+       Private mCreatesSalvage As Int32
+       Private mCreatesRecipe As Int32
+       Private mCreatesRequires As String()
+       Private mReceiveRequires As String()
+       Private mNeverReceiveRequires As String()
+       Private mAuctionRequires As String()
+       Private mDisplayCreatesRequiresFail As String
+       Private mDisplayReceiveRequiresFail As String
+       Private mDisplayReceive As String
+       Private mDisplayAccountItemPurchase As String
+       Private mDisplayClaimConfirmation As String
+       Private mFlags As COH_Enum_Recipe
 #End Region
 
 #Region "Create New Instance"

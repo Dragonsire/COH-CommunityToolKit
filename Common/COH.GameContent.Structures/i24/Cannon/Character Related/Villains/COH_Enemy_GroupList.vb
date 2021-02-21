@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVG As COH_Enemy_GroupMM()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmbrace As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCantMove As String()
+       Private mVG As COH_Enemy_GroupMM()
+       Private mEmbrace As String()
+       Private mCantMove As String()
 #End Region
 
 #Region "Create New Instance"

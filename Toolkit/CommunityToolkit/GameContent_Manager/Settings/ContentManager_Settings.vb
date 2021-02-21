@@ -58,12 +58,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentProjectRoot As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentProjectFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpdate_Bin_TimeStamps As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOuroborosRepoPath As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGitReleaseFeed As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGitReleaseDate As Date
+       Private mCurrentProjectRoot As String
+       Private mCurrentProjectFileName As String
+       Private mUpdate_Bin_TimeStamps As Boolean
+       Private mOuroborosRepoPath As String
+       Private mGitReleaseFeed As String
+       Private mGitReleaseDate As Date
 #End Region
 
 #Region "Create New Instance"

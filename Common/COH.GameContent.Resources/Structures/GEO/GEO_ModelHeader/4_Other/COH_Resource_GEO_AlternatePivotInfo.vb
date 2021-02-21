@@ -16,7 +16,7 @@
 
 #Region "Private Properties"
         Property PivotCount As Integer
-        Property Pivot As Matrix4() '15
+        Property Pivot As COH_Struct_Matrix4() '15
 #End Region
 
 #Region "Create New Instances"
@@ -43,7 +43,7 @@
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean
             PivotCount = CurrentReader.ReadInt32
-            Pivot = New Matrix4(MAX_ALTPIVOTS - 1) {}
+            Pivot = New COH_Struct_Matrix4(MAX_ALTPIVOTS - 1) {}
             For X = 0 To MAX_ALTPIVOTS - 1 ' Max 15 - 1
                 Pivot(X) = CurrentReader.Read_CrypticS_Matrix4
             Next

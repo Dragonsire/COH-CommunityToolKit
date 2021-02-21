@@ -13,7 +13,7 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStruct_Controller As COH_FileStructureIndex_Controller
+       Private mStruct_Controller As COH_FileStructureIndex_Controller
 #End Region
 
 #Region "MessageStores"

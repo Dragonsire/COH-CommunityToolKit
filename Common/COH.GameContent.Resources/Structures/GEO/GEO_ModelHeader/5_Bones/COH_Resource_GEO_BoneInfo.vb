@@ -14,8 +14,8 @@
         Public Const MAXBONES = 15
         Property NumberBones As Integer 'Only has boneinfo if numbones
         Property BoneIDs() As GEO_Enums_MESH_BoneId() '//Max 15
-        Property Weights As Weight() 'per vert: list of weights
-        Property MaterialIndexs As MaterialIndex()  'per vert: list of mat associated with each weight
+        Property Weights As COH_Struct_Weight() 'per vert: list of weights
+        Property MaterialIndexs As COH_Struct_MaterialIndex()  'per vert: list of mat associated with each weight
 #End Region
 
 #Region "Create New Instances"
@@ -57,11 +57,11 @@
                 For X = 0 To MAXBONES - 1
                     .BoneIDs(X) = BoneIDs(X)
                 Next
-                .Weights = New Weight(Weights.Count - 1) {}
+                .Weights = New COH_Struct_Weight(Weights.Count - 1) {}
                 For X = 0 To Weights.Count - 1
                     .Weights(X) = Weights(X) '.clone  
                 Next
-                .MaterialIndexs = New MaterialIndex(MaterialIndexs.Count - 1) {}
+                .MaterialIndexs = New COH_Struct_MaterialIndex(MaterialIndexs.Count - 1) {}
                 For X = 0 To MaterialIndexs.Count - 1
                     .MaterialIndexs(X) = MaterialIndexs(X) '.clone  
                 Next

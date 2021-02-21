@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnitude As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPercent As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpread As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor As [Shared].Drawing.COH_Color_RGBA
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOffset As COH_TexWord_Layer_Offset
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlend As Int32
+       Private mType As Int32
+       Private mMagnitude As Int32
+       Private mPercent As Single
+       Private mSpread As Single
+       Private mColor As [Shared].Drawing.COH_Color_RGBA
+       Private mOffset As COH_TexWord_Layer_Offset
+       Private mBlend As Int32
 #End Region
 
 #Region "Create New Instance"

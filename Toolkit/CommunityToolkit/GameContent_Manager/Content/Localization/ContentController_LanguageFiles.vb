@@ -16,7 +16,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageStore_Controller As COH_LocalizeContent_Controller
+       Private mMessageStore_Controller As COH_LocalizeContent_Controller
 #End Region
 
 #Region "MessageStores"

@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGlobal As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHead As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChest As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoulder As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWaist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHip As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeg As Single
+       Private mGlobal As Single
+       Private mBone As Single
+       Private mHead As Single
+       Private mChest As Single
+       Private mShoulder As Single
+       Private mWaist As Single
+       Private mHip As Single
+       Private mLeg As Single
 #End Region
 
 #Region "Create New Instance"

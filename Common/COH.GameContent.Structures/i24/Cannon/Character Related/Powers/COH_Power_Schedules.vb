@@ -24,7 +24,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowers As COH_Power_Schedule
+       Private mPowers As COH_Power_Schedule
 #End Region
 
 #Region "Create New Instance"

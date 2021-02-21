@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntryFee As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerTokenCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerColorCost As Int32
+       Private mMinLevel As Int32
+       Private mMaxLevel As Int32
+       Private mEntryFee As Int32
+       Private mPowerTokenCost As Int32
+       Private mPowerColorCost As Int32
 #End Region
 
 #Region "Create New Instance"

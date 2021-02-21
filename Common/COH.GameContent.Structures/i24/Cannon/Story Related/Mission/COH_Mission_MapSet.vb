@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapSet As COH_Enum_MapSet
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandomDoorType As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTime As COH_Mission_MapTime()
+       Private mMapSet As COH_Enum_MapSet
+       Private mDisplayName As String
+       Private mRandomDoorType As String()
+       Private mTime As COH_Mission_MapTime()
 #End Region
 
 #Region "Create New Instance"

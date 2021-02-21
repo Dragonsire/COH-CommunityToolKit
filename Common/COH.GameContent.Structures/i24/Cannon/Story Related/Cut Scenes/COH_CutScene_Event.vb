@@ -177,26 +177,26 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActor As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAction As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTarget As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPosition As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMoveTo As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDepthOfField As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMoveToDepthOfField As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOver As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMusic As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoundFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeftText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeftWatermark As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeftObjective As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeftReward As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRightText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRightWatermark As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRightObjective As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRightReward As String
+       Private mTime As Single
+       Private mActor As String
+       Private mDialog As String
+       Private mAction As String
+       Private mTarget As String
+       Private mPosition As String
+       Private mMoveTo As String
+       Private mDepthOfField As Single
+       Private mMoveToDepthOfField As Single
+       Private mOver As Int32
+       Private mMusic As String
+       Private mSoundFx As String
+       Private mLeftText As String
+       Private mLeftWatermark As String
+       Private mLeftObjective As String
+       Private mLeftReward As String
+       Private mRightText As String
+       Private mRightWatermark As String
+       Private mRightObjective As String
+       Private mRightReward As String
 #End Region
 
 #Region "Create New Instance"

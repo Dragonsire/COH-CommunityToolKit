@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As COH_StoryReward_ItemChance ' No Default Defined()
+       Private mRequires As String()
+       Private mChance As COH_StoryReward_ItemChance ' No Default Defined()
 #End Region
 
 #Region "Create New Instance"

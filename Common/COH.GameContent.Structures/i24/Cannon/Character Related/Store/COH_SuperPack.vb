@@ -73,14 +73,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCardBack As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSalvage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCards As COH_Store_SuperPackCard()
+       Private mName As String
+       Private mDisplayName As String
+       Private mIcon As String
+       Private mCardBack As String
+       Private mSalvage As String
+       Private mCards As COH_Store_SuperPackCard()
         '//Localization
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
+       Private mDisplayNameKey As String
 #End Region
 
 #Region "Create New Instance"

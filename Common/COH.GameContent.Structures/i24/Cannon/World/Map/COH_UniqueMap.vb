@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMap As COH_UniqueMap_File()
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mMap As COH_UniqueMap_File()
 #End Region
 
 #Region "Create New Instance"

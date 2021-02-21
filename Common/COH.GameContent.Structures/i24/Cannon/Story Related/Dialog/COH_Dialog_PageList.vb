@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mList As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFallback As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_DialogPage_ListFlags
+       Private mName As String
+       Private mList As String()
+       Private mFallback As String
+       Private mRequires As String()
+       Private mFlags As COH_Enum_DialogPage_ListFlags
 #End Region
 
 #Region "Create New Instance"

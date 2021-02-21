@@ -13,7 +13,7 @@
 #Region "Private Properties"
         Property PolyCell_Pointer As UInt32
         Property PolyCell As COH_Resource_GenericMesh_PolyCell
-        Property Position As Vector3
+        Property Position As COH_Struct_Vector3
         Property GridSize As Single
         Property Inv_Size As Single
         Property Tag As Integer

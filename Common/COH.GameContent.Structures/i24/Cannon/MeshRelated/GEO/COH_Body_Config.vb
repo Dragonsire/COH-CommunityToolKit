@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodyType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuild As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScales As COH_Body_Scales
+       Private mDisplayName As String
+       Private mBodyType As String
+       Private mBuild As String
+       Private mScales As COH_Body_Scales
 #End Region
 
 #Region "Create New Instance"

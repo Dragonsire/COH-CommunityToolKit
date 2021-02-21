@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefault As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttrib As COH_Enum_Attrib_CharacterAll()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReturn As COH_Power_DiminishingReturns()
+       Private mDefault As Int32
+       Private mAttrib As COH_Enum_Attrib_CharacterAll()
+       Private mReturn As COH_Power_DiminishingReturns()
 #End Region
 
 #Region "Create New Instance"

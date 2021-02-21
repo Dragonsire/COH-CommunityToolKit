@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBossChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLieutenantChance As Single
+       Private mTeamSize As Int32
+       Private mBossChance As Single
+       Private mLieutenantChance As Single
 #End Region
 
 #Region "Create New Instance"

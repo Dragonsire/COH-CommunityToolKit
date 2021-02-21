@@ -56,11 +56,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRentPeriodSeconds As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRentRange As COH_Base_UpkeepRange()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRentDueDateResetPeriod As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLatePeriod As COH_Base_UpkeepPeriod()
+       Private mfilename As String
+       Private mRentPeriodSeconds As Int32
+       Private mRentRange As COH_Base_UpkeepRange()
+       Private mRentDueDateResetPeriod As Int32
+       Private mLatePeriod As COH_Base_UpkeepPeriod()
 #End Region
 
 #Region "Create New Instance"

@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mroomCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfloorCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mobjectiveRoomCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mplaceCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mplaces As COH_Map_PlaceStats()
+       Private mName As String
+       Private mroomCount As Int32
+       Private mfloorCount As Int32
+       Private mobjectiveRoomCount As Int32
+       Private mplaceCount As Int32
+       Private mplaces As COH_Map_PlaceStats()
 #End Region
 
 #Region "Create New Instance"

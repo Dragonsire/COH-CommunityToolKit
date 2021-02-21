@@ -4,22 +4,22 @@ Namespace Structures.GEO
     Public NotInheritable Class COH_Resource_GEO_PackData_UnPack
 
 #Region "Properties"
-        Property TriangleIndices As HelperClasses.TriangleIndice()
-        Property Vertexs As Vector3()
-        Property Normals As Vector3()
+        Property TriangleIndices As HelperClasses.COH_Struct_TriangleIndice()
+        Property Vertexs As COH_Struct_Vector3()
+        Property Normals As COH_Struct_Vector3()
         '//NOT SUPPORTED YET
-        Property STS As Vector2()
-        Property STS3 As Vector2()
-        Property Weights As Weight()
-        Property BoneMatIndex As MaterialIndex()
+        Property STS As COH_Struct_Vector2()
+        Property STS3 As COH_Struct_Vector2()
+        Property Weights As COH_Struct_Weight()
+        Property BoneMatIndex As COH_Struct_MaterialIndex()
         Property Reductions As COH_Resource_GenericMesh_Reduction()
-        Property ReflectionQuads As Vector3()
+        Property ReflectionQuads As COH_Struct_Vector3()
         Property Valid As Boolean = True
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVersion As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlockStarts As Integer
+       Private mVersion As Integer
+       Private mBlockStarts As Integer
 #End Region
 
 #Region "Create New Instances"
@@ -93,11 +93,11 @@ Namespace Structures.GEO
 
             Dim WeightBytes = Retrieve_PackedBuffer(CurrentReader, Header.Models(ModelIndex).PackedData.Weights)
             If WeightBytes Is Nothing OrElse WeightBytes.Length = 0 Then
-                Weights = New Weight() {}
+                Weights = New COH_Struct_Weight() {}
             Else
-                Weights = New Weight(Vertexs.Count - 1) {}
+                Weights = New COH_Struct_Weight(Vertexs.Count - 1) {}
                 For i = 0 To Vertexs.Count - 1
-                    Weights(i) = New Weight
+                    Weights(i) = New COH_Struct_Weight
                     Weights(i).W1 = WeightBytes(i) * 1.0F / 255.0F
                     Weights(i).W2 = 1.0F - Weights(i).W1
                 Next i
@@ -105,11 +105,11 @@ Namespace Structures.GEO
 
             Dim MaterialIndexBytes = Retrieve_PackedBuffer(CurrentReader, Header.Models(ModelIndex).PackedData.matidxs)
             If MaterialIndexBytes Is Nothing OrElse MaterialIndexBytes.Length = 0 Then
-                BoneMatIndex = New MaterialIndex() {}
+                BoneMatIndex = New COH_Struct_MaterialIndex() {}
             Else
-                BoneMatIndex = New MaterialIndex(Vertexs.Count - 1) {}
+                BoneMatIndex = New COH_Struct_MaterialIndex(Vertexs.Count - 1) {}
                 For i = 0 To Vertexs.Count - 1
-                    BoneMatIndex(i) = New MaterialIndex
+                    BoneMatIndex(i) = New COH_Struct_MaterialIndex
                     BoneMatIndex(i).Pos1 = MaterialIndexBytes(i * 2 + 0)
                     BoneMatIndex(i).Pos2 = MaterialIndexBytes(i * 2 + 1)
                 Next i
@@ -124,15 +124,15 @@ Namespace Structures.GEO
             End If
             Return scale
         End Function
-        Private Function GEO_Unpack_Floats_Vector2(ByRef Buffer As Byte(), NumberItems As Integer) As Vector2()
+        Private Function GEO_Unpack_Floats_Vector2(ByRef Buffer As Byte(), NumberItems As Integer) As COH_Struct_Vector2()
             Dim Stride As Integer = 2
-            If Buffer.Count = 0 Then Return New Vector2() {}
+            If Buffer.Count = 0 Then Return New COH_Struct_Vector2() {}
             Dim BITS As Byte() = Nothing, Values As Byte() = Nothing, ScaleByte As Byte, Scale As Single = 1.0F
             Split_DeltaBuffers(Buffer, NumberItems, Stride, BITS, ScaleByte, Values)
             Scale = Determine_Scale(ScaleByte)
 
             Dim CurrentByteIndex As Integer = 0
-            Dim Results As Vector2() = New Vector2(NumberItems - 1) {}
+            Dim Results As COH_Struct_Vector2() = New COH_Struct_Vector2(NumberItems - 1) {}
             Dim CodeV As List(Of Integer) = Retrieve_DeltaCodes(BITS)
             Dim CodeIndex As Integer = 0, DeltaByte As Integer = 0
             Dim CurrentItem() As Single = New Single(Stride - 1) {}
@@ -159,19 +159,19 @@ Namespace Structures.GEO
                     If CODE <> 3 Then DeltaFloat = DeltaByte * Scale
                     CurrentItem(V) += DeltaFloat
                 Next
-                Results(x) = New Vector2(CurrentItem)
+                Results(x) = New COH_Struct_Vector2(CurrentItem)
             Next
             Return Results
         End Function
-        Private Function GEO_Unpack_Floats_Vector3(ByRef Buffer As Byte(), NumberItems As Integer) As Vector3()
+        Private Function GEO_Unpack_Floats_Vector3(ByRef Buffer As Byte(), NumberItems As Integer) As COH_Struct_Vector3()
             Dim Stride As Integer = 3
-            If Buffer.Count = 0 Then Return New Vector3() {}
+            If Buffer.Count = 0 Then Return New COH_Struct_Vector3() {}
             Dim BITS As Byte() = Nothing, Values As Byte() = Nothing, ScaleByte As Byte, Scale As Single = 1.0F
             Split_DeltaBuffers(Buffer, NumberItems, Stride, BITS, ScaleByte, Values)
             Scale = Determine_Scale(ScaleByte)
 
             Dim CurrentByteIndex As Integer = 0
-            Dim Results As Vector3() = New Vector3(NumberItems - 1) {}
+            Dim Results As COH_Struct_Vector3() = New COH_Struct_Vector3(NumberItems - 1) {}
             Dim CodeV As List(Of Integer) = Retrieve_DeltaCodes(BITS)
             Dim CodeIndex As Integer = 0, DeltaByte As Integer = 0
             Dim CurrentItem() As Single = New Single(Stride - 1) {}
@@ -198,18 +198,18 @@ Namespace Structures.GEO
                     If CODE <> 3 Then DeltaFloat = DeltaByte * Scale
                     CurrentItem(V) += DeltaFloat
                 Next
-                Results(x) = New Vector3(CurrentItem)
+                Results(x) = New COH_Struct_Vector3(CurrentItem)
             Next
             Return Results
         End Function
-        Private Function GEO_Unpack_TriangleIndices(ByRef Buffer As Byte(), NumberItems As Integer) As TriangleIndice()
-            If (Buffer Is Nothing) OrElse Buffer.Count = 0 Then Return New TriangleIndice() {}
+        Private Function GEO_Unpack_TriangleIndices(ByRef Buffer As Byte(), NumberItems As Integer) As COH_Struct_TriangleIndice()
+            If (Buffer Is Nothing) OrElse Buffer.Count = 0 Then Return New COH_Struct_TriangleIndice() {}
             Dim BITS As Byte() = Nothing, Values As Byte() = Nothing, ScaleByte As Byte, Scale As Single = 1.0F
             Split_DeltaBuffers(Buffer, NumberItems, 3, BITS, ScaleByte, Values)
             Scale = Determine_Scale(ScaleByte)
 
             Dim CurrentByteIndex As Integer = 0
-            Dim Results As TriangleIndice() = New TriangleIndice(NumberItems - 1) {} 'CurrentItem
+            Dim Results As COH_Struct_TriangleIndice() = New COH_Struct_TriangleIndice(NumberItems - 1) {} 'CurrentItem
             Dim CodeV As List(Of Integer) = Retrieve_DeltaCodes(BITS)
             Dim CodeIndex As Integer = 0, DeltaByte As Integer = 0
             Dim CurrentItem() As Integer = New Integer(3 - 1) {}
@@ -233,18 +233,18 @@ Namespace Structures.GEO
                     End Select
                     CurrentItem(V) += CInt(DeltaByte + 1)
                 Next
-                Results(x) = New TriangleIndice(CurrentItem)
+                Results(x) = New COH_Struct_TriangleIndice(CurrentItem)
             Next
             Return Results
         End Function
 #End Region
 
 #Region "Testing"
-        Private Function Convert_ToVector2(ByRef Buffer As Byte()) As Vector2()
-            Dim Result As Vector2() = New Vector2((Buffer.Length / 2) - 1) {}
+        Private Function Convert_ToVector2(ByRef Buffer As Byte()) As COH_Struct_Vector2()
+            Dim Result As COH_Struct_Vector2() = New COH_Struct_Vector2((Buffer.Length / 2) - 1) {}
             Dim VIndex As Integer = 0
             For X = 0 To Buffer.Count - 1 Step 2
-                Result(VIndex) = New Vector2(Convert.ToSingle(Buffer(X)), Convert.ToSingle(Buffer(X + 1)))
+                Result(VIndex) = New COH_Struct_Vector2(Convert.ToSingle(Buffer(X)), Convert.ToSingle(Buffer(X + 1)))
             Next
             Return Result
         End Function

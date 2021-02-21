@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInSet As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOutSet As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowAttuned As Int32
+       Private mName As String
+       Private mInSet As Int32
+       Private mOutSet As Int32
+       Private mAllowAttuned As Int32
 #End Region
 
 #Region "Create New Instance"

@@ -2,7 +2,7 @@
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mCurrentPiggReader As Utilities.COH_PiggTool
+       Private WithEvents mCurrentPiggReader As Utilities.COH_PiggTool
 #End Region
 
 #Region "Import & Rebuild Sources From Defs"

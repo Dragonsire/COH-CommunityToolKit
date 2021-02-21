@@ -68,13 +68,13 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHelpMessage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageID As String ' The message ID associated with the message.  For debugging convenience.
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageIndex As Integer 'The message index into a string table,  to be printed as double-byte strings.
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHelpIndex As Integer 'The help index into a string table,  to be printed as double-byte strings.
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVariableDefNameIndices As List(Of COH_MessageStore_EntryVariable)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomContent As Boolean
+       Private mMessage As String
+       Private mHelpMessage As String
+       Private mMessageID As String ' The message ID associated with the message.  For debugging convenience.
+       Private mMessageIndex As Integer 'The message index into a string table,  to be printed as double-byte strings.
+       Private mHelpIndex As Integer 'The help index into a string table,  to be printed as double-byte strings.
+       Private mVariableDefNameIndices As List(Of COH_MessageStore_EntryVariable)
+       Private mCustomContent As Boolean
 #End Region
 
 #Region "Create New Instance"

@@ -16,14 +16,14 @@
         Property Triangles As Int32
         '//Per Vertex Data
         Property VertexID As Int32
-        Property Vertices As Vector3
-        Property Norms As Vector3
-        Property Stencils As Vector2
-        Property Stencil2s As Vector2
-        Property Stencil3s As Vector2 '//LightMap
-        Property Tangents As Vector4
-        Property Weights As Weight
-        Property MaterialIndexs As MaterialIndex
+        Property Vertices As COH_Struct_Vector3
+        Property Norms As COH_Struct_Vector3
+        Property Stencils As COH_Struct_Vector2
+        Property Stencil2s As COH_Struct_Vector2
+        Property Stencil3s As COH_Struct_Vector2 '//LightMap
+        Property Tangents As COH_Struct_Vector4
+        Property Weights As COH_Struct_Weight
+        Property MaterialIndexs As COH_Struct_MaterialIndex
         '//Stencil Shadows
         Property Shadow As COH_Resource_GEO_ShadowInfo
         Property Bump_Initial As UInt32
@@ -36,7 +36,7 @@
         Property VertexCount As Integer
         Property VertexBuffer As Integer
         Property TextureCount As Integer
-        Property TextureID As TextureID
+        Property TextureID As COH_Struct_TextureID
         Property Flags As UInt32
         Property FrameID As Integer
 #End Region
@@ -75,8 +75,8 @@
             Stencil2s = CurrentReader.Read_CrypticS_Vector2
             Stencil3s = CurrentReader.Read_CrypticS_Vector2 '//LightMap
             Tangents = CurrentReader.Read_CrypticS_Vector4
-            Weights = New Weight(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
-            MaterialIndexs = New MaterialIndex(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
+            Weights = New COH_Struct_Weight(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
+            MaterialIndexs = New COH_Struct_MaterialIndex(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
             '//Stencil Shadows
             Shadow = New COH_Resource_GEO_ShadowInfo(0, Nothing) '//////////////
             Bump_Initial = CurrentReader.ReadUInt32
@@ -89,7 +89,7 @@
             VertexCount = CurrentReader.ReadInt32
             VertexBuffer = CurrentReader.ReadInt32
             TextureCount = CurrentReader.ReadInt32
-            TextureID = New TextureID(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
+            TextureID = New COH_Struct_TextureID(CurrentReader.ReadSingle, CurrentReader.ReadSingle)
             Flags = CurrentReader.ReadUInt32
             FrameID = CurrentReader.ReadInt32
             Return True

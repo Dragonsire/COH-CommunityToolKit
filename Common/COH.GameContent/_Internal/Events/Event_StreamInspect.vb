@@ -23,9 +23,9 @@ Namespace Internal.Events
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrompt As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentReader As COH_BinaryReader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStart As Long
+       Private mPrompt As String
+       Private mCurrentReader As COH_BinaryReader
+       Private mStart As Long
 #End Region
 
 #Region "Initialize"

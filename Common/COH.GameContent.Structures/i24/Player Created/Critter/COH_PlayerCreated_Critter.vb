@@ -163,24 +163,24 @@ Namespace PlayerCreated.Critter
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReferenceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDifficulty As COH_Enum_PlayerCreated_CritterDiff
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelectedPowers As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDifficulty2 As COH_Enum_PlayerCreated_CritterDiff
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelectedPowers2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTravelPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRank As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDesignation As COH_Enum_PlayerCreated_CritterRank
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRanged As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostume As COH_Costume()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDiffCostume As COH_Costume_Diff()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeStamp As Int32
+       Private mReferenceFile As String
+       Private mName As String
+       Private mDescription As String
+       Private mVillainGroup As String
+       Private mPrimaryPower As String
+       Private mDifficulty As COH_Enum_PlayerCreated_CritterDiff
+       Private mSelectedPowers As Int32
+       Private mSecondaryPower As String
+       Private mDifficulty2 As COH_Enum_PlayerCreated_CritterDiff
+       Private mSelectedPowers2 As Int32
+       Private mTravelPower As String
+       Private mRank As String
+       Private mDesignation As COH_Enum_PlayerCreated_CritterRank
+       Private mRanged As Int32
+       Private mCostume As COH_Costume()
+       Private mDiffCostume As COH_Costume_Diff()
+       Private mSourceFile As String
+       Private mTimeStamp As Int32
 #End Region
 
 #Region "Create New Instance"

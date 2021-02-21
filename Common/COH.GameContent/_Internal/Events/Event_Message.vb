@@ -23,7 +23,7 @@
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage As String
+       Private mMessage As String
 #End Region
 
 #Region "Initialize"

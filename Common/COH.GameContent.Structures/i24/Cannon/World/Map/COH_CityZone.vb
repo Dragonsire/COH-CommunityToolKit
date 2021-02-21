@@ -27,19 +27,19 @@
                 mIcon = value
             End Set
         End Property
-        Property Location As Vector2
+        Property Location As COH_Struct_Vector2
             Get
                 Return mLocation
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mLocation = value
             End Set
         End Property
-        Property TextLocation As Vector2
+        Property TextLocation As COH_Struct_Vector2
             Get
                 Return mTextLocation
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mTextLocation = value
             End Set
         End Property
@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocation As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextLocation As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHide As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCity As COH_Enum_City
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamArea As COH_Enum_TeamArea
+       Private mName As String
+       Private mIcon As String
+       Private mLocation As COH_Struct_Vector2
+       Private mTextLocation As COH_Struct_Vector2
+       Private mHide As Int32
+       Private mCity As COH_Enum_City
+       Private mTeamArea As COH_Enum_TeamArea
 #End Region
 
 #Region "Create New Instance"
@@ -102,8 +102,8 @@
             MyBase.ResetDefaults()
             mName = String.Empty
             mIcon = String.Empty
-            mLocation = New Vector2()
-            mTextLocation = New Vector2()
+            mLocation = New COH_Struct_Vector2()
+            mTextLocation = New COH_Struct_Vector2()
         End Sub
 #End Region
 

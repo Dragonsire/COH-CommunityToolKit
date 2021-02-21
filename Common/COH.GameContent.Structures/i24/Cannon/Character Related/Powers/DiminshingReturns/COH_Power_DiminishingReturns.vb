@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStart As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHandicap As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBasis As Single
+       Private mStart As Single
+       Private mHandicap As Single
+       Private mBasis As Single
 #End Region
 
 #Region "Create New Instance"

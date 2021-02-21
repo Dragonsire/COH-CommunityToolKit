@@ -50,10 +50,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerCategory As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerset As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTag As String()
+       Private mPowerCategory As String()
+       Private mPowerset As String()
+       Private mPower As String()
+       Private mTag As String()
 #End Region
 
 #Region "Create New Instance"

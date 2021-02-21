@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_Details As UI.COH_UI_Widget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOrigin As COH_Enum_Origin
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRarity As COH_Enum_SalvageRarity
+       Private mName As String
+       Private mUI_Details As UI.COH_UI_Widget
+       Private mOrigin As COH_Enum_Origin
+       Private mRarity As COH_Enum_SalvageRarity
 #End Region
 
 #Region "Create New Instance"

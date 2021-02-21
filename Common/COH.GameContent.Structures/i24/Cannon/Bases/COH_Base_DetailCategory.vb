@@ -51,10 +51,10 @@ Namespace Bases
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_NameANDHelp As COH_UI_NameANDHelp
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEnergyPriority As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mControlPriority As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDetailPointer As Int32
+       Private mUI_NameANDHelp As COH_UI_NameANDHelp
+       Private mEnergyPriority As Int32
+       Private mControlPriority As Int32
+       Private mDetailPointer As Int32
 #End Region
 
 #Region "Create New Instance"

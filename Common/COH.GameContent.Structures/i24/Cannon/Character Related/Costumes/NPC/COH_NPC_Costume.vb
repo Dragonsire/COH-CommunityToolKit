@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOriginalNPCName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSkinColor As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeParts As COH_CostumeNPC_Part()
+       Private mOriginalNPCName As String
+       Private mSkinColor As Drawing.Color
+       Private mCostumeParts As COH_CostumeNPC_Part()
 #End Region
 
 #Region "Create New Instance"

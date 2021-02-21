@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDayJob As COH_DayJob_Detail()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinTime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPatrolXPMultiplier As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPatrolScalar As Single
+       Private mDayJob As COH_DayJob_Detail()
+       Private mMinTime As Int32
+       Private mPatrolXPMultiplier As Single
+       Private mPatrolScalar As Single
 #End Region
 
 #Region "Create New Instance"

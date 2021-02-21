@@ -123,19 +123,19 @@ Namespace Animation.FX
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOn As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDayStart As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDayEnd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoMany As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRepeat As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRepeatJitter As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTriggerBits As COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEvent As COH_FX_Event()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandom As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceThreshold As Single
+       Private mOn As String
+       Private mTime As Single
+       Private mDayStart As Single
+       Private mDayEnd As Single
+       Private mDist As Single
+       Private mChance As Single
+       Private mDoMany As Byte
+       Private mRepeat As Byte
+       Private mRepeatJitter As Byte
+       Private mTriggerBits As COH_Generic_StringTableArray
+       Private mEvent As COH_FX_Event()
+       Private mRandom As Byte
+       Private mForceThreshold As Single
 #End Region
 
 #Region "Create New Instance"

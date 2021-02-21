@@ -91,19 +91,19 @@
                 mZoomBits = value
             End Set
         End Property
-        Property DefaultView As Vector3
+        Property DefaultView As COH_Struct_Vector3
             Get
                 Return mDefaultView
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mDefaultView = value
             End Set
         End Property
-        Property ZoomView As Vector3
+        Property ZoomView As COH_Struct_Vector3
             Get
                 Return mZoomView
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mZoomView = value
             End Set
         End Property
@@ -201,29 +201,29 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodyPart As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorLink As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mBodyPart As String
+       Private mColorLink As String
+       Private mKeys As String()
+       Private mFlags As String()
+       Private mProduct As String
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInternalProducts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimBits As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZoomBits As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultView As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZoomView As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFourColor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoDisplay As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInfo As COH_CostumeTxtSet()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMask As COH_CostumeMaskSet()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMasks As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaskNames As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegacy As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFace As COH_CostumeFaceScale()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOH As Int32
+       Private mType As Int32
+       Private mAnimBits As String()
+       Private mZoomBits As String()
+       Private mDefaultView As COH_Struct_Vector3
+       Private mZoomView As COH_Struct_Vector3
+       Private mFourColor As Int32
+       Private mNoDisplay As Int32
+       Private mInfo As COH_CostumeTxtSet()
+       Private mMask As COH_CostumeMaskSet()
+       Private mMasks As String()
+       Private mMaskNames As String()
+       Private mLegacy As Int32
+       Private mFace As COH_CostumeFaceScale()
+       Private mCOV As Int32
+       Private mCOH As Int32
 #End Region
 
 #Region "Create New Instance"
@@ -246,8 +246,8 @@
             mType = 0
             mAnimBits = New String() {}
             mZoomBits = New String() {}
-            mDefaultView = New Vector3  ' No Default Defined
-            mZoomView = New Vector3  ' No Default Defined
+            mDefaultView = New COH_Struct_Vector3  ' No Default Defined
+            mZoomView = New COH_Struct_Vector3  ' No Default Defined
             mFourColor = 0
             mNoDisplay = 0
             mInfo = New COH_CostumeTxtSet() {}

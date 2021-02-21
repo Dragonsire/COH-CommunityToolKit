@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOrigin As COH_CostumeOrigin()
+       Private mName As String
+       Private mOrigin As COH_CostumeOrigin()
 #End Region
 
 #Region "Create New Instance"

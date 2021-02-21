@@ -56,11 +56,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolume As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRamp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclude As COH_Enum_SoundFlags
+       Private mName As String
+       Private mVolume As Single
+       Private mRadius As Single
+       Private mRamp As Single
+       Private mExclude As COH_Enum_SoundFlags
 #End Region
 
 #Region "Create New Instance"

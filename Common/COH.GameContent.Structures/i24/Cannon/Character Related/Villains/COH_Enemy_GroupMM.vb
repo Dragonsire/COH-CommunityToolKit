@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinGroupLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxGroupLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclude As String
+       Private mName As String
+       Private mMinLevel As Int32
+       Private mMaxLevel As Int32
+       Private mMinGroupLevel As Int32
+       Private mMaxGroupLevel As Int32
+       Private mExclude As String
 #End Region
 
 #Region "Create New Instance"

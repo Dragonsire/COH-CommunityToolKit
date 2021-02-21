@@ -6,7 +6,7 @@ Namespace UserControls
 
 #Region "Private Properties"
         Private mFileSource As String
-        Private mMessageTool As Utilities.COH_BinTool_MessageStore
+        Private mMessageTool As COH_BinTool_MessageStore
 #End Region
 
 #Region "Prepare Usage"

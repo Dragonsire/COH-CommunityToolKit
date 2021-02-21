@@ -89,15 +89,15 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextMove_Count As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCycleMove_Count As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextMoves As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw_CycleMoves As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw_Count As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw_Requires_Bits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw_Member_Bits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw_interrupt_Bits As Int32()
+       Private mIndex As Int32
+       Private mNextMove_Count As UInt32
+       Private mCycleMove_Count As UInt32
+       Private mNextMoves As Int32()
+       Private mRaw_CycleMoves As Int32()
+       Private mRaw_Count As Int32
+       Private mRaw_Requires_Bits As Int32()
+       Private mRaw_Member_Bits As Int32()
+       Private mRaw_interrupt_Bits As Int32()
 #End Region
 
 #Region "Create New Instance"

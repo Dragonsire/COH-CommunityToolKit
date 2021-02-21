@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWeapon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStanceType As COH_Enum_WeaponStance
+       Private mWeapon As String
+       Private mStanceType As COH_Enum_WeaponStance
 #End Region
 
 #Region "Create New Instance"

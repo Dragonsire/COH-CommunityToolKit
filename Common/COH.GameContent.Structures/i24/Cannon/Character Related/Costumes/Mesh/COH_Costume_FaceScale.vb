@@ -19,59 +19,59 @@
                 mDisplayName = value
             End Set
         End Property
-        Property Head As Vector3
+        Property Head As COH_Struct_Vector3
             Get
                 Return mHead
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mHead = value
             End Set
         End Property
-        Property Brow As Vector3
+        Property Brow As COH_Struct_Vector3
             Get
                 Return mBrow
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mBrow = value
             End Set
         End Property
-        Property Cheek As Vector3
+        Property Cheek As COH_Struct_Vector3
             Get
                 Return mCheek
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCheek = value
             End Set
         End Property
-        Property Chin As Vector3
+        Property Chin As COH_Struct_Vector3
             Get
                 Return mChin
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mChin = value
             End Set
         End Property
-        Property Cranium As Vector3
+        Property Cranium As COH_Struct_Vector3
             Get
                 Return mCranium
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCranium = value
             End Set
         End Property
-        Property Jaw As Vector3
+        Property Jaw As COH_Struct_Vector3
             Get
                 Return mJaw
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mJaw = value
             End Set
         End Property
-        Property Nose As Vector3
+        Property Nose As COH_Struct_Vector3
             Get
                 Return mNose
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mNose = value
             End Set
         End Property
@@ -105,17 +105,17 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHead As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBrow As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCheek As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChin As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCranium As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mJaw As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNose As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOH As Int32
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mHead As COH_Struct_Vector3
+       Private mBrow As COH_Struct_Vector3
+       Private mCheek As COH_Struct_Vector3
+       Private mChin As COH_Struct_Vector3
+       Private mCranium As COH_Struct_Vector3
+       Private mJaw As COH_Struct_Vector3
+       Private mNose As COH_Struct_Vector3
+       Private mCOV As Int32
+       Private mCOH As Int32
 #End Region
 
 #Region "Create New Instance"
@@ -129,13 +129,13 @@
             MyBase.ResetDefaults()
             mDisplayName = String.Empty
             mDisplayNameKey = String.Empty
-            mHead = New Vector3  ' No Default Defined
-            mBrow = New Vector3 ' No Default Defined
-            mCheek = New Vector3 ' No Default Defined
-            mChin = New Vector3 ' No Default Defined
-            mCranium = New Vector3 ' No Default Defined
-            mJaw = New Vector3 ' No Default Defined
-            mNose = New Vector3 ' No Default Defined
+            mHead = New COH_Struct_Vector3  ' No Default Defined
+            mBrow = New COH_Struct_Vector3 ' No Default Defined
+            mCheek = New COH_Struct_Vector3 ' No Default Defined
+            mChin = New COH_Struct_Vector3 ' No Default Defined
+            mCranium = New COH_Struct_Vector3 ' No Default Defined
+            mJaw = New COH_Struct_Vector3 ' No Default Defined
+            mNose = New COH_Struct_Vector3 ' No Default Defined
             mCOV = 0
             mCOH = 0
         End Sub

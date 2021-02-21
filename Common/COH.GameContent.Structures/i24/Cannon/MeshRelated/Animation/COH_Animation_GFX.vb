@@ -121,19 +121,19 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnim As COH_Animation_AnimP()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRagdoll As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayFx As COH_Animation_Sequence_FX()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMoveRate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSmoothSprint As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPitchAngle As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPitchRate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPitchStart As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPitchEnd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScaleRootBone As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfn As String
+       Private mFileName As String
+       Private mAnim As COH_Animation_AnimP()
+       Private mRagdoll As Int32
+       Private mPlayFx As COH_Animation_Sequence_FX()
+       Private mScale As Single
+       Private mMoveRate As Single
+       Private mSmoothSprint As Single
+       Private mPitchAngle As Single
+       Private mPitchRate As Single
+       Private mPitchStart As Single
+       Private mPitchEnd As Single
+       Private mScaleRootBone As String
+       Private mfn As String
 #End Region
 
 #Region "Create New Instance"

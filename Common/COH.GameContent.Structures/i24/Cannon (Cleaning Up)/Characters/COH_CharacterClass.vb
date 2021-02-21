@@ -340,47 +340,47 @@ Namespace Characters
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowedOrigins As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialRestrictions As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreRequires As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProductCode As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReductionClass As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReduceAsArchvillain As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevelUpRespecs As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerPoolCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEpicPoolCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModTable As COH_NamedTable()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConnectHPAndStatus As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefiantHitPointsAttrib As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefiantScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private m_FinalAttrMax_ As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private m_FinalAttrMaxMax_ As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private m_FinalAttrStrengthMax_ As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private m_FinalAttrResistanceMax_ As Int32
+       Private mName As String
+       Private mAllowedOrigins As String()
+       Private mSpecialRestrictions As String()
+       Private mStoreRequires As String
+       Private mProductCode As String
+       Private mReductionClass As String
+       Private mReduceAsArchvillain As Boolean
+       Private mLevelUpRespecs As Int32()
+       Private mDisplayShortHelp As CrypticS_String
+       Private mIcon As String
+       Private mPrimaryCategory As String
+       Private mSecondaryCategory As String
+       Private mPowerPoolCategory As String
+       Private mEpicPoolCategory As String
+       Private mModTable As COH_NamedTable()
+       Private mConnectHPAndStatus As Boolean
+       Private mDefiantHitPointsAttrib As Int32
+       Private mDefiantScale As Single
+       Private m_FinalAttrMax_ As Int32
+       Private m_FinalAttrMaxMax_ As Int32
+       Private m_FinalAttrStrengthMax_ As Int32
+       Private m_FinalAttrResistanceMax_ As Int32
         '//LOCALIZED
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLockedTooltip As CrypticS_String
+       Private mDisplayName As CrypticS_String
+       Private mDisplayHelp As CrypticS_String
+       Private mLockedTooltip As CrypticS_String
         '//HAVE EVENTS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAttribMin As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAttribBase As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mStrengthMin As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mResistanceMin As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminStrIn As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminStrOut As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminCurIn As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminCurOut As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminResIn As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAtrribDiminResOut As COH_CharacterClass_Attributes
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAttribMaxTable As COH_CharacterClass_AttributesTable
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mAttribMaxMaxTable As COH_CharacterClass_AttributesTable
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mStrengthMaxTable As COH_CharacterClass_AttributesTable
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mResistanceMaxTable As COH_CharacterClass_AttributesTable
+       Private WithEvents mAttribMin As COH_CharacterClass_Attributes
+       Private WithEvents mAttribBase As COH_CharacterClass_Attributes
+       Private WithEvents mStrengthMin As COH_CharacterClass_Attributes
+       Private WithEvents mResistanceMin As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminStrIn As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminStrOut As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminCurIn As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminCurOut As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminResIn As COH_CharacterClass_Attributes
+       Private WithEvents mAtrribDiminResOut As COH_CharacterClass_Attributes
+       Private WithEvents mAttribMaxTable As COH_CharacterClass_AttributesTable
+       Private WithEvents mAttribMaxMaxTable As COH_CharacterClass_AttributesTable
+       Private WithEvents mStrengthMaxTable As COH_CharacterClass_AttributesTable
+       Private WithEvents mResistanceMaxTable As COH_CharacterClass_AttributesTable
 #End Region
 
 #Region "Create New Instance"

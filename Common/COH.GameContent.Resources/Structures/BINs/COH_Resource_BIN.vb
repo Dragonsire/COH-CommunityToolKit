@@ -19,8 +19,8 @@ Namespace Structures.BIN
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRawBytes As Byte() = Nothing
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntryType As COH_Supported_ContentType
+       Private mRawBytes As Byte() = Nothing
+       Private mEntryType As COH_Supported_ContentType
 #End Region
 
 #Region "Create New Instances"

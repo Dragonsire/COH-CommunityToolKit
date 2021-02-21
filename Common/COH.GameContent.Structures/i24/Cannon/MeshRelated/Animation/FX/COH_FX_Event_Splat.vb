@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexture1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexture2 As String
+       Private mTexture1 As String
+       Private mTexture2 As String
 #End Region
 
 #Region "Create New Instance"

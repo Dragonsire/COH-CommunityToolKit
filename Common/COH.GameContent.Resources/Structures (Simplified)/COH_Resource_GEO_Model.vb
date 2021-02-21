@@ -13,8 +13,8 @@
         Property TrickName As String
         <Category("Identifier")> Property Index As Integer
         <Category("ModelDetails")> Property Mesh As COH_Resource_GEO_Model_MeshDetails
-        <Category("ModelDetails")> Property BoundingBox_Min As Vector3
-        <Category("ModelDetails")> Property BoundingBox_Max As Vector3
+        <Category("ModelDetails")> Property BoundingBox_Min As COH_Struct_Vector3
+        <Category("ModelDetails")> Property BoundingBox_Max As COH_Struct_Vector3
         <Category("ModelDetails")> Property Radius As Single
 #End Region
 
@@ -32,8 +32,8 @@
             Version = 0 '//DECIDE THIS LATER BUT THINKING 8
             ModelName = "New Model"
             Mesh = New COH_Resource_GEO_Model_MeshDetails
-            BoundingBox_Max = New Vector3
-            BoundingBox_Min = New Vector3
+            BoundingBox_Max = New COH_Struct_Vector3
+            BoundingBox_Min = New COH_Struct_Vector3
             Radius = 0
         End Sub
 #End Region

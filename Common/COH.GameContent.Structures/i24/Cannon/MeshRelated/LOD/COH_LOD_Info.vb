@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModelName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoLOD As COH_LOD_Auto()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceAutomatic As Boolean
+       Private mModelName As String
+       Private mFilename As String
+       Private mAutoLOD As COH_LOD_Auto()
+       Private mForceAutomatic As Boolean
 #End Region
 
 #Region "Create New Instance"

@@ -3,13 +3,13 @@
 
 #Region "Private Properties"
         Property [Shadows] As GEO.COH_Resource_GEO_Model()
-        Property ShadowVertex As Vector3()
+        Property ShadowVertex As COH_Struct_Vector3()
         Property ShadowVertexCount As Int32
-        Property ShadowNorms As Vector3()
+        Property ShadowNorms As COH_Struct_Vector3()
         Property Triangles As Int32()
         Property TrianglesCount As Int32
         Property ZeroArea_TriangleCount As Int32
-        Property TrianglesNormals As Vector3()
+        Property TrianglesNormals As COH_Struct_Vector3()
         Property OpenEdges As Byte()
 #End Region
 

@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOffset1 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOffset2 As Int32
+       Private mOffset1 As Int32
+       Private mOffset2 As Int32
 #End Region
 
 #Region "Create New Instance"

@@ -45,11 +45,11 @@
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinue As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mException As Exception
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mErrorLevel As COH_ErrorEvent
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mThrowException As Boolean
+       Private mContinue As Boolean
+       Private mMessage As String
+       Private mException As Exception
+       Private mErrorLevel As COH_ErrorEvent
+       Private mThrowException As Boolean
 #End Region
 
 #Region "Initialize"

@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mID As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCommand As String
+       Private mID As Int32
+       Private mDescription As String
+       Private mCommand As String
 #End Region
 
 #Region "Create New Instance"

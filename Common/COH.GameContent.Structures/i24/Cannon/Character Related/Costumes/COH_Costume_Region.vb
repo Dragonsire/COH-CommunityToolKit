@@ -75,13 +75,13 @@ Namespace Costumes
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneSet As COH_CostumeBone()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreCategory As String
+       Private mName As String
+       Private mFilename As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mKeys As String()
+       Private mBoneSet As COH_CostumeBone()
+       Private mStoreCategory As String
 #End Region
 
 #Region "Create New Instance"

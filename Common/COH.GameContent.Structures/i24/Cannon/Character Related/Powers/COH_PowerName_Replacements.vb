@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerSet As COH_Power_NameMap()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As COH_Power_NameMap()
+       Private mPowerSet As COH_Power_NameMap()
+       Private mPower As COH_Power_NameMap()
 #End Region
 
 #Region "Create New Instance"

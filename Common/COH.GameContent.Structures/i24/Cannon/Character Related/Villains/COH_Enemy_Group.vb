@@ -105,18 +105,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplaySingluar As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayLeaderName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInKiosk As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlly As COH_Enum_GroupAlly
+       Private mName As String
+       Private mDisplayName As String
+       Private mDisplaySingluar As String
+       Private mDisplayLeaderName As String
+       Private mDescription As String
+       Private mShowInKiosk As Boolean
+       Private mAlly As COH_Enum_GroupAlly
         '//Localized
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplaySingluarKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayLeaderNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescriptionKey As String
+       Private mDisplayNameKey As String
+       Private mDisplaySingluarKey As String
+       Private mDisplayLeaderNameKey As String
+       Private mDescriptionKey As String
 #End Region
 
 #Region "Create New Instances"

@@ -22,7 +22,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItems As COH_ProductCatalogItem()
+       Private mItems As COH_ProductCatalogItem()
 
 #End Region
 

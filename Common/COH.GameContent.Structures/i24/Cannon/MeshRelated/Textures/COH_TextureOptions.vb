@@ -59,11 +59,11 @@
                 mSurface = value
             End Set
         End Property
-        Property Fade As Vector2
+        Property Fade As COH_Struct_Vector2
             Get
                 Return mFade
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mFade = value
             End Set
         End Property
@@ -157,24 +157,24 @@
 
 #Region "Private Properties"
         '//EmbeddedStructures
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScrollScales As COH_TextureOptions_ScrollScales
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlendNames As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSwappable As Boolean()
+       Private mScrollScales As COH_TextureOptions_ScrollScales
+       Private mBlendNames As String()
+       Private mSwappable As Boolean()
         '//Other
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInternalName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGloss As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSurface As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFade As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlendType As COH_Enum_BlendModeShader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_EnumFlags_Texture_Options
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjFlags As COH_Enum_ModelFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDF_ObjName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecularExponent1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecularExponent2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFallback As COH_TextureOptions_Fallback
+       Private mName As String
+       Private mFileName As String
+       Private mFileAge As Int32
+       Private mInternalName As String
+       Private mGloss As Single
+       Private mSurface As String
+       Private mFade As COH_Struct_Vector2
+       Private mBlendType As COH_Enum_BlendModeShader
+       Private mFlags As COH_EnumFlags_Texture_Options
+       Private mObjFlags As COH_Enum_ModelFlags
+       Private mDF_ObjName As String
+       Private mSpecularExponent1 As Single
+       Private mSpecularExponent2 As Single
+       Private mFallback As COH_TextureOptions_Fallback
 #End Region
 
 #Region "Create New Instance"
@@ -197,7 +197,7 @@
             mSurface = String.Empty
             mGloss = 0
             mSurface = String.Empty
-            mFade = New Vector2
+            mFade = New COH_Struct_Vector2
             mBlendType = 0
             mFlags = COH_EnumFlags_Texture_Options.None
             mObjFlags = 0

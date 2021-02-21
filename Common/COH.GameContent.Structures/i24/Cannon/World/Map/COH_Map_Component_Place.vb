@@ -89,15 +89,15 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mX As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mY As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZ As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mXScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mYScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAngle As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextBackgroundColor As Int32
-        '   <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAdditive As Byte '//BITFIELD
+       Private mX As Single
+       Private mY As Single
+       Private mZ As Single
+       Private mXScale As Single
+       Private mYScale As Single
+       Private mAngle As Single
+       Private mColor As Int32
+       Private mTextBackgroundColor As Int32
+        '  Private mAdditive As Byte '//BITFIELD
 #End Region
 
 #Region "Create New Instance"

@@ -116,18 +116,18 @@ Namespace Bases
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_NameANDHelp As COH_UI_NameANDHelp
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTabName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLength As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWidth As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxRaidParty As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostPrestige As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostInfluence As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpkeepPrestige As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpkeepInfluence As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDetailAllowed As COH_ObjectDetail_CategoryLimit()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
+       Private mUI_NameANDHelp As COH_UI_NameANDHelp
+       Private mDisplayTabName As String
+       Private mGroupName As String
+       Private mLength As Int32
+       Private mWidth As Int32
+       Private mMaxRaidParty As Int32
+       Private mCostPrestige As Int32
+       Private mCostInfluence As Int32
+       Private mUpkeepPrestige As Int32
+       Private mUpkeepInfluence As Int32
+       Private mDetailAllowed As COH_ObjectDetail_CategoryLimit()
+       Private mRequires As String()
 #End Region
 
 #Region "Create New Instance"

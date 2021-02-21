@@ -91,35 +91,35 @@
                 mGroupFlags = value
             End Set
         End Property
-        Property Sway As Vector2
+        Property Sway As COH_Struct_Vector2
             Get
                 Return mSway
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mSway = value
             End Set
         End Property
-        Property SwayRandomize As Vector2
+        Property SwayRandomize As COH_Struct_Vector2
             Get
                 Return mSwayRandomize
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mSwayRandomize = value
             End Set
         End Property
-        Property SwayPitch As Vector2
+        Property SwayPitch As COH_Struct_Vector2
             Get
                 Return mSwayPitch
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mSwayPitch = value
             End Set
         End Property
-        Property SwayRoll As Vector2
+        Property SwayRoll As COH_Struct_Vector2
             Get
                 Return mSwayRoll
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mSwayRoll = value
             End Set
         End Property
@@ -155,11 +155,11 @@
                 mWaterReflectionStrength = value
             End Set
         End Property
-        Property ScrollAmount As Vector3()
+        Property ScrollAmount As COH_Struct_Vector3()
             Get
                 Return mScrollAmount
             End Get
-            Set(value As Vector3())
+            Set(value As COH_Struct_Vector3())
                 mScrollAmount = value
             End Set
         End Property
@@ -171,11 +171,11 @@
                 mShadowDist = value
             End Set
         End Property
-        Property NightGlow As Vector2
+        Property NightGlow As COH_Struct_Vector2
             Get
                 Return mNightGlow
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mNightGlow = value
             End Set
         End Property
@@ -225,32 +225,32 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFar As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFarFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNear As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNearFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrickFlags As COH_EnumFlags_Tricks
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjFlags As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupFlags As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSway As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSwayRandomize As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSwayPitch As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSwayRoll As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlphaRef As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSortBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWaterReflectionSkew As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWaterReflectionStrength As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScrollAmount As Vector3()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowDist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNightGlow As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjTexBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCameraFaceTightenUp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStAnim As COH_Tricks_ST_Anim()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoLOD As MeshRelated.COH_LOD_Auto()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrickNode As COH_TrickNode
+       Private mName As String
+       Private mFileName As String
+       Private mFileAge As Integer
+       Private mLodFar As Single
+       Private mLodFarFade As Single
+       Private mLodNear As Single
+       Private mLodNearFade As Single
+       Private mTrickFlags As COH_EnumFlags_Tricks
+       Private mObjFlags As Int32
+       Private mGroupFlags As Int32
+       Private mSway As COH_Struct_Vector2
+       Private mSwayRandomize As COH_Struct_Vector2
+       Private mSwayPitch As COH_Struct_Vector2
+       Private mSwayRoll As COH_Struct_Vector2
+       Private mAlphaRef As Single
+       Private mSortBias As Single
+       Private mWaterReflectionSkew As Single
+       Private mWaterReflectionStrength As Single
+       Private mScrollAmount As COH_Struct_Vector3()
+       Private mShadowDist As Single
+       Private mNightGlow As COH_Struct_Vector2
+       Private mObjTexBias As Single
+       Private mCameraFaceTightenUp As Single
+       Private mStAnim As COH_Tricks_ST_Anim()
+       Private mAutoLOD As MeshRelated.COH_LOD_Auto()
+       Private mTrickNode As COH_TrickNode
 #End Region
 
 #Region "Create New Instance"
@@ -272,17 +272,17 @@
             mTrickFlags = 0
             mObjFlags = 0
             mGroupFlags = 0
-            mSway = New Vector2  ' No Default Defined
-            mSwayRandomize = New Vector2 ' No Default Defined
-            mSwayPitch = New Vector2  ' No Default Defined
-            mSwayRoll = New Vector2  ' No Default Defined
+            mSway = New COH_Struct_Vector2  ' No Default Defined
+            mSwayRandomize = New COH_Struct_Vector2 ' No Default Defined
+            mSwayPitch = New COH_Struct_Vector2  ' No Default Defined
+            mSwayRoll = New COH_Struct_Vector2  ' No Default Defined
             mAlphaRef = 0
             mSortBias = 0
             mWaterReflectionSkew = 30
             mWaterReflectionStrength = 60
-            mScrollAmount = New Vector3(1) {}
+            mScrollAmount = New COH_Struct_Vector3(1) {}
             mShadowDist = 0
-            mNightGlow = New Vector2  ' No Default Defined
+            mNightGlow = New COH_Struct_Vector2  ' No Default Defined
             mObjTexBias = 0
             mCameraFaceTightenUp = 0
             mStAnim = New COH_Tricks_ST_Anim() {}
@@ -396,8 +396,8 @@
             mSortBias = CurrentReader.ReadSingle
             mWaterReflectionSkew = CurrentReader.ReadSingle
             mWaterReflectionStrength = CurrentReader.ReadSingle
-            mScrollAmount(0) = New Vector3(CurrentReader.ReadSingle, CurrentReader.ReadSingle, 0) '//Uses only Verctor 2 portion
-            mScrollAmount(1) = New Vector3(CurrentReader.ReadSingle, CurrentReader.ReadSingle, 0)
+            mScrollAmount(0) = New COH_Struct_Vector3(CurrentReader.ReadSingle, CurrentReader.ReadSingle, 0) '//Uses only Verctor 2 portion
+            mScrollAmount(1) = New COH_Struct_Vector3(CurrentReader.ReadSingle, CurrentReader.ReadSingle, 0)
             mShadowDist = CurrentReader.ReadSingle
             mNightGlow = CurrentReader.Read_CrypticS_Vector2
 

@@ -371,50 +371,50 @@ Namespace World
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_NameANDHelp As COH_UI_NameANDHelp
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTabName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupNameUnpowered As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupNameDestroyed As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupNameMount As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupNameUnpoweredMount As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupNameBaseEdit As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSurface As COH_Enum_Surface
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReplacer As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHasVolumeTrigger As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMounted As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCannotDelete As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWarnDelete As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoNotBlock As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimatedEnt As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAccessPermissions As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostPrestige As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostInfluence As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpkeepPrestige As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpkeepInfluence As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEnergyConsume As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEnergyProduce As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mControlConsume As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mControlProduce As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMustBeReachable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObsolete As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifetime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRepairChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntityDef As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBehavior As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDecayTo As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDecayedLife As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuxAllowed As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxAuxAllowed As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFunction As COH_Enum_ObjectDetailFunction
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFunctionParams As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFloatDestroyed As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFloatUnpowered As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFloatUncontrolled As String
+       Private mUI_NameANDHelp As COH_UI_NameANDHelp
+       Private mCategory As String
+       Private mDisplayTabName As String
+       Private mGroupName As String
+       Private mGroupNameUnpowered As String
+       Private mGroupNameDestroyed As String
+       Private mGroupNameMount As String
+       Private mGroupNameUnpoweredMount As String
+       Private mGroupNameBaseEdit As String
+       Private mSurface As COH_Enum_Surface
+       Private mReplacer As Int32
+       Private mHasVolumeTrigger As Boolean
+       Private mMounted As Boolean
+       Private mCannotDelete As Boolean
+       Private mWarnDelete As Boolean
+       Private mDoNotBlock As Boolean
+       Private mAnimatedEnt As Boolean
+       Private mAccessPermissions As Boolean
+       Private mRequires As String()
+       Private mCostPrestige As Int32
+       Private mCostInfluence As Int32
+       Private mUpkeepPrestige As Int32
+       Private mUpkeepInfluence As Int32
+       Private mEnergyConsume As Int32
+       Private mEnergyProduce As Int32
+       Private mControlConsume As Int32
+       Private mControlProduce As Int32
+       Private mMustBeReachable As Boolean
+       Private mObsolete As Boolean
+       Private mLifetime As Int32
+       Private mRepairChance As Single
+       Private mEntityDef As String
+       Private mLevel As Int32
+       Private mBehavior As String
+       Private mDecayTo As String
+       Private mDecayedLife As Int32
+       Private mAuxAllowed As String()
+       Private mMaxAuxAllowed As Int32
+       Private mFunction As COH_Enum_ObjectDetailFunction
+       Private mFunctionParams As String()
+       Private mPower As String
+       Private mDisplayFloatDestroyed As String
+       Private mDisplayFloatUnpowered As String
+       Private mDisplayFloatUncontrolled As String
 #End Region
 
 #Region "Create New Instance"

@@ -57,10 +57,14 @@
     <Import Include="COH.GameContent.Storage.Structures" />
     <Import Include="COH.GameContent.Storage.Structures.CrypticsS" />
     <Import Include="COH.GameContent.Storage.Structures.Generics" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.ComponentModel.Design" />
+    <Import Include="System.Threading.Tasks.Sources" />
+    <Import Include="System.Windows.Forms" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.GameContent.vbproj" />
   </ItemGroup>
 
 </Project>

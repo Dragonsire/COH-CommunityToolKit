@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefault As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoost As COH_Enum_Attrib_OriginBoosts()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttribReturnSet As COH_Power_AttribReturns_Set()
+       Private mDefault As Int32
+       Private mBoost As COH_Enum_Attrib_OriginBoosts()
+       Private mAttribReturnSet As COH_Power_AttribReturns_Set()
 #End Region
 
 #Region "Create New Instance"

@@ -66,12 +66,12 @@ Namespace Store
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As COH_PowerName
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSell As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuy As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCountPerStore As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDepartments As Int32()
+       Private mName As String
+       Private mPower As COH_PowerName
+       Private mSell As Int32
+       Private mBuy As Int32
+       Private mCountPerStore As Int32
+       Private mDepartments As Int32()
 #End Region
 
 #Region "Create New Instance"

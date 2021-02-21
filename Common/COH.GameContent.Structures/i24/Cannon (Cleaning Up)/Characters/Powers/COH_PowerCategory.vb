@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerSets As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIndex As Int32
+       Private mSourceFile As String
+       Private mName As String
+       Private mDisplayName As CrypticS_String
+       Private mDisplayHelp As CrypticS_String
+       Private mDisplayShortHelp As CrypticS_String
+       Private mPowerSets As String()
+       Private mAutoIndex As Int32
 #End Region
 
 #Region "Create New Instance"

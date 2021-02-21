@@ -91,19 +91,19 @@
                 mAnimScale = value
             End Set
         End Property
-        Property ClampMinScale As Vector3
+        Property ClampMinScale As COH_Struct_Vector3
             Get
                 Return mClampMinScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mClampMinScale = value
             End Set
         End Property
-        Property ClampMaxScale As Vector3
+        Property ClampMaxScale As COH_Struct_Vector3
             Get
                 Return mClampMaxScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mClampMaxScale = value
             End Set
         End Property
@@ -113,18 +113,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifeSpan As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLighting As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInput As COH_FX_Input()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCondition As COH_FX_Condition()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_FX_Used
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPerformanceRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOnForceRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClampMinScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClampMaxScale As Vector3
+       Private mName As String
+       Private mFileAge As Int32
+       Private mLifeSpan As Int32
+       Private mLighting As Int32
+       Private mInput As COH_FX_Input()
+       Private mCondition As COH_FX_Condition()
+       Private mFlags As COH_Enum_FX_Used
+       Private mPerformanceRadius As Single
+       Private mOnForceRadius As Single
+       Private mAnimScale As Single
+       Private mClampMinScale As COH_Struct_Vector3
+       Private mClampMaxScale As COH_Struct_Vector3
 #End Region
 
 #Region "Create New Instance"
@@ -148,8 +148,8 @@
             mName = String.Empty
             mInput = New COH_FX_Input() {}
             mCondition = New COH_FX_Condition() {}
-            mClampMinScale = New Vector3
-            mClampMaxScale = New Vector3
+            mClampMinScale = New COH_Struct_Vector3
+            mClampMaxScale = New COH_Struct_Vector3
         End Sub
 #End Region
 

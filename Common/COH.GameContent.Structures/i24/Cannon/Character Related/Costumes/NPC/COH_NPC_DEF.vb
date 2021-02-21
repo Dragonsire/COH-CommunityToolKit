@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostume As COH_Costume()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
+       Private mName As String
+       Private mDisplayName As String
+       Private mCostume As COH_Costume()
+       Private mFileName As String
 #End Region
 
 #Region "Create New Instance"

@@ -16,12 +16,12 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIdentifier As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUnknown1 As UInt16
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUnknown2 As UInt16
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUnknown3 As UInt16
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirectorySize As UInt16
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumber_DirectoryEntries As UInt32
+       Private mIdentifier As UInt32
+       Private mUnknown1 As UInt16
+       Private mUnknown2 As UInt16
+       Private mUnknown3 As UInt16
+       Private mDirectorySize As UInt16
+       Private mNumber_DirectoryEntries As UInt32
 #End Region
 
 #Region "Create New Instance"

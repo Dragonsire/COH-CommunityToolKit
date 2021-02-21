@@ -11,10 +11,10 @@
 #End Region
 
 #Region "Properties"
-        Property PortalPostion As Vector3
-        Property Min As Vector3
-        Property Max As Vector3
-        Property Normal As Vector3
+        Property PortalPostion As COH_Struct_Vector3
+        Property Min As COH_Struct_Vector3
+        Property Max As COH_Struct_Vector3
+        Property Normal As COH_Struct_Vector3
 #End Region
 
 #Region "Create New Instances"

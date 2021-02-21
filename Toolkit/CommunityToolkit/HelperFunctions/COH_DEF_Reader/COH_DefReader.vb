@@ -10,11 +10,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileNames As List(Of String)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntries As List(Of COH_FileStructure)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLineBuffer As String = Nothing
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStringBuffer1 As String = Nothing
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStringBuffer2 As String = Nothing
+       Private mFileNames As List(Of String)
+       Private mEntries As List(Of COH_FileStructure)
+       Private mLineBuffer As String = Nothing
+       Private mStringBuffer1 As String = Nothing
+       Private mStringBuffer2 As String = Nothing
 #End Region
 
 #Region "Create New Instance"

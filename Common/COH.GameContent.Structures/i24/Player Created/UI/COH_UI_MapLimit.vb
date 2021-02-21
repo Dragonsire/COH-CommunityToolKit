@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mregular_only As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private maround_only As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private maround_or_regular As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mgiant_monster As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mwall As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfloor As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdefeat_all As Int32
+       Private mregular_only As Int32()
+       Private maround_only As Int32()
+       Private maround_or_regular As Int32()
+       Private mgiant_monster As Int32
+       Private mwall As Int32()
+       Private mfloor As Int32()
+       Private mdefeat_all As Int32
 #End Region
 
 #Region "Create New Instance"

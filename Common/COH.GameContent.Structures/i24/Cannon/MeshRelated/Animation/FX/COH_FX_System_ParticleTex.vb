@@ -19,19 +19,19 @@
                 mTextureName = value
             End Set
         End Property
-        Property TexScroll As Vector3
+        Property TexScroll As COH_Struct_Vector3
             Get
                 Return mTexScroll
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mTexScroll = value
             End Set
         End Property
-        Property TexScrollJitter As Vector3
+        Property TexScrollJitter As COH_Struct_Vector3
             Get
                 Return mTexScrollJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mTexScrollJitter = value
             End Set
         End Property
@@ -59,11 +59,11 @@
                 mAnimType = value
             End Set
         End Property
-        Property TexScale As Vector2
+        Property TexScale As COH_Struct_Vector2
             Get
                 Return mTexScale
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mTexScale = value
             End Set
         End Property
@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextureName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexScroll As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexScrollJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimFrames As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimPace As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexScale As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFrameWidth As Int32
+       Private mTextureName As String
+       Private mTexScroll As COH_Struct_Vector3
+       Private mTexScrollJitter As COH_Struct_Vector3
+       Private mAnimFrames As Single
+       Private mAnimPace As Single
+       Private mAnimType As Int32
+       Private mTexScale As COH_Struct_Vector2
+       Private mFrameWidth As Int32
 #End Region
 
 #Region "Create New Instance"
@@ -110,9 +110,9 @@
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
             mTextureName = String.Empty
-            mTexScroll = New Vector3
-            mTexScrollJitter = New Vector3
-            mTexScale = New Vector2
+            mTexScroll = New COH_Struct_Vector3
+            mTexScrollJitter = New COH_Struct_Vector3
+            mTexScale = New COH_Struct_Vector2
         End Sub
 #End Region
 

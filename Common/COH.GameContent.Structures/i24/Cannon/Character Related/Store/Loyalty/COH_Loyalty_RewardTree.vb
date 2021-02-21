@@ -56,11 +56,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTier As COH_Loyalty_RewardTier()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As COH_Loyalty_RewardLevel()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNodeNames As COH_Loyalty_RewardNodeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultInfluenceCap As Int64
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVIPInfluenceCap As Int64
+       Private mTier As COH_Loyalty_RewardTier()
+       Private mLevel As COH_Loyalty_RewardLevel()
+       Private mNodeNames As COH_Loyalty_RewardNodeName()
+       Private mDefaultInfluenceCap As Int64
+       Private mVIPInfluenceCap As Int64
 #End Region
 
 #Region "Create New Instance"

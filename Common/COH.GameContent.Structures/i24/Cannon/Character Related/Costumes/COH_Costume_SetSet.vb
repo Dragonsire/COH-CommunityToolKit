@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNPCName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProductList As String()
+       Private mName As String
+       Private mFilename As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mNPCName As String
+       Private mKeys As String()
+       Private mProductList As String()
 #End Region
 
 #Region "Create New Instance"

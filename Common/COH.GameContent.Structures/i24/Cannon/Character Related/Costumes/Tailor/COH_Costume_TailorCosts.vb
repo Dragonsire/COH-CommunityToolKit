@@ -105,17 +105,17 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntryFee As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGlobal As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadSubCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpperCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpperSubCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLowerCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLoserSubCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumCostumes As Int32
+       Private mMinLevel As Int32
+       Private mMaxLevel As Int32
+       Private mEntryFee As Int32
+       Private mGlobal As Int32
+       Private mHeadCost As Int32
+       Private mHeadSubCost As Int32
+       Private mUpperCost As Int32
+       Private mUpperSubCost As Int32
+       Private mLowerCost As Int32
+       Private mLoserSubCost As Int32
+       Private mNumCostumes As Int32
 #End Region
 
 #Region "Create New Instance"

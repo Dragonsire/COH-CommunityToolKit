@@ -25,7 +25,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItems As Single()
+       Private mItems As Single()
 #End Region
 
 #Region "Create New Instance"

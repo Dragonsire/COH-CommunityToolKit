@@ -212,30 +212,30 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModel As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSupergroupContact As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContact As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRegistersSupergroup As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStore As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanTailor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanRespec As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanAuction As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoHeadshot As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoutDialog As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoutFrequency As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoutVariation As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoRewards As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTalksToStrangers As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisionPhases As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclusiveVisionPhase As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWrongAllianceString As String
+       Private mName As String
+       Private mCurrentFile As String
+       Private mModel As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mSupergroupContact As String
+       Private mAI As String
+       Private mContact As String
+       Private mRegistersSupergroup As Int32
+       Private mStoreCount As Int32
+       Private mStore As String()
+       Private mCanTailor As Int32
+       Private mCanRespec As Int32
+       Private mCanAuction As Int32
+       Private mNoHeadshot As Int32
+       Private mDialog As String()
+       Private mShoutDialog As String()
+       Private mShoutFrequency As Int32
+       Private mShoutVariation As Int32
+       Private mAutoRewards As String()
+       Private mTalksToStrangers As Int32
+       Private mVisionPhases As String()
+       Private mExclusiveVisionPhase As String
+       Private mWrongAllianceString As String
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScript As COH_None()
 #End Region
 

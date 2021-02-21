@@ -47,11 +47,11 @@ Public Class COH_TextureResource_Panel
 
 #Region "Private Usage"
     Private Const SupportedImageExtentions As String = ".jpg|.bmp|.png|.gif|.jpeg|.tiff"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPanels_Color_Selected As Color = Color.Blue
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPanels_Color_Back As Color = Color.Gray
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPanels_Size As Size = New Size(75, 100)
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mThumbnail_Selected As Integer = -1
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mThumbnail_CheckOnAdd As Boolean = True
+   Private mPanels_Color_Selected As Color = Color.Blue
+   Private mPanels_Color_Back As Color = Color.Gray
+   Private mPanels_Size As Size = New Size(75, 100)
+   Private mThumbnail_Selected As Integer = -1
+   Private mThumbnail_CheckOnAdd As Boolean = True
 #End Region
 
 #Region "Usage"

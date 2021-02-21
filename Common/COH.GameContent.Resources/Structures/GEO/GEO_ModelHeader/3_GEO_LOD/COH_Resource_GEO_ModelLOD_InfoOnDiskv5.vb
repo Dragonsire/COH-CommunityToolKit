@@ -30,8 +30,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumberLOD As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLods As COH_Resource_GEO_AutoLOD_OnDiskv5()
+       Private mNumberLOD As Integer
+       Private mLods As COH_Resource_GEO_AutoLOD_OnDiskv5()
 #End Region
 
 #Region "Create New Instances"

@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMarker As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCount As Int32()
+       Private mMarker As String()
+       Private mCount As Int32()
 #End Region
 
 #Region "Create New Instance"

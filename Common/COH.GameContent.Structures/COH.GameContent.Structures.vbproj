@@ -15,26 +15,26 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Toolkit|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\Toolkit\Debug\COH.GameContent.Structures</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\Toolkit\Debug\COH.GameContent.Structures</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Toolkit|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\ToolKit\Release\COH.GameContent.Structures</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\ToolKit\Release\COH.GameContent.Structures</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_GameServer|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\Server\Release\COH.GameContent.Structures</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\Server\Release\COH.GameContent.Structures</OutputPath>
     <DefineConstants>EDITOR=False,SERVER=True,CLIENT=False</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\GameClient\Release\COH.GameContent.Structures</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\GameClient\Release\COH.GameContent.Structures</OutputPath>
 	<DefineConstants>EDITOR=False,SERVER=False,CLIENT=True</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>

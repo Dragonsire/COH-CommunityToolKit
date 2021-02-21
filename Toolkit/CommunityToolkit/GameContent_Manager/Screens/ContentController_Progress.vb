@@ -5,7 +5,7 @@ Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentProgressForm As COH_ExtractionProgress
+       Private mCurrentProgressForm As COH_ExtractionProgress
 #End Region
 
 #Region "Create Form"

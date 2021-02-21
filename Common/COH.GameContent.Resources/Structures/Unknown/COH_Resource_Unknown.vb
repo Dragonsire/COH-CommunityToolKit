@@ -11,7 +11,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRawBytes As Byte() = Nothing
+       Private mRawBytes As Byte() = Nothing
 #End Region
 
 #Region "Create New Instances"

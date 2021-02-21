@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVerified As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As COH_StoryReward_ItemChance()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChanceRequires As COH_StoryReward_ChanceRequiresItem()
+       Private mName As String
+       Private mFilename As String
+       Private mVerified As Int32
+       Private mChance As COH_StoryReward_ItemChance()
+       Private mChanceRequires As COH_StoryReward_ChanceRequiresItem()
 #End Region
 
 #Region "Create New Instance"

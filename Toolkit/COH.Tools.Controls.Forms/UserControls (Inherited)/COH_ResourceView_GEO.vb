@@ -1,10 +1,12 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.GameContent.CodeManagement.Interfaces
+Imports COH.GameContent.Enums
 Imports COH.GameContent.Resources.Structures.Anim
 Imports COH.GameContent.Resources.Structures.GEO
 Imports COH.GameContent.Resources.Structures_Simplified
 Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.MeshRelated
 Imports COH.GameContent.Structures.MeshRelated.Textures
+Imports HelixToolkit
 Imports HelixToolkit.Wpf
 Imports HelixToolkit.Wpf.SharpDX
 Imports SharpDX
@@ -19,7 +21,7 @@ Namespace Dialogs
 #Region "Properties"
         Public ReadOnly Property ModelViewer As Viewport3DX
             Get
-                Dim COH As WPF.COH_ModelViewer = ElementHost2.Child
+                Dim COH As Wpf.COH_ModelViewer = ElementHost2.Child
                 Return COH.ModelWindow
             End Get
         End Property
@@ -234,48 +236,48 @@ Namespace Dialogs
         End Property
 
 #Region "Private"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCameraRotationMode As HelixToolkit.Wpf.SharpDX.CameraRotationMode
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCameraRotationModes As HelixToolkit.Wpf.SharpDX.CameraRotationMode()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRotateAroundMouseDownPoint As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Model As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Transparent As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_WireFrame As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Vertex As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Grid As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Bones As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_BoundingBox As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShow_Materials As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWireFrame_Color As Windows.Media.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVertex_Color As Windows.Media.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoundingBox_Color As Windows.Media.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone_Color As Windows.Media.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone_ColorUsed As Windows.Media.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVertex_Size As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVertexModels As List(Of HelixToolkit.Wpf.SharpDX.PointGeometryModel3D)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoundingBox As List(Of HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D)
+        Private mCameraRotationMode As HelixToolkit.Wpf.SharpDX.CameraRotationMode
+        Private mCameraRotationModes As HelixToolkit.Wpf.SharpDX.CameraRotationMode()
+        Private mRotateAroundMouseDownPoint As Boolean
+        Private mShow_Model As Boolean
+        Private mShow_Transparent As Boolean
+        Private mShow_WireFrame As Boolean
+        Private mShow_Vertex As Boolean
+        Private mShow_Grid As Boolean
+        Private mShow_Bones As Boolean
+        Private mShow_BoundingBox As Boolean
+        Private mShow_Materials As Boolean
+        Private mWireFrame_Color As Windows.Media.Color
+        Private mVertex_Color As Windows.Media.Color
+        Private mBoundingBox_Color As Windows.Media.Color
+        Private mBone_Color As Windows.Media.Color
+        Private mBone_ColorUsed As Windows.Media.Color
+        Private mVertex_Size As Single
+        Private mVertexModels As List(Of HelixToolkit.Wpf.SharpDX.PointGeometryModel3D)
+        Private mBoundingBox As List(Of HelixToolkit.Wpf.SharpDX.MeshGeometryModel3D)
         '//GRID
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGrid As HelixToolkit.Wpf.SharpDX.LineGeometryModel3D
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGrid_Axis As HelixToolkit.Wpf.SharpDX.GroupModel3D
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGrid_Color As Windows.Media.Color
+        Private mGrid As HelixToolkit.Wpf.SharpDX.LineGeometryModel3D
+        Private mGrid_Axis As HelixToolkit.Wpf.SharpDX.GroupModel3D
+        Private mGrid_Color As Windows.Media.Color
         '//LIGHT
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLight As AmbientLight3D
+        Private mLight As AmbientLight3D
         '//MODELS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModels As List(Of HelixToolkit.Wpf.SharpDX.GroupModel3D)
+        Private mModels As List(Of HelixToolkit.Wpf.SharpDX.GroupModel3D)
         '//BONES
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBones_Joints As HelixToolkit.Wpf.SharpDX.GroupModel3D
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBones_Animate As BoneSkinMeshGeometryModel3D
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBones As HelixToolkit.Wpf.SharpDX.GroupModel3D
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOption_AdjustModelPositions As Boolean = False
+        Private mBones_Joints As HelixToolkit.Wpf.SharpDX.GroupModel3D
+        Private mBones_Animate As BoneSkinMeshGeometryModel3D
+        Private mBones As HelixToolkit.Wpf.SharpDX.GroupModel3D
+        Private mOption_AdjustModelPositions As Boolean = False
         '//ORIGINOL FILES
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentGEO As COH_Resource_GEO
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Textures As Dictionary(Of String, COH_FileStructure)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Tricks_Tex As Dictionary(Of String, COH_TextureOptions)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Tricks As Dictionary(Of String, COH_Trick)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrentTextureStreams As List(Of System.IO.MemoryStream)
+        Private mCurrentGEO As COH_Resource_GEO
+        Private rLinked_Textures As Dictionary(Of String, COH_FileStructure)
+        Private rLinked_Tricks_Tex As Dictionary(Of String, COH_TextureOptions)
+        Private rLinked_Tricks As Dictionary(Of String, COH_Trick)
+        Private rCurrentTextureStreams As List(Of System.IO.MemoryStream)
         '//<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_SkeletonsH As Dictionary(Of String, COH_Skeleton_Heirarchy)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rLinked_Skeletons As Dictionary(Of String, COH_Resource_GEO_Skeleton)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModelIndex As Integer = -1
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelectedBoneIndex As Integer = 0
+        Private rLinked_Skeletons As Dictionary(Of String, COH_Resource_GEO_Skeleton)
+        Private mModelIndex As Integer = -1
+        Private mSelectedBoneIndex As Integer = 0
 #End Region
 
 #Region "Initialize / Create New Instance"
@@ -362,7 +364,7 @@ Namespace Dialogs
         End Sub
         Private Sub ResetDefault_Grid()
             mGrid = HelperFunctions.GEO.Create_RetrieveGrid_Lines("Grid", New SharpDX.Vector2(-10, -10), 10, 5, mGrid_Color)
-            mGrid_Axis = BuildModel_VectorArrows()
+            mGrid_Axis = HelperFunctions.GEO.BuildModel_VectorArrows()
         End Sub
         Private Sub ResetDefault_Background()
             EffectsManager = New DefaultEffectsManager()
@@ -673,7 +675,7 @@ Namespace Dialogs
             'DisplayModel_LightSource()
             ModelViewer.Items.Add(mLight)
             If mShow_Grid = True Then ModelViewer.Items.Add(mGrid)
-            If mShow_Grid = True Then ModelViewer.Items.Add(BuildModel_VectorArrows)
+            If mShow_Grid = True Then ModelViewer.Items.Add(HelperFunctions.GEO.BuildModel_VectorArrows)
             If mShow_Bones = True Then
                 Update_Models_BonesUsedOptions()
                 ModelViewer.Items.Add(mBones)
@@ -714,7 +716,7 @@ Namespace Dialogs
         End Sub
         Private Sub ImportModel(ByRef theModel As COH_Resource_GEO_Model)
             '///TESTING
-            mBones = CreateSkeletonMesh_Bones(rLinked_Skeletons.Values(SelectedBoneIndex), Skeleton_Color)
+            mBones = HelperFunctions.GEO.CreateSkeletonMesh_Bones(rLinked_Skeletons.Values(SelectedBoneIndex), Skeleton_Color)
 
             Dim AdjustHandiness As Integer = -1 '//GET FROM TANGENTS NEED TO ADD
             If theModel.Mesh.TextureNames.Count <= 1 Then
@@ -734,17 +736,17 @@ Namespace Dialogs
                 If mOption_AdjustModelPositions = True AndAlso HasBones = True Then
                     NewVector = AdjustVertexPosition_FromBone(x, theModel)
                 Else
-                    NewVector = Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(x), AdjustHandiness)
+                    NewVector = HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(x), AdjustHandiness)
                 End If
                 VertexBuffer.Add(NewVector)
             Next
             Dim Normals As New Vector3Collection
             For x = 0 To theModel.Mesh.Normals.Count - 1
-                Normals.Add(Convert_Vector3_SharpVector3D(theModel.Mesh.Normals(x)))
+                Normals.Add(HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.Mesh.Normals(x)))
             Next
             Dim UV As New Vector2Collection
             For x = 0 To theModel.Mesh.UV.Count - 1
-                UV.Add(Convert_Vector2_SharpVector3D_InversedY(theModel.Mesh.UV(x)))
+                UV.Add(HelperFunctions.GEO.Convert_Vector2_SharpVector3D_InversedY(theModel.Mesh.UV(x)))
             Next
             Dim TriangleIndicesL(NumberMaterialGroups - 1) As IntCollection
             Dim TIndex As Integer = 0
@@ -758,7 +760,7 @@ Namespace Dialogs
                     TIndex += 1
                 Next
             Next
-            Dim BoundingBox As New SharpDX.BoundingBox(Convert_Vector3_SharpVector3D(theModel.BoundingBox_Min), Convert_Vector3_SharpVector3D(theModel.BoundingBox_Max))
+            Dim BoundingBox As New SharpDX.BoundingBox(HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.BoundingBox_Min), HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.BoundingBox_Max))
             Dim Rect3D As New Rect3D(theModel.BoundingBox_Min.X, theModel.BoundingBox_Min.Y, theModel.BoundingBox_Min.Z, BoundingBox.Width, BoundingBox.Height, BoundingBox.Depth)
 
             Dim NewGroup As New HelixToolkit.Wpf.SharpDX.GroupModel3D()
@@ -789,7 +791,7 @@ Namespace Dialogs
                 If mOption_AdjustModelPositions = True AndAlso HasBones = True Then
                     NewVector = AdjustVertexPosition_FromBone(x, theModel)
                 Else
-                    NewVector = Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(x), AdjustHandiness)
+                    NewVector = HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(x), AdjustHandiness)
                 End If
                 VertexBuffer.Add(NewVector)
             Next
@@ -801,13 +803,13 @@ Namespace Dialogs
             Next
             Dim Normals As New Vector3Collection
             For x = 0 To theModel.Mesh.Normals.Count - 1
-                Normals.Add(Convert_Vector3_SharpVector3D(theModel.Mesh.Normals(x)))
+                Normals.Add(HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.Mesh.Normals(x)))
             Next
             Dim UV As New Vector2Collection
             For x = 0 To theModel.Mesh.UV.Count - 1
-                UV.Add(Convert_Vector2_SharpVector3D_InversedY(theModel.Mesh.UV(x)))
+                UV.Add(HelperFunctions.GEO.Convert_Vector2_SharpVector3D_InversedY(theModel.Mesh.UV(x)))
             Next
-            Dim BoundingBox As New SharpDX.BoundingBox(Convert_Vector3_SharpVector3D(theModel.BoundingBox_Min), Convert_Vector3_SharpVector3D(theModel.BoundingBox_Max))
+            Dim BoundingBox As New SharpDX.BoundingBox(HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.BoundingBox_Min), HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.BoundingBox_Max))
             Dim Rect3D As New Rect3D(theModel.BoundingBox_Min.X, theModel.BoundingBox_Min.Y, theModel.BoundingBox_Min.Z, BoundingBox.Width, BoundingBox.Height, BoundingBox.Depth)
 
             Dim CurrentMeshGeometry = New HelixToolkit.Wpf.SharpDX.MeshGeometry3D() With {.Positions = VertexBuffer, .Indices = TriangleIndices, .Normals = Normals, .Bound = BoundingBox, .TextureCoordinates = UV}
@@ -825,7 +827,7 @@ Namespace Dialogs
             AddModel_BoundingBox(theModel.ModelName, Rect3D, theModel.Radius)
         End Sub
         Private Function AdjustVertexPosition_FromBone(ByRef VecIndex As Integer, ByRef theModel As COH_Resource_GEO_Model, Optional AdjustHandiness As Integer = 1) As Vector3
-            Dim NewVector As Vector3 = Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(VecIndex), AdjustHandiness)
+            Dim NewVector As Vector3 = HelperFunctions.GEO.Convert_Vector3_SharpVector3D(theModel.Mesh.Vertexs(VecIndex), AdjustHandiness)
             Dim BoneName1 As String = theModel.Mesh.Bones(theModel.Mesh.BoneMatIndex(VecIndex).Pos1 / 3).ToString
             Dim BoneName2 As String = theModel.Mesh.Bones(theModel.Mesh.BoneMatIndex(VecIndex).Pos2 / 3).ToString
             Dim ConnectedBone1 As COH_Resource_GEO_SkeletonBone = rLinked_Skeletons.Values(SelectedBoneIndex).SearchBone(BoneName1)
@@ -915,7 +917,7 @@ Namespace Dialogs
             mBoundingBox.Add(CurrentMesh)
         End Sub
         Private Sub Update_ModelGrid(Optional AdjustHandiness As Integer = 1)
-            Dim TheBox As Rect3D = Calculate_MaxBoundingBox(mCurrentGEO, AdjustHandiness)
+            Dim TheBox As Rect3D = HelperFunctions.GEO.Calculate_MaxBoundingBox(mCurrentGEO, AdjustHandiness)
             Dim TheMin As Vector2 = New Vector2(Math.Floor(TheBox.X), Math.Floor(TheBox.Z))
             Dim Size As Integer = TheBox.SizeX
             If TheBox.X > -10 Then
@@ -952,14 +954,14 @@ Namespace Dialogs
             End Select
         End Function
         Private Function Calculate_BoundingBox_Visible() As Rect3D
-            Dim MinPos As New GameContent.HelperClasses.Vector3
-            Dim MaxPos As New GameContent.HelperClasses.Vector3
+            Dim MinPos As New GameContent.HelperClasses.COH_Struct_Vector3
+            Dim MaxPos As New GameContent.HelperClasses.COH_Struct_Vector3
             For X = 0 To ModelList.Items.Count - 1
                 If ModelList.Items(X).Checked = True And mModels.Count > 0 Then
-                    Calculate_BoundingBox_Regions(mCurrentGEO.Models(X).Mesh.Vertexs, MinPos, MaxPos, -1) '//THIS NEEDS SET SOMEWHERE
+                    HelperFunctions.GEO.Calculate_BoundingBox_Regions(mCurrentGEO.Models(X).Mesh.Vertexs, MinPos, MaxPos, -1) '//THIS NEEDS SET SOMEWHERE
                 End If
             Next
-            Return Calculate_BoundingBox_FromMinMax(MinPos, MaxPos)
+            Return HelperFunctions.GEO.Calculate_BoundingBox_FromMinMax(MinPos, MaxPos)
         End Function
 
 #End Region

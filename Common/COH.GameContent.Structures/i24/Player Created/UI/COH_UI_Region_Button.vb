@@ -113,19 +113,19 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialAction As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mElementList As COH_UI_PlayerCreated_ElementList()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPageName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToolTip As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private misOpen As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOptional As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFirstUse As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mwd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mht As Single
+       Private mName As String
+       Private mSpecialAction As String
+       Private mElementList As COH_UI_PlayerCreated_ElementList()
+       Private mPageName As String
+       Private mToolTip As String
+       Private misOpen As Int32
+       Private mOptional As Int32
+       Private mFirstUse As Int32
+       Private mwd As Single
+       Private mht As Single
         '//LOCALIZED
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltipKey As String
+       Private mNameKey As String
+       Private mTooltipKey As String
 #End Region
 
 #Region "Create New Instance"

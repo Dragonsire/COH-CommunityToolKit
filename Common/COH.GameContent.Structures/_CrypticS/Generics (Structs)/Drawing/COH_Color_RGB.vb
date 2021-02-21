@@ -47,9 +47,9 @@ Namespace [Shared].Drawing
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRed As UInteger
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGreen As UInteger
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlue As UInteger
+       Private mRed As UInteger
+       Private mGreen As UInteger
+       Private mBlue As UInteger
 #End Region
 
 #Region "Create New Instance"

@@ -6,9 +6,9 @@ Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mEventController As COH_LibraryEventControl
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBinTool_CrypticS As COH_BinTool_CrypticS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBinTool_MessageStore As COH_BinTool_MessageStore
+       Private WithEvents mEventController As COH_LibraryEventControl
+       Private mBinTool_CrypticS As COH_BinTool_CrypticS
+       Private mBinTool_MessageStore As COH_BinTool_MessageStore
 #End Region
 
 #Region "Extract - Contents for Modding (Specified Bins)"

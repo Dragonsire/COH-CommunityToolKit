@@ -59,35 +59,35 @@
                 mExten2 = value
             End Set
         End Property
-        Property Offset As Vector3
+        Property Offset As COH_Struct_Vector3
             Get
                 Return mOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mOffset = value
             End Set
         End Property
-        Property Direction As Vector3
+        Property Direction As COH_Struct_Vector3
             Get
                 Return mDirection
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mDirection = value
             End Set
         End Property
-        Property DirX As Vector3
+        Property DirX As COH_Struct_Vector3
             Get
                 Return mDirX
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mDirX = value
             End Set
         End Property
-        Property DirY As Vector3
+        Property DirY As COH_Struct_Vector3
             Get
                 Return mDirY
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mDirY = value
             End Set
         End Property
@@ -121,19 +121,19 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextBone As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_ClothCollisionShape
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExten1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExten2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirection As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirX As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirY As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSameAs As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialBackwardsFlag As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialForwardsFlag As Boolean
+       Private mBoneName As String
+       Private mNextBone As String
+       Private mType As COH_Enum_ClothCollisionShape
+       Private mRadius As Single
+       Private mExten1 As Single
+       Private mExten2 As Single
+       Private mOffset As COH_Struct_Vector3
+       Private mDirection As COH_Struct_Vector3
+       Private mDirX As COH_Struct_Vector3
+       Private mDirY As COH_Struct_Vector3
+       Private mSameAs As String
+       Private mSpecialBackwardsFlag As Boolean
+       Private mSpecialForwardsFlag As Boolean
 #End Region
 
 #Region "Create New Instance"
@@ -157,10 +157,10 @@
             mBoneName = String.Empty
             mNextBone = String.Empty
             mType = 0
-            mOffset = New Vector3
-            mDirection = New Vector3
-            mDirX = New Vector3
-            mDirY = New Vector3
+            mOffset = New COH_Struct_Vector3
+            mDirection = New COH_Struct_Vector3
+            mDirX = New COH_Struct_Vector3
+            mDirY = New COH_Struct_Vector3
             mSameAs = String.Empty
         End Sub
 #End Region

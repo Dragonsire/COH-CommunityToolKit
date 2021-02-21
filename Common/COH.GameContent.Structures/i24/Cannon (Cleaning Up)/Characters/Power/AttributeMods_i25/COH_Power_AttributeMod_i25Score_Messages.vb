@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttackerHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayVictimHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFloat As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttribDefenseFloat As CrypticS_String
+       Private mDisplayAttackerHit As CrypticS_String
+       Private mDisplayVictimHit As CrypticS_String
+       Private mDisplayFloat As CrypticS_String
+       Private mDisplayAttribDefenseFloat As CrypticS_String
 #End Region
 
 #Region "Create New Instance"

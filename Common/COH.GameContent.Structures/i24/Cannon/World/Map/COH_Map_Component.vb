@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapImage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextNotImage As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdefaultXScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdefaultYScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImageLocation As COH_Map_ComponentPlace()
+       Private mMapImage As String
+       Private mTextNotImage As Int32
+       Private mdefaultXScale As Single
+       Private mdefaultYScale As Single
+       Private mImageLocation As COH_Map_ComponentPlace()
 #End Region
 
 #Region "Create New Instance"

@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
+       Private mText As String
+       Private mPage As String
+       Private mRequires As String()
 #End Region
 
 #Region "Create New Instance"

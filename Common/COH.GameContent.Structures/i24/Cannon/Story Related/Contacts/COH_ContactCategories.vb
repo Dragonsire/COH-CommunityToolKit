@@ -38,9 +38,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContacts As String()
+       Private mName As String
+       Private mDisplayNameKey As String
+       Private mContacts As String()
 #End Region
 
 #Region "Create New Instances"

@@ -40,9 +40,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPeriod As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShutBaseDown As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDenyBaseEntry As Boolean
+       Private mPeriod As Int32
+       Private mShutBaseDown As Boolean
+       Private mDenyBaseEntry As Boolean
 #End Region
 
 #Region "Create New Instance"

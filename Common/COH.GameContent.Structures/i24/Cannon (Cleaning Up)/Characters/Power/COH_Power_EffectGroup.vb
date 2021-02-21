@@ -107,17 +107,17 @@ Namespace Characters.Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTag As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProcsPerMinute As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelay As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadiusInner As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadiusOuter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_EnumFlags_EffectGroup
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEvalFlags As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttribMod As COH_Power_AttributeMod_i25_Score()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffect As COH_PowerEffectGroup()
+       Private mTag As String()
+       Private mChance As Single
+       Private mProcsPerMinute As Single
+       Private mDelay As Single
+       Private mRadiusInner As Single
+       Private mRadiusOuter As Single
+       Private mRequires As String()
+       Private mFlags As COH_EnumFlags_EffectGroup
+       Private mEvalFlags As Int32
+       Private mAttribMod As COH_Power_AttributeMod_i25_Score()
+       Private mEffect As COH_PowerEffectGroup()
 #End Region
 
 #Region "Create New Instance"

@@ -163,24 +163,24 @@ Namespace Animation
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMoveRate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInterpolate As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriority As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNextMove As COH_Generic_StringClass()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCycleMove As COH_Generic_StringClass()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Animation_GFX()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWind As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMember As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInterrupts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSticksOnChild As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetsOnChild As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetsOnReactor As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSets As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_EnumFlags_MoveSequence
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRaw As COH_Animation_Sequence_Raw
+       Private mName As String
+       Private mMoveRate As Single
+       Private mInterpolate As Int32
+       Private mPriority As Int32
+       Private mScale As Single
+       Private mNextMove As COH_Generic_StringClass()
+       Private mCycleMove As COH_Generic_StringClass()
+       Private mType As COH_Animation_GFX()
+       Private mWind As String
+       Private mMember As String()
+       Private mInterrupts As String()
+       Private mSticksOnChild As String()
+       Private mSetsOnChild As String()
+       Private mSetsOnReactor As String()
+       Private mSets As String()
+       Private mRequires As String()
+       Private mFlags As COH_EnumFlags_MoveSequence
+       Private mRaw As COH_Animation_Sequence_Raw
 #End Region
 
 #Region "Create New Instance"

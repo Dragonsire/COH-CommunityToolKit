@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMap As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawn As String
+       Private mName As String
+       Private mDescription As String
+       Private mMap As Int32
+       Private mSpawn As String
 #End Region
 
 #Region "Create New Instance"

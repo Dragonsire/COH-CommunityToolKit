@@ -10,6 +10,7 @@
     <FileVersion>1.0.0.0</FileVersion>
 	<OutputType>Library</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+	<UseWPF>true</UseWPF>
     <NeutralLanguage>en</NeutralLanguage>
     <Platforms>AnyCPU</Platforms>
     <Configurations>Debug_Toolkit;Release_Toolkit;Release_Client;Release_GameServer</Configurations>
@@ -50,6 +51,7 @@
     <Import Include="COH.GameContent.CodeManagement.Enums.Structures" />
     <Import Include="COH.GameContent.CodeManagement.Enums.Toks" />
     <Import Include="COH.GameContent.CodeManagement.Extentions" />
+    <Import Include="COH.GameContent.CodeManagement.Interfaces" />
     <Import Include="COH.GameContent.CodeManagement.Interfaces.Structures" />
     <Import Include="COH.GameContent.CodeManagement.Interfaces.TOKs" />
     <Import Include="COH.GameContent.Storage.Serialization" />
@@ -57,11 +59,24 @@
     <Import Include="COH.GameContent.Storage.Structures" />
     <Import Include="COH.GameContent.Storage.Structures.CrypticsS" />
     <Import Include="COH.GameContent.Storage.Structures.Generics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Drawing.Imaging" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.15.0" />
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\COH.Tools.Controls.WPF\COH.Tools.WPFControls.vbproj" />
   </ItemGroup>
 
 </Project>

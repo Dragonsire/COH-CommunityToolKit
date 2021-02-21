@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNames As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumes As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mXP As Int32
+       Private mLevel As Int32
+       Private mDisplayNames As String()
+       Private mCostumes As String()
+       Private mXP As Int32
 #End Region
 
 #Region "Create New Instances"

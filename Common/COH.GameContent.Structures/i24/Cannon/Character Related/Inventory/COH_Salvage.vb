@@ -164,25 +164,25 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_Details As UI.COH_UI_Widget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTabName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayDropMessage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRarity As COH_Enum_SalvageRarity
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_SalvageType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChallengePoints As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewardTableName As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOpenRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuctionRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayOpenRequiresFailed As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinReverseEngineerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxInventoryAmount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSellAmount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_SalvageFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreProduct As String
+       Private mName As String
+       Private mUI_Details As UI.COH_UI_Widget
+       Private mDisplayTabName As String
+       Private mDisplayDropMessage As String
+       Private mRarity As COH_Enum_SalvageRarity
+       Private mType As COH_Enum_SalvageType
+       Private mChallengePoints As Int32
+       Private mRewardTableName As String()
+       Private mOpenRequires As String()
+       Private mAuctionRequires As String()
+       Private mDisplayOpenRequiresFailed As String
+       Private mMinReverseEngineerLevel As Int32
+       Private mMaxInventoryAmount As Int32
+       Private mSellAmount As Int32
+       Private mFlags As COH_Enum_SalvageFlags
+       Private mStoreProduct As String
         '//LINKED
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorkShopLinks As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorkShop As World.COH_ObjectDetail
+       Private mWorkShopLinks As String()
+       Private mWorkShop As World.COH_ObjectDetail
 #End Region
 
 #Region "Create New Instance"

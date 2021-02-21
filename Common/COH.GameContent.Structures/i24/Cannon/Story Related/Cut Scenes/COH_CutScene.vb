@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_CutSceneFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEvent As COH_CutScene_Event()
+       Private mFlags As COH_Enum_CutSceneFlags
+       Private mEvent As COH_CutScene_Event()
 #End Region
 
 #Region "Create New Instance"

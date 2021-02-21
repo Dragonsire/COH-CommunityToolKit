@@ -166,19 +166,19 @@ Namespace Animation
                 mShadowQuality = value
             End Set
         End Property
-        Property ShadowSize As Vector3
+        Property ShadowSize As COH_Struct_Vector3
             Get
                 Return mShadowSize
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShadowSize = value
             End Set
         End Property
-        Property ShadowOffset As Vector3
+        Property ShadowOffset As COH_Struct_Vector3
             Get
                 Return mShadowOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShadowOffset = value
             End Set
         End Property
@@ -214,27 +214,27 @@ Namespace Animation
                 mGeomScale = value
             End Set
         End Property
-        Property GeomScaleMax As Vector3
+        Property GeomScaleMax As COH_Struct_Vector3
             Get
                 Return mGeomScaleMax
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mGeomScaleMax = value
             End Set
         End Property
-        Property CapsuleSize As Vector3
+        Property CapsuleSize As COH_Struct_Vector3
             Get
                 Return mCapsuleSize
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCapsuleSize = value
             End Set
         End Property
-        Property CapsuleOffset As Vector3
+        Property CapsuleOffset As COH_Struct_Vector3
             Get
                 Return mCapsuleOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCapsuleOffset = value
             End Set
         End Property
@@ -398,43 +398,43 @@ Namespace Animation
                 mReticleBaseBias = value
             End Set
         End Property
-        Property ShoulderScaleSkinny As Vector3
+        Property ShoulderScaleSkinny As COH_Struct_Vector3
             Get
                 Return mShoulderScaleSkinny
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShoulderScaleSkinny = value
             End Set
         End Property
-        Property ShoulderScaleFat As Vector3
+        Property ShoulderScaleFat As COH_Struct_Vector3
             Get
                 Return mShoulderScaleFat
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mShoulderScaleFat = value
             End Set
         End Property
-        Property HipScale As Vector3
+        Property HipScale As COH_Struct_Vector3
             Get
                 Return mHipScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mHipScale = value
             End Set
         End Property
-        Property NeckScale As Vector3
+        Property NeckScale As COH_Struct_Vector3
             Get
                 Return mNeckScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mNeckScale = value
             End Set
         End Property
-        Property LegScaleVec As Vector3
+        Property LegScaleVec As COH_Struct_Vector3
             Get
                 Return mLegScaleVec
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mLegScaleVec = value
             End Set
         End Property
@@ -494,19 +494,19 @@ Namespace Animation
                 mLegScaleMax = value
             End Set
         End Property
-        Property HeadScaleMin As Vector3
+        Property HeadScaleMin As COH_Struct_Vector3
             Get
                 Return mHeadScaleMin
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mHeadScaleMin = value
             End Set
         End Property
-        Property HeadScaleMax As Vector3
+        Property HeadScaleMax As COH_Struct_Vector3
             Get
                 Return mHeadScaleMax
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mHeadScaleMax = value
             End Set
         End Property
@@ -580,76 +580,76 @@ Namespace Animation
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSequencer As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSequencerType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVar As COH_Animation_Sequence_Var()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGraphics As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLODs As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisSphereRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxAlpha As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReverseFadeOutDist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeOutStart As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeOutFinish As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTicksToLingerAfterDeath As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTicksToFadeAwayAfterDeath As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowTexture As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowQuality As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowSize As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShadowOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_EnumFlags_AnimationSequence
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLightAsDoorOutside As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRejectContinuingFX As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeomScale As COH_Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeomScaleMax As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCapsuleSize As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCapsuleOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneCapsule As COH_BoneCapsule()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHasRandomName As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandomNameFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBigMonster As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFx As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOnClickFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHealthFx As COH_FX_Health()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinimumAmbient As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneScaleFat As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneScaleSkinny As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandomBoneScale As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNotSelectable As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCollisionType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBounciness As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlacement As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelection As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConstantState As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReticleHeightBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReticleWidthBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReticleBaseBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoulderScaleSkinny As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoulderScaleFat As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHipScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNeckScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegScaleVec As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadScaleRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoulderScaleRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChestScaleRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWaistScaleRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHipScaleRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegScaleMin As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegScaleMax As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadScaleMin As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadScaleMax As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegScaleRatio As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnOffsetY As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoStrafe As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTurnSpeed As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCameraHeight As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPushable As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFullBodyPortrait As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStaticLighting As Int32
+       Private mName As String
+       Private mFileName As String
+       Private mFileAge As Int32
+       Private mSequencer As String
+       Private mSequencerType As String
+       Private mVar As COH_Animation_Sequence_Var()
+       Private mAnimScale As Single
+       Private mGraphics As String
+       Private mLODs As Single()
+       Private mVisSphereRadius As Single
+       Private mMaxAlpha As Byte
+       Private mReverseFadeOutDist As Single
+       Private mFadeOutStart As Single
+       Private mFadeOutFinish As Single
+       Private mTicksToLingerAfterDeath As Int32
+       Private mTicksToFadeAwayAfterDeath As Int32
+       Private mShadowType As Int32
+       Private mShadowTexture As String
+       Private mShadowQuality As Int32
+       Private mShadowSize As COH_Struct_Vector3
+       Private mShadowOffset As COH_Struct_Vector3
+       Private mFlags As COH_EnumFlags_AnimationSequence
+       Private mLightAsDoorOutside As Int32
+       Private mRejectContinuingFX As Int32
+       Private mGeomScale As COH_Vector3
+       Private mGeomScaleMax As COH_Struct_Vector3
+       Private mCapsuleSize As COH_Struct_Vector3
+       Private mCapsuleOffset As COH_Struct_Vector3
+       Private mBoneCapsule As COH_BoneCapsule()
+       Private mHasRandomName As Int32
+       Private mRandomNameFile As String
+       Private mBigMonster As Int32
+       Private mFx As String()
+       Private mOnClickFx As String
+       Private mHealthFx As COH_FX_Health()
+       Private mMinimumAmbient As Single
+       Private mBoneScaleFat As String
+       Private mBoneScaleSkinny As String
+       Private mRandomBoneScale As Int32
+       Private mNotSelectable As Int32
+       Private mCollisionType As Int32
+       Private mBounciness As Single
+       Private mPlacement As Int32
+       Private mSelection As Int32
+       Private mConstantState As String()
+       Private mReticleHeightBias As Single
+       Private mReticleWidthBias As Single
+       Private mReticleBaseBias As Single
+       Private mShoulderScaleSkinny As COH_Struct_Vector3
+       Private mShoulderScaleFat As COH_Struct_Vector3
+       Private mHipScale As COH_Struct_Vector3
+       Private mNeckScale As COH_Struct_Vector3
+       Private mLegScaleVec As COH_Struct_Vector3
+       Private mHeadScaleRange As Single
+       Private mShoulderScaleRange As Single
+       Private mChestScaleRange As Single
+       Private mWaistScaleRange As Single
+       Private mHipScaleRange As Single
+       Private mLegScaleMin As Single
+       Private mLegScaleMax As Single
+       Private mHeadScaleMin As COH_Struct_Vector3
+       Private mHeadScaleMax As COH_Struct_Vector3
+       Private mLegScaleRatio As Single
+       Private mSpawnOffsetY As Single
+       Private mNoStrafe As Int32
+       Private mTurnSpeed As Single
+       Private mCameraHeight As Single
+       Private mPushable As Int32
+       Private mFullBodyPortrait As Int32
+       Private mStaticLighting As Int32
 #End Region
 
         Const MAX_LODS = 4
@@ -696,12 +696,12 @@ Namespace Animation
             mVar = New COH_Animation_Sequence_Var() {}
             mGraphics = String.Empty
             mShadowTexture = String.Empty
-            mShadowSize = New Vector3
-            mShadowOffset = New Vector3
+            mShadowSize = New COH_Struct_Vector3
+            mShadowOffset = New COH_Struct_Vector3
             mGeomScale = New COH_Vector3(True, 1)
-            mGeomScaleMax = New Vector3
-            mCapsuleSize = New Vector3
-            mCapsuleOffset = New Vector3
+            mGeomScaleMax = New COH_Struct_Vector3
+            mCapsuleSize = New COH_Struct_Vector3
+            mCapsuleOffset = New COH_Struct_Vector3
             mBoneCapsule = New COH_BoneCapsule() {}
             mRandomNameFile = String.Empty
             mFx = New String() {}
@@ -710,13 +710,13 @@ Namespace Animation
             mBoneScaleFat = String.Empty
             mBoneScaleSkinny = String.Empty
             mConstantState = New String() {}
-            mShoulderScaleSkinny = New Vector3
-            mShoulderScaleFat = New Vector3
-            mHipScale = New Vector3
-            mNeckScale = New Vector3
-            mLegScaleVec = New Vector3
-            mHeadScaleMin = New Vector3
-            mHeadScaleMax = New Vector3
+            mShoulderScaleSkinny = New COH_Struct_Vector3
+            mShoulderScaleFat = New COH_Struct_Vector3
+            mHipScale = New COH_Struct_Vector3
+            mNeckScale = New COH_Struct_Vector3
+            mLegScaleVec = New COH_Struct_Vector3
+            mHeadScaleMin = New COH_Struct_Vector3
+            mHeadScaleMax = New COH_Struct_Vector3
             mLODs = New Single(MAX_LODS - 1) {}
             mVisSphereRadius = SEQ_DEFAULT_VISSPHERERADIUS
             mMaxAlpha = SEQ_DEFAULT_MAX_ALPHA

@@ -21,11 +21,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private Shared sInstance As COH_ContentController
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private sMainForm As COH_Tools
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProgramFolders As COH_ProgramPathsManager
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings As ContentManager_Settings
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLoadScreenVisible As Boolean
+       Private Shared sInstance As COH_ContentController
+       Private sMainForm As COH_Tools
+       Private mProgramFolders As COH_ProgramPathsManager
+       Private mSettings As ContentManager_Settings
+       Private mLoadScreenVisible As Boolean
 #End Region
 
 #Region "Initialize"

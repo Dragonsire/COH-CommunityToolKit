@@ -47,9 +47,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEvent As COH_Enum_PowerEvent
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSeconds As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlways As Boolean
+       Private mEvent As COH_Enum_PowerEvent
+       Private mSeconds As Int32
+       Private mAlways As Boolean
 #End Region
 
 #Region "Create New Instances"

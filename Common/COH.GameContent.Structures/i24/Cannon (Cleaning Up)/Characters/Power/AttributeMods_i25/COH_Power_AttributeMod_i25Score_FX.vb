@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX As String
+       Private mContinuingBits As Int32()
+       Private mContinuingFX As String
+       Private mConditionalBits As Int32()
+       Private mConditionalFX As String
 #End Region
 
 #Region "Create New Instance"

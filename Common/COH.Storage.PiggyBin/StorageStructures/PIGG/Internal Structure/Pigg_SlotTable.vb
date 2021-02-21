@@ -13,10 +13,10 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private sSlotTableMarker As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private sCount As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private sSize As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private sItems As List(Of COH_PIGG_SlotTableEntry)
+       Private sSlotTableMarker As UInt32
+       Private sCount As UInt32
+       Private sSize As UInt32
+       Private sItems As List(Of COH_PIGG_SlotTableEntry)
 #End Region
 
 #Region "Create New Instance"

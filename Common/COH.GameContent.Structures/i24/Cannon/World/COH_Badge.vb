@@ -243,34 +243,34 @@ Namespace World
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCollection As COH_Enum_CollectionType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As COH_Enum_BadgeType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSteamExport As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHint As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHintVillain As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTextVillain As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTitleVillain As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisible As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHinted As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMeter As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRevoke As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayButton As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mButtonReward As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoNotCount As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayPopup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAwardText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAwardTextColor As COH_Color_RGBA
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContacts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeValues As Int32
+       Private mCurrentFile As String
+       Private mName As String
+       Private mIndex As Int32
+       Private mCollection As COH_Enum_CollectionType
+       Private mCategory As COH_Enum_BadgeType
+       Private mSteamExport As String
+       Private mDisplayHint As String
+       Private mDisplayText As String
+       Private mDisplayTitle As String
+       Private mIcon As String
+       Private mDisplayHintVillain As String
+       Private mDisplayTextVillain As String
+       Private mDisplayTitleVillain As String
+       Private mVillainIcon As String
+       Private mReward As String()
+       Private mVisible As String()
+       Private mHinted As String()
+       Private mRequires As String()
+       Private mMeter As String()
+       Private mRevoke As String()
+       Private mDisplayButton As String
+       Private mButtonReward As String()
+       Private mDoNotCount As Boolean
+       Private mDisplayPopup As String
+       Private mAwardText As String
+       Private mAwardTextColor As COH_Color_RGBA
+       Private mContacts As String()
+       Private mBadgeValues As Int32
 #End Region
 
 #Region "Create New Instance"

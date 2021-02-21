@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLOD As COH_Costume_Cloth_CollisionInfoLOD()
+       Private mType As String
+       Private mLOD As COH_Costume_Cloth_CollisionInfoLOD()
 #End Region
 
 #Region "Create New Instance"

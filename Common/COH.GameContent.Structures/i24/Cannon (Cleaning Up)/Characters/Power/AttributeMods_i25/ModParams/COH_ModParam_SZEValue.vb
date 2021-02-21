@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScriptID As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScriptValue As String()
+       Private mScriptID As String()
+       Private mScriptValue As String()
 #End Region
 
 #Region "Create New Instance"

@@ -113,18 +113,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String
-        '' <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInternalProducts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTag As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegacy As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDevOnly As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOH As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOHV As Int32
+       Private mName As String
+       Private mdisplayName As String
+       Private mdisplayNameKey As String
+       Private mKeys As String()
+       Private mProduct As String
+        ''Private mInternalProducts As String()
+       Private mTag As String()
+       Private mLegacy As Int32
+       Private mDevOnly As Int32
+       Private mCOV As Int32
+       Private mCOH As Int32
+       Private mCOHV As Int32
 #End Region
 
 #Region "Create New Instance"

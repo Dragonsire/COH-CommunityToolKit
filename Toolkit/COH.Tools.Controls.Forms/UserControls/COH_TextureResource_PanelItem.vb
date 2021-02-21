@@ -25,12 +25,12 @@ Public Class COH_TextureResource_PanelItem
 #End Region
 
 #Region "Private Usage"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParent As COH_TextureResource_Panel
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As Integer = 0
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mThumbnail_Size As Size = New Size(175, 175)
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As COH_FileStructure
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImage As Bitmap
+   Private mParent As COH_TextureResource_Panel
+   Private mIndex As Integer = 0
+   Private mThumbnail_Size As Size = New Size(175, 175)
+   Private mName As String
+   Private mResource As COH_FileStructure
+   Private mImage As Bitmap
 #End Region
 
 #Region "Initialize"

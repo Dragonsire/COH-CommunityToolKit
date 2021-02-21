@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayVIP As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFree As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLoyaltyPointsRequired As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInfluenceCap As Int64
+       Private mName As String
+       Private mDisplayName As String
+       Private mDisplayVIP As String
+       Private mDisplayFree As String
+       Private mProduct As String()
+       Private mLoyaltyPointsRequired As Int32
+       Private mInfluenceCap As Int64
 #End Region
 
 #Region "Create New Instance"

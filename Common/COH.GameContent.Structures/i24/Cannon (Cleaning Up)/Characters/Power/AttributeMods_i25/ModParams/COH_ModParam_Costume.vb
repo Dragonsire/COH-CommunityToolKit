@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostume As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriority As Int32
+       Private mCostume As String
+       Private mPriority As Int32
 #End Region
 
 #Region "Create New Instance"

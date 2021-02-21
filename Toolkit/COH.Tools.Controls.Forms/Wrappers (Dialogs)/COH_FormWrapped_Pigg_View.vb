@@ -10,11 +10,11 @@ Namespace Dialogs
     Public Class COH_FormWrapped_Pigg_View
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileSource As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTool As Utilities.COH_PiggTool
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPreviewControl As Control
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentResource As COH_FileStructure
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
+       Private mFileSource As String
+       Private mTool As Utilities.COH_PiggTool
+       Private mPreviewControl As Control
+       Private mCurrentResource As COH_FileStructure
+       Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
 #End Region
 
 #Region "Initialize"

@@ -40,9 +40,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_OmniLightFlags
+       Private mColor1 As Drawing.Color
+       Private mRadius As Single
+       Private mFlags As COH_Enum_OmniLightFlags
 #End Region
 
 #Region "Create New Instance"

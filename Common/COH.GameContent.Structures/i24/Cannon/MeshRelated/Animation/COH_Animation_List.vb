@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContents As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
+       Private mName As String
+       Private mContents As String()
+       Private mFileName As String
 #End Region
 
 #Region "Create New Instance"

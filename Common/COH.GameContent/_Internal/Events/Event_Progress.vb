@@ -38,10 +38,10 @@
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCancel As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValue As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTheEvent As COH_ProgressEvent
+       Private mCancel As Boolean
+       Private mMessage As String
+       Private mValue As String
+       Private mTheEvent As COH_ProgressEvent
 #End Region
 
 #Region "Initialize"

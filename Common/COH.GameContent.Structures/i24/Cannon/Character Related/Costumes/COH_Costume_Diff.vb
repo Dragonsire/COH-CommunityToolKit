@@ -99,59 +99,59 @@
                 mArmScale = value
             End Set
         End Property
-        Property HeadScales As Vector3
+        Property HeadScales As COH_Struct_Vector3
             Get
                 Return mHeadScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mHeadScales = value
             End Set
         End Property
-        Property BrowScales As Vector3
+        Property BrowScales As COH_Struct_Vector3
             Get
                 Return mBrowScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mBrowScales = value
             End Set
         End Property
-        Property CheekScales As Vector3
+        Property CheekScales As COH_Struct_Vector3
             Get
                 Return mCheekScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCheekScales = value
             End Set
         End Property
-        Property ChinScales As Vector3
+        Property ChinScales As COH_Struct_Vector3
             Get
                 Return mChinScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mChinScales = value
             End Set
         End Property
-        Property CraniumScales As Vector3
+        Property CraniumScales As COH_Struct_Vector3
             Get
                 Return mCraniumScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mCraniumScales = value
             End Set
         End Property
-        Property JawScales As Vector3
+        Property JawScales As COH_Struct_Vector3
             Get
                 Return mJawScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mJawScales = value
             End Set
         End Property
-        Property NoseScales As Vector3
+        Property NoseScales As COH_Struct_Vector3
             Get
                 Return mNoseScales
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mNoseScales = value
             End Set
         End Property
@@ -201,29 +201,29 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntTypeFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeFilePrefix As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoulderScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChestScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWaistScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHipScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArmScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBrowScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCheekScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChinScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCraniumScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mJawScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoseScales As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSkinColor As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumParts As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodyType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBaseCostumeNum As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDiffCostumePart As COH_CostumePart_Diff()
+       Private mEntTypeFile As String
+       Private mCostumeFilePrefix As String
+       Private mScale As Single
+       Private mBoneScale As Single
+       Private mHeadScale As Single
+       Private mShoulderScale As Single
+       Private mChestScale As Single
+       Private mWaistScale As Single
+       Private mHipScale As Single
+       Private mLegScale As Single
+       Private mArmScale As Single
+       Private mHeadScales As COH_Struct_Vector3
+       Private mBrowScales As COH_Struct_Vector3
+       Private mCheekScales As COH_Struct_Vector3
+       Private mChinScales As COH_Struct_Vector3
+       Private mCraniumScales As COH_Struct_Vector3
+       Private mJawScales As COH_Struct_Vector3
+       Private mNoseScales As COH_Struct_Vector3
+       Private mSkinColor As Drawing.Color
+       Private mNumParts As Int32
+       Private mBodyType As Int32
+       Private mBaseCostumeNum As Int32
+       Private mDiffCostumePart As COH_CostumePart_Diff()
 #End Region
 
 #Region "Create New Instance"
@@ -246,13 +246,13 @@
             mHipScale = 0
             mLegScale = 0
             mArmScale = 0
-            mHeadScales = New Vector3  ' No Default Defined
-            mBrowScales = New Vector3  ' No Default Defined
-            mCheekScales = New Vector3  ' No Default Defined
-            mChinScales = New Vector3  ' No Default Defined
-            mCraniumScales = New Vector3  ' No Default Defined
-            mJawScales = New Vector3 ' No Default Defined
-            mNoseScales = New Vector3  ' No Default Defined
+            mHeadScales = New COH_Struct_Vector3  ' No Default Defined
+            mBrowScales = New COH_Struct_Vector3  ' No Default Defined
+            mCheekScales = New COH_Struct_Vector3  ' No Default Defined
+            mChinScales = New COH_Struct_Vector3  ' No Default Defined
+            mCraniumScales = New COH_Struct_Vector3  ' No Default Defined
+            mJawScales = New COH_Struct_Vector3 ' No Default Defined
+            mNoseScales = New COH_Struct_Vector3  ' No Default Defined
             mSkinColor = New Drawing.Color  ' No Default Defined
             mNumParts = 0
             mBodyType = 0

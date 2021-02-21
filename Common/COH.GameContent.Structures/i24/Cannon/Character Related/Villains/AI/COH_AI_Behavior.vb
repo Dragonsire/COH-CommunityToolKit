@@ -38,27 +38,27 @@ Namespace Enemies.AI
                 mFileAge = value
             End Set
         End Property
-        Property StartJitter As Vector3
+        Property StartJitter As COH_Struct_Vector3
             Get
                 Return mStartJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mStartJitter = value
             End Set
         End Property
-        Property InitialVelocity As Vector3
+        Property InitialVelocity As COH_Struct_Vector3
             Get
                 Return mInitialVelocity
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mInitialVelocity = value
             End Set
         End Property
-        Property InitialVelocityJitter As Vector3
+        Property InitialVelocityJitter As COH_Struct_Vector3
             Get
                 Return mInitialVelocityJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mInitialVelocityJitter = value
             End Set
         End Property
@@ -182,11 +182,11 @@ Namespace Enemies.AI
                 mPhysForceSpeedScaleMax = value
             End Set
         End Property
-        Property PhysScale As Vector3
+        Property PhysScale As COH_Struct_Vector3
             Get
                 Return mPhysScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPhysScale = value
             End Set
         End Property
@@ -198,11 +198,11 @@ Namespace Enemies.AI
                 mPhysJointDOFs = value
             End Set
         End Property
-        Property PhysJointAnchor As Vector3
+        Property PhysJointAnchor As COH_Struct_Vector3
             Get
                 Return mPhysJointAnchor
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPhysJointAnchor = value
             End Set
         End Property
@@ -302,19 +302,19 @@ Namespace Enemies.AI
                 mPhysDebris = value
             End Set
         End Property
-        Property Spin As Vector3
+        Property Spin As COH_Struct_Vector3
             Get
                 Return mSpin
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mSpin = value
             End Set
         End Property
-        Property SpinJitter As Vector3
+        Property SpinJitter As COH_Struct_Vector3
             Get
                 Return mSpinJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mSpinJitter = value
             End Set
         End Property
@@ -382,35 +382,35 @@ Namespace Enemies.AI
                 mBlurRadius = value
             End Set
         End Property
-        Property Scale As Vector3
+        Property Scale As COH_Struct_Vector3
             Get
                 Return mScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mScale = value
             End Set
         End Property
-        Property ScaleRate As Vector3
+        Property ScaleRate As COH_Struct_Vector3
             Get
                 Return mScaleRate
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mScaleRate = value
             End Set
         End Property
-        Property ScaleTime As Vector3
+        Property ScaleTime As COH_Struct_Vector3
             Get
                 Return mScaleTime
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mScaleTime = value
             End Set
         End Property
-        Property EndScale As Vector3
+        Property EndScale As COH_Struct_Vector3
             Get
                 Return mEndScale
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mEndScale = value
             End Set
         End Property
@@ -430,27 +430,27 @@ Namespace Enemies.AI
                 mDrag = value
             End Set
         End Property
-        Property PyrRotate As Vector3
+        Property PyrRotate As COH_Struct_Vector3
             Get
                 Return mPyrRotate
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPyrRotate = value
             End Set
         End Property
-        Property PyrRotateJitter As Vector3
+        Property PyrRotateJitter As COH_Struct_Vector3
             Get
                 Return mPyrRotateJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPyrRotateJitter = value
             End Set
         End Property
-        Property PositionOffset As Vector3
+        Property PositionOffset As COH_Struct_Vector3
             Get
                 Return mPositionOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPositionOffset = value
             End Set
         End Property
@@ -852,110 +852,110 @@ Namespace Enemies.AI
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParamBitfield As Byte()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStartJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialVelocity As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialVelocityJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialVelocityAngle As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGravity As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysics As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysGravity As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysRestitution As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysSFriction As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysDFriction As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysKillBelowSpeed As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysDensity As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForceRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForcePower As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForcePowerJitter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForceCentripetal As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForceSpeedScaleMax As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointDOFs As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointAnchor As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointAngLimit As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointLinLimit As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointBreakTorque As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointBreakForce As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointLinSpring As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointLinSpringDamp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointAngSpring As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointAngSpringDamp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointDrag As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysJointCollidesWorld As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysForceType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysDebris As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpin As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpinJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeInLength As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeOutLength As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShake As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShakeFallOff As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShakeRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlur As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlurFallOff As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlurRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScaleRate As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScaleTime As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEndScale As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStretch As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDrag As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPyrRotate As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPyrRotateJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPositionOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseShieldOffset As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrackRate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrackMethod As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCollides As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifeSpan As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlpha As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPulsePeakTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPulseBrightness As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPulseClamp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplatFlags As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplatFalloffType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplatNormalFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplatFadeCenter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplatSetBack As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStAnim As COH_Tricks_ST_Anim()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHueShift As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHueShiftJitter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStartColor As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeColor1 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeColor2 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeColor3 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeColor4 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mByTime1 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mByTime2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mByTime3 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mByTime4 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint3 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint4 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint3 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint4 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInheritGroupTint As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb0 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb1 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb2 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb3 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb4 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb0Time As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb1Time As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb2Time As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb3Time As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb4Time As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTintGeom As Boolean
+       Private mName As String
+       Private mParamBitfield As Byte()
+       Private mFileAge As Int32
+       Private mStartJitter As COH_Struct_Vector3
+       Private mInitialVelocity As COH_Struct_Vector3
+       Private mInitialVelocityJitter As COH_Struct_Vector3
+       Private mInitialVelocityAngle As Single
+       Private mGravity As Single
+       Private mPhysics As Byte
+       Private mPhysRadius As Single
+       Private mPhysGravity As Single
+       Private mPhysRestitution As Single
+       Private mPhysSFriction As Single
+       Private mPhysDFriction As Single
+       Private mPhysKillBelowSpeed As Single
+       Private mPhysDensity As Single
+       Private mPhysForceRadius As Single
+       Private mPhysForcePower As Single
+       Private mPhysForcePowerJitter As Single
+       Private mPhysForceCentripetal As Single
+       Private mPhysForceSpeedScaleMax As Single
+       Private mPhysScale As COH_Struct_Vector3
+       Private mPhysJointDOFs As Int32
+       Private mPhysJointAnchor As COH_Struct_Vector3
+       Private mPhysJointAngLimit As Single
+       Private mPhysJointLinLimit As Single
+       Private mPhysJointBreakTorque As Single
+       Private mPhysJointBreakForce As Single
+       Private mPhysJointLinSpring As Single
+       Private mPhysJointLinSpringDamp As Single
+       Private mPhysJointAngSpring As Single
+       Private mPhysJointAngSpringDamp As Single
+       Private mPhysJointDrag As Single
+       Private mPhysJointCollidesWorld As Boolean
+       Private mPhysForceType As Int32
+       Private mPhysDebris As Int32
+       Private mSpin As COH_Struct_Vector3
+       Private mSpinJitter As COH_Struct_Vector3
+       Private mFadeInLength As Single
+       Private mFadeOutLength As Single
+       Private mShake As Single
+       Private mShakeFallOff As Single
+       Private mShakeRadius As Single
+       Private mBlur As Single
+       Private mBlurFallOff As Single
+       Private mBlurRadius As Single
+       Private mScale As COH_Struct_Vector3
+       Private mScaleRate As COH_Struct_Vector3
+       Private mScaleTime As COH_Struct_Vector3
+       Private mEndScale As COH_Struct_Vector3
+       Private mStretch As Byte
+       Private mDrag As Single
+       Private mPyrRotate As COH_Struct_Vector3
+       Private mPyrRotateJitter As COH_Struct_Vector3
+       Private mPositionOffset As COH_Struct_Vector3
+       Private mUseShieldOffset As Boolean
+       Private mTrackRate As Single
+       Private mTrackMethod As Byte
+       Private mCollides As Byte
+       Private mLifeSpan As Int32
+       Private mAnimScale As Single
+       Private mAlpha As Byte
+       Private mPulsePeakTime As Single
+       Private mPulseBrightness As Single
+       Private mPulseClamp As Single
+       Private mSplatFlags As Int32
+       Private mSplatFalloffType As Int32
+       Private mSplatNormalFade As Single
+       Private mSplatFadeCenter As Single
+       Private mSplatSetBack As Single
+       Private mStAnim As COH_Tricks_ST_Anim()
+       Private mHueShift As Single
+       Private mHueShiftJitter As Single
+       Private mStartColor As COH_Color_RGB
+       Private mBeColor1 As COH_Color_RGB
+       Private mBeColor2 As COH_Color_RGB
+       Private mBeColor3 As COH_Color_RGB
+       Private mBeColor4 As COH_Color_RGB
+       Private mByTime1 As Int32
+       Private mByTime2 As Int32
+       Private mByTime3 As Int32
+       Private mByTime4 As Int32
+       Private mPrimaryTint As Single
+       Private mPrimaryTint1 As Single
+       Private mPrimaryTint2 As Single
+       Private mPrimaryTint3 As Single
+       Private mPrimaryTint4 As Single
+       Private mSecondaryTint As Single
+       Private mSecondaryTint1 As Single
+       Private mSecondaryTint2 As Single
+       Private mSecondaryTint3 As Single
+       Private mSecondaryTint4 As Single
+       Private mInheritGroupTint As Boolean
+       Private mRgb0 As COH_Color_RGB
+       Private mRgb1 As COH_Color_RGB
+       Private mRgb2 As COH_Color_RGB
+       Private mRgb3 As COH_Color_RGB
+       Private mRgb4 As COH_Color_RGB
+       Private mRgb0Time As Int32
+       Private mRgb1Time As Int32
+       Private mRgb2Time As Int32
+       Private mRgb3Time As Int32
+       Private mRgb4Time As Int32
+       Private mTintGeom As Boolean
 #End Region
 
 #Region "Create New Instance"
@@ -977,20 +977,20 @@ Namespace Enemies.AI
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
             mName = String.Empty
-            mStartJitter = New Vector3
-            mInitialVelocity = New Vector3
-            mInitialVelocityJitter = New Vector3
-            mPhysScale = New Vector3
-            mPhysJointAnchor = New Vector3
-            mSpin = New Vector3
-            mSpinJitter = New Vector3
-            mScale = New Vector3
-            mScaleRate = New Vector3
-            mScaleTime = New Vector3
-            mEndScale = New Vector3
-            mPyrRotate = New Vector3
-            mPyrRotateJitter = New Vector3
-            mPositionOffset = New Vector3
+            mStartJitter = New COH_Struct_Vector3
+            mInitialVelocity = New COH_Struct_Vector3
+            mInitialVelocityJitter = New COH_Struct_Vector3
+            mPhysScale = New COH_Struct_Vector3
+            mPhysJointAnchor = New COH_Struct_Vector3
+            mSpin = New COH_Struct_Vector3
+            mSpinJitter = New COH_Struct_Vector3
+            mScale = New COH_Struct_Vector3
+            mScaleRate = New COH_Struct_Vector3
+            mScaleTime = New COH_Struct_Vector3
+            mEndScale = New COH_Struct_Vector3
+            mPyrRotate = New COH_Struct_Vector3
+            mPyrRotateJitter = New COH_Struct_Vector3
+            mPositionOffset = New COH_Struct_Vector3
             mStAnim = New COH_Tricks_ST_Anim() {}
         End Sub
 #End Region

@@ -16,7 +16,7 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageStores As List(Of KeyValuePair(Of String, COH_MessageStore))
+       Private mMessageStores As List(Of KeyValuePair(Of String, COH_MessageStore))
 #End Region
 
 #Region "Create New Instance"

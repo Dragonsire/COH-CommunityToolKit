@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinPlayers As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxPlayers As Int32
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mMapName As String
+       Private mMinPlayers As Int32
+       Private mMaxPlayers As Int32
 #End Region
 
 #Region "Create New Instance"

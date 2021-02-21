@@ -11,11 +11,11 @@
 #End Region
 
 #Region "Properties"
-        Property ScaleST As Vector2()
+        Property ScaleST As COH_Struct_Vector2()
             Get
                 Return mScaleST
             End Get
-            Set(value As Vector2())
+            Set(value As COH_Struct_Vector2())
                 mScaleST = value
             End Set
         End Property
@@ -59,27 +59,27 @@
                 mUseFallback = value
             End Set
         End Property
-        Property DiffuseScaleVec As Vector3
+        Property DiffuseScaleVec As COH_Struct_Vector3
             Get
                 Return mDiffuseScaleVec
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mDiffuseScaleVec = value
             End Set
         End Property
-        Property AmbientScaleVec As Vector3
+        Property AmbientScaleVec As COH_Struct_Vector3
             Get
                 Return mAmbientScaleVec
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mAmbientScaleVec = value
             End Set
         End Property
-        Property AmbientMinVec As Vector3
+        Property AmbientMinVec As COH_Struct_Vector3
             Get
                 Return mAmbientMinVec
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mAmbientMinVec = value
             End Set
         End Property
@@ -89,15 +89,15 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScaleST As Vector2()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBase As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlend As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBumpMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlendType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseFallback As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDiffuseScaleVec As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAmbientScaleVec As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAmbientMinVec As Vector3
+       Private mScaleST As COH_Struct_Vector2()
+       Private mBase As String
+       Private mBlend As String
+       Private mBumpMap As String
+       Private mBlendType As Int32
+       Private mUseFallback As Byte
+       Private mDiffuseScaleVec As COH_Struct_Vector3
+       Private mAmbientScaleVec As COH_Struct_Vector3
+       Private mAmbientMinVec As COH_Struct_Vector3
 #End Region
 
 #Region "Create New Instance"
@@ -109,13 +109,13 @@
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
-            mScaleST = New Vector2(1) {New Vector2(1, 1), New Vector2(1, 1)}
+            mScaleST = New COH_Struct_Vector2(1) {New COH_Struct_Vector2(1, 1), New COH_Struct_Vector2(1, 1)}
             mBase = String.Empty
             mBlend = String.Empty
             mBumpMap = String.Empty
-            mDiffuseScaleVec = New Vector3(1, 1, 1)
-            mAmbientScaleVec = New Vector3(1, 1, 1)
-            mAmbientMinVec = New Vector3
+            mDiffuseScaleVec = New COH_Struct_Vector3(1, 1, 1)
+            mAmbientScaleVec = New COH_Struct_Vector3(1, 1, 1)
+            mAmbientMinVec = New COH_Struct_Vector3
         End Sub
 #End Region
 

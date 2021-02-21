@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionAdd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZoneAdd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNictusGroup As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamSize As COH_RankSelect()
+       Private mMissionAdd As Single
+       Private mZoneAdd As Single
+       Private mNictusGroup As Single
+       Private mTeamSize As COH_RankSelect()
 #End Region
 
 #Region "Create New Instance"

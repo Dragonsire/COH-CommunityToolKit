@@ -169,26 +169,26 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUserName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActualDisplay As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mElementList As COH_UI_PlayerCreated_ElementList()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mButton As COH_UI_PlayerCreated_Region_Button()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStruct As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToolTip As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIconGlow As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mouter_ht As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private minner_ht As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private minner_wd As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private misOpen As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUndeleteable As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdetailType As COH_Enum_PlayerCreated_DetailType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mlimit As Int32
+       Private mName As String
+       Private mDisplayName As String
+       Private mUserName As String
+       Private mActualDisplay As String
+       Private mElementList As COH_UI_PlayerCreated_ElementList()
+       Private mButton As COH_UI_PlayerCreated_Region_Button()
+       Private mStruct As String
+       Private mToolTip As String
+       Private mIcon As String
+       Private mIconGlow As String
+       Private mouter_ht As Single
+       Private minner_ht As Single
+       Private minner_wd As Single
+       Private misOpen As Int32
+       Private mUndeleteable As Int32
+       Private mdetailType As COH_Enum_PlayerCreated_DetailType
+       Private mlimit As Int32
         '//Localized
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltipKey As String
+       Private mDisplayNameKey As String
+       Private mTooltipKey As String
 #End Region
 
 #Region "Create New Instance"

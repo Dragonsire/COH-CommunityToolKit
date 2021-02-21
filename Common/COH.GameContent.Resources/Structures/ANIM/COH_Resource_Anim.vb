@@ -83,20 +83,20 @@ Namespace Structures.Anim
 
                     Dim Location = Retrieve_BoneLocation(BoneLink.ID)
                     If Not (Location Is Nothing) Then
-                        .FirstPosition = If(Location.Position Is Nothing, New Vector3, Location.Position(0))
-                        .FirstRotation = If(Location.Rotation Is Nothing, New Quat, Location.Rotation(0))
+                        .FirstPosition = If(Location.Position Is Nothing, New COH_Struct_Vector3, Location.Position(0))
+                        .FirstRotation = If(Location.Rotation Is Nothing, New COH_Struct_Quat, Location.Rotation(0))
                     End If
 
-                    Dim NewVector As Vector3
+                    Dim NewVector As COH_Struct_Vector3
                     If BoneLink.ID = 0 Or (ParentBone Is Nothing) Then
                         NewVector = .FirstPosition
                     Else
-                        Dim ParentBoneVector As Vector3 = ParentBone.ConnectedPosition
-                        NewVector = ParentBoneVector.AddVec3(New Vector3(.FirstPosition.Retrieve_Singles))
+                        Dim ParentBoneVector As COH_Struct_Vector3 = ParentBone.ConnectedPosition
+                        NewVector = ParentBoneVector.AddVec3(New COH_Struct_Vector3(.FirstPosition.Retrieve_Singles))
                     End If
                     .ConnectedPosition = NewVector
                     .ConnectedRotation = .FirstRotation '//Not Supposed to use in BASE ANIM
-                    '.BindPose = SharpDX.Matrix.Transformation(New Vector3(0, 0, 0), New SharpDX.Quaternion(0, 0, 0, 0), New Vector3(1, 1, 1), New Vector3(0, 0, 0), New SharpDX.Quaternion(BoneLink.FirstRotation.Retrieve_Singles), New Vector3(BoneLink.FirstPosition.Retrieve_Singles))
+                    '.BindPose = SharpDX.Matrix.Transformation(New COH_Struct_Vector3(0, 0, 0), New SharpDX.Quaternion(0, 0, 0, 0), New COH_Struct_Vector3(1, 1, 1), New COH_Struct_Vector3(0, 0, 0), New SharpDX.Quaternion(BoneLink.FirstRotation.Retrieve_Singles), New COH_Struct_Vector3(BoneLink.FirstPosition.Retrieve_Singles))
                     '.BindPose = SharpDX.Matrix.Translation(NewVector)
                 End With
                 If ParentBone Is Nothing Then
@@ -112,8 +112,6 @@ Namespace Structures.Anim
             Loop
         End Sub
 #End Region
-
-
 
 #Region "Clone"
         Public Function Clone() As COH_Resource_Anim
@@ -146,16 +144,16 @@ Namespace Structures.Anim
             Result.Position = Convert_ToBoneLocation_Position(CurrentReader, BoneTrack)
             Return Result
         End Function
-        Private Function Convert_ToBoneLocation_Rotation(ByRef CurrentReader As COH_BinaryReader, ByRef BoneTrack As COH_Resource_ANIM_BoneTrack, ByRef Result As Quat()) As Boolean
+        Private Function Convert_ToBoneLocation_Rotation(ByRef CurrentReader As COH_BinaryReader, ByRef BoneTrack As COH_Resource_ANIM_BoneTrack, ByRef Result As COH_Struct_Quat()) As Boolean
             If BoneTrack.Rotation_Offset = 0 Then
                 Return Nothing
             End If
             CurrentReader.Position = BoneTrack.Rotation_Offset
-            Result = New Quat(BoneTrack.rot_fullkeycount - 1) {}
+            Result = New COH_Struct_Quat(BoneTrack.rot_fullkeycount - 1) {}
             If BoneTrack.flags_Check And COH_AnimCompression.ROTATION_UNCOMPRESSED Then
                 For X = 0 To BoneTrack.rot_fullkeycount - 1
                     Dim Singles As Single() = CurrentReader.Read_CrypticS_SingleArray(4)
-                    Result(X) = New Quat(Singles)
+                    Result(X) = New COH_Struct_Quat(Singles)
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.ROTATION_COMPRESSED_TO_8_BYTES Then
                 For X = 0 To BoneTrack.rot_fullkeycount - 1
@@ -164,17 +162,17 @@ Namespace Structures.Anim
                     Singles(1) = Decompress_8Bytes_ToSingle(CurrentReader.ReadInt16)
                     Singles(2) = Decompress_8Bytes_ToSingle(CurrentReader.ReadInt16)
                     Singles(3) = Decompress_8Bytes_ToSingle(CurrentReader.ReadInt16)
-                    Result(X) = New Quat(Singles)
+                    Result(X) = New COH_Struct_Quat(Singles)
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.ROTATION_COMPRESSED_TO_5_BYTES Then
                 For X = 0 To BoneTrack.rot_fullkeycount - 1
-                    Dim NewValue As Quat = Nothing
+                    Dim NewValue As COH_Struct_Quat = Nothing
                     If Decompress_5Byte_Quat(CurrentReader.ReadBytes(5), NewValue) = False Then Return False
                     Result(X) = NewValue
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.ROTATION_COMPRESSED_NONLINEAR Then
                 For X = 0 To BoneTrack.rot_fullkeycount - 1
-                    Dim NewValue As Quat = Nothing
+                    Dim NewValue As COH_Struct_Quat = Nothing
                     If Decompress_5Byte_Quat_NonLinear(CurrentReader.ReadBytes(5), NewValue) = False Then Return False
                     Result(X) = NewValue
                 Next
@@ -185,16 +183,16 @@ Namespace Structures.Anim
             End If
             Return True
         End Function
-        Private Function Convert_ToBoneLocation_Position(ByRef CurrentReader As COH_BinaryReader, ByRef BoneTrack As COH_Resource_ANIM_BoneTrack) As Vector3()
+        Private Function Convert_ToBoneLocation_Position(ByRef CurrentReader As COH_BinaryReader, ByRef BoneTrack As COH_Resource_ANIM_BoneTrack) As COH_Struct_Vector3()
             If BoneTrack.Position_Offset = 0 Then
                 Return Nothing
             End If
             CurrentReader.Position = BoneTrack.Position_Offset
-            Dim Result As Vector3() = New Vector3(BoneTrack.pos_fullkeycount - 1) {}
+            Dim Result As COH_Struct_Vector3() = New COH_Struct_Vector3(BoneTrack.pos_fullkeycount - 1) {}
             If BoneTrack.flags_Check And COH_AnimCompression.POSITION_UNCOMPRESSED Then
                 For X = 0 To BoneTrack.pos_fullkeycount - 1
                     Dim Singles As Single() = CurrentReader.Read_CrypticS_SingleArray(3)
-                    Result(X) = New Vector3(Singles)
+                    Result(X) = New COH_Struct_Vector3(Singles)
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.POSITION_COMPRESSED_TO_6_BYTES Then
                 For X = 0 To BoneTrack.pos_fullkeycount - 1
@@ -202,7 +200,7 @@ Namespace Structures.Anim
                     Singles(0) = Decompress_6Bytes_ToSingle(CurrentReader.ReadInt16)
                     Singles(1) = Decompress_6Bytes_ToSingle(CurrentReader.ReadInt16)
                     Singles(2) = Decompress_6Bytes_ToSingle(CurrentReader.ReadInt16)
-                    Result(X) = New Vector3(Singles)
+                    Result(X) = New COH_Struct_Vector3(Singles)
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.POSITION_DELTACODED Then
                 COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "SomeBody was too Lazy to add Support for Bone Position DeltaCoded", Nothing, True)
@@ -223,7 +221,7 @@ Namespace Structures.Anim
             'EFACTOR_8BYTE_QUAT 0.0001
             Return (Convert.ToSingle(Value) * 0.0001)
         End Function
-        Private Function Decompress_5Byte_Quat(ByVal Buffer() As Byte, ByRef Result As Quat) As Boolean
+        Private Function Decompress_5Byte_Quat(ByVal Buffer() As Byte, ByRef Result As COH_Struct_Quat) As Boolean
             If LookupTable Is Nothing OrElse LookupTable.Count < LOOKUPSIZE12BIT Then Create_LookUpTable()
             Dim Values As UInt32() = Nothing
             Dim QuatValues As Single() = New Single(3) {}
@@ -253,10 +251,10 @@ Namespace Structures.Anim
                 If SQR < 0 Then SQR = 0
                 QuatValues(0) = Math.Sqrt(SQR)
             End If
-            Result = New Quat(QuatValues)
+            Result = New COH_Struct_Quat(QuatValues)
             Return True
         End Function
-        Private Function Decompress_5Byte_Quat_NonLinear(ByVal Buffer() As Byte, ByRef Result As Quat) As Boolean
+        Private Function Decompress_5Byte_Quat_NonLinear(ByVal Buffer() As Byte, ByRef Result As COH_Struct_Quat) As Boolean
             If LookupTable Is Nothing OrElse LookupTable.Count < LOOKUPSIZE12BIT Then Create_LookUpTable()
             Dim Values As UInt32() = Nothing
             Dim QuatValues As Single() = New Single(3) {}
@@ -286,7 +284,7 @@ Namespace Structures.Anim
                 If SQR < 0 Then SQR = 0
                 QuatValues(0) = Math.Sqrt(SQR)
             End If
-            Result = New Quat(QuatValues)
+            Result = New COH_Struct_Quat(QuatValues)
             Return True
         End Function
         Private Function UnPack_5Byte_Quat(ByVal Buffer() As Byte, ByRef Result() As UInt32, ByRef missing As Integer) As Boolean

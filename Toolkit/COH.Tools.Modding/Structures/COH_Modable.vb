@@ -59,12 +59,12 @@ Public NotInheritable Class COH_ModableContent
 #End Region
 
 #Region "Private Properties"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFullName As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFullPath As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilePath_Relative_Current As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilePath_Reference_Original As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIsCustom As Boolean
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWasModified_FromSource As Boolean
+   Private mFullName As String
+   Private mFullPath As String
+   Private mFilePath_Relative_Current As String
+   Private mFilePath_Reference_Original As String
+   Private mIsCustom As Boolean
+   Private mWasModified_FromSource As Boolean
 #End Region
 
 #Region "Create New Instances"

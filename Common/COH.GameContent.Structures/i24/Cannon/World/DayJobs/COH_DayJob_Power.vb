@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSalvage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFactor As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMax As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemainderToken As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_JobPowerType
+       Private mPower As String
+       Private mSalvage As String
+       Private mRequires As String()
+       Private mFactor As Single
+       Private mMax As Int32
+       Private mRemainderToken As String
+       Private mType As COH_Enum_JobPowerType
 #End Region
 
 #Region "Create New Instance"

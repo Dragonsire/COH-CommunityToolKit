@@ -30,8 +30,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValues As Single()
+       Private mName As String
+       Private mValues As Single()
 #End Region
 
 #Region "Create New Instances"

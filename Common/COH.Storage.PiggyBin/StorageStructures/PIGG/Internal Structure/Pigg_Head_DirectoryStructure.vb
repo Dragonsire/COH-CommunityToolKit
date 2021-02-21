@@ -60,16 +60,16 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntryType As COH_Supported_ContentType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDirectoryMarker As UInt32 ' 0x00003456
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As UInt32 ' Which string in the string table this is associated with
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFile_Size As UInt32  ' Uncompressed File Size
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFile_Size_Compressed As UInt32  ' Compressed length of the file
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFile_DateStamp As UInt32  ' Date stamp when this entry was created
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFile_OffsetStart As UInt32  ' Location in the file where this chunk starts
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUnknown1 As UInt32  ' Currently always zero
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondarySlotIndex As Int32  ' Location of secondary slot this is associated with
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private nMD5(15) As Byte ' MD5 Hash of the uncompressed data
+       Private mEntryType As COH_Supported_ContentType
+       Private mDirectoryMarker As UInt32 ' 0x00003456
+       Private mIndex As UInt32 ' Which string in the string table this is associated with
+       Private mFile_Size As UInt32  ' Uncompressed File Size
+       Private mFile_Size_Compressed As UInt32  ' Compressed length of the file
+       Private mFile_DateStamp As UInt32  ' Date stamp when this entry was created
+       Private mFile_OffsetStart As UInt32  ' Location in the file where this chunk starts
+       Private mUnknown1 As UInt32  ' Currently always zero
+       Private mSecondarySlotIndex As Int32  ' Location of secondary slot this is associated with
+       Private nMD5(15) As Byte ' MD5 Hash of the uncompressed data
 #End Region
 
 #Region "Create New Instance"

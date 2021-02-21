@@ -1,6 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 Imports COH.GameContent.Storage.Controllers
-Imports COH.GameContent.Structures.LanguageFiles
 
 Public NotInheritable Class COH_LibraryRegister_MessageStore
 

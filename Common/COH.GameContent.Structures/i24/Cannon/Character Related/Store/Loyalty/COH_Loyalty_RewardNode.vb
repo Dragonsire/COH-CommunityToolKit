@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRepeatable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPurchasable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVIPOnly As Boolean
+       Private mName As String
+       Private mDisplayName As String
+       Private mDisplayDescription As String
+       Private mProduct As String()
+       Private mRepeatable As Boolean
+       Private mPurchasable As Boolean
+       Private mVIPOnly As Boolean
 #End Region
 
 #Region "Create New Instance"

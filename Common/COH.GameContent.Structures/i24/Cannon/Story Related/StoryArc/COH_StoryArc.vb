@@ -193,28 +193,28 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeprecated As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_StoryArcFlag
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEpisode As COH_StoryEpisode()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClueDef As COH_StoryClue()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCompleteRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackTeamRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackTeamRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlliance As COH_Enum_StoryArcAlliance
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackCostMultiplier As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackLeft As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private marchitectAboutContact As String
+       Private mFileName As String
+       Private mDeprecated As Boolean
+       Private mFlags As COH_Enum_StoryArcFlag
+       Private mEpisode As COH_StoryEpisode()
+       Private mClueDef As COH_StoryClue()
+       Private mMinPlayerLevel As Int32
+       Private mMaxPlayerLevel As Int32
+       Private mCompleteRequires As String()
+       Private mFlashbackRequires As String()
+       Private mFlashbackRequiresFailedText As String
+       Private mFlashbackTeamRequires As String()
+       Private mFlashbackTeamRequiresFailedText As String
+       Private mRequires As String()
+       Private mRequiresFailedText As String
+       Private mTeamRequires As String()
+       Private mTeamRequiresFailedText As String
+       Private mName As String
+       Private mAlliance As COH_Enum_StoryArcAlliance
+       Private mFlashbackDescription As String
+       Private mFlashbackCostMultiplier As Single
+       Private mFlashbackLeft As COH_StoryReward()
+       Private marchitectAboutContact As String
 #End Region
 
 #Region "Create New Instance"

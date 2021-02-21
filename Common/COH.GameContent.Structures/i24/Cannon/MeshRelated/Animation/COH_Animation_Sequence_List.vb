@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSeqs As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnims As String()
+       Private mSeqs As String()
+       Private mAnims As String()
 #End Region
 
 #Region "Create New Instance"

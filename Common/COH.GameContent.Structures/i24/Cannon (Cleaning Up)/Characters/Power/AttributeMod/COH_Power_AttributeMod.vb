@@ -523,69 +523,69 @@ Namespace Characters.Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttackerHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayVictimHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayFloat As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttribDefenseFloat As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowFloaters As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttrib As COH_Enum_Attrib_CharacterAll
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAspect As COH_Enum_Aspect
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostIgnoreDiminishing As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTarget As COH_Enum_ModTarget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTable As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mApplicationType As COH_Enum_ModApplication
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_ModType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelay As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPeriod As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCancelOnMiss As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCancelEvents As COH_Enum_PowerEvent()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNearGround As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowStrength As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowResistance As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseMagnitudeResistance As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseDurationResistance As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowCombatMods As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseMagnitudeCombatMods As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseDurationCombatMods As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostTemplate As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryStringList As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryStringList As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCasterStackType As COH_Enum_CasterStackType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackType As COH_Enum_StackType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackLimit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackKey As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDuration As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDurationExpr As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnitude As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnitudeExpr As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadiusInner As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadiusOuter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSuppress As COH_SuppressPairs()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreSuppressErrors As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParams As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntityDef As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriorityListDefense As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriorityListOffense As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriorityListPassive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayOnlyIfNotZero As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMatchExactPower As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVanishEntOnTimeout As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoNotTint As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeepThroughDeath As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelayEval As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostModAllowed As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEvalFlags As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProcsPerMinute As Single
+       Private mName As String
+       Private mDisplayAttackerHit As CrypticS_String
+       Private mDisplayVictimHit As CrypticS_String
+       Private mDisplayFloat As CrypticS_String
+       Private mDisplayAttribDefenseFloat As CrypticS_String
+       Private mShowFloaters As Boolean
+       Private mAttrib As COH_Enum_Attrib_CharacterAll
+       Private mAspect As COH_Enum_Aspect
+       Private mBoostIgnoreDiminishing As Boolean
+       Private mTarget As COH_Enum_ModTarget
+       Private mTable As String
+       Private mScale As Single
+       Private mApplicationType As COH_Enum_ModApplication
+       Private mType As COH_Enum_ModType
+       Private mDelay As Single
+       Private mPeriod As Single
+       Private mChance As Single
+       Private mCancelOnMiss As Boolean
+       Private mCancelEvents As COH_Enum_PowerEvent()
+       Private mNearGround As Boolean
+       Private mAllowStrength As Boolean
+       Private mAllowResistance As Boolean
+       Private mUseMagnitudeResistance As Boolean
+       Private mUseDurationResistance As Boolean
+       Private mAllowCombatMods As Boolean
+       Private mUseMagnitudeCombatMods As Boolean
+       Private mUseDurationCombatMods As Boolean
+       Private mBoostTemplate As Boolean
+       Private mRequires As String()
+       Private mPrimaryStringList As String()
+       Private mSecondaryStringList As String()
+       Private mCasterStackType As COH_Enum_CasterStackType
+       Private mStackType As COH_Enum_StackType
+       Private mStackLimit As Int32
+       Private mStackKey As Int32
+       Private mDuration As Single
+       Private mDurationExpr As String()
+       Private mMagnitude As Single
+       Private mMagnitudeExpr As String()
+       Private mRadiusInner As Single
+       Private mRadiusOuter As Single
+       Private mSuppress As COH_SuppressPairs()
+       Private mIgnoreSuppressErrors As String
+       Private mContinuingBits As Int32()
+       Private mContinuingFX As String
+       Private mConditionalBits As Int32()
+       Private mConditionalFX As String
+       Private mCostumeName As String
+       Private mReward As String
+       Private mParams As String
+       Private mEntityDef As String
+       Private mPriorityListDefense As String
+       Private mPriorityListOffense As String
+       Private mPriorityListPassive As String
+       Private mDisplayOnlyIfNotZero As Boolean
+       Private mMatchExactPower As Boolean
+       Private mVanishEntOnTimeout As Boolean
+       Private mDoNotTint As Boolean
+       Private mKeepThroughDeath As Boolean
+       Private mDelayEval As Boolean
+       Private mBoostModAllowed As Int32
+       Private mEvalFlags As Int32
+       Private mProcsPerMinute As Single
 #End Region
 
 #Region "Create New Instance"

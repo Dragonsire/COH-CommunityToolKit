@@ -25,7 +25,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone As COH_Costume_ClothBone()
+       Private mBone As COH_Costume_ClothBone()
 #End Region
 
 #Region "Create New Instance"

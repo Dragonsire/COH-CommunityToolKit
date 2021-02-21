@@ -299,11 +299,11 @@
                 mFogDist = value
             End Set
         End Property
-        Property FogColor As Vector3
+        Property FogColor As COH_Struct_Vector3
             Get
                 Return mFogColor
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mFogColor = value
             End Set
         End Property
@@ -345,47 +345,47 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntryString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExitStringFail As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExitStringSuccess As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefeatAllText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapSet As COH_Enum_MapSet
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapLength As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroupVar As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroupType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_MissionFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCityZone As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoorType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocationName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFoyerType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoorNPC As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoorNPCDialog As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoorNPCDialogStart As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumSideMissions As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSideMission As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainPacing As COH_Enum_VillainPacingEnum
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeToComplete As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandomNPCs As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnDef As COH_SpawnDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjective As COH_Mission_Objective()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanCompleteWith As COH_Mission_Objectives_Set()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanFailWith As COH_Mission_Objectives_Set()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRace As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDayNightCycle As COH_Enum_DayNightCycle
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeyDoor As COH_Mission_KeyDoor()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScript As COH_ScriptDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeyClueDef As COH_StoryClue()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomVGIdx As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFogDist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFogColor As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowItemsOnMinimap As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowCrittersOnMinimap As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLoadScreenPages As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVars As COH_STD
+       Private mCurrentFile As String
+       Private mEntryString As String
+       Private mExitStringFail As String
+       Private mExitStringSuccess As String
+       Private mDefeatAllText As String
+       Private mMapFile As String
+       Private mMapSet As COH_Enum_MapSet
+       Private mMapLength As Int32
+       Private mVillainGroup As String
+       Private mVillainGroupVar As String
+       Private mVillainGroupType As Int32
+       Private mFlags As COH_Enum_MissionFlags
+       Private mCityZone As String
+       Private mDoorType As String
+       Private mLocationName As String
+       Private mFoyerType As String
+       Private mDoorNPC As String
+       Private mDoorNPCDialog As String
+       Private mDoorNPCDialogStart As String
+       Private mNumSideMissions As Int32
+       Private mSideMission As String()
+       Private mVillainPacing As COH_Enum_VillainPacingEnum
+       Private mTimeToComplete As Int32
+       Private mRandomNPCs As Int32
+       Private mMissionLevel As Int32
+       Private mSpawnDef As COH_SpawnDef()
+       Private mObjective As COH_Mission_Objective()
+       Private mCanCompleteWith As COH_Mission_Objectives_Set()
+       Private mCanFailWith As COH_Mission_Objectives_Set()
+       Private mRace As String
+       Private mDayNightCycle As COH_Enum_DayNightCycle
+       Private mKeyDoor As COH_Mission_KeyDoor()
+       Private mScript As COH_ScriptDef()
+       Private mKeyClueDef As COH_StoryClue()
+       Private mCustomVGIdx As Int32
+       Private mFogDist As Single
+       Private mFogColor As COH_Struct_Vector3
+       Private mShowItemsOnMinimap As Int32
+       Private mShowCrittersOnMinimap As Int32
+       Private mLoadScreenPages As String()
+       Private mVars As COH_STD
 #End Region
 
 #Region "Create New Instance"
@@ -433,7 +433,7 @@
             mKeyDoor = New COH_Mission_KeyDoor() {}
             mScript = New COH_ScriptDef() {}
             mKeyClueDef = New COH_StoryClue() {}
-            mFogColor = New Vector3
+            mFogColor = New COH_Struct_Vector3
             mLoadScreenPages = New String() {}
         End Sub
 #End Region

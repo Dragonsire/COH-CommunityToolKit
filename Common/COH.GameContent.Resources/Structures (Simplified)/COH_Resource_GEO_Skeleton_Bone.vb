@@ -20,10 +20,10 @@
                 Children = value.ToList
             End Set
         End Property
-        Property FirstPosition As GameContent.HelperClasses.Vector3
-        Property FirstRotation As GameContent.HelperClasses.Quat
-        Property ConnectedPosition As GameContent.HelperClasses.Vector3
-        Property ConnectedRotation As GameContent.HelperClasses.Quat
+        Property FirstPosition As GameContent.HelperClasses.COH_Struct_Vector3
+        Property FirstRotation As GameContent.HelperClasses.COH_Struct_Quat
+        Property ConnectedPosition As GameContent.HelperClasses.COH_Struct_Vector3
+        Property ConnectedRotation As GameContent.HelperClasses.COH_Struct_Quat
 #End Region
 
 #Region "Create New Instances"
@@ -54,10 +54,10 @@
             With Result
                 .BoneIndex = BoneIndex
                 .ParentIndex = ParentIndex
-                .FirstPosition = New Vector3(FirstPosition.X, FirstPosition.Y, FirstPosition.Z)
-                .FirstRotation = New Quat(FirstRotation.Q1, FirstRotation.Q2, FirstRotation.Q3, FirstRotation.Q4)
-                .ConnectedPosition = New Vector3(ConnectedPosition.X, ConnectedPosition.Y, ConnectedPosition.Z)
-                .ConnectedRotation = New Quat(ConnectedRotation.Q1, ConnectedRotation.Q2, ConnectedRotation.Q3, ConnectedRotation.Q4)
+                .FirstPosition = New COH_Struct_Vector3(FirstPosition.X, FirstPosition.Y, FirstPosition.Z)
+                .FirstRotation = New COH_Struct_Quat(FirstRotation.Q1, FirstRotation.Q2, FirstRotation.Q3, FirstRotation.Q4)
+                .ConnectedPosition = New COH_Struct_Vector3(ConnectedPosition.X, ConnectedPosition.Y, ConnectedPosition.Z)
+                .ConnectedRotation = New COH_Struct_Quat(ConnectedRotation.Q1, ConnectedRotation.Q2, ConnectedRotation.Q3, ConnectedRotation.Q4)
                 .Children = New List(Of COH_Resource_GEO_SkeletonBone)
                 For x = 0 To Children.Count - 1
                     .Children.Add(Children(x).Clone)

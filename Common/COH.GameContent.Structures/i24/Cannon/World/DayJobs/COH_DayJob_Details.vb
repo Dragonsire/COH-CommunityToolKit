@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolumeName As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZoneName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStat As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As COH_DayJob_Power()
+       Private mSourceFile As String
+       Private mName As String
+       Private mDisplayName As String
+       Private mVolumeName As String()
+       Private mZoneName As String
+       Private mStat As String
+       Private mPower As COH_DayJob_Power()
 #End Region
 
 #Region "Create New Instance"

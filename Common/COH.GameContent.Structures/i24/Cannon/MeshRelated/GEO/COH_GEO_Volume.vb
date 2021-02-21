@@ -40,9 +40,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale3 As Single
+       Private mScale1 As Single
+       Private mScale2 As Single
+       Private mScale3 As Single
 #End Region
 
 #Region "Create New Instance"

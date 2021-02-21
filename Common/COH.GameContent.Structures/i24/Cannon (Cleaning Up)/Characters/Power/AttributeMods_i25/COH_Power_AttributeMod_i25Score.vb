@@ -237,33 +237,33 @@ Namespace Characters.Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttrib As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAspect As COH_Enum_Aspect
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mApplicationType As COH_Enum_ModApplication
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_ModType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTarget As COH_Enum_ModTarget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetInfo As COH_AttribMod_i25Score_TagetInfo()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTable As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDuration As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnitude As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDurationExpr As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnitudeExpr As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelay As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPeriod As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTickChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelayedRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCasterStackType As COH_Enum_CasterStackType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackType As COH_Enum_StackType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackLimit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackKey As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCancelEvents As COH_Enum_PowerEvent()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSuppress As COH_SuppressPairs()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostModAllowed As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_EnumFlags_AttribModFlags()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessages As COH_AttribMod_i25Score_Messages()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFX As COH_AttribMod_i25Score_FX()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParam As COH_ModParam
+       Private mAttrib As Int32()
+       Private mAspect As COH_Enum_Aspect
+       Private mApplicationType As COH_Enum_ModApplication
+       Private mType As COH_Enum_ModType
+       Private mTarget As COH_Enum_ModTarget
+       Private mTargetInfo As COH_AttribMod_i25Score_TagetInfo()
+       Private mTable As String
+       Private mScale As Single
+       Private mDuration As Single
+       Private mMagnitude As Single
+       Private mDurationExpr As String()
+       Private mMagnitudeExpr As String()
+       Private mDelay As Single
+       Private mPeriod As Single
+       Private mTickChance As Single
+       Private mDelayedRequires As String()
+       Private mCasterStackType As COH_Enum_CasterStackType
+       Private mStackType As COH_Enum_StackType
+       Private mStackLimit As Int32
+       Private mStackKey As Int32
+       Private mCancelEvents As COH_Enum_PowerEvent()
+       Private mSuppress As COH_SuppressPairs()
+       Private mBoostModAllowed As Int32
+       Private mFlags As COH_EnumFlags_AttribModFlags()
+       Private mMessages As COH_AttribMod_i25Score_Messages()
+       Private mFX As COH_AttribMod_i25Score_FX()
+       Private mParam As COH_ModParam
 #End Region
 
 #Region "Create New Instance"

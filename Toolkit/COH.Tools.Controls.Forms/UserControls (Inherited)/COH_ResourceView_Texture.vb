@@ -3,9 +3,9 @@ Namespace UserControls
     Public Class COH_ResourceView_Texture
 
 #Region "Private"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResource As COH_FileStructure
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImage As Bitmap
+       Private mName As String
+       Private mResource As COH_FileStructure
+       Private mImage As Bitmap
 #End Region
 
 #Region "Initialize / Create New Instance"

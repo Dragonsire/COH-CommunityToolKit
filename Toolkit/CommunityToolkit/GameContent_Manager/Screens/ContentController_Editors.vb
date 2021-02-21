@@ -15,8 +15,8 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mListWindows_InUse As List(Of COH_FormTemplate)
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUseIndependentScreens As Boolean = False
+       Private mListWindows_InUse As List(Of COH_FormTemplate)
+       Private mUseIndependentScreens As Boolean = False
 #End Region
 
 #Region "Project Editors"

@@ -204,30 +204,30 @@ Namespace PlayerCreated.UI
 
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToolTip As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActive As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mminLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mmaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mElementList As COH_UI_PlayerCreated_ElementList()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVGDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlias As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSeq As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mnpcIndex As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mnpcIndexList As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private manimationUpdate As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private msetnum As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorable As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mmapImageName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mmaplimit As COH_UI_PlayerCreated_MapLimit
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCritter As COH_PlayerCreated_Critter()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdoppelFlags As Int32
+       Private mDisplayName As String
+       Private mText As String
+       Private mToolTip As String
+       Private mActive As Int32
+       Private mminLevel As Int32
+       Private mmaxLevel As Int32
+       Private mElementList As COH_UI_PlayerCreated_ElementList()
+       Private mDescription As String
+       Private mVGDescription As String
+       Private mPowerDescription As String
+       Private mAlias As String
+       Private mSeq As String
+       Private mnpcIndex As Int32
+       Private mnpcIndexList As Int32()
+       Private manimationUpdate As Int32
+       Private msetnum As Int32
+       Private mColorable As Int32
+       Private mmapImageName As String
+       Private mmaplimit As COH_UI_PlayerCreated_MapLimit
+       Private mCritter As COH_PlayerCreated_Critter()
+       Private mdoppelFlags As Int32
         '//Localized
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltipKey As String
+       Private mDisplayNameKey As String
+       Private mTooltipKey As String
 #End Region
 
 #Region "Create New Instance"

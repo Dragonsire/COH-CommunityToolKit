@@ -31,7 +31,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItems As COH_Generic_StringClass()
+       Private mItems As COH_Generic_StringClass()
 #End Region
 
 #Region "Create New Instance"

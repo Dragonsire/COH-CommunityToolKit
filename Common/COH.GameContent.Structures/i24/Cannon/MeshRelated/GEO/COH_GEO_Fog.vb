@@ -64,12 +64,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNearDistance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFarDistance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor2 As Drawing.Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpeed As Single
+       Private mRadius As Single
+       Private mNearDistance As Single
+       Private mFarDistance As Single
+       Private mColor1 As Drawing.Color
+       Private mColor2 As Drawing.Color
+       Private mSpeed As Single
 #End Region
 
 #Region "Create New Instance"

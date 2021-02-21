@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDifficultyMod As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissingRankPenalty As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomPowerNumberMod As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArchitectAmbushScaling As Single
+       Private mDifficultyMod As Single()
+       Private mMissingRankPenalty As Single()
+       Private mCustomPowerNumberMod As Single()
+       Private mArchitectAmbushScaling As Single
 #End Region
 
 #Region "Create New Instance"

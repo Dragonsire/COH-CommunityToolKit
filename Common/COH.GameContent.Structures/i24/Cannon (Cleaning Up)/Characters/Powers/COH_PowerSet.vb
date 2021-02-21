@@ -257,36 +257,36 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFullName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSystem As COH_Enum_PowerSystem
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShared As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIconName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeParts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetAccountRequires As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetAccountTooltip As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetAccountProduct As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetBuyRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetBuyRequiresFailedText As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInInventory As COH_Enum_ShowPowerSetting
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInManage As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInInfo As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecializeAt As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecializeRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowers As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndexAvailable As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAvailable As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIMaxLevel As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIMinRankCon As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIMaxRankCon As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinDifficulty As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxDifficulty As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceLevelBought As Int32
+       Private mSourceFile As String
+       Private mFullName As String
+       Private mName As String
+       Private mSystem As COH_Enum_PowerSystem
+       Private mShared As Boolean
+       Private mDisplayName As CrypticS_String
+       Private mDisplayHelp As CrypticS_String
+       Private mDisplayShortHelp As CrypticS_String
+       Private mIconName As String
+       Private mCostumeKeys As String()
+       Private mCostumeParts As String()
+       Private mSetAccountRequires As String
+       Private mSetAccountTooltip As CrypticS_String
+       Private mSetAccountProduct As String
+       Private mSetBuyRequires As String()
+       Private mSetBuyRequiresFailedText As CrypticS_String
+       Private mShowInInventory As COH_Enum_ShowPowerSetting
+       Private mShowInManage As Boolean
+       Private mShowInInfo As Boolean
+       Private mSpecializeAt As Int32
+       Private mSpecializeRequires As String()
+       Private mPowers As String()
+       Private mIndexAvailable As Int32
+       Private mAvailable As Int32()
+       Private mAIMaxLevel As Int32()
+       Private mAIMinRankCon As Int32()
+       Private mAIMaxRankCon As Int32()
+       Private mMinDifficulty As Int32()
+       Private mMaxDifficulty As Int32()
+       Private mForceLevelBought As Int32
 #End Region
 
 #Region "Create New Instance"

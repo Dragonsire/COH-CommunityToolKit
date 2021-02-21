@@ -19,19 +19,19 @@
                 mName = value
             End Set
         End Property
-        Property Pos As Vector3
+        Property Pos As COH_Struct_Vector3
             Get
                 Return mPos
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mPos = value
             End Set
         End Property
-        Property PYR As Degrees
+        Property PYR As COH_Struct_Degrees
             Get
                 Return mPYR
             End Get
-            Set(value As Degrees)
+            Set(value As COH_Struct_Degrees)
                 mPYR = value
             End Set
         End Property
@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPos As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPYR As Degrees
+       Private mName As String
+       Private mPos As COH_Struct_Vector3
+       Private mPYR As COH_Struct_Degrees
 #End Region
 
 #Region "Create New Instance"
@@ -56,8 +56,8 @@
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
             mName = String.Empty
-            mPos = New Vector3  ' No Default Defined
-            mPYR = New Degrees   ' No Default Defined
+            mPos = New COH_Struct_Vector3  ' No Default Defined
+            mPYR = New COH_Struct_Degrees   ' No Default Defined
         End Sub
 #End Region
 

@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInInfo As Boolean
+       Private mPower As String
+       Private mRequires As String()
+       Private mShowInInfo As Boolean
 #End Region
 
 #Region "Create New Instance"

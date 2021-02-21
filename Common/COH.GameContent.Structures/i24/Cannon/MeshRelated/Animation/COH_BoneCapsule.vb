@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneID As GEO_Enums_MESH_BoneId
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
+       Private mBoneID As GEO_Enums_MESH_BoneId
+       Private mRadius As Single
 #End Region
 
 #Region "Create New Instance"

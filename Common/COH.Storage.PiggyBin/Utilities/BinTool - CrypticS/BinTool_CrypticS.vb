@@ -16,11 +16,11 @@ Namespace Utilities
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCrypticS_Info As COH_CrypticS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentReader As COH_BinaryReader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValid As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLanguageMaps As ISupport_COH_LocalizeContent
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileStructs As COH_FileStructureIndex_Controller
+       Private mCrypticS_Info As COH_CrypticS
+       Private mCurrentReader As COH_BinaryReader
+       Private mValid As Boolean
+       Private mLanguageMaps As ISupport_COH_LocalizeContent
+       Private mFileStructs As COH_FileStructureIndex_Controller
 #End Region
 
 #Region "Create New Instance"

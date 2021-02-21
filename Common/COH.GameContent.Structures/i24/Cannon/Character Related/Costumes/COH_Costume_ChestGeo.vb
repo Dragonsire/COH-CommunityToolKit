@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonesetName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoStrings As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfilename As String
+       Private mBonesetName As String
+       Private mGeoStrings As String()
+       Private mfilename As String
 #End Region
 
 #Region "Create New Instance"

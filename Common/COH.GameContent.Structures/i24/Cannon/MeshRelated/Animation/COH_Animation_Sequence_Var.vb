@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReplacementName As String
+       Private mName As String
+       Private mReplacementName As String
 #End Region
 
 #Region "Create New Instance"

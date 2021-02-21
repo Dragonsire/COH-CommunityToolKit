@@ -73,13 +73,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelp As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelp As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelpKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelpKey As String
+       Private mDisplayName As String
+       Private mDisplayHelp As String
+       Private mDisplayShortHelp As String
+       Private mIcon As String
+       Private mDisplayNameKey As String
+       Private mDisplayHelpKey As String
+       Private mDisplayShortHelpKey As String
 #End Region
 
 #Region "Create New Instance"

@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFirstFrame As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLastFrame As Int32
+       Private mName As String
+       Private mFirstFrame As Int32
+       Private mLastFrame As Int32
 #End Region
 
 #Region "Create New Instance"

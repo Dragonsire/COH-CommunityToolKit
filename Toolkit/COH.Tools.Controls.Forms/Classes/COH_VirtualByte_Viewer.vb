@@ -1,5 +1,5 @@
-﻿Imports System.IO
-Imports COH.GameContent.BinaryStreams
+﻿Imports System.ComponentModel
+Imports System.IO
 
 Public Class COH_VirtualByte_Viewer
     Inherits DataGridView
@@ -69,17 +69,17 @@ Public Class COH_VirtualByte_Viewer
 #End Region
 
 #Region "Private Usage"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWidth_Column As Integer
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWidth_Table As Integer
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWidth_Ascii As Integer
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTableOffsetLen As Integer
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConfiguration As VirtualHexView_Configuration
+    Private mWidth_Column As Integer
+    Private mWidth_Table As Integer
+    Private mWidth_Ascii As Integer
+    Private mTableOffsetLen As Integer
+    Private mConfiguration As VirtualHexView_Configuration
     '//Data Control
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mCurrentReader As COH_BinaryReader
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRawbytes() As Byte
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFocusedPosition As Long
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIsCached As Boolean
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCached_MaxSize As Integer = 200000
+    Private WithEvents mCurrentReader As COH_BinaryReader
+    Private mRawbytes() As Byte
+    Private mFocusedPosition As Long
+    Private mIsCached As Boolean
+    Private mCached_MaxSize As Integer = 200000
 #End Region
 
 #Region "Initialize"

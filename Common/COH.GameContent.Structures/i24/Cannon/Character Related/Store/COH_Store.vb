@@ -64,12 +64,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSell As COH_Stores_Markup()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuy As COH_Stores_Markup()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItem As COH_Stores_ItemName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSalvage As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRecipe As Single
+       Private mName As String
+       Private mSell As COH_Stores_Markup()
+       Private mBuy As COH_Stores_Markup()
+       Private mItem As COH_Stores_ItemName()
+       Private mSalvage As Single
+       Private mRecipe As Single
 #End Region
 
 #Region "Create New Instance"

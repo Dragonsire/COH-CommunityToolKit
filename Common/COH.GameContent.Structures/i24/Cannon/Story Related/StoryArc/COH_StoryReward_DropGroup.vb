@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItemSetName As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItemSet As COH_StoryReward_ItemSet()
+       Private mChance As Int32
+       Private mItemSetName As String()
+       Private mItemSet As COH_StoryReward_ItemSet()
 #End Region
 
 #Region "Create New Instance"

@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mF As COH_GroupSaveInfo_FileEntry()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mN As COH_GroupSaveInfo_LibEntry()
+       Private mF As COH_GroupSaveInfo_FileEntry()
+       Private mN As COH_GroupSaveInfo_LibEntry()
 #End Region
 
 #Region "Create New Instance"

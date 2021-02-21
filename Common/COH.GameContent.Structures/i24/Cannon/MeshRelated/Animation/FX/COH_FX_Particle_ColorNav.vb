@@ -68,13 +68,13 @@ Namespace Animation
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeColor As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mByTime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgb As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRgbTime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeInBy As Single
+       Private mBeColor As COH_Color_RGB
+       Private mByTime As Int32
+       Private mPrimaryTint As Single
+       Private mSecondaryTint As Single
+       Private mRgb As COH_Color_RGB
+       Private mRgbTime As Int32
+       Private mFadeInBy As Single
 #End Region
 
 #Region "Create New Instance"

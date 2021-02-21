@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLimits As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWeights As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPreClamp As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPostClamp As Single()
+       Private mLimits As Single()
+       Private mWeights As Single()
+       Private mPreClamp As Single()
+       Private mPostClamp As Single()
 #End Region
 
 #Region "Create New Instance"

@@ -67,19 +67,19 @@
                 mColors = value
             End Set
         End Property
-        Property Pos As Vector2
+        Property Pos As COH_Struct_Vector2
             Get
                 Return mPos
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mPos = value
             End Set
         End Property
-        Property Size As Vector2
+        Property Size As COH_Struct_Vector2
             Get
                 Return mSize
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mSize = value
             End Set
         End Property
@@ -145,22 +145,22 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStretch As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImage As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor As [Shared].Drawing.COH_Color_RGBA
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColors As [Shared].Drawing.COH_Color_RGBA()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPos As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSize As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRot As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHidden As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFont As COH_TextWord_Layer_Font
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilter As COH_TexWord_Layer_Filter()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSubLayer As COH_TextWord_Layer()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSubBlend As COH_Enum_BlendType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSubBlendWeight As Single
+       Private mName As String
+       Private mType As Int32
+       Private mStretch As Int32
+       Private mText As String
+       Private mImage As String
+       Private mColor As [Shared].Drawing.COH_Color_RGBA
+       Private mColors As [Shared].Drawing.COH_Color_RGBA()
+       Private mPos As COH_Struct_Vector2
+       Private mSize As COH_Struct_Vector2
+       Private mRot As Single
+       Private mHidden As Boolean
+       Private mFont As COH_TextWord_Layer_Font
+       Private mFilter As COH_TexWord_Layer_Filter()
+       Private mSubLayer As COH_TextWord_Layer()
+       Private mSubBlend As COH_Enum_BlendType
+       Private mSubBlendWeight As Single
 #End Region
 
 #Region "Create New Instance"
@@ -186,8 +186,8 @@
             mImage = String.Empty
             mColor = New [Shared].Drawing.COH_Color_RGBA
             mColors = New [Shared].Drawing.COH_Color_RGBA(3) {}
-            mPos = New Vector2
-            mSize = New Vector2
+            mPos = New COH_Struct_Vector2
+            mSize = New COH_Struct_Vector2
             mFont = New COH_TextWord_Layer_Font()
             mFilter = New COH_TexWord_Layer_Filter() {}
             mSubLayer = New COH_TextWord_Layer() {}

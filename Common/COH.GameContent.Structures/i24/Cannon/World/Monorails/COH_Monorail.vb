@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLogo As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStop As COH_Monorail_LineStop()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZoneTransferDoorTypes As String()
+       Private mName As String
+       Private mTitle As String
+       Private mLogo As String
+       Private mStop As COH_Monorail_LineStop()
+       Private mZoneTransferDoorTypes As String()
 #End Region
 
 #Region "Create New Instance"

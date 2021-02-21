@@ -15,9 +15,9 @@ Namespace Structures.GEO
 #Region "Properties - Model Details"
         <Category("Model Details")> Property VertexCount As Integer
         <Category("Model Details")> Property TriangleCount As Integer
-        <Category("Model Details")> Property Scale As Vector3 '// hardly used at all, but dont remove, jeremy scaling files
-        <Category("Model Details")> Property Min As Vector3
-        <Category("Model Details")> Property Max As Vector3
+        <Category("Model Details")> Property Scale As COH_Struct_Vector3 '// hardly used at all, but dont remove, jeremy scaling files
+        <Category("Model Details")> Property Min As COH_Struct_Vector3
+        <Category("Model Details")> Property Max As COH_Struct_Vector3
         <Category("Model Details")> Property PackedData As COH_Resource_GEO_PackBlockonDiskv2
         <Category("Model Details")> Property Radius As Single
         <Category("Model Details")> Property Grid As COH_Resource_GenericMesh_PolyGrid
@@ -43,7 +43,7 @@ Namespace Structures.GEO
 
 #Region "Properties Used in Version >=3"
         <Category("Model Details >=3")> Property ReflectionQuadCount As Integer
-        <Category("Model Details >=3")> Property Texture_Indexes As TextureID() 'INdex Start & Count Really Kinda Redundant  as it's just pulling the damn name
+        <Category("Model Details >=3")> Property Texture_Indexes As COH_Struct_TextureID() 'INdex Start & Count Really Kinda Redundant  as it's just pulling the damn name
         <Category("Model Details >=3")> Property AutoLOD_Distances As Single() '3 ARRAY
 #End Region
 

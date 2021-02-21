@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mplace As COH_Enum_MissionPlace
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mgenericEncounterCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mgenericEncounterOnlyCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mhostageLocationCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mwallObjectiveCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfloorObjectiveCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mroofObjectiveCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mcustomEncounters As COH_Map_EncounterStats()
+       Private mplace As COH_Enum_MissionPlace
+       Private mgenericEncounterCount As Int32
+       Private mgenericEncounterOnlyCount As Int32
+       Private mhostageLocationCount As Int32
+       Private mwallObjectiveCount As Int32
+       Private mfloorObjectiveCount As Int32
+       Private mroofObjectiveCount As Int32
+       Private mcustomEncounters As COH_Map_EncounterStats()
 #End Region
 
 #Region "Create New Instance"

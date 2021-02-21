@@ -422,19 +422,19 @@ Namespace Characters.Powers
                 SetValue(mArc, value)
             End Set
         End Property
-        Property BoxOffset As Vector3
+        Property BoxOffset As COH_Struct_Vector3
             Get
                 Return mBoxOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 SetValue(mBoxOffset, value)
             End Set
         End Property
-        Property BoxSize As Vector3
+        Property BoxSize As COH_Struct_Vector3
             Get
                 Return mBoxSize
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 SetValue(mBoxSize, value)
             End Set
         End Property
@@ -1207,156 +1207,156 @@ Namespace Characters.Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFullName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCRCFullName As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSystem As COH_Enum_PowerSystem
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIssue As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIssueSaveLevel As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFree As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayShortHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTargetHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTargetShortHelp As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttackerAttack As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttackerAttackFloater As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayAttackerHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayVictimHit As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayConfirm As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFloatRewarded As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayPowerDefenseFloat As CrypticS_String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIconName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_PowerType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumAllowed As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackTypes As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuyRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivateRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSlotRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewardRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuctionRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewardFallback As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAccuracy As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNearGround As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetNearGround As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCastableAfterDeath As COH_Enum_DeathCastableSetting
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCastThroughHold As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCastThroughSleep As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCastThroughStun As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCastThroughTerrorize As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToggleIgnoreHold As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToggleIgnoreSleep As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToggleIgnoreStun As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreLevelBought As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShootThroughUntouchable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInterruptLikeSleep As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIReport As COH_Enum_AIReport
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffectArea As COH_Enum_EffectArea
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxTargetsHit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArc As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoxOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoxSize As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRange As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRangeSecondary As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeToActivate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRechargeTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivatePeriod As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEnduranceCost As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIdeaCost As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeToConfirm As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelfConfirm As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConfirmRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDestroyOnLimit As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackingUsage As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumCharges As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxNumCharges As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUsageTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxUsageTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifetime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLifetime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifetimeInGame As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLifetimeInGame As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInterruptTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetVisibility As COH_Enum_TargetVisibility
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTarget As COH_Enum_TargetType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetSecondary As COH_Enum_TargetType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntsAutoHit As COH_Enum_TargetType()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntsAffected As COH_Enum_TargetType()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTargetsThroughVisionPhase As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostsAllowed As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupMembership As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModesRequired As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModesDisallowed As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIGroups As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreStrength As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowBuffIcon As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInInventory As COH_Enum_ShowPowerSetting
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInManage As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowInInfo As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeletable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTradeable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxBoosts As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDoNotSave As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostIgnoreEffectiveness As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostAlwaysCountForSet As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostTradeable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostCombinable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostAccountBound As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostBoostable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostUsePlayerLevel As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostCatalystConversion As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreProduct As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostLicenseLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinSlotLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxSlotLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxBoostLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVar As COH_PowerVar()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToggleDroppable As COH_Enum_ToggleDroppable
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStrengthsDisallowed As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProcMainTargetOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimMainTargetOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHighlightEval As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHighlightIcon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHighlightRing As COH_Color_RGBA
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTravelSuppression As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPreferenceMultiplier As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDontSetStance As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPointValue As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPointMultiplier As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChainIntoPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInstanceLocked As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIsEnvironmentHit As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShuffleTargets As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceLevelBought As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRefreshesOnActivePlayerChange As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCancelable As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreToggleMaxDistance As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mServerTrayPriority As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAbusiveBuff As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPositionCenter As COH_Enum_ModTarget
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPositionDistance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPositionHeight As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPositionYaw As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFaceTarget As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisualFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFX As COH_PowerFX
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomFX As COH_PowerCustomFX()
+       Private mFullName As String
+       Private mCRCFullName As UInt32
+       Private mSourceFile As String
+       Private mName As String
+       Private mSourceName As String
+       Private mSystem As COH_Enum_PowerSystem
+       Private mAutoIssue As Boolean
+       Private mAutoIssueSaveLevel As Boolean
+       Private mFree As Boolean
+       Private mDisplayName As CrypticS_String
+       Private mDisplayHelp As CrypticS_String
+       Private mDisplayShortHelp As CrypticS_String
+       Private mDisplayTargetHelp As CrypticS_String
+       Private mDisplayTargetShortHelp As CrypticS_String
+       Private mDisplayAttackerAttack As CrypticS_String
+       Private mDisplayAttackerAttackFloater As CrypticS_String
+       Private mDisplayAttackerHit As CrypticS_String
+       Private mDisplayVictimHit As CrypticS_String
+       Private mDisplayConfirm As CrypticS_String
+       Private mFloatRewarded As CrypticS_String
+       Private mDisplayPowerDefenseFloat As CrypticS_String
+       Private mIconName As String
+       Private mType As COH_Enum_PowerType
+       Private mNumAllowed As Int32
+       Private mAttackTypes As Int32()
+       Private mBuyRequires As String()
+       Private mActivateRequires As String()
+       Private mSlotRequires As String()
+       Private mTargetRequires As String()
+       Private mRewardRequires As String()
+       Private mAuctionRequires As String()
+       Private mRewardFallback As String
+       Private mAccuracy As Single
+       Private mNearGround As Boolean
+       Private mTargetNearGround As Boolean
+       Private mCastableAfterDeath As COH_Enum_DeathCastableSetting
+       Private mCastThroughHold As Boolean
+       Private mCastThroughSleep As Boolean
+       Private mCastThroughStun As Boolean
+       Private mCastThroughTerrorize As Boolean
+       Private mToggleIgnoreHold As Boolean
+       Private mToggleIgnoreSleep As Boolean
+       Private mToggleIgnoreStun As Boolean
+       Private mIgnoreLevelBought As Boolean
+       Private mShootThroughUntouchable As Boolean
+       Private mInterruptLikeSleep As Boolean
+       Private mAIReport As COH_Enum_AIReport
+       Private mEffectArea As COH_Enum_EffectArea
+       Private mMaxTargetsHit As Int32
+       Private mRadius As Single
+       Private mArc As Single
+       Private mBoxOffset As COH_Struct_Vector3
+       Private mBoxSize As COH_Struct_Vector3
+       Private mRange As Single
+       Private mRangeSecondary As Single
+       Private mTimeToActivate As Single
+       Private mRechargeTime As Single
+       Private mActivatePeriod As Single
+       Private mEnduranceCost As Single
+       Private mIdeaCost As Single
+       Private mTimeToConfirm As Int32
+       Private mSelfConfirm As Int32
+       Private mConfirmRequires As String()
+       Private mDestroyOnLimit As Boolean
+       Private mStackingUsage As Boolean
+       Private mNumCharges As Int32
+       Private mMaxNumCharges As Int32
+       Private mUsageTime As Single
+       Private mMaxUsageTime As Single
+       Private mLifetime As Single
+       Private mMaxLifetime As Single
+       Private mLifetimeInGame As Single
+       Private mMaxLifetimeInGame As Single
+       Private mInterruptTime As Single
+       Private mTargetVisibility As COH_Enum_TargetVisibility
+       Private mTarget As COH_Enum_TargetType
+       Private mTargetSecondary As COH_Enum_TargetType
+       Private mEntsAutoHit As COH_Enum_TargetType()
+       Private mEntsAffected As COH_Enum_TargetType()
+       Private mTargetsThroughVisionPhase As Boolean
+       Private mBoostsAllowed As Int32()
+       Private mGroupMembership As Int32()
+       Private mModesRequired As Int32()
+       Private mModesDisallowed As Int32()
+       Private mAIGroups As String()
+       Private mIgnoreStrength As Boolean
+       Private mShowBuffIcon As Boolean
+       Private mShowInInventory As COH_Enum_ShowPowerSetting
+       Private mShowInManage As Boolean
+       Private mShowInInfo As Boolean
+       Private mDeletable As Boolean
+       Private mTradeable As Boolean
+       Private mMaxBoosts As Int32
+       Private mDoNotSave As Boolean
+       Private mBoostIgnoreEffectiveness As Boolean
+       Private mBoostAlwaysCountForSet As Boolean
+       Private mBoostTradeable As Boolean
+       Private mBoostCombinable As Boolean
+       Private mBoostAccountBound As Boolean
+       Private mBoostBoostable As Boolean
+       Private mBoostUsePlayerLevel As Boolean
+       Private mBoostCatalystConversion As String
+       Private mStoreProduct As String
+       Private mBoostLicenseLevel As Int32
+       Private mMinSlotLevel As Int32
+       Private mMaxSlotLevel As Int32
+       Private mMaxBoostLevel As Int32
+       Private mVar As COH_PowerVar()
+       Private mToggleDroppable As COH_Enum_ToggleDroppable
+       Private mStrengthsDisallowed As Int32()
+       Private mProcMainTargetOnly As Boolean
+       Private mAnimMainTargetOnly As Boolean
+       Private mHighlightEval As String()
+       Private mHighlightIcon As String
+       Private mHighlightRing As COH_Color_RGBA
+       Private mTravelSuppression As Single
+       Private mPreferenceMultiplier As Single
+       Private mDontSetStance As Boolean
+       Private mPointValue As Single
+       Private mPointMultiplier As Single
+       Private mChainIntoPower As String
+       Private mInstanceLocked As Boolean
+       Private mIsEnvironmentHit As Boolean
+       Private mShuffleTargets As Boolean
+       Private mForceLevelBought As Int32
+       Private mRefreshesOnActivePlayerChange As Boolean
+       Private mCancelable As Boolean
+       Private mIgnoreToggleMaxDistance As Boolean
+       Private mServerTrayPriority As Int32
+       Private mAbusiveBuff As Boolean
+       Private mPositionCenter As COH_Enum_ModTarget
+       Private mPositionDistance As Single
+       Private mPositionHeight As Single
+       Private mPositionYaw As Single
+       Private mFaceTarget As Boolean
+       Private mVisualFX As String
+       Private mFX As COH_PowerFX
+       Private mCustomFX As COH_PowerCustomFX()
         '//PARSE 7 REMOVED
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttribMod As COH_Power_AttributeMod()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerRedirector As Boolean
+       Private mAttribMod As COH_Power_AttributeMod()
+       Private mPowerRedirector As Boolean
         '//PARSE 7 ADDITIONS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChainDelay As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChainEff As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChainFork As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRedirect As COH_PowerRedirect()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEffect As COH_PowerEffectGroup()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProcAllowed As COH_Enum_ProcAllowed
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mServerTrayRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttribCache As Int32()
+       Private mChainDelay As Single
+       Private mChainEff As String()
+       Private mChainFork As Int32()
+       Private mRedirect As COH_PowerRedirect()
+       Private mEffect As COH_PowerEffectGroup()
+       Private mProcAllowed As COH_Enum_ProcAllowed
+       Private mServerTrayRequires As String()
+       Private mAttribCache As Int32()
 #End Region
 
 #Region "Create New Instance"
@@ -1395,8 +1395,8 @@ Namespace Characters.Powers
             mCastableAfterDeath = COH_Enum_DeathCastableSetting.kDeathCastableSetting_AliveOnly
             mAIReport = COH_Enum_AIReport.kAIReport_Always
             mEffectArea = COH_Enum_EffectArea.kEffectArea_Character
-            mBoxOffset = New Vector3()
-            mBoxSize = New Vector3()
+            mBoxOffset = New COH_Struct_Vector3()
+            mBoxSize = New COH_Struct_Vector3()
             mConfirmRequires = New String() {}
             mTargetVisibility = COH_Enum_TargetVisibility.kTargetVisibility_LineOfSight
             mTarget = COH_Enum_TargetType.kTargetType_None

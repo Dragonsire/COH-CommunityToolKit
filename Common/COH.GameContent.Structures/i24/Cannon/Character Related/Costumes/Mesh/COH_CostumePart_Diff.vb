@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBaseCostumeNum As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDiffCostumePart As COH_CostumePart()
+       Private mBaseCostumeNum As Int32
+       Private mDiffCostumePart As COH_CostumePart()
 #End Region
 
 #Region "Create New Instance"

@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerSet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemove As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDontSetStance As Int32
+       Private mPowerCategory As String
+       Private mPowerSet As String
+       Private mPower As String
+       Private mLevel As Int32
+       Private mRemove As Int32
+       Private mDontSetStance As Int32
 #End Region
 
 #Region "Create New Instances"

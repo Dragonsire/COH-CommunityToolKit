@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mvar As [Shared].COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mvargroup As [Shared].COH_Generic_StringTableArray
+       Private mvar As [Shared].COH_Generic_StringTableArray
+       Private mvargroup As [Shared].COH_Generic_StringTableArray
 #End Region
 
 #Region "Create New Instance"

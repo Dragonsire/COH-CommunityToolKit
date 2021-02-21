@@ -101,28 +101,28 @@ Namespace Storage.Serialization
             Dim Result As Drawing.Color = Drawing.Color.FromArgb(ColorBytes(3), ColorBytes(0), ColorBytes(1), ColorBytes(2))
             Return Result
         End Function
-        Public Function Read_CrypticS_Vector2() As HelperClasses.Vector2
+        Public Function Read_CrypticS_Vector2() As HelperClasses.COH_Struct_Vector2
             Dim VectorBytes As Single() = New Single(1) {ReadSingle(), ReadSingle()}
-            Return New HelperClasses.Vector2(VectorBytes(0), VectorBytes(1))
+            Return New HelperClasses.COH_Struct_Vector2(VectorBytes(0), VectorBytes(1))
         End Function
-        Public Function Read_CrypticS_Vector3() As HelperClasses.Vector3
+        Public Function Read_CrypticS_Vector3() As HelperClasses.COH_Struct_Vector3
             Dim VectorBytes As Single() = New Single(2) {ReadSingle(), ReadSingle(), ReadSingle()}
-            Return New HelperClasses.Vector3(VectorBytes(0), VectorBytes(1), VectorBytes(2))
+            Return New HelperClasses.COH_Struct_Vector3(VectorBytes(0), VectorBytes(1), VectorBytes(2))
         End Function
-        Public Function Read_CrypticS_Vector4() As HelperClasses.Vector4
+        Public Function Read_CrypticS_Vector4() As HelperClasses.COH_Struct_Vector4
             Dim VectorBytes As Single() = New Single(3) {ReadSingle(), ReadSingle(), ReadSingle(), ReadSingle()}
-            Return New HelperClasses.Vector4(VectorBytes(0), VectorBytes(1), VectorBytes(2), VectorBytes(3))
+            Return New HelperClasses.COH_Struct_Vector4(VectorBytes(0), VectorBytes(1), VectorBytes(2), VectorBytes(3))
         End Function
         Public Function Read_CrypticS_TimeStamp() As Int32
             Return ReadInt32()
         End Function
-        Public Function Read_CrypticS_Degrees() As HelperClasses.Degrees
+        Public Function Read_CrypticS_Degrees() As HelperClasses.COH_Struct_Degrees
             Dim DegreeSingles As Single() = New Single(2) {ReadSingle(), ReadSingle(), ReadSingle()}
-            Return New HelperClasses.Degrees(DegreeSingles(0), DegreeSingles(1), DegreeSingles(2))
+            Return New HelperClasses.COH_Struct_Degrees(DegreeSingles(0), DegreeSingles(1), DegreeSingles(2))
         End Function
-        Public Function Read_CrypticS_Matrix4() As HelperClasses.Matrix4
-            Dim VectorBytes As HelperClasses.Vector3() = New HelperClasses.Vector3(3) {Read_CrypticS_Vector3(), Read_CrypticS_Vector3(), Read_CrypticS_Vector3(), Read_CrypticS_Vector3()}
-            Return New HelperClasses.Matrix4(VectorBytes(0), VectorBytes(1), VectorBytes(2), VectorBytes(3))
+        Public Function Read_CrypticS_Matrix4() As HelperClasses.COH_Struct_Matrix4
+            Dim VectorBytes As HelperClasses.COH_Struct_Vector3() = New HelperClasses.COH_Struct_Vector3(3) {Read_CrypticS_Vector3(), Read_CrypticS_Vector3(), Read_CrypticS_Vector3(), Read_CrypticS_Vector3()}
+            Return New HelperClasses.COH_Struct_Matrix4(VectorBytes(0), VectorBytes(1), VectorBytes(2), VectorBytes(3))
         End Function
 #End Region
 

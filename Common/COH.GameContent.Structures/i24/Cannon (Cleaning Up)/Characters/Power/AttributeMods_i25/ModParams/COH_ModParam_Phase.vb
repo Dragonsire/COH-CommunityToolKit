@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCombatPhases As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisionPhases As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclusiveVisionPhase As Int32
+       Private mCombatPhases As Int32()
+       Private mVisionPhases As Int32()
+       Private mExclusiveVisionPhase As Int32
 #End Region
 
 #Region "Create New Instance"

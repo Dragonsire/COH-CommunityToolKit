@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFar As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFarFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
+       Private mFar As Single
+       Private mFarFade As Single
+       Private mScale As Single
 #End Region
 
 #Region "Create New Instance"

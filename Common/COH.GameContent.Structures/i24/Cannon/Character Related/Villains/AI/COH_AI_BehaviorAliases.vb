@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlias As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResolve As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
+       Private mAlias As String
+       Private mResolve As String
+       Private mFileName As String
 #End Region
 
 #Region "Create New Instance"

@@ -13,7 +13,7 @@ Namespace FileStructures.PIGG.Contents
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeader As COH_Resource_Texture_Header
+       Private mHeader As COH_Resource_Texture_Header
 #End Region
 
 #Region "Create New Instance"

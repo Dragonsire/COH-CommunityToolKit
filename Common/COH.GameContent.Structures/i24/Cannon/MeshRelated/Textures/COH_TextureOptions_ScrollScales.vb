@@ -11,9 +11,9 @@
 #End Region
 
 #Region "Properties"
-        <Category("Scaling")> Property TextureOption_Scales As Vector2()  ''texopt_scale[BLEND_NUM_BLEND_NAMES][2];
+        <Category("Scaling")> Property TextureOption_Scales As COH_Struct_Vector2()  ''texopt_scale[BLEND_NUM_BLEND_NAMES][2];
 
-        <Category("Scrolling")> Property TextureOption_Scrolls As Vector2() 'texopt_scroll[BLEND_NUM_BLEND_NAMES][2];
+        <Category("Scrolling")> Property TextureOption_Scrolls As COH_Struct_Vector2() 'texopt_scroll[BLEND_NUM_BLEND_NAMES][2];
         <Category("Scrolling")> Property TextureOption_ScrollTypes As COH_Enum_Texture_ScrollType()
 
         <Category("Alpha")> Property Alpha_Mask As Byte ' Use just the alpha channel of the Mask layer
@@ -46,13 +46,13 @@
         <Category("Reflectivity")> Property Reflectivity_Tint As Byte ' flag to tint environment reflections by current tint 'const color 1'
         <Category("Reflectivity")> Property Reflectivity_Desaturate As Byte ' flag to desaturate the environment reflection to grayscale before applying
 
-        <Category("Diffuse")> Property Diffuse_Scale_Trick As Vector3
-        <Category("Ambient")> Property Ambient_Scale_Trick As Vector3
-        <Category("Ambient")> Property Ambient_Min As Vector3
+        <Category("Diffuse")> Property Diffuse_Scale_Trick As COH_Struct_Vector3
+        <Category("Ambient")> Property Ambient_Scale_Trick As COH_Struct_Vector3
+        <Category("Ambient")> Property Ambient_Min As COH_Struct_Vector3
 
         'Redundant
-        <Category("Redundant")> Property Ambient_Scale As Vector3
-        <Category("Redundant")> Property Diffuse_Scale As Vector3
+        <Category("Redundant")> Property Ambient_Scale As COH_Struct_Vector3
+        <Category("Redundant")> Property Diffuse_Scale As COH_Struct_Vector3
 
         Property debug_backpointer As COH_EnumFlags_Texture_Options
 #End Region
@@ -75,8 +75,8 @@
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
-            TextureOption_Scales = New Vector2(COH_Enum_Texture_BlendIndex.BLEND_NUM_BLEND_NAMES - 1) {}
-            TextureOption_Scrolls = New Vector2(COH_Enum_Texture_BlendIndex.BLEND_NUM_BLEND_NAMES - 1) {}
+            TextureOption_Scales = New COH_Struct_Vector2(COH_Enum_Texture_BlendIndex.BLEND_NUM_BLEND_NAMES - 1) {}
+            TextureOption_Scrolls = New COH_Struct_Vector2(COH_Enum_Texture_BlendIndex.BLEND_NUM_BLEND_NAMES - 1) {}
             TextureOption_ScrollTypes = New COH_Enum_Texture_ScrollType(COH_Enum_Texture_BlendIndex.BLEND_NUM_BLEND_NAMES - 1) {}
             Color1 = New [Shared].Drawing.COH_Color_RGBA(0, 0, 0, 0)
             Color2 = New [Shared].Drawing.COH_Color_RGBA(0, 0, 0, 0)
@@ -96,8 +96,8 @@
             Glow_AddSubMaterial2 = 0
             Glow_Tint = 0
             Alpha_Water = 0
-            Ambient_Scale_Trick = New Vector3(1, 1, 1)
-            Diffuse_Scale_Trick = New Vector3(1, 1, 1)
+            Ambient_Scale_Trick = New COH_Struct_Vector3(1, 1, 1)
+            Diffuse_Scale_Trick = New COH_Struct_Vector3(1, 1, 1)
         End Sub
 #End Region
 

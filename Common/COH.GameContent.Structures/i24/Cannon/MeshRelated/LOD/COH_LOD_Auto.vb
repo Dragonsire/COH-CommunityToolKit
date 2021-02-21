@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowedError As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNearFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNear As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFar As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFarFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFlags As COH_Enum_AutoLODFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModelName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
+       Private mAllowedError As Single
+       Private mLodNearFade As Single
+       Private mLodNear As Single
+       Private mLodFar As Single
+       Private mLodFarFade As Single
+       Private mLodFlags As COH_Enum_AutoLODFlags
+       Private mModelName As String
+       Private mFileName As String
 #End Region
 
 #Region "Create New Instance"

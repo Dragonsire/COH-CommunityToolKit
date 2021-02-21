@@ -48,10 +48,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTheSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCaptureSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlue As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTime As Single
+       Private mTheSize As Int32
+       Private mCaptureSize As Int32
+       Private mBlue As Single
+       Private mTime As Single
 #End Region
 
 #Region "Create New Instance"

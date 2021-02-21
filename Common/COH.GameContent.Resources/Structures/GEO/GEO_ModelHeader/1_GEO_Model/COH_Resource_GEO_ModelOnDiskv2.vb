@@ -15,9 +15,9 @@ Namespace Structures.GEO
 #Region "Properties - Model Details"
         <Category("Model Details")> Property VertexCount As Integer
         <Category("Model Details")> Property TriangleCount As Integer
-        <Category("Model Details")> Property Scale As Vector3 '// hardly used at all, but dont remove, jeremy scaling files
-        <Category("Model Details")> Property Min As Vector3
-        <Category("Model Details")> Property Max As Vector3
+        <Category("Model Details")> Property Scale As COH_Struct_Vector3 '// hardly used at all, but dont remove, jeremy scaling files
+        <Category("Model Details")> Property Min As COH_Struct_Vector3
+        <Category("Model Details")> Property Max As COH_Struct_Vector3
         <Category("Model Details")> Property PackedData As COH_Resource_GEO_PackBlockonDiskv2
         <Category("Texture Details")> Property Texture_Count As UInteger
         <Category("Texture Details")> Property BlendMode As COH_Enum_BlendModeShader

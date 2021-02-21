@@ -70,13 +70,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDamage As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefense As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoost As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroup As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMode As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mElusivity As COH_AttributeName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStackKey As COH_AttributeName()
+       Private mDamage As COH_AttributeName()
+       Private mDefense As COH_AttributeName()
+       Private mBoost As COH_AttributeName()
+       Private mGroup As COH_AttributeName()
+       Private mMode As COH_AttributeName()
+       Private mElusivity As COH_AttributeName()
+       Private mStackKey As COH_AttributeName()
 #End Region
 
 #Region "Create New Instances"

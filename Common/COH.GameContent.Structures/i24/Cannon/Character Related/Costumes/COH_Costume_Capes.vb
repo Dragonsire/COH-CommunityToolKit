@@ -157,11 +157,11 @@ Namespace Costumes
                 mScale = value
             End Set
         End Property
-        Property ScaleXY As Vector2
+        Property ScaleXY As COH_Struct_Vector2
             Get
                 Return mScaleXY
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mScaleXY = value
             End Set
         End Property
@@ -219,31 +219,31 @@ Namespace Costumes
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimestamp As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHarnessName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHarnessFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrick As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor2 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor3 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor4 As COH_Color_RGB
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex3 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex4 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStiffness As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDrag As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScaleXY As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLODBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPointYScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColRad As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIsFlag As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWind As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCollision As String
+       Private mName As String
+       Private mTimestamp As Int32
+       Private mGeoName As String
+       Private mGeoFile As String
+       Private mHarnessName As String
+       Private mHarnessFile As String
+       Private mTrick As String
+       Private mColor1 As COH_Color_RGB
+       Private mColor2 As COH_Color_RGB
+       Private mColor3 As COH_Color_RGB
+       Private mColor4 As COH_Color_RGB
+       Private mTex1 As String
+       Private mTex2 As String
+       Private mTex3 As String
+       Private mTex4 As String
+       Private mStiffness As Single
+       Private mDrag As Single
+       Private mScale As Single
+       Private mScaleXY As COH_Struct_Vector2
+       Private mLODBias As Single
+       Private mPointYScale As Single
+       Private mColRad As Single
+       Private mIsFlag As Boolean
+       Private mWind As String
+       Private mCollision As String
 #End Region
 
 #Region "Create New Instance"
@@ -274,7 +274,7 @@ Namespace Costumes
             mTex2 = String.Empty
             mTex3 = String.Empty
             mTex4 = String.Empty
-            mScaleXY = New Vector2
+            mScaleXY = New COH_Struct_Vector2
             mWind = String.Empty
             mCollision = String.Empty
         End Sub

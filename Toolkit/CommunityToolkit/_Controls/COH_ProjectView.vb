@@ -5,9 +5,9 @@ Namespace Controls.Forms
     Public Class COH_ProjectView
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrentProject As COH_ProjectFile
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rExportProject As COH_ProjectFile
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private rCurrent As COH_FileStructure
+       Private rCurrentProject As COH_ProjectFile
+       Private rExportProject As COH_ProjectFile
+       Private rCurrent As COH_FileStructure
 #End Region
 
 #Region "Initialize"

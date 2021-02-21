@@ -25,8 +25,8 @@ Namespace Structures.Textures
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilePath As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRawBytes As Byte() = Nothing
+       Private mFilePath As String
+       Private mRawBytes As Byte() = Nothing
 #End Region
 
 #Region "Create New Instances"

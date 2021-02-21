@@ -44,7 +44,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBytes As Byte()
+       Private mBytes As Byte()
 #End Region
 
 #Region "Create New Instance"

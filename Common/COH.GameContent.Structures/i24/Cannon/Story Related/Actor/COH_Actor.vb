@@ -385,52 +385,52 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_ActorType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumber As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinimumHeroesRequired As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaximumHeroesRequired As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExactHeroesRequired As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActorName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayInfo As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayGroup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocation As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoutRange As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShoutChance As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWalkRange As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNotRequired As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoGroundSnap As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlly As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGang As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClassOverride As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNoUnroll As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSucceedOnDeath As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFailOnDeath As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCustomCritterIdx As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mnpcDefOverride As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_ActorFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConColor As COH_Enum_ConColor
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewardScaleOverridePct As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisionPhases As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDONTUSETHISJUSTINITIALIZE As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclusiveVisionPhase As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDONTUSETHISEITHERINITIALIZE As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModel As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainLevelMod As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillain As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI_Group As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI_InActive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI_Active As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI_Alerted As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAI_Completion As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog_InActive As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog_Active As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog_Alerted As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog_Completion As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog_ThankHero As String
+       Private mType As COH_Enum_ActorType
+       Private mNumber As Int32
+       Private mMinimumHeroesRequired As Int32
+       Private mMaximumHeroesRequired As Int32
+       Private mExactHeroesRequired As Int32
+       Private mActorName As String
+       Private mName As String
+       Private mDisplayInfo As String
+       Private mDisplayGroup As String
+       Private mLocation As Int32()
+       Private mShoutRange As String
+       Private mShoutChance As String
+       Private mWalkRange As String
+       Private mNotRequired As String
+       Private mNoGroundSnap As Int32
+       Private mAlly As String
+       Private mGang As String
+       Private mClassOverride As String
+       Private mNoUnroll As Int32
+       Private mSucceedOnDeath As Int32
+       Private mFailOnDeath As Int32
+       Private mCustomCritterIdx As Int32
+       Private mnpcDefOverride As Int32
+       Private mFlags As COH_Enum_ActorFlags
+       Private mReward As COH_StoryReward()
+       Private mConColor As COH_Enum_ConColor
+       Private mRewardScaleOverridePct As Int32
+       Private mVisionPhases As String()
+       Private mDONTUSETHISJUSTINITIALIZE As Int32
+       Private mExclusiveVisionPhase As String
+       Private mDONTUSETHISEITHERINITIALIZE As Int32
+       Private mModel As String
+       Private mVillainLevelMod As Int32
+       Private mVillain As String
+       Private mVillainGroup As String
+       Private mVillainType As String
+       Private mAI_Group As Int32
+       Private mAI_InActive As String
+       Private mAI_Active As String
+       Private mAI_Alerted As String
+       Private mAI_Completion As String
+       Private mDialog_InActive As String
+       Private mDialog_Active As String
+       Private mDialog_Alerted As String
+       Private mDialog_Completion As String
+       Private mDialog_ThankHero As String
 #End Region
 
 #Region "Create New Instance"

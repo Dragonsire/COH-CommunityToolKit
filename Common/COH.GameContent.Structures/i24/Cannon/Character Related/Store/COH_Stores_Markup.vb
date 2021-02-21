@@ -32,8 +32,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDepartment As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMarkup As Single
+       Private mDepartment As Int32
+       Private mMarkup As Single
 #End Region
 
 #Region "Create New Instance"

@@ -5,8 +5,8 @@ Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mWebClient As WebClient
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mFileDownloading As String
+       Private WithEvents mWebClient As WebClient
+       Private WithEvents mFileDownloading As String
 #End Region
 
         Public Sub Download_GitForWindows()

@@ -35,8 +35,8 @@ Namespace Structures.LanguageFiles
 
 #Region "Private Properties"
         <EditorBrowsable(Global.COH.GameContent.Internal.DeveloperOptions.COH_DeveloperMode_ShowPrivate)> Private mIndex As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVariable As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFormat As String
+       Private mVariable As String
+       Private mFormat As String
 #End Region
 
 #Region "Properties"

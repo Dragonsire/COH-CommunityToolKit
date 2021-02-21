@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTheType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCountGrouped As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCountOnly As Int32
+       Private mTheType As String
+       Private mCountGrouped As Int32
+       Private mCountOnly As Int32
 #End Region
 
 #Region "Create New Instance"

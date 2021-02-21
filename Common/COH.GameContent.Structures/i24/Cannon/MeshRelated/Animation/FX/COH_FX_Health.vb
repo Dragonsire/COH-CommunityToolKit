@@ -11,11 +11,11 @@
 #End Region
 
 #Region "Properties"
-        Property Range As Vector2
+        Property Range As COH_Struct_Vector2
             Get
                 Return mRange
             End Get
-            Set(value As Vector2)
+            Set(value As COH_Struct_Vector2)
                 mRange = value
             End Set
         End Property
@@ -57,11 +57,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRange As Vector2
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLibraryPiece As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOneShotFx As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFx As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_HealthFX
+       Private mRange As COH_Struct_Vector2
+       Private mLibraryPiece As String()
+       Private mOneShotFx As String()
+       Private mContinuingFx As String()
+       Private mFlags As COH_Enum_HealthFX
 #End Region
 
 #Region "Create New Instance"
@@ -82,7 +82,7 @@
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
-            mRange = New Vector2
+            mRange = New COH_Struct_Vector2
             mLibraryPiece = New String() {}
             mOneShotFx = New String() {}
             mContinuingFx = New String() {}

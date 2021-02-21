@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjectives As String()
+       Private mName As String
+       Private mObjectives As String()
 #End Region
 
 #Region "Create New Instance"

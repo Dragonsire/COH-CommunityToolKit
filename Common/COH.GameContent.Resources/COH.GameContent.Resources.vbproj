@@ -15,26 +15,26 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Toolkit|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\Toolkit\Debug\COH.GameContent.Resources</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\Toolkit\Debug\COH.GameContent.Resources</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Toolkit|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\ToolKit\Release\COH.GameContent.Resources</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\ToolKit\Release\COH.GameContent.Resources</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_GameServer|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\Server\Release\COH.GameContent.Resources</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\Server\Release\COH.GameContent.Resources</OutputPath>
     <DefineConstants>EDITOR=False,SERVER=True,CLIENT=False</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|AnyCPU'">
-    <OutputPath>..\..\_Compiled Code\GameClient\Release\COH.GameContent.Resources</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\GameClient\Release\COH.GameContent.Resources</OutputPath>
 	<DefineConstants>EDITOR=False,SERVER=False,CLIENT=True</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
@@ -104,7 +104,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.Tools.GameContent\COH.GameContent.vbproj" />
-    <ProjectReference Include="..\COH.Tools.Structures\COH.GameContent.Structures.vbproj" />
+    <ProjectReference Include="..\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
+    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj" />
   </ItemGroup>
 </Project>

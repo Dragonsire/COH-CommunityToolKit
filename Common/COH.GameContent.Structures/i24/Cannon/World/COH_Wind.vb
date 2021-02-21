@@ -51,11 +51,11 @@
                 mMinWind = value
             End Set
         End Property
-        Property LocalDir As Vector3
+        Property LocalDir As COH_Struct_Vector3
             Get
                 Return mLocalDir
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mLocalDir = value
             End Set
         End Property
@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorldFactor As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocalFactor As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRipple As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGravity As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinWind As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocalDir As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialCollision As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWindInMovementDirection As Boolean
+       Private mWorldFactor As Single
+       Private mLocalFactor As Single
+       Private mRipple As Single
+       Private mGravity As Single
+       Private mMinWind As Single
+       Private mLocalDir As COH_Struct_Vector3
+       Private mSpecialCollision As Boolean
+       Private mWindInMovementDirection As Boolean
 #End Region
 
 #Region "Create New Instance"
@@ -109,7 +109,7 @@
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
-            mLocalDir = New Vector3
+            mLocalDir = New COH_Struct_Vector3
         End Sub
 #End Region
 

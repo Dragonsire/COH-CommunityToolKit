@@ -8,13 +8,13 @@
                 Return "MeshDetails"
             End Get
         End Property
-        <Category("ModelDetails")> Property Vertexs As Vector3()
-        <Category("ModelDetails")> Property TriangleIndices As TriangleIndice()
-        <Category("ModelDetails")> Property Normals As Vector3()
+        <Category("ModelDetails")> Property Vertexs As COH_Struct_Vector3()
+        <Category("ModelDetails")> Property TriangleIndices As COH_Struct_TriangleIndice()
+        <Category("ModelDetails")> Property Normals As COH_Struct_Vector3()
         <Category("ModelDetails")> Property Bones As GEO_Enums_MESH_BoneId()
-        <Category("ModelDetails")> Property BoneWeights As Weight()
-        <Category("ModelDetails")> Property BoneMatIndex As MaterialIndex()
-        <Category("ModelDetails")> Property UV As Vector2()
+        <Category("ModelDetails")> Property BoneWeights As COH_Struct_Weight()
+        <Category("ModelDetails")> Property BoneMatIndex As COH_Struct_MaterialIndex()
+        <Category("ModelDetails")> Property UV As COH_Struct_Vector2()
         <Category("ModelDetails")> Property TextureNames As String()
         <Category("ModelDetails")> Property TextureSTSCounts As Integer()
 #End Region
@@ -30,10 +30,10 @@
             MyBase.New(SetDefaults, Version)
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
-            UV = New Vector2() {}
-            Vertexs = New Vector3() {}
-            Normals = New Vector3() {}
-            TriangleIndices = New TriangleIndice() {}
+            UV = New COH_Struct_Vector2() {}
+            Vertexs = New COH_Struct_Vector3() {}
+            Normals = New COH_Struct_Vector3() {}
+            TriangleIndices = New COH_Struct_TriangleIndice() {}
             TextureSTSCounts = New Integer() {}
         End Sub
 #End Region

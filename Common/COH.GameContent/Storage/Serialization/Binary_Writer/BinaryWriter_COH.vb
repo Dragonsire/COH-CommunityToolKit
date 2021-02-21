@@ -80,16 +80,16 @@ Namespace Storage.Serialization
             Write(CInt(Source.B))
             Write(CInt(Source.A))
         End Sub
-        Public Sub Write_CrypticS_Vector2(source As HelperClasses.Vector2)
+        Public Sub Write_CrypticS_Vector2(source As HelperClasses.COH_Struct_Vector2)
             Write(source.X)
             Write(source.Y)
         End Sub
-        Public Sub Write_CrypticS_Vector3(source As HelperClasses.Vector3)
+        Public Sub Write_CrypticS_Vector3(source As HelperClasses.COH_Struct_Vector3)
             Write(source.X)
             Write(source.Y)
             Write(source.Z)
         End Sub
-        Public Sub Write_CrypticS_Vector4(source As HelperClasses.Vector4)
+        Public Sub Write_CrypticS_Vector4(source As HelperClasses.COH_Struct_Vector4)
             Write(source.X)
             Write(source.Y)
             Write(source.Z)
@@ -98,7 +98,7 @@ Namespace Storage.Serialization
         Public Sub Write_CrypticS_TimeStamp(source As Int32)
             Write(source)
         End Sub
-        Public Sub Write_CrypticS_Degrees(source As HelperClasses.Degrees)
+        Public Sub Write_CrypticS_Degrees(source As HelperClasses.COH_Struct_Degrees)
             Write(source.v1)
             Write(source.v2)
             Write(source.v3)

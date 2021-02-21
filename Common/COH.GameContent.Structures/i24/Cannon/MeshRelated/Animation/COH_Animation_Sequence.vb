@@ -51,10 +51,10 @@ Namespace Animation
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTypeDef As COH_Animation_Sequence_DEF_P()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroup As COH_Generic_StringClass()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMove As COH_Animation_Sequence_MoveP()
+       Private mName As String
+       Private mTypeDef As COH_Animation_Sequence_DEF_P()
+       Private mGroup As COH_Generic_StringClass()
+       Private mMove As COH_Animation_Sequence_MoveP()
 #End Region
 
 #Region "Create New Instance"

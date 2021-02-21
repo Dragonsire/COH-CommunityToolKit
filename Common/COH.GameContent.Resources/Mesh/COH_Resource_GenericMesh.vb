@@ -18,11 +18,11 @@ Namespace Structures.Resources
         Property usagebits As Integer
         Property vert_count As Integer
         Property vert_max As Integer
-        Property positions As Vector3
-        Property normals As Vector3
-        Property tex1s As Vector2
-        Property tex2s As Vector2
-        Property boneweights As Vector4
+        Property positions As COH_Struct_Vector3
+        Property normals As COH_Struct_Vector3
+        Property tex1s As COH_Struct_Vector2
+        Property tex2s As COH_Struct_Vector2
+        Property boneweights As COH_Struct_Vector4
         Property bonemats As COH_Resource_GenericMesh_BoneMat
         Property tri_count As Integer
         Property tri_max As Integer

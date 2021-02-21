@@ -46,11 +46,11 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStep As ULong = 0
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinimumValue As ULong = 0
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaximumValue As ULong = 100
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentValue As ULong = 0
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProgressBarColor As Color = Color.Blue
+       Private mStep As ULong = 0
+       Private mMinimumValue As ULong = 0
+       Private mMaximumValue As ULong = 100
+       Private mCurrentValue As ULong = 0
+       Private mProgressBarColor As Color = Color.Blue
 #End Region
 
 #Region "Update"

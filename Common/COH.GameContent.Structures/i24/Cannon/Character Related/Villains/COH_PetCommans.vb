@@ -105,17 +105,17 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPassive As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefensive As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAggressive As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackTarget As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackNoTarget As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStayHere As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUsePower As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUsePowerNone As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFollowMe As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGotoSpot As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDismiss As String()
+       Private mPassive As String()
+       Private mDefensive As String()
+       Private mAggressive As String()
+       Private mAttackTarget As String()
+       Private mAttackNoTarget As String()
+       Private mStayHere As String()
+       Private mUsePower As String()
+       Private mUsePowerNone As String()
+       Private mFollowMe As String()
+       Private mGotoSpot As String()
+       Private mDismiss As String()
 #End Region
 
 #Region "Create New Instances"

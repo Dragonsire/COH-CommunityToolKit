@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStateBit As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashBit As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mfilename As String
+       Private mName As String
+       Private mStateBit As String()
+       Private mFlashBit As String()
+       Private mfilename As String
 #End Region
 
 #Region "Create New Instance"

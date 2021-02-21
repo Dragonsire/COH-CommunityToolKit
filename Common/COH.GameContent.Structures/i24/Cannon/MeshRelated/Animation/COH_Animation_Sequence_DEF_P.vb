@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBaseSkeleton As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParentType As String
+       Private mName As String
+       Private mBaseSkeleton As String
+       Private mParentType As String
 #End Region
 
 #Region "Create New Instance"

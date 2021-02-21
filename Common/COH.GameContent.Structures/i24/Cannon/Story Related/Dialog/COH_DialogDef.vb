@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mQualifyRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPage As COH_DialogPage()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionPage As COH_DialogPage()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContactPage As COH_DialogPage()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPageList As COH_DialogPageList()
+       Private mCurrentFile As String
+       Private mName As String
+       Private mFilename As String
+       Private mQualifyRequires As String()
+       Private mPage As COH_DialogPage()
+       Private mMissionPage As COH_DialogPage()
+       Private mContactPage As COH_DialogPage()
+       Private mPageList As COH_DialogPageList()
 #End Region
 
 #Region "Create New Instance"

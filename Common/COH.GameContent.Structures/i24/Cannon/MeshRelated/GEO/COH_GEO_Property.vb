@@ -40,9 +40,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValue As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTheType As Int32
+       Private mName As String
+       Private mValue As String
+       Private mTheType As Int32
 #End Region
 
 #Region "Create New Instance"

@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapTime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMap As COH_Mission_Map()
+       Private mMapTime As Int32
+       Private mMap As COH_Mission_Map()
 #End Region
 
 #Region "Create New Instance"

@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFloor As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdefaultXScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdefaultYScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMapImage As COH_Map_Component()
+       Private mFloor As Int32
+       Private mdefaultXScale As Single
+       Private mdefaultYScale As Single
+       Private mMapImage As COH_Map_Component()
 #End Region
 
 #Region "Create New Instance"

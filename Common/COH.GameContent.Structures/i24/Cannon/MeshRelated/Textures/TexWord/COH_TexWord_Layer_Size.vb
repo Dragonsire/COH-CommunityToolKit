@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWidth As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeight As Int32
+       Private mWidth As Int32
+       Private mHeight As Int32
 #End Region
 
 #Region "Create New Instance"

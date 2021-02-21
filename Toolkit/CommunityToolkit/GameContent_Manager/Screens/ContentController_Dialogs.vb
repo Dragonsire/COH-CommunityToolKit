@@ -2,7 +2,7 @@
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLastLocated As String = ""
+       Private mLastLocated As String = ""
 #End Region
 
 

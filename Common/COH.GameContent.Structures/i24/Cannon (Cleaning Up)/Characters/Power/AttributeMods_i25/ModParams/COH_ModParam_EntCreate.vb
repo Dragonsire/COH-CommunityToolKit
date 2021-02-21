@@ -89,15 +89,15 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntityDef As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClass As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostume As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPriorityList As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIConfig As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerCategory As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerset As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String()
+       Private mEntityDef As String
+       Private mClass As String
+       Private mCostume As String
+       Private mDisplayName As String
+       Private mPriorityList As String
+       Private mAIConfig As String
+       Private mPowerCategory As String()
+       Private mPowerset As String()
+       Private mPower As String()
 #End Region
 
 #Region "Create New Instance"

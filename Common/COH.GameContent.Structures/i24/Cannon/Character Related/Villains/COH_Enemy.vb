@@ -296,40 +296,40 @@ Namespace Enemies
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClass As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGender As COH_Enum_Genders
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayClassName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAIConfig As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroupIndex As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As COH_PowerName()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As COH_EnemyVillain_Level()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRank As COH_Enum_VillainRank
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlly As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGang As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExclusion As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreCombatMods As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCopyCreatorMods As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreReduction As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCanZone As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnLimit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnLimitMission As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSuccessRewards As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFavoriteWeapon As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeathFailureRewards As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStatusFailureRewards As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewardScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerTags As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialPetPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileAge As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPetCommandStrings As COH_PetCommands()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPetVisibility As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPetCommandability As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeStat As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_VillainBadgeFlags
+       Private mName As String
+       Private mClass As String
+       Private mGender As COH_Enum_Genders
+       Private mDisplayDescription As String
+       Private mGroupDescription As String
+       Private mDisplayClassName As String
+       Private mAIConfig As String
+       Private mVillainGroupIndex As Integer
+       Private mPower As COH_PowerName()
+       Private mLevel As COH_EnemyVillain_Level()
+       Private mRank As COH_Enum_VillainRank
+       Private mAlly As String
+       Private mGang As String
+       Private mExclusion As Int32
+       Private mIgnoreCombatMods As Boolean
+       Private mCopyCreatorMods As Boolean
+       Private mIgnoreReduction As Boolean
+       Private mCanZone As Boolean
+       Private mSpawnLimit As Int32
+       Private mSpawnLimitMission As Int32
+       Private mSuccessRewards As String()
+       Private mFavoriteWeapon As String
+       Private mDeathFailureRewards As String()
+       Private mStatusFailureRewards As String()
+       Private mRewardScale As Single
+       Private mPowerTags As String()
+       Private mSpecialPetPower As String
+       Private mFileAge As Int32
+       Private mFileName As String
+       Private mPetCommandStrings As COH_PetCommands()
+       Private mPetVisibility As Int32
+       Private mPetCommandability As Int32
+       Private mBadgeStat As String
+       Private mFlags As COH_Enum_VillainBadgeFlags
         '//<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScriptDef As COH_None()
 #End Region
 

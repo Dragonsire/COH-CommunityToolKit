@@ -190,27 +190,27 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_RewardsSetFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultOrigin As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOrigin As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultArchetype As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArchetype As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultVillainGroup As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroup As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExperience As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonusExperience As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWisdom As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInfluence As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrestige As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIncarnateSubtype As Int32 '''///ENUMLIST COULD BE USED>>>IS A STATIC LOADED LIST
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIncarnateCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreRewardCaps As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLeagueOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSuperDropGroup As COH_StoryReward_DropGroup()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDropGroup As COH_StoryReward_DropGroup()
+       Private mFilename As String
+       Private mChance As Single
+       Private mFlags As COH_Enum_RewardsSetFlags
+       Private mDefaultOrigin As Boolean
+       Private mOrigin As String()
+       Private mDefaultArchetype As Boolean
+       Private mArchetype As String()
+       Private mDefaultVillainGroup As Boolean
+       Private mVillainGroup As Int32()
+       Private mRequires As String()
+       Private mExperience As Int32
+       Private mBonusExperience As Single
+       Private mWisdom As Int32
+       Private mInfluence As Int32
+       Private mPrestige As Int32
+       Private mIncarnateSubtype As Int32 '''///ENUMLIST COULD BE USED>>>IS A STATIC LOADED LIST
+       Private mIncarnateCount As Int32
+       Private mIgnoreRewardCaps As Boolean
+       Private mLeagueOnly As Boolean
+       Private mSuperDropGroup As COH_StoryReward_DropGroup()
+       Private mDropGroup As COH_StoryReward_DropGroup()
 
 #End Region
 

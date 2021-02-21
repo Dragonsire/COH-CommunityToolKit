@@ -4,12 +4,12 @@ Namespace Structures.Resources
     Public Class COH_Resource_BasicTexture_cTri
 
 #Region "Private Properties"
-        Property Vector As Vector3
-        Property Vector2 As Vector2
-        Property Vector3 As Vector2
-        Property MidPoint As Vector2
-        Property Ext As Vector2
-        Property Normal As Vector3
+        Property Vector As COH_Struct_Vector3
+        Property Vector2 As COH_Struct_Vector2
+        Property Vector3 As COH_Struct_Vector2
+        Property MidPoint As COH_Struct_Vector2
+        Property Ext As COH_Struct_Vector2
+        Property Normal As COH_Struct_Vector3
         Property Scale As Single
         Property Flags As UInt32
         Property SurfaceTexture As COH_Resource_BasicTexture '// wood, metal, etc.

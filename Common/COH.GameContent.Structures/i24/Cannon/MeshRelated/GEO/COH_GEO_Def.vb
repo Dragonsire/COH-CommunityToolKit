@@ -169,25 +169,25 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroup As COH_GEO_Group()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProperty As COH_GEO_Property()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTintColor As COH_GEO_Tint()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAmbient As COH_GEO_Ambient()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOmni As COH_GEO_Omni()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCubemap As COH_GEO_CubeMap()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolume As COH_GEO_Volume()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSound As COH_GEO_Sound()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReplaceTex As COH_GEO_ReplaceText()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBeacon As COH_GEO_BEACON()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFog As COH_GEO_FOG()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLod As COH_LOD()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_DefFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlpha As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObj As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexSwap As COH_GEO_TextureSwap()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoundScript As String
+       Private mName As String
+       Private mGroup As COH_GEO_Group()
+       Private mProperty As COH_GEO_Property()
+       Private mTintColor As COH_GEO_Tint()
+       Private mAmbient As COH_GEO_Ambient()
+       Private mOmni As COH_GEO_Omni()
+       Private mCubemap As COH_GEO_CubeMap()
+       Private mVolume As COH_GEO_Volume()
+       Private mSound As COH_GEO_Sound()
+       Private mReplaceTex As COH_GEO_ReplaceText()
+       Private mBeacon As COH_GEO_BEACON()
+       Private mFog As COH_GEO_FOG()
+       Private mLod As COH_LOD()
+       Private mType As String
+       Private mFlags As COH_Enum_DefFlags
+       Private mAlpha As Single
+       Private mObj As String
+       Private mTexSwap As COH_GEO_TextureSwap()
+       Private mSoundScript As String
 #End Region
 
 #Region "Create New Instance"

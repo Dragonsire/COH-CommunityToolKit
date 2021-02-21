@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSize As COH_TextWord_Layer_Size ' No Default Defined()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLayer As COH_TextWord_Layer()
+       Private mName As String
+       Private mSize As COH_TextWord_Layer_Size ' No Default Defined()
+       Private mLayer As COH_TextWord_Layer()
 #End Region
 
 #Region "Create New Instance"

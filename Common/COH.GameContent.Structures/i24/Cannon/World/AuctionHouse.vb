@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSellFeePercent As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBuyFeePercent As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinFee As Int32
+       Private mSellFeePercent As Single
+       Private mBuyFeePercent As Single
+       Private mMinFee As Int32
 #End Region
 
 #Region "Create New Instance"

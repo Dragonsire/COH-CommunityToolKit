@@ -43,9 +43,9 @@ Namespace Costumes.Textures
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor2 As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor3 As Single
+       Private mColor1 As Single
+       Private mColor2 As Single
+       Private mColor3 As Single
 #End Region
 
 #Region "Create New Instance"

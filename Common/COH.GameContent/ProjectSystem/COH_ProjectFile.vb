@@ -107,13 +107,13 @@ Namespace ProjectFiles
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAuthor As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWebsite As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVersion As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReleaseDate As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContent As COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS)
+       Private mName As String
+       Private mAuthor As String
+       Private mWebsite As String
+       Private mVersion As String
+       Private mReleaseDate As String
+       Private mDescription As String
+       Private mContent As COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS)
 #End Region
 
 #Region "Create New Instances"

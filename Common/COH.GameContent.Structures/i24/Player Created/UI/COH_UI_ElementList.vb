@@ -283,40 +283,40 @@ Namespace PlayerCreated.UI
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTemplate As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpecialAction As COH_Enum_PlayerCreated_SpecialActions
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mElements As COH_UI_PlayerCreated_Element()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mcurrent_element As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mupdated As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToolTip As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefault As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mField As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAmbushLoad As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDestinationLoad As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReplaceNoneWith As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCheckBoxList As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mButton As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCopyrightCheck As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTabbedSelection As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeywordSelector As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequired As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFieldRestrictionAlreadyDefined As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDontUnlockCheck As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAllowHTML As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCharLimit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValMin As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValMax As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMultiList As COH_UI_PlayerCreated_ElementList()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mcurrent_list As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mprevious_list As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSelectedCritter As COH_PlayerCreated_Critter()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mreasonForInvalid As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mdoneCritterValidation As Int32
+       Private mName As String
+       Private mTemplate As String
+       Private mSpecialAction As COH_Enum_PlayerCreated_SpecialActions
+       Private mElements As COH_UI_PlayerCreated_Element()
+       Private mcurrent_element As Int32
+       Private mupdated As Int32
+       Private mToolTip As String
+       Private mDefault As String
+       Private mField As String
+       Private mAmbushLoad As String
+       Private mDestinationLoad As String
+       Private mReplaceNoneWith As String
+       Private mCheckBoxList As Int32
+       Private mButton As Int32
+       Private mCopyrightCheck As Int32
+       Private mTabbedSelection As Int32
+       Private mKeywordSelector As Int32
+       Private mRequired As Int32
+       Private mFieldRestrictionAlreadyDefined As Int32
+       Private mDontUnlockCheck As Int32
+       Private mAllowHTML As Int32
+       Private mCharLimit As Int32
+       Private mValMin As Int32
+       Private mValMax As Int32
+       Private mMultiList As COH_UI_PlayerCreated_ElementList()
+       Private mcurrent_list As Int32
+       Private mprevious_list As Int32
+       Private mSelectedCritter As COH_PlayerCreated_Critter()
+       Private mreasonForInvalid As Int32
+       Private mdoneCritterValidation As Int32
         '//LOCALIZED
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltipKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDefaultKey As String
+       Private mNameKey As String
+       Private mTooltipKey As String
+       Private mDefaultKey As String
 #End Region
 
 #Region "Create New Instance"

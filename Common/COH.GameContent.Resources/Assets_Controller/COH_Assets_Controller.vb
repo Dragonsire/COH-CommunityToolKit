@@ -39,12 +39,12 @@ Public Class COH_ResourceAssets_Controller
 #End Region
 
 #Region "Private Properties"
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRootFolder As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonesFolder As String
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTextures As Dictionary(Of String, String)
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTGA As Dictionary(Of String, String)
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnim As Dictionary(Of String, String)
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBones As Dictionary(Of String, COH_Resource_GEO_Skeleton)
+   Private mRootFolder As String
+   Private mBonesFolder As String
+   Private mTextures As Dictionary(Of String, String)
+   Private mTGA As Dictionary(Of String, String)
+   Private mAnim As Dictionary(Of String, String)
+   Private mBones As Dictionary(Of String, COH_Resource_GEO_Skeleton)
 #End Region
 
 #Region "Create New Instance"

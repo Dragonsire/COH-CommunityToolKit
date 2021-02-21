@@ -105,17 +105,17 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddRemove As COH_Enum_AddRemovePower
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerSet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFixedLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPad1 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPad2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItemSetAddRemove As COH_Enum_AddRemovePower
+       Private mChance As Int32
+       Private mAddRemove As COH_Enum_AddRemovePower
+       Private mPowerCategory As String
+       Private mPowerSet As String
+       Private mPower As String
+       Private mLevel As Int32
+       Private mFixedLevel As Int32
+       Private mType As Int32
+       Private mPad1 As Int32
+       Private mPad2 As Int32
+       Private mItemSetAddRemove As COH_Enum_AddRemovePower
 #End Region
 
 #Region "Create New Instance"

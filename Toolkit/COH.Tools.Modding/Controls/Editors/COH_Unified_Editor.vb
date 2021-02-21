@@ -4,9 +4,9 @@ Namespace Editors
     Public Class COH_EditModdableContent
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileSource As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEditingControl As COH_ModdableContent_Editor
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContent As COH_ModableContent
+       Private mFileSource As String
+       Private mEditingControl As COH_ModdableContent_Editor
+       Private mContent As COH_ModableContent
 #End Region
 
 #Region "Initialize"

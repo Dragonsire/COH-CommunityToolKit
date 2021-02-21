@@ -39,10 +39,10 @@ Namespace Internal.Events
 #End Region
 
 #Region "Private Usage"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mResult As COH_ResponseEnum
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrompt As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessage2 As String
+       Private mResult As COH_ResponseEnum
+       Private mPrompt As String
+       Private mMessage1 As String
+       Private mMessage2 As String
 #End Region
 
 #Region "Initialize"

@@ -169,25 +169,25 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeo As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTex2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String
-        ' <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInternalProducts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTag As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDevOnly As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOH As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOHV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIsMask As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegacy As Int32
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mGeoName As String
+       Private mGeo As String
+       Private mTex1 As String
+       Private mTex2 As String
+       Private mFx As String
+       Private mProduct As String
+        'Private mInternalProducts As String()
+       Private mKeys As String()
+       Private mTag As String()
+       Private mFlags As String()
+       Private mDevOnly As Int32
+       Private mCOV As Int32
+       Private mCOH As Int32
+       Private mCOHV As Int32
+       Private mIsMask As Int32
+       Private mLevel As Int32
+       Private mLegacy As Int32
 #End Region
 
 #Region "Create New Instance"

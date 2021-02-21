@@ -46,10 +46,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIndex As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMin As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMax As Single
+       Private mIndex As Int32
+       Private mName As String
+       Private mMin As Single
+       Private mMax As Single
 #End Region
 
 #Region "Create New Instances"

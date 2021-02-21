@@ -84,14 +84,14 @@ Namespace Costumes
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodyPalette As COH_ColorPalette()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSkinPalette As COH_ColorPalette()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowerPalette As COH_ColorPalette()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRegion As COH_CostumeRegion()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeSet As COH_CostumeSet_Set()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoData As COH_CostumeGeoData()
+       Private mName As String
+       Private mFilename As String
+       Private mBodyPalette As COH_ColorPalette()
+       Private mSkinPalette As COH_ColorPalette()
+       Private mPowerPalette As COH_ColorPalette()
+       Private mRegion As COH_CostumeRegion()
+       Private mCostumeSet As COH_CostumeSet_Set()
+       Private mGeoData As COH_CostumeGeoData()
 #End Region
 
 #Region "Create New Instance"

@@ -257,36 +257,36 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLDialog As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCaption As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddClue As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveClue As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddToken As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddTokenToAll As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveToken As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveTokenFromAll As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPopHelp As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAbandonContacts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlaySound As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlaySoundChannel As COH_Enum_SoundChannel()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlaySoundVolumeLevel As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeSoundChannel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeSoundTime As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayFXOnPlayer As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContactPoints As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeSlot As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryReward As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryReward As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChance As COH_StoryRewardSet()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNewContactReward As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRandomFameString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSouvenirClue As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBadgeStat As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonusTime As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFloatText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArchitectBadgeStat As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mArchitectBadgeStatTest As String
+       Private mDialog As String
+       Private mSOLDialog As String
+       Private mCaption As String
+       Private mAddClue As String()
+       Private mRemoveClue As String()
+       Private mAddToken As String()
+       Private mAddTokenToAll As String()
+       Private mRemoveToken As String()
+       Private mRemoveTokenFromAll As String()
+       Private mPopHelp As String()
+       Private mAbandonContacts As String()
+       Private mPlaySound As String()
+       Private mPlaySoundChannel As COH_Enum_SoundChannel()
+       Private mPlaySoundVolumeLevel As Single()
+       Private mFadeSoundChannel As Int32
+       Private mFadeSoundTime As Single
+       Private mPlayFXOnPlayer As String
+       Private mContactPoints As Int32
+       Private mCostumeSlot As Int32
+       Private mPrimaryReward As String()
+       Private mSecondaryReward As String()
+       Private mChance As COH_StoryRewardSet()
+       Private mNewContactReward As Int32
+       Private mRandomFameString As String
+       Private mSouvenirClue As String()
+       Private mBadgeStat As String
+       Private mBonusTime As Int32
+       Private mFloatText As String
+       Private mArchitectBadgeStat As String
+       Private mArchitectBadgeStatTest As String
 #End Region
 
 #Region "Create New Instance"

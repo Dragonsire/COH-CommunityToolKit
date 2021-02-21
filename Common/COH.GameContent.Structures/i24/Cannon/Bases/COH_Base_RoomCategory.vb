@@ -28,7 +28,7 @@ Namespace Bases
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUI_NameANDHelp As COH_UI_NameANDHelp
+       Private mUI_NameANDHelp As COH_UI_NameANDHelp
 #End Region
 
 #Region "Create New Instance"

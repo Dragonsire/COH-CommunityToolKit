@@ -357,48 +357,48 @@ Namespace Animation.FX
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInherit As COH_Enum_FX_Transform
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUpdate As COH_Enum_FX_Transform
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAt As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBhvr As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBhvrOverride As COH_Behavior()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mJEvent As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCEvent As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCDestroy As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mJDestroy As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCRotation As COH_Enum_FX_CollisionRotation
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mParentVelocityFraction As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCThresh As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHardwareOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoftwareOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPhysicsOnly As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCameraSpace As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRayLength As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAtRayFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeom As COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCape As COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAltPiv As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimPiv As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPart As COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnim As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSetState As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mChildFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLookAt As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPMagnet As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPOther As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplat As COH_FX_Event_Splat()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSound As COH_FX_Event_Sound()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoundNoRepeat As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifeSpan As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLifeSpanJitter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As COH_Color_RG
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorldGroup As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_FXEvent
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWhile As COH_Generic_StringTableArray
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mUntil As COH_Generic_StringTableArray
+       Private mEName As String
+       Private mType As Int32
+       Private mInherit As COH_Enum_FX_Transform
+       Private mUpdate As COH_Enum_FX_Transform
+       Private mAt As String
+       Private mBhvr As String
+       Private mBhvrOverride As COH_Behavior()
+       Private mJEvent As String
+       Private mCEvent As String
+       Private mCDestroy As Byte
+       Private mJDestroy As Byte
+       Private mCRotation As COH_Enum_FX_CollisionRotation
+       Private mParentVelocityFraction As Single
+       Private mCThresh As Single
+       Private mHardwareOnly As Boolean
+       Private mSoftwareOnly As Boolean
+       Private mPhysicsOnly As Boolean
+       Private mCameraSpace As Boolean
+       Private mRayLength As Single
+       Private mAtRayFx As String
+       Private mGeom As COH_Generic_StringTableArray
+       Private mCape As COH_Generic_StringTableArray
+       Private mAltPiv As Int32
+       Private mAnimPiv As String
+       Private mPart As COH_Generic_StringTableArray
+       Private mAnim As String
+       Private mSetState As String
+       Private mChildFx As String
+       Private mMagnet As String
+       Private mLookAt As String
+       Private mPMagnet As String
+       Private mPOther As String
+       Private mSplat As COH_FX_Event_Splat()
+       Private mSound As COH_FX_Event_Sound()
+       Private mSoundNoRepeat As Int32
+       Private mLifeSpan As Single
+       Private mLifeSpanJitter As Single
+       Private mPower As COH_Color_RG
+       Private mWorldGroup As String
+       Private mFlags As COH_Enum_FXEvent
+       Private mWhile As COH_Generic_StringTableArray
+       Private mUntil As COH_Generic_StringTableArray
 #End Region
 
 #Region "Create New Instance"

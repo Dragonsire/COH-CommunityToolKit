@@ -257,36 +257,36 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLogicalName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEncounterSpawn As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeprecated As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnRadius As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainMinLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainMaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinTeamSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxTeamSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRespawnTimer As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_SpawnFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActor As COH_Actor()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScript As COH_ScriptDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialogDef As COH_DialogDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEncounterComplete As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionPlacement As COH_Enum_MissionPlace
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionUncounted As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCreateOnObjectiveComplete As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivateOnObjectiveComplete As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjective As COH_Mission_Objective()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPlayerCreatedDetailType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCutScene As COH_CutScene()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEncounterAlliance As COH_Enum_EncounterAlliance
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionTeamOverride As COH_Enum_TeamOverride
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionEncounter As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCVGIndex As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCVGIndex2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVars As COH_STD
+       Private mCurrentFile As String
+       Private mLogicalName As String
+       Private mEncounterSpawn As String
+       Private mDialog As String
+       Private mDeprecated As Boolean
+       Private mSpawnRadius As Int32
+       Private mVillainMinLevel As Int32
+       Private mVillainMaxLevel As Int32
+       Private mMinTeamSize As Int32
+       Private mMaxTeamSize As Int32
+       Private mRespawnTimer As Int32
+       Private mFlags As COH_Enum_SpawnFlags
+       Private mActor As COH_Actor()
+       Private mScript As COH_ScriptDef()
+       Private mDialogDef As COH_DialogDef()
+       Private mEncounterComplete As COH_StoryReward()
+       Private mMissionPlacement As COH_Enum_MissionPlace
+       Private mMissionCount As Int32
+       Private mMissionUncounted As Boolean
+       Private mCreateOnObjectiveComplete As String()
+       Private mActivateOnObjectiveComplete As String()
+       Private mObjective As COH_Mission_Objective()
+       Private mPlayerCreatedDetailType As Int32
+       Private mCutScene As COH_CutScene()
+       Private mEncounterAlliance As COH_Enum_EncounterAlliance
+       Private mMissionTeamOverride As COH_Enum_TeamOverride
+       Private mMissionEncounter As Int32
+       Private mCVGIndex As Int32
+       Private mCVGIndex2 As Int32
+       Private mVars As COH_STD
 #End Region
 
 #Region "Create New Instance"

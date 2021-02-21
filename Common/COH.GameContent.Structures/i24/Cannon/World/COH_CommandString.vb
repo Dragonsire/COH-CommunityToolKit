@@ -32,8 +32,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCmdString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
+       Private mCmdString As String
+       Private mDisplayName As String
 #End Region
 
 #Region "Create New Instance"

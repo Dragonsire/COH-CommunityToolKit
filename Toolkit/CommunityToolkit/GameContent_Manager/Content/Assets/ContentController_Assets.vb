@@ -19,7 +19,7 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAssets_Controller As COH_ResourceAssets_Controller
+       Private mAssets_Controller As COH_ResourceAssets_Controller
 #End Region
 
 #Region "Assets"

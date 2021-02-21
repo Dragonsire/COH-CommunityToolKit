@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeyBind As COH_UI_KeyBind()
+       Private mDisplayName As String
+       Private mName As String
+       Private mKeyBind As COH_UI_KeyBind()
 #End Region
 
 #Region "Create New Instance"

@@ -25,7 +25,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInpName As String
+       Private mInpName As String
 #End Region
 
 #Region "Create New Instance"

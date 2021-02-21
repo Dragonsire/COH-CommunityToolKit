@@ -16,9 +16,9 @@ Namespace Utilities
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMessageStore As COH_MessageStore
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentReader As COH_BinaryReader
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mValid As Boolean
+        Private mMessageStore As COH_MessageStore
+        Private mCurrentReader As COH_BinaryReader
+        Private mValid As Boolean
 #End Region
 
 #Region "Create New Instance"

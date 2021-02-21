@@ -25,7 +25,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBehavior As String()
+       Private mBehavior As String()
 #End Region
 
 #Region "Create New Instance"

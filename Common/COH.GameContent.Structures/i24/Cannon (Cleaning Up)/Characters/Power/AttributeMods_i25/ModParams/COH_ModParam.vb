@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_AttribModParamType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStruct As COH_FileStructure
+       Private mType As COH_Enum_AttribModParamType
+       Private mStruct As COH_FileStructure
 #End Region
 
 #Region "Create New Instance"

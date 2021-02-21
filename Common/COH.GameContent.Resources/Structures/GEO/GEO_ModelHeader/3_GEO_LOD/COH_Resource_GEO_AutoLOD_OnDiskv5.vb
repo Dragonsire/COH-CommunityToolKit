@@ -62,12 +62,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxError As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNear As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFar As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodNearFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFarFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLodFlags As COH_Enum_AutoLODFlags
+       Private mMaxError As Single
+       Private mLodNear As Single
+       Private mLodFar As Single
+       Private mLodNearFade As Single
+       Private mLodFarFade As Single
+       Private mLodFlags As COH_Enum_AutoLODFlags
 #End Region
 
 #Region "Create New Instances"

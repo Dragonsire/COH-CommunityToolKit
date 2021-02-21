@@ -96,16 +96,16 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltip As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTooltipKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mType As COH_Enum_AttribType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStyle As COH_Enum_AttribStyle
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKey As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOffset As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mShowBase As Boolean
+       Private mName As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mTooltip As String
+       Private mTooltipKey As String
+       Private mType As COH_Enum_AttribType
+       Private mStyle As COH_Enum_AttribStyle
+       Private mKey As Int32
+       Private mOffset As Int32
+       Private mShowBase As Boolean
 #End Region
 
 #Region "Create New Instances"

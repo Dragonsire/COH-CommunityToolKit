@@ -131,20 +131,20 @@ Namespace Costumes
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFx As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeometry As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexture1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexture2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRegionName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodySetName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCostumeNum As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor1 As Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor2 As Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor3 As Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColor4 As Color
+       Private mName As String
+       Private mSourceFile As String
+       Private mFx As String
+       Private mGeometry As String
+       Private mTexture1 As String
+       Private mTexture2 As String
+       Private mDisplayName As String
+       Private mRegionName As String
+       Private mBodySetName As String
+       Private mCostumeNum As Int32
+       Private mColor1 As Color
+       Private mColor2 As Color
+       Private mColor3 As Color
+       Private mColor4 As Color
 #End Region
 
 #Region "Create New Instance"

@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSize As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mItalic As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBold As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOutline As Byte
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDropShadow As COH_TextWord_Layer_DropShadow
+       Private mName As String
+       Private mSize As Int32
+       Private mItalic As Boolean
+       Private mBold As Boolean
+       Private mOutline As Byte
+       Private mDropShadow As COH_TextWord_Layer_DropShadow
 #End Region
 
 #Region "Create New Instance"

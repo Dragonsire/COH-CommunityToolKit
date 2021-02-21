@@ -1,9 +1,11 @@
-﻿Namespace Dialogs
+﻿Imports COH.GameContent.Internal.Events
+
+Namespace Dialogs
     Public Class COH_ErrorDialog
 
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTheError As COH_Event_Error
+        Private mTheError As COH_Event_Error
 #End Region
 
 #Region "Initialize"
@@ -41,7 +43,7 @@
                     TextBox3.Text = TheError.MessageException.StackTrace.ToString
                 End If
             End If
-                If TheError.AllowContinue = False Then Me.Button1.Enabled = False
+            If TheError.AllowContinue = False Then Me.Button1.Enabled = False
         End Sub
         Public Shared Function ShowErrorMessage(ByRef TheError As COH_Event_Error) As DialogResult
             Dim NewDialog As New COH_ErrorDialog(Nothing)

@@ -161,24 +161,24 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContactFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeleportDest As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSayOutLoudText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mObjectives As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRewards As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddClues As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveClues As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddTokens As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveTokens As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAddTokensToAll As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRemoveTokensFromAll As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAbandonContacts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnswer As COH_DialogAnswer()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_DialogPage_Flags
+       Private mName As String
+       Private mMissionName As String
+       Private mContactFilename As String
+       Private mTeleportDest As String
+       Private mText As String
+       Private mSayOutLoudText As String
+       Private mRequires As String()
+       Private mObjectives As String()
+       Private mRewards As String()
+       Private mAddClues As String()
+       Private mRemoveClues As String()
+       Private mAddTokens As String()
+       Private mRemoveTokens As String()
+       Private mAddTokensToAll As String()
+       Private mRemoveTokensFromAll As String()
+       Private mAbandonContacts As String()
+       Private mAnswer As COH_DialogAnswer()
+       Private mFlags As COH_Enum_DialogPage_Flags
 #End Region
 
 #Region "Create New Instance"

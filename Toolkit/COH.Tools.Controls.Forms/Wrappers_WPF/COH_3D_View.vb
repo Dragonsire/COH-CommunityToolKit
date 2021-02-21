@@ -1,4 +1,6 @@
-﻿Namespace Dialogs
+﻿Imports COH.GameContent.CodeManagement.Interfaces
+
+Namespace Dialogs
     Public Class COH_3D_View
 
 #Region "Private Properties"

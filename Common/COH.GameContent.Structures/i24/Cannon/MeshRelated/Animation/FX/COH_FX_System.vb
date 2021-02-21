@@ -229,11 +229,11 @@ Namespace Animation
                 mInitialVelocityJitter = value
             End Set
         End Property
-        Property VelocityJitter As Vector3
+        Property VelocityJitter As COH_Struct_Vector3
             Get
                 Return mVelocityJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mVelocityJitter = value
             End Set
         End Property
@@ -269,19 +269,19 @@ Namespace Animation
                 mStickiness = value
             End Set
         End Property
-        Property ColorOffset As Vector3
+        Property ColorOffset As COH_Struct_Vector3
             Get
                 Return mColorOffset
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mColorOffset = value
             End Set
         End Property
-        Property ColorOffsetJitter As Vector3
+        Property ColorOffsetJitter As COH_Struct_Vector3
             Get
                 Return mColorOffsetJitter
             End Get
-            Set(value As Vector3)
+            Set(value As COH_Struct_Vector3)
                 mColorOffsetJitter = value
             End Set
         End Property
@@ -471,68 +471,68 @@ Namespace Animation
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFrontOrLocalFacing As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWorldOrLocalPosition As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeToFull As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKickStart As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNewPerFrame As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBurst As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBurbleAmplitude As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBurbleType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBurbleFrequency As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBurbleThreshold As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMoveScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionStartJitter As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionHeight As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionLifeSpan As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEmissionLifeSpanJitter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpin As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpinJitter As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mOrientationJitter As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMagnetism As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGravity As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKillOnZero As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTerrain As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialVelocity As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialVelocityJitter As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVelocityJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTightenUp As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSortBias As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDrag As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStickiness As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorOffset As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorOffsetJitter As Vector3
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlpha As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorChangeType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeInBy As Single
+       Private mName As String
+       Private mFrontOrLocalFacing As Int32
+       Private mWorldOrLocalPosition As Int32
+       Private mTimeToFull As Single
+       Private mKickStart As Int32
+       Private mNewPerFrame As Single()
+       Private mBurst As Int32()
+       Private mBurbleAmplitude As Single()
+       Private mBurbleType As Int32
+       Private mBurbleFrequency As Single
+       Private mBurbleThreshold As Single
+       Private mMoveScale As Single
+       Private mEmissionType As Int32
+       Private mEmissionStartJitter As Single()
+       Private mEmissionRadius As Single
+       Private mEmissionHeight As Single
+       Private mEmissionLifeSpan As Single
+       Private mEmissionLifeSpanJitter As Single
+       Private mSpin As Int32
+       Private mSpinJitter As Int32
+       Private mOrientationJitter As Int32
+       Private mMagnetism As Single
+       Private mGravity As Single
+       Private mKillOnZero As Int32
+       Private mTerrain As Int32
+       Private mInitialVelocity As Single()
+       Private mInitialVelocityJitter As Single()
+       Private mVelocityJitter As COH_Struct_Vector3
+       Private mTightenUp As Single
+       Private mSortBias As Single
+       Private mDrag As Single
+       Private mStickiness As Single
+       Private mColorOffset As COH_Struct_Vector3
+       Private mColorOffsetJitter As COH_Struct_Vector3
+       Private mAlpha As Int32()
+       Private mColorChangeType As Int32
+       Private mFadeInBy As Single
 
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPartTex As COH_FX_System_ParticleTex()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mColorNav As COH_FX_Particle_ColorNav()
-
-
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeOutStart As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFadeOutBy As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDieLikeThis As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeathAgeToZero As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStartSize As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStartSizeJitter As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlend_mode As COH_Enum_Particles
+       Private mPartTex As COH_FX_System_ParticleTex()
+       Private mColorNav As COH_FX_Particle_ColorNav()
 
 
+       Private mFadeOutStart As Single
+       Private mFadeOutBy As Single
+       Private mDieLikeThis As String
+       Private mDeathAgeToZero As UInt32
+       Private mStartSize As Single()
+       Private mStartSizeJitter As Single
+       Private mBlend_mode As COH_Enum_Particles
 
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEndSize As Single()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExpandRate As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mExpandType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStreakType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStreakScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStreakOrient As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStreakDirection As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisDist As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As COH_Enum_ParticleFlags
+
+
+       Private mEndSize As Single()
+       Private mExpandRate As Single
+       Private mExpandType As Int32
+       Private mStreakType As Int32
+       Private mStreakScale As Single
+       Private mStreakOrient As Int32
+       Private mStreakDirection As Int32
+       Private mVisRadius As Single
+       Private mVisDist As Single
+       Private mFlags As COH_Enum_ParticleFlags
 #End Region
 
 #Region "Create New Instance"
@@ -560,9 +560,9 @@ Namespace Animation
             mEmissionStartJitter = New Single() {}
             mInitialVelocity = New Single() {}
             mInitialVelocityJitter = New Single() {}
-            mVelocityJitter = New Vector3
-            mColorOffset = New Vector3
-            mColorOffsetJitter = New Vector3
+            mVelocityJitter = New COH_Struct_Vector3
+            mColorOffset = New COH_Struct_Vector3
+            mColorOffsetJitter = New COH_Struct_Vector3
             mAlpha = New Int32() {}
             mDieLikeThis = String.Empty
             mStartSize = New Single() {}

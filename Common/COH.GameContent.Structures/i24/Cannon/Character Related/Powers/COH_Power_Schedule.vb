@@ -72,13 +72,13 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFreeBoostSlotsOnPower As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPoolPowerSet As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEpicPowerSet As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPower As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAssignableBoost As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInspirationCol As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInspirationRow As Int32()
+       Private mFreeBoostSlotsOnPower As Int32()
+       Private mPoolPowerSet As Int32()
+       Private mEpicPowerSet As Int32()
+       Private mPower As Int32()
+       Private mAssignableBoost As Int32()
+       Private mInspirationCol As Int32()
+       Private mInspirationRow As Int32()
 #End Region
 
 #Region "Create New Instance"

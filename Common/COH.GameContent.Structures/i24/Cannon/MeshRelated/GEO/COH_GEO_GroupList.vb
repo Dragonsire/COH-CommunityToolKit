@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVersion As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScenefile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLoadscreen As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDef As COH_Def()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRef As COH_Ref()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mImport As String()
+       Private mVersion As Int32
+       Private mScenefile As String
+       Private mLoadscreen As String
+       Private mDef As COH_Def()
+       Private mRef As COH_Ref()
+       Private mImport As String()
 #End Region
 
 #Region "Create New Instance"

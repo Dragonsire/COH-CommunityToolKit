@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mScriptName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVars As COH_STD
+       Private mCurrentFile As String
+       Private mScriptName As String
+       Private mVars As COH_STD
 #End Region
 
 #Region "Create New Instance"

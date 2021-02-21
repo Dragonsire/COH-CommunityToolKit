@@ -65,12 +65,12 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinBoosts As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxBoosts As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoPowers As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonusPower As String
+       Private mDisplayText As String
+       Private mMinBoosts As Int32
+       Private mMaxBoosts As Int32
+       Private mRequires As String()
+       Private mAutoPowers As String()
+       Private mBonusPower As String
 #End Region
 
 #Region "Create New Instance"

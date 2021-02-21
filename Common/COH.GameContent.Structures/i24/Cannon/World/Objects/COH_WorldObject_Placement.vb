@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGameObjects As COH_GameObject()
+       Private mName As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mGameObjects As COH_GameObject()
 #End Region
 
 #Region "Create New Instance"

@@ -113,18 +113,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFilename As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayNameKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mKeys As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String
+       Private mName As String
+       Private mFilename As String
+       Private mDisplayName As String
+       Private mDisplayNameKey As String
+       Private mKeys As String()
+       Private mProduct As String
         '<EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInternalProducts As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlags As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoSet As COH_CostumeGeoSet()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLegacy As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOV As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCOH As Int32
+       Private mFlags As String()
+       Private mGeoSet As COH_CostumeGeoSet()
+       Private mLegacy As Int32
+       Private mCOV As Int32
+       Private mCOH As Int32
 #End Region
 
 #Region "Create New Instance"

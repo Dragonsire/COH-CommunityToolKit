@@ -368,55 +368,55 @@ Namespace Characters.Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlockBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWindUpBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHitBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeathBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivationBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeactivationBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialAttackBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActivationFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeactivationFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHitFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mWindUpFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBlockFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeathFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialAttackFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX3 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContinuingFX4 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX1 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX3 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConditionalFX4 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModeBits As Int32()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFramesBeforeHit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelayedHit As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAttackFrames As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialFramesBeforeHit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialAttackFXFrameDelay As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProjectileSpeed As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInitialFramesBeforeBlock As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIgnoreAttackTimeErrors As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFramesBeforeBlock As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFXImportant As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPrimaryTint As COH_XML_Color
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryTint As COH_XML_Color
+       Private mAttackBits As Int32()
+       Private mBlockBits As Int32()
+       Private mWindUpBits As Int32()
+       Private mHitBits As Int32()
+       Private mDeathBits As Int32()
+       Private mActivationBits As Int32()
+       Private mDeactivationBits As Int32()
+       Private mInitialAttackBits As Int32()
+       Private mContinuingBits As Int32()
+       Private mConditionalBits As Int32()
+       Private mActivationFX As String
+       Private mDeactivationFX As String
+       Private mAttackFX As String
+       Private mHitFX As String
+       Private mWindUpFX As String
+       Private mBlockFX As String
+       Private mDeathFX As String
+       Private mInitialAttackFX As String
+       Private mContinuingFX As String
+       Private mContinuingFX1 As String
+       Private mContinuingFX2 As String
+       Private mContinuingFX3 As String
+       Private mContinuingFX4 As String
+       Private mConditionalFX As String
+       Private mConditionalFX1 As String
+       Private mConditionalFX2 As String
+       Private mConditionalFX3 As String
+       Private mConditionalFX4 As String
+       Private mModeBits As Int32()
+       Private mFramesBeforeHit As Int32
+       Private mDelayedHit As Boolean
+       Private mAttackFrames As Int32
+       Private mInitialFramesBeforeHit As Int32
+       Private mInitialAttackFXFrameDelay As Int32
+       Private mProjectileSpeed As Single
+       Private mInitialFramesBeforeBlock As Int32
+       Private mIgnoreAttackTimeErrors As String
+       Private mFramesBeforeBlock As Int32
+       Private mFXImportant As Boolean
+       Private mPrimaryTint As COH_XML_Color
+       Private mSecondaryTint As COH_XML_Color
         '//i25 Score
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryAttackFX As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFramesBeforeSecondaryHit As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSecondaryProjectileSpeed As Single
+       Private mSecondaryAttackFX As String
+       Private mFramesBeforeSecondaryHit As Int32
+       Private mSecondaryProjectileSpeed As Single
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
+       Private mName As String
 #End Region
 
 #Region "Create New Instances"

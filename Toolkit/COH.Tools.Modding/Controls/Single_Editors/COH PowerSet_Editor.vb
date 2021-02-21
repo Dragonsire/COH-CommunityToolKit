@@ -15,8 +15,8 @@ Namespace Editors
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mCurrent As Characters.Powers.COH_PowerSet
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As Image
+       Private WithEvents mCurrent As Characters.Powers.COH_PowerSet
+       Private mIcon As Image
 #End Region
 
 #Region "Initialize"

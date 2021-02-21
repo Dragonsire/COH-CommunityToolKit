@@ -15,7 +15,7 @@ Namespace Editors
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private WithEvents mCurrent As COH_PowerCategory
+       Private WithEvents mCurrent As COH_PowerCategory
 #End Region
 
 #Region "Initialize"

@@ -121,20 +121,20 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNumber As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRarity As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mProduct As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBorder As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIcon As String
+       Private mNumber As Int32
+       Private mRarity As String
+       Private mCount As Int32
+       Private mDisplayCount As Int32
+       Private mProduct As String
+       Private mTitle As String
+       Private mCategory As String
+       Private mDescription As String
+       Private mBorder As String
+       Private mIcon As String
         '//Localized
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTitleKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategoryKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDescriptionKey As String
+       Private mTitleKey As String
+       Private mCategoryKey As String
+       Private mDescriptionKey As String
 #End Region
 
 #Region "Create New Instance"

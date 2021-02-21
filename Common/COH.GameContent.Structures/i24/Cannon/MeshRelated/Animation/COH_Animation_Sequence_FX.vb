@@ -41,9 +41,9 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDelay As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFxFlags As COH_EnumFlags_SequenceFX
+       Private mName As String
+       Private mDelay As Int32
+       Private mFxFlags As COH_EnumFlags_SequenceFX
 #End Region
 
 #Region "Create New Instance"

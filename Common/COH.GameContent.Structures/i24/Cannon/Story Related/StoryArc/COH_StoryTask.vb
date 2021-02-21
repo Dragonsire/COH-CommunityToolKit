@@ -857,111 +857,111 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskType As COH_Enum_TaskType
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskFlag As COH_Enum_TaskFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeprecated As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionDef As COH_Mission()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMissionEditor As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawn As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpawnDef As COH_SpawnDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mClueDef As COH_StoryClue()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroup As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainGroupType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDialog As COH_DialogDef()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxPlayers As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mIntroString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLIntroString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mHeadlineString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAcceptString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeclineString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeclineSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLDeclineSendoffString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mYoureStillBusyString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSOLYoureStillBusyString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mActiveTaskString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskCompleteDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskFailedDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskAbandonedString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskSubTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskIssueTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAlliance As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCompleteRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackTeamRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFlashbackTeamRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTeamRequiresFailedText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAutoIssueRequires As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxPlayerLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeoutMinutes As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mForceTaskLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPvPType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mNewspaperType As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocationName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLocationMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainNeighborhood As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainVolumeName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainSingularDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainType2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainCount2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainMap2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainNeighborhood2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainVolumeName2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainDescription2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVillainSingularDescription2 As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVisitLocationName As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeliveryTargetName As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeliveryDialog As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeliveryDialogStartPage As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDeliveryMethod As COH_Enum_Deliverymethod()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInventionName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTokenName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTokenCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTokenProgressString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTokenFlags As COH_Enum_TokenFlags
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieType As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowiePoolSize As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieSingularDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mZowieMap As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractDelay As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractBeginString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractCompleteString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractInterruptedString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInteractActionString As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolumeMapName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolumeName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolumeDescription As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskDef As COH_StoryTask()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskBegin As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskBeginFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskBeginNoFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskSuccess As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskSuccessFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskSuccessNoFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskFailure As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTaskAbandon As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReturnSuccess As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReturnSuccessFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReturnSuccessNoFlashback As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReturnFailure As COH_StoryReward()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVars As COH_STD
+       Private mTaskType As COH_Enum_TaskType
+       Private mTaskFlag As COH_Enum_TaskFlags
+       Private mCurrentFile As String
+       Private mName As String
+       Private mDeprecated As Boolean
+       Private mMissionDef As COH_Mission()
+       Private mMissionEditor As String
+       Private mSpawn As String
+       Private mSpawnDef As COH_SpawnDef()
+       Private mClueDef As COH_StoryClue()
+       Private mVillainGroup As Int32
+       Private mVillainGroupType As Int32
+       Private mDialog As COH_DialogDef()
+       Private mMaxPlayers As Int32
+       Private mIntroString As String
+       Private mSOLIntroString As String
+       Private mHeadlineString As String
+       Private mAcceptString As String
+       Private mDeclineString As String
+       Private mSendoffString As String
+       Private mSOLSendoffString As String
+       Private mDeclineSendoffString As String
+       Private mSOLDeclineSendoffString As String
+       Private mYoureStillBusyString As String
+       Private mSOLYoureStillBusyString As String
+       Private mActiveTaskString As String
+       Private mTaskCompleteDescription As String
+       Private mTaskFailedDescription As String
+       Private mTaskAbandonedString As String
+       Private mTaskTitle As String
+       Private mTaskSubTitle As String
+       Private mTaskIssueTitle As String
+       Private mFlashbackDescription As String
+       Private mAlliance As Int32
+       Private mCompleteRequires As String()
+       Private mFlashbackRequires As String()
+       Private mFlashbackRequiresFailedText As String
+       Private mFlashbackTeamRequires As String()
+       Private mFlashbackTeamRequiresFailedText As String
+       Private mRequires As String()
+       Private mRequiresFailedText As String
+       Private mTeamRequires As String()
+       Private mTeamRequiresFailedText As String
+       Private mAutoIssueRequires As String()
+       Private mMinPlayerLevel As Int32
+       Private mMaxPlayerLevel As Int32
+       Private mTimeoutMinutes As Int32
+       Private mForceTaskLevel As Int32
+       Private mPvPType As Int32
+       Private mNewspaperType As Int32
+       Private mLocationName As String
+       Private mLocationMap As String
+       Private mVillainType As String
+       Private mVillainCount As Int32
+       Private mVillainMap As String
+       Private mVillainNeighborhood As String
+       Private mVillainVolumeName As String
+       Private mVillainDescription As String
+       Private mVillainSingularDescription As String
+       Private mVillainType2 As String
+       Private mVillainCount2 As Int32
+       Private mVillainMap2 As String
+       Private mVillainNeighborhood2 As String
+       Private mVillainVolumeName2 As String
+       Private mVillainDescription2 As String
+       Private mVillainSingularDescription2 As String
+       Private mVisitLocationName As String()
+       Private mDeliveryTargetName As String()
+       Private mDeliveryDialog As String()
+       Private mDeliveryDialogStartPage As String()
+       Private mDeliveryMethod As COH_Enum_Deliverymethod()
+       Private mInventionName As String
+       Private mTokenName As String
+       Private mTokenCount As Int32
+       Private mTokenProgressString As String
+       Private mTokenFlags As COH_Enum_TokenFlags
+       Private mZowieType As String
+       Private mZowiePoolSize As String
+       Private mZowieDisplayName As String
+       Private mZowieCount As Int32
+       Private mZowieDescription As String
+       Private mZowieSingularDescription As String
+       Private mZowieMap As String
+       Private mInteractDelay As Int32
+       Private mInteractBeginString As String
+       Private mInteractCompleteString As String
+       Private mInteractInterruptedString As String
+       Private mInteractActionString As String
+       Private mVolumeMapName As String
+       Private mVolumeName As String
+       Private mVolumeDescription As String
+       Private mTaskDef As COH_StoryTask()
+       Private mTaskBegin As COH_StoryReward()
+       Private mTaskBeginFlashback As COH_StoryReward()
+       Private mTaskBeginNoFlashback As COH_StoryReward()
+       Private mTaskSuccess As COH_StoryReward()
+       Private mTaskSuccessFlashback As COH_StoryReward()
+       Private mTaskSuccessNoFlashback As COH_StoryReward()
+       Private mTaskFailure As COH_StoryReward()
+       Private mTaskAbandon As COH_StoryReward()
+       Private mReturnSuccess As COH_StoryReward()
+       Private mReturnSuccessFlashback As COH_StoryReward()
+       Private mReturnSuccessNoFlashback As COH_StoryReward()
+       Private mReturnFailure As COH_StoryReward()
+       Private mVars As COH_STD
 #End Region
 
 #Region "Create New Instance"

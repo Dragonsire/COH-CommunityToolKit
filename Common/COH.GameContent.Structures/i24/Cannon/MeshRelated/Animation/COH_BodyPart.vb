@@ -113,18 +113,18 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneCount As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInfluenceCost As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGeoName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBaseName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoneCount2 As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDontClear As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone1 As GEO_Enums_MESH_BoneId
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBone2 As GEO_Enums_MESH_BoneId
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBodyPartIndex As Int32
+       Private mName As String
+       Private mSourceFile As String
+       Private mBoneCount As Int32
+       Private mInfluenceCost As Int32
+       Private mGeoName As String
+       Private mTexName As String
+       Private mBaseName As String
+       Private mBoneCount2 As Int32
+       Private mDontClear As Boolean
+       Private mBone1 As GEO_Enums_MESH_BoneId
+       Private mBone2 As GEO_Enums_MESH_BoneId
+       Private mBodyPartIndex As Int32
 #End Region
 
 #Region "Create New Instance"

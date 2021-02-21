@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTokenName As String
+       Private mName As String
+       Private mTokenName As String
 #End Region
 
 #Region "Create New Instance"

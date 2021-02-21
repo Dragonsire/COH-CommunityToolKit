@@ -25,7 +25,7 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mReward As String()
+       Private mReward As String()
 #End Region
 
 #Region "Create New Instance"

@@ -32,8 +32,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mLimit As Int32
+       Private mCategory As String
+       Private mLimit As Int32
 #End Region
 
 #Region "Create New Instance"

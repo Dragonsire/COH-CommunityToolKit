@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRentMax As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRate As Single
+       Private mRentMax As Int32
+       Private mRate As Single
 #End Region
 
 #Region "Create New Instance"

@@ -39,11 +39,11 @@ Namespace FileStructures.PIGG.Contents
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntry_Offset As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntry_Size As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntry_Size_Compressed As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mEntry_Size_Decompressed As UInt32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSlotType As SlotTypes
+       Private mEntry_Offset As UInt32
+       Private mEntry_Size As UInt32
+       Private mEntry_Size_Compressed As UInt32
+       Private mEntry_Size_Decompressed As UInt32
+       Private mSlotType As SlotTypes
 #End Region
 
 #Region "Create New Instance"

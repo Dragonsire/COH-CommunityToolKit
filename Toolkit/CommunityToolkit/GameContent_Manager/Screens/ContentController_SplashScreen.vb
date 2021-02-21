@@ -4,7 +4,7 @@ Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSplashForm As SplashScreen
+       Private mSplashForm As SplashScreen
 #End Region
 
 #Region "Create Form"

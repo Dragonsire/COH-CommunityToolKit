@@ -72,13 +72,13 @@ Namespace Powers
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mToken As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAltTheme As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSourceFile As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCategory As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPalette As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFX As COH_PowerFX
+       Private mToken As String
+       Private mAltTheme As String()
+       Private mSourceFile As String
+       Private mCategory As String
+       Private mDisplayName As String
+       Private mPalette As String
+       Private mFX As COH_PowerFX
 #End Region
 
 #Region "Create New Instances"

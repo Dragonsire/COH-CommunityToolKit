@@ -8,13 +8,13 @@ Namespace UserControls
     Public Class COH_Control_ViewBin
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileSource As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBinTool As Utilities.COH_BinTool_CrypticS
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings As COH_Serialization_Settings
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFileIndex As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mContentIndex As Integer
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCurrentStruct As COH_FileStructure
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMenuItems As List(Of COH_FileStructure.DynamicMenu_Cmmand)
+       Private mFileSource As String
+       Private mBinTool As Utilities.COH_BinTool_CrypticS
+       Private mSettings As COH_Serialization_Settings
+       Private mFileIndex As Integer
+       Private mContentIndex As Integer
+       Private mCurrentStruct As COH_FileStructure
+       Private mMenuItems As List(Of COH_FileStructure.DynamicMenu_Cmmand)
 #End Region
 
 #Region "Initialize"

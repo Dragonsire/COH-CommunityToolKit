@@ -48,10 +48,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSpeedScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSTScale As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAnimationFlags As COH_Enum_TricksAnimationFlags
+       Private mSpeedScale As Single
+       Private mSTScale As Single
+       Private mName As String
+       Private mAnimationFlags As COH_Enum_TricksAnimationFlags
 #End Region
 
 #Region "Create New Instance"

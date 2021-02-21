@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mkey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mcommand As String
+       Private mkey As String
+       Private mcommand As String
 #End Region
 
 #Region "Create New Instance"

@@ -81,14 +81,14 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTag As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mInYourFace As Boolean
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTitle As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayText As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoundName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTimeTriggered As Int64
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTitleKey As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayTextKey As String
+       Private mTag As String
+       Private mInYourFace As Boolean
+       Private mDisplayTitle As String
+       Private mDisplayText As String
+       Private mSoundName As String
+       Private mTimeTriggered As Int64
+       Private mDisplayTitleKey As String
+       Private mDisplayTextKey As String
 #End Region
 
 #Region "Create New Instance"

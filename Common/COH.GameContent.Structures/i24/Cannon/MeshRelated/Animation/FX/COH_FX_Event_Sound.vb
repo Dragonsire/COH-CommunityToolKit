@@ -49,10 +49,10 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSoundName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mRadius As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mFade As Single
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mVolume As Single
+       Private mSoundName As String
+       Private mRadius As Single
+       Private mFade As Single
+       Private mVolume As Single
 #End Region
 
 #Region "Create New Instance"

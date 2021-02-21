@@ -32,8 +32,8 @@ Namespace MeshRelated
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTexture As COH_TextureOptions
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mTrick As COH_Trick
+       Private mTexture As COH_TextureOptions
+       Private mTrick As COH_Trick
 #End Region
 
 #Region "Create New Instance"

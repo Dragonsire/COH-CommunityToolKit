@@ -23,9 +23,9 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCached_CurrentProjectFile As ProjectFiles.COH_ProjectFile
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
+       Private mCached_CurrentProjectFile As ProjectFiles.COH_ProjectFile
+       Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
+       Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
 #End Region
 
 #Region "Create Standard Project File"

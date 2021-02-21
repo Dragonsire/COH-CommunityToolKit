@@ -97,16 +97,16 @@
 #End Region
 
 #Region "Private Properties"
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mDisplayName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mGroupName As String
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mConversionGroups As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mPowers As String()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBoostLists As COH_Boost_List()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mBonuses As COH_Boost_SetBonus()
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMinLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mMaxLevel As Int32
-        <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mStoreProduct As String
+       Private mName As String
+       Private mDisplayName As String
+       Private mGroupName As String
+       Private mConversionGroups As String()
+       Private mPowers As String()
+       Private mBoostLists As COH_Boost_List()
+       Private mBonuses As COH_Boost_SetBonus()
+       Private mMinLevel As Int32
+       Private mMaxLevel As Int32
+       Private mStoreProduct As String
 #End Region
 
 #Region "Create New Instance"

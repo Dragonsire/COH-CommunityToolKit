@@ -11,7 +11,7 @@ Namespace Structures.Resources
         Property height As Integer
         Property dirname As String ' Either directory name of the texture, or trick file name if this is a trick-made texture
         Property bind_blend_mode As COH_Resource_BasicTexture_BlendModeType() 'pixel shader to use (BLENDMODE_MULTIPLY etc)
-        Property bind_scale As Scale() = New Scale(2) {} 'st scale for this tex and secondary texture, if any (tex_links[0])
+        Property bind_scale As COH_Struct_Scale() = New COH_Struct_Scale(2) {} 'st scale for this tex and secondary texture, if any (tex_links[0])
         Property use_category As New COH_Enum_Texture_Usage() 'what is this texture used for?
         Property tex_layers As COH_Resource_BasicTexture() = New COH_Resource_BasicTexture(TEXLAYER_MAX_LAYERS - 1) {} 'set in texsetbinds, given ids in texConvertToGameFormat
         Property tex_swappable As Byte() = New Byte(TEXLAYER_MAX_LAYERS) {} ' Whether or not, on a MultiTexture shader, each layer can be swapped

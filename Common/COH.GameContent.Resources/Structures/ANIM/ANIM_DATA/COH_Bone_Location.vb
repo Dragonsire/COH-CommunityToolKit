@@ -9,8 +9,8 @@
             End Get
         End Property
         Property ID As Enums.GEO_Enums_MESH_BoneId
-        Property Position As Vector3()
-        Property Rotation As Quat()
+        Property Position As COH_Struct_Vector3()
+        Property Rotation As COH_Struct_Quat()
 #End Region
 
 #Region "Create New Instances"

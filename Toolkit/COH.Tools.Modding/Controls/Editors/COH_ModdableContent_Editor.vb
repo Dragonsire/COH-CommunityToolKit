@@ -31,10 +31,10 @@ Public Class COH_ModdableContent_Editor
             Return mAdvancedEditLocked
         End Get
     End Property
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mAdvancedEditLocked As Boolean
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings_DEF As COH_Serialization_Settings
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mSettings_XML As COH_Serialization_Settings
-    <EditorBrowsable(COH_DeveloperMode_ShowPrivate)> Private mModDetails As Modding.COH_ModableContent
+   Private mAdvancedEditLocked As Boolean
+   Private mSettings_DEF As COH_Serialization_Settings
+   Private mSettings_XML As COH_Serialization_Settings
+   Private mModDetails As Modding.COH_ModableContent
 #End Region
 
 #Region "Create New Instance"

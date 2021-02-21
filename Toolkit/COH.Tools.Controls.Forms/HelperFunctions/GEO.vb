@@ -1,6 +1,5 @@
 ﻿Imports System.Windows.Media.Media3D
-Imports COH.GameContent.Enums
-Imports COH.GameContent.Resources.Structures.Anim
+Imports COH.GameContent.HelperClasses
 Imports COH.GameContent.Resources.Structures_Simplified
 Imports HelixToolkit.Wpf.SharpDX
 Imports SharpDX
@@ -9,22 +8,22 @@ Namespace HelperFunctions.GEO
     <HideModuleName> Public Module COH_HelperFunctions_GEO
 
 #Region "Vectors"
-        Function Convert_Vector3_SharpVector3D(ByRef Vector As GameContent.HelperClasses.Vector3, Optional AdjustHandiness As Integer = 1) As SharpDX.Vector3
+        Function Convert_Vector3_SharpVector3D(ByRef Vector As GameContent.HelperClasses.COH_Struct_Vector3, Optional AdjustHandiness As Integer = 1) As SharpDX.Vector3
             Return New SharpDX.Vector3(Vector.X * AdjustHandiness, Vector.Y, Vector.Z)
         End Function
-        Function Convert_Vector2_SharpVector3D(ByRef Vector As GameContent.HelperClasses.Vector2) As SharpDX.Vector2
+        Function Convert_Vector2_SharpVector3D(ByRef Vector As GameContent.HelperClasses.COH_Struct_Vector2) As SharpDX.Vector2
             Return New SharpDX.Vector2(Vector.X, Vector.Y)
         End Function
-        Function Convert_Vector2_SharpVector3D_InversedY(ByRef Vector As GameContent.HelperClasses.Vector2) As SharpDX.Vector2
+        Function Convert_Vector2_SharpVector3D_InversedY(ByRef Vector As GameContent.HelperClasses.COH_Struct_Vector2) As SharpDX.Vector2
             Return New SharpDX.Vector2(Vector.X, 1 - Vector.Y)
         End Function
-        Function Convert_Vector2_SharpVector3D_InversedXY(ByRef Vector As GameContent.HelperClasses.Vector2) As SharpDX.Vector2
+        Function Convert_Vector2_SharpVector3D_InversedXY(ByRef Vector As GameContent.HelperClasses.COH_Struct_Vector2) As SharpDX.Vector2
             Return New SharpDX.Vector2(1 - Vector.X, 1 - Vector.Y)
         End Function
 #End Region
 
 #Region "Grids"
-        Public Function Create_RetrieveGrid_Lines(Name As String, MinPosition As Vector2, Width As Integer, Spacing As Integer, GridColor As Windows.Media.Color, Optional LineThickNess As Single = 0.5) As LineGeometryModel3D
+        Public Function Create_RetrieveGrid_Lines(Name As String, MinPosition As Vector2, Width As Integer, Spacing As Integer, GridColor As System.Windows.Media.Color, Optional LineThickNess As Single = 0.5) As LineGeometryModel3D
             Dim lineBilder = New LineBuilder()
             For x As Integer = 0 To Width Step Spacing
                 lineBilder.AddLine(New Vector3(MinPosition.X + x, 0, MinPosition.Y), New Vector3(MinPosition.X + x, 0, MinPosition.Y + Width))
@@ -60,7 +59,7 @@ Namespace HelperFunctions.GEO
 #End Region
 
 #Region "BoundingBox"
-        Function Calculate_BoundingBox(ByRef TheVectors As GameContent.HelperClasses.Vector3(), Optional AdjustHandiness As Integer = 1) As Rect3D
+        Function Calculate_BoundingBox(ByRef TheVectors As Vector3(), Optional AdjustHandiness As Integer = 1) As Rect3D
             Dim MinPos As New Vector3D
             Dim MaxPos As New Vector3D
             For Each Vector In TheVectors
@@ -76,16 +75,16 @@ Namespace HelperFunctions.GEO
             Return NewBox
         End Function
         Function Calculate_MaxBoundingBox(ByRef GEO As GameContent.Resources.Structures.GEO.COH_Resource_GEO, Optional AdjustHandiness As Integer = 1) As Rect3D
-            Dim MinPos As New GameContent.HelperClasses.Vector3
-            Dim MaxPos As New GameContent.HelperClasses.Vector3
+            Dim MinPos As New GameContent.HelperClasses.COH_Struct_Vector3
+            Dim MaxPos As New GameContent.HelperClasses.COH_Struct_Vector3
             For Each SelectedModel In GEO.Models
                 Calculate_BoundingBox_Regions(SelectedModel.Mesh.Vertexs, MinPos, MaxPos, AdjustHandiness)
             Next
             Return Calculate_BoundingBox_FromMinMax(MinPos, MaxPos)
         End Function
-        Sub Calculate_BoundingBox_Regions(ByRef TheVectors As GameContent.HelperClasses.Vector3(), ByRef MinPos As GameContent.HelperClasses.Vector3, ByRef MaxPos As GameContent.HelperClasses.Vector3, Optional AdjustHandiness As Integer = 1)
-            If MinPos Is Nothing Then MinPos = New GameContent.HelperClasses.Vector3
-            If MaxPos Is Nothing Then MaxPos = New GameContent.HelperClasses.Vector3
+        Sub Calculate_BoundingBox_Regions(ByRef TheVectors As GameContent.HelperClasses.COH_Struct_Vector3(), ByRef MinPos As GameContent.HelperClasses.COH_Struct_Vector3, ByRef MaxPos As GameContent.HelperClasses.COH_Struct_Vector3, Optional AdjustHandiness As Integer = 1)
+            If MinPos Is Nothing Then MinPos = New GameContent.HelperClasses.COH_Struct_Vector3
+            If MaxPos Is Nothing Then MaxPos = New GameContent.HelperClasses.COH_Struct_Vector3
             For Each Vector In TheVectors
                 Dim UsedX As Single = (Vector.X * AdjustHandiness)
                 If UsedX > MaxPos.X Then MaxPos.X = UsedX
@@ -96,7 +95,7 @@ Namespace HelperFunctions.GEO
                 If Vector.Z < MinPos.Z Then MinPos.Z = Vector.Z
             Next
         End Sub
-        Function Calculate_BoundingBox_FromMinMax(ByRef MinPos As GameContent.HelperClasses.Vector3, ByRef MaxPos As GameContent.HelperClasses.Vector3) As Rect3D
+        Function Calculate_BoundingBox_FromMinMax(ByRef MinPos As GameContent.HelperClasses.COH_Struct_Vector3, ByRef MaxPos As GameContent.HelperClasses.COH_Struct_Vector3) As Rect3D
             Dim NewBox As New Rect3D(MinPos.X, MinPos.Y, MinPos.Z, (MaxPos.X - MinPos.X), (MaxPos.Y - MinPos.Y), (MaxPos.Z - MinPos.Z))
             Return NewBox
         End Function
