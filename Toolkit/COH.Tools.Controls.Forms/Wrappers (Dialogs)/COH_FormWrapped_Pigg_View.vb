@@ -1,20 +1,25 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports System.ComponentModel
+Imports COH.GameContent.Enums
 Imports COH.GameContent.Resources.Structures.Anim
 Imports COH.GameContent.Resources.Structures.BIN
 Imports COH.GameContent.Resources.Structures.GEO
 Imports COH.GameContent.Resources.Structures.Textures
 Imports COH.GameContent.Storage.Controllers
+Imports COH.Storage.PiggyBin.Utilities
 Imports COH.Tools.Controls.WinForms.UserControls
 
 Namespace Dialogs
     Public Class COH_FormWrapped_Pigg_View
 
+
+        Const COH_DeveloperMode_AllowEdit = False '//TEMP
+
 #Region "Private Properties"
-       Private mFileSource As String
-       Private mTool As Utilities.COH_PiggTool
-       Private mPreviewControl As Control
-       Private mCurrentResource As COH_FileStructure
-       Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
+        Private mFileSource As String
+        Private mTool As COH_PiggTool
+        Private mPreviewControl As Control
+        Private mCurrentResource As COH_FileStructure
+        Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
 #End Region
 
 #Region "Initialize"
@@ -37,7 +42,7 @@ Namespace Dialogs
 
 #Region "Prepare Usage"
         Public Sub Prepare_Editor(FilePath As String)
-            mTool = New Utilities.COH_PiggTool()
+            mTool = New COH_PiggTool()
             mTool.OpenExisting_PiggFile(FilePath, False)
             DisplayInfo()
         End Sub

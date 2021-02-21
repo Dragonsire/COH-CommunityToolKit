@@ -1,4 +1,5 @@
 ﻿Imports COH.Tools.HelperFunctions.Defs
+Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController

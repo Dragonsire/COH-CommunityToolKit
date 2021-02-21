@@ -1,6 +1,9 @@
 ﻿Imports COH.GameContent
 Imports COH.GameContent.Enums
 Imports COH.GameContent.Structures
+Imports COH.Storage.PiggyBin
+Imports COH.Storage.PiggyBin.Utilities
+
 Namespace UserControls
     Public Class COH_Control_MessageStore
 
@@ -11,7 +14,7 @@ Namespace UserControls
 
 #Region "Prepare Usage"
         Public Sub Prepare_Editor(FilePath As String)
-            Select Case COH.Tools.Utilities.Identify_BinType(FilePath)
+            Select Case Utilities.Identify_BinType(FilePath)
                 Case COH_Supported_ContentType.Resource_BIN_MessageStore
                     mMessageTool = New Utilities.COH_BinTool_MessageStore(FilePath, False)
                     DisplayInfo()

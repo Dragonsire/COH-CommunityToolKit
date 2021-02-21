@@ -2,19 +2,20 @@
 Imports COH.GameContent
 Imports COH.GameContent.Enums
 Imports COH.GameContent.Structures
-Imports COH.GameContent.Utilities
+Imports COH.Storage.PiggyBin
+Imports COH.Storage.PiggyBin.Utilities
 
 Namespace UserControls
     Public Class COH_Control_ViewBin
 
 #Region "Private Properties"
-       Private mFileSource As String
-       Private mBinTool As Utilities.COH_BinTool_CrypticS
-       Private mSettings As COH_Serialization_Settings
-       Private mFileIndex As Integer
-       Private mContentIndex As Integer
-       Private mCurrentStruct As COH_FileStructure
-       Private mMenuItems As List(Of COH_FileStructure.DynamicMenu_Cmmand)
+        Private mFileSource As String
+        Private mBinTool As COH_BinTool_CrypticS
+        Private mSettings As COH_Serialization_Settings
+        Private mFileIndex As Integer
+        Private mContentIndex As Integer
+        Private mCurrentStruct As COH_FileStructure
+        Private mMenuItems As List(Of COH_FileStructure.DynamicMenu_Cmmand)
 #End Region
 
 #Region "Initialize"
@@ -30,7 +31,7 @@ Namespace UserControls
 
 #Region "Prepare Usage"
         Public Sub Prepare_Editor(FilePath As String)
-            Select Case COH.Tools.Utilities.Identify_BinType(FilePath)
+            Select Case Utilities.Identify_BinType(FilePath)
                 Case COH_Supported_ContentType.Resource_BIN_CrypticS
                     mSettings = New COH_Serialization_Settings(True, COH_ExportFormat.XML, ContentController.TheController_Localize)  ' //THIS SHOULD GET PASSED FROM MAIN CONTROLLER AND STORED
                     mBinTool = New Utilities.COH_BinTool_CrypticS(ContentController.TheController_Localize, ContentController.TheController_SupportedStructures)
@@ -89,7 +90,7 @@ Namespace UserControls
         Private Function AddToTree_Content_InTree_File2(Index As Integer, ByRef theFile As COH_CrypticS_File) As TreeNode
             Dim NewRootNode As New TreeNode(theFile.Name)
             Dim PAths = mBinTool.Content.Files(Index - 1).Retrieve_AllEntryPaths(False)
-            Fill_TreeView_GetNodes_WithIndex(NewRootNode, Index, PAths, ".")
+            HelperFunctions.TreeViews.Fill_TreeView_GetNodes_WithIndex(NewRootNode, Index, PAths, ".")
             Return NewRootNode
         End Function
 #End Region

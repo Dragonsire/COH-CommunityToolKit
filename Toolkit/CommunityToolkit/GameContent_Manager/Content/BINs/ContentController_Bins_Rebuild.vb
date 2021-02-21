@@ -1,4 +1,6 @@
-﻿Imports COH.Tools.Utilities
+﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+Imports COH.Storage.PiggyBin.Utilities
+Imports COH.Tools.Utilities
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -145,7 +147,7 @@ Namespace Internal.ContentController
         Private Function RebuildBin_MessageStore(ByRef TheStore As COH_MessageStore, Destination As String) As Boolean
             Dim FilePath As String = Destination & TheStore.Name
             If IO.File.Exists(FilePath) = True Then IO.File.Delete(FilePath)
-            Return Utilities.COH_BinTool_MessageStore.Create_NewFile(TheStore.Name, FilePath, TheStore, True)
+            Return COH_BinTool_MessageStore.Create_NewFile(TheStore.Name, FilePath, TheStore, True)
         End Function
         Private Function RebuildBin_CrypticS(Root As String, Title As String, Destination As String, Optional ShowMessage As Boolean = True) As Boolean
             Dim SourcePath As String = Root & "Index_" & IO.Path.GetFileName(Destination) & ".xml"

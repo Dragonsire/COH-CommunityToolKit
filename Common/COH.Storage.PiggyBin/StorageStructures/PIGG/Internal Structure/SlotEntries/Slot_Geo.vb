@@ -1,4 +1,6 @@
-﻿Namespace FileStructures.PIGG.Contents
+﻿Imports COH.Storage.PiggyBin.Enums
+
+Namespace FileStructures.PIGG.Contents
     Public Class PIGG_SlotEntry_Geo
         Inherits COH_PIGG_SlotTableEntry
 
@@ -11,7 +13,7 @@
 #End Region
 
 #Region "Private Properties"
-       Private mRawBytes As Byte()
+        Private mRawBytes As Byte()
 #End Region
 
 #Region "Create New Instance"

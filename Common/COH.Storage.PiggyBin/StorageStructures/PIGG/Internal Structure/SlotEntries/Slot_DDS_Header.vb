@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Resources.Structures.Textures
+Imports COH.Storage.PiggyBin.Enums
 
 Namespace FileStructures.PIGG.Contents
     Public Class PIGG_SlotEntry_TextureDDS
@@ -13,7 +14,7 @@ Namespace FileStructures.PIGG.Contents
 #End Region
 
 #Region "Private Properties"
-       Private mHeader As COH_Resource_Texture_Header
+        Private mHeader As COH_Resource_Texture_Header
 #End Region
 
 #Region "Create New Instance"

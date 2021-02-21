@@ -3,6 +3,7 @@ Imports COH.GameContent.Enums
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Powers
 Imports COH.GameContent.Structures.Powers
+Imports COH.Tools.Controls.WinForms.HelperFunctions.Lists
 
 Namespace HelperFunctions.Structs
     <HideModuleName> Public Module COH_QuickControlHelpers_COH_FileStructures

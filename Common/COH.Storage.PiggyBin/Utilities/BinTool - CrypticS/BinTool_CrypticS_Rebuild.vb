@@ -1,4 +1,6 @@
-﻿Namespace Utilities
+﻿Imports COH.GameContent
+
+Namespace Utilities
     Partial Public NotInheritable Class COH_BinTool_CrypticS
 
 #Region "Export CrypticS - File Structure"

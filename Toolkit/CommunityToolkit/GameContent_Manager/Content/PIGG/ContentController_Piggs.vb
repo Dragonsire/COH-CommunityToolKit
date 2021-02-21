@@ -1,8 +1,11 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.Storage.PiggyBin.Utilities
+Imports COH.Tools.Internal.Enums
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-       Private WithEvents mCurrentPiggReader As Utilities.COH_PiggTool
+        Private WithEvents mCurrentPiggReader As COH_PiggTool
 #End Region
 
 #Region "Import & Rebuild Sources From Defs"
@@ -152,7 +155,7 @@
                 IO.File.Copy(FileLocation, FileSource)
             End If
             If DeleteAllFiles = True Then Delete_AllFiles_InDirectory(Destination, False, IO.SearchOption.AllDirectories)
-            mCurrentPiggReader = New Utilities.COH_PiggTool
+            mCurrentPiggReader = New COH_PiggTool
             mCurrentPiggReader.OpenExisting_PiggFile(FileSource)
             mCurrentPiggReader.ExtractAllFiles_ToDirectory(Destination, ProcessRecord, True)
             mCurrentPiggReader.Dispose()

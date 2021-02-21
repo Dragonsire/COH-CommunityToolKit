@@ -1,4 +1,6 @@
-﻿Public Module Startup
+﻿Imports COH.Tools.Internal.ContentController
+
+Public Module Startup
 
 #Region "Properties"
     Public sApplication As COH_Tools_Application

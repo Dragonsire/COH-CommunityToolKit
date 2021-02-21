@@ -1,5 +1,5 @@
-﻿Imports COH.GameContent.HelperClasses.Wrappers
-Imports COH.GameContent.Structures.LanguageFiles
+﻿Imports COH.GameContent
+Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 
 Namespace Utilities
     Partial NotInheritable Class COH_BinTool_MessageStore

@@ -1,6 +1,8 @@
-﻿Imports COH.Tools.Controls.Forms
+﻿Imports COH.GameContent.Internal.Events
+Imports COH.Tools.Controls.Forms
 Imports COH.Tools.Controls.WinForms.Dialogs
 Imports COH.Tools.Controls.WinForms.Internal
+Imports COH.Tools.Internal.Enums
 Imports COH.Tools.Modding.Editors
 
 Namespace Internal.ContentController
@@ -15,8 +17,8 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Usage"
-       Private mListWindows_InUse As List(Of COH_FormTemplate)
-       Private mUseIndependentScreens As Boolean = False
+        Private mListWindows_InUse As List(Of COH_FormTemplate)
+        Private mUseIndependentScreens As Boolean = False
 #End Region
 
 #Region "Project Editors"
@@ -68,7 +70,7 @@ Namespace Internal.ContentController
 #Region "View Screens"
         Public Sub OpenAboutBox()
             Dim NewEditor As New COH_AboutBox(Me)
-            NewEditor.DisplayDetails(My.Resources.Logo, ProgramFolders.LookupFolder(COH_ProgramPaths.Root) & "ChangeLog.rtf", My.Application.Info.Version.ToString)
+            '//NewEditor.DisplayDetails(My.Resources.Logo, ProgramFolders.LookupFolder(COH_ProgramPaths.Root) & "ChangeLog.rtf", My.Application.Info.Version.ToString)
             ShowWindow(NewEditor, True)
         End Sub
         Public Sub CheckUpdate(Optional ForceShowMessage As Boolean = False)

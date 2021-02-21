@@ -1,7 +1,6 @@
 ﻿Imports COH.GameContent.Enums
-Imports COH.GameContent.Shared
 Imports COH.GameContent.Structures
-Imports COH.GameContent.Structures.Powers
+Imports COH.Tools.Controls.WinForms.HelperFunctions.Lists
 
 Namespace Editors
     Public Class COH_PowerSet_Editor

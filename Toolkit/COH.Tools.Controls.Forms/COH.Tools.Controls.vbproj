@@ -65,6 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FCTB" Version="2.16.24" />
     <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.15.0" />
     <PackageReference Include="SharpDX" Version="4.2.0" />
     <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
@@ -73,9 +74,11 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.PiggyBin.vbproj" />
     <ProjectReference Include="..\COH.Tools.Controls.WPF\COH.Tools.WPFControls.vbproj" />
   </ItemGroup>
 

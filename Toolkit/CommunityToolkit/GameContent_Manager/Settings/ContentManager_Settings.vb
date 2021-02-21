@@ -1,4 +1,6 @@
-﻿Namespace Internal.ContentController.Settings
+﻿Imports COH.Tools.Internal.Enums
+
+Namespace Internal.ContentController.Settings
     Public NotInheritable Class ContentManager_Settings
 
 #Region "Properties"
@@ -58,12 +60,12 @@
 #End Region
 
 #Region "Private Properties"
-       Private mCurrentProjectRoot As String
-       Private mCurrentProjectFileName As String
-       Private mUpdate_Bin_TimeStamps As Boolean
-       Private mOuroborosRepoPath As String
-       Private mGitReleaseFeed As String
-       Private mGitReleaseDate As Date
+        Private mCurrentProjectRoot As String
+        Private mCurrentProjectFileName As String
+        Private mUpdate_Bin_TimeStamps As Boolean
+        Private mOuroborosRepoPath As String
+        Private mGitReleaseFeed As String
+        Private mGitReleaseDate As Date
 #End Region
 
 #Region "Create New Instance"

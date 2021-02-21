@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Structures.LanguageFiles
+﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 Imports COH.Tools.Controls.WinForms.Enums
 
 Namespace Editors

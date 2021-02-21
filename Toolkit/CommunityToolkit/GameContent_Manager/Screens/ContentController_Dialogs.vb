@@ -1,8 +1,10 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.GameContent.Internal.Events
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-       Private mLastLocated As String = ""
+        Private mLastLocated As String = ""
 #End Region
 
 

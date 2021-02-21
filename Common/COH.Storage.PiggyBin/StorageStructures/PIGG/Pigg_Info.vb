@@ -1,4 +1,4 @@
-﻿Imports COH.Tools.FileStructures.PIGG
+﻿Imports COH.Storage.PiggyBin.FileStructures.PIGG
 
 Namespace Structures
     Public Class COH_Pigg_Info
@@ -44,11 +44,11 @@ Namespace Structures
 #End Region
 
 #Region "Private Properties"
-       Private mFileName As String
-       Private mHeader As COH_PIGG_FileHeader
-       Private mDirectories As List(Of COH_PIGG_DirectoryEntry)
-       Private mStringTable As COH_PIGG_StringTable
-       Private mSlotTable As COH_PIGG_SlotTable
+        Private mFileName As String
+        Private mHeader As COH_PIGG_FileHeader
+        Private mDirectories As List(Of COH_PIGG_DirectoryEntry)
+        Private mStringTable As COH_PIGG_StringTable
+        Private mSlotTable As COH_PIGG_SlotTable
 #End Region
 
 #Region "Create New Instance"

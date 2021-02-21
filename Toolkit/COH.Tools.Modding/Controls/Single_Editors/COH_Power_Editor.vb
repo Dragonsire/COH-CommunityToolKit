@@ -1,7 +1,6 @@
 ﻿Imports COH.GameContent.Enums
-Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Characters.Powers
-Imports COH.GameContent.Structures.Powers
+Imports COH.Tools.Controls.WinForms.HelperFunctions.Lists
 
 Namespace Editors
     Public Class COH_Power_Editor
@@ -337,8 +336,8 @@ Namespace Editors
                 If String.IsNullOrEmpty(ThePower.AttribMod(0).CostumeName) = False Then
 
 
-                        MsgBox("Found : " & ThePower.SourceName & " : " & ThePower.AttribMod(0).ConditionalFX)
-                    End If
+                    MsgBox("Found : " & ThePower.SourceName & " : " & ThePower.AttribMod(0).ConditionalFX)
+                End If
                 'End If
                 'Next
             Next

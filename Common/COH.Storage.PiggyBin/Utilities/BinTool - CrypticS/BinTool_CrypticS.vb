@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.Storage.Controllers
+﻿Imports COH.GameContent
+Imports COH.GameContent.Storage.Controllers
 
 Namespace Utilities
     Public NotInheritable Class COH_BinTool_CrypticS
@@ -16,11 +17,11 @@ Namespace Utilities
 #End Region
 
 #Region "Private Properties"
-       Private mCrypticS_Info As COH_CrypticS
-       Private mCurrentReader As COH_BinaryReader
-       Private mValid As Boolean
-       Private mLanguageMaps As ISupport_COH_LocalizeContent
-       Private mFileStructs As COH_FileStructureIndex_Controller
+        Private mCrypticS_Info As COH_CrypticS
+        Private mCurrentReader As COH_BinaryReader
+        Private mValid As Boolean
+        Private mLanguageMaps As ISupport_COH_LocalizeContent
+        Private mFileStructs As COH_FileStructureIndex_Controller
 #End Region
 
 #Region "Create New Instance"

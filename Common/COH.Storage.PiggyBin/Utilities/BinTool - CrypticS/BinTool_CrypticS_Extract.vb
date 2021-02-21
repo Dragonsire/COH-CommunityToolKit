@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums
+﻿Imports COH.GameContent
+Imports COH.GameContent.CodeManagement.Enums
 
 Namespace Utilities
     Partial Public NotInheritable Class COH_BinTool_CrypticS

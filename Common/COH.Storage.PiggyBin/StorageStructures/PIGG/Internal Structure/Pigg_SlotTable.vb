@@ -1,5 +1,5 @@
-﻿Imports COH.Tools.Enums
-Imports COH.Tools.FileStructures.PIGG.Contents
+﻿Imports COH.Storage.PiggyBin.Enums
+Imports COH.Storage.PiggyBin.FileStructures.PIGG.Contents
 
 Namespace FileStructures.PIGG
     Public NotInheritable Class COH_PIGG_SlotTable
@@ -13,10 +13,10 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-       Private sSlotTableMarker As UInt32
-       Private sCount As UInt32
-       Private sSize As UInt32
-       Private sItems As List(Of COH_PIGG_SlotTableEntry)
+        Private sSlotTableMarker As UInt32
+        Private sCount As UInt32
+        Private sSize As UInt32
+        Private sItems As List(Of COH_PIGG_SlotTableEntry)
 #End Region
 
 #Region "Create New Instance"

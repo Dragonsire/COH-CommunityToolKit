@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Internal.Structures
+﻿Imports COH.GameContent.MessageStores
 Imports COH.GameContent.Storage.Controllers
 
 Namespace Internal.ContentController
@@ -13,14 +13,14 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-       Private mStruct_Controller As COH_FileStructureIndex_Controller
+        Private mStruct_Controller As COH_FileStructureIndex_Controller
 #End Region
 
 #Region "MessageStores"
         Private Function Prepare_StructuresController() As Boolean
             mStruct_Controller = New COH_FileStructureIndex_Controller
             mStruct_Controller.Add_ListSupportedFiles(GameContent.Structures.COH_LibraryRegister_CrypticS.CreateList_BinMapping_ToTypes)
-            mStruct_Controller.Add_ListSupportedFiles(GameContent.COH_LibraryRegister_MessageStore.CreateList_BinMapping_ToTypes)
+            mStruct_Controller.Add_ListSupportedFiles(COH_LibraryRegister_MessageStore.CreateList_BinMapping_ToTypes)
             mStruct_Controller.Add_ListSupportedFiles(GameContent.Resources.COH_LibraryRegister_Resources.CreateList_BinMapping_ToTypes)
             Return True
         End Function

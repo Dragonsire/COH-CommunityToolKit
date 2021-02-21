@@ -1,12 +1,13 @@
 ﻿Imports System.Net
+Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController
 
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-       Private WithEvents mWebClient As WebClient
-       Private WithEvents mFileDownloading As String
+        Private WithEvents mWebClient As WebClient
+        Private WithEvents mFileDownloading As String
 #End Region
 
         Public Sub Download_GitForWindows()

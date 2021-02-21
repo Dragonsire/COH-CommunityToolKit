@@ -1,4 +1,7 @@
-﻿Namespace Internal.ContentController.Settings
+﻿Imports COH.GameContent.Enums
+Imports COH.Tools.Internal.Enums
+
+Namespace Internal.ContentController.Settings
     Public NotInheritable Class COH_ProgramPathsManager
 
 #Region "Properties"
@@ -10,9 +13,9 @@
 #End Region
 
 #Region "Private Properties"
-       Private mRoot As String
-       Private mFolders As Dictionary(Of COH_ProgramPaths, String)
-       Private mRelativeFolders As Dictionary(Of COH_ProjectContent, String)
+        Private mRoot As String
+        Private mFolders As Dictionary(Of COH_ProgramPaths, String)
+        Private mRelativeFolders As Dictionary(Of COH_ProjectContent, String)
 #End Region
 
 #Region "Initialize"
@@ -144,7 +147,7 @@
 
 #Region "Additional Functions"
         Public Sub UpdateEnviromentPath_MSBUILD()
-            Dim readValue = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSBuild\ToolsVersions\4.0", "MSBuildToolsPath", Nothing)
+            Dim readValue = Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSBuild\ToolsVersions\4.0", "MSBuildToolsPath", Nothing)
             Dim PathtoMSBUILD As String = readValue ' & "MSBuild.exe"
             Dim FindPath As String = System.Environment.GetEnvironmentVariable("path", EnvironmentVariableTarget.User)
             If FindPath.Contains("MSBuild") = False Then
@@ -189,9 +192,9 @@
 
                 Dim file As System.IO.StreamWriter
                 If IO.File.Exists(Folder & "Run.bat") = False Then
-                    file = My.Computer.FileSystem.OpenTextFileWriter(Folder & "Run.bat", True)
-                    file.WriteLine(SB.ToString)
-                    file.Close()
+                    'file = OpenTextFileWriter(Folder & "Run.bat", True)
+                    'file.WriteLine(SB.ToString)
+                    'file.Close()
                 End If
 
                 Dim p As Process = New Process()
@@ -202,8 +205,8 @@
                 p.StartInfo = psi
                 'p.StartInfo.Verb = "runas"
                 p.Start()
-                    p.WaitForExit()
-                End If
+                p.WaitForExit()
+            End If
 
         End Sub 'git clone --recursive https://git.ourodev.com/CoX/Source.git
 

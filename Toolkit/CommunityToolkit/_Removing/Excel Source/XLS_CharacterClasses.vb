@@ -1,7 +1,5 @@
-﻿Imports COH.Tools.GameContent
-Imports COH.Tools.GameContent.Structures.CharacterClasses
-Imports COH.Tools.GameContent.Structures
-Imports COH.Tools.GameContent.Structures.Characters
+﻿Imports COH.GameContent.Structures.Characters
+Imports System.Data
 
 Namespace ImportTools.Excel
     Public Module XLS_CharacterClasses

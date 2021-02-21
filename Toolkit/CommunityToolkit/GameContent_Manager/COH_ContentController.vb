@@ -1,4 +1,7 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.Tools.Internal.ContentController.Settings
+Imports COH.Tools.Internal.Enums
+
+Namespace Internal.ContentController
     Public NotInheritable Class COH_ContentController
         Implements ISupport_MasterController
 
@@ -21,11 +24,11 @@
 #End Region
 
 #Region "Private Properties"
-       Private Shared sInstance As COH_ContentController
-       Private sMainForm As COH_Tools
-       Private mProgramFolders As COH_ProgramPathsManager
-       Private mSettings As ContentManager_Settings
-       Private mLoadScreenVisible As Boolean
+        Private Shared sInstance As COH_ContentController
+        Private sMainForm As COH_Tools
+        Private mProgramFolders As COH_ProgramPathsManager
+        Private mSettings As ContentManager_Settings
+        Private mLoadScreenVisible As Boolean
 #End Region
 
 #Region "Initialize"
@@ -123,28 +126,28 @@
             End If
         End Sub
         Private Function Check_UpdateInfo(AtomFeed As String, ByRef Message As String, ByRef Link As String) As Boolean
-            If My.Computer.Network.IsAvailable = False Then
-                Message = "No Internet Connection"
-                Return False
-            End If
+            ' If Devices.Network.IsAvailable = False Then
+            ' Message = "No Internet Connection"
+            ' Return False
+            ' End If
             Dim UpdateFound As Boolean = False
             If String.IsNullOrEmpty(AtomFeed) = True Then AtomFeed = "https://github.com/Dragon-Sire/COH-CommunityToolKit/releases.atom"
             Using reader As Xml.XmlReader = Xml.XmlReader.Create(AtomFeed)
-                Dim feed As ServiceModel.Syndication.SyndicationFeed = ServiceModel.Syndication.SyndicationFeed.Load(reader)
+                'Dim feed As ServiceModel.Syndication.SyndicationFeed = ServiceModel.Syndication.SyndicationFeed.Load(reader)
                 'Console.WriteLine(feed.Title.Text)
                 'Console.WriteLine(feed.Links(0).Uri)
 
                 'For Each item As ServiceModel.Syndication.SyndicationItem In feed.Items
-                Dim item As ServiceModel.Syndication.SyndicationItem = feed.Items(0)
-                Dim LastUpdated As Date = item.LastUpdatedTime.DateTime
-                Link = item.Links(0).Uri.ToString
-                Dim ID As String = item.Id ' "tag:github.com,2008:Repository/203834544/v1.0.0.93"
-                If Parse_VersionGit(ID) = True Then
-                    Message = "There is a newer version available!"
-                    UpdateFound = True
-                Else
-                    Message = "Current Version is Latest Release"
-                End If
+                'Dim item As ServiceModel.Syndication.SyndicationItem = feed.Items(0)
+                'Dim LastUpdated As Date = item.LastUpdatedTime.DateTime
+                'Link = item.Links(0).Uri.ToString
+                'Dim ID As String = item.Id ' "tag:github.com,2008:Repository/203834544/v1.0.0.93"
+                'If Parse_VersionGit(ID) = True Then
+                ' Message = "There is a newer version available!"
+                ''UpdateFound = True
+                'Else
+                ' Message = "Current Version is Latest Release"
+                ' End If
                 'Next
             End Using
             Return UpdateFound
@@ -155,31 +158,31 @@
             Dim VString As String = Source.Substring(Source.IndexOf("/v") + 2)
             Dim Values As String() = VString.Split(".")
 
-            If My.Application.Info.Version.Major < Values(0) Then
-                Return True
-            ElseIf My.Application.Info.Version.Major > Values(0) Then
-                Return False
-            End If
-
-            If My.Application.Info.Version.MajorRevision < Values(1) Then
-                Return True
-            ElseIf My.Application.Info.Version.MajorRevision > Values(1) Then
-                Return False
-            End If
-
-            If My.Application.Info.Version.Minor < Values(2) Then
-                Return True
-            ElseIf My.Application.Info.Version.Minor > Values(2) Then
-                Return False
-            End If
-
-            If My.Application.Info.Version.MinorRevision < Values(3) Then
-                Return True
-            ElseIf My.Application.Info.Version.MinorRevision > Values(3) Then
-                Return False
-            Else
-                Return False
-            End If
+            'If My.Application.Info.Version.Major < Values(0) Then
+            ' Return True
+            ' ElseIf My.Application.Info.Version.Major > Values(0) Then
+            ' Return False
+            'End If
+            ''
+            'I 'f My.Application.Info.Version.MajorRevision < Values(1) Then
+            'Return True
+            'ElseIf My.Application.Info.Version.MajorRevision > Values(1) Then
+            ' Return False
+            ' End If
+            '
+            '            If My.Application.Info.Version.Minor < Values(2) Then
+            ''           Return True
+            '           ElseIf My.Application.Info.Version.Minor > Values(2) Then
+            '           Return False
+            '           End If
+            ''
+            '           If My.Application.Info.Version.MinorRevision < Values(3) Then
+            '           Return True
+            '           ElseIf My.Application.Info.Version.MinorRevision > Values(3) Then
+            ' '          Return False
+            '           Else
+            Return False
+            'End If
         End Function
 #End Region
 

@@ -37,7 +37,7 @@
             Dim Line As String = ""
             mEntries = New List(Of COH_FileStructure)
             For Each File In mFileNames
-                Using CurrentReader As IO.StreamReader = My.Computer.FileSystem.OpenTextFileReader(File, Text.Encoding.UTF8)
+                Using CurrentReader As IO.StreamReader = New IO.StreamReader(File, Text.Encoding.UTF8)
                     Return ProcessFile(CurrentReader)
                 End Using
             Next

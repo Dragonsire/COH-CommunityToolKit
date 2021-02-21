@@ -1,4 +1,5 @@
 ﻿Imports COH.Tools.Controls.WinForms
+Imports COH.Tools.Controls.WinForms.UserControls
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class COH_ModdableContent_Editor

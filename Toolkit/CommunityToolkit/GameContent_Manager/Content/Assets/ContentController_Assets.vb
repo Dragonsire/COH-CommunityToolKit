@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Resources
+Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -19,7 +20,7 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-       Private mAssets_Controller As COH_ResourceAssets_Controller
+        Private mAssets_Controller As COH_ResourceAssets_Controller
 #End Region
 
 #Region "Assets"

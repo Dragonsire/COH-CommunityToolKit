@@ -1,4 +1,5 @@
-﻿
+﻿Imports COH.GameContent.Structures.Characters
+
 Namespace HelperFunctions.Defs
     Partial Public Class COH_DefReader
 

@@ -1,10 +1,13 @@
 ﻿Imports System.IO
-Imports COH.GameContent.Resources.Structures.BIN
+Imports COH.GameContent
 Imports COH.GameContent.Resources.Structures.Anim
+Imports COH.GameContent.Resources.Structures.BIN
 Imports COH.GameContent.Resources.Structures.GEO
 Imports COH.GameContent.Resources.Structures.Other
 Imports COH.GameContent.Resources.Structures.Textures
-Imports COH.Tools.Structures
+Imports COH.Storage.PiggyBin.Enums
+Imports COH.Storage.PiggyBin.FileStructures.PIGG
+Imports COH.Storage.PiggyBin.Structures
 
 Namespace Utilities
     Partial Public Class COH_PiggTool
@@ -126,8 +129,8 @@ Namespace Utilities
             'Dim L1 As String = FilePath.Length
 
             If File.Exists(FilePath) = True Then IO.File.Delete(FilePath)
-                Dim Folder As String = IO.Path.GetDirectoryName(FilePath)
-                If IO.Directory.Exists(Folder) = False Then IO.Directory.CreateDirectory(Folder)
+            Dim Folder As String = IO.Path.GetDirectoryName(FilePath)
+            If IO.Directory.Exists(Folder) = False Then IO.Directory.CreateDirectory(Folder)
             Return FilePath
         End Function
         Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As COH_Pigg_Info, Optional Decompress As Boolean = False) As Byte()

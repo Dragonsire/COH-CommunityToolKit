@@ -1,14 +1,16 @@
-﻿Imports COH.GameContent.COH_CrypticS_Settings
+﻿Imports COH.GameContent.Internal.Events
+Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 Imports COH.GameContent.Storage.Serialization.Configuration.COH_Serialization_Settings
-Imports COH.Tools.Utilities
+Imports COH.Storage.PiggyBin.Utilities
+Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Properties"
-       Private WithEvents mEventController As COH_LibraryEventControl
-       Private mBinTool_CrypticS As COH_BinTool_CrypticS
-       Private mBinTool_MessageStore As COH_BinTool_MessageStore
+        Private WithEvents mEventController As COH_LibraryEventControl
+        Private mBinTool_CrypticS As COH_BinTool_CrypticS
+        Private mBinTool_MessageStore As COH_BinTool_MessageStore
 #End Region
 
 #Region "Extract - Contents for Modding (Specified Bins)"
@@ -383,7 +385,7 @@ Namespace Internal.ContentController
                     Return False
                 End If
             End If
-            mBinTool_MessageStore = New Utilities.COH_BinTool_MessageStore(FileSource, True)
+            mBinTool_MessageStore = New COH_BinTool_MessageStore(FileSource, True)
             Dim Result As Boolean = mBinTool_MessageStore.ExtractFromBin_WriteXML(Destination)
             mBinTool_MessageStore.Dispose()
             mBinTool_MessageStore = Nothing

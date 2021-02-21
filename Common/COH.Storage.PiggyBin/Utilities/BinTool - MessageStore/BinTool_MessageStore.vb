@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Structures.LanguageFiles
+﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 
 Namespace Utilities
     Public NotInheritable Class COH_BinTool_MessageStore

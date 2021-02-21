@@ -59,9 +59,22 @@
     <Import Include="COH.GameContent.Storage.Structures.Generics" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HelixToolkit" Version="2.15.0" />
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.15.0" />
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.15.0" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.GameContent.vbproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

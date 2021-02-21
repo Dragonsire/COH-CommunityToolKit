@@ -1,4 +1,6 @@
-﻿Imports System.Windows.Forms
+﻿Imports System.Data
+Imports System.Data.Odbc
+Imports System.Windows.Forms
 Imports Microsoft.Office.Interop.Excel
 
 Namespace HelperFunctions.Excel
@@ -45,7 +47,7 @@ Namespace HelperFunctions.Excel
             strConnString = "dsn=City;"
             Dim strSQL As String
             strSQL = "SELECT * FROM [" & SheetName & "$]"
-            Dim y As New Odbc.OdbcDataAdapter(strSQL, strConnString)
+            Dim y As New OdbcDataAdapter(strSQL, strConnString)
             y.Fill(RetVal)
             Return RetVal
         End Function

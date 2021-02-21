@@ -322,7 +322,7 @@ Namespace Dialogs
             mShow_Bones = False
             mShow_BoundingBox = False
             mShow_Grid = True
-            mCameraRotationModes = New CameraRotationMode(2) {CameraRotationMode.Turntable, CameraRotationMode.Trackball, CameraRotationMode.Turnball}
+            mCameraRotationModes = New HelixToolkit.Wpf.CameraRotationMode(2) {HelixToolkit.Wpf.CameraRotationMode.Turntable, HelixToolkit.Wpf.CameraRotationMode.Trackball, HelixToolkit.Wpf.CameraRotationMode.Turnball}
             mRotateAroundMouseDownPoint = True
             mGrid_Color = Colors.Black
             mWireFrame_Color = Colors.Black
@@ -331,7 +331,7 @@ Namespace Dialogs
             mBone_ColorUsed = Colors.Black
             mVertex_Size = 4
             mBoundingBox_Color = Colors.LightBlue
-            mCameraRotationMode = CameraRotationMode.Turntable
+            mCameraRotationMode = HelixToolkit.Wpf.CameraRotationMode.Turntable
             Grid_Show = True
             ResetDefault_Cameras()
             ResetDefault_Lights()
@@ -902,8 +902,8 @@ Namespace Dialogs
         Private Sub AddModel_BoundingBox(Name As String, ByRef BoundingBox As Rect3D, TheRadius As Single)
             If mBoundingBox Is Nothing Then mBoundingBox = New List(Of MeshGeometryModel3D)
             Dim Material As HelixToolkit.Wpf.SharpDX.Material = New HelixToolkit.Wpf.SharpDX.DiffuseMaterial(New Model.DiffuseMaterialCore() With {.DiffuseColor = mBoundingBox_Color.ToColor4})
-            Dim MeshBuilder As New MeshBuilder
-            MeshBuilder.AddBox(BoundingBox, BoxFaces.All)
+            Dim MeshBuilder As New HelixToolkit.Wpf.SharpDX.MeshBuilder
+            MeshBuilder.AddBox(BoundingBox, HelixToolkit.Wpf.BoxFaces.All)
             MeshBuilder.ToMesh()
             Dim CurrentMesh As New MeshGeometryModel3D()
             With CurrentMesh

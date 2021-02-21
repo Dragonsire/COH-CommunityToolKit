@@ -1,8 +1,8 @@
 ﻿Imports COH.GameContent.Enums
-Imports COH.GameContent.Shared
-Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Attributes
+Imports COH.Tools.Controls.WinForms.HelperFunctions.Lists
+Imports COH.Tools.Modding.HelperFunctions.Structs
 
 Namespace Editors
     Public Class COH_CharacterClass_Editor
@@ -16,8 +16,8 @@ Namespace Editors
 #End Region
 
 #Region "Private Properties"
-       Private WithEvents mCharacterClass_Current As COH_CharacterClass
-       Private mIcon As Image
+        Private WithEvents mCharacterClass_Current As COH_CharacterClass
+        Private mIcon As Image
 #End Region
 
 #Region "Initialize"

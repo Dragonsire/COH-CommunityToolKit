@@ -1,4 +1,6 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Properties"
@@ -16,7 +18,7 @@
 #End Region
 
 #Region "Private Properties"
-       Private mMessageStore_Controller As COH_LocalizeContent_Controller
+        Private mMessageStore_Controller As COH_LocalizeContent_Controller
 #End Region
 
 #Region "MessageStores"

@@ -10,7 +10,7 @@ Namespace Internal.ContentController
 #Region "Create Form"
         Private Sub SplashScreen_Create()
             mSplashForm = New SplashScreen
-            mSplashForm.PrepareUsage(My.Application.Info.Version.ToString, 100)
+            '//mSplashForm.PrepareUsage(My.Application.Info.Version.ToString, 100)
             mSplashForm.Show()
         End Sub
         Private Sub SplashScreen_Update(Name As String, UpdateAmount As Integer, Optional UseWait As Boolean = False)

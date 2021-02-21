@@ -1,4 +1,6 @@
-﻿Public Class COH_Menu
+﻿Imports COH.Tools.Internal.ContentController
+
+Public Class COH_Menu
 
 #Region "Proects"
     Private Sub ViewCurrentProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewCurrentProjectToolStripMenuItem.Click
@@ -201,7 +203,7 @@
         COH_ContentController.Instance.OpenEditor_BinViewer_FindFile()
         UpdateCursor(False)
     End Sub
-    Private Sub CharacterClassesclassesbinToolStripMenuItem_Click_1(sender As Object, e As EventArgs) 
+    Private Sub CharacterClassesclassesbinToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         UpdateCursor(True)
         COH_ContentController.Instance.OpenEditor_ModdableContentEditor()
         UpdateCursor(False)

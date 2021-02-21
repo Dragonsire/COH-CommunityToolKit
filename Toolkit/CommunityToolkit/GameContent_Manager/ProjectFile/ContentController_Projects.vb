@@ -1,4 +1,12 @@
-﻿Imports COH.GameContent.Storage.Controllers
+﻿Imports COH.GameContent
+Imports COH.GameContent.CodeManagement.Interfaces
+Imports COH.GameContent.Enums
+Imports COH.GameContent.HelperClasses.Wrappers
+Imports COH.GameContent.Storage.Controllers
+Imports COH.GameContent.Structures
+Imports COH.GameContent.Structures.Characters
+Imports COH.GameContent.Structures.MeshRelated
+Imports COH.GameContent.Structures.Shared
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -23,9 +31,9 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-       Private mCached_CurrentProjectFile As ProjectFiles.COH_ProjectFile
-       Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
-       Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
+        Private mCached_CurrentProjectFile As ProjectFiles.COH_ProjectFile
+        Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
+        Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
 #End Region
 
 #Region "Create Standard Project File"

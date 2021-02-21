@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Imports COH.Tools.Enums
+Imports COH.Storage.PiggyBin.Enums
 
 Namespace FileStructures.PIGG.Contents
     Public MustInherit Class COH_PIGG_SlotTableEntry
@@ -39,11 +39,11 @@ Namespace FileStructures.PIGG.Contents
 #End Region
 
 #Region "Private Properties"
-       Private mEntry_Offset As UInt32
-       Private mEntry_Size As UInt32
-       Private mEntry_Size_Compressed As UInt32
-       Private mEntry_Size_Decompressed As UInt32
-       Private mSlotType As SlotTypes
+        Private mEntry_Offset As UInt32
+        Private mEntry_Size As UInt32
+        Private mEntry_Size_Compressed As UInt32
+        Private mEntry_Size_Decompressed As UInt32
+        Private mSlotType As SlotTypes
 #End Region
 
 #Region "Create New Instance"

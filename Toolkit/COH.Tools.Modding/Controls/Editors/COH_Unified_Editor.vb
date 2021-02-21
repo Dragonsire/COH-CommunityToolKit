@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Enums
+Imports COH.Tools.Modding.HelperFunctions.Structs
 
 Namespace Editors
     Public Class COH_EditModdableContent

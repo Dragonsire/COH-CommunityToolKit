@@ -1,7 +1,9 @@
-﻿Imports COH.Tools.Controls.WinForms.Interfaces
+﻿Imports System.Drawing
+Imports COH.Tools.Controls.WinForms.Interfaces
+Imports COH.Tools.Internal.ContentController
 
 Public Class COH_Tools
-    Implements Controls.WinForms.Interfaces.COH_ParentFormInterface
+    Implements COH_ParentFormInterface
 
 #Region "Startup"
     Private Sub COH_Tools_Load(sender As Object, e As EventArgs) Handles MyBase.Load

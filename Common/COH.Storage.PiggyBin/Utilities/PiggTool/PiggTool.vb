@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports COH.Tools.Structures
+﻿Imports COH.Storage.PiggyBin.Structures
 
 Namespace Utilities
     Public Class COH_PiggTool
@@ -17,9 +16,9 @@ Namespace Utilities
 #End Region
 
 #Region "Private Properties"
-       Private mPiggInfo As COH_Pigg_Info
-       Private mCurrentReader As COH_BinaryReader
-       Private mValid As Boolean
+        Private mPiggInfo As COH_Pigg_Info
+        Private mCurrentReader As COH_BinaryReader
+        Private mValid As Boolean
 #End Region
 
 #Region "Create New Instance"

@@ -1,4 +1,6 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.GameContent.Enums
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Private Functions"

@@ -1,13 +1,14 @@
 ﻿Imports COH.GameContent.ProjectFiles
 Imports COH.Tools.Controls.WinForms.Extentsions
+Imports COH.Tools.Internal.ContentController
 
 Namespace Controls.Forms
     Public Class COH_ProjectView
 
 #Region "Private Properties"
-       Private rCurrentProject As COH_ProjectFile
-       Private rExportProject As COH_ProjectFile
-       Private rCurrent As COH_FileStructure
+        Private rCurrentProject As COH_ProjectFile
+        Private rExportProject As COH_ProjectFile
+        Private rCurrent As COH_FileStructure
 #End Region
 
 #Region "Initialize"
