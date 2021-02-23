@@ -1,5 +1,5 @@
 ﻿Imports System.Drawing
-Imports COH.GameContent.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Enums.Binary
 
 Namespace Storage.Serialization
     Partial Public NotInheritable Class COH_BinaryWriter

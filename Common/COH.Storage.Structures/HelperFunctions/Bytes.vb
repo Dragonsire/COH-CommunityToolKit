@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿Imports COH.CodeManagement.Enums.Binary
+Imports COH.GameContent.CodeManagement.Enums.Structures
 
 Namespace HelperFunctions.Bytes
     <HideModuleName> Public Module DS_HelperFunctions_ByteFunctions

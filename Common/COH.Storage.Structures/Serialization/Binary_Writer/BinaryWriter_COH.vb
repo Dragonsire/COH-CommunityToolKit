@@ -1,5 +1,5 @@
-﻿Imports COH.GameContent.HelperClasses
-Imports COH.GameContent.Storage.Serialization.Configuration
+﻿Imports COH.HelperClasses.Wrappers
+Imports COH.Storage.Serialization.Configuration
 
 Namespace Storage.Serialization
     Partial Public NotInheritable Class COH_BinaryWriter
@@ -106,7 +106,7 @@ Namespace Storage.Serialization
 #End Region
 
 #Region "Strings "
-        Public Sub Write_CrypticS_String(ByRef source As Wrappers.COH_XML_CrypticS_String)
+        Public Sub Write_CrypticS_String(ByRef source As COH_XML_CrypticS_String)
             If source Is Nothing OrElse source.Key.Length = 0 Then
                 Write(CShort(0))
             Else

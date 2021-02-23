@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿
+Imports COH.CodeManagement.Enums.Binary
 
 Namespace HelperFunctions.StringsAndThings
     <HideModuleName> Public Module COH_HelperFunctions_StringFunctions

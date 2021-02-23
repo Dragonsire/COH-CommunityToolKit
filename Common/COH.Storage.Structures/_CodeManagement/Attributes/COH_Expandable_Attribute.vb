@@ -1,6 +1,7 @@
 ﻿'#If EDITOR Then
 Imports System.ComponentModel
 Imports COH.GameContent.Storage.Structures
+Imports COH.Storage.Structures
 
 Namespace CodeManagement.Attributes
     Public Class COH_FileStructure_ExpandableObjectCoverter

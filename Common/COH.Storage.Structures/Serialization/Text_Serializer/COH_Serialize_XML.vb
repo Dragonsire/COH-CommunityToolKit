@@ -1,10 +1,10 @@
 ﻿Imports System.ComponentModel
 Imports System.Xml
-Imports COH.GameContent.CodeManagement.Attributes
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.HelperFunctions.Attributes
-Imports COH.GameContent.Storage.Serialization.Configuration
-Imports COH.GameContent.Storage.Structures.Generics
+Imports COH.Storage.Serialization.Configuration
+Imports COH.Storage.Structures.Generics
+Imports COH.CodeManagement.Attributes
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.HelperFunctions.Attributes
 
 Namespace Storage.Serialization
     Public Class COH_XML_Serialization

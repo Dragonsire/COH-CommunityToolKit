@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.CodeManagement.Interfaces.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.TOKs
-Imports COH.GameContent.Storage.Serialization
+﻿Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.CodeManagement.Interfaces.TOKs
+Imports COH.Storage.Serialization
 
 Namespace Storage.Structures.Generics
     Public NotInheritable Class CrypticS_String_NotLocalizable

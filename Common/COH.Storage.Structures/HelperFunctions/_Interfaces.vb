@@ -1,5 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.TOKs
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Interfaces.TOKs
 
 Namespace HelperFunctions.Interfaces
 

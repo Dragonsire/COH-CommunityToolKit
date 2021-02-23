@@ -1,4 +1,8 @@
-﻿Namespace Storage.Serialization
+﻿Imports COH.CodeManagement.Enums.Binary
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization.Configuration
+
+Namespace Storage.Serialization
     '<DebuggerStepThrough>
     Public NotInheritable Class COH_BinaryReader
         Inherits IO.BinaryReader

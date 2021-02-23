@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Xml.Serialization
+Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent.CodeManagement.Enums.Structures
 
 Namespace Storage.Structures.CrypticsS

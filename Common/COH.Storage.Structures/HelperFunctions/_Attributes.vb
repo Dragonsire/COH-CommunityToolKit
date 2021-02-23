@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Xml.Serialization
+Imports COH.CodeManagement.Attributes
 
 Namespace HelperFunctions.Attributes
     <HideModuleName()> Public Module COH_Attributes_Helper

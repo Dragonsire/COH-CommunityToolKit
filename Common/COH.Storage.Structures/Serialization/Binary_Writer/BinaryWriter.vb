@@ -1,5 +1,5 @@
 ﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization.Configuration
+Imports COH.Storage.Serialization.Configuration
 
 Namespace Storage.Serialization
     '<DebuggerStepThrough>
@@ -81,7 +81,7 @@ Namespace Storage.Serialization
             mOptions = New COH_Serialization_Settings
             mOptions.Options_TextEncoding = DefaultEncoding
             mOptions.Option_Version = 0
-            mOptions.Option_SelectedFormat = COH_ExportFormat.CrypticS_BINFormat
+            mOptions.Option_SelectedFormat = CodeManagement.Enums.Structures.COH_ExportFormat.CrypticS_BINFormat
         End Sub
 #End Region
 

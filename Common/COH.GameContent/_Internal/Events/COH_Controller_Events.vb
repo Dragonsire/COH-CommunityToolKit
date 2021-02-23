@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Internal.Events.COH_Event_Error
 Imports COH.GameContent.Internal.Events.COH_Event_ProgressUpdate
-Imports COH.GameContent.Storage.Serialization
+Imports COH.Storage.Serialization
 
 Namespace Internal.Events
     Public NotInheritable Class COH_LibraryEventControl

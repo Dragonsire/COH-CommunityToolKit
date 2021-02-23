@@ -1,8 +1,8 @@
 ﻿Imports System.ComponentModel
-Imports COH.GameContent.CodeManagement.Attributes
-Imports COH.GameContent.CodeManagement.Interfaces.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.TOKs
-Imports COH.GameContent.Storage.Serialization
+Imports COH.CodeManagement.Attributes
+Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.CodeManagement.Interfaces.TOKs
+Imports COH.Storage.Serialization
 
 Namespace Storage.Structures.Generics
     <TypeConverter(GetType(COH_FileStructure_ExpandableObjectCoverter))> Public NotInheritable Class CrypticS_StringArray_NotLocalizable

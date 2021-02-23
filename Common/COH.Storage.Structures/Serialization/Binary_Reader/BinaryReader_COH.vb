@@ -1,5 +1,5 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.HelperClasses
+﻿Imports COH.CodeManagement.Enums.Binary
+Imports COH.HelperClasses.Wrappers
 
 Namespace Storage.Serialization
     Partial Public NotInheritable Class COH_BinaryReader
@@ -154,7 +154,7 @@ Namespace Storage.Serialization
 #End Region
 
 #Region "Strings - Parse 6"
-        Public Function Read_CrypticS_StringKey() As Wrappers.COH_XML_CrypticS_String
+        Public Function Read_CrypticS_StringKey() As COH_XML_CrypticS_String
             Dim TempLength_String As Short = ReadInt16()
             Dim Result As String = ""
             If TempLength_String = 0 Then
@@ -163,7 +163,7 @@ Namespace Storage.Serialization
                 Result = ReadString_LengthFixed_Ascii(TempLength_String)
             End If
             CrypticS_AlignString(TempLength_String + 2)
-            Return New Wrappers.COH_XML_CrypticS_String(Result)
+            Return New COH_XML_CrypticS_String(Result)
         End Function
 
         Public Function Read_CrypticS_String() As String

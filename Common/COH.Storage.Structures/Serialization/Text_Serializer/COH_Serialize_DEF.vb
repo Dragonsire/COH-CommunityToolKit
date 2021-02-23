@@ -1,13 +1,13 @@
 ﻿Imports System.ComponentModel
 Imports System.Text
 Imports System.Xml
-Imports COH.GameContent.CodeManagement.Attributes
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.TOKs
-Imports COH.GameContent.HelperFunctions.Attributes
-Imports COH.GameContent.Storage.Serialization.Configuration
-Imports COH.GameContent.Storage.Structures.Generics
+Imports COH.Storage.Serialization.Configuration
+Imports COH.CodeManagement.Interfaces.TOKs
+Imports COH.CodeManagement.Attributes
+Imports COH.HelperFunctions.Attributes
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Structures.Generics
+Imports COH.CodeManagement.Interfaces.Structures
 
 Namespace Storage.Serialization
     Public NotInheritable Class COH_DEF_Serialization

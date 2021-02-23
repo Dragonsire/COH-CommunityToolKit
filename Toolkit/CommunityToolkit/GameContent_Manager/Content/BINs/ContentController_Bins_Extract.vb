@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Internal.Events
 Imports COH.GameContent.MessageStores.Structures.LanguageFiles
-Imports COH.GameContent.Storage.Serialization.Configuration.COH_Serialization_Settings
+Imports COH.Storage.Serialization.Configuration.COH_Serialization_Settings
 Imports COH.Storage.PiggyBin.Utilities
 Imports COH.Tools.Internal.Enums
 

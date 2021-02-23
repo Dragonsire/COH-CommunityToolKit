@@ -1,9 +1,7 @@
 ﻿Imports System.Xml.Serialization
-Imports COH.GameContent.CodeManagement.Enums
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Controllers
-Imports COH.GameContent.Storage.Serialization
-Imports COH_SupportedBinFiles = COH.GameContent.CodeManagement.Enums.COH_SupportedBinFiles
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Controllers
+Imports COH.Storage.Serialization
 
 Namespace Storage.Structures.CrypticsS
     Public Class COH_CrypticS
@@ -25,11 +23,11 @@ Namespace Storage.Structures.CrypticsS
                 mName = value
             End Set
         End Property
-        Property ParseVersion As COH_Supported_CrypticS_ParseVersion
+        Property ParseVersion As COH_BinaryFormat
             Get
                 Return mParseVersionUsed
             End Get
-            Set(value As COH_Supported_CrypticS_ParseVersion)
+            Set(value As COH_BinaryFormat)
                 mParseVersionUsed = value
             End Set
         End Property
@@ -95,7 +93,7 @@ Namespace Storage.Structures.CrypticsS
         Private mIdentifier As String
         Private mName As String
         Private mEntries As List(Of COH_CrypticS_FileEntry)
-        Private mParseVersionUsed As COH_Supported_CrypticS_ParseVersion
+        Private mParseVersionUsed As COH_BinaryFormat
         Private mBuild As COH_BuildType
         Private mAdler32CheckSum As Integer ' Should Be CheckSum
         Private mFiles As List(Of COH_CrypticS_File)
@@ -129,13 +127,13 @@ Namespace Storage.Structures.CrypticsS
             Dim L1 As Int16 = CurrentReader.ReadInt16
             Dim TempV = System.Text.Encoding.ASCII.GetString(CurrentReader.ReadBytes(L1))
             If TempV = "Parse6" Then
-                mParseVersionUsed = COH_Supported_CrypticS_ParseVersion.Parse6
+                mParseVersionUsed = COH_BinaryFormat.CrypticsS_Parse6
                 Return Import_FromStream_Parse6(CurrentReader, ShowProgress)
             ElseIf TempV = "Parse7" Then
-                mParseVersionUsed = COH_Supported_CrypticS_ParseVersion.Parse7
+                mParseVersionUsed = COH_BinaryFormat.CrypticsS_Parse7
                 Return Import_FromStream_Parse7(CurrentReader, ShowProgress)
             Else
-                mParseVersionUsed = COH_Supported_CrypticS_ParseVersion.Unknown
+                mParseVersionUsed = COH_BinaryFormat.Unknown
                 Return False
             End If
         End Function

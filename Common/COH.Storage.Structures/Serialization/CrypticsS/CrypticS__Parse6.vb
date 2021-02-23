@@ -2,13 +2,15 @@
 Imports COH.GameContent.CodeManagement.Enums.Structures
 Imports COH.GameContent.Storage.Controllers
 Imports COH.GameContent.Storage.Serialization
+Imports COH.Storage.Controllers
+Imports COH.Storage.Serialization
 
 Namespace Storage.Structures.CrypticsS
     Partial Public Class COH_CrypticS
 
 #Region "Read Structures Parse6"
         Public Function Import_FromStream_Parse6(ByRef CurrentReader As COH_BinaryReader, Optional ShowProgress As Boolean = False) As Boolean
-            mParseVersionUsed = COH_Supported_CrypticS_ParseVersion.Parse6
+            mParseVersionUsed = CodeManagement.Enums.Structures.COH_BinaryFormat.CrypticsS_Parse6
             Dim L1 = CurrentReader.ReadInt16
             Dim TempV = System.Text.Encoding.ASCII.GetString(CurrentReader.ReadBytes(L1))
             If Not TempV.Contains("Files") Then Return False

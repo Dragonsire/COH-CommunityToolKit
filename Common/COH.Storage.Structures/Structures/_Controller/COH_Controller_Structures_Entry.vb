@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿Imports COH.CodeManagement.Enums.Structures
 
 Namespace Storage.Controllers
     Public Class COH_FSI_Entry

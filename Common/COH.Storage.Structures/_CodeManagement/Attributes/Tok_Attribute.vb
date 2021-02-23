@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿Imports COH.CodeManagement.Enums.Structures
 
 Namespace CodeManagement.Attributes
     <AttributeUsage(AttributeTargets.Property Or AttributeTargets.Class)>

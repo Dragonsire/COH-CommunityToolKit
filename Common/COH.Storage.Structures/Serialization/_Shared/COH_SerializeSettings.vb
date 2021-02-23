@@ -1,4 +1,8 @@
-﻿Namespace Storage.Serialization.Configuration
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.Storage.Serialization.COH_DEF_Serialization
+
+Namespace Storage.Serialization.Configuration
     Public NotInheritable Class COH_Serialization_Settings
 
 #Region "Enums"

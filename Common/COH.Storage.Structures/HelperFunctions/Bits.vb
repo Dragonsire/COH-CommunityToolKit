@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
+﻿Imports COH.CodeManagement.Enums.Binary
 
 Namespace HelperFunctions.Bits
     <HideModuleName()> Public Module COH_Bit_HelperFunctions

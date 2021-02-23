@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Storage.Serialization
+﻿Imports COH.Storage.Serialization
 
 Namespace Internal.Events
     Public Class COH_EventResponse_StreamInspect
