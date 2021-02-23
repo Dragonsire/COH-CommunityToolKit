@@ -1,8 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.Structures
-Imports COH.GameContent.Storage.Serialization.COH_DEF_Serialization
-
-Namespace Storage.Serialization.Configuration
+﻿Namespace Storage.Serialization.Configuration
     Public NotInheritable Class COH_Serialization_Settings
 
 #Region "Enums"

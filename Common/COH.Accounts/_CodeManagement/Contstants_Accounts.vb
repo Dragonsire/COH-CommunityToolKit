@@ -1,4 +1,4 @@
-﻿Namespace Internal.Constants
+﻿Namespace CodeManagement.Constants
     <HideModuleName> Public Module DefinedConstants_Accounts
 
         Public Const MAX_SLOTS_PER_SHARD As Integer = 36

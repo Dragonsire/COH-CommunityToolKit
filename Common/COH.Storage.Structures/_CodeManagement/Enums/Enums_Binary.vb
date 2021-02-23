@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums.Binary
     Public Enum COH_Supported_BinaryByteOrder
         LittleEndian = 0
         BigEndian = 1

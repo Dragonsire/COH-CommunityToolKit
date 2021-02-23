@@ -1,4 +1,4 @@
-﻿Namespace Internal.Enums.Accounts
+﻿Namespace CodeManagement.Enums.Accounts
 	Public Enum AccountInventoryType
 		kAccountInventoryType_Certification
 		kAccountInventoryType_Voucher
@@ -53,7 +53,7 @@
 	<Flags> Public Enum AccountProductStateFlag
 		PRODFLAG_NOT_PUBLISHED = 1 ' item is not ready to show to the user yet
 		PRODFLAG_FREE_FOR_VIP = 4
-		UNKNOWN_MISSING2 = 0 '///MISSING
+		UNKNOWN_MISSING1 = 0 '///MISSING
 		UNKNOWN_MISSING2 = 2 '///MISSING
 	End Enum
 End Namespace

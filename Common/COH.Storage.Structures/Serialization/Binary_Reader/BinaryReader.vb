@@ -1,7 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization.Configuration
-
-Namespace Storage.Serialization
+﻿Namespace Storage.Serialization
     '<DebuggerStepThrough>
     Public NotInheritable Class COH_BinaryReader
         Inherits IO.BinaryReader

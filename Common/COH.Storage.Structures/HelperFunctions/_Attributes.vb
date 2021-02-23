@@ -1,7 +1,5 @@
 ﻿Imports System.ComponentModel
-Imports System.Xml
 Imports System.Xml.Serialization
-Imports COH.GameContent.CodeManagement.Attributes
 
 Namespace HelperFunctions.Attributes
     <HideModuleName()> Public Module COH_Attributes_Helper
@@ -66,7 +64,6 @@ Namespace HelperFunctions.Attributes
         End Function
 #End Region
 
-
 #Region "Enum Attributes"
         Public Function Retrieve_EnumFlagAttribute(ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor) As Boolean
             Dim XMLAttrib As FlagsAttribute = CType(SingleProperty.Attributes(GetType(FlagsAttribute)), FlagsAttribute)
@@ -78,7 +75,6 @@ Namespace HelperFunctions.Attributes
             End If
         End Function
 #End Region
-
 
 #Region "XML Attributes"
         Public Function Retrieve_XMLAttribute(ByRef Source As Object, ByRef SingleProperty As PropertyDescriptor) As Boolean
