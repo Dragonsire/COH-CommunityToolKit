@@ -11,9 +11,9 @@ Namespace Utilities
             CurrentWriter.Write(Source.BuildCRC)
             CurrentWriter.Write(CShort(6))
             Select Case Source.ParseVersion
-                Case COH_Supported_CrypticS_ParseVersion.Parse6
+                Case COH_PiggyBinSupported_CrypticS_ParseVersion.Parse6
                     CurrentWriter.Write(System.Text.Encoding.ASCII.GetBytes("Parse6"))
-                Case COH_Supported_CrypticS_ParseVersion.Parse7
+                Case COH_PiggyBinSupported_CrypticS_ParseVersion.Parse7
                     CurrentWriter.Write(System.Text.Encoding.ASCII.GetBytes("Parse7"))
                     Return False
                 Case Else

@@ -3,9 +3,6 @@ Imports COH.GameContent.Storage.Serialization
 Imports COH.GameContent.Storage.Structures
 
 Namespace CodeManagement.Interfaces.Structures
-    Public Interface ISupport_COH_DisplayName
-        ReadOnly Property InternalDisplayName As String
-    End Interface
     Public Interface ISupport_COH_OriginolSources
         Property FullName As String
         Property IsCustom As Boolean
@@ -14,14 +11,6 @@ Namespace CodeManagement.Interfaces.Structures
         Property RelativePath_Originol As String
         Property Content As COH_FileStructure
         Sub Initialize_DefaultRelativePath()
-    End Interface
-    Public Interface ISupport_COH_LocalizeContent
-        Function CreateKey(ByRef Value As String) As String
-        Function CreateKey(ByRef Value As String, MessageStoreName As String) As String
-        Function RetrieveLocalizedString(ByRef Search As String) As String
-    End Interface
-    Public Interface ISupport_COH_Localized
-        Sub UpdateLocalizations(ByRef LocalizeController As ISupport_COH_LocalizeContent)
     End Interface
     Public Interface ISupport_COH_AssetRetrieval
         Function RetrieveAsset_ImageStruct(FilePath As String) As COH_FileStructure

@@ -4,6 +4,12 @@
         ClientOnly = 1
         ServerOnly = 2
     End Enum
+    Public Enum COH_BinaryFormat
+        Unknown = 0
+        CrypticsS_Parse6 = 6
+        CrypticsS_Parse7 = 7
+        CityHeroes_BinFormat = 8
+    End Enum
     Public Enum COH_TextFormat
         XML = 0
         CrypticS_TextFormat = 1

@@ -21,7 +21,7 @@
         Costume
         GeoGroupList = 1048517264
     End Enum
-    Public Enum COH_Supported_CrypticS_ParseVersion
+    Public Enum COH_PiggyBinSupported_CrypticS_ParseVersion
         Unknown = 0
         Parse6 = 6
         Parse7 = 7

@@ -1,9 +1,12 @@
-﻿Imports System.Xml.Serialization
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.CodeManagement.Interfaces.Structures
+﻿#If EDITOR Then
+Imports System.IO
+Imports System.Xml.Serialization
+Imports COH.CodeManagement.Enums.Structures
+#End If
 
 Namespace Storage.Structures
-    Partial Public MustInherit Class COH_FileStructure
+#If EDITOR Then
+    Partial Public Class COH_FileStructure
         Protected Overridable Function Import_From_TextStream_XML(ByRef Source As String, Optional Version As Integer = 0, Optional BuildType As COH_BuildType = COH_BuildType.Either) As Boolean
             '//INIFICIENT WOULD NEED TO CLONE RESULT INTO SELF
             Return False
@@ -26,4 +29,5 @@ Namespace Storage.Structures
             Return ImportResult
         End Function
     End Class
+#End If
 End Namespace

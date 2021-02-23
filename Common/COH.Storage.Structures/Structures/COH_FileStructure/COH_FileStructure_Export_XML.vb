@@ -1,14 +1,14 @@
-﻿Imports System.IO
+﻿#If EDITOR Then
 Imports System.Xml.Serialization
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization
-Imports COH.GameContent.Storage.Serialization.Configuration
-Imports COH.GameContent.Utilities
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+#End If
 
 Namespace Storage.Structures
-    Partial Public MustInherit Class COH_FileStructure
+#If EDITOR Then
+    Partial Public Class COH_FileStructure
 
-#Region "XML - Serialization Standard"
         Private Shared Function CreateXML_NameSpace() As XmlSerializerNamespaces
             Dim XMLNameSpace As XmlSerializerNamespaces = New XmlSerializerNamespaces()
             XMLNameSpace.Add("", "")
@@ -29,7 +29,7 @@ Namespace Storage.Structures
             Dim ExportResult As Boolean = XMLFile_Export_String(Source, XMlString, New COH_Serialization_Settings(True, COH_ExportFormat.XML))
             If ExportResult = False Then Return False
             Try
-                File.WriteAllText(NewPath, XMlString)
+                'File.WriteAllText(NewPath, XMlString)
             Catch ex As Exception
                 ' ShowErrorOccured_Exception(COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Export XML", ex, True)
                 ExportResult = False
@@ -49,6 +49,6 @@ Namespace Storage.Structures
             End Try
             Return ExportResult
         End Function
-#End Region
     End Class
+#End If
 End Namespace

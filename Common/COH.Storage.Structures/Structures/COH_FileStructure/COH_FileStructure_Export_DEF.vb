@@ -1,10 +1,12 @@
-﻿Imports System.IO
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization
-Imports COH.GameContent.Storage.Serialization.Configuration
+﻿#If EDITOR Then
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+#End If
 
 Namespace Storage.Structures
-    Partial Public MustInherit Class COH_FileStructure
+#If EDITOR Then
+    Partial Public Class COH_FileStructure
 
 #Region "DEF - Serialization Standard"
         Private Function DefFile_Export(Filepath As String, Source As Object) As Boolean
@@ -14,7 +16,7 @@ Namespace Storage.Structures
             Dim ExportResult As Boolean = DefFile_Export_String(Source, XMlString, New COH_Serialization_Settings(True, COH_ExportFormat.CrypticS_TextFormat))
             If ExportResult = False Then Return False
             Try
-                File.WriteAllText(NewPath, XMlString)
+                'File.WriteAllText(NewPath, XMlString)
             Catch ex As Exception
                 ' ShowErrorOccured_Exception(COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Export DEF", ex, True)
                 ExportResult = False
@@ -36,4 +38,5 @@ Namespace Storage.Structures
         End Function
 #End Region
     End Class
+#End If
 End Namespace

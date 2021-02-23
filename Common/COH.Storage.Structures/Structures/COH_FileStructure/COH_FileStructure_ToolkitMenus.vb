@@ -1,8 +1,11 @@
-﻿Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization.Configuration
+﻿#If EDITOR Then
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization.Configuration
+#End If
 
 Namespace Storage.Structures
-    Partial Public MustInherit Class COH_FileStructure
+#If EDITOR Then
+    Partial Public Class COH_FileStructure
 
         Public Overridable Function Retrieve_DynamicMenus() As List(Of DynamicMenu_Cmmand)
             Return Nothing
@@ -30,8 +33,6 @@ Namespace Storage.Structures
             Dim myParameters() As Object = {Parameter}
             Return myInfo.Invoke(Me, myParameters)
         End Function
-
-
         Public Enum DynamicMenu_CommandType
             Extract_ToXML = 0
         End Enum
@@ -46,4 +47,5 @@ Namespace Storage.Structures
             End Sub
         End Class
     End Class
+#End If
 End Namespace

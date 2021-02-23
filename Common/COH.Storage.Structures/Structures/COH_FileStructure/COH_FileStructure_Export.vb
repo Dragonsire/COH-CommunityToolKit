@@ -1,10 +1,13 @@
-﻿Imports System.IO
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Serialization
-Imports COH.GameContent.Storage.Serialization.Configuration
+﻿#If EDITOR Then
+Imports System.IO
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+#End If
 
 Namespace Storage.Structures
-    Partial Public MustInherit Class COH_FileStructure
+#If EDITOR Then
+    Partial Public Class COH_FileStructure
 
 #Region "Export - To File"
         Public Function Export_To_File(FileName As String, Folder As String, Format As COH_ExportFormat) As Boolean
@@ -133,4 +136,5 @@ Namespace Storage.Structures
         End Function
 #End Region
     End Class
+#End If
 End Namespace
