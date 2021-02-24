@@ -1,4 +1,4 @@
-﻿Namespace World.Monorail
+﻿Namespace GameContent.Structures.World.Monorail
     Public NotInheritable Class COH_Monorail_LineStop
         Inherits COH_FileStructure
 

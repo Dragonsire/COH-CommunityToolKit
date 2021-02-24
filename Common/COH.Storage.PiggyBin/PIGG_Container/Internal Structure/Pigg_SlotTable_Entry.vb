@@ -1,7 +1,7 @@
-﻿Imports System.IO
-Imports COH.Storage.PiggyBin.Enums
+﻿Imports COH.CodeManagement.Enums.Pigg
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG.Contents
+Namespace Storage.Containers.PIGG.Structures.Contents
     Public MustInherit Class COH_PIGG_SlotTableEntry
 
 #Region "Properties"
@@ -35,7 +35,7 @@ Namespace FileStructures.PIGG.Contents
                 Return True
             End Get
         End Property
-        MustOverride ReadOnly Property SlotType As Enums.SlotTypes
+        MustOverride ReadOnly Property SlotType As PIGG_Container_SlotTypes
 #End Region
 
 #Region "Private Properties"
@@ -43,7 +43,7 @@ Namespace FileStructures.PIGG.Contents
         Private mEntry_Size As UInt32
         Private mEntry_Size_Compressed As UInt32
         Private mEntry_Size_Decompressed As UInt32
-        Private mSlotType As SlotTypes
+        Private mSlotType As PIGG_Container_SlotTypes
 #End Region
 
 #Region "Create New Instance"

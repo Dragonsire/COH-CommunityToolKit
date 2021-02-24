@@ -1,4 +1,4 @@
-﻿Namespace MeshRelated
+﻿Namespace GameContent.Structures.MeshRelated
     Public NotInheritable Class COH_TextureOptions_Fallback
         inherits COH_FileStructure
 

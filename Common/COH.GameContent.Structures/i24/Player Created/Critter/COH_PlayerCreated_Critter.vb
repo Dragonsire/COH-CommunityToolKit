@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Costumes
 
-Namespace PlayerCreated.Critter
+Namespace GameContent.Structures.PlayerCreated.Critter
     Public NotInheritable Class COH_PlayerCreated_Critter
         Inherits COH_FileStructure
 

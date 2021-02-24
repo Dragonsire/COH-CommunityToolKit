@@ -1,4 +1,4 @@
-﻿Namespace Characters.Powers
+﻿Namespace GameContent.Structures.Characters.Powers
     Public NotInheritable Class COH_AttribMod_i25Score_FX
         Inherits COH_FileStructure
 

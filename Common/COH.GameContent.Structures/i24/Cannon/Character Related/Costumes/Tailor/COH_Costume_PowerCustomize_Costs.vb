@@ -1,4 +1,4 @@
-﻿Namespace Costumes.Tailor
+﻿Namespace GameContent.Structures.Costumes.Tailor
     Public NotInheritable Class COH_Costum_PowerCustomize_Costs
         Inherits COH_FileStructure
 

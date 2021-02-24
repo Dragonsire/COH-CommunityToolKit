@@ -1,4 +1,6 @@
-﻿Namespace Structures.Anim
+﻿Imports COH.GameContent.Structures.Enums
+
+Namespace Structures.Anim
     Public Class COH_Resource_ANIM_SkeletonTrack
         Inherits COH_FileStructure
 
@@ -43,29 +45,29 @@
         Const MAX_ANIMSETS = 1000  '//so big so they can be reloaded in development mode
         Const MAX_ANIMDATATRACKS = 100
         Const SIZE_OF_ROTKEY_UNCOMPRESSED = (16)
-        Const SIZE_OF_ROTKEY_COMPRESSED_TO_5_BYTES  = ( 5 ) '//quantized quaternion
+        Const SIZE_OF_ROTKEY_COMPRESSED_TO_5_BYTES = (5) '//quantized quaternion
         Const SIZE_OF_ROTKEY_COMPRESSED_TO_8_BYTES = (8)    '//stuff quat into shorts
-        Const SIZE_OF_UNCOMPRESSED_POSKEY  = ( 4 * 3 )      '//full size Vec3  = (3 floats)
+        Const SIZE_OF_UNCOMPRESSED_POSKEY = (4 * 3)      '//full size Vec3  = (3 floats)
         Const SIZE_OF_POSKEY_COMPRESSED_TO_6_BYTES = (2 * 3) '//3 floats quantized to 2 byte chunks
-        Const SIZE_OF_TIME    = (4 * 1) '//1 float
+        Const SIZE_OF_TIME = (4 * 1) '//1 float
         Const SIZE_OF_KEYCORRECTION = (2)
         Const CFACTOR_8BYTE_QUAT = 10000
         Const EFACTOR_8BYTE_QUAT = 0.0001
         Const ROTATION_KEY = 0
-        Const POSITION_KEY= 1
+        Const POSITION_KEY = 1
         Const CFACTOR_6BYTE_POS = 32000
-        Const EFACTOR_6BYTE_POS= 0.00003125 '// = ( = (F32) = ( = (F32)1/ = (F32)CFACTOR_6BYTE_POS))
+        Const EFACTOR_6BYTE_POS = 0.00003125 '// = ( = (F32) = ( = (F32)1/ = (F32)CFACTOR_6BYTE_POS))
         Const ROTATION_UNCOMPRESSED = (1 << 0)
-        Const ROTATION_COMPRESSED_TO_5_BYTES	 = (1 << 1)
+        Const ROTATION_COMPRESSED_TO_5_BYTES = (1 << 1)
         Const ROTATION_COMPRESSED_TO_8_BYTES = (1 << 2)
-        Const POSITION_UNCOMPRESSED			 = (1 << 3)
+        Const POSITION_UNCOMPRESSED = (1 << 3)
         Const POSITION_COMPRESSED_TO_6_BYTES = (1 << 4)
-        Const ROTATION_DELTACODED				 = (1 << 5)
+        Const ROTATION_DELTACODED = (1 << 5)
         Const POSITION_DELTACODED = (1 << 6)
-        Const ROTATION_COMPRESSED_NONLINEAR	 = (1 << 7)
+        Const ROTATION_COMPRESSED_NONLINEAR = (1 << 7)
         Const POS_BIGGEST = 2000000 '//debug thingy
         Const LOOKUPSIZE12BIT = 4096
-        Const COMPRESSEDQUATSIZE= 5
+        Const COMPRESSEDQUATSIZE = 5
         Const MAX_ANIM_FILE_NAME_LEN = 256
 #End Region
 
@@ -101,7 +103,7 @@
 #End Region
 
 #Region "Read/Write"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             Throw New NotImplementedException()
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean

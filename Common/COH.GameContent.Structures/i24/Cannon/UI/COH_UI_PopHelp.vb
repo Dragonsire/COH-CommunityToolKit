@@ -1,4 +1,4 @@
-﻿Namespace UI
+﻿Namespace GameContent.Structures.UI
     Public NotInheritable Class COH_UI_PopHelp
         Inherits COH_FileStructure
 

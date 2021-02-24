@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     <Flags> Public Enum COH_Group_Flags
         none = 0
         <COH_DefEnum("DisablePlanarReflections")> GROUP_DISABLEPLANARREFLECTIONS = 1

@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_PowerType
         ' Defines if the power is auto, toggle, or click power.
         ' Click powers only activate when the user has activated them.

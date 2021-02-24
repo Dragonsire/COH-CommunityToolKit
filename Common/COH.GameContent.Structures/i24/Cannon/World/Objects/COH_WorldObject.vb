@@ -1,4 +1,4 @@
-﻿Namespace World.Objects
+﻿Namespace GameContent.Structures.World.Objects
     Public NotInheritable Class COH_GameObject
         Inherits COH_FileStructure
 

@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.MeshRelated.Textures
 
-Namespace MeshRelated
+Namespace GameContent.Structures.MeshRelated
     Public NotInheritable Class COH_TrickList
         Inherits COH_FileStructure
 
@@ -74,7 +74,7 @@ Namespace MeshRelated
 
 
             Return True
-            COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+            'COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
             mTrick = New COH_Trick() : If mTrick.Import_From_Stream(CurrentReader) = False Then Return False
             Return True
         End Function

@@ -1,13 +1,14 @@
-﻿Imports COH.Storage.PiggyBin.Enums
+﻿Imports COH.CodeManagement.Enums.Pigg
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG.Contents
+Namespace Storage.Containers.PIGG.Structures.Contents
     Public Class PIGG_SlotEntry_Geo
         Inherits COH_PIGG_SlotTableEntry
 
 #Region "Properties"
-        Public Overrides ReadOnly Property SlotType As SlotTypes
+        Public Overrides ReadOnly Property SlotType As PIGG_Container_SlotTypes
             Get
-                Return SlotTypes.GEO
+                Return PIGG_Container_SlotTypes.GEO
             End Get
         End Property
 #End Region

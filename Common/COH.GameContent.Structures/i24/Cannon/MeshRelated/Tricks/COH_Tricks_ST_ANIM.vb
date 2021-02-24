@@ -1,4 +1,4 @@
-﻿Namespace MeshRelated
+﻿Namespace GameContent.Structures.MeshRelated
     Public NotInheritable Class COH_Tricks_ST_Anim
         Inherits COH_FileStructure
 

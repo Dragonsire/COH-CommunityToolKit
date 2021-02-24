@@ -1,4 +1,4 @@
-﻿Namespace Characters
+﻿Namespace GameContent.Structures.Characters
     Public NotInheritable Class COH_ExperienceTable
         inherits COH_FileStructure
 

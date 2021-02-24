@@ -1,6 +1,4 @@
-﻿Imports COH.Storage.PiggyBin.FileStructures.PIGG
-
-Namespace Structures
+﻿Namespace Storage.Containers.PIGG.Structures
     Public Class COH_Pigg_Info
 
 #Region "Properties"

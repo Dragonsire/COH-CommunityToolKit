@@ -1,4 +1,4 @@
-﻿Namespace Inventory
+﻿Namespace GameContent.Structures.Inventory
     Public NotInheritable Class COH_Power_Required
         Inherits COH_FileStructure
 

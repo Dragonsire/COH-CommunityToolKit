@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.GameContent.Structures</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>
@@ -47,35 +47,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Import Include="COH.GameContent.BinaryStreams" />
-    <Import Include="COH.GameContent.CodeManagement.Attributes" />
-    <Import Include="COH.GameContent.CodeManagement.Enums.Structures" />
-    <Import Include="COH.GameContent.CodeManagement.Enums.Toks" />
-    <Import Include="COH.GameContent.CodeManagement.Extentions" />
-    <Import Include="COH.GameContent.CodeManagement.Interfaces.Structures" />
-    <Import Include="COH.GameContent.CodeManagement.Interfaces.TOKs" />
-    <Import Include="COH.GameContent.Enums" />
-    <Import Include="COH.GameContent.HelperClasses" />
-    <Import Include="COH.GameContent.HelperClasses.Wrappers" />
-    <Import Include="COH.GameContent.HelperFunctions.Bits" />
-    <Import Include="COH.GameContent.HelperFunctions.Bytes" />
-    <Import Include="COH.GameContent.HelperFunctions.DateTimeFunctions" />
-    <Import Include="COH.GameContent.HelperFunctions.StringsAndThings" />
-    <Import Include="COH.GameContent.HelperFunctions.XML" />
-    <Import Include="COH.GameContent.Interfaces" />
-    <Import Include="COH.GameContent.Internal.Attributes" />
+    <Import Include="COH.CodeManagement.Attributes" />
+    <Import Include="COH.CodeManagement.Enums" />
+    <Import Include="COH.CodeManagement.Enums.Binary" />
+    <Import Include="COH.CodeManagement.Enums.Structures" />
+    <Import Include="COH.CodeManagement.Enums.Toks" />
+    <Import Include="COH.CodeManagement.Extentions" />
+    <Import Include="COH.CodeManagement.Interfaces.Structures" />
+    <Import Include="COH.CodeManagement.Interfaces.TOKs" />
     <Import Include="COH.GameContent.Internal.DeveloperOptions" />
-    <Import Include="COH.GameContent.Internal.Events" />
-    <Import Include="COH.GameContent.Internal.Extentions" />
-    <Import Include="COH.GameContent.Shared" />
-    <Import Include="COH.GameContent.Storage.Serialization" />
-    <Import Include="COH.GameContent.Storage.Serialization.Configuration" />
-    <Import Include="COH.GameContent.Storage.Structures" />
-    <Import Include="COH.GameContent.Storage.Structures.CrypticsS" />
-    <Import Include="COH.GameContent.Storage.Structures.Generics" />
-    <Import Include="COH.GameContent.Structures" />
-    <Import Include="COH.GameContent.Structures.Shared" />
-    <Import Include="COH.GameContent.Utilities" />
+    <Import Include="COH.HelperClasses" />
+    <Import Include="COH.HelperClasses.Wrappers" />
+    <Import Include="COH.HelperFunctions.StringsAndThings" />
+    <Import Include="COH.Storage.Serialization" />
+    <Import Include="COH.Storage.Serialization.Configuration" />
+    <Import Include="COH.Storage.Structures" />
+    <Import Include="COH.Storage.Structures.CrypticsS" />
+    <Import Include="COH.Storage.Structures.Generics" />
     <Import Include="System.ComponentModel" />
     <Import Include="System.ComponentModel.Design" />
   </ItemGroup>
@@ -89,6 +77,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>
 
   <ItemGroup>

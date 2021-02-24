@@ -1,6 +1,7 @@
 ﻿Imports COH.GameContent.Structures.Characters.Attributes
+Imports COH.GameContent.Structures.Shared
 
-Namespace Characters
+Namespace GameContent.Structures.Characters
     <COH_TOK("Class")> Public NotInheritable Class COH_CharacterClass
         Inherits COH_FileStructure
 
@@ -340,47 +341,47 @@ Namespace Characters
 #End Region
 
 #Region "Private Properties"
-       Private mName As String
-       Private mAllowedOrigins As String()
-       Private mSpecialRestrictions As String()
-       Private mStoreRequires As String
-       Private mProductCode As String
-       Private mReductionClass As String
-       Private mReduceAsArchvillain As Boolean
-       Private mLevelUpRespecs As Int32()
-       Private mDisplayShortHelp As CrypticS_String
-       Private mIcon As String
-       Private mPrimaryCategory As String
-       Private mSecondaryCategory As String
-       Private mPowerPoolCategory As String
-       Private mEpicPoolCategory As String
-       Private mModTable As COH_NamedTable()
-       Private mConnectHPAndStatus As Boolean
-       Private mDefiantHitPointsAttrib As Int32
-       Private mDefiantScale As Single
-       Private m_FinalAttrMax_ As Int32
-       Private m_FinalAttrMaxMax_ As Int32
-       Private m_FinalAttrStrengthMax_ As Int32
-       Private m_FinalAttrResistanceMax_ As Int32
+        Private mName As String
+        Private mAllowedOrigins As String()
+        Private mSpecialRestrictions As String()
+        Private mStoreRequires As String
+        Private mProductCode As String
+        Private mReductionClass As String
+        Private mReduceAsArchvillain As Boolean
+        Private mLevelUpRespecs As Int32()
+        Private mDisplayShortHelp As CrypticS_String
+        Private mIcon As String
+        Private mPrimaryCategory As String
+        Private mSecondaryCategory As String
+        Private mPowerPoolCategory As String
+        Private mEpicPoolCategory As String
+        Private mModTable As COH_NamedTable()
+        Private mConnectHPAndStatus As Boolean
+        Private mDefiantHitPointsAttrib As Int32
+        Private mDefiantScale As Single
+        Private m_FinalAttrMax_ As Int32
+        Private m_FinalAttrMaxMax_ As Int32
+        Private m_FinalAttrStrengthMax_ As Int32
+        Private m_FinalAttrResistanceMax_ As Int32
         '//LOCALIZED
-       Private mDisplayName As CrypticS_String
-       Private mDisplayHelp As CrypticS_String
-       Private mLockedTooltip As CrypticS_String
+        Private mDisplayName As CrypticS_String
+        Private mDisplayHelp As CrypticS_String
+        Private mLockedTooltip As CrypticS_String
         '//HAVE EVENTS
-       Private WithEvents mAttribMin As COH_CharacterClass_Attributes
-       Private WithEvents mAttribBase As COH_CharacterClass_Attributes
-       Private WithEvents mStrengthMin As COH_CharacterClass_Attributes
-       Private WithEvents mResistanceMin As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminStrIn As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminStrOut As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminCurIn As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminCurOut As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminResIn As COH_CharacterClass_Attributes
-       Private WithEvents mAtrribDiminResOut As COH_CharacterClass_Attributes
-       Private WithEvents mAttribMaxTable As COH_CharacterClass_AttributesTable
-       Private WithEvents mAttribMaxMaxTable As COH_CharacterClass_AttributesTable
-       Private WithEvents mStrengthMaxTable As COH_CharacterClass_AttributesTable
-       Private WithEvents mResistanceMaxTable As COH_CharacterClass_AttributesTable
+        Private WithEvents mAttribMin As COH_CharacterClass_Attributes
+        Private WithEvents mAttribBase As COH_CharacterClass_Attributes
+        Private WithEvents mStrengthMin As COH_CharacterClass_Attributes
+        Private WithEvents mResistanceMin As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminStrIn As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminStrOut As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminCurIn As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminCurOut As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminResIn As COH_CharacterClass_Attributes
+        Private WithEvents mAtrribDiminResOut As COH_CharacterClass_Attributes
+        Private WithEvents mAttribMaxTable As COH_CharacterClass_AttributesTable
+        Private WithEvents mAttribMaxMaxTable As COH_CharacterClass_AttributesTable
+        Private WithEvents mStrengthMaxTable As COH_CharacterClass_AttributesTable
+        Private WithEvents mResistanceMaxTable As COH_CharacterClass_AttributesTable
 #End Region
 
 #Region "Create New Instance"
@@ -438,23 +439,23 @@ Namespace Characters
             Dim Result As COH_CharacterClass = New COH_CharacterClass
             'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
-                .mName = CloneString(mName)
+                '.mName = CloneString(mName)
                 .mDisplayName = mDisplayName.Clone
                 .mDisplayHelp = mDisplayHelp.Clone
-                .mAllowedOrigins = CloneStrings(mAllowedOrigins)
-                .mSpecialRestrictions = CloneStrings(mSpecialRestrictions)
-                .mStoreRequires = CloneString(mStoreRequires)
+                '.mAllowedOrigins = CloneStrings(mAllowedOrigins)
+                ' .mSpecialRestrictions = CloneStrings(mSpecialRestrictions)
+                ' .mStoreRequires = CloneString(mStoreRequires)
                 .mLockedTooltip = mLockedTooltip.Clone
-                .mProductCode = CloneString(mProductCode)
-                .mReductionClass = CloneString(mReductionClass)
+                '.mProductCode = CloneString(mProductCode)
+                ' .mReductionClass = CloneString(mReductionClass)
                 .mReduceAsArchvillain = mReduceAsArchvillain
                 .mLevelUpRespecs = New Int32(mLevelUpRespecs.Count - 1) {} : mLevelUpRespecs.CopyTo(.mLevelUpRespecs, 0)
                 .mDisplayShortHelp = mDisplayShortHelp.Clone
-                .mIcon = CloneString(mIcon)
-                .mPrimaryCategory = CloneString(mPrimaryCategory)
-                .mSecondaryCategory = CloneString(mSecondaryCategory)
-                .mPowerPoolCategory = CloneString(mPowerPoolCategory)
-                .mEpicPoolCategory = CloneString(mEpicPoolCategory)
+                '.mIcon = CloneString(mIcon)
+                '.mPrimaryCategory = CloneString(mPrimaryCategory)
+                '.mSecondaryCategory = CloneString(mSecondaryCategory)
+                '.mPowerPoolCategory = CloneString(mPowerPoolCategory)
+                '.mEpicPoolCategory = CloneString(mEpicPoolCategory)
                 .mAttribMin = mAttribMin.Clone
                 .mAttribBase = mAttribBase.Clone
                 .mStrengthMin = mStrengthMin.Clone

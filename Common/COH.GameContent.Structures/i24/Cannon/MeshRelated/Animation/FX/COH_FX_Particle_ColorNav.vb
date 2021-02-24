@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace Animation
+Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_FX_Particle_ColorNav
         Inherits COH_FileStructure
 

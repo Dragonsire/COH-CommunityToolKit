@@ -1,7 +1,7 @@
 ﻿Imports COH.GameContent.Structures.Animation.FX
 Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace Animation
+Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_Animation_Sequence_Type
         Inherits COH_FileStructure
 

@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.UI
 
-Namespace World
+Namespace GameContent.Structures.World
     Public NotInheritable Class COH_ObjectDetail
         Inherits COH_FileStructure
 

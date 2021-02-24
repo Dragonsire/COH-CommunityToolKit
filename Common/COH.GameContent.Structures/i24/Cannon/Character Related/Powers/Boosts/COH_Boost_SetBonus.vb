@@ -1,4 +1,4 @@
-﻿Namespace Powers.Boosts
+﻿Namespace GameContent.Structures.Powers.Boosts
     Public NotInheritable Class COH_Boost_SetBonus
         Inherits COH_FileStructure
 

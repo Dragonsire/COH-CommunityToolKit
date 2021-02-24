@@ -1,4 +1,7 @@
 ﻿Imports COH.GameContent.Resources.Structures.Resources
+Imports COH.GameContent.Structures
+Imports COH.GameContent.Structures.Enums
+Imports COH.HelperClasses
 
 Namespace Structures.GEO
     Public Class COH_Resource_GEOModel
@@ -139,7 +142,7 @@ Namespace Structures.GEO
 #End Region
 
 #Region "Import / Export"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             Throw New NotImplementedException()
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean
@@ -180,8 +183,8 @@ Namespace Structures.GEO
                 ID = CurrentReader.ReadUInt16
                 Dim Unknown As Int16 = CurrentReader.ReadUInt16
                 If Not ID = 65532 AndAlso Not ID = 65534 Then '65534
-                    COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "ID <>65532, Unhandled Something Not Aligned?", Nothing, True)
-                    COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                    'COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "ID <>65532, Unhandled Something Not Aligned?", Nothing, True)
+                    'COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
                     Return False
                 End If
                 Return True

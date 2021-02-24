@@ -1,7 +1,8 @@
-﻿Imports COH.Storage.PiggyBin.Enums
-Imports COH.Storage.PiggyBin.FileStructures.PIGG.Contents
+﻿Imports COH.CodeManagement.Enums.Pigg
+Imports COH.Storage.Containers.PIGG.Structures.Contents
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG
+Namespace Storage.Containers.PIGG.Structures
     Public NotInheritable Class COH_PIGG_SlotTable
 
 #Region "Properties"
@@ -32,11 +33,11 @@ Namespace FileStructures.PIGG
                 For X = 0 To sCount - 1
                     Dim EntryType = Identify_SlotType(FindName_FromSlotIndex(X, Source))
                     Select Case EntryType
-                        Case SlotTypes.Unknown
+                        Case PIGG_Container_SlotTypes.Unknown
                             sItems.Add(New PIGG_SlotEntry_UNKNOWN(CurrentReader))
-                        Case SlotTypes.DDS_Header
+                        Case PIGG_Container_SlotTypes.DDS_Header
                             sItems.Add(New PIGG_SlotEntry_TextureDDS(CurrentReader))
-                        Case SlotTypes.GEO
+                        Case PIGG_Container_SlotTypes.GEO
                             sItems.Add(New PIGG_SlotEntry_Geo(CurrentReader))
                     End Select
                 Next
@@ -49,13 +50,13 @@ Namespace FileStructures.PIGG
             Next
             Return ""
         End Function
-        Private Function Identify_SlotType(ByRef FileName As String) As SlotTypes
-            Dim Result = SlotTypes.Unknown
+        Private Function Identify_SlotType(ByRef FileName As String) As PIGG_Container_SlotTypes
+            Dim Result = PIGG_Container_SlotTypes.Unknown
             Dim EXT As String = IO.Path.GetExtension(FileName).ToUpper
             If EXT = ".TEXTURE" Or EXT = ".DDS" Then
-                Return SlotTypes.DDS_Header
+                Return PIGG_Container_SlotTypes.DDS_Header
             ElseIf EXT = ".GEO" Then
-                Return SlotTypes.GEO
+                Return PIGG_Container_SlotTypes.GEO
             ElseIf EXT = ".ANIM" Then
                 'Return SlotTypes.ANIM_ANIMATION
             Else

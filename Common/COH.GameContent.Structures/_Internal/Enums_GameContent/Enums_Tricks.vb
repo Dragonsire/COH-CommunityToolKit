@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     <Flags> Public Enum COH_Enum_TricksAnimationFlags As UInt32
         <COH_DefEnum("FRAMESNAP")> STANIM_FRAMESNAP = (1 << 0)
         STANIM_PINGPONG = (1 << 1)

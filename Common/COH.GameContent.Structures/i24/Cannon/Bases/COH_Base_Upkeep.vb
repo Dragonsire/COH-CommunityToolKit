@@ -1,4 +1,4 @@
-﻿Namespace Bases
+﻿Namespace GameContent.Structures.Bases
     Public NotInheritable Class COH_Base_Upkeep
         Inherits COH_FileStructure
 
@@ -125,7 +125,7 @@
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean
             mfilename = CurrentReader.Read_CrypticS_String
             mRentPeriodSeconds = CurrentReader.ReadInt32
-            COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+            'COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
             If CurrentReader.Read_CrypticS_StructArray(GetType(COH_Base_UpkeepRange), mRentRange) = False Then Return False
             mRentDueDateResetPeriod = CurrentReader.ReadInt32
             If CurrentReader.Read_CrypticS_StructArray(GetType(COH_Base_UpkeepPeriod), mLatePeriod) = False Then Return False

@@ -1,4 +1,4 @@
-﻿Namespace World.Maps
+﻿Namespace GameContent.Structures.World.Maps
     Public NotInheritable Class COH_Map_Set
         Inherits COH_FileStructure
 

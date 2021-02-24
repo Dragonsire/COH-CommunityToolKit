@@ -1,4 +1,4 @@
-﻿Namespace Notifications
+﻿Namespace GameContent.Structures.Notifications
     Public NotInheritable Class COH_NewFeatures
         Inherits COH_FileStructure
 

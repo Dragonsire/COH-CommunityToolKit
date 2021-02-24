@@ -1,4 +1,4 @@
-﻿Namespace Bases
+﻿Namespace GameContent.Structures.Bases
     Public NotInheritable Class COH_Base_UpkeepPeriod
         inherits COH_FileStructure
 

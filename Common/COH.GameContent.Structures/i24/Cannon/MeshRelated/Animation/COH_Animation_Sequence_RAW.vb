@@ -1,4 +1,4 @@
-﻿Namespace Animation
+﻿Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_Animation_Sequence_Raw
         Inherits COH_FileStructure
 

@@ -1,7 +1,7 @@
 ﻿Imports COH.GameContent.Structures.UI
 Imports COH.GameContent.Structures.World
 
-Namespace Bases
+Namespace GameContent.Structures.Bases
     Public NotInheritable Class COH_Base_Room
         Inherits COH_FileStructure
 

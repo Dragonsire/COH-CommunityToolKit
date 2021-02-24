@@ -1,4 +1,4 @@
-﻿Namespace Animation
+﻿Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_Animation_Demo
         Inherits COH_FileStructure
 

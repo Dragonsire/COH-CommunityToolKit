@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_Aspect '//THIS RELIES ON OFFSET
         <COH_DefEnum("kCurrent")> kCurrent = 0 '//Values Yes, Order Not Confirmed
         <COH_DefEnum("kMaximum")> kMaximum = 4

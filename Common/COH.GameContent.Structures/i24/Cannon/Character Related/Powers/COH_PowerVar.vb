@@ -1,4 +1,4 @@
-﻿Namespace Powers
+﻿Namespace GameContent.Structures.Powers
     Public Class COH_PowerVar
         inherits COH_FileStructure
 

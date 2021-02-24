@@ -1,4 +1,4 @@
-﻿Namespace Store
+﻿Namespace GameContent.Structures.Store
     Public NotInheritable Class COH_Store_SuperPackCard
         inherits COH_FileStructure
 

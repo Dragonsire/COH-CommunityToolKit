@@ -1,4 +1,4 @@
-﻿Namespace Characters.Powers
+﻿Namespace GameContent.Structures.Characters.Powers
     Public NotInheritable Class COH_PowerSet
         Inherits COH_FileStructure
 

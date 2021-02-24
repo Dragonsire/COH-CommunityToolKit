@@ -272,8 +272,6 @@ Namespace HelperFunctions.StringsAndThings
         End Function
 #End Region
 
-
-
 #Region "Cloning"
         Public Function CloneString(ByRef Source As String) As String
             If Source Is Nothing Then Return String.Empty

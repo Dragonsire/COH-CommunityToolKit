@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_BadgeType
         <COH_DefEnum("kNone", "kInternal")> kBadgeType_None
         '// Old categories, some of which may be going away after the re-org.

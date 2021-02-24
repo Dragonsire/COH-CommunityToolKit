@@ -1,6 +1,7 @@
 ﻿Imports System.IO
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG
+Namespace Storage.Containers.PIGG.Structures
     Public NotInheritable Class COH_PIGG_StringTable
 
 #Region "Properties"
@@ -12,10 +13,10 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-       Private sStringTableMarker As UInt32
-       Private sCount As UInt32
-       Private sSize As UInt32
-       Private sStringEntries As List(Of String)
+        Private sStringTableMarker As UInt32
+        Private sCount As UInt32
+        Private sSize As UInt32
+        Private sStringEntries As List(Of String)
 #End Region
 
 #Region "Create New Instance"

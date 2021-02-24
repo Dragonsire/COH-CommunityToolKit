@@ -1,4 +1,4 @@
-﻿Namespace Enemies.AI
+﻿Namespace GameContent.Structures.Enemies.AI
     Public NotInheritable Class COH_AI_BehaviorAlias
         Inherits COH_FileStructure
 

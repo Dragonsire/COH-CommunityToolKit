@@ -1,4 +1,7 @@
-﻿Namespace Structures.Resources
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.HelperClasses
+
+Namespace Structures.Resources
     Public Class COH_Resource_GEO_VertexBuffer
         Inherits COH_FileStructure
 
@@ -60,7 +63,7 @@
 #End Region
 
 #Region "Import / Export"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             Throw New NotImplementedException()
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean

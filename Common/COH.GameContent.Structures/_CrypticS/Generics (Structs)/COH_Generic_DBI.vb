@@ -1,4 +1,4 @@
-﻿Namespace [Shared]
+﻿Namespace GameContent.Structures.[Shared]
     Public NotInheritable Class COH_Generic_DBI
         Inherits COH_FileStructure
 
@@ -33,8 +33,8 @@
 #End Region
 
 #Region "Private Properties"
-       Private mIndex As Int32
-       Private mName As String
+        Private mIndex As Int32
+        Private mName As String
 #End Region
 
 #Region "Create New Instance"
@@ -44,10 +44,10 @@
         Public Sub New(SetDefaults As Boolean, Optional Version As Integer = 0, Optional BuildType As COH_BuildType = COH_BuildType.Either)
             MyBase.New(SetDefaults, Version)
         End Sub
-        Public Sub New(ByRef Buffer As Byte(), Optional Settings as COH_Serialization_Settings = Nothing)
+        Public Sub New(ByRef Buffer As Byte(), Optional Settings As COH_Serialization_Settings = Nothing)
             MyBase.New(Buffer, Settings)
         End Sub
-        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings as COH_Serialization_Settings = Nothing)
+        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings As COH_Serialization_Settings = Nothing)
             MyBase.New(Stream, Settings)
         End Sub
         Public Sub New(ByRef CurrentReader As COH_BinaryReader)
@@ -77,7 +77,7 @@
 #End Region
 
 #Region "Import/Export - CrypticS"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             CurrentWriter.Write(mIndex)
             CurrentWriter.Write_CrypticS_String(mName)
             Return True

@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_Genders
         <COH_DefEnum("undefined")> GENDER_UNDEFINED
         <COH_DefEnum("neuter")> GENDER_NEUTER

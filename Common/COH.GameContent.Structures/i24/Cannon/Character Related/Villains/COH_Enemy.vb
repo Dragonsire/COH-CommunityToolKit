@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Powers
 
-Namespace Enemies
+Namespace GameContent.Structures.Enemies
     Public Class COH_EnemyVillain
         Inherits COH_FileStructure
 

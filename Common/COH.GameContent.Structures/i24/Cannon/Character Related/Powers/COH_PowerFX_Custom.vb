@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Characters.Powers
 
-Namespace Powers
+Namespace GameContent.Structures.Powers
     Public Class COH_PowerCustomFX
         Inherits COH_FileStructure
 

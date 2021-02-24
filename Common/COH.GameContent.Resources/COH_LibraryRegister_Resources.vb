@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.Storage.Controllers
+﻿Imports COH.GameContent.Structures
+Imports COH.Storage.Controllers
 
 Public NotInheritable Class COH_LibraryRegister_Resources
 

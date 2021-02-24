@@ -1,4 +1,4 @@
-﻿Namespace [Shared]
+﻿Namespace GameContent.Structures.[Shared]
     Public Class COH_AttributesCategory
         Inherits COH_FileStructure
 

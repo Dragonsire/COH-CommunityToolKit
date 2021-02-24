@@ -1,6 +1,8 @@
-﻿Imports COH.Storage.PiggyBin.Structures
+﻿Imports COH.Storage.Containers.PIGG.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
 
-Namespace Utilities
+Namespace Storage.Containers.PIGG.Utilities
     Public Class COH_PiggTool
         Implements IDisposable
 
@@ -47,7 +49,6 @@ Namespace Utilities
             Return Extract_Entry(mCurrentReader, mPiggInfo, Index, Result)
         End Function
 #End Region
-
 
 #Region "IDisposable Support"
         Private disposedValue As Boolean ' To detect redundant calls

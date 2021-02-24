@@ -1,4 +1,4 @@
-﻿Namespace Spawns
+﻿Namespace GameContent.Structures.Spawns
     Public NotInheritable Class COH_NictusOptions
         Inherits COH_FileStructure
 

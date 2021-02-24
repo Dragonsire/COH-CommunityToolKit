@@ -1,4 +1,4 @@
-﻿Namespace Enemies
+﻿Namespace GameContent.Structures.Enemies
     Public Class COH_EnemyVillainGroup
         Inherits COH_FileStructure
 

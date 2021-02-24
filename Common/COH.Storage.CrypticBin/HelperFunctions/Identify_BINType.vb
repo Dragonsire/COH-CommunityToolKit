@@ -1,7 +1,9 @@
 ﻿Imports System.IO
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization
 
-Namespace Utilities
-    <HideModuleName> Public Module IdentifyBINType
+Namespace Helperfunctions.Serialize.PIGG
+    <HideModuleName> Public Module HelperFunctions_PIGG
         Public Function Identify_BinType(FilePath As String) As COH_Supported_ContentType
             Dim Result As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
             Dim FileStream = New FileStream(FilePath, FileMode.Open, FileAccess.Read)

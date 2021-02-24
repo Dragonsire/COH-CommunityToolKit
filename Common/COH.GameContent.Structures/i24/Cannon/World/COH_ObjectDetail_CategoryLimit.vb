@@ -1,4 +1,4 @@
-﻿Namespace World
+﻿Namespace GameContent.Structures.World
     Public NotInheritable Class COH_ObjectDetail_CategoryLimit
         inherits COH_FileStructure
 

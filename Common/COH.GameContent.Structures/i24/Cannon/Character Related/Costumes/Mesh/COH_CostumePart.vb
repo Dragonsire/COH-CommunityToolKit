@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace Costumes
+Namespace GameContent.Structures.Costumes
     Public NotInheritable Class COH_CostumePart
         Inherits COH_FileStructure
 

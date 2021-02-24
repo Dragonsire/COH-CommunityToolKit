@@ -1,4 +1,4 @@
-﻿Namespace MeshRelated.Textures
+﻿Namespace GameContent.Structures.MeshRelated.Textures
     Public Class COH_TextureOptions
         Inherits COH_FileStructure
 

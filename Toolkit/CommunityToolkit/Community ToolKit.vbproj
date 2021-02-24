@@ -76,7 +76,7 @@
     <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
-    <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.PiggyBin.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
     <ProjectReference Include="..\COH.Tools.Controls.Forms\COH.Tools.Controls.vbproj" />
     <ProjectReference Include="..\COH.Tools.Controls.WPF\COH.Tools.WPFControls.vbproj" />
     <ProjectReference Include="..\COH.Tools.Modding\COH.Tools.Modding.vbproj" />

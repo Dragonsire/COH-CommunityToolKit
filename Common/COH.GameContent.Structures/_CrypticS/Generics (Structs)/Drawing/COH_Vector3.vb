@@ -1,4 +1,4 @@
-﻿Namespace [Shared].Drawing
+﻿Namespace GameContent.Structures.[Shared].Drawing
     Public NotInheritable Class COH_Vector3
         Inherits COH_FileStructure
 

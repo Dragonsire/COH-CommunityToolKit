@@ -1,6 +1,7 @@
-﻿Imports System.IO
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG
+Namespace Storage.Containers.PIGG.Structures
     Public NotInheritable Class COH_PIGG_DirectoryEntry
 
 #Region "Properties"
@@ -40,7 +41,7 @@ Namespace FileStructures.PIGG
         End Property
         ReadOnly Property TimeStamp As DateTime
             Get
-                Return GameContent.HelperFunctions.DateTimeFunctions.Convert_Uint32Value_To_DateTime(mFile_DateStamp)
+                Return Helperfunctions.DateTimeFunctions.Convert_Uint32Value_To_DateTime(mFile_DateStamp)
             End Get
         End Property
         ReadOnly Property IsCompressed As Boolean
@@ -60,16 +61,16 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-       Private mEntryType As COH_Supported_ContentType
-       Private mDirectoryMarker As UInt32 ' 0x00003456
-       Private mIndex As UInt32 ' Which string in the string table this is associated with
-       Private mFile_Size As UInt32  ' Uncompressed File Size
-       Private mFile_Size_Compressed As UInt32  ' Compressed length of the file
-       Private mFile_DateStamp As UInt32  ' Date stamp when this entry was created
-       Private mFile_OffsetStart As UInt32  ' Location in the file where this chunk starts
-       Private mUnknown1 As UInt32  ' Currently always zero
-       Private mSecondarySlotIndex As Int32  ' Location of secondary slot this is associated with
-       Private nMD5(15) As Byte ' MD5 Hash of the uncompressed data
+        Private mEntryType As COH_Supported_ContentType
+        Private mDirectoryMarker As UInt32 ' 0x00003456
+        Private mIndex As UInt32 ' Which string in the string table this is associated with
+        Private mFile_Size As UInt32  ' Uncompressed File Size
+        Private mFile_Size_Compressed As UInt32  ' Compressed length of the file
+        Private mFile_DateStamp As UInt32  ' Date stamp when this entry was created
+        Private mFile_OffsetStart As UInt32  ' Location in the file where this chunk starts
+        Private mUnknown1 As UInt32  ' Currently always zero
+        Private mSecondarySlotIndex As Int32  ' Location of secondary slot this is associated with
+        Private nMD5(15) As Byte ' MD5 Hash of the uncompressed data
 #End Region
 
 #Region "Create New Instance"

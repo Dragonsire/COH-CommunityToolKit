@@ -1,4 +1,4 @@
-﻿Namespace AuctionHouse
+﻿Namespace GameContent.Structures.AuctionHouse
     Public NotInheritable Class COH_AunctionHouse_Fee
         Inherits COH_FileStructure
 

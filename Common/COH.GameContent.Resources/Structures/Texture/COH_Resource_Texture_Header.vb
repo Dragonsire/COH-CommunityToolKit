@@ -1,4 +1,6 @@
-﻿Namespace Structures.Textures
+﻿Imports COH.GameContent.Structures.Enums
+
+Namespace Structures.Textures
     <TypeConverter(GetType(ExpandableObjectConverter))> Public Class COH_Resource_Texture_Header
 
 #Region "Properties"

@@ -177,8 +177,8 @@ Namespace Structures.Anim
                     Result(X) = NewValue
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.ROTATION_DELTACODED Then
-                COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "SomeBody was too Lazy to add Support for Bone Rotation DeltaCoded", Nothing, True)
-                COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                'COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "SomeBody was too Lazy to add Support for Bone Rotation DeltaCoded", Nothing, True)
+                'COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
                 Return False
             End If
             Return True
@@ -203,8 +203,8 @@ Namespace Structures.Anim
                     Result(X) = New COH_Struct_Vector3(Singles)
                 Next
             ElseIf BoneTrack.flags_Check And COH_AnimCompression.POSITION_DELTACODED Then
-                COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "SomeBody was too Lazy to add Support for Bone Position DeltaCoded", Nothing, True)
-                COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                'COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "SomeBody was too Lazy to add Support for Bone Position DeltaCoded", Nothing, True)
+                'COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
                 ForceNotValid()
             Else
                 ForceNotValid()

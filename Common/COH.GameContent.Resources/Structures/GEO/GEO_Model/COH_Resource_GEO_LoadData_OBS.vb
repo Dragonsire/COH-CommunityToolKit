@@ -1,4 +1,6 @@
 ﻿Imports COH.GameContent.Resources.Structures.GEO
+Imports COH.GameContent.Structures
+Imports COH.GameContent.Structures.Enums
 
 Namespace Structures.Resources
     Public Class COH_Resource_GEO_LoadData 'Almost Identical to Header...so...

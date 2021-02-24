@@ -1,4 +1,4 @@
-﻿Namespace Story
+﻿Namespace GameContent.Structures.Story
     Public NotInheritable Class COH_StoryReward_ItemChance
         Inherits COH_FileStructure
 

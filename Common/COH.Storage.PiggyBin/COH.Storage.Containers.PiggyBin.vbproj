@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.Storage.PiggyBin</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>
@@ -41,7 +41,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="_Internal\Constants\" />
+    <Compile Remove="_Internal\**" />
+    <EmbeddedResource Remove="_Internal\**" />
+    <None Remove="_Internal\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -90,6 +92,7 @@
     <ProjectReference Include="..\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
     <ProjectReference Include="..\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>
 
   <ItemGroup>

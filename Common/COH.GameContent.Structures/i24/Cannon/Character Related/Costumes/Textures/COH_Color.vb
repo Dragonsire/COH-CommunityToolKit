@@ -1,6 +1,6 @@
 ﻿Imports System.Xml.Serialization
 
-Namespace Costumes.Textures
+Namespace GameContent.Structures.Costumes.Textures
     Public NotInheritable Class COH_Color
         Inherits COH_FileStructure
 

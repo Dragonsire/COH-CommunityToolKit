@@ -8,7 +8,7 @@
                 Return ID
             End Get
         End Property
-        <Xml.Serialization.XmlAttribute> Property ID As Enums.GEO_Enums_MESH_BoneId
+        <Xml.Serialization.XmlAttribute> Property ID As GEO_Enums_MESH_BoneId
         <Xml.Serialization.XmlAttribute> Property Child As Integer '//Enums.GEO_Enums_MESH_BoneId
         <Xml.Serialization.XmlAttribute> Property [Next] As Integer '//Enums.GEO_Enums_MESH_BoneId
 #End Region

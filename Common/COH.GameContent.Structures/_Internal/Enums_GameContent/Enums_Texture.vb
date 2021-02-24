@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_LoadHow
         None = 0
         TEX_LOAD_IN_BACKGROUND = 1

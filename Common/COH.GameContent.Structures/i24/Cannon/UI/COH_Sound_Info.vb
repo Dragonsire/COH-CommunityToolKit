@@ -1,4 +1,4 @@
-﻿Namespace Enviroment.Sound
+﻿Namespace GameContent.Structures.Enviroment.Sound
     Public NotInheritable Class COH_SOUND_INFO
         Inherits COH_FileStructure
 

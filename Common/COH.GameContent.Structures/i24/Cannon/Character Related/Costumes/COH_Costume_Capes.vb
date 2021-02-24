@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace Costumes
+Namespace GameContent.Structures.Costumes
     Public NotInheritable Class COH_Costume_Capes
         Inherits COH_FileStructure
 

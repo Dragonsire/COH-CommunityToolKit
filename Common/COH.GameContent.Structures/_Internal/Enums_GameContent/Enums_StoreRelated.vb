@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     <Flags> Public Enum COH_Enum_AccountProductFlags
         NotDefined = 0
         <COH_DefEnum("Unpublished")> PRODFLAG_NOT_PUBLISHED = 1 '1 << 0,	// item Is Not ready To show To the user yet

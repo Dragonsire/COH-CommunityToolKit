@@ -1,4 +1,4 @@
-﻿Namespace Enemies
+﻿Namespace GameContent.Structures.Enemies
     Public NotInheritable Class COH_Enemy_GroupMM
         Inherits COH_FileStructure
 

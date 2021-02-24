@@ -1,4 +1,4 @@
-﻿Namespace Characters
+﻿Namespace GameContent.Structures.Characters
     Public NotInheritable Class COH_Exemplar_Boost
         Inherits COH_FileStructure
 

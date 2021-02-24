@@ -1,15 +1,18 @@
 ﻿Imports System.IO
+Imports COH.CodeManagement.Enums.Pigg
+Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent
 Imports COH.GameContent.Resources.Structures.Anim
 Imports COH.GameContent.Resources.Structures.BIN
 Imports COH.GameContent.Resources.Structures.GEO
 Imports COH.GameContent.Resources.Structures.Other
 Imports COH.GameContent.Resources.Structures.Textures
-Imports COH.Storage.PiggyBin.Enums
-Imports COH.Storage.PiggyBin.FileStructures.PIGG
-Imports COH.Storage.PiggyBin.Structures
+Imports COH.Storage.Containers.PIGG.Structures
+Imports COH.Storage.Containers.PIGG.Structures.Contents
+Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
 
-Namespace Utilities
+Namespace Storage.Containers.PIGG.Utilities
     Partial Public Class COH_PiggTool
 
 #Region "Extract PiggInfo"
@@ -40,7 +43,7 @@ Namespace Utilities
             Return True
         End Function
         Private Shared Function Identify_SlotType(ByRef FileName As String) As COH_Supported_ContentType
-            Dim Result = SlotTypes.Unknown
+            Dim Result = PIGG_Container_SlotTypes.Unknown
             Dim EXT As String = IO.Path.GetExtension(FileName).ToUpper
             If EXT = ".TEXTURE" Or EXT = ".DDS" Then
                 Return COH_Supported_ContentType.Resource_Texture
@@ -136,7 +139,7 @@ Namespace Utilities
         Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As COH_Pigg_Info, Optional Decompress As Boolean = False) As Byte()
             CurrentReader.BaseStream.Position = Source.Directories(Index).File_Offset
             If Decompress = True And Source.Directories(Index).File_Size_Compressed > 0 Then
-                Return GameContent.HelperFunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))
+                Return Helperfunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))
             Else
                 '//HelperFunctions.Bytes.Write_BytesToFile(CurrentReader.ReadBytes(8000), "E:\SOURCE.RAW")
                 Return CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored)
@@ -198,7 +201,7 @@ Namespace Utilities
             End Try
             Return True
         End Function
-        Private Shared Function WriteData_Slot(Entry As FileStructures.PIGG.Contents.COH_PIGG_SlotTableEntry, DestinationFile As String) As Boolean
+        Private Shared Function WriteData_Slot(Entry As COH_PIGG_SlotTableEntry, DestinationFile As String) As Boolean
             Dim CurrentStream As FileStream
             CurrentStream = New FileStream(DestinationFile, FileMode.Create)
             Using CurrentWriter As New COH_BinaryWriter(CurrentStream, Text.Encoding.ASCII)

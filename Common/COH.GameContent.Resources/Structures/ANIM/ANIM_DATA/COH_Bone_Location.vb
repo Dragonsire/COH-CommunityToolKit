@@ -8,7 +8,7 @@
                 Return "Anim"
             End Get
         End Property
-        Property ID As Enums.GEO_Enums_MESH_BoneId
+        Property ID As GEO_Enums_MESH_BoneId
         Property Position As COH_Struct_Vector3()
         Property Rotation As COH_Struct_Quat()
 #End Region

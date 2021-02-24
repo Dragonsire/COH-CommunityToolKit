@@ -1,4 +1,4 @@
-﻿Namespace Costumes.Mesh
+﻿Namespace GameContent.Structures.Costumes.Mesh
     Public NotInheritable Class COH_CostumeBone
         Inherits COH_FileStructure
 

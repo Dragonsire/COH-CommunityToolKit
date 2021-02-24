@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_SalvageRarity
         <COH_DefEnum("Ubiquitous")> kSalvageRarity_Ubiquitous
         <COH_DefEnum("Common")> kSalvageRarity_Common

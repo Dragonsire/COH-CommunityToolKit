@@ -1,14 +1,15 @@
-﻿Imports COH.GameContent.Resources.Structures.Textures
-Imports COH.Storage.PiggyBin.Enums
+﻿Imports COH.CodeManagement.Enums.Pigg
+Imports COH.GameContent.Resources.Structures.Textures
+Imports COH.Storage.Serialization
 
-Namespace FileStructures.PIGG.Contents
+Namespace Storage.Containers.PIGG.Structures.Contents
     Public Class PIGG_SlotEntry_TextureDDS
         Inherits COH_PIGG_SlotTableEntry
 
 #Region "Properties"
-        Public Overrides ReadOnly Property SlotType As Enums.SlotTypes
+        Public Overrides ReadOnly Property SlotType As PIGG_Container_SlotTypes
             Get
-                Return SlotTypes.DDS_Header
+                Return PIGG_Container_SlotTypes.DDS_Header
             End Get
         End Property
 #End Region

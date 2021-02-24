@@ -42,7 +42,7 @@
                 For Each Vertice In Model.Mesh.Vertexs
                     CurrentWriter.AppendLine("v " & Vertice.X * AdjustHandiness & " " & Vertice.Y & " " & Vertice.Z)
                 Next
-                TotalV += Model.Mesh.Vertexs.Count
+                TotalV += Model.Mesh.Vertexs.Length
             Next
             CurrentWriter.AppendLine("# " & TotalV & " Vertices")
             CurrentWriter.AppendLine()
@@ -59,7 +59,7 @@
                     Y = Y.ToString.PadRight(8, "0")
                     CurrentWriter.AppendLine("vt " & X & " " & Y)
                 Next
-                TotalV += Model.Mesh.UV.Count
+                TotalV += Model.Mesh.UV.Length
             Next
             CurrentWriter.AppendLine("# " & TotalV & " UV Coordinates")
             CurrentWriter.AppendLine()
@@ -68,7 +68,7 @@
                 For Each Normal In Model.Mesh.Normals
                     CurrentWriter.AppendLine("vn " & Normal.X & " " & Normal.Y & " " & Normal.Z)
                 Next
-                TotalV += Model.Mesh.Vertexs.Count
+                TotalV += Model.Mesh.Vertexs.Length
             Next
             CurrentWriter.AppendLine("# " & TotalV & " Normals")
             CurrentWriter.AppendLine()
@@ -82,8 +82,8 @@
                     Dim Face3 As String = Faces.Value3 + FaceIndex_Offset & "/" & Faces.Value3 + FaceIndex_Offset & "/" & Faces.Value1 + FaceIndex_Offset
                     CurrentWriter.AppendLine("f " & Face1 & " " & Face2 & " " & Face3)
                 Next
-                TotalV = Model.Mesh.TriangleIndices.Count
-                FaceIndex_Offset += Model.Mesh.Vertexs.Count
+                TotalV = Model.Mesh.TriangleIndices.Length
+                FaceIndex_Offset += Model.Mesh.Vertexs.Length
                 CurrentWriter.AppendLine("# " & TotalV & " Triangles In Group")
                 CurrentWriter.AppendLine()
             Next

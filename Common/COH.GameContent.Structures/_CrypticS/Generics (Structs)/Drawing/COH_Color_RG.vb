@@ -1,6 +1,6 @@
 ﻿Imports System.Xml.Serialization
 
-Namespace [Shared].Drawing
+Namespace GameContent.Structures.[Shared].Drawing
     Public NotInheritable Class COH_Color_RG
         Inherits COH_FileStructure
 

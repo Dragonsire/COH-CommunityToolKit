@@ -1,7 +1,7 @@
 ﻿Imports COH.GameContent.Structures.Costumes.Mesh
 Imports COH.GameContent.Structures.Costumes.Textures
 
-Namespace Costumes
+Namespace GameContent.Structures.Costumes
     Public NotInheritable Class COH_CostumeOrigin
         Inherits COH_FileStructure
 

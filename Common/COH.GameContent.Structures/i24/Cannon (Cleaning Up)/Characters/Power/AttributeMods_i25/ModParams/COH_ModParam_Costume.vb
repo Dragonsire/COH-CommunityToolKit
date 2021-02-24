@@ -1,4 +1,4 @@
-﻿Namespace Characters.Powers.ModParams
+﻿Namespace GameContent.Structures.Characters.Powers.ModParams
     Public NotInheritable Class COH_ModParam_Costume
         Inherits COH_FileStructure
 

@@ -1,4 +1,4 @@
-﻿Namespace Story
+﻿Namespace GameContent.Structures.Story
     Public NotInheritable Class COH_Mission_Objectives_Set
         Inherits COH_FileStructure
 

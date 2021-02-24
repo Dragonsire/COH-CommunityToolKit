@@ -1,4 +1,4 @@
-﻿Namespace [Shared]
+﻿Namespace GameContent.Structures.[Shared]
     Public NotInheritable Class COH_Generic_StringTableArray
         Inherits COH_FileStructure
 

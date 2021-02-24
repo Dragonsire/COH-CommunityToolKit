@@ -1,4 +1,4 @@
-﻿Namespace Body
+﻿Namespace GameContent.Structures.Body
     Public NotInheritable Class COH_BodyPart
         Inherits COH_FileStructure
 

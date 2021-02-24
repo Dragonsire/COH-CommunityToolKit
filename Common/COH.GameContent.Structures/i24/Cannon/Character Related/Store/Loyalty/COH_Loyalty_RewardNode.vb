@@ -1,4 +1,4 @@
-﻿Namespace Store
+﻿Namespace GameContent.Structures.Store
     Public NotInheritable Class COH_Loyalty_RewardNode
         Inherits COH_FileStructure
 

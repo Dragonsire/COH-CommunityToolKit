@@ -1,4 +1,4 @@
-﻿Namespace Enemies
+﻿Namespace GameContent.Structures.Enemies
     Public Class COH_PetCommands
         Inherits COH_FileStructure
 

@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Powers
 
-Namespace Store
+Namespace GameContent.Structures.Store
     Public NotInheritable Class COH_Store_Items
         Inherits COH_FileStructure
 

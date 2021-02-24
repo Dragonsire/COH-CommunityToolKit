@@ -1,4 +1,5 @@
 ﻿Imports System.Xml.Serialization
+Imports COH.GameContent.Structures.Enums
 
 Namespace Structures.Anim
     Public Class COH_Resource_ANIM_BoneTrack
@@ -13,7 +14,7 @@ Namespace Structures.Anim
 #End Region
 
 #Region "Properties"
-        <XmlAttribute> Property id As Enums.GEO_Enums_MESH_BoneId 'I am this bone's animation track
+        <XmlAttribute> Property id As GEO_Enums_MESH_BoneId 'I am this bone's animation track
         Property Rotation_Offset As UInt32 'Full keys
         Property Position_Offset As UInt32 'Full keys
         Property rot_fullkeycount As UInt16

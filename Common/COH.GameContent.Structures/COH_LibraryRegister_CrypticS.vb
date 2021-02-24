@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Storage.Controllers
+﻿Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Powers
 Imports COH.GameContent.Structures.Costumes
@@ -7,7 +7,7 @@ Imports COH.GameContent.Structures.Powers
 Imports COH.GameContent.Structures.Powers.Boosts
 Imports COH.GameContent.Structures.Shared
 Imports COH.GameContent.Structures.World.Maps
-Imports COH_Supported_ContentType = COH.GameContent.CodeManagement.Enums.Structures.COH_Supported_ContentType
+Imports COH.Storage.Controllers
 
 Public NotInheritable Class COH_LibraryRegister_CrypticS
 

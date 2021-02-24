@@ -1,4 +1,4 @@
-﻿Namespace [Shared]
+﻿Namespace GameContent.Structures.[Shared]
     Public NotInheritable Class COH_Generic_StringArray
         Inherits COH_FileStructure
 
@@ -90,7 +90,7 @@
                 mItems(X) = CurrentReader.Read_CrypticS_String()
                 If mItems(X) = "P1701128950" Then
                     mItems(X) = mItems(X)
-                    COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                    ' COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
                 End If
             Next
             Return True

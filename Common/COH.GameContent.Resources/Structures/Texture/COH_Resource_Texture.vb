@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports COH.GameContent.Structures.CodeManagement.Enums
 
 Namespace Structures.Textures
     Public Class COH_Resource_Texture
@@ -50,10 +51,10 @@ Namespace Structures.Textures
 #End Region
 
 #Region "Private Properties"
-       Private mFilePath As String
-       Private mID As COH_PiggEnum_Texture_ResourceType = Nothing
-       Private mHeader As COH_Resource_Texture_Header
-       Private mImageBytes As Byte() = Nothing
+        Private mFilePath As String
+        Private mID As COH_PiggEnum_Texture_ResourceType = Nothing
+        Private mHeader As COH_Resource_Texture_Header
+        Private mImageBytes As Byte() = Nothing
 #End Region
 
 #Region "Create New Instances"
@@ -84,7 +85,7 @@ Namespace Structures.Textures
 
 #Region "Process Image"
         Public Function Extract_Resource_Texture() As Bitmap
-            If mID =0 Then Return nothing
+            If mID = 0 Then Return Nothing
             Select Case mID
                 Case COH_PiggEnum_Texture_ResourceType.DDS
                     Return Extract_Resource_Texture_DDS()

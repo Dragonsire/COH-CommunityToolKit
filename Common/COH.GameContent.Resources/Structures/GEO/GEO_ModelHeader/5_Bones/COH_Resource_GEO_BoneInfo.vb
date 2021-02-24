@@ -81,13 +81,13 @@
             Next
             Dim Unknown1 As UInt32 = CurrentReader.ReadUInt32 '//Reference to Weights or Materials
             If Unknown1 >= 1 Then
-                COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "Bone Unknown1 Has Value: " & Unknown1, Nothing, True)
-                COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                ' COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "Bone Unknown1 Has Value: " & Unknown1, Nothing, True)
+                ' COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
             End If
             Dim Unknown2 As UInt32 = CurrentReader.ReadUInt32
             If Unknown2 >= 1 Then
-                COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "Bone Unknown2 Has Value: " & Unknown1, Nothing, True)
-                COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
+                ' COH_LibraryEventControl.Instance.Trigger_ErrorOccured(COH_Event_Error.COH_ErrorEvent.ControlledError, "Bone Unknown2 Has Value: " & Unknown1, Nothing, True)
+                ' COH_LibraryEventControl.Instance.Trigger_InspectStream("Model", CurrentReader)
             End If
             Return True
         End Function

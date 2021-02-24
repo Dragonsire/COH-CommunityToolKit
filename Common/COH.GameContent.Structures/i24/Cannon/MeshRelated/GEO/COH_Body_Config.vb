@@ -1,4 +1,4 @@
-﻿Namespace MeshRelated
+﻿Namespace GameContent.Structures.MeshRelated
     Public NotInheritable Class COH_Body_Config
         Inherits COH_FileStructure
 

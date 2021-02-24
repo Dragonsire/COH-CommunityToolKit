@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     <Flags> Public Enum COH_EnumFlags_AnimationSequence
         None = 0
         <COH_DefEnum("NoShallowSplash")> SEQ_NO_SHALLOW_SPLASH = (1 << 0)

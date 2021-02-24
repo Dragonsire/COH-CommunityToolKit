@@ -1,4 +1,4 @@
-﻿Namespace Costumes
+﻿Namespace GameContent.Structures.Costumes
     Public NotInheritable Class COH_CostumePart_Diff
         Inherits COH_FileStructure
 

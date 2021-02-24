@@ -1,4 +1,4 @@
-﻿Namespace World.DayJobs
+﻿Namespace GameContent.Structures.World.DayJobs
     Public NotInheritable Class COH_DayJob
         Inherits COH_FileStructure
 

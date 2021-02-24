@@ -1,4 +1,4 @@
-﻿Namespace Characters
+﻿Namespace GameContent.Structures.Characters
     Public NotInheritable Class COH_Proficiency
         Inherits COH_FileStructure
 

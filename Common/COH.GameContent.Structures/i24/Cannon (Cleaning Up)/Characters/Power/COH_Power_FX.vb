@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace Characters.Powers
+Namespace GameContent.Structures.Characters.Powers
     Public Class COH_PowerFX
         Inherits COH_FileStructure
 

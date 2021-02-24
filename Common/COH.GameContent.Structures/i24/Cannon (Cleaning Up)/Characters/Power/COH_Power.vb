@@ -1,7 +1,7 @@
 ﻿Imports COH.GameContent.Structures.Powers
 Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace Characters.Powers
+Namespace GameContent.Structures.Characters.Powers
     Public NotInheritable Class COH_Power
         Inherits COH_FileStructure
 
@@ -1464,7 +1464,7 @@ Namespace Characters.Powers
             Return False
         End Function
         Public Function Create_CRC32c() As UInt32
-            Dim Result As UInt32 = GameContent.HelperFunctions.Cryptic.Calculate_CRC32(mFullName.ToLower, HelperFunctions.Cryptic.COH_CRC32_Functions.CRC32_Method.Cryptic)
+            Dim Result As UInt32 = HelperFunctions.Cryptic.Calculate_CRC32(mFullName.ToLower, HelperFunctions.Cryptic.COH_CRC32_Functions.CRC32_Method.Cryptic)
             Return Result
         End Function
 #End Region

@@ -1,4 +1,4 @@
-﻿Namespace Animation.FX
+﻿Namespace GameContent.Structures.Animation.FX
     Public NotInheritable Class COH_FX_Info
         Inherits COH_FileStructure
 

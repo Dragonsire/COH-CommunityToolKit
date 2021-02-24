@@ -1,4 +1,4 @@
-﻿Namespace Costumes
+﻿Namespace GameContent.Structures.Costumes
     Public NotInheritable Class COH_CostumeMaskSet
         Inherits COH_FileStructure
 

@@ -2,7 +2,7 @@
 Imports COH.GameContent.Structures.Shared
 Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace Animation.FX
+Namespace GameContent.Structures.Animation.FX
     Public NotInheritable Class COH_FX_Event
         Inherits COH_FileStructure
 

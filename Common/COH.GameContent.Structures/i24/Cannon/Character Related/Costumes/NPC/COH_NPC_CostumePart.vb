@@ -1,4 +1,4 @@
-﻿Namespace Costumes.NPC
+﻿Namespace GameContent.Structures.Costumes.NPC
     Public NotInheritable Class COH_CostumeNPC_Part
         Inherits COH_FileStructure
 

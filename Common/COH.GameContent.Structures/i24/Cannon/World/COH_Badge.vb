@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Shared.Drawing
 
-Namespace World
+Namespace GameContent.Structures.World
     Public NotInheritable Class COH_Badge
         Inherits COH_FileStructure
 

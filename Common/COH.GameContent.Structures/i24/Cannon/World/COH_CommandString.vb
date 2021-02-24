@@ -1,4 +1,4 @@
-﻿Namespace UI
+﻿Namespace GameContent.Structures.UI
     Public NotInheritable Class COH_CommandString
         inherits COH_FileStructure
 

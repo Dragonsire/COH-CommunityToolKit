@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_JobPowerType
         <COH_DefEnum("TimeInGame")> kDayJobPowerType_TimeInGame
         <COH_DefEnum("TimeUsed")> kDayJobPowerType_TimeUsed

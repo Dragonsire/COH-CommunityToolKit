@@ -1,4 +1,4 @@
-﻿Namespace Powers
+﻿Namespace GameContent.Structures.Powers
     Public NotInheritable Class COH_Power_NameMap
         Inherits COH_FileStructure
 

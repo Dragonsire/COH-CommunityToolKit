@@ -64,13 +64,13 @@ Namespace Internal.Events
 #End Region
 
 #Region "Developer"
-        Public Event TriggerInspectStream(ByRef e As COH_EventResponse_StreamInspect)
-        Public Function Trigger_InspectStream(Title As String, ByRef CurrentReader As COH_BinaryReader) As Boolean
-            Dim NewEvent As New COH_EventResponse_StreamInspect(Title, CurrentReader)
-            RaiseEvent TriggerInspectStream(NewEvent)
-            CurrentReader.Position = NewEvent.StartPosition
-            Return True
-        End Function
+        'Public Event TriggerInspectStream(ByRef e As COH_EventResponse_StreamInspect)
+        'Public Function Trigger_InspectStream(Title As String, ByRef CurrentReader As COH_BinaryReader) As Boolean
+        ' Dim NewEvent As New COH_EventResponse_StreamInspect(Title, CurrentReader)
+        ' RaiseEvent TriggerInspectStream(NewEvent)
+        '     CurrentReader.Position = NewEvent.StartPosition
+        ' Return True
+        ' End Function
 #End Region
 
     End Class

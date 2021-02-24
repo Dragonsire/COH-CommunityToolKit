@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     <Flags> Public Enum COH_Enum_HealthFX
         None = 0
         <COH_DefEnum("NoCollision")> HEALTHFX_NO_COLLISION = (1 << 0)

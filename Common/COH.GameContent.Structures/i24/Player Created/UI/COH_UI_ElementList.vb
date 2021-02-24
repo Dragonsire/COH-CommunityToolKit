@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.PlayerCreated.Critter
 
-Namespace PlayerCreated.UI
+Namespace GameContent.Structures.PlayerCreated.UI
     Public NotInheritable Class COH_UI_PlayerCreated_ElementList
         Inherits COH_FileStructure
 

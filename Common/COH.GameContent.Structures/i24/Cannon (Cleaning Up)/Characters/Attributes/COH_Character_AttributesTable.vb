@@ -1,4 +1,4 @@
-﻿Namespace Characters.Attributes
+﻿Namespace GameContent.Structures.Characters.Attributes
     Public NotInheritable Class COH_CharacterClass_AttributesTable
         Inherits COH_FileStructure
 

@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_GroupAlly
         <COH_DefEnum("None")> VG_ALLY_NONE
         <COH_DefEnum("Hero")> VG_ALLY_HERO

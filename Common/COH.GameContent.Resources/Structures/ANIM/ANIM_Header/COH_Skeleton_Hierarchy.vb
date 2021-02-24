@@ -8,7 +8,7 @@
                 Return "Anim"
             End Get
         End Property
-        Property Root As Enums.GEO_Enums_MESH_BoneId
+        Property Root As GEO_Enums_MESH_BoneId
         Property NumberBonesUsed As UInt32
         Property Skeleton_Hierarchy As COH_Skeleton_Hierarchy_BoneLink() '100){} ' BonesOnDisk   'skeleton_heirarchy[BONES_ON_DISK]; //tree Structure
 #End Region

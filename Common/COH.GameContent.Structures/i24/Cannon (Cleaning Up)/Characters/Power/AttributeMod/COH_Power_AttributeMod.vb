@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Powers
 
-Namespace Characters.Powers
+Namespace GameContent.Structures.Characters.Powers
     Public NotInheritable Class COH_Power_AttributeMod
         Inherits COH_FileStructure
 

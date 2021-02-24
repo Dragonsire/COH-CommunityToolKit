@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Boolean
         ' Which power system to use for advancement, level lookup, etc.
         <COH_DefEnum("false", "kfalse")> [false] = 0

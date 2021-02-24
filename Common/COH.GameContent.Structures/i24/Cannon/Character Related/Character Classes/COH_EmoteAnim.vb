@@ -1,4 +1,4 @@
-﻿Namespace Characters
+﻿Namespace GameContent.Structures.Characters
     Public Class COH_CharacterEmoteAnim
 
 #Region "Properties"

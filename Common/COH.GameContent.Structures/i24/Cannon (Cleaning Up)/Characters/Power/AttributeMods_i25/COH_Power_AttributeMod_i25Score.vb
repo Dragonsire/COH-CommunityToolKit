@@ -2,7 +2,7 @@
 Imports COH.GameContent.Structures.Characters.Powers.ModParams
 Imports COH.GameContent.Structures.Powers
 
-Namespace Characters.Powers
+Namespace GameContent.Structures.Characters.Powers
     Public NotInheritable Class COH_Power_AttributeMod_i25_Score
         Inherits COH_FileStructure
 

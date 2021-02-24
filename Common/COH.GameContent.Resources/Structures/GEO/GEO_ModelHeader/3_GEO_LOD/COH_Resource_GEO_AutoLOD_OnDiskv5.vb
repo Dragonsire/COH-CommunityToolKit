@@ -1,4 +1,6 @@
-﻿Namespace Structures.GEO
+﻿Imports COH.GameContent.Structures.Enums
+
+Namespace Structures.GEO
     Public NotInheritable Class COH_Resource_GEO_AutoLOD_OnDiskv5
         Inherits COH_FileStructure
 
@@ -62,12 +64,12 @@
 #End Region
 
 #Region "Private Properties"
-       Private mMaxError As Single
-       Private mLodNear As Single
-       Private mLodFar As Single
-       Private mLodNearFade As Single
-       Private mLodFarFade As Single
-       Private mLodFlags As COH_Enum_AutoLODFlags
+        Private mMaxError As Single
+        Private mLodNear As Single
+        Private mLodFar As Single
+        Private mLodNearFade As Single
+        Private mLodFarFade As Single
+        Private mLodFlags As COH_Enum_AutoLODFlags
 #End Region
 
 #Region "Create New Instances"
@@ -114,7 +116,7 @@
 #End Region
 
 #Region "Import/Export - CrypticS"
-    Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             CurrentWriter.Write(mMaxError)
             CurrentWriter.Write(mLodNearFade)
             CurrentWriter.Write(mLodNear)

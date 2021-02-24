@@ -1,4 +1,4 @@
-﻿Namespace World
+﻿Namespace GameContent.Structures.World
     Public NotInheritable Class COH_Enviroment_Wind
         Inherits COH_FileStructure
 

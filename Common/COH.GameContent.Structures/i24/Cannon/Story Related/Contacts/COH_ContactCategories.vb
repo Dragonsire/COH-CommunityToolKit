@@ -1,4 +1,4 @@
-﻿Namespace Story
+﻿Namespace GameContent.Structures.Story
     Public Class COH_ContactCategories
         Inherits COH_FileStructure
 

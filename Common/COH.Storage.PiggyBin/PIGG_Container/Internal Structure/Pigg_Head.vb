@@ -1,5 +1,6 @@
-﻿Imports System.IO
-Namespace FileStructures.PIGG
+﻿Imports COH.Storage.Serialization
+
+Namespace Storage.Containers.PIGG.Structures
     Public NotInheritable Class COH_PIGG_FileHeader
 
 #Region "Properties"
@@ -16,12 +17,12 @@ Namespace FileStructures.PIGG
 #End Region
 
 #Region "Private Properties"
-       Private mIdentifier As UInt32
-       Private mUnknown1 As UInt16
-       Private mUnknown2 As UInt16
-       Private mUnknown3 As UInt16
-       Private mDirectorySize As UInt16
-       Private mNumber_DirectoryEntries As UInt32
+        Private mIdentifier As UInt32
+        Private mUnknown1 As UInt16
+        Private mUnknown2 As UInt16
+        Private mUnknown3 As UInt16
+        Private mDirectorySize As UInt16
+        Private mNumber_DirectoryEntries As UInt32
 #End Region
 
 #Region "Create New Instance"

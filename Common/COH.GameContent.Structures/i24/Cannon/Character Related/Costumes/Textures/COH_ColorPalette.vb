@@ -1,4 +1,4 @@
-﻿Namespace Costumes.Textures
+﻿Namespace GameContent.Structures.Costumes.Textures
     Public NotInheritable Class COH_ColorPalette
         Inherits COH_FileStructure
 

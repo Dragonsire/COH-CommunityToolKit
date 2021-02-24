@@ -1,4 +1,4 @@
-﻿Namespace Animation
+﻿Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_FX_System_ParticleTex
         Inherits COH_FileStructure
 

@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Shared
 
-Namespace Animation.FX
+Namespace GameContent.Structures.Animation.FX
     Public NotInheritable Class COH_FX_Condition
         Inherits COH_FileStructure
 

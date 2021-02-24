@@ -1,6 +1,6 @@
 ﻿Imports COH.GameContent.Structures.Shared
 
-Namespace Animation
+Namespace GameContent.Structures.Animation
     Public NotInheritable Class COH_Animation_Sequence_MoveP
         Inherits COH_FileStructure
 

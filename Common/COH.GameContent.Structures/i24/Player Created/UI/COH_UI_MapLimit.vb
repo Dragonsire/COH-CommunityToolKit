@@ -1,4 +1,4 @@
-﻿Namespace PlayerCreated.UI
+﻿Namespace GameContent.Structures.PlayerCreated.UI
     Public NotInheritable Class COH_UI_PlayerCreated_MapLimit
         Inherits COH_FileStructure
 

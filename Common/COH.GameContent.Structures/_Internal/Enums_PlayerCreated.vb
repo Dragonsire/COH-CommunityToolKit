@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace CodeManagement.Enums
     Public Enum COH_Enum_PlayerCreated_DetailType
         None = 0
         <COH_DefEnum("Ambush")> kDetail_Ambush

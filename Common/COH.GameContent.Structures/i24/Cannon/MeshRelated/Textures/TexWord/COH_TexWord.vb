@@ -1,4 +1,4 @@
-﻿Namespace Textures
+﻿Namespace GameContent.Structures.Textures
     Public NotInheritable Class COH_TextWord
         Inherits COH_FileStructure
 

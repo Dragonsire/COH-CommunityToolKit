@@ -1,4 +1,4 @@
-﻿Namespace Store
+﻿Namespace GameContent.Structures.Store
     Public Class COH_ProductCatalog
         Inherits COH_FileStructure
 
