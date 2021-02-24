@@ -41,7 +41,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="_Internal\Constants\" />
+    <Compile Remove="_Internal\Constants\**" />
+    <EmbeddedResource Remove="_Internal\Constants\**" />
+    <None Remove="_Internal\Constants\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,7 +88,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
   </ItemGroup>
 
   <ItemGroup>

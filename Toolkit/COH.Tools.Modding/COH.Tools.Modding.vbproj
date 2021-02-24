@@ -66,7 +66,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
     <ProjectReference Include="..\COH.Tools.Controls.Forms\COH.Tools.Controls.vbproj" />
     <ProjectReference Include="..\COH.Tools.Controls.WPF\COH.Tools.WPFControls.vbproj" />
   </ItemGroup>

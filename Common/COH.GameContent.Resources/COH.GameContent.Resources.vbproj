@@ -105,6 +105,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
-    <ProjectReference Include="..\COH.GameContent\COH.GameContent.vbproj" />
+    <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
   </ItemGroup>
 </Project>
