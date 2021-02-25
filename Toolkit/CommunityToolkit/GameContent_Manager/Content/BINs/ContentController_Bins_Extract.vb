@@ -1,8 +1,9 @@
 ﻿Imports COH.GameContent.Internal.Events
 Imports COH.GameContent.MessageStores.Structures.LanguageFiles
 Imports COH.Storage.Serialization.Configuration.COH_Serialization_Settings
-Imports COH.Storage.PiggyBin.Utilities
 Imports COH.Tools.Internal.Enums
+Imports COH.Toolkit.Enums
+Imports COH.Utilities
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -185,7 +186,7 @@ Namespace Internal.ContentController
         Private Function WriteModdingFile(FileSource As String, Destination As String, ByRef Info As COH_CrypticS, ByRef Structs As COH_FileStructure(), TheType As Type, Optional WriteIndex As Boolean = True) As Boolean
             ProgressDisplay_Create("Writing Modable Content", 0, Structs.Count, 0)
             For X = 0 To Structs.Count - 1
-                Dim NFO As New Modding.COH_ModableContent
+                Dim NFO As New COH_ModableContent
                 NFO.Content = Structs(X)
                 NFO.RelativePath_Current = Info.Files(0).Details(X).XML_RelativePath
                 NFO.RelativePath_Originol = Structs(0).Retrieve_OriginolSourceReference
@@ -197,7 +198,7 @@ Namespace Internal.ContentController
             ProgressDisplay_Destroy()
             If WriteIndex = True Then
                 Dim MasterListPath As String = Destination & "Index_" & Info.Name & ".XML"
-                Return GameContent.HelperFunctions.XML.Export_XMLFile(MasterListPath, Info)
+                Return COH.Helperfunctions.XML.Export_XMLFile(MasterListPath, Info)
             Else
                 Return True
             End If

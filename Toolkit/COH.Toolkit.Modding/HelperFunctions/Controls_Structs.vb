@@ -1,11 +1,11 @@
-﻿Imports COH.GameContent.CodeManagement.Interfaces
-Imports COH.GameContent.Enums
+﻿Imports COH.CodeManagement.Interfaces.Structures
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Powers
 Imports COH.GameContent.Structures.Powers
-Imports COH.Toolkit.Controls.WinForms.HelperFunctions.Lists
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
-Namespace HelperFunctions.Structs
+Namespace Helperfunctions.Toolkit.Structs
     <HideModuleName> Public Module COH_QuickControlHelpers_COH_FileStructures
 
 #Region "Unified"
@@ -219,7 +219,7 @@ Namespace HelperFunctions.Structs
             ' If AllAllowed.Contains(Entry.CharacterClass.SpecialRestrictions(x)) = False Then AllAllowed.Add(Entry.CharacterClass.SpecialRestrictions(x))
             ' Next
             'Next
-            Fill_ChecklistBox(CheckList, AllAllowed)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ChecklistBox(CheckList, AllAllowed)
         End Sub
         Public Sub Display_InCheckListBox_CharacterOrigins(ByRef CheckList As CheckedListBox, ByRef Controller As ISupport_MasterController)
             '  Dim AllOrigins As New List(Of COH_Modable_CharacterOrigin)
@@ -242,7 +242,7 @@ Namespace HelperFunctions.Structs
                     If AllAllowed.Contains(Entry.SetBuyRequires(x)) = False Then AllAllowed.Add(Entry.SetBuyRequires(x))
                 Next
             Next
-            Fill_ChecklistBox(CheckList, AllAllowed)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ChecklistBox(CheckList, AllAllowed)
             '//Dim Ter As String = String.Join(Chr(10), AllAllowed)
         End Sub
         Public Sub Display_InCheckListBox_PowerSet_PurchaseRequirements_NoSearch(ByRef CheckList As CheckedListBox)
@@ -264,7 +264,7 @@ Namespace HelperFunctions.Structs
             AllAllowed.Add("Pool.Experimentation.Speed_of_Sound")
             AllAllowed.Add("||")
             AllAllowed.Add("!")
-            Fill_ChecklistBox(CheckList, AllAllowed)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ChecklistBox(CheckList, AllAllowed)
         End Sub
 #End Region
     End Module

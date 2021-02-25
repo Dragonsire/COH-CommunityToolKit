@@ -1,7 +1,7 @@
 ﻿Imports COH.Tools.Controls
 Imports COH.Toolkit.Controls.WinForms
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class COH_PowerSet_Editor
         Inherits COH_ModdableContent_Editor

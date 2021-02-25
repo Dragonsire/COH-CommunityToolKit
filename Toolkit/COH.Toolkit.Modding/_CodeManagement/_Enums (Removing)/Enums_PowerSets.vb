@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace Toolkit.Modding.Enums
     Public Enum COH_Enum_PowerCategory
         ClassName
         DisplayName

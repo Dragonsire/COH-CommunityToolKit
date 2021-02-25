@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace Toolkit.Modding.Enums
     Public Enum TargetType1
         kNone = 0
         kCaster  ' kTargetType_Caster								

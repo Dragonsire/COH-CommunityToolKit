@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Internal.Events
+Imports COH.Toolkit.Controls.WinForms.Dialogs
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -196,7 +197,7 @@ Namespace Internal.ContentController
             If Not mCurrentProgressForm Is Nothing Then
                 mCurrentProgressForm.TopMost = False
             End If
-            Dim NewEditor As New Controls.WinForms.Dialogs.Dialog_Compare2Strings(Nothing)
+            Dim NewEditor As New Dialog_Compare2Strings(Nothing)
             NewEditor.PrepareDialog(e.Prompt, e.Message1, e.Message2)
             If ShowWindow(NewEditor, True) = DialogResult.Yes Then
                 e.Result = GameContent.Internal.Events.COH_EventResponse_Compare2Items.COH_ResponseEnum.Yes
@@ -217,11 +218,11 @@ Namespace Internal.ContentController
                     e.AllowContinue = True
                     e.ThrowException = False
                 Case GameContent.Internal.Events.COH_Event_Error.COH_ErrorEvent.ControlledError
-                    Controls.WinForms.Dialogs.COH_ErrorDialog.ShowErrorMessage(e)
+                    'Controls.WinForms.Dialogs.COH_ErrorDialog.ShowErrorMessage(e)
                     e.AllowContinue = True
                     e.ThrowException = False
                 Case GameContent.Internal.Events.COH_Event_Error.COH_ErrorEvent.FatalError
-                    Controls.WinForms.Dialogs.COH_ErrorDialog.ShowErrorMessage(e)
+                    'Controls.WinForms.Dialogs.COH_ErrorDialog.ShowErrorMessage(e)
                     e.AllowContinue = False
                     e.ThrowException = False
             End Select

@@ -1,4 +1,6 @@
-﻿Imports COH.Tools.Internal.ContentController.Settings
+﻿Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
+Imports COH.Tools.Internal.ContentController.Settings
 Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController

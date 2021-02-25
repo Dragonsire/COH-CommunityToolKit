@@ -1,7 +1,8 @@
 ﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+Imports COH.Toolkit.CodeManagement.Interfaces
 Imports COH.Toolkit.Controls.WinForms.Enums
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_MessageStoreEdit
 
 #Region "Private Properties"

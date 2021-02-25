@@ -1,10 +1,15 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
+Imports COH.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Interfaces.Structures
 Imports COH.GameContent
 Imports COH.GameContent.Internal.Events
 Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.COH_FileStructure
 Imports COH.GameContent.Utilities
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+Imports COH.Storage.Structures
 
 Public NotInheritable Class COH_ModableContent
     Implements ISupport_COH_OriginolSources
@@ -59,12 +64,12 @@ Public NotInheritable Class COH_ModableContent
 #End Region
 
 #Region "Private Properties"
-   Private mFullName As String
-   Private mFullPath As String
-   Private mFilePath_Relative_Current As String
-   Private mFilePath_Reference_Original As String
-   Private mIsCustom As Boolean
-   Private mWasModified_FromSource As Boolean
+    Private mFullName As String
+    Private mFullPath As String
+    Private mFilePath_Relative_Current As String
+    Private mFilePath_Reference_Original As String
+    Private mIsCustom As Boolean
+    Private mWasModified_FromSource As Boolean
 #End Region
 
 #Region "Create New Instances"
@@ -105,9 +110,9 @@ Public NotInheritable Class COH_ModableContent
 #Region "Clone"
     Public Overloads Sub CloneTo(ByRef Destination As COH_ModableContent)
         With Destination
-            .mFullName = GameContent.HelperFunctions.StringsAndThings.CloneString(mFullName)
-            .mFilePath_Relative_Current = GameContent.HelperFunctions.StringsAndThings.CloneString(mFilePath_Relative_Current)
-            .mFilePath_Reference_Original = GameContent.HelperFunctions.StringsAndThings.CloneString(mFilePath_Reference_Original)
+            .mFullName = Helperfunctions.StringsAndThings.CloneString(mFullName)
+            .mFilePath_Relative_Current = Helperfunctions.StringsAndThings.CloneString(mFilePath_Relative_Current)
+            .mFilePath_Reference_Original = Helperfunctions.StringsAndThings.CloneString(mFilePath_Reference_Original)
             .mIsCustom = mIsCustom
             .mWasModified_FromSource = mWasModified_FromSource
         End With
@@ -133,7 +138,7 @@ Public NotInheritable Class COH_ModableContent
                 Reader.Close()
                 TryCast(ImportXMLResult, COH_ModableContent).mFullPath = Filepath
             Catch ex As Exception
-                COH_LibraryEventController.ShowErrorOccured_Exception(Internal.Events.COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Import XML", ex, True)
+                ' COH_LibraryEventController.ShowErrorOccured_Exception(Internal.Events.COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Import XML", ex, True)
                 ImportResult = False
             End Try
         End If
@@ -141,7 +146,7 @@ Public NotInheritable Class COH_ModableContent
         Return ImportResult
     End Function
     Public Shared Function Export_ToXMLFile(Filepath As String, Source As Object) As Boolean
-        Dim NewPath As String = GameContent.HelperFunctions.XML.COH_HelperFunctions_XML.CleanupFileName(Filepath)
+        Dim NewPath As String = Helperfunctions.XML.COH_HelperFunctions_XML.CleanupFileName(Filepath)
         If IO.Directory.Exists(IO.Path.GetDirectoryName(NewPath)) = False Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(NewPath))
         Dim XMlString As String = ""
         Dim ExportResult As Boolean = Export_ToXMLFile_String(Source, XMlString, New COH_Serialization_Settings(True, COH_ExportFormat.XML))
@@ -161,7 +166,7 @@ Public NotInheritable Class COH_ModableContent
             Dim Test As COH_XML_Serialization = New COH_XML_Serialization(Settings)
             Result = Test.Serialize_ToXML(Source)
         Catch ex As Exception
-            COH_LibraryEventController.ShowErrorOccured_Exception(Internal.Events.COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Export XML", ex, True)
+            ' COH_LibraryEventController.ShowErrorOccured_Exception(Internal.Events.COH_Event_Error.COH_ErrorEvent.ControlledError, "Unable to Export XML", ex, True)
             ExportResult = False
         End Try
         Return ExportResult

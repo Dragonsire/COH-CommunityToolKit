@@ -1,8 +1,13 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.CodeManagement.Enums
+Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent.Structures
-Imports COH.Toolkit.Controls.WinForms.HelperFunctions.Lists
+Imports COH.GameContent.Structures.Resources.Textures
+Imports COH.Storage.Structures
+Imports COH.Storage.Structures.Generics
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_PowerSet_Editor
 
 #Region "Properties"
@@ -14,8 +19,8 @@ Namespace Editors
 #End Region
 
 #Region "Private Properties"
-       Private WithEvents mCurrent As Characters.Powers.COH_PowerSet
-       Private mIcon As Image
+        Private WithEvents mCurrent As Characters.Powers.COH_PowerSet
+        Private mIcon As Image
 #End Region
 
 #Region "Initialize"
@@ -145,14 +150,14 @@ Namespace Editors
 
             Edit_LockedKey.Text = mCurrent.SetAccountTooltip.Key
 
-            Fill_ListBox(Edit_PurchaseRequirements, mCurrent.SetBuyRequires)
-            Fill_ListBox(Edit_Costume_Keys, mCurrent.CostumeKeys)
-            Fill_ListBox(Edit_Costume_Parts, mCurrent.CostumeParts)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_PurchaseRequirements, mCurrent.SetBuyRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Costume_Keys, mCurrent.CostumeKeys)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Costume_Parts, mCurrent.CostumeParts)
             Edit_ShowInfo.Checked = mCurrent.ShowInInfo
             Edit_ShowManage.Checked = mCurrent.ShowInManage
             Edit_Shared.Checked = mCurrent.Shared
             Edit_SpecializedAt.Value = mCurrent.SpecializeAt
-            Fill_ListBox(Edit_SpecializedReq, mCurrent.SpecializeRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_SpecializedReq, mCurrent.SpecializeRequires)
             Edit_ForceLevel.Value = mCurrent.ForceLevelBought
             Select_Inventory.Text = mCurrent.ShowInInventory.ToString
             Select_PowerSystem.Text = mCurrent.System.ToString
@@ -168,10 +173,10 @@ Namespace Editors
             Dim FileNAme = ContentController.TheController_Assets.RetrieveAsset_FilePath(IO.Path.GetFileNameWithoutExtension(mCurrent.IconName), COH_Supported_ContentType.Unknown)
             If String.IsNullOrEmpty(FileNAme) = False Then
                 Dim theResource As COH_FileStructure = ContentController.TheController_Assets.RetrieveAsset_ImageStruct(FileNAme)
-                If TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_Texture Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_Texture).Extract_Resource_Texture)
-                ElseIf TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_TGA Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_TGA).Extract_Resource_Texture)
+                If TypeOf theResource Is COH_Resource_Texture Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_Texture).Extract_Resource_Texture)
+                ElseIf TypeOf theResource Is COH_Resource_TGA Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_TGA).Extract_Resource_Texture)
                 End If
                 PictureBox1.BackgroundImage = mIcon
             Else

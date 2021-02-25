@@ -1,18 +1,18 @@
-﻿Imports COH.GameContent
-Imports COH.GameContent.CodeManagement.Interfaces
-Imports COH.GameContent.Enums
-Imports COH.GameContent.HelperClasses.Wrappers
-Imports COH.GameContent.Storage.Controllers
-Imports COH.GameContent.Structures
+﻿Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.MeshRelated
 Imports COH.GameContent.Structures.Shared
+Imports COH.HelperClasses.Wrappers
+Imports COH.Storage.Controllers
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
+Imports COH.Toolkit.ProjectFiles
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Properties"
-        Public ReadOnly Property Cached_CurrentProjectFile As ProjectFiles.COH_ProjectFile Implements ISupport_MasterController.CurrentProjectFile
+        Public ReadOnly Property Cached_CurrentProjectFile As COH_ProjectFile Implements ISupport_MasterController.CurrentProjectFile
             Get
                 If mCached_CurrentProjectFile Is Nothing Then Return Nothing
                 Return Retrieve_CurrentPoject(False)
@@ -31,7 +31,7 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Private Properties"
-        Private mCached_CurrentProjectFile As ProjectFiles.COH_ProjectFile
+        Private mCached_CurrentProjectFile As COH_ProjectFile
         Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
         Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
 #End Region
@@ -40,14 +40,14 @@ Namespace Internal.ContentController
         Public Function Start_FreshProjectFile_Standard(Optional ShowMessage As Boolean = False) As Boolean
             mSettings.Reset_ToDefaultProject()
             mCached_CurrentProjectFile = CreateProjectFile_Standard()
-            If ProjectFiles.COH_ProjectFile.Export_XML_ProjectFolder(mSettings.CurrentProject_FilePath, mCached_CurrentProjectFile) = False Then
+            If COH_ProjectFile.Export_XML_ProjectFolder(mSettings.CurrentProject_FilePath, mCached_CurrentProjectFile) = False Then
 
             End If
             If ShowMessage = True Then ShowMessage_Simple("Standard Project Created")
             Return True
         End Function
-        Private Function CreateProjectFile_Standard() As ProjectFiles.COH_ProjectFile
-            Dim Result As New ProjectFiles.COH_ProjectFile
+        Private Function CreateProjectFile_Standard() As COH_ProjectFile
+            Dim Result As New COH_ProjectFile
             With Result
                 .Name = "CityofHeroes_StandardProject"
                 .Author = "Crytic/Paragon Studios Revised by Ouroboros"
@@ -149,13 +149,13 @@ Namespace Internal.ContentController
 #End Region
 
 #Region "Retrieve Standard / Official Project File"
-        Public Function Retrieve_CurrentPoject(Optional ShowMessage As Boolean = False) As ProjectFiles.COH_ProjectFile '//THIS WILL HAVE TO CHANGE TO STORE WHAT LAST PROJECT WAS SOMEWHERE, SETTINGS LIKELY
+        Public Function Retrieve_CurrentPoject(Optional ShowMessage As Boolean = False) As COH_ProjectFile '//THIS WILL HAVE TO CHANGE TO STORE WHAT LAST PROJECT WAS SOMEWHERE, SETTINGS LIKELY
             If Not mCached_CurrentProjectFile Is Nothing Then Return mCached_CurrentProjectFile
-            Dim Result As ProjectFiles.COH_ProjectFile = Nothing
+            Dim Result As COH_ProjectFile = Nothing
             If IO.File.Exists(mSettings.CurrentProject_FilePath) = False Then
                 Start_FreshProjectFile_Standard(False)
             Else
-                If ProjectFiles.COH_ProjectFile.Import_XMLFile(mSettings.CurrentProject_FilePath, Result) = False Then
+                If COH_ProjectFile.Import_XMLFile(mSettings.CurrentProject_FilePath, Result) = False Then
                 End If
             End If
             mCached_CurrentProjectFile = Result

@@ -12,7 +12,7 @@ Option Strict On
 Option Explicit On
 
 
-Namespace My
+Namespace Toolkit.Modding.My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0"),  _
@@ -56,17 +56,17 @@ Namespace My
     End Class
 End Namespace
 
-Namespace My
+Namespace Toolkit.Modding.My
     
     <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Module MySettingsProperty
-        
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.COH.Tools.Modding.My.MySettings
+
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>
+        Friend ReadOnly Property Settings() As My.MySettings
             Get
-                Return Global.COH.Tools.Modding.My.MySettings.Default
+                Return My.MySettings.Default
             End Get
         End Property
     End Module

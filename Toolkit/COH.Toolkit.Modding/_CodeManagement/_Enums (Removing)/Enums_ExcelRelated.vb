@@ -1,4 +1,4 @@
-﻿Namespace Enums
+﻿Namespace Toolkit.Modding.Enums
 
     Public Enum COH_CC_Fields_Excel
         Name

@@ -1,9 +1,10 @@
 ﻿Imports COH.GameContent.Internal.Events
-Imports COH.Toolkit.Controls.Forms
+Imports COH.Internal.Events
 Imports COH.Toolkit.Controls.WinForms.Dialogs
 Imports COH.Toolkit.Controls.WinForms.Internal
+Imports COH.Toolkit.Modding.Editors
+Imports COH.Tools.Controls.Forms
 Imports COH.Tools.Internal.Enums
-Imports COH.Tools.Modding.Editors
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
@@ -82,7 +83,7 @@ Namespace Internal.ContentController
             Dim NewEditor As New COH_CRC_Tool(Me)
             ShowWindow(NewEditor, True)
         End Sub
-        Public Sub OpenByteInspection(ByRef e As COH_EventResponse_StreamInspect) Handles mEventController.TriggerInspectStream
+        Public Sub OpenByteInspection(ByRef e As COH_EventResponse_StreamInspect) '///Handles mEventController.TriggerInspectStream
             Dim NewEditor As New Dialog_ByteView(Me)
             NewEditor.LoadStream(e.StreamReader)
             ShowWindow(NewEditor, True)
@@ -173,13 +174,13 @@ Namespace Internal.ContentController
 
 #Region "XML Editors"
         Public Function ViewXML(ByRef Source As String) As Boolean
-            Dim NewEditor As New Controls.WinForms.Dialogs.COH_XML_Viewer()
+            Dim NewEditor As New COH_XML_Viewer()
             NewEditor.ViewTex(Source, True)
             ShowWindow(NewEditor, False)
             Return True
         End Function
         Public Function ViewText(ByRef Source As String) As Boolean
-            Dim NewEditor As New Controls.WinForms.Dialogs.COH_XML_Viewer()
+            Dim NewEditor As New COH_XML_Viewer()
             NewEditor.ViewTex(Source, False)
             ShowWindow(NewEditor, False)
             Return True

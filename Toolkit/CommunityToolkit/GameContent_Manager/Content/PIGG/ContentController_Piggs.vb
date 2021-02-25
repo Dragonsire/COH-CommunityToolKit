@@ -1,4 +1,4 @@
-﻿Imports COH.Storage.PiggyBin.Utilities
+﻿Imports COH.Storage.Containers.PIGG.Utilities
 Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController

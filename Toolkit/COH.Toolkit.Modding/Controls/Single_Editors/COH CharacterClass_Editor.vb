@@ -1,10 +1,13 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent.Structures.Characters
 Imports COH.GameContent.Structures.Characters.Attributes
-Imports COH.Toolkit.Controls.WinForms.HelperFunctions.Lists
-Imports COH.Tools.Modding.HelperFunctions.Structs
+Imports COH.GameContent.Structures.Resources.Textures
+Imports COH.Storage.Structures
+Imports COH.Storage.Structures.Generics
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_CharacterClass_Editor
 
 #Region "Properties"
@@ -35,7 +38,7 @@ Namespace Editors
         Public Overrides Sub ConfigureUI()
             MyBase.ConfigureUI()
             Changes_Locked = True
-            Display_InCheckListBox_CharacterOrigins(Select_Allowed_Origins, ContentController)
+            Helperfunctions.Toolkit.Structs.Display_InCheckListBox_CharacterOrigins(Select_Allowed_Origins, ContentController)
             Display_InCombos()
             ConfigureUI_Tooltips()
             ConfigureUI_Table_BaseAttributes()
@@ -54,9 +57,9 @@ Namespace Editors
             AllAllowed_Restrictions.Add("Class_Lt_PraetorianGrunt")
             AllAllowed_Restrictions.Add("Class_Boss_PraetorianGrunt")
             AllAllowed_Restrictions.Add("Class_Boss_PraetorianElite")
-            Fill_ComboBox(Select_EpicPool, AllAllowed_Epic)
-            Fill_ComboBox(Select_Pool, AllAllowed_Pool)
-            Fill_ChecklistBox(Select_Restrictions, AllAllowed_Restrictions)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ComboBox(Select_EpicPool, AllAllowed_Epic)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ComboBox(Select_Pool, AllAllowed_Pool)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ChecklistBox(Select_Restrictions, AllAllowed_Restrictions)
         End Sub
         Private Sub ConfigureUI_Tooltips()
             With FormToolTip
@@ -233,10 +236,10 @@ Namespace Editors
             Dim FileNAme = ContentController.TheController_Assets.RetrieveAsset_FilePath(IO.Path.GetFileNameWithoutExtension(mCharacterClass_Current.Icon), COH_Supported_ContentType.Unknown)
             If String.IsNullOrEmpty(FileNAme) = False Then
                 Dim theResource As COH_FileStructure = ContentController.TheController_Assets.RetrieveAsset_ImageStruct(FileNAme)
-                If TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_Texture Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_Texture).Extract_Resource_Texture)
-                ElseIf TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_TGA Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_TGA).Extract_Resource_Texture)
+                If TypeOf theResource Is COH_Resource_Texture Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_Texture).Extract_Resource_Texture)
+                ElseIf TypeOf theResource Is COH_Resource_TGA Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_TGA).Extract_Resource_Texture)
                 End If
                 PictureBox1.BackgroundImage = mIcon
             Else

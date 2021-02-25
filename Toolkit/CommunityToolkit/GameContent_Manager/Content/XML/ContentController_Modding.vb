@@ -1,4 +1,7 @@
-﻿Namespace Internal.ContentController
+﻿Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
+
+Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController
 
 #Region "Retrieve Content"
@@ -46,12 +49,12 @@
             Next
             Return Results
         End Function
-        Public Function Retrieve_ModableContent_FromFileName(TheType As Type, FilePath As String, ByRef Result As Modding.COH_ModableContent) As Boolean
+        Public Function Retrieve_ModableContent_FromFileName(TheType As Type, FilePath As String, ByRef Result As COH_ModableContent) As Boolean
             Dim Content As COH_FileStructure = Nothing
             If COH_FileStructure.Import_COHStruct_FromXMLFile(FilePath, TheType, Content) = False Then
                 Return False
             End If
-            Result = New Modding.COH_ModableContent
+            Result = New COH_ModableContent
             Result.Content = Content
             Return True
         End Function

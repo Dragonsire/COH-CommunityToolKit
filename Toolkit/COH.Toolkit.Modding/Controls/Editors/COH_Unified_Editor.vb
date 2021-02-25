@@ -1,13 +1,15 @@
 ﻿Imports COH.GameContent.Enums
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 Imports COH.Tools.Modding.HelperFunctions.Structs
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_EditModdableContent
 
 #Region "Private Properties"
-       Private mFileSource As String
-       Private mEditingControl As COH_ModdableContent_Editor
-       Private mContent As COH_ModableContent
+        Private mFileSource As String
+        Private mEditingControl As COH_ModdableContent_Editor
+        Private mContent As COH_ModableContent
 #End Region
 
 #Region "Initialize"
@@ -44,7 +46,7 @@ Namespace Editors
             Changes_Locked = True
             Application.DoEvents()
             Cursor.Current = Cursors.WaitCursor
-            Display_InTreeView_Unified(TreeView1, ContentController, Edit_ShowAllPowers.Checked)
+            Helperfunctions.Toolkit.Structs.Display_InTreeView_Unified(TreeView1, ContentController, Edit_ShowAllPowers.Checked)
             Cursor.Current = Cursors.Default
             Changes_Locked = False
         End Sub

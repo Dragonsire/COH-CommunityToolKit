@@ -1,4 +1,5 @@
 ﻿Imports COH.GameContent.Structures.Characters
+Imports COH.Toolkit.Modding.Enums
 Imports System.Data
 
 Namespace ImportTools.Excel

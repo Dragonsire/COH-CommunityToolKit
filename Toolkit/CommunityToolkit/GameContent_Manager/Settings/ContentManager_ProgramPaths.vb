@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.Toolkit.Enums
 Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController.Settings

@@ -1,8 +1,12 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.CodeManagement.Enums
+Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent.Structures.Characters.Powers
-Imports COH.Toolkit.Controls.WinForms.HelperFunctions.Lists
+Imports COH.GameContent.Structures.Resources.Textures
+Imports COH.Storage.Structures
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_Power_Editor
 
 #Region "Properties"
@@ -123,10 +127,10 @@ Namespace Editors
             Dim FileNAme = ContentController.TheController_Assets.RetrieveAsset_FilePath(IO.Path.GetFileNameWithoutExtension(mCurrent.IconName), COH_Supported_ContentType.Unknown)
             If String.IsNullOrEmpty(FileNAme) = False Then
                 Dim theResource As COH_FileStructure = ContentController.TheController_Assets.RetrieveAsset_ImageStruct(FileNAme)
-                If TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_Texture Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_Texture).Extract_Resource_Texture)
-                ElseIf TypeOf theResource Is GameContent.Resources.Structures.Textures.COH_Resource_TGA Then
-                    mIcon = New Bitmap(TryCast(theResource, GameContent.Resources.Structures.Textures.COH_Resource_TGA).Extract_Resource_Texture)
+                If TypeOf theResource Is COH_Resource_Texture Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_Texture).Extract_Resource_Texture)
+                ElseIf TypeOf theResource Is COH_Resource_TGA Then
+                    mIcon = New Bitmap(TryCast(theResource, COH_Resource_TGA).Extract_Resource_Texture)
                 End If
                 PictureBox1.BackgroundImage = mIcon
             Else
@@ -155,7 +159,7 @@ Namespace Editors
             CoH_ColorSelection1.Select_Color(mCurrent.HighlightRing.Convert_To_Color)
             Check_RefreshPlayerChange.Checked = mCurrent.RefreshesOnActivePlayerChange
             Edit_HilightIcon.Text = mCurrent.HighlightIcon
-            Fill_ListBox(EditList_HighlightEval, Array.ConvertAll(mCurrent.HighlightEval, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(EditList_HighlightEval, Array.ConvertAll(mCurrent.HighlightEval, Function(e) e.ToString()))
             '//Animation
             Check_DontSetStance.Checked = mCurrent.DontSetStance
             Check_AnimateMain.Checked = mCurrent.AnimMainTargetOnly
@@ -186,8 +190,8 @@ Namespace Editors
             Select_EffectArea.Text = mCurrent.EffectArea
             Check_Target_VisionPhase.Checked = mCurrent.TargetsThroughVisionPhase
             Edit_Accuracy.Value = mCurrent.Accuracy
-            Fill_ListBox(Edit_Ents_Auto, Array.ConvertAll(mCurrent.EntsAutoHit, Function(e) e.ToString()))
-            Fill_ListBox(Edit_Ents_Affected, Array.ConvertAll(mCurrent.EntsAffected, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Ents_Auto, Array.ConvertAll(mCurrent.EntsAutoHit, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Ents_Affected, Array.ConvertAll(mCurrent.EntsAffected, Function(e) e.ToString()))
         End Sub
         Private Sub Display_Power_Usage()
             Check_AbusiveBuff.Checked = mCurrent.AbusiveBuff
@@ -195,8 +199,8 @@ Namespace Editors
             Select_PowerSystem.Text = mCurrent.System.ToString
             Select_PowerType.Text = mCurrent.Type.ToString
             Edit_NumAllowed.Value = mCurrent.NumAllowed
-            Fill_ListBox(Edit_AttackTypes, Array.ConvertAll(mCurrent.AttackTypes, Function(e) e.ToString()))
-            Fill_ListBox(Edit_PowerGroup, Array.ConvertAll(mCurrent.GroupMembership, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_AttackTypes, Array.ConvertAll(mCurrent.AttackTypes, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_PowerGroup, Array.ConvertAll(mCurrent.GroupMembership, Function(e) e.ToString()))
             Edit_ChainPower.Text = mCurrent.ChainIntoPower
             Edit_StoreProduct.Text = mCurrent.StoreProduct
             Edit_Slot_Min.Value = mCurrent.MinSlotLevel
@@ -257,7 +261,7 @@ Namespace Editors
             Edit_Boost_License.Value = mCurrent.BoostLicenseLevel
             Edit_Boost_MaxLevel.Value = mCurrent.MaxBoostLevel
             Check_Boost_Boostable.Checked = mCurrent.BoostBoostable
-            Fill_ListBox(EditList_BoostsAllowed, Array.ConvertAll(mCurrent.BoostsAllowed, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(EditList_BoostsAllowed, Array.ConvertAll(mCurrent.BoostsAllowed, Function(e) e.ToString()))
         End Sub
         Private Sub Display_Power_AI()
             Edit_AI_Point.Value = mCurrent.PointValue
@@ -271,16 +275,16 @@ Namespace Editors
             Check_Free.Checked = mCurrent.Free
             Check_AutoIssue.Checked = mCurrent.AutoIssue
             Check_AutoIssueSaveLevel.Checked = mCurrent.AutoIssueSaveLevel
-            Fill_ListBox(Edit_Requires_Activate, mCurrent.ActivateRequires)
-            Fill_ListBox(Edit_Requires_Auction, mCurrent.AuctionRequires)
-            Fill_ListBox(Edit_Requires_Buy, mCurrent.BuyRequires)
-            Fill_ListBox(Edit_Requires_Confirm, mCurrent.ConfirmRequires)
-            Fill_ListBox(Edit_Requires_Reward, mCurrent.RewardRequires)
-            Fill_ListBox(Edit_Requires_Slot, mCurrent.SlotRequires)
-            Fill_ListBox(Edit_Requires_Target, mCurrent.TargetRequires)
-            Fill_ListBox(EditList_Modes_Required, Array.ConvertAll(mCurrent.ModesRequired, Function(e) e.ToString()))
-            Fill_ListBox(EditList_Modes_Disallowed, Array.ConvertAll(mCurrent.ModesDisallowed, Function(e) e.ToString()))
-            Fill_ListBox(EditList_StrengthDis, Array.ConvertAll(mCurrent.StrengthsDisallowed, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Activate, mCurrent.ActivateRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Auction, mCurrent.AuctionRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Buy, mCurrent.BuyRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Confirm, mCurrent.ConfirmRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Reward, mCurrent.RewardRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Slot, mCurrent.SlotRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(Edit_Requires_Target, mCurrent.TargetRequires)
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(EditList_Modes_Required, Array.ConvertAll(mCurrent.ModesRequired, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(EditList_Modes_Disallowed, Array.ConvertAll(mCurrent.ModesDisallowed, Function(e) e.ToString()))
+            Helperfunctions.Toolkit.Controls.Lists.Fill_ListBox(EditList_StrengthDis, Array.ConvertAll(mCurrent.StrengthsDisallowed, Function(e) e.ToString()))
         End Sub
         Private Sub Display_Power_Variables()
             With View_Variables

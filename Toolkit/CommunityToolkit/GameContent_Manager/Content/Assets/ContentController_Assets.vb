@@ -1,4 +1,4 @@
-﻿Imports COH.GameContent.Resources
+﻿Imports COH.Toolkit.CodeManagement.Interfaces
 Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController

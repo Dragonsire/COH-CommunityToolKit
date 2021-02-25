@@ -1,4 +1,4 @@
-﻿Namespace Enums.Villians
+﻿Namespace Toolkit.Modding.Enums.Villians
     Public Enum COH_CC_Villians_Groups
         FifththColumn '5thColumn
         AntiMatter

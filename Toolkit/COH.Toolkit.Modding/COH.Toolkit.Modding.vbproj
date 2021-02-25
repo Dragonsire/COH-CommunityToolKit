@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.Tools.Modding</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0-windows</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>
@@ -42,7 +42,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="_Internal\Constants\" />
+    <Compile Remove="_Internal\**" />
+    <EmbeddedResource Remove="_Internal\**" />
+    <None Remove="_Internal\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,7 +70,13 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
     <ProjectReference Include="..\COH.Toolkit.Controls.Forms\COH.Toolkit.Controls.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit.Controls.WPF\COH.Tools.WPFControls.vbproj" />
+    <ProjectReference Include="..\COH.Toolkit.Controls.WPF\COH.Toolkit.WPFControls.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

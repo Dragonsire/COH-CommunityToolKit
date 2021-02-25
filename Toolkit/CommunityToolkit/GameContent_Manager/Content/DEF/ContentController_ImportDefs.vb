@@ -1,4 +1,5 @@
-﻿Imports COH.Tools.HelperFunctions.Defs
+﻿Imports COH.Toolkit.Enums
+Imports COH.Tools.HelperFunctions.Defs
 Imports COH.Tools.Internal.Enums
 
 Namespace Internal.ContentController

@@ -1,4 +1,5 @@
-﻿Imports COH.GameContent.Enums
+﻿Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController

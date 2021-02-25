@@ -1,7 +1,4 @@
-﻿Imports COH.GameContent.Structures.LanguageFiles
-Imports COH.GameContent.Structures.PowerSets
-Imports COH.GameContent.Structures.CharacterClasses
-Imports COH.GameContent.Enums
+﻿Imports COH.Toolkit.Enums
 
 Namespace HelperFunctions.Defs
     Partial Public Class COH_DefReader

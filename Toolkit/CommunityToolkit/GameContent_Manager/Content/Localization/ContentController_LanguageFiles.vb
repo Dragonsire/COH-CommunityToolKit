@@ -1,4 +1,6 @@
 ﻿Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController

@@ -1,10 +1,9 @@
-﻿Imports COH.Tools.Controls
-Imports COH.Toolkit.Controls.WinForms
+﻿Imports COH.Toolkit.Controls.WinForms.Internal
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class COH_EditModdableContent
-        Inherits WinForms.Internal.COH_FormTemplate
+        Inherits COH_FormTemplate
 
         'Form overrides dispose to clean up the component list.
         <System.Diagnostics.DebuggerNonUserCode()>

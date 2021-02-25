@@ -97,7 +97,7 @@ Namespace Internal.ContentController.Settings
 
 #Region "Import/Export"
         Public Shared Function Export_XML_Settings(FilePAth As String, ByRef Item As ContentManager_Settings) As Boolean
-            If GameContent.HelperFunctions.XML.Export_XMLFile(FilePAth, Item) = False Then
+            If COH.Helperfunctions.XML.Export_XMLFile(FilePAth, Item) = False Then
                 Return False
             End If
             Return True

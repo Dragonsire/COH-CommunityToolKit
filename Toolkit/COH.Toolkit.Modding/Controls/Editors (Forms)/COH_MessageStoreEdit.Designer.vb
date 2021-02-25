@@ -1,8 +1,9 @@
-﻿Imports COH.Tools.Controls
-Namespace Editors
+﻿Imports COH.Toolkit.Controls.WinForms.Internal
+
+Namespace Toolkit.Modding.Editors
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class COH_MessageStoreEdit
-        Inherits WinForms.Internal.COH_FormTemplate
+        Inherits COH_FormTemplate
 
         'Form overrides dispose to clean up the component list.
         <System.Diagnostics.DebuggerNonUserCode()>

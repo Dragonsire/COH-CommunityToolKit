@@ -2,8 +2,11 @@
 Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Characters.Powers
 Imports COH.GameContent.Structures.Powers
+Imports COH.Storage.Structures
+Imports COH.Toolkit.CodeManagement.Interfaces
+Imports COH.Toolkit.Enums
 
-Namespace Editors
+Namespace Toolkit.Modding.Editors
     Public Class COH_CategoryEditor
 
 #Region "Properties"
@@ -15,7 +18,7 @@ Namespace Editors
 #End Region
 
 #Region "Private Properties"
-       Private WithEvents mCurrent As COH_PowerCategory
+        Private WithEvents mCurrent As COH_PowerCategory
 #End Region
 
 #Region "Initialize"
