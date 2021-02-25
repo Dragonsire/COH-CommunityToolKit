@@ -1,6 +1,6 @@
 ﻿Imports System.Xml.Serialization
 
-Namespace Structures.LanguageFiles
+Namespace GameContent.MessageStores.Structures.LanguageFiles
     Public NotInheritable Class COH_MessageStore_Entry
 
 #Region "Properties"
@@ -68,13 +68,13 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-       Private mMessage As String
-       Private mHelpMessage As String
-       Private mMessageID As String ' The message ID associated with the message.  For debugging convenience.
-       Private mMessageIndex As Integer 'The message index into a string table,  to be printed as double-byte strings.
-       Private mHelpIndex As Integer 'The help index into a string table,  to be printed as double-byte strings.
-       Private mVariableDefNameIndices As List(Of COH_MessageStore_EntryVariable)
-       Private mCustomContent As Boolean
+        Private mMessage As String
+        Private mHelpMessage As String
+        Private mMessageID As String ' The message ID associated with the message.  For debugging convenience.
+        Private mMessageIndex As Integer 'The message index into a string table,  to be printed as double-byte strings.
+        Private mHelpIndex As Integer 'The help index into a string table,  to be printed as double-byte strings.
+        Private mVariableDefNameIndices As List(Of COH_MessageStore_EntryVariable)
+        Private mCustomContent As Boolean
 #End Region
 
 #Region "Create New Instance"

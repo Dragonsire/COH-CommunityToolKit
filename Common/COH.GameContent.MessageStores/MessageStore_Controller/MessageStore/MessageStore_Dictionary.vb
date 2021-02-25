@@ -1,6 +1,6 @@
 ﻿Imports System.Xml.Serialization
 
-Namespace Structures.LanguageFiles
+Namespace GameContent.MessageStores.Structures.LanguageFiles
     <XmlRoot("COH_MessageStoreDictionary")>
     Public Class COH_MessageStore_Dictionary
         Inherits Dictionary(Of String, COH_MessageStore_Entry)

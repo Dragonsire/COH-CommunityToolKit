@@ -1,6 +1,6 @@
 ﻿Imports System.Xml.Serialization
 
-Namespace Structures.LanguageFiles
+Namespace GameContent.MessageStores.Structures.LanguageFiles
     Public Class COH_MessageStore_EntryVariable
 
 #Region "Properties"
@@ -35,8 +35,8 @@ Namespace Structures.LanguageFiles
 
 #Region "Private Properties"
         <EditorBrowsable(Global.COH.GameContent.Internal.DeveloperOptions.COH_DeveloperMode_ShowPrivate)> Private mIndex As Integer
-       Private mVariable As String
-       Private mFormat As String
+        Private mVariable As String
+        Private mFormat As String
 #End Region
 
 #Region "Properties"

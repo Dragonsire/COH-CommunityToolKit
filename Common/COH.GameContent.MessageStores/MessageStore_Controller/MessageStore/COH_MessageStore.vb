@@ -1,13 +1,11 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.HelperClasses.Wrappers
+Imports COH.CodeManagement.Enums.Structures
 Imports COH.Storage.Serialization
 Imports COH.Storage.Serialization.Configuration
-Imports COH.GameContent.Structures.COH_FileStructure
-Imports COH.GameContent.Utilities
 
-Namespace Structures.LanguageFiles
+
+Namespace GameContent.MessageStores.Structures.LanguageFiles
     Public NotInheritable Class COH_MessageStore
 
 #Region "Properties"
@@ -55,14 +53,14 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-       Private mLastSearchIndex As Integer = -1
-       Private mfileSource As String
-       Private mName As String
-       Private mVersion As UInteger
-       Private mNumBytes As UInteger
-       Private mMessages As List(Of String)
-       Private mVariables As List(Of String)
-       Private mMessageDetails As COH_MessageStore_Dictionary
+        Private mLastSearchIndex As Integer = -1
+        Private mfileSource As String
+        Private mName As String
+        Private mVersion As UInteger
+        Private mNumBytes As UInteger
+        Private mMessages As List(Of String)
+        Private mVariables As List(Of String)
+        Private mMessageDetails As COH_MessageStore_Dictionary
 #End Region
 
 #Region "Create New Instance"

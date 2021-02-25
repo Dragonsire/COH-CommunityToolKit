@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.CodeManagement.Interfaces.Structures
+﻿Imports COH.CodeManagement.Interfaces.Structures
 
-Namespace Structures.LanguageFiles
+Namespace GameContent.MessageStores.Structures.LanguageFiles
     Public Class COH_LocalizeContent_Controller
         Implements ISupport_COH_LocalizeContent
 
@@ -16,7 +16,7 @@ Namespace Structures.LanguageFiles
 #End Region
 
 #Region "Private Properties"
-       Private mMessageStores As List(Of KeyValuePair(Of String, COH_MessageStore))
+        Private mMessageStores As List(Of KeyValuePair(Of String, COH_MessageStore))
 #End Region
 
 #Region "Create New Instance"

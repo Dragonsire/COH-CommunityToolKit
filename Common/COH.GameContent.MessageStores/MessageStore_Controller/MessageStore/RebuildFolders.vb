@@ -1,4 +1,4 @@
-﻿Namespace LanguageFiles.Folders
+﻿Namespace GameContent.MessageStores.LanguageFiles.Folders
     <HideModuleName> Public Module COH_RebuildFolders
 
         Public Sub Rebuild_FolderStructure()

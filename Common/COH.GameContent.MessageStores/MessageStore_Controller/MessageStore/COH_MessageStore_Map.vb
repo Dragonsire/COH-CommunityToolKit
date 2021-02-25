@@ -1,4 +1,4 @@
-﻿Namespace Structures.LanguageFiles
+﻿Namespace GameContent.MessageStores.Structures.LanguageFiles
     Partial Public NotInheritable Class COH_MessageStore
 
 #Region "CreateMap"
