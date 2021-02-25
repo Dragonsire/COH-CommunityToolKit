@@ -1,4 +1,6 @@
-﻿Imports COH.GameContent.Resources.Structures_Simplified
+﻿Imports COH.GameContent.Structures.Resources.Anim
+Imports COH.GameContent.Structures.Resources.Textures
+Imports COH.GameContent.Structures.Resources_Simplified
 
 Public Class COH_ResourceAssets_Controller
     Implements ISupport_COH_AssetRetrieval
@@ -39,12 +41,12 @@ Public Class COH_ResourceAssets_Controller
 #End Region
 
 #Region "Private Properties"
-   Private mRootFolder As String
-   Private mBonesFolder As String
-   Private mTextures As Dictionary(Of String, String)
-   Private mTGA As Dictionary(Of String, String)
-   Private mAnim As Dictionary(Of String, String)
-   Private mBones As Dictionary(Of String, COH_Resource_GEO_Skeleton)
+    Private mRootFolder As String
+    Private mBonesFolder As String
+    Private mTextures As Dictionary(Of String, String)
+    Private mTGA As Dictionary(Of String, String)
+    Private mAnim As Dictionary(Of String, String)
+    Private mBones As Dictionary(Of String, COH_Resource_GEO_Skeleton)
 #End Region
 
 #Region "Create New Instance"
@@ -132,13 +134,13 @@ Public Class COH_ResourceAssets_Controller
                 Return RetrieveAsset_ImageStruct(FilePath)
         End Select
     End Function
-    Public Function RetrieveAsset_Texture(FilePath As String) As Structures.Textures.COH_Resource_Texture
-        Dim Result = New Structures.Textures.COH_Resource_Texture
+    Public Function RetrieveAsset_Texture(FilePath As String) As COH_Resource_Texture
+        Dim Result = New COH_Resource_Texture
         Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_ExportFormat.Binary))
         Return Result
     End Function
-    Public Function RetrieveAsset_TGA(FilePath As String) As Structures.Textures.COH_Resource_TGA
-        Dim Result = New Structures.Textures.COH_Resource_TGA
+    Public Function RetrieveAsset_TGA(FilePath As String) As COH_Resource_TGA
+        Dim Result = New COH_Resource_TGA
         Result.Import_From_File(FilePath, New COH_Serialization_Settings(True, COH_ExportFormat.Binary))
         Return Result
     End Function
@@ -182,9 +184,9 @@ Public Class COH_ResourceAssets_Controller
         Dim FoundBones As New Dictionary(Of String, COH_Resource_GEO_Skeleton)
         Dim Files = IO.Directory.GetFiles(mRootFolder, "*.anim", IO.SearchOption.AllDirectories)
         Dim SkelName As String = ""
-        If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Files.Count, "Searching ANIM Files For Skeletons")
+        '' If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Files.Count, "Searching ANIM Files For Skeletons")
         For Each File In Files
-            Dim Existing As New Structures.Anim.COH_Resource_Anim
+            Dim Existing As New COH_Resource_Anim
             If Existing.Import_From_File(IO.Path.GetFileName(File), IO.Path.GetDirectoryName(File), COH_ExportFormat.Binary) = True Then
                 If Not (Existing.SkeletonTrack.Skeleton_Heirarchy Is Nothing) Then
                     SkelName = Existing.SkeletonTrack.Name_BaseAnimation
@@ -200,9 +202,9 @@ Public Class COH_ResourceAssets_Controller
                     End If
                 End If
             End If
-            If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, SkelName)
+            ''If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, SkelName)
         Next
-        If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Files.Count)
+        '''If ShowProgress = True Then ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Files.Count)
     End Sub
 #End Region
 

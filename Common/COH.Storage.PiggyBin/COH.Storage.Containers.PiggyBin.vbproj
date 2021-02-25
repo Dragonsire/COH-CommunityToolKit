@@ -89,7 +89,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj" />
-    <ProjectReference Include="..\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
+    <ProjectReference Include="..\COH.GameContent.Resources\COH.GameContent.Structures.Resources.vbproj" />
     <ProjectReference Include="..\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
     <ProjectReference Include="..\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />

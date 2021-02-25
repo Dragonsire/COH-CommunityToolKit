@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.Structures.Enums
+﻿Imports COH.CodeManagement.Enums
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_BasicTexture_BlendModeType
 
 #Region "Private Properties"

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.GameContent.Resources</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>

@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.Resources.Structures.Resources
+﻿Imports COH.CodeManagement.Enums
 
-Namespace Structures.GEO
+Namespace GameContent.Structures.Resources.GEO
     Public Class COH_Resource_GEO_ModelonDiskv2
         Inherits COH_FileStructure
 
@@ -63,7 +63,7 @@ Namespace Structures.GEO
 #End Region
 
 #Region "Import / Export"
-    Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             Throw New NotImplementedException()
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean

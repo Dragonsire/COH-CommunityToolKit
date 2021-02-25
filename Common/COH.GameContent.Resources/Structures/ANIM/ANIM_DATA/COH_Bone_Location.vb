@@ -1,4 +1,6 @@
-﻿Namespace Structures.Anim
+﻿Imports COH.CodeManagement.Enums
+
+Namespace GameContent.Structures.Resources.Anim
     Public Class COH_Skeleton_BoneLocation
         Inherits COH_FileStructure
 

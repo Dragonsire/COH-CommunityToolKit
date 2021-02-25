@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.Resources.Structures.GEO
+﻿Imports COH.GameContent.Structures.Resources.GEO
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_GenericMesh
 
 #Region "Enums" '//Move Later

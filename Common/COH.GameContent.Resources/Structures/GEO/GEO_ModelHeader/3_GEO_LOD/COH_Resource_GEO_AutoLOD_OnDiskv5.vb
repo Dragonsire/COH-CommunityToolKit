@@ -1,6 +1,7 @@
-﻿Imports COH.GameContent.Structures.Enums
+﻿Imports COH.CodeManagement.Enums
+Imports COH.GameContent.Structures.Enums
 
-Namespace Structures.GEO
+Namespace GameContent.Structures.Resources.GEO
     Public NotInheritable Class COH_Resource_GEO_AutoLOD_OnDiskv5
         Inherits COH_FileStructure
 

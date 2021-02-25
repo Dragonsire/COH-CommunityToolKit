@@ -1,4 +1,4 @@
-﻿Namespace Structures.GEO
+﻿Namespace GameContent.Structures.Resources.GEO
     Public NotInheritable Class COH_Resource_GEO_ModelLOD_OnDiskv5
         Inherits COH_FileStructure
 

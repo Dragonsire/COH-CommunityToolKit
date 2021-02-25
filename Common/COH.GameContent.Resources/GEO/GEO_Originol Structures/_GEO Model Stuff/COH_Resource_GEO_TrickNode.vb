@@ -1,4 +1,4 @@
-﻿Namespace Structures.Resources
+﻿Namespace GameContent.Structures.Resources
     Public Class COH_Resource_GEO_Animation_TrickNode
 
 #Region "Private Properties"

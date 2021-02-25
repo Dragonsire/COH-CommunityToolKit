@@ -1,6 +1,7 @@
-﻿Imports COH.GameContent.Resources.Structures_Simplified
+﻿Imports COH.CodeManagement.Enums
+Imports COH.GameContent.Structures.Resources_Simplified
 
-Namespace Structures.Anim
+Namespace GameContent.Structures.Resources.Anim
     Public Class COH_Resource_Anim
         Inherits COH_FileStructure
 

@@ -1,6 +1,6 @@
 ﻿Imports COH.TOOLS.GameContent.HelperClasses
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_BasicTexture_cTri
 
 #Region "Private Properties"

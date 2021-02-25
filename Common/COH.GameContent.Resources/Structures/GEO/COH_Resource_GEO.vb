@@ -1,4 +1,4 @@
-﻿Namespace Structures.GEO
+﻿Namespace GameContent.Structures.Resources.GEO
     Public Class COH_Resource_GEO
         Inherits COH_FileStructure
 

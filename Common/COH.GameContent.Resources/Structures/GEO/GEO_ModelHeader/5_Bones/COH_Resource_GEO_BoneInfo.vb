@@ -1,4 +1,6 @@
-﻿Namespace Structures.Resources
+﻿Imports COH.CodeManagement.Enums
+
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_GEO_BoneInfo
         Inherits COH_FileStructure
 
@@ -71,7 +73,7 @@
 #End Region
 
 #Region "Import / Export"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             Throw New NotImplementedException()
         End Function
         Protected Overrides Function Read_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean

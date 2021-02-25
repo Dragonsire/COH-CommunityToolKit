@@ -1,6 +1,7 @@
-﻿Imports COH.GameContent.Resources.Structures.Textures.COH_Resource_Texture_Header
+﻿Imports COH.CodeManagement.Enums
+Imports COH.GameContent.Structures.Resources.Textures.COH_Resource_Texture_Header
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_BasicTexture_Bind
 
         Const TEXLAYER_MAX_LAYERS = 11

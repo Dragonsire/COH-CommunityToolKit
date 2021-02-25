@@ -1,4 +1,6 @@
-﻿Namespace Structures_Simplified
+﻿Imports COH.CodeManagement.Enums
+
+Namespace GameContent.Structures.Resources_Simplified
     Public NotInheritable Class COH_Resource_GEO_Skeleton
         Inherits COH_FileStructure
 
@@ -9,7 +11,7 @@
             End Get
         End Property
         Property Name As String
-        Property Root As Enums.GEO_Enums_MESH_BoneId
+        Property Root As GEO_Enums_MESH_BoneId
         Property NumberBonesUsed As UInt32
         Property Bones As COH_Resource_GEO_SkeletonBone()
 #End Region

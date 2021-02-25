@@ -1,7 +1,7 @@
 ﻿Imports COH.CodeManagement.Enums.Structures
 Imports COH.HelperClasses
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_GEO_VertexBuffer
         Inherits COH_FileStructure
 

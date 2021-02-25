@@ -1,4 +1,4 @@
-﻿Namespace Structures.Textures
+﻿Namespace GameContent.Structures.Resources.Textures
     Public Class COH_Resource_Texture_MipHeader
 
 #Region "Enums"

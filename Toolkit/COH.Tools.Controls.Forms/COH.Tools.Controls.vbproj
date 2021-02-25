@@ -75,7 +75,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj" />
-    <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Resources.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Structures.Resources.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />

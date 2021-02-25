@@ -1,6 +1,6 @@
-﻿Imports COH.GameContent.Resources.Structures.Resources
+﻿Imports COH.GameContent.Structures.Resources
 
-Namespace Structures.GEO
+Namespace GameContent.Structures.Resources.GEO
     Public NotInheritable Class COH_Resource_GEO_PackData_UnPack
 
 #Region "Properties"

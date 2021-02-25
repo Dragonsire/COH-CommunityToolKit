@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace Structures.Textures
+Namespace GameContent.Structures.Resources.Textures
     Public Class COH_Resource_TGA
         Inherits COH_FileStructure
 

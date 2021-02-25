@@ -1,4 +1,6 @@
-﻿Namespace Structures_Simplified
+﻿Imports COH.CodeManagement.Enums
+
+Namespace GameContent.Structures.Resources_Simplified
     Public NotInheritable Class COH_Resource_GEO_SkeletonBone
         Inherits COH_FileStructure
 
@@ -10,7 +12,7 @@
         End Property
         <Xml.Serialization.XmlAttribute> Property BoneIndex As Integer
         <Xml.Serialization.XmlAttribute> Property ParentIndex As Integer
-        <Xml.Serialization.XmlAttribute> Property ID As Enums.GEO_Enums_MESH_BoneId
+        <Xml.Serialization.XmlAttribute> Property ID As GEO_Enums_MESH_BoneId
         <Xml.Serialization.XmlIgnore> Property Children As List(Of COH_Resource_GEO_SkeletonBone)
         Property Bones As COH_Resource_GEO_SkeletonBone()
             Get
@@ -20,10 +22,10 @@
                 Children = value.ToList
             End Set
         End Property
-        Property FirstPosition As GameContent.HelperClasses.COH_Struct_Vector3
-        Property FirstRotation As GameContent.HelperClasses.COH_Struct_Quat
-        Property ConnectedPosition As GameContent.HelperClasses.COH_Struct_Vector3
-        Property ConnectedRotation As GameContent.HelperClasses.COH_Struct_Quat
+        Property FirstPosition As COH_Struct_Vector3
+        Property FirstRotation As COH_Struct_Quat
+        Property ConnectedPosition As COH_Struct_Vector3
+        Property ConnectedRotation As COH_Struct_Quat
 #End Region
 
 #Region "Create New Instances"

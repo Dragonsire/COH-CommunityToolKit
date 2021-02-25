@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace Structures.BIN
+Namespace GameContent.Structures.Resources.BIN
     Public Class COH_Resource_BIN
         Inherits COH_FileStructure
 

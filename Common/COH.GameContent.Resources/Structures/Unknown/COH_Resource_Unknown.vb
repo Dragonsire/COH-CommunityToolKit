@@ -1,4 +1,4 @@
-﻿Namespace Structures.Other
+﻿Namespace GameContent.Structures.Resources.Other
     Public Class COH_Resource_Unknown
         Inherits COH_FileStructure
 

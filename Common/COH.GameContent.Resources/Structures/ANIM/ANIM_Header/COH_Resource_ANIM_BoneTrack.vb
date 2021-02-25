@@ -1,7 +1,7 @@
 ﻿Imports System.Xml.Serialization
-Imports COH.GameContent.Structures.Enums
+Imports COH.CodeManagement.Enums
 
-Namespace Structures.Anim
+Namespace GameContent.Structures.Resources.Anim
     Public Class COH_Resource_ANIM_BoneTrack
         Inherits COH_FileStructure
 

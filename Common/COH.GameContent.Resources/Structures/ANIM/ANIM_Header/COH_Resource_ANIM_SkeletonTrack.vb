@@ -1,6 +1,7 @@
-﻿Imports COH.GameContent.Structures.Enums
+﻿Imports COH.CodeManagement.Enums
+Imports COH.GameContent.Structures.Enums
 
-Namespace Structures.Anim
+Namespace GameContent.Structures.Resources.Anim
     Public Class COH_Resource_ANIM_SkeletonTrack
         Inherits COH_FileStructure
 

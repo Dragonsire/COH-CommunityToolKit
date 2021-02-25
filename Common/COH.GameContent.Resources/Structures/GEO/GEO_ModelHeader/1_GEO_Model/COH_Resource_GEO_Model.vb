@@ -1,9 +1,10 @@
-﻿Imports COH.GameContent.Resources.Structures.Resources
+﻿Imports COH.GameContent.Structures.Resources
 Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Enums
 Imports COH.HelperClasses
+Imports COH.CodeManagement.Enums
 
-Namespace Structures.GEO
+Namespace GameContent.Structures.Resources.GEO
     Public Class COH_Resource_GEOModel
         Inherits COH_FileStructure
 

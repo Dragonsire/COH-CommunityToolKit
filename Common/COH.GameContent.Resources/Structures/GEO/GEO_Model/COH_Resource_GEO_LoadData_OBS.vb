@@ -1,8 +1,9 @@
-﻿Imports COH.GameContent.Resources.Structures.GEO
+﻿Imports COH.GameContent.Structures.Resources.GEO
 Imports COH.GameContent.Structures
 Imports COH.GameContent.Structures.Enums
+Imports COH.CodeManagement.Enums
 
-Namespace Structures.Resources
+Namespace GameContent.Structures.Resources
     Public Class COH_Resource_GEO_LoadData 'Almost Identical to Header...so...
 
 #Region "Private Properties"

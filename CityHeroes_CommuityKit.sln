@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameContent", "GameContent"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.GameContent.MessageStores", "Common\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj", "{326AC461-EE5C-4872-862B-5F522FB8AC52}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.GameContent.Resources", "Common\COH.GameContent.Resources\COH.GameContent.Resources.vbproj", "{4EBD4F82-F6B2-4731-91F2-3B2EAE5626B5}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.GameContent.Structures.Resources", "Common\COH.GameContent.Resources\COH.GameContent.Structures.Resources.vbproj", "{4EBD4F82-F6B2-4731-91F2-3B2EAE5626B5}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.GameContent.Structures", "Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj", "{8226245E-4CB0-4EAC-B22F-409B50175E6A}"
 EndProject

@@ -1,7 +1,8 @@
 ﻿Imports System.Drawing
+Imports COH.CodeManagement.Enums
 Imports COH.GameContent.Structures.CodeManagement.Enums
 
-Namespace Structures.Textures
+Namespace GameContent.Structures.Resources.Textures
     Public Class COH_Resource_Texture
         Inherits COH_FileStructure
 
