@@ -1,5 +1,11 @@
-﻿Imports COH.GameContent
-Imports COH.GameContent.Storage.Controllers
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.GameContent
+Imports COH.Storage.Controllers
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+Imports COH.Storage.Structures
+Imports COH.Storage.Structures.CrypticsS
 
 Namespace Utilities
     Public NotInheritable Class COH_BinTool_CrypticS
@@ -140,7 +146,7 @@ Namespace Utilities
         End Function
         Public Function ExtractFromBin_FileList(Name As String, Folder As String) As Boolean
             Dim FilePath As String = Folder & "Index_" & Name & ".Xml"
-            Export_XMLFile(FilePath, mCrypticS_Info)
+            Helperfunctions.XML.Export_XMLFile(FilePath, mCrypticS_Info)
             Return True
         End Function
         Public Function ExtractFromBin_Item(FileIndex As Integer, ContentIndex As Integer, ByRef Result As COH_FileStructure, ByRef LanguageMaps As ISupport_COH_LocalizeContent) As Boolean
@@ -179,7 +185,7 @@ Namespace Utilities
         Private Shared Function Export_ToXML_Combined(Title As String, ByRef Entries As List(Of COH_FileStructure), Folder As String, Optional UseSourcePath As Boolean = False, Optional ShowProgress As Boolean = True) As Boolean
             Dim results As New List(Of String)
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, 1, "Writing XML - " & Title)
-            GameContent.HelperFunctions.XML.Export_XMLFile(Folder, Entries, True)
+            Helperfunctions.XML.Export_XMLFile(Folder, Entries, True)
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, Title)
             COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Finish)
             Return True

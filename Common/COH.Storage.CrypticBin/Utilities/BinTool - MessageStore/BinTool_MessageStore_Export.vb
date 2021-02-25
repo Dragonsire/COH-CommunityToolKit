@@ -1,5 +1,6 @@
 ﻿Imports COH.GameContent
 Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+Imports COH.Storage.Serialization
 
 Namespace Utilities
     Partial NotInheritable Class COH_BinTool_MessageStore
@@ -32,7 +33,7 @@ Namespace Utilities
             Using InternalWriter As New COH_BinaryWriter(CurrentStream)
                 For X = 0 To StringTable.Count - 1
                     Dim NewLine As String = StringTable(X)
-                    NewLine = Return_SpecialCharacters(NewLine)
+                    NewLine = Helperfunctions.StringsAndThings.Return_SpecialCharacters(NewLine)
                     InternalWriter.WriteString_ZeroEnded_UTF8_COH(NewLine)
                     If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1)
                 Next

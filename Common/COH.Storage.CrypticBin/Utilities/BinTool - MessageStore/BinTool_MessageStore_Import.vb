@@ -1,5 +1,6 @@
 ﻿Imports COH.GameContent
 Imports COH.GameContent.MessageStores.Structures.LanguageFiles
+Imports COH.Storage.Serialization
 
 Namespace Utilities
     Partial NotInheritable Class COH_BinTool_MessageStore
@@ -38,7 +39,7 @@ Namespace Utilities
             Do
                 If (CurrentReader.Position - PosProgress) > 50000 Then PosProgress = CurrentReader.Position
                 NewLine = CurrentReader.Read_CrypticS_String_ZeroEnded_UTF8
-                NewLine = Replace_SpecialCharacters(NewLine)
+                NewLine = Helperfunctions.StringsAndThings.Replace_SpecialCharacters(NewLine)
                 Result.Add(NewLine)
                 If (CurrentReader.Position - PosProgress) > 50000 Then
                     If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(GameContent.Internal.Events.COH_Event_ProgressUpdate.COH_ProgressEvent.Update, CurrentReader.Position - PosProgress)

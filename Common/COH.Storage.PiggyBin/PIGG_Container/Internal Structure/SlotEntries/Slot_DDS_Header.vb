@@ -1,5 +1,6 @@
 ﻿Imports COH.CodeManagement.Enums.Pigg
 Imports COH.GameContent.Resources.Structures.Textures
+Imports COH.GameContent.Structures.Resources.Textures
 Imports COH.Storage.Serialization
 
 Namespace Storage.Containers.PIGG.Structures.Contents

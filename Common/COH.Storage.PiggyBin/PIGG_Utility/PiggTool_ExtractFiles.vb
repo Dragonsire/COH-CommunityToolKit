@@ -2,11 +2,11 @@
 Imports COH.CodeManagement.Enums.Pigg
 Imports COH.CodeManagement.Enums.Structures
 Imports COH.GameContent
-Imports COH.GameContent.Resources.Structures.Anim
-Imports COH.GameContent.Resources.Structures.BIN
-Imports COH.GameContent.Resources.Structures.GEO
-Imports COH.GameContent.Resources.Structures.Other
-Imports COH.GameContent.Resources.Structures.Textures
+Imports COH.GameContent.Structures.Resources.Anim
+Imports COH.GameContent.Structures.Resources.BIN
+Imports COH.GameContent.Structures.Resources.GEO
+Imports COH.GameContent.Structures.Resources.Other
+Imports COH.GameContent.Structures.Resources.Textures
 Imports COH.Storage.Containers.PIGG.Structures
 Imports COH.Storage.Containers.PIGG.Structures.Contents
 Imports COH.Storage.Serialization
@@ -139,7 +139,7 @@ Namespace Storage.Containers.PIGG.Utilities
         Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As COH_Pigg_Info, Optional Decompress As Boolean = False) As Byte()
             CurrentReader.BaseStream.Position = Source.Directories(Index).File_Offset
             If Decompress = True And Source.Directories(Index).File_Size_Compressed > 0 Then
-                Return Helperfunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))
+                Return HelperFunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))
             Else
                 '//HelperFunctions.Bytes.Write_BytesToFile(CurrentReader.ReadBytes(8000), "E:\SOURCE.RAW")
                 Return CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored)

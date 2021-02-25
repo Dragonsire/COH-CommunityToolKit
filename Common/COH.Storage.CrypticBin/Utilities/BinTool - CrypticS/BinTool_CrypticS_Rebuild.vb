@@ -1,4 +1,7 @@
 ﻿Imports COH.GameContent
+Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
+Imports COH.Storage.Structures.CrypticsS
 
 Namespace Utilities
     Partial Public NotInheritable Class COH_BinTool_CrypticS
@@ -17,7 +20,7 @@ Namespace Utilities
                 For Each Entry In Source.Entries
                     InternalWriter.Write_CrypticS_String(Entry.DefFilePath)
                     If Source.Options.Option_BINs_UpdateTimeStamps = True Then
-                        InternalWriter.Write(GameContent.HelperFunctions.DateTimeFunctions.Convert_DateTime_to_Uint32Value(Date.Now))
+                        InternalWriter.Write(Helperfunctions.DateTimeFunctions.Convert_DateTime_to_Uint32Value(Date.Now))
                     Else
                         InternalWriter.Write(Entry.Time) '//For Now TimeStamp Does Not Change...
                     End If

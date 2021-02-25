@@ -1,5 +1,8 @@
-﻿Imports COH.GameContent
-Imports COH.GameContent.CodeManagement.Enums
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.GameContent
+Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
+Imports COH.Storage.Structures.CrypticsS
 
 Namespace Utilities
     Partial Public NotInheritable Class COH_BinTool_CrypticS
@@ -11,9 +14,9 @@ Namespace Utilities
             CurrentWriter.Write(Source.BuildCRC)
             CurrentWriter.Write(CShort(6))
             Select Case Source.ParseVersion
-                Case COH_PiggyBinSupported_CrypticS_ParseVersion.Parse6
+                Case CodeManagement.Enums.Structures.COH_BinaryFormat.CrypticsS_Parse6
                     CurrentWriter.Write(System.Text.Encoding.ASCII.GetBytes("Parse6"))
-                Case COH_PiggyBinSupported_CrypticS_ParseVersion.Parse7
+                Case CodeManagement.Enums.Structures.COH_BinaryFormat.CrypticsS_Parse7
                     CurrentWriter.Write(System.Text.Encoding.ASCII.GetBytes("Parse7"))
                     Return False
                 Case Else
