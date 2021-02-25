@@ -1,4 +1,4 @@
-﻿Imports COH.Tools.Controls.WinForms.Dialogs
+﻿Imports COH.Toolkit.Controls.WinForms.Dialogs
 
 Namespace Internal.ContentController
     Partial Public NotInheritable Class COH_ContentController

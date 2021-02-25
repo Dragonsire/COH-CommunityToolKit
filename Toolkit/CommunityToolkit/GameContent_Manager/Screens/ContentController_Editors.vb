@@ -1,7 +1,7 @@
 ﻿Imports COH.GameContent.Internal.Events
-Imports COH.Tools.Controls.Forms
-Imports COH.Tools.Controls.WinForms.Dialogs
-Imports COH.Tools.Controls.WinForms.Internal
+Imports COH.Toolkit.Controls.Forms
+Imports COH.Toolkit.Controls.WinForms.Dialogs
+Imports COH.Toolkit.Controls.WinForms.Internal
 Imports COH.Tools.Internal.Enums
 Imports COH.Tools.Modding.Editors
 

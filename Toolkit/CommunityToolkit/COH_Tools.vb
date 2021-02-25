@@ -1,5 +1,5 @@
 ﻿Imports System.Drawing
-Imports COH.Tools.Controls.WinForms.Interfaces
+Imports COH.Toolkit.Controls.WinForms.Interfaces
 Imports COH.Tools.Internal.ContentController
 
 Public Class COH_Tools

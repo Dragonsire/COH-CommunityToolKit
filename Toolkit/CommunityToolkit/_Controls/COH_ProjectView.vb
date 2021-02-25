@@ -1,5 +1,5 @@
 ﻿Imports COH.GameContent.ProjectFiles
-Imports COH.Tools.Controls.WinForms.Extentsions
+Imports COH.Toolkit.Controls.WinForms.Extentsions
 Imports COH.Tools.Internal.ContentController
 
 Namespace Controls.Forms
