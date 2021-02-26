@@ -1,4 +1,5 @@
 ﻿Imports COH.Accounts.Inventories
+Imports COH.CodeManagement.Enums.Accounts
 Imports COH.CodeManagement.Interfaces.Accounts
 
 Namespace Accounts
@@ -143,10 +144,13 @@ Namespace Accounts
         ''' List of Operations to perform on the next @ref AccountDB_Tick
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property NextUpdate_Flags As AccountUpdateFlags
+        Public Property NextUpdate_Flags As AccountUpdateFlags
             Get
                 Return pNextUpdate_Flags
             End Get
+            Set(value As AccountUpdateFlags)
+                pNextUpdate_Flags = value
+            End Set
         End Property
         ''' <summary>
         ''' Last Time the Client Auth Digest was sent 
@@ -185,6 +189,20 @@ Namespace Accounts
         Private pAuthDigeest_Sent As UInt32
         Private pAuthResend As UInt32
 #End Region
+
+#Region "Create New Instance"
+        Public Sub New(AuthID As Integer, AuthName As String)
+
+        End Sub
+#End Region
+
+
+#Region "Functions"
+        Public Sub PrepareNextUpdate(ByRef Account As GameAccount)
+            pNextUpdate = Account
+        End Sub
+#End Region
+
 
         Public Sub LINK(Account, reauthLink)
             ''' Next pointer for the re-auth link

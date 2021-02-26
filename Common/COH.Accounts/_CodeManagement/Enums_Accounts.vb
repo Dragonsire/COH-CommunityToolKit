@@ -4,6 +4,12 @@
 		ACCOUNT_STATUS_FLAG_IS_VIP = 1  ' for subscribers and others who get everything free
 		ACCOUNT_STATUS_FLAG_DEBUG_VIP = 2 ' debug flag which doesn't get overwritten by loyalty update logic
 	End Enum
+	<Flags> Public Enum AccountUpdateFlags
+		'/// Object needs the [account] table updated in SQL
+		ACCOUNTDB_UPDATE_SQL_ACCOUNT = 1
+		'/// Object needs to be transmitted to the active shard
+		ACCOUNTDB_UPDATE_NETWORK = 2
+	End Enum
 	Public Enum AccountInventoryType
 		kAccountInventoryType_Certification
 		kAccountInventoryType_Voucher
