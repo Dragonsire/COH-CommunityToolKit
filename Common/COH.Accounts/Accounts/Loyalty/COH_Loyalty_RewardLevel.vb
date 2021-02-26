@@ -1,4 +1,6 @@
-﻿Imports COH.Common.Structures
+﻿Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
 
 Namespace Store
     Public NotInheritable Class COH_Loyalty_RewardLevel
@@ -116,13 +118,13 @@ Namespace Store
 #Region "Clone"
         Public Function Clone() As COH_Loyalty_RewardLevel
             Dim Result As COH_Loyalty_RewardLevel = New COH_Loyalty_RewardLevel
-            MyBase.CloneTo(TryCast(Result, COH_FileStructure))
+            'MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDisplayName = String.Copy(mDisplayName)
                 .mDisplayVIP = String.Copy(mDisplayVIP)
                 .mDisplayFree = String.Copy(mDisplayFree)
-                .mProduct = mProduct.CloneTheStrings
+                '.mProduct = mProduct.CloneTheStrings
                 .mLoyaltyPointsRequired = mLoyaltyPointsRequired
                 .mInfluenceCap = mInfluenceCap
                 Return Result

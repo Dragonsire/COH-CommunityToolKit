@@ -1,4 +1,4 @@
-﻿Imports COH.Common.Accounts.Products
+﻿Imports COH.Accounts.Products
 
 Namespace Accounts.Inventories
     Public NotInheritable Class AccountInventory

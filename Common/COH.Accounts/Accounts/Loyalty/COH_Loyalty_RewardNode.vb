@@ -1,4 +1,10 @@
-﻿Namespace Store
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.CodeManagement.Interfaces.Structures
+Imports COH.Storage.Serialization
+Imports COH.Storage.Serialization.Configuration
+Imports COH.Storage.Structures
+
+Namespace Store
     Public NotInheritable Class COH_Loyalty_RewardNode
         Inherits COH_FileStructure
 
@@ -89,14 +95,14 @@
         Public Sub New(SetDefaults As Boolean, Optional Version As Integer = 0, Optional BuildType As COH_BuildType = COH_BuildType.Either)
             MyBase.New(SetDefaults, Version)
         End Sub
-        Public Sub New(ByRef Buffer As Byte(), Optional Settings as COH_Serialization_Settings = Nothing)
+        Public Sub New(ByRef Buffer As Byte(), Optional Settings As COH_Serialization_Settings = Nothing)
             MyBase.New(Buffer, Settings)
         End Sub
-        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings as COH_Serialization_Settings = Nothing)
-             MyBase.New(Stream, Settings)
+        Public Sub New(ByRef Stream As IO.MemoryStream, Optional Settings As COH_Serialization_Settings = Nothing)
+            MyBase.New(Stream, Settings)
         End Sub
         Public Sub New(ByRef CurrentReader As COH_BinaryReader)
-             MyBase.New(CurrentReader)
+            MyBase.New(CurrentReader)
         End Sub
         Public Overrides Sub ResetDefaults(Optional Version As Integer = 0)
             MyBase.ResetDefaults()
@@ -115,12 +121,12 @@
 #Region "Clone"
         Public Function Clone() As COH_Loyalty_RewardNode
             Dim Result As COH_Loyalty_RewardNode = New COH_Loyalty_RewardNode
-            MyBase.CloneTo(TryCast(Result, COH_FileStructure))
+            ' MyBase.CloneTo(TryCast(Result, COH_FileStructure))
             With Result
                 .mName = String.Copy(mName)
                 .mDisplayName = String.Copy(mDisplayName)
                 .mDisplayDescription = String.Copy(mDisplayDescription)
-                .mProduct = mProduct.CloneTheStrings
+                '.mProduct = mProduct.CloneTheStrings
                 .mRepeatable = mRepeatable
                 .mPurchasable = mPurchasable
                 .mVIPOnly = mVIPOnly
@@ -130,7 +136,7 @@
 #End Region
 
 #Region "Import/Export - CrypticS"
-      Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
+        Protected Overrides Function Write_ToStream(ByRef CurrentWriter As COH_BinaryWriter) As Boolean
             CurrentWriter.Write_CrypticS_String(mName)
             CurrentWriter.Write_CrypticS_String(mDisplayName)
             CurrentWriter.Write_CrypticS_String(mDisplayDescription)

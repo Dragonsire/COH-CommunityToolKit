@@ -1,4 +1,4 @@
-﻿Imports COH.Common.Internal.Enums.Accounts
+﻿Imports COH.CodeManagement.Enums.Accounts
 
 Namespace Accounts.Inventories
     Public NotInheritable Class AccountInventorySet
