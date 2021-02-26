@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.Servers.AccountServer</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>
@@ -30,7 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\_Shared\Common\Common.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Accounts\COH.Accounts.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>
 
 </Project>

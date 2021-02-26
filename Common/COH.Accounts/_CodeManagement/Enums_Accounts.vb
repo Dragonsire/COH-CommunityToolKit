@@ -1,4 +1,9 @@
 ﻿Namespace CodeManagement.Enums.Accounts
+	<Flags> Public Enum AccountStatusFlags
+		ACCOUNT_STATUS_FLAG_DEFAULT = 0
+		ACCOUNT_STATUS_FLAG_IS_VIP = 1  ' for subscribers and others who get everything free
+		ACCOUNT_STATUS_FLAG_DEBUG_VIP = 2 ' debug flag which doesn't get overwritten by loyalty update logic
+	End Enum
 	Public Enum AccountInventoryType
 		kAccountInventoryType_Certification
 		kAccountInventoryType_Voucher
@@ -44,11 +49,6 @@
 		BILLING_PLAN_EXTERNAL_COMPED = 97 'NOTICE WE SKIPPED A LOT!
 		BILLING_PLAN_INTERNAL_COMPED = 98
 		BILLING_PLAN_GM_COMPED = 99
-	End Enum
-	<Flags> Public Enum AccountStatusFlags
-		ACCOUNT_STATUS_FLAG_DEFAULT = 0
-		ACCOUNT_STATUS_FLAG_IS_VIP = 1  ' for subscribers and others who get everything free
-		ACCOUNT_STATUS_FLAG_DEBUG_VIP = 2 ' debug flag which doesn't get overwritten by loyalty update logic
 	End Enum
 	<Flags> Public Enum AccountProductStateFlag
 		PRODFLAG_NOT_PUBLISHED = 1 ' item is not ready to show to the user yet
