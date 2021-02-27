@@ -1,4 +1,4 @@
-﻿Namespace Helpers
+﻿Namespace Helpers.SQL
     <HideModuleName> Public Module SQL_Helpers
         Public Class SQL_TIMESTAMP_STRUCT
             Public Property year As UInt16

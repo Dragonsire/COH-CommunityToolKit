@@ -1,4 +1,4 @@
-﻿Namespace Transactions
+﻿Namespace GameServers.AccountServer.Transactions
 	Public Class GameTransaction
 		Public gtx As New asql_game_transaction()
 		Public inv As New asql_inventory()

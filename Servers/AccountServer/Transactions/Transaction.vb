@@ -1,6 +1,4 @@
-﻿Imports COH.Servers.AccountServer.GameAccounts
-
-Namespace Transactions
+﻿Namespace GameServers.AccountServer.Transactions
     Public MustInherit Class Transaction
 
 #Region "Properties"

@@ -1,4 +1,4 @@
-﻿Namespace Transactions
+﻿Namespace GameServers.AccountServer.Transactions
 	Public Class MultiGameTransaction
 		Public order_id As New OrderId()
 		Public count As UInteger

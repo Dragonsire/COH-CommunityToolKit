@@ -3,27 +3,19 @@ Imports COH.CodeManagement.Enums.Accounts
 Imports COH.CodeManagement.Interfaces.Accounts
 
 Namespace Accounts
-    Public NotInheritable Class GameAccount
+    Public NotInheritable Class PlayerAccount
 
 #Region "Properties - Account Details"
         ''' <summary>
         ''' The AuthServer ID for Account
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property Auth_ID As UInt32
-            Get
-                Return pAuth_ID
-            End Get
-        End Property
+        Public Property Auth_ID As UInt32
         ''' <summary>
         ''' Account Name, Max 32 Characters
         ''' </summary>
         ''' <returns></returns>		
-        Public ReadOnly Property Auth_Name As String
-            Get
-                Return pAuth_Name
-            End Get
-        End Property
+        Public Property Auth_Name As String
 #End Region
 #Region "Properties - Inventory"
         ''' <summary>
@@ -41,50 +33,39 @@ Namespace Accounts
         ''' Number of Loyalty points earned for this account (Not Stored in SQL)
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property LoyaltyPoints_Earned As Integer
-            Get
-                Return pLoyaltyPoints_Earned
-            End Get
-        End Property
+        Public Property LoyaltyPoints_Earned As Integer
         ''' <summary>
         ''' Number of unspent Loyalty points for this account (Not Stored in SQL)
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property LoyaltyPoints_Unspent As Integer
-            Get
-                Return pLoyaltyPoints_Unspent
-            End Get
-        End Property
+        Public Property LoyaltyPoints_Unspent As Integer
         ''' <summary>
         ''' Last seen Amount of Virtual Currency
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property VirtualCurrencyBalance As Integer
-            Get
-                Return pVirtualCurrencyBalance
-            End Get
-        End Property
+        Public Property VirtualCurrencyBalance As Integer
 #End Region
 #Region "Properties - Email"
         ''' <summary>
         ''' Last time the player sent an email
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property Email_Lastsent As UInt32
-            Get
-                Return pEmail_Lastsent
-            End Get
-        End Property
+        Public Property Email_Lastsent As Date
         ''' <summary>
         ''' Something to do with @ref lastEmailTime
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property Email_LastsentNumber As UInt32
-            Get
-                Return pEmail_LastsentNumber
-            End Get
-        End Property
+        Public Property Email_LastsentNumber As UInt32
 #End Region
+#Region "Properties - Other"
+        ''' <summary>
+        ''' Last time a player received a free shard transfer
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property AccountShard_FreeTransferRecieved As Date
+#End Region
+
+
 #Region "Properties - Storage"
         ''' <summary>
         ''' Account SQL Data
@@ -114,15 +95,6 @@ Namespace Accounts
             End Get
         End Property
         ''' <summary>
-        ''' Last time a player received a free shard transfer
-        ''' </summary>
-        ''' <returns></returns>
-        Public ReadOnly Property AccountShard_FreeTransferRecieved As UInt32
-            Get
-                Return pAccountShard_FreeTransferRecieved
-            End Get
-        End Property
-        ''' <summary>
         ''' LEGACY --- int * shardXferTokens???
         ''' </summary>
         ''' <returns></returns>
@@ -135,7 +107,7 @@ Namespace Accounts
         ''' Linked for Objects that need to be Processed on the next @ref AccountDb_Tick
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property NextUpdate As GameAccount
+        Public ReadOnly Property NextUpdate As PlayerAccount
             Get
                 Return pNextUpdate
             End Get
@@ -172,19 +144,12 @@ Namespace Accounts
         End Property
 #End Region
 #Region "Private"
-        Private pAuth_ID As UInt32
-        Private pAuth_Name As String
-        Private pLoyaltyPoints_Earned As Int32
-        Private pLoyaltyPoints_Unspent As Int32
-        Private pVirtualCurrencyBalance As Int32
-        Private pEmail_Lastsent As UInt32
-        Private pEmail_LastsentNumber As UInt32
+        '//RUNNING INFO
         Private pStorageAccount As IStorage_PlayerAccount
         Private pAccountShard As IStorage_Shard
         Private pAccountShard_TransferInProgress As Boolean
-        Private pAccountShard_FreeTransferRecieved As UInt32
         Private pAccountShard_TransferTokens As UInt32
-        Private pNextUpdate As GameAccount
+        Private pNextUpdate As PlayerAccount
         Private pNextUpdate_Flags As AccountUpdateFlags
         Private pAuthDigeest_Sent As UInt32
         Private pAuthResend As UInt32
@@ -198,7 +163,7 @@ Namespace Accounts
 
 
 #Region "Functions"
-        Public Sub PrepareNextUpdate(ByRef Account As GameAccount)
+        Public Sub PrepareNextUpdate(ByRef Account As PlayerAccount)
             pNextUpdate = Account
         End Sub
 #End Region
