@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
 
-Namespace Internal.DeveloperOptions
+Namespace GameContent.Internal.DeveloperOptions
     <HideModuleName()> Public Module COH_Internal_CompilingOptions
 
 #Const DS_DeveloperMode = 1

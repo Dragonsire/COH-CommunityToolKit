@@ -2,7 +2,7 @@
 Imports COH.GameContent.Internal.Events.COH_Event_ProgressUpdate
 Imports COH.Storage.Serialization
 
-Namespace Internal.Events
+Namespace GameContent.Internal.Events
     Public NotInheritable Class COH_LibraryEventControl
 
 #Region "Properties"

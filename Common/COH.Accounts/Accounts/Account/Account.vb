@@ -38,12 +38,12 @@ Namespace Accounts
         ''' Number of unspent Loyalty points for this account (Not Stored in SQL)
         ''' </summary>
         ''' <returns></returns>
-        Public Property LoyaltyPoints_Unspent As Integer
+        Public Property LoyaltyPoints_Spent As Integer
         ''' <summary>
         ''' Last seen Amount of Virtual Currency
         ''' </summary>
         ''' <returns></returns>
-        Public Property VirtualCurrencyBalance As Integer
+        Public Property LoyaltyPoints_Balance As Integer
 #End Region
 #Region "Properties - Email"
         ''' <summary>

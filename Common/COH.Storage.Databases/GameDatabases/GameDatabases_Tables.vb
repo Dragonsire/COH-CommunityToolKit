@@ -21,7 +21,7 @@ Namespace Storage.Databases
             'mTable_Publisher = New BTC_MetaData_Publisher_Table(Me, DataSet.Tables(BTC_DB_Tables.Publisher.toString))
             'mTable_IndustryPerson = New BTC_MetaData_IndustryPerson_Table(Me, DataSet.Tables(BTC_DB_Tables.IndustryPerson.toString))
         End Sub
-        Function Tables_RetrieveTable(Table As GameDataBase_Tables) As GameDatabase_GenericTable Implements CodeManagement.Interfaces.Databases.I_Support_DataStorage.Tables_RetrieveTable
+        Function Tables_RetrieveTable(Table As GameDataBase_Tables) As GameDatabase_GenericTable 'Implements CodeManagement.Interfaces.Databases.I_Support_LocalDataStorage.Tables_RetrieveTable
             Dim Result As GameDatabase_GenericTable = Nothing
             Return Result
         End Function

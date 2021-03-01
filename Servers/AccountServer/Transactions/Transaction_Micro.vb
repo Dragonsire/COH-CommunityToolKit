@@ -1,13 +1,11 @@
-﻿Imports COH.Servers.AccountServer.GameAccounts
-
-Namespace GameServers.AccountServer.Transactions
+﻿Namespace GameServers.AccountServer.Transactions
     Public Class MicroTransaction
         Inherits Transaction
 
 #Region "Properties"
         Public Property mtx As New asql_micro_transaction()
         Public Property inv As New asql_inventory()
-        Public Property ReadOnly product As AccountProduct
+        Public ReadOnly product As AccountProduct
         Public Property message As PostbackMessage
 #End Region
 

@@ -1,4 +1,4 @@
-﻿Namespace Internal.Events
+﻿Namespace GameContent.Internal.Events
     Public Class COH_Event_Error
         Inherits EventArgs
 
@@ -45,11 +45,11 @@
 #End Region
 
 #Region "Private Usage"
-       Private mContinue As Boolean
-       Private mMessage As String
-       Private mException As Exception
-       Private mErrorLevel As COH_ErrorEvent
-       Private mThrowException As Boolean
+        Private mContinue As Boolean
+        Private mMessage As String
+        Private mException As Exception
+        Private mErrorLevel As COH_ErrorEvent
+        Private mThrowException As Boolean
 #End Region
 
 #Region "Initialize"

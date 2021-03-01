@@ -1,4 +1,4 @@
-﻿Namespace Internal.Events
+﻿Namespace GameContent.Internal.Events
     Public Class COH_Event_Message
         Inherits EventArgs
 
@@ -23,7 +23,7 @@
 #End Region
 
 #Region "Private Usage"
-       Private mMessage As String
+        Private mMessage As String
 #End Region
 
 #Region "Initialize"

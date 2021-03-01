@@ -11,11 +11,11 @@ Namespace Storage.Databases
 
 #Region "Private Properties"
         Private mDataTable As Data.DataTable
-        Private mStorageController As I_Support_DataStorage
+        Private mStorageController As I_Support_LocalDataStorage
 #End Region
 
 #Region "Properties"
-        Friend ReadOnly Property StorageController As I_Support_DataStorage
+        Friend ReadOnly Property StorageController As I_Support_LocalDataStorage
             Get
                 Return mStorageController
             End Get
@@ -33,7 +33,7 @@ Namespace Storage.Databases
 #End Region
 
 #Region "Create New Instance"
-        Friend Sub New(ByRef StorageController As I_Support_DataStorage, ByRef DataTable As Data.DataTable)
+        Friend Sub New(ByRef StorageController As I_Support_LocalDataStorage, ByRef DataTable As Data.DataTable)
             mStorageController = StorageController
             mDataTable = DataTable
         End Sub

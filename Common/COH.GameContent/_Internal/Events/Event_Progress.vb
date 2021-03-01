@@ -1,4 +1,4 @@
-﻿Namespace Internal.Events
+﻿Namespace GameContent.Internal.Events
     Public Class COH_Event_ProgressUpdate
         Inherits EventArgs
 
@@ -38,10 +38,10 @@
 #End Region
 
 #Region "Private Usage"
-       Private mCancel As Boolean
-       Private mMessage As String
-       Private mValue As String
-       Private mTheEvent As COH_ProgressEvent
+        Private mCancel As Boolean
+        Private mMessage As String
+        Private mValue As String
+        Private mTheEvent As COH_ProgressEvent
 #End Region
 
 #Region "Initialize"

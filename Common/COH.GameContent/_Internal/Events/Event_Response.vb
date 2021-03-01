@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
 
-Namespace Internal.Events
+Namespace GameContent.Internal.Events
     Public Class COH_EventResponse_Compare2Items
         Inherits EventArgs
 
@@ -39,10 +39,10 @@ Namespace Internal.Events
 #End Region
 
 #Region "Private Usage"
-       Private mResult As COH_ResponseEnum
-       Private mPrompt As String
-       Private mMessage1 As String
-       Private mMessage2 As String
+        Private mResult As COH_ResponseEnum
+        Private mPrompt As String
+        Private mMessage1 As String
+        Private mMessage2 As String
 #End Region
 
 #Region "Initialize"
