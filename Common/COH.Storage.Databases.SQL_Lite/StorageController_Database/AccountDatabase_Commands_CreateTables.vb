@@ -20,8 +20,12 @@ Namespace Storage.DataBases.SQL_Lite
 		Private Shared Function FormatLine() As String
 			Return (Environment.NewLine & Chr(9))
 		End Function
-		Private Shared Function FormatEndLine() As String
-			Return (Environment.NewLine & ");")
+		Private Shared Function FormatLine_EndTable(Clustered As Boolean) As String
+			If Clustered = False Then
+				Return (Environment.NewLine & ");")
+			Else
+				Return (Environment.NewLine & ") WITHOUT ROWID;")
+			End If
 		End Function
 		Private Shared Function FormatConstraintLine(Name As [Enum], Key As [Enum]) As String
 			Return (Environment.NewLine & Chr(9) & "CONSTRAINT " & Name.ToString.QuoteTheString) & " PRIMARY KEY(" & Key.ToString.QuoteTheString & ")"
@@ -38,7 +42,7 @@ Namespace Storage.DataBases.SQL_Lite
 			FormatName(GDEnum_AccountTables_Account.Email_LastsentNumber) & " SMALLINT NULL DEFAULT 0, " &
 			FormatName(GDEnum_AccountTables_Account.FreeTransfer_LastRecieved) & " DATETIME NULL DEFAULT '2000.01.01'," &
 			FormatConstraintLine(GDEnum_AccountTables_Account.UniqueKey, GDEnum_AccountTables_Account.Auth_ID) &
-			FormatEndLine()
+			FormatLine_EndTable(True)
 			Return CommandString
 		End Function
 		Public Shared Function Retrieve_CommandString_CreateTable_Account2() As String
