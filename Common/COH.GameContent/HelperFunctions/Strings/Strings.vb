@@ -126,6 +126,9 @@ Namespace HelperFunctions.StringsAndThings
         Public Function SingleQuoteString(Source As String) As String
             Return ("'" & Source & "'")
         End Function
+        Public Function BracketString(Source As String) As String
+            Return ("[" & Source & "]")
+        End Function
 #End Region
     End Module
 End Namespace

@@ -8,5 +8,8 @@ Namespace CodeManagement.Extentions
         <Extension> Public Function SingleQuoteTheString(ByRef Source As String) As String
             Return HelperFunctions.StringsAndThings.SingleQuoteString(Source)
         End Function
+        <Extension> Public Function BracketTheString(ByRef Source As String) As String
+            Return HelperFunctions.StringsAndThings.BracketString(Source)
+        End Function
     End Module
 End Namespace

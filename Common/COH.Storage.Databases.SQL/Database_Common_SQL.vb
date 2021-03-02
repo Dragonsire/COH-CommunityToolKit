@@ -7,7 +7,7 @@ Namespace Storage.Databases.SQL
 
 #Region "Properties"
 		''' auth_id index into a @ref asql_account
-		Public Property Accounts As New StashTable()
+		Public Property Accounts As Object 'New StashTable()
 		'''
 		Public Property ASQL_WORKERS()
 		''' SQL connection state

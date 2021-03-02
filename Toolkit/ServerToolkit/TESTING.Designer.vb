@@ -23,6 +23,7 @@ Partial Class TESTING
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -34,11 +35,21 @@ Partial Class TESTING
         Me.Button1.Text = "Create SQL LITE Database"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(68, 144)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(166, 29)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'TESTING
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "TESTING"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -48,4 +59,5 @@ Partial Class TESTING
     End Sub
 
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

@@ -41,6 +41,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
     <ProjectReference Include="..\COH.Storage.Databases\COH.Storage.Databases.vbproj" />
     <ProjectReference Include="..\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>

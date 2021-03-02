@@ -67,6 +67,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.Databases.SQL\COH.Storage.Databases.SQL.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Databases.SQL_Lite\COH.Storage.Databases.SQL_Lite.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Databases.XML\COH.Storage.Databases.XML.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Databases\COH.Storage.Databases.vbproj" />
