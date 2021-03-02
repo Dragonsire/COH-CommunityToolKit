@@ -55,7 +55,7 @@ Namespace Storage.DataBases.SQL_Lite
             Command.Transaction = Transactions_CreateNew()
             Dim Result As Boolean = True
             If CreateTable(Command, GDEnum_AccountTables.Account, IncludeRealtionships) = False Then Return False
-            'If CreateTable(Command, GDEnum_AccountTables.Product_Type, IncludeRealtionships) = False Then Return False
+            If CreateTable(Command, GDEnum_AccountTables.Product_Type, IncludeRealtionships) = False Then Return False
             'If CreateTable(Command, GDEnum_AccountTables.Product, IncludeRealtionships) = False Then Return False
             'If CreateTable(Command, GDEnum_AccountTables.Game_Log, IncludeRealtionships) = False Then Return False
             'If CreateTable(Command, GDEnum_AccountTables.Inventory, IncludeRealtionships) = False Then Return False

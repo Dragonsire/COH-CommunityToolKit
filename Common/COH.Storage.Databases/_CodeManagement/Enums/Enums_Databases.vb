@@ -12,7 +12,7 @@
         MTX_Log
         GameTransactions
     End Enum
-    Public Enum GDEnum_AccountTables_Account
+    Public Enum GDEnum_Account_AccountColumn
         Auth_ID
         Auth_Name
         LoyaltyPoints_Balance
@@ -23,6 +23,11 @@
         FreeTransfer_LastRecieved
         UniqueKey
     End Enum
-
+    Public Enum GDEnum_Account_ProductTypeColumn
+        Product_TypeID ' [product_type_id] [int] Not NULL,
+        Product_Name '[name] [varchar](128) NULL,
+        UniqueKey
+        'CONSTRAINT [PK_product_type] PRIMARY KEY CLUSTERED 
+    End Enum
 
 End Namespace
