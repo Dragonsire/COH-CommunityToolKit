@@ -28,6 +28,34 @@ Namespace Storage.DataBases.SQL
 #Region "Initialize"
         Private Sub SetDefaults()
         End Sub
+        Public Function CreateDatabase() As Boolean
+            Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
+            'Command.Transaction = Transactions_CreateNew()
+            Command.CommandText = Retrieve_CommandString_CreateDatabase("COH_ACC", "E:\COH_TEST.MDF")
+            Try
+                Command.ExecuteNonQuery()
+                ' Command.Transaction.Commit()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+                Return False
+            End Try
+
+            Return True
+        End Function
+        Public Function DeleteDatabase() As Boolean
+            Return True
+            Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
+            Command.Transaction = Transactions_CreateNew()
+            Command.CommandText = Retrieve_CommandString_DeleteDatabase("COH_ACC")
+            Try
+                Command.ExecuteNonQuery()
+                Command.Transaction.Commit()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+                Return False
+            End Try
+            Return True
+        End Function
         Protected Overrides Function CreateTables(IncludeRealtionships As Boolean) As Boolean
             Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
             Command.Transaction = Transactions_CreateNew()
@@ -65,16 +93,26 @@ Namespace Storage.DataBases.SQL
         End Function
         Public Function Database_OpenConnection_WinAuth() As Boolean
             If Connection_AlreadyExists() = True Then Return True
-            Dim ConnectString As SqlClient.SqlConnectionStringBuilder = New SqlClient.SqlConnectionStringBuilder
-            With ConnectString
+            Dim Builder As SqlClient.SqlConnectionStringBuilder = New SqlClient.SqlConnectionStringBuilder
+            With Builder
+                '//DRAGONSIRELAPTO\SQLEXPRESS01
                 .PersistSecurityInfo = True
                 .IntegratedSecurity = True
-                .InitialCatalog = "cohacc"
-                .DataSource = "localhost"
-                .ConnectTimeout = 30
+                '.InitialCatalog = "cohacc"
+                '.DataSource = "(local)\SQLExpress"
+                '.DataSource = ".\SQLExpress"
+                .DataSource = "DRAGONSIRELAPTO\SQLEXPRESS"
+                '.UserID = "NT Service\MSSQL$SQLEXPRESS"
+                '.Password = "MyPass1"
+                ' .ConnectTimeout = 30
             End With
-            pConnection = New SqlClient.SqlConnection(ConnectString.ToString())
-            pConnection.Open()
+            Dim TheConnectionString As String = Builder.ToString
+            pConnection = New SqlClient.SqlConnection(Builder.ToString())
+            Try
+                pConnection.Open()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
             Return (pConnection.State = Data.ConnectionState.Open)
         End Function
         Private Function Database_OpenConnection() As Boolean
