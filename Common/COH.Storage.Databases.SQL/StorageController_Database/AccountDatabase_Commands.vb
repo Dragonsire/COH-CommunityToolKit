@@ -15,6 +15,23 @@ Namespace Storage.DataBases.SQL
 			"DROP DATABASE IF EXISTS" & Name & ")"
 			Return CommandString
 		End Function
+
+		Public Shared Function CreateWrapper_AccountDatabase(Name As String, FileName As String) As SQL_Database
+			Dim TheDatabase As New SQL_Database(Name, FileName)
+			Dim AccountTable = TheDatabase.AddTable(GDEnum_AccountTables.Account.ToString)
+			AccountTable.AddColumn(GDEnum_Account_AccountColumn.Auth_ID, SQL_Types.INT, False)
+			AccountTable.AddColumn_VarChar(GDEnum_Account_AccountColumn.Auth_Name, 14)
+			AccountTable.AddColumn_Blob(GDEnum_Account_AccountColumn.LoyaltyPoints_Balance, 16)
+			AccountTable.AddColumn_SmallInt(GDEnum_Account_AccountColumn.LoyaltyPoints_Earned)
+			AccountTable.AddColumn_SmallInt(GDEnum_Account_AccountColumn.LoyaltyPoints_Spent)
+			AccountTable.AddColumn_Date(GDEnum_Account_AccountColumn.Email_Lastsent)
+			AccountTable.AddColumn_SmallInt(GDEnum_Account_AccountColumn.Email_LastsentNumber)
+			AccountTable.AddColumn_Date(GDEnum_Account_AccountColumn.FreeTransfer_LastRecieved)
+			AccountTable.Constraint = New SQL_DatabaseTableConstraint(GDEnum_Account_AccountColumn.UniqueKey.ToString, GDEnum_Account_AccountColumn.Auth_ID.ToString)
+			AccountTable.Clustered = True
+			Return TheDatabase
+		End Function
+
 #End Region
 	End Class
 End Namespace
