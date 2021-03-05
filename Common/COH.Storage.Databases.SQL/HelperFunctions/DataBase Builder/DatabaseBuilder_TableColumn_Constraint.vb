@@ -1,7 +1,7 @@
 ﻿Imports COH.CodeManagement.Extentions
 
 Namespace HelperFunctions.Databases.SQL
-    Public Class SQL_DatabaseTableConstraint
+    Public Class DatabaseBuilder_DatabaseTableConstraint
 
 #Region "Properties"
         Public Property Name As String

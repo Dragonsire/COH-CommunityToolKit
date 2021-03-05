@@ -16,8 +16,8 @@ Namespace Storage.DataBases.SQL
 			Return CommandString
 		End Function
 
-		Public Shared Function CreateWrapper_AccountDatabase(Name As String, FileName As String) As SQL_Database
-			Dim TheDatabase As New SQL_Database(Name, FileName)
+		Public Shared Function CreateWrapper_AccountDatabase(Name As String, FileName As String) As DatabaseBuilder
+			Dim TheDatabase As New DatabaseBuilder(Name, FileName)
 			Dim AccountTable = TheDatabase.AddTable(GDEnum_AccountTables.Account.ToString)
 			AccountTable.AddColumn(GDEnum_Account_AccountColumn.Auth_ID, SQL_Types.INT, False)
 			AccountTable.AddColumn_VarChar(GDEnum_Account_AccountColumn.Auth_Name, 14)
@@ -27,7 +27,7 @@ Namespace Storage.DataBases.SQL
 			AccountTable.AddColumn_Date(GDEnum_Account_AccountColumn.Email_Lastsent)
 			AccountTable.AddColumn_SmallInt(GDEnum_Account_AccountColumn.Email_LastsentNumber)
 			AccountTable.AddColumn_Date(GDEnum_Account_AccountColumn.FreeTransfer_LastRecieved)
-			AccountTable.Constraint = New SQL_DatabaseTableConstraint(GDEnum_Account_AccountColumn.UniqueKey.ToString, GDEnum_Account_AccountColumn.Auth_ID.ToString)
+			AccountTable.Constraint = New DatabaseBuilder_DatabaseTableConstraint(GDEnum_Account_AccountColumn.UniqueKey.ToString, GDEnum_Account_AccountColumn.Auth_ID.ToString)
 			AccountTable.Clustered = True
 			Return TheDatabase
 		End Function
