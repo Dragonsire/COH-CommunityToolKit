@@ -65,7 +65,7 @@ Namespace HelperFunctions.Databases.SQL
         Public Function Export_CommandString_Options() As String
             ''//ALTER DATABASE [cohacc] SET ANSI_NULL_DEFAULT OFF 
             Dim SB As New Text.StringBuilder
-            SB.Append("ALTER DATABASE " & DatabaseName.BracketTheString & " SET ANSI_NULL_DEFAULT " & ANSI_NULL_DEFAULT.ToString)
+            SB.AppendLine("ALTER DATABASE " & DatabaseName.BracketTheString & " SET ANSI_NULL_DEFAULT " & ANSI_NULL_DEFAULT.ToString)
             SB.Append("ALTER DATABASE " & DatabaseName.BracketTheString & " SET ANSI_NULLS " & ANSI_NULLS.ToString)
             Return SB.ToString
         End Function

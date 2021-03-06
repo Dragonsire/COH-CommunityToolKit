@@ -172,6 +172,16 @@ Namespace Storage.DataBases.SQL
             If Not pConnection.State = Data.ConnectionState.Open Then pConnection.Open()
             Return pConnection.CreateCommand()
         End Function
+        Public Sub SendCommand(value As String)
+            Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
+            Command.CommandText = value
+            Try
+                Command.ExecuteNonQuery()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+
+        End Sub
 #End Region
 
 #Region "Transactions"
