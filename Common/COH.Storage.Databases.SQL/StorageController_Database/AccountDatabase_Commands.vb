@@ -1,4 +1,5 @@
 ﻿Imports COH.CodeManagement.Enums.Databases
+Imports COH.CodeManagement.Enums.Databases.SQL
 Imports COH.CodeManagement.Extentions
 Imports COH.HelperFunctions.Databases.SQL
 Imports COH.HelperFunctions.Databases.SQL.DatabaseBuilder_DatabaseOptions
