@@ -3,6 +3,24 @@
         [ON]
         OFF
     End Enum
+    Public Enum DatabaseOption_CursorEnum
+        [Global]
+        [Local]
+    End Enum
+    Public Enum DatabaseOption_ParamEnum
+        Forced
+        Simple
+    End Enum
+    Public Enum DatabaseOption_PageVerifyEnum
+        CHECKSUM
+        TORN_PAGE_DETECTION
+        NONE
+    End Enum
+    Public Enum DatabaseOption_AccessEnum
+        MULTI_USER
+        SINGLE_USER
+        RESTRICTED_USER
+    End Enum
     Public Enum DataBaseOptionsEnum
         ANSI_NULL_DEFAULT
         ANSI_NULLS

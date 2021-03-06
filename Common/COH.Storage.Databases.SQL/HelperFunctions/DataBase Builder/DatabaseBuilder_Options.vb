@@ -5,12 +5,12 @@ Namespace HelperFunctions.Databases.SQL
     Public Class DatabaseBuilder_DatabaseOptions
 
 #Region "Properties"
-        Public Property CURSOR_DEFAULT As String ' Global 
-        Public Property PARAMETERIZATION As String 'SIMPLE 
+        Public Property CURSOR_DEFAULT As DatabaseOption_CursorEnum ' Global 
+        Public Property PARAMETERIZATION As DatabaseOption_ParamEnum 'SIMPLE 
         Public Property RECOVERY As String ' FULL
-        Public Property PAGE_VERIFY As String 'CHECKSUM   
+        Public Property PAGE_VERIFY As DatabaseOption_PageVerifyEnum 'CHECKSUM   
         Public Property OnOff_Options As Dictionary(Of DataBaseOptionsEnum, DatabaseOption_OnOffEnum)
-        Public Property MULTI_USER
+        Public Property RestrictAccess As DatabaseOption_AccessEnum
         Public Property READ_WRITE
 #End Region
 
