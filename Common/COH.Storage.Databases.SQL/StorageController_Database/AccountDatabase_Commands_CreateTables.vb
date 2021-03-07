@@ -17,32 +17,11 @@ Namespace Storage.DataBases.SQL
 		End Function
 #End Region
 
-#Region "SQL - Formatting"
-
-		Private Shared Function FormatLine() As String
-			Return (Environment.NewLine & Chr(9))
-		End Function
-		Private Shared Function FormatLine_ColumnName(TheV As [Enum]) As String
-			Return (Environment.NewLine & Chr(9) & TheV.ToString.QuoteTheString)
-		End Function
-
-		Private Shared Function FormatLine_EndTable(Clustered As Boolean) As String
-			If Clustered = False Then
-				Return (Environment.NewLine & ");")
-			Else
-				Return (Environment.NewLine & ") WITHOUT ROWID;")
-			End If
-		End Function
-		Private Shared Function FormatLine_Constraint(Name As [Enum], Key As [Enum]) As String
-			Return (Environment.NewLine & Chr(9) & "CONSTRAINT " & Name.ToString.QuoteTheString) & " PRIMARY KEY(" & Key.ToString.QuoteTheString & ")"
-		End Function
-#End Region
-
 #Region "Commands - Individual Tables"
 		Public Shared Function Retrieve_CommandString_CreateTable_Account() As String
 			Dim CommandString As String = "" &
 			"CREATE TABLE IF NOT EXISTS " & GDEnum_AccountTables.Account.ToString.QuoteTheString & " (" &
-			SQL_FormatLine_ColumnCreate(GDEnum_Account_AccountColumn.Auth_ID, SQL_Types.INT, False) &
+			SQL_FormatLine_ColumnCreate(GDEnum_Account_AccountColumn.Auth_ID, System.Data.SqlDbType.Int, False) &
 			SQL_FormatLine_ColumnCreate_VarChars(GDEnum_Account_AccountColumn.Auth_Name, 14) &
 			SQL_FormatLine_ColumnCreate_Blob(GDEnum_Account_AccountColumn.LoyaltyPoints_Balance, 16) &
 			SQL_FormatLine_ColumnCreate_SmallInt(GDEnum_Account_AccountColumn.LoyaltyPoints_Earned) &
@@ -57,7 +36,7 @@ Namespace Storage.DataBases.SQL
 		Public Shared Function Retrieve_CommandString_CreateTable_ProductType() As String
 			Dim CommandString As String = "" &
 			"CREATE TABLE IF NOT EXISTS " & GDEnum_AccountTables.Product_Type.ToString.QuoteTheString & " (" &
-			SQL_FormatLine_ColumnCreate(GDEnum_Account_ProductTypeColumn.Product_TypeID, SQL_Types.INT, False) &
+			SQL_FormatLine_ColumnCreate(GDEnum_Account_ProductTypeColumn.Product_TypeID, System.Data.SqlDbType.Int, False) &
 			SQL_FormatLine_ColumnCreate_VarChars(GDEnum_Account_ProductTypeColumn.Product_Name, 128) &
 			FormatLine_Constraint(GDEnum_Account_ProductTypeColumn.UniqueKey, GDEnum_Account_ProductTypeColumn.Product_TypeID) &
 			FormatLine_EndTable(True)

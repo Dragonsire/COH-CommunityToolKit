@@ -28,10 +28,10 @@ Namespace Storage.DataBases.SQL
 #Region "Initialize"
         Private Sub SetDefaults()
         End Sub
-        Public Function CreateDatabase() As Boolean
+        Public Function CreateDatabase(Name As String, FileName As String) As Boolean
             Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
             'Command.Transaction = Transactions_CreateNew()
-            Command.CommandText = Retrieve_CommandString_CreateDatabase("COH_ACC", "E:\COH_TEST.MDF")
+            Command.CommandText = COH.HelperFunctions.Databases.SQL.Retrieve_CommandString_CreateDatabase(Name, FileName)
             Try
                 Command.ExecuteNonQuery()
                 ' Command.Transaction.Commit()
@@ -42,11 +42,11 @@ Namespace Storage.DataBases.SQL
 
             Return True
         End Function
-        Public Function DeleteDatabase() As Boolean
+        Public Function DeleteDatabase(Name As String) As Boolean
             Return True
             Dim Command As SqlClient.SqlCommand = Commands_CreateNew()
             Command.Transaction = Transactions_CreateNew()
-            Command.CommandText = Retrieve_CommandString_DeleteDatabase("COH_ACC")
+            Command.CommandText = COH.HelperFunctions.Databases.SQL.Retrieve_CommandString_DeleteDatabase(Name)
             Try
                 Command.ExecuteNonQuery()
                 Command.Transaction.Commit()

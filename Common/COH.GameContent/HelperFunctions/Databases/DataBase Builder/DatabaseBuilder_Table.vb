@@ -1,4 +1,5 @@
-﻿Imports COH.CodeManagement.Extentions
+﻿Imports System.Data
+Imports COH.CodeManagement.Extentions
 
 Namespace HelperFunctions.Databases.SQL
     Public Class DatabaseBuilder_DatabaseTable
@@ -20,23 +21,23 @@ Namespace HelperFunctions.Databases.SQL
 #End Region
 
 #Region "Table Columns"
-        Public Sub AddColumn(ColumnName As [Enum], TheType As SQL_Types, Optional AllowNull As Boolean = True, Optional Length As UInt32 = 0, Optional HasDefault As Boolean = False, Optional TheDefault As String = "")
+        Public Sub AddColumn(ColumnName As [Enum], TheType As System.Data.SqlDbType, Optional AllowNull As Boolean = True, Optional Length As UInt32 = 0, Optional HasDefault As Boolean = False, Optional TheDefault As String = "")
             TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, TheType.ToString, AllowNull, Length, HasDefault, TheDefault))
         End Sub
         Public Sub AddColumn_Date(ColumnName As [Enum], Optional HasDefault As Boolean = True, Optional AllowNull As Boolean = True, Optional TheDefault As Date = #01/01/2000#)
-            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, SQL_Types.DATETIME.ToString, AllowNull, 0, HasDefault, TheDefault.ToString.SingleQuoteTheString))
+            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, System.Data.SqlDbType.DateTime.ToString, AllowNull, 0, HasDefault, TheDefault.ToString.SingleQuoteTheString))
         End Sub
         Public Sub AddColumn_SmallInt(ColumnName As [Enum], Optional HasDefault As Boolean = True, Optional AllowNull As Boolean = True, Optional TheDefault As Integer = 0)
-            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, SQL_Types.SMALLINT.ToString, AllowNull, 0, HasDefault, TheDefault))
+            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, System.Data.SqlDbType.SmallInt.ToString, AllowNull, 0, HasDefault, TheDefault))
         End Sub
         Public Sub AddColumn_Integer(ColumnName As [Enum], Optional HasDefault As Boolean = True, Optional AllowNull As Boolean = True, Optional TheDefault As Integer = 0)
-            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, SQL_Types.INT.ToString, AllowNull, 0, HasDefault, TheDefault))
+            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, System.Data.SqlDbType.Int.ToString, AllowNull, 0, HasDefault, TheDefault))
         End Sub
         Public Sub AddColumn_VarChar(ColumnName As [Enum], Length As UInt32, Optional HasDefault As Boolean = True, Optional AllowNull As Boolean = True, Optional TheDefault As Integer = 0)
-            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, SQL_Types.VARCHAR.ToString, AllowNull, Length, HasDefault, TheDefault))
+            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, System.Data.SqlDbType.VarChar.ToString, AllowNull, Length, HasDefault, TheDefault))
         End Sub
         Public Sub AddColumn_Blob(ColumnName As [Enum], Length As UInt32, Optional AllowNull As Boolean = True)
-            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, SQL_Types.BLOB.ToString, AllowNull, Length, False, ""))
+            TableColumns.Add(New DatabaseBuilder_DatabaseTableColumn(ColumnName.ToString, System.Data.SqlDbType.Binary.ToString, AllowNull, Length, False, ""))
         End Sub
 #End Region
 
