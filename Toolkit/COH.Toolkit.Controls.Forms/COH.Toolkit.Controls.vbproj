@@ -81,11 +81,10 @@
     <ProjectReference Include="..\..\Common\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Structures.Resources.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
-    <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.CrypticBin\COH.Storage.Containers.CrypticBin.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit.Controls.WPF\COH.Toolkit.WPFControls.vbproj" />
     <ProjectReference Include="..\COH.Toolkit\COH.Toolkit.vbproj" />
   </ItemGroup>
 
@@ -94,6 +93,38 @@
     <None Update="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Page Update="Controls\Controls (WPF)\COH_ModelViewer.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Controls %28Modding%29\Editors %28Forms%29\COH_MessageStoreEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Editors\COH_ModdableContent_Editor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Editors\COH_Unified_Editor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Single_Editors\COH CharacterClass_Editor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Single_Editors\COH PowerSet_Editor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Single_Editors\COH_PowerCategory_Editor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls %28Modding%29\Single_Editors\COH_Power_Editor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

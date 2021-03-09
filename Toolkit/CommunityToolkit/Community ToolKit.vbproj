@@ -43,7 +43,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="_Internal\Constants\" />
+    <Compile Remove="_Internal\Constants\**" />
+    <EmbeddedResource Remove="_Internal\Constants\**" />
+    <None Remove="_Internal\Constants\**" />
+    <Page Remove="_Internal\Constants\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,11 +78,9 @@
     <ProjectReference Include="..\..\Common\COH.GameContent.MessageStores\COH.GameContent.MessageStores.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Resources\COH.GameContent.Structures.Resources.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
-    <ProjectReference Include="..\..\Common\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
     <ProjectReference Include="..\COH.Toolkit.Controls.Forms\COH.Toolkit.Controls.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit.Controls.WPF\COH.Toolkit.WPFControls.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit.Modding\COH.Toolkit.Modding.vbproj" />
     <ProjectReference Include="..\COH.Toolkit\COH.Toolkit.vbproj" />
   </ItemGroup>
 

@@ -41,6 +41,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\COH.GameContent\COH.vbproj" />
   </ItemGroup>
 </Project>

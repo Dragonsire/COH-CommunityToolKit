@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\COH.GameContent\COH.Core.vbproj" />
+    <ProjectReference Include="..\COH.GameContent\COH.vbproj" />
     <ProjectReference Include="..\COH.Storage.Databases\COH.Storage.Databases.vbproj" />
     <ProjectReference Include="..\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>
