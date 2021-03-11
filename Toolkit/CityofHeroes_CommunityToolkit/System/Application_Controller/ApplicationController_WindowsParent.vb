@@ -1,4 +1,4 @@
-﻿Partial Public Class ApplicationController
+﻿Partial Public Class ToolkitController
 
 #Region "Properties"
     Private UseCustomParentForm As Boolean

@@ -1,12 +1,10 @@
-﻿Imports DS._CoreLibrary_.v6.HelperFunctions.WindowsForms
-
-Namespace ControllerModules.Pathways
+﻿Namespace ControllerModules.Pathways
     Public NotInheritable Class ControllerModule_PathwaysRegistry
 
 #Region "Properties"
         Public ReadOnly Property ProgramID As String
             Get
-                Return pProgramID
+                Return "CityofHeroes_CommunityToolKit"
             End Get
         End Property
         Public ReadOnly Property InstalledPath As String
@@ -33,12 +31,10 @@ Namespace ControllerModules.Pathways
         Private pInstalledPathChanged As Boolean
         Private pVersion As String
         Private pInstalledPath As String
-        Private pProgramID As String
 #End Region
 
 #Region "Initialize"
-        Public Sub New(ID As String, Path As String)
-            pProgramID = ID
+        Public Sub New(Path As String)
             pInstalledPath = Path
             EnsureRegisryEntry()
         End Sub
@@ -85,7 +81,7 @@ Namespace ControllerModules.Pathways
 #Region "Windows Registry Settings"
         Public Shared Function CheckProgramRegistryExists(ProgramNameKey As String, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
             Dim DSKey As Microsoft.Win32.RegistryKey = Nothing
-            'If WindowsRegistry.CheckExists("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, False, DSKey) = False Then Return False
+            If CheckExists("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, False, DSKey) = False Then Return False
             Dim ProgramKey As Microsoft.Win32.RegistryKey = DSKey.OpenSubKey(ProgramNameKey, False)
             If (ProgramKey Is Nothing) Then Return False
             Result = ProgramKey
@@ -93,11 +89,50 @@ Namespace ControllerModules.Pathways
         End Function
         Public Shared Function CreateRegistryEntry(ByRef Details As ControllerModule_PathwaysRegistry) As Boolean
             Dim DSKey As Microsoft.Win32.RegistryKey = Nothing
-            ' If WindowsRegistry.CreateRegistryEntry("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, DSKey) = False Then Return False
+            If CreateRegistryEntry("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, DSKey) = False Then Return False
             Dim ProgramKey = DSKey.CreateSubKey(Details.ProgramID)
             ProgramKey.SetValue("InstalledPath", Details.InstalledPath)
             ProgramKey.SetValue("Version", Retrieve_VersionInfo)
             Return True
+        End Function
+#End Region
+
+#Region "Generic Functions"
+        Public Enum WindowsRegistryBranches
+            LocalMachine
+            Users
+            CurrentConfig
+            ClassesRoot
+            CurrentUser
+            CurrentUser_Software
+        End Enum
+        Public Shared Function CreateRegistryEntry(Name As String, Branch As WindowsRegistryBranches, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
+            If CheckExists(Name, Branch, True, Result) = True Then Return True
+            Result = Retrieve_RegistryBranch(Branch, True).CreateSubKey(Name)
+            Return Not (Result Is Nothing)
+        End Function
+        Public Shared Function CheckExists(Name As String, Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
+            Result = Retrieve_RegistryBranch(Branch, RequireWriteAccess).OpenSubKey(Name, RequireWriteAccess)
+            Return Not (Result Is Nothing)
+            Dim T As Microsoft.Win32.RegistryKeyPermissionCheck
+        End Function
+        Public Shared Function Retrieve_RegistryBranch(Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean) As Microsoft.Win32.RegistryKey
+            Select Case Branch
+                Case WindowsRegistryBranches.Users
+                    Return Microsoft.Win32.Registry.Users
+                Case WindowsRegistryBranches.LocalMachine
+                    Return Microsoft.Win32.Registry.LocalMachine
+                Case WindowsRegistryBranches.CurrentUser
+                    Return Microsoft.Win32.Registry.CurrentUser
+                Case WindowsRegistryBranches.CurrentConfig
+                    Return Microsoft.Win32.Registry.CurrentConfig
+                Case WindowsRegistryBranches.ClassesRoot
+                    Return Microsoft.Win32.Registry.ClassesRoot
+                Case WindowsRegistryBranches.CurrentUser_Software
+                    Return Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE", RequireWriteAccess)
+                Case Else
+                    Return Nothing
+            End Select
         End Function
 #End Region
     End Class

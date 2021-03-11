@@ -1,7 +1,7 @@
 ﻿Imports COH.ControllerModules
 Imports COH.Toolkit.Controls.Menu
 
-Public NotInheritable Class ApplicationController
+Public NotInheritable Class ToolkitController
 
 #Region "Identification"
     Public Const ProgramName As String = "ControlFreak Controller Template"
@@ -9,7 +9,7 @@ Public NotInheritable Class ApplicationController
 #End Region
 
 #Region "Properties"
-    Public Shared ReadOnly Property Instance As ApplicationController
+    Public Shared ReadOnly Property Instance As ToolkitController
         Get
             Return sInstance
         End Get
@@ -32,7 +32,7 @@ Public NotInheritable Class ApplicationController
     Private WithEvents rPathways As ControllerModule_Pathways
     Private WithEvents rWindowManager As ControllerModule_WindowManager
     Private WithEvents pSettings As ApplicationController_Settings
-    Private Shared sInstance As ApplicationController
+    Private Shared sInstance As ToolkitController
 #End Region
 
 #Region "Create New Instance"

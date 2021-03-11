@@ -5,7 +5,7 @@ Namespace ControllerModules
 
 #Region "Registry"
         Private Function OnConfigureRegistry(ProgramFolder As String, DefaultFolderName As String) As ControllerModule_PathwaysRegistry
-            Dim Result As New ControllerModule_PathwaysRegistry(DefaultFolderName, ProgramFolder)
+            Dim Result As New ControllerModule_PathwaysRegistry(ProgramFolder)
             With Result
                 '// .InstalledPath 
                 '// 

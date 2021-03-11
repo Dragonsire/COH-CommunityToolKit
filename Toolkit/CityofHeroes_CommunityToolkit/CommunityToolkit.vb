@@ -4,9 +4,9 @@ Namespace Toolkit.Controls
     Public Class COH_CommunityToolkit_Main
 
 #Region "References"
-        Protected Friend ReadOnly Property ProgramController As ApplicationController
+        Protected Friend ReadOnly Property ProgramController As ToolkitController
             Get
-                Return ApplicationController.Instance
+                Return ToolkitController.Instance
             End Get
         End Property
 #End Region

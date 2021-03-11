@@ -1,4 +1,4 @@
-﻿Namespace Helpers
+﻿Namespace Toolkit.Helpers
     Public NotInheritable Class Toolkit_AssemblyLocator
 
 #Region "Properties"

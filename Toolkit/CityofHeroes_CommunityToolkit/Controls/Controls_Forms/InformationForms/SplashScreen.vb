@@ -1,21 +1,15 @@
-﻿Imports System.Drawing
-
-Namespace  Toolkit.Controls
+﻿Namespace Toolkit.Controls
     Public Class COH_Toolkit_SplashScreen
 
 #Region "Prepare USage"
-        Public Sub PrepareUsage(Background As Image, ProgressBarColor As Color, Version As String, Max As Integer)
+        Public Sub PrepareUsage(Version As String, Max As Integer)
             DoubleBuffered = True
             StartPosition = FormStartPosition.CenterScreen
-            BackgroundImageLayout = ImageLayout.Stretch
-            Dim NewSize As Size = New Size(Background.Width, Background.Height + Me.ProgressBar1.Height)
-            ClientSize = NewSize
-            BackgroundImage = Background
             VersionLabel.Text = "Version : " & Version
             ProgressBar1.Minimum = 0
             ProgressBar1.Maximum = Max
             ProgressBar1.Value = 0
-            ProgressBar1.ForeColor = ProgressBarColor
+            ProgressBar1.ForeColor = Drawing.Color.Red
         End Sub
         Public Sub UpdateProgress(Name As String, NewValue As Integer, Optional Sleep As Boolean = False, Optional SleepAmount As Integer = 300)
             Label_Progress.Text = Name

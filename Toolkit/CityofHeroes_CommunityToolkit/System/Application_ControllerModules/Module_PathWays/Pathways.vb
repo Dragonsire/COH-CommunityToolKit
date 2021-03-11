@@ -28,7 +28,7 @@ Namespace ControllerModules
 #End Region
 
 #Region "Create New Instance"
-        Public Sub New(ByRef ParentController As ApplicationController)
+        Public Sub New(ByRef ParentController As ToolkitController)
             MyBase.New(ParentController)
         End Sub
         Public Sub ConfigureModule(StartupFolder As String, DefaultFolderName As String)

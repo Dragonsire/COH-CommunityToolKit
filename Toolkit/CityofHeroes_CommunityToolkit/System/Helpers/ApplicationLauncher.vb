@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices
 
-Namespace Helpers
+Namespace Toolkit.Helpers
     Public Class Toolkit_ApplicationLauncher
         Inherits WindowsFormsApplicationBase
 

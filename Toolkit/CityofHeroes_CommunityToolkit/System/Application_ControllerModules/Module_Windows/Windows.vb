@@ -23,7 +23,7 @@
 #End Region
 
 #Region "Create New Instance"
-        Public Sub New(ByRef ParentController As ApplicationController)
+        Public Sub New(ByRef ParentController As ToolkitController)
             MyBase.New(ParentController)
         End Sub
         Public Sub ConfigureModule(ByRef DefaultParent As Control, DefaultParent_Area As Drawing.Rectangle)

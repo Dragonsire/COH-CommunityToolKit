@@ -2,16 +2,16 @@
     Public MustInherit Class ControllerModule
 
 #Region "Properties"
-        Public ReadOnly Property ParentController As ApplicationController
+        Public ReadOnly Property ParentController As ToolkitController
             Get
                 Return rParent
             End Get
         End Property
-        Private rParent As ApplicationController
+        Private rParent As ToolkitController
 #End Region
 
 #Region "Create New Instance"
-        Public Sub New(ByRef ParentController As ApplicationController)
+        Public Sub New(ByRef ParentController As ToolkitController)
             rParent = ParentController
         End Sub
 #End Region

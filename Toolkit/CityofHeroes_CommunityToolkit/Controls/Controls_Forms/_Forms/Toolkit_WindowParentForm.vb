@@ -4,9 +4,9 @@ Namespace Toolkit.Controls
     Public Class ControlFreak_ParentForm
 
 #Region "References"
-        Protected Friend ReadOnly Property ProgramController As ApplicationController
+        Protected Friend ReadOnly Property ProgramController As ToolkitController
             Get
-                Return ApplicationController.Instance
+                Return ToolkitController.Instance
             End Get
         End Property
 #End Region

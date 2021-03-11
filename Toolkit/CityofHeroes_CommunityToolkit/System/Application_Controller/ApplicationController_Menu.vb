@@ -1,6 +1,6 @@
 ﻿Imports COH.Toolkit.Controls.Menu
 
-Partial Public Class ApplicationController
+Partial Public Class ToolkitController
 
 #Region "Properties"
     Public ReadOnly Property WindowMenu() As COH_Toolkit_MenuStrip

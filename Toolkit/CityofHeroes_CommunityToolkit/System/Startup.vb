@@ -1,14 +1,13 @@
-﻿Imports COH.Controls
-Imports COH.Helpers
+﻿Imports COH.Toolkit.Helpers
 
 Public Module Startup
-    Public mApplication As Toolkit_ApplicationLauncher
-    Public MasterControl As ApplicationController
-    Public mMainForm As Toolkit.Controls.COH_CommunityToolkit_Main
+    Public CurrentApplication As Toolkit_ApplicationLauncher
+    Public MasterControl As ToolkitController
+    Public MainForm As Toolkit.Controls.COH_CommunityToolkit_Main
     Sub Main(Arguments As String())
-        MasterControl = New ApplicationController(Application.StartupPath)
-        '//mMainForm = MasterControl.MainForm
-        mApplication = New Toolkit_ApplicationLauncher(mMainForm)
-        mApplication.Run(Arguments)
+        MasterControl = New ToolkitController(Application.StartupPath)
+        MainForm = Nothing 'MasterControl.MainForm
+        CurrentApplication = New Toolkit_ApplicationLauncher(MainForm)
+        CurrentApplication.Run(Arguments)
     End Sub
 End Module

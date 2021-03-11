@@ -67,11 +67,13 @@
             Me.VersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
             Me.VersionLabel.UseWaitCursor = True
             '
-            'ControlFreak_SplashScreen
+            'COH_Toolkit_SplashScreen
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.BackColor = System.Drawing.Color.DarkSlateBlue
+            Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+            Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
             Me.ClientSize = New System.Drawing.Size(582, 207)
             Me.Controls.Add(Me.VersionLabel)
             Me.Controls.Add(Me.Label_Progress)
@@ -80,7 +82,7 @@
             Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
             Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
             Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-            Me.Name = "ControlFreak_SplashScreen"
+            Me.Name = "COH_Toolkit_SplashScreen"
             Me.ShowIcon = False
             Me.ShowInTaskbar = False
             Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

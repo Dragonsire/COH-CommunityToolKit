@@ -1,4 +1,4 @@
-﻿Partial Public Class ApplicationController
+﻿Partial Public Class ToolkitController
 
 #Region "Properties"
     Public ReadOnly Property EventManager() 'As Metatron_EventManager

@@ -1,4 +1,4 @@
-﻿Partial Public Class ApplicationController
+﻿Partial Public Class ToolkitController
 
 #Region "Menu Events"
     Protected Overridable Sub OnMenuClicked(ID As String)
