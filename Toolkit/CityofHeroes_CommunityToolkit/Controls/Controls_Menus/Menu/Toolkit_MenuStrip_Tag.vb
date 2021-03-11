@@ -1,6 +1,6 @@
 ﻿Imports COH.CodeManagement.Enums
 
-Namespace Controls.Menu
+Namespace Toolkit.Controls.Menu
     Public Class ControlFreak_MenuStrip_Tag
         Property Visibility As SecurityRole
         Property DisablesDuringEditing As Boolean

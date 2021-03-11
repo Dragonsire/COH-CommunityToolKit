@@ -1,4 +1,4 @@
-﻿Namespace  Controls
+﻿Namespace  Toolkit.Controls
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class ControlFreak_AboutBox
         Inherits Toolkit_Window

@@ -1,19 +1,17 @@
-﻿Imports COH.Controls
-
-Partial Public Class ApplicationController
+﻿Partial Public Class ApplicationController
 
 #Region "Properties"
     Private UseCustomParentForm As Boolean
 #End Region
 
 #Region "Create ParentForm"
-    Private Function Create_ParentForm() As ControlFreak_ParentForm
-        'Dim ParentFormConfiguration As WindowFormsConfiguration = ConfigureDefaultConfiguration_ParmForm()
-        'Dim ParentForm As New ControlFreak_ParentForm()
-        'ParentForm.ApplyConfiguration(ParentFormConfiguration, Not (ParentFormConfiguration.Skin Is Nothing), Not (ParentFormConfiguration.ColorScheme Is Nothing))
-        'OnModify_ParentForm_BannerMenu(ParentForm.BannerMenu)
-        'Return ParentForm
-    End Function
+    'Private Function Create_ParentForm() As ControlFreak_ParentForm
+    'Dim ParentFormConfiguration As WindowFormsConfiguration = ConfigureDefaultConfiguration_ParmForm()
+    'Dim ParentForm As New ControlFreak_ParentForm()
+    'ParentForm.ApplyConfiguration(ParentFormConfiguration, Not (ParentFormConfiguration.Skin Is Nothing), Not (ParentFormConfiguration.ColorScheme Is Nothing))
+    'OnModify_ParentForm_BannerMenu(ParentForm.BannerMenu)
+    'Return ParentForm
+    'End Function
     'Protected Function ConfigureDefaultConfiguration_ParmForm() As WindowFormsConfiguration
     'Dim Skin As WindowFormsConfiguration_Skin = Pathways.RetrieveResource_FormSkin(Settings.Skinning_TemplateUsed)
     'If Skin Is Nothing Then Skin = Pathways.RetrieveResource_FormSkin_Default

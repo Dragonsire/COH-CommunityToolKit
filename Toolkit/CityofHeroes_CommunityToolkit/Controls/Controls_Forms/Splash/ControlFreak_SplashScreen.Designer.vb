@@ -1,4 +1,4 @@
-﻿Namespace  Controls
+﻿Namespace  Toolkit.Controls
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class COH_Toolkit_SplashScreen
         Inherits System.Windows.Forms.Form

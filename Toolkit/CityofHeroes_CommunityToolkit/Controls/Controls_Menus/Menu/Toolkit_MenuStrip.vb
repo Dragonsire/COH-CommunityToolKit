@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 Imports COH.CodeManagement.Enums
 
-Namespace Controls.Menu
+Namespace Toolkit.Controls.Menu
     Public NotInheritable Class COH_Toolkit_MenuStrip
         Inherits MenuStrip
 

@@ -1,4 +1,4 @@
-﻿Namespace  Controls.Menu
+﻿Namespace Toolkit.Controls.Menu
     Public Class ControlFreak_MenuBanner
 
 #Region "Properties"
@@ -31,6 +31,10 @@
                 UseWaitCursor = False
                 ParentForm.UseWaitCursor = False
             End If
+        End Sub
+
+        Private Sub ControlFreak_MenuBanner_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         End Sub
 #End Region
     End Class

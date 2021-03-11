@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace  Controls
+Namespace  Toolkit.Controls
     <ToolboxItem(True)> <ToolboxBitmap(GetType(FileDialog))> Public Class ControlFreak_AboutBox
 
 #Region "Create New Instance"

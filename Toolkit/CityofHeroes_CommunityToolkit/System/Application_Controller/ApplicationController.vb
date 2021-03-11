@@ -1,4 +1,5 @@
 ﻿Imports COH.ControllerModules
+Imports COH.Toolkit.Controls.Menu
 
 Public NotInheritable Class ApplicationController
 
@@ -40,7 +41,7 @@ Public NotInheritable Class ApplicationController
         PerformStartup_ConfigureMainWindow_Standard()
         PerformStartup_Final()
     End Sub
-    Public Sub New(ByRef StartupFolder As String, MainForm As Control, ByRef TheMenu As Controls.Menu.COH_Toolkit_MenuStrip, DefaultParent_Area As Drawing.Rectangle)
+    Public Sub New(ByRef StartupFolder As String, MainForm As Control, ByRef TheMenu As COH_Toolkit_MenuStrip, DefaultParent_Area As Drawing.Rectangle)
         PerformStartup_Intial(StartupFolder)
         PerformStartup_ConfigureMainWindow_Custom(MainForm, TheMenu, DefaultParent_Area)
         PerformStartup_Final()
@@ -58,11 +59,11 @@ Public NotInheritable Class ApplicationController
         UpdateSplashScreen("Configuring UI", 20, True)
     End Sub
     Private Sub PerformStartup_ConfigureMainWindow_Standard()
-        Dim ParentForm = Create_ParentForm()
+        Dim ParentForm '= Create_ParentForm()
         ConfigureWindowController(ParentForm, ParentForm.ChildFormArea)
         ConfigureMenu(ParentForm.MainMenuStrip)
     End Sub
-    Private Sub PerformStartup_ConfigureMainWindow_Custom(MainForm As Control, ByRef TheMenu As Controls.Menu.COH_Toolkit_MenuStrip, DefaultParent_Area As Drawing.Rectangle)
+    Private Sub PerformStartup_ConfigureMainWindow_Custom(MainForm As Control, ByRef TheMenu As COH_Toolkit_MenuStrip, DefaultParent_Area As Drawing.Rectangle)
         ConfigureWindowController(MainForm, DefaultParent_Area)
         ConfigureMenu(TheMenu)
     End Sub

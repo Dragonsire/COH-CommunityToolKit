@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace  Controls
+Namespace  Toolkit.Controls
     Public Class COH_Toolkit_SplashScreen
 
 #Region "Prepare USage"

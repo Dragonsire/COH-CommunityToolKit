@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 Imports COH.ControllerModules.Pathways
-Imports COH.Controls
+Imports COH.Toolkit.Controls
 
 Partial Public Class ApplicationController
 

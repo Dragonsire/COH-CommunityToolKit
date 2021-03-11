@@ -1,4 +1,4 @@
-﻿Namespace Controls
+﻿Namespace Toolkit.Controls
     Public Class Toolkit_Window
 
 #Region "References"

@@ -1,4 +1,4 @@
-﻿Imports COH.Controls.Menu
+﻿Imports COH.Toolkit.Controls.Menu
 
 Partial Public Class ApplicationController
 

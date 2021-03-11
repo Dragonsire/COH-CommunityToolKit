@@ -80,7 +80,6 @@
     <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\HelperClasses\" />
     <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\_System\CodeManagement.Interfaces\" />
     <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\SystemsCode\ControlFreak\Controller\UI\" />
-    <Folder Include="My Project\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,11 +88,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\Controls_Menus\MenuBanner\ControlFreak_MenuBanner.vb">
+    <Compile Update="CommunityToolkit.vb" />
+    <Compile Update="Controls\Controls_Menus\MenuBanner\Toolkit_MenuBanner.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Controls\Controls_Menus\Menu\ControlFreak_MenuStrip.vb" />
-    <Compile Update="Controls\Controls_Menus\Menu\ControlFreak_MenuStrip_MenuItems.vb" />
+    <Compile Update="Controls\Controls_Menus\Menu\Toolkit_MenuStrip.vb" />
+    <Compile Update="Controls\Controls_Menus\Menu\Toolkit_MenuStrip_MenuItems.vb" />
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>Toolkit.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

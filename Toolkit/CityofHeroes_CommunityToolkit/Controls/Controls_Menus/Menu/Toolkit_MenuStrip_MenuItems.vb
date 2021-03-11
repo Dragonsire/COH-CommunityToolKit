@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace  Controls.Menu
+Namespace  Toolkit.Controls.Menu
     Partial Public NotInheritable Class COH_Toolkit_MenuStrip
 
 #Region "Configure Menu Items"
