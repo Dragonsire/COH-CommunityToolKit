@@ -29,9 +29,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="My Project\**" />
     <Compile Remove="_Internal\**" />
+    <EmbeddedResource Remove="My Project\**" />
     <EmbeddedResource Remove="_Internal\**" />
+    <None Remove="My Project\**" />
     <None Remove="_Internal\**" />
+    <Page Remove="My Project\**" />
     <Page Remove="_Internal\**" />
   </ItemGroup>
 
@@ -70,11 +74,6 @@
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="My Project\" />
   </ItemGroup>
 
 </Project>

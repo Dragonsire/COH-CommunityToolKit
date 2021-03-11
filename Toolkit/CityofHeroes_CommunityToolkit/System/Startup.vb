@@ -1,6 +1,5 @@
-﻿Imports DS.ControlFreak.v1
-Imports DS.ControlFreak.v1.Controls
-Imports DS.ControlFreak.v1.Helpers
+﻿Imports COH.Controls
+Imports COH.Helpers
 
 Public Module Startup
     Public mApplication As Toolkit_ApplicationLauncher

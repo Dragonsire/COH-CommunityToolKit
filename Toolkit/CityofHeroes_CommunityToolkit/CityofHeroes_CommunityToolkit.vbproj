@@ -12,11 +12,12 @@
     <FileVersion>1.0.0.1246</FileVersion>
     <NeutralLanguage>en</NeutralLanguage>
     <AssemblyName>COH_ToolKit</AssemblyName>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
-    <StartupObject></StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <Platforms>AnyCPU;x64</Platforms>
     <Configurations>Debug_Toolkit;Release_Toolkit</Configurations>
+    <ApplicationIcon>COH_Multiple.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Toolkit|AnyCPU'">
