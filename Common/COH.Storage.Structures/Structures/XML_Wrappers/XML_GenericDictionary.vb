@@ -1,7 +1,6 @@
 ﻿Imports System.Xml.Serialization
-Namespace HelperClasses.Wrappers
-    <XmlRoot("COH_Dictionary")>
-    Public Class COH_XML_Dictionary(Of TKey, TValue)
+Namespace Storage.Structures.Wrappers
+    <XmlRoot("COH_GenericDictionary")> Public Class COH_GenericDictionary(Of TKey, TValue)
         Inherits Dictionary(Of TKey, TValue)
         Implements IXmlSerializable
 

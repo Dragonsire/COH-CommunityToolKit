@@ -1,0 +1,98 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>COH</RootNamespace>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <PackageId>DS_ControlFreak-v1</PackageId>
+    <Authors>DragonSire</Authors>
+    <Company>DragonSire Software</Company>
+    <Product>File and UI Controller</Product>
+    <Copyright>2002 - 2020</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.1246</FileVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyName>COH_ToolKit</AssemblyName>
+    <OutputType>Library</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Configurations>Debug_Toolkit;Release_Toolkit</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Toolkit|AnyCPU'">
+    <OutputPath>..\..\..\_Compiled Code\Toolkit\Debug\COH.Toolkit</OutputPath>
+	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Toolkit|AnyCPU'">
+    <OutputPath>..\..\..\_Compiled Code\ToolKit\Release\COH.Toolkit</OutputPath>
+	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="DS.ControlFreak.v1.ControllerModules" />
+    <Import Include="DS.ControlFreak.v1.ControllerModules.Pathways" />
+    <Import Include="DS.ControlFreak.v1.ControllerModules.Settings" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.Attributes" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.Enums" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.Events" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.Interfaces" />
+    <Import Include="DS._CoreLibrary_.v6.Internal.DeveloperOptions" />
+    <Import Include="DS._CoreLibrary_.v6.Extensions.BitsANDBytes" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.BitsANDBytes.FleXStream" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.ControlRegions" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.ControlRegions.Misc" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.Metatron" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.Metatron.Configuration" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.Metatron.ErrorReporting" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.Metatron.Events" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.Metatron.Logging" />
+    <Import Include="DS._CoreLibrary_.v6.Utilities.WinForms" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.BitsANDBytes.Enums" />
+    <Import Include="DS._CoreLibrary_.v6.HelperFunctions.BitsANDBytes.Extensions" />
+    <Import Include="DS._CoreLibrary_.v6.Libraries.FlexStream" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.CFS.Interfaces" />
+    <Import Include="DS._CoreLibrary_.v6.FileStructures.CFS" />
+    <Import Include="DS._CoreLibrary_.v6.FileStructures.CFS.Wrappers" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.CFS.ClassAttributes" />
+    <Import Include="DS._CoreLibrary_.v6.CodeManagement.Enums.WinForms" />
+    <Import Include="DS._CoreLibrary_.v6.Controls.WinForms._WindowForms_" />
+    <Import Include="DS.ControlFreak.v1.CodeManagement.Enums" />
+    <Import Include="DS.ControlFreak.v1.Controllers" />
+    <Import Include="DS.ControlFreak.v1.Controllers" />
+    <Import Include="DS.ControlFreak.v1.Controls" />
+    <Import Include="DS.ControlFreak.v1.Controls.Menu" />
+    <Import Include="DS.ControlFreak.v1.Events" />
+    <Import Include="DS.ControlFreak.v1.HelperClasses" />
+    <Import Include="DS.ControlFreak.v1.HelperFunctions" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.ComponentModel.Design" />
+    <Import Include="System.Data" />
+	<Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\Helpers\Extensions\" />
+    <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\HelperClasses\" />
+    <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\_System\CodeManagement.Interfaces\" />
+    <Folder Include="..\..\..\_DragonSireCoreLibrary %25286.0%2529\_NetCore\DSv6_Library_ControlFreak\SystemsCode\ControlFreak\Controller\UI\" />
+    <Folder Include="My Project\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\Controls_Menus\MenuBanner\ControlFreak_MenuBanner.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\Controls_Menus\Menu\ControlFreak_MenuStrip.vb" />
+    <Compile Update="Controls\Controls_Menus\Menu\ControlFreak_MenuStrip_MenuItems.vb" />
+  </ItemGroup>
+
+</Project>

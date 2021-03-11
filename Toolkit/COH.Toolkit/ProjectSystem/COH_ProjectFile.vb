@@ -96,11 +96,11 @@ Namespace ProjectFiles
                 Return Index_Retrieve(COH_ProjectContent.Tricks)
             End Get
         End Property
-        Property Content As COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS)
+        Property Content As COH_GenericDictionary(Of COH_ProjectContent, COH_CrypticS)
             Get
                 Return mContent
             End Get
-            Set(value As COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS))
+            Set(value As COH_GenericDictionary(Of COH_ProjectContent, COH_CrypticS))
                 mContent = value
             End Set
         End Property
@@ -113,7 +113,7 @@ Namespace ProjectFiles
         Private mVersion As String
         Private mReleaseDate As String
         Private mDescription As String
-        Private mContent As COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS)
+        Private mContent As COH_GenericDictionary(Of COH_ProjectContent, COH_CrypticS)
 #End Region
 
 #Region "Create New Instances"
@@ -130,7 +130,7 @@ Namespace ProjectFiles
             mWebsite = String.Empty
             mVersion = String.Empty
             mReleaseDate = String.Empty
-            mContent = New COH_XML_Dictionary(Of COH_ProjectContent, COH_CrypticS)
+            mContent = New COH_GenericDictionary(Of COH_ProjectContent, COH_CrypticS)
             mDescription = "Full Package"
         End Sub
 #End Region

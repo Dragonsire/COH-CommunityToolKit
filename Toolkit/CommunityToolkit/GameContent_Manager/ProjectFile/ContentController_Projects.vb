@@ -32,8 +32,8 @@ Namespace Internal.ContentController
 
 #Region "Private Properties"
         Private mCached_CurrentProjectFile As COH_ProjectFile
-        Private mCached_ProjectMapping As COH_XML_Dictionary(Of String, COH_ProjectContent())
-        Private mCahced_ModMapping As COH_XML_Dictionary(Of COH_ProjectContent, Type)
+        Private mCached_ProjectMapping As COH_GenericDictionary(Of String, COH_ProjectContent())
+        Private mCahced_ModMapping As COH_GenericDictionary(Of COH_ProjectContent, Type)
 #End Region
 
 #Region "Create Standard Project File"
@@ -70,8 +70,8 @@ Namespace Internal.ContentController
             Dim SourcePath As String = Root & "Index_" & Retrieve_FileName(Selected) & ".xml"
             Return SourcePath
         End Function
-        Private Function CreateListProjectMapping() As COH_XML_Dictionary(Of String, COH_ProjectContent())
-            Dim Result As New COH_XML_Dictionary(Of String, COH_ProjectContent())
+        Private Function CreateListProjectMapping() As COH_GenericDictionary(Of String, COH_ProjectContent())
+            Dim Result As New COH_GenericDictionary(Of String, COH_ProjectContent())
             With Result
                 .Add("powercats.bin", New COH_ProjectContent(0) {COH_ProjectContent.PowerCategory})
                 .Add("powersets.bin", New COH_ProjectContent(0) {COH_ProjectContent.PowerSets})
@@ -91,8 +91,8 @@ Namespace Internal.ContentController
             End With
             Return Result
         End Function
-        Private Function CreateListProjectMapping_ModType() As COH_XML_Dictionary(Of COH_ProjectContent, Type)
-            Dim Result As New COH_XML_Dictionary(Of COH_ProjectContent, Type)
+        Private Function CreateListProjectMapping_ModType() As COH_GenericDictionary(Of COH_ProjectContent, Type)
+            Dim Result As New COH_GenericDictionary(Of COH_ProjectContent, Type)
             With Result
                 .Add(COH_ProjectContent.CharacterClasses_PlayerClasses, GetType(COH_CharacterClass))
                 .Add(COH_ProjectContent.CharacterClasses_EnemyClass, GetType(COH_CharacterClass))
