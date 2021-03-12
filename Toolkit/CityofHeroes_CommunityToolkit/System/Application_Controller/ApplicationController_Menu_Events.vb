@@ -2,10 +2,33 @@
     Partial Public Class ToolkitController
 
 #Region "Menu Events"
-        Protected Overridable Sub OnMenuClicked(ID As String)
+        Private Sub OnHandleMenuClicked(MenuCommand As [Enum]) Handles pTheMenu.MenuClicked
+            Dim TheType = MenuCommand.GetType
+            If TheType = GetType(CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu) Then
+                OnMenuClicked(CType(MenuCommand, CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu))
+            ElseIf TheType = GetType(CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_OpenSpecified) Then
+                OnMenuClicked(CType(MenuCommand, CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_OpenSpecified))
+            ElseIf TheType = GetType(CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_ExtractSpecified) Then
+                OnMenuClicked(CType(MenuCommand, CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_ExtractSpecified))
+            End If
         End Sub
-        Private Sub OnHandleMenuClicked(ID As String) Handles pTheMenu.MenuClicked
-            OnMenuClicked(ID)
+#End Region
+
+#Region "Menu Commands  - File Menu"
+        Private Sub OnMenuClicked(MenuCommand As CodeManagement.Enums.Toolkit.MenuEnum_FileMenu)
+            MsgBox(MenuCommand.ToString)
+        End Sub
+#End Region
+
+#Region "Menu Commands  - PIGG Menu"
+        Private Sub OnMenuClicked(MenuCommand As CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu)
+            MsgBox(MenuCommand.ToString)
+        End Sub
+        Private Sub OnMenuClicked(MenuCommand As CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_ExtractSpecified)
+            MsgBox(MenuCommand.ToString)
+        End Sub
+        Private Sub OnMenuClicked(MenuCommand As CodeManagement.Enums.Toolkit.MenuEnum_PIGGMenu_OpenSpecified)
+            MsgBox(MenuCommand.ToString)
         End Sub
 #End Region
 

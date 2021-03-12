@@ -1,5 +1,4 @@
-﻿Imports COH.CodeManagement.Enums
-Imports COH.ControllerModules.Pathways
+﻿Imports COH.CodeManagement.Enums.Toolkit
 Imports COH.Toolkit.ControllerModules.Pathways
 
 Namespace Toolkit.ControllerModules

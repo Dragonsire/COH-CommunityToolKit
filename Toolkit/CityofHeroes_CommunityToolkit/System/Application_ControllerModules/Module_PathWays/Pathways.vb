@@ -1,4 +1,4 @@
-﻿Imports COH.CodeManagement.Enums
+﻿Imports COH.CodeManagement.Enums.Toolkit
 Imports COH.Toolkit.ControllerModules.Pathways
 
 Namespace Toolkit.ControllerModules
@@ -33,7 +33,7 @@ Namespace Toolkit.ControllerModules
         End Sub
         Public Sub ConfigureModule(StartupFolder As String)
             Dim InstalledPath As String = IdentifyInstalledPath(StartupFolder)
-            pRegistryDetails = OnConfigureRegistry(InstalledPath, "")
+            pRegistryDetails = OnConfigureRegistry(InstalledPath)
             pPaths = New DS_PathwaysCollection(pRegistryDetails.InstalledPath)
             pFonts = New Drawing.Text.PrivateFontCollection
             pPaths.Pathway_AddRange(OnConfigurePathways)
@@ -54,6 +54,22 @@ Namespace Toolkit.ControllerModules
             '/// CHECK FOR INSTALLED INDICATORS HERE
             Return StartupPath
         End Function
+        Private Function OnConfigureRegistry(ProgramFolder As String) As ControllerModule_PathwaysRegistry
+            Dim Result As New ControllerModule_PathwaysRegistry(ProgramFolder)
+            With Result
+                '// .InstalledPath 
+                '// 
+            End With
+            Return Result
+        End Function
+        Private Function OnConfigurePathways() As List(Of DS_PathwaysCollectionEntry)
+            Dim Result As New List(Of DS_PathwaysCollectionEntry)
+            '// Result.Add(New ControllerModule_PathwaysEntry(MBT_XRS_DataStructure.Data.ToString, "Data\", PathwayTypeEnum.Folder))
+            Return Result
+        End Function
+        Private Sub OnConfigurePathwaysResources()
+            '// AddAllFolderResources_FromFolder(RetrievePath(MBT_XRS_DataStructure.Resources_Skin.ToString), PathwayTypeEnum.Folder_Skin, "", IO.SearchOption.TopDirectoryOnly)
+        End Sub
 #End Region
 
 #Region "Usage"

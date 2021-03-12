@@ -1,12 +1,13 @@
 ﻿Imports System.Drawing
+Imports COH.CodeManagement.Enums.Toolkit
 
-Namespace  Toolkit.Controls.Menu
+Namespace Toolkit.Controls.Menu
     Partial Public NotInheritable Class COH_Toolkit_MenuStrip
 
 #Region "Configure Menu Items"
-        Public Function CreateLinked_Root_ToolStripMenuItem(DisplayName As String, Key As String, Optional ByRef SubItems As ToolStripItem() = Nothing, Optional Tag As ControlFreak_MenuStrip_Tag = Nothing) As ToolStripMenuItem
+        Public Function CreateLinked_Root_ToolStripMenuItem(DisplayName As String, Key As [Enum], Optional ByRef SubItems As ToolStripItem() = Nothing, Optional Tag As ControlFreak_MenuStrip_Tag = Nothing) As ToolStripMenuItem
             Dim Result As ToolStripMenuItem = New ToolStripMenuItem()
-            Result.Name = Key
+            Result.Name = Key.ToString
             Result.Size = mMenuSize_RootItems
             Result.Text = DisplayName
             '//Result.Image = Internal.EmbeddedResources.WindowDetails
@@ -19,17 +20,19 @@ Namespace  Toolkit.Controls.Menu
                 AddHandler Result.Click, Sub(sender, e) MenuItem_Clicked(Result)
             End If
             If (Tag Is Nothing) Then Tag = New ControlFreak_MenuStrip_Tag
+            Tag.MenuCommand = Key
             Result.Tag = Tag
-            'Result.Visible = (Tag.Visibility = SecurityRole.User)
+            Result.Visible = (Tag.Visibility = SecurityRole.User)
             Return Result
         End Function
-        Public Function CreateLinked_MenuItem_ToolStripMenuItem(DisplayName As String, Key As String, Optional SubItems As ToolStripItem() = Nothing, Optional Tag As ControlFreak_MenuStrip_Tag = Nothing) As ToolStripMenuItem
+        Public Function CreateLinked_MenuItem_ToolStripMenuItem(DisplayName As String, Key As [Enum], Optional SubItems As ToolStripItem() = Nothing, Optional Tag As ControlFreak_MenuStrip_Tag = Nothing) As ToolStripMenuItem
             Dim Result As New ToolStripMenuItem
             With Result
                 .Name = Key.ToString
                 .Size = mMenuSize_DropDownItems
                 .Text = DisplayName
                 If (Tag Is Nothing) Then Tag = New ControlFreak_MenuStrip_Tag
+                Tag.MenuCommand = Key
                 .Tag = Tag
                 '.Visible = (Tag.Visibility = SecurityRole.User)
                 If Not (SubItems Is Nothing) Then
@@ -43,7 +46,7 @@ Namespace  Toolkit.Controls.Menu
 #End Region
 
 #Region "Events"
-        Public Event MenuClicked(ID As String)
+        Public Event MenuClicked(Command As [Enum])
         Private Sub RootMenuItem_DroppedDown(ByRef Menu As ToolStripMenuItem)
             SetMenu_Colors_Selected(Menu, True)
         End Sub
@@ -59,7 +62,7 @@ Namespace  Toolkit.Controls.Menu
         End Sub
         Private Sub MenuItem_Clicked(ByRef Menu As ToolStripMenuItem)
             Mouse_ShowWait()
-            RaiseEvent MenuClicked(Menu.Name)
+            RaiseEvent MenuClicked(CType(Menu.Tag, ControlFreak_MenuStrip_Tag).MenuCommand)
             '//Threading.Thread.Sleep(5000)
             If Me.IsDisposed = False Then Mouse_ShowReady()
         End Sub

@@ -1,5 +1,5 @@
 ﻿Imports System.Collections.ObjectModel
-Imports COH.CodeManagement.Enums
+Imports COH.CodeManagement.Enums.Toolkit
 
 Namespace Toolkit.ControllerModules.Pathways
     Public NotInheritable Class DS_PathwaysCollection

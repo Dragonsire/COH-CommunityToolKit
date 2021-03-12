@@ -1,4 +1,6 @@
-﻿Namespace Toolkit.ControllerModules.Pathways
+﻿Imports COH.CodeManagement.Enums.WindowsEnviroment
+
+Namespace Toolkit.ControllerModules.Pathways
     Public NotInheritable Class ControllerModule_PathwaysRegistry
 
 #Region "Properties"
@@ -83,14 +85,6 @@
 #End Region
 
 #Region "Generic Functions"
-        Public Enum WindowsRegistryBranches
-            LocalMachine
-            Users
-            CurrentConfig
-            ClassesRoot
-            CurrentUser
-            CurrentUser_Software
-        End Enum
         Private Function CheckExists(Name As String, Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
             Result = Retrieve_RegistryBranch(Branch, RequireWriteAccess).OpenSubKey(Name, RequireWriteAccess)
             Return Not (Result Is Nothing)

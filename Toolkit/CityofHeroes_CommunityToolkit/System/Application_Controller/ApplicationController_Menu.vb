@@ -1,4 +1,5 @@
-﻿Imports COH.Toolkit.Controls.Menu
+﻿Imports COH.CodeManagement.Enums.Toolkit
+Imports COH.Toolkit.Controls.Menu
 
 Namespace Toolkit
     Partial Public Class ToolkitController
@@ -23,18 +24,31 @@ Namespace Toolkit
 #End Region
 
 #Region "Add Root Menu Items"
-        Private Function BuildMenuItems_Root(ByRef TheMenu As COH_Toolkit_MenuStrip) As ToolStripMenuItem()
-            Dim Result As New List(Of ToolStripMenuItem)
-            '// Result.Add(TheMenu.CreateLinked_Root_ToolStripMenuItem("&File Menu", MenuFunction_Enum.RootMenu_FileMenu.ToString))
-            '// Result.Add(TheMenu.CreateLinked_Root_ToolStripMenuItem("&Tools Menu", MenuFunction_Enum.RootMenu_ToolsMenu.ToString, BuildMenuItems_Tools(TheMenu)))
+        Private Function BuildMenuItems_Root(ByRef TheMenu As COH_Toolkit_MenuStrip) As ToolStripItem()
+            Dim Result As New List(Of ToolStripItem)
+            Result.Add(TheMenu.CreateLinked_Root_ToolStripMenuItem("&File Menu", RootMenusEnum.FileMenu))
+            Result.Add(TheMenu.CreateLinked_Root_ToolStripMenuItem("&PIGG Menu", RootMenusEnum.PIGG, BuildMenuItems_PIGG()))
             Return Result.ToArray
         End Function
 #End Region
 
 #Region "Add Menu Items"
-        Private Function BuildMenuItems_Tools(ByRef TheMenu As COH_Toolkit_MenuStrip) As ToolStripMenuItem()
-            Dim Result As New List(Of ToolStripMenuItem)
-            '//Result.Add(TheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Assembly Examiner", MenuFunction_Enum.Menu_Tools_AssemblyExamine.ToString))
+        Private Function BuildMenuItems_PIGG() As ToolStripItem()
+            Dim Result As New List(Of ToolStripItem)
+            Result.Add(pTheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Open PIGG File", MenuEnum_PIGGMenu.OpenPigg_LocateFile))
+            Result.Add(New ToolStripSeparator())
+            Result.Add(pTheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Open Specified PIGG File", MenuEnum_PIGGMenu.OpenPigg_Specified, BuildMenuItems_PIGG_OpenSpecified()))
+            Result.Add(pTheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Extract Specified PIGG File", MenuEnum_PIGGMenu.ExtractPigg_Specified, BuildMenuItems_PIGG_ExtractSpecified()))
+            Return Result.ToArray
+        End Function
+        Private Function BuildMenuItems_PIGG_OpenSpecified() As ToolStripItem()
+            Dim Result As New List(Of ToolStripItem)
+            Result.Add(pTheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Open PIGG File (UI.PIGG)", MenuEnum_PIGGMenu_OpenSpecified.OpenPigg_Specified_UI))
+            Return Result.ToArray
+        End Function
+        Private Function BuildMenuItems_PIGG_ExtractSpecified() As ToolStripItem()
+            Dim Result As New List(Of ToolStripItem)
+            Result.Add(pTheMenu.CreateLinked_MenuItem_ToolStripMenuItem("Extract PIGG File (UI.PIGG)", MenuEnum_PIGGMenu_ExtractSpecified.ExtractPigg_Specified_UI))
             Return Result.ToArray
         End Function
 #End Region
