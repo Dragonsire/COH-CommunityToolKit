@@ -58,7 +58,7 @@ Namespace Toolkit
             Dim ParentForm = New Toolkit.Controls.COH_CommunityToolkit_Main
             rWindowManager = New ControllerModule_WindowManager(Me)
             rWindowManager.ConfigureModule(ParentForm)
-            ConfigureMenu(ParentForm.MainMenuStrip)
+            ConfigureMenu(ParentForm.BannerMenu.MenuStrip)
         End Sub
         Private Sub PerformStartup_Final()
             UpdateSplashScreen("Configuring Logging", 30, True)
@@ -80,7 +80,7 @@ Namespace Toolkit
 #Region "Configure Modules"
         Protected Sub ConfigurePathways(ByRef StartupFolder As String)
             rPathways = New ControllerModule_Pathways(Me)
-            rPathways.ConfigureModule(StartupFolder, DefaultFolderName)
+            rPathways.ConfigureModule(StartupFolder)
         End Sub
         Protected Sub ConfigureSettings(StartupFolder As String)
             Dim ExpectedFileLocation As String = IO.Path.Combine(StartupFolder, "Settings.xml")

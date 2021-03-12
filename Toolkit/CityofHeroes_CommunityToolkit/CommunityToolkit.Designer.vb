@@ -48,9 +48,11 @@ Namespace Toolkit.Controls
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(800, 450)
             Me.Controls.Add(Me.BannerMenu)
+            Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
             Me.IsMdiContainer = True
             Me.Name = "COH_CommunityToolkit_Main"
-            Me.Text = "ControlFreak_ParentForm"
+            Me.Text = "City of Heroes : Community Toolkit"
+            Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
             Me.ResumeLayout(False)
 
         End Sub

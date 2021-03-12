@@ -14,12 +14,9 @@ Namespace Toolkit
 
 #Region "Create Menu"
         Protected Sub ConfigureMenu(ByRef TheMenu As COH_Toolkit_MenuStrip)
-            pTheMenu = OnCreate_Menu()
+            pTheMenu = TheMenu
             OnUpdate_MenuItems(pTheMenu)
         End Sub
-        Private Function OnCreate_Menu() As COH_Toolkit_MenuStrip
-            '//  Return MainForm.BannerMenu.MenuStrip
-        End Function
         Private Sub OnUpdate_MenuItems(ByRef TheMenu As COH_Toolkit_MenuStrip)
             TheMenu.PrepareUsage(BuildMenuItems_Root(TheMenu))
         End Sub

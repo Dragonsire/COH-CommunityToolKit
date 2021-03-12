@@ -22,7 +22,7 @@ Namespace Toolkit
             rSplashScreen.Refresh()
         End Sub
         Private Sub UnloadSplash()
-            If Not (rSplashScreen Is Nothing) Then Exit Sub
+            If (rSplashScreen Is Nothing) Then Exit Sub
             rSplashScreen.Close()
         End Sub
         Protected Sub UpdateSplashScreen(Text As String, NewValue As Integer, Optional Sleep As Boolean = False, Optional SleepAmount As Integer = 300)

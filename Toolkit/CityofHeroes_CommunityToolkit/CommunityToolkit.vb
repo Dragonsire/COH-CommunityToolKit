@@ -22,6 +22,7 @@ Namespace Toolkit.Controls
 #Region "Create New Instance"
         Public Sub New()
             MyBase.New
+            Me.InitializeComponent()
             'Update_CurrentState(CurrentState_Enum.ModifyingUI)
             'Update_CurrentState(CurrentState_Enum.Ready)
         End Sub

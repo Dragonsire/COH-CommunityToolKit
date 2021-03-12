@@ -31,9 +31,9 @@ Namespace Toolkit.ControllerModules
         Public Sub New(ByRef ParentController As ToolkitController)
             MyBase.New(ParentController)
         End Sub
-        Public Sub ConfigureModule(StartupFolder As String, DefaultFolderName As String)
-            Dim InstalledPath As String = IdentifyInstalledPath(StartupFolder, DefaultFolderName)
-            pRegistryDetails = OnConfigureRegistry(InstalledPath, DefaultFolderName)
+        Public Sub ConfigureModule(StartupFolder As String)
+            Dim InstalledPath As String = IdentifyInstalledPath(StartupFolder)
+            pRegistryDetails = OnConfigureRegistry(InstalledPath, "")
             pPaths = New DS_PathwaysCollection(pRegistryDetails.InstalledPath)
             pFonts = New Drawing.Text.PrivateFontCollection
             pPaths.Pathway_AddRange(OnConfigurePathways)
@@ -43,12 +43,12 @@ Namespace Toolkit.ControllerModules
 #End Region
 
 #Region "Configure Pathways"
-        Private Function IdentifyInstalledPath(StartupPath As String, DefaultFolderName As String) As String
+        Private Function IdentifyInstalledPath(StartupPath As String) As String
             Dim Root As String = StartupPath
             If StartupPath.Contains("_Compiled Code") Then '//DEVELOPER VERSION
                 Dim RemovePath As String = StartupPath.Substring(StartupPath.IndexOf("_Compiled Code"))
                 Dim NewPath As String = StartupPath.Replace(RemovePath, "")
-                Root = IO.Path.Combine(NewPath, "Program Data\" & DefaultFolderName & "\")
+                Root = IO.Path.Combine(NewPath, "Program Data\" & "COH_CommunityToolkit" & "\")
                 Return Root
             End If
             '/// CHECK FOR INSTALLED INDICATORS HERE

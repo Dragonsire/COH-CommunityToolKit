@@ -7,7 +7,7 @@ Public Module Startup
     Public MainForm As Toolkit.Controls.COH_CommunityToolkit_Main
     Sub Main(Arguments As String())
         MasterControl = New ToolkitController(Application.StartupPath)
-        MainForm = Nothing 'MasterControl.MainForm
+        MainForm = MasterControl.WindowManager.UIController.MainForm
         CurrentApplication = New Toolkit_ApplicationLauncher(MainForm)
         CurrentApplication.Run(Arguments)
     End Sub
