@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace ControllerModules.WindowForms
+Namespace Toolkit.ControllerModules.WindowForms
     Partial Public NotInheritable Class UIController
 
 #Region "Open/Create WindowForm From Configuration"

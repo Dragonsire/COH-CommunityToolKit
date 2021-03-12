@@ -1,4 +1,4 @@
-﻿Namespace ControllerModules.Pathways
+﻿Namespace Toolkit.ControllerModules.Pathways
     Public NotInheritable Class ControllerModule_PathwaysRegistry
 
 #Region "Properties"

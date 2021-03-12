@@ -1,6 +1,6 @@
-﻿Imports COH.ControllerModules.Pathways
+﻿Imports COH.Toolkit.ControllerModules.Pathways
 
-Namespace ControllerModules
+Namespace Toolkit.ControllerModules
     Partial Public NotInheritable Class ControllerModule_Pathways
 
 #Region "Search"

@@ -1,4 +1,5 @@
-﻿Imports COH.Toolkit.Helpers
+﻿Imports COH.Toolkit
+Imports COH.Toolkit.Helpers
 
 Public Module Startup
     Public CurrentApplication As Toolkit_ApplicationLauncher

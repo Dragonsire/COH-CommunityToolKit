@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
 
-Namespace ControllerModules
+Namespace Toolkit.ControllerModules
     Partial Public NotInheritable Class ControllerModule_WindowManager
 
 #Region "Locate Files"

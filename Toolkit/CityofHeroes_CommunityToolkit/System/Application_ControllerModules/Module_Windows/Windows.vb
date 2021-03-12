@@ -1,4 +1,4 @@
-﻿Namespace ControllerModules
+﻿Namespace Toolkit.ControllerModules
     Public NotInheritable Class ControllerModule_WindowManager
         Inherits ControllerModule
 
@@ -26,8 +26,8 @@
         Public Sub New(ByRef ParentController As ToolkitController)
             MyBase.New(ParentController)
         End Sub
-        Public Sub ConfigureModule(ByRef DefaultParent As Control, DefaultParent_Area As Drawing.Rectangle)
-            rUIController = New WindowForms.UIController(DefaultParent, DefaultParent_Area)
+        Public Sub ConfigureModule(ByRef DefaultParent As Control)
+            rUIController = New WindowForms.UIController(DefaultParent)
             Dim DefaultConfiguration = ConfigureDefaultConfiguration_ChildForms()
             'rUIController.Update_Configuration(DefaultConfiguration)
             rUIController.Update_FromSettings(ParentController.Settings)

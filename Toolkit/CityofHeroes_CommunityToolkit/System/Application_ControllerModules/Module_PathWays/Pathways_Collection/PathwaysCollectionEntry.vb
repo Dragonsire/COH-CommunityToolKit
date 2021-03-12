@@ -1,6 +1,6 @@
 ﻿Imports COH.CodeManagement.Enums
 
-Namespace ControllerModules.Pathways
+Namespace Toolkit.ControllerModules.Pathways
     Public NotInheritable Class DS_PathwaysCollectionEntry
 
 #Region "Properties"

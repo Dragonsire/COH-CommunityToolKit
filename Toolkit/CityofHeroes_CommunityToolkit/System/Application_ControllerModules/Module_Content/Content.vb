@@ -1,4 +1,4 @@
-﻿Namespace ControllerModules
+﻿Namespace Toolkit.ControllerModules
     Public NotInheritable Class ControllerModule_ContentManager
         Inherits ControllerModule
 

@@ -1,7 +1,7 @@
 ﻿Imports System.Collections.ObjectModel
 Imports COH.CodeManagement.Enums
 
-Namespace ControllerModules.Pathways
+Namespace Toolkit.ControllerModules.Pathways
     Public NotInheritable Class DS_PathwaysCollection
         Inherits Collection(Of DS_PathwaysCollectionEntry)
 

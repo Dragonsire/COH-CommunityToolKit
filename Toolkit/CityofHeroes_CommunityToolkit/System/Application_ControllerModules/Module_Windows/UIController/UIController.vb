@@ -1,4 +1,6 @@
-﻿Namespace ControllerModules.WindowForms
+﻿Imports COH.ControllerModules
+
+Namespace Toolkit.ControllerModules.WindowForms
     Public NotInheritable Class UIController
 
 #Region "Enum"
@@ -19,7 +21,7 @@
                 ' Return rDefaultConfiguration
             End Get
         End Property
-        Public ReadOnly Property MainForm As Form
+        Public ReadOnly Property MainForm As Controls.COH_CommunityToolkit_Main
             Get
                 Return rParentControl
             End Get
@@ -57,14 +59,14 @@
 #End Region
 
 #Region "Create New Instance"
-        Public Sub New(ByRef DefaultParent As Control, DefaultParent_Area As Drawing.Rectangle)
+        Public Sub New(ByRef DefaultParent As Controls.COH_CommunityToolkit_Main)
             rFormsInUse = New List(Of Form)
             rParentControl = DefaultParent
-            ' rParentSettings '= New WindowFormsConfiguration_Parenting
-            rParentSettings.ParentForm = DefaultParent
-            rParentSettings.ParentLocation = DefaultParent_Area
-            rParentSettings.ParentFormDock = DockStyle.None
-            rParentSettings.Form_StartPosition = FormStartPosition.Manual
+            'rParentSettings = New WindowFormsConfiguration_Parenting
+            'rParentSettings.ParentForm = DefaultParent
+            'rParentSettings.ParentLocation = DefaultParent_Area
+            'rParentSettings.ParentFormDock = DockStyle.None
+            'rParentSettings.Form_StartPosition = FormStartPosition.Manual
         End Sub
 #End Region
 

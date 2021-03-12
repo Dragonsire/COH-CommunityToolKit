@@ -40,7 +40,6 @@ Namespace ControllerModules
         Private pCurrentProject_FileName As String
         Private pCurrentProject_HasActive As Boolean
 #End Region
-
 #Region "Properties - Game Code Source Related"
         Public Property Ouroboros_RepoPathRoot As String
             Get
@@ -52,7 +51,6 @@ Namespace ControllerModules
         End Property
         Private pOuroboros_RepoPath As String
 #End Region
-
 #Region "Properties - Update Check"
         Public Property GitReleaseFeed As String
             Get
@@ -73,7 +71,6 @@ Namespace ControllerModules
         Private pGit_ReleaseFeed As String
         Private pGit_ReleaseDate As Date
 #End Region
-
 #Region "Properties - Options"
         Public Property Option_BINs_UpdateTimeStamps As String
             Get
@@ -113,10 +110,8 @@ Namespace ControllerModules
             'Return Export_XML_Settings(FilePath, Me)
         End Function
 #End Region
-
 #Region "Export"
 #End Region
-
 #Region "Import"
         <OnDeserializing()> Friend Sub OnDeserializingMethod(ByVal context As StreamingContext)
         End Sub

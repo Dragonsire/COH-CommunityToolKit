@@ -1,4 +1,4 @@
-﻿Namespace ControllerModules
+﻿Namespace Toolkit.ControllerModules
     Public MustInherit Class ControllerModule
 
 #Region "Properties"
