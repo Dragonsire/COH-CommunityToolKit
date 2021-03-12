@@ -19,47 +19,51 @@
         End Property
         Public ReadOnly Property WasUpdatedSinceLastLaunched As Boolean
             Get
-                Return pWasUpdatedSinceLastLaunched
+                Return pVersion_UpdatedSinceLastLaunched
             End Get
         End Property
         Public ReadOnly Property InstalledPathChanged As Boolean
             Get
-                Return pInstalledPathChanged
+                Return pInstalledPath_Changed
             End Get
         End Property
-        Private pWasUpdatedSinceLastLaunched As Boolean
-        Private pInstalledPathChanged As Boolean
         Private pVersion As String
+        Private pVersion_UpdatedSinceLastLaunched As Boolean
         Private pInstalledPath As String
+        Private pInstalledPath_Changed As Boolean
 #End Region
 
 #Region "Initialize"
         Public Sub New(Path As String)
             pInstalledPath = Path
-            EnsureRegisryEntry()
+            EnsureRegistryExists()
         End Sub
-        Private Sub EnsureRegisryEntry()
-            Dim Result As Microsoft.Win32.RegistryKey = Nothing
-            If CheckProgramRegistryExists(ProgramID, Result) = False Then
-                CreateRegistryEntry(Me)
+#End Region
+
+#Region "Registry Functions" '//Dim T As Microsoft.Win32.RegistryKeyPermissionCheck
+        Private Sub EnsureRegistryExists()
+            Dim Root = Retrieve_RegistryBranch(WindowsRegistryBranches.CurrentUser_Software, True)
+            Dim Toolkit = Root.OpenSubKey(ProgramID, True)
+            If Toolkit Is Nothing Then
+                Toolkit = Root.CreateSubKey(ProgramID)
+                pInstalledPath_Changed = True
+                pVersion_UpdatedSinceLastLaunched = True
+                pVersion = Retrieve_VersionInfo()
             Else
-                Update_FromRegistry(Result)
+                Update_FromRegistry(Toolkit)
             End If
+            Update_ToRegistry(Toolkit)
         End Sub
         Private Sub Update_FromRegistry(ByRef Source As Microsoft.Win32.RegistryKey)
             Dim LastPath As String = Source.GetValue("InstalledPath")
-            If Not String.Equals(LastPath, InstalledPath) Then
-                pInstalledPathChanged = True
-            End If
+            If Not String.Equals(LastPath, InstalledPath) Then pInstalledPath_Changed = True
             pVersion = Source.GetValue("Version")
             Dim EXEVersion = Retrieve_VersionInfo()
-            If Not (EXEVersion = pVersion) Then
-                pWasUpdatedSinceLastLaunched = True
-            End If
+            If Not (EXEVersion = pVersion) Then pVersion_UpdatedSinceLastLaunched = True
         End Sub
         Private Sub Update_ToRegistry(ByRef Source As Microsoft.Win32.RegistryKey)
-            If pInstalledPathChanged = True Then Source.SetValue("InstalledPath", pInstalledPath)
-            If pWasUpdatedSinceLastLaunched = True Then Source.SetValue("Version", pVersion)
+            If pInstalledPath_Changed = True Then Source.SetValue("InstalledPath", pInstalledPath)
+            If pVersion_UpdatedSinceLastLaunched = True Then Source.SetValue("Version", pVersion)
         End Sub
 #End Region
 
@@ -78,25 +82,6 @@
         End Function
 #End Region
 
-#Region "Windows Registry Settings"
-        Public Shared Function CheckProgramRegistryExists(ProgramNameKey As String, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
-            Dim DSKey As Microsoft.Win32.RegistryKey = Nothing
-            If CheckExists("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, False, DSKey) = False Then Return False
-            Dim ProgramKey As Microsoft.Win32.RegistryKey = DSKey.OpenSubKey(ProgramNameKey, False)
-            If (ProgramKey Is Nothing) Then Return False
-            Result = ProgramKey
-            Return True
-        End Function
-        Public Shared Function CreateRegistryEntry(ByRef Details As ControllerModule_PathwaysRegistry) As Boolean
-            Dim DSKey As Microsoft.Win32.RegistryKey = Nothing
-            If CreateRegistryEntry("DragonSireSoftware", WindowsRegistryBranches.CurrentUser_Software, DSKey) = False Then Return False
-            Dim ProgramKey = DSKey.CreateSubKey(Details.ProgramID)
-            ProgramKey.SetValue("InstalledPath", Details.InstalledPath)
-            ProgramKey.SetValue("Version", Retrieve_VersionInfo)
-            Return True
-        End Function
-#End Region
-
 #Region "Generic Functions"
         Public Enum WindowsRegistryBranches
             LocalMachine
@@ -106,15 +91,9 @@
             CurrentUser
             CurrentUser_Software
         End Enum
-        Public Shared Function CreateRegistryEntry(Name As String, Branch As WindowsRegistryBranches, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
-            If CheckExists(Name, Branch, True, Result) = True Then Return True
-            Result = Retrieve_RegistryBranch(Branch, True).CreateSubKey(Name)
-            Return Not (Result Is Nothing)
-        End Function
-        Public Shared Function CheckExists(Name As String, Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
+        Private Function CheckExists(Name As String, Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean, ByRef Result As Microsoft.Win32.RegistryKey) As Boolean
             Result = Retrieve_RegistryBranch(Branch, RequireWriteAccess).OpenSubKey(Name, RequireWriteAccess)
             Return Not (Result Is Nothing)
-            Dim T As Microsoft.Win32.RegistryKeyPermissionCheck
         End Function
         Public Shared Function Retrieve_RegistryBranch(Branch As WindowsRegistryBranches, RequireWriteAccess As Boolean) As Microsoft.Win32.RegistryKey
             Select Case Branch
