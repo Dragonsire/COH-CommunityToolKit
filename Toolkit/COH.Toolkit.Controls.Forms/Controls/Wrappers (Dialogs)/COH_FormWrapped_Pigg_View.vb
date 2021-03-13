@@ -3,7 +3,7 @@ Imports COH.GameContent.Structures.Resources.Anim
 Imports COH.GameContent.Structures.Resources.BIN
 Imports COH.GameContent.Structures.Resources.GEO
 Imports COH.GameContent.Structures.Resources.Textures
-Imports COH.Storage.Containers.PIGG.Utilities
+Imports COH.Storage.Containers.PIGG
 Imports COH.Storage.Controllers
 Imports COH.Toolkit.CodeManagement.Interfaces
 Imports COH.Toolkit.Controls.WinForms.UserControls
@@ -16,7 +16,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
 
 #Region "Private Properties"
         Private mFileSource As String
-        Private mTool As COH_PiggTool
+        Private mTool As PIGG_Container
         Private mPreviewControl As Control
         Private mCurrentResource As COH_FileStructure
         Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
@@ -42,13 +42,13 @@ Namespace Toolkit.Controls.WinForms.Dialogs
 
 #Region "Prepare Usage"
         Public Sub Prepare_Editor(FilePath As String)
-            mTool = New COH_PiggTool()
-            mTool.OpenExisting_PiggFile(FilePath, False)
+            mTool = New PIGG_Container
+            mTool.OpenExisting_PiggFile(FilePath)
             DisplayInfo()
         End Sub
         Private Sub DisplayInfo()
             Changes_Locked = True
-            HelperFunctions.Toolkit.Controls.TreeViews.Fill_TreeView(Me.TreeView1, mTool.Content.StringTable.Items, "/", "Root", ".")
+            HelperFunctions.Toolkit.Controls.TreeViews.Fill_TreeView(Me.TreeView1, mTool.StringTable.Items, "/", "Root", ".")
             For Each node As TreeNode In Me.TreeView1.Nodes(0).Nodes(0).Nodes
                 Dim TheType As COH_FSI_Entry = Nothing
                 If ContentController.TheController_SupportedStructures.Retrieve_SupportedType(node.Text, TheType) = False Then
@@ -90,18 +90,18 @@ Namespace Toolkit.Controls.WinForms.Dialogs
         Private Sub DisplayInfo_ContentDetails()
             ListView1.Items.Clear()
             ListView1.BeginUpdate()
-            For X = 0 To mTool.Content.Directories.Count - 1
-                Dim Newitem As New ListViewItem(mTool.Content.Directories(X).Index)
+            For X = 0 To mTool.Directories.Count - 1
+                Dim Newitem As New ListViewItem(mTool.Directories(X).Index)
                 Newitem.Name = X
-                Newitem.SubItems.Add(mTool.Content.StringTable.Items(X))
-                Newitem.SubItems.Add(mTool.Content.Directories(X).EntryType.ToString)
-                Newitem.SubItems.Add(mTool.Content.Directories(X).File_Offset)
-                Newitem.SubItems.Add(mTool.Content.Directories(X).File_Size_Stored)
+                Newitem.SubItems.Add(mTool.StringTable.Items(X))
+                Newitem.SubItems.Add(mTool.Directories(X).EntryType.ToString)
+                Newitem.SubItems.Add(mTool.Directories(X).File_Offset)
+                Newitem.SubItems.Add(mTool.Directories(X).File_Size_Stored)
                 'Newitem.SubItems.Add(mTool.Content.Directories(X).File_Size)
-                Newitem.SubItems.Add(mTool.Content.Directories(X).IsCompressed)
+                Newitem.SubItems.Add(mTool.Directories(X).IsCompressed)
                 'Newitem.SubItems.Add(mTool.Content.Directories(X).File_Size_Compressed)
-                Newitem.SubItems.Add(mTool.Content.Directories(X).TimeStamp)
-                Newitem.SubItems.Add(mTool.Content.Directories(X).SecondarySlotIndex)
+                Newitem.SubItems.Add(mTool.Directories(X).TimeStamp)
+                Newitem.SubItems.Add(mTool.Directories(X).SecondarySlotIndex)
                 ListView1.Items.Add(Newitem)
             Next
             ListView1.EndUpdate()
@@ -109,14 +109,14 @@ Namespace Toolkit.Controls.WinForms.Dialogs
         Private Sub DisplayInfo_SlotDetails()
             ListView2.Items.Clear()
             ListView2.BeginUpdate()
-            If mTool.Content.SlotTable.Items Is Nothing Then Exit Sub
-            For X = 0 To mTool.Content.SlotTable.Items.Count - 1
-                Dim Newitem As New ListViewItem(X)
+            If mTool.SlotTable.Items Is Nothing Then Exit Sub
+            For X = 0 To mTool.SlotTable.Items.Count - 1
+                Dim Newitem As New ListViewItem(X.ToString)
                 Newitem.Name = X
-                Newitem.SubItems.Add(mTool.Content.SlotTable.Items(X).SlotType.ToString)
-                Newitem.SubItems.Add(mTool.Content.SlotTable.Items(X).Offset)
-                Newitem.SubItems.Add(mTool.Content.SlotTable.Items(X).Size_Stored)
-                Newitem.SubItems.Add(mTool.Content.SlotTable.Items(X).IsCompressed)
+                Newitem.SubItems.Add(mTool.SlotTable.Items(X).SlotType.ToString)
+                Newitem.SubItems.Add(mTool.SlotTable.Items(X).Offset)
+                Newitem.SubItems.Add(mTool.SlotTable.Items(X).Size_Stored)
+                Newitem.SubItems.Add(mTool.SlotTable.Items(X).IsCompressed)
                 ListView2.Items.Add(Newitem)
             Next
             ListView2.EndUpdate()
@@ -132,7 +132,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
             Preview_Contents(Index, e.Node.Text)
         End Sub
         Private Sub Preview_Contents(Index As Integer, Name As String)
-            mTool.ExtractEntry(Index, mCurrentResource)
+            'mTool.ExtractEntry(Index, mCurrentResource)
             Select Case mCurrentResource.EntryType
                 Case COH_Supported_ContentType.Resource_Texture
                     CreatePreviewControl_DDS()

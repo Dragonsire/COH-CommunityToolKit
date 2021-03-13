@@ -244,7 +244,7 @@ Namespace Toolkit.Modding.Editors
             '
             'Image_Locked
             '
-            Me.Image_Locked.BackgroundImage = My.Resources.Button_Locked
+            ' Me.Image_Locked.BackgroundImage = My.Resources.Button_Locked
             Me.Image_Locked.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
             Me.Image_Locked.Location = New System.Drawing.Point(3, 2)
             Me.Image_Locked.Name = "Image_Locked"

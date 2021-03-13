@@ -27,14 +27,14 @@ Namespace Internal.ContentController
 
 #Region "Private Properties"
         Private Shared sInstance As COH_ContentController
-        Private sMainForm As COH_Tools
+        Private sMainForm As Form
         Private mProgramFolders As COH_ProgramPathsManager
         Private mSettings As ContentManager_Settings
         Private mLoadScreenVisible As Boolean
 #End Region
 
 #Region "Initialize"
-        Public Sub New(ByRef MainForm As COH_Tools, InstalledProgramPath As String, Optional PrepareCache As Boolean = True)
+        Public Sub New(ByRef MainForm As Form, InstalledProgramPath As String, Optional PrepareCache As Boolean = True)
             sMainForm = MainForm
             PrepareUsage(InstalledProgramPath)
             If PrepareCache = True Then CacheFiles()

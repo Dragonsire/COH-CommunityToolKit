@@ -76,7 +76,7 @@ Namespace Internal.ContentController
         End Sub
         Public Sub CheckUpdate(Optional ForceShowMessage As Boolean = False)
             '#If Not DEBUG Then
-            Check_Update(Settings.GitReleaseFeed, ForceShowMessage, sMainForm.CoH_Menu1.UpdateLink)
+            'Check_Update(Settings.GitReleaseFeed, ForceShowMessage, sMainForm.CoH_Menu1.UpdateLink)
             '#End If
         End Sub
         Public Sub OpenCRCTool()

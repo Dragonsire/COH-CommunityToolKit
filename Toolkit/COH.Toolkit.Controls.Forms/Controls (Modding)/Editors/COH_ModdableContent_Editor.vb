@@ -102,9 +102,9 @@ Namespace Toolkit.Modding.Editors
                 Button_Save.Enabled = False
             End If
             If AdvancedEditLocked = True Then
-                Image_Locked.BackgroundImage = My.Resources.Button_Locked
+                'Image_Locked.BackgroundImage = My.Resources.Button_Locked
             Else
-                Image_Locked.BackgroundImage = My.Resources.Button_Unlocked
+                ' Image_Locked.BackgroundImage = My.Resources.Button_Unlocked
             End If
         End Sub
 #End Region

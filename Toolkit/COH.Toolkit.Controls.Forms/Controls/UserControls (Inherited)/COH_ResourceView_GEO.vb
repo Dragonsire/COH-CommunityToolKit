@@ -21,7 +21,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
 #Region "Properties"
         Public ReadOnly Property ModelViewer As Viewport3DX
             Get
-                Dim COH As COH.Toolkit.Controls.WPF.COH_ModelViewer = ElementHost2.Child
+                Dim COH As COH_ModelViewer = ElementHost2.Child
                 Return COH.ModelWindow
             End Get
         End Property
@@ -322,7 +322,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
             mShow_Bones = False
             mShow_BoundingBox = False
             mShow_Grid = True
-            mCameraRotationModes = New HelixToolkit.Wpf.CameraRotationMode(2) {HelixToolkit.Wpf.CameraRotationMode.Turntable, HelixToolkit.Wpf.CameraRotationMode.Trackball, HelixToolkit.Wpf.CameraRotationMode.Turnball}
+            mCameraRotationModes = New CameraRotationMode(2) {CameraRotationMode.Turntable, CameraRotationMode.Trackball, CameraRotationMode.Turnball}
             mRotateAroundMouseDownPoint = True
             mGrid_Color = Colors.Black
             mWireFrame_Color = Colors.Black
@@ -331,7 +331,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
             mBone_ColorUsed = Colors.Black
             mVertex_Size = 4
             mBoundingBox_Color = Colors.LightBlue
-            mCameraRotationMode = HelixToolkit.Wpf.CameraRotationMode.Turntable
+            mCameraRotationMode = CameraRotationMode.Turntable
             Grid_Show = True
             ResetDefault_Cameras()
             ResetDefault_Lights()
@@ -903,7 +903,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
             If mBoundingBox Is Nothing Then mBoundingBox = New List(Of MeshGeometryModel3D)
             Dim Material As HelixToolkit.Wpf.SharpDX.Material = New HelixToolkit.Wpf.SharpDX.DiffuseMaterial(New Model.DiffuseMaterialCore() With {.DiffuseColor = mBoundingBox_Color.ToColor4})
             Dim MeshBuilder As New HelixToolkit.Wpf.SharpDX.MeshBuilder
-            MeshBuilder.AddBox(BoundingBox, HelixToolkit.Wpf.BoxFaces.All)
+            MeshBuilder.AddBox(BoundingBox, BoxFaces.All)
             MeshBuilder.ToMesh()
             Dim CurrentMesh As New MeshGeometryModel3D()
             With CurrentMesh

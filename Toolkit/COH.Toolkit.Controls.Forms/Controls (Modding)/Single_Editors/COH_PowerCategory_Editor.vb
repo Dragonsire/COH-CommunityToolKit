@@ -46,9 +46,9 @@ Namespace Toolkit.Modding.Editors
             Dim AllowEdit As Boolean = True
             If Current_Content Is Nothing Then AllowEdit = False
             If AdvancedEditLocked = True Then
-                Image_Locked.BackgroundImage = My.Resources.Button_Locked
+                'Image_Locked.BackgroundImage = My.Resources.Button_Locked
             Else
-                Image_Locked.BackgroundImage = My.Resources.Button_Unlocked
+                'Image_Locked.BackgroundImage = My.Resources.Button_Unlocked
             End If
             If AllowEdit = True Then
                 Button_Refresh_DisplayName.Enabled = (AdvancedEditLocked = False)

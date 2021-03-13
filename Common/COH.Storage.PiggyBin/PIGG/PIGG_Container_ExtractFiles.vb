@@ -12,36 +12,10 @@ Imports COH.Storage.Containers.PIGG.Structures.Contents
 Imports COH.Storage.Serialization
 Imports COH.Storage.Structures
 
-Namespace Storage.Containers.PIGG.Utilities
-    Partial Public Class COH_PiggTool
+Namespace Storage.Containers.PIGG
+    Partial Public Class PIGG_Container
 
 #Region "Extract PiggInfo"
-        Public Shared Function Create_FromFile(Name As String, FilePath As String, ByRef Result As COH_Pigg_Info, Optional ShowProgress As Boolean = False) As Boolean
-            If IO.File.Exists(FilePath) = False Then Return False
-            Dim CurrentStream As New IO.FileStream(FilePath, IO.FileMode.Open)
-            Using CurrentReader As New COH_BinaryReader(CurrentStream, Text.Encoding.ASCII)
-                If Create_FromStream(Name, CurrentReader, Result, ShowProgress) = False Then Return False
-            End Using
-            CurrentStream = Nothing
-            Return True
-        End Function
-        Public Shared Function Create_FromStream(Name As String, ByRef CurrentReader As COH_BinaryReader, ByRef Result As COH_Pigg_Info, Optional ShowProgress As Boolean = False) As Boolean
-            Result = New COH_Pigg_Info(Name)
-            If COH_PIGG_FileHeader.CreateFromStream(CurrentReader, Result.FileHeader) = False Then Return False
-            Dim TheDirectories As New List(Of COH_PIGG_DirectoryEntry)
-            Dim NewItem As COH_PIGG_DirectoryEntry = Nothing
-            For X = 0 To Result.FileHeader.Number_DirectoryEntries - 1
-                If COH_PIGG_DirectoryEntry.CreateFromStream(CurrentReader, NewItem) = False Then Return False
-                TheDirectories.Add(NewItem)
-            Next
-            Result.Directories = TheDirectories
-            If COH_PIGG_StringTable.CreateFromStream(CurrentReader, Result.StringTable) = False Then Return False
-            If COH_PIGG_SlotTable.CreateFromStream(CurrentReader, Result, Result.SlotTable) = False Then Return False
-            For X = 0 To Result.FileHeader.Number_DirectoryEntries - 1
-                Result.Directories(X).EntryType = Identify_SlotType(Result.StringTable.Items(X))
-            Next
-            Return True
-        End Function
         Private Shared Function Identify_SlotType(ByRef FileName As String) As COH_Supported_ContentType
             Dim Result = PIGG_Container_SlotTypes.Unknown
             Dim EXT As String = IO.Path.GetExtension(FileName).ToUpper
@@ -63,7 +37,7 @@ Namespace Storage.Containers.PIGG.Utilities
 #End Region
 
 #Region "Extract Files"
-        Public Shared Function ExtractAllFiles_ToDirectory(ByRef CurrentReader As COH_BinaryReader, RootPath As String, ByRef Source As COH_Pigg_Info, Optional ProcessEntry As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
+        Public Shared Function ExtractAllFiles_ToDirectory(ByRef CurrentReader As COH_BinaryReader, RootPath As String, ByRef Source As PIGG_Container, Optional ProcessEntry As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
             CurrentReader.Settings.Option_SelectedFormat = COH_ExportFormat.Binary
             For X = 0 To Source.Directories.Count - 1
@@ -91,7 +65,7 @@ Namespace Storage.Containers.PIGG.Utilities
             If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
             Return True
         End Function
-        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_FileStructure, Optional ShowProgress As Boolean = False) As Boolean
+        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container, Index As Integer, ByRef Result As COH_FileStructure, Optional ShowProgress As Boolean = False) As Boolean
             Dim RawBytes As Byte() = Nothing
             Dim Slot As Contents.COH_PIGG_SlotTableEntry = Nothing
             If Extract_Entry(CurrentReader, Source, Index, RawBytes, Slot) Then
@@ -99,7 +73,7 @@ Namespace Storage.Containers.PIGG.Utilities
             End If
             Return True
         End Function
-        Public Shared Function Process_Entry(ByRef RawBytes As Byte(), ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As COH_FileStructure) As Boolean
+        Public Shared Function Process_Entry(ByRef RawBytes As Byte(), ByRef Source As PIGG_Container, Index As Integer, ByRef Result As COH_FileStructure) As Boolean
             Select Case Source.Directories(Index).EntryType
                 Case COH_Supported_ContentType.Resource_Texture
                     Return Extract_Entry_Resource_Texture(RawBytes, Result)
@@ -117,7 +91,7 @@ Namespace Storage.Containers.PIGG.Utilities
                     Return False
             End Select
         End Function
-        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As COH_Pigg_Info, Index As Integer, ByRef Result As Byte(), ByRef Slot As Contents.COH_PIGG_SlotTableEntry) As Boolean
+        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container, Index As Integer, ByRef Result As Byte(), ByRef Slot As Contents.COH_PIGG_SlotTableEntry) As Boolean
             Result = Extract_RawData(CurrentReader, Index, Source, Source.Directories(Index).IsCompressed)
             If Source.Directories(Index).SecondarySlotIndex >= 0 Then
                 Slot = Source.SlotTable.Items(Source.Directories(Index).SecondarySlotIndex)
@@ -126,7 +100,7 @@ Namespace Storage.Containers.PIGG.Utilities
             End If
             Return True
         End Function
-        Private Shared Function DeterminePath(RootPath As String, ByRef Source As COH_Pigg_Info, Index As Int32) As String
+        Private Shared Function DeterminePath(RootPath As String, ByRef Source As PIGG_Container, Index As Int32) As String
             Dim FilePath As String = RootPath & Source.StringTable.Items(Source.Directories(Index).Index).ToString.Replace("/", "\")
             FilePath = FilePath.Replace(ChrW(0), "")
             'Dim L1 As String = FilePath.Length
@@ -136,7 +110,7 @@ Namespace Storage.Containers.PIGG.Utilities
             If IO.Directory.Exists(Folder) = False Then IO.Directory.CreateDirectory(Folder)
             Return FilePath
         End Function
-        Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As COH_Pigg_Info, Optional Decompress As Boolean = False) As Byte()
+        Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As PIGG_Container, Optional Decompress As Boolean = False) As Byte()
             CurrentReader.BaseStream.Position = Source.Directories(Index).File_Offset
             If Decompress = True And Source.Directories(Index).File_Size_Compressed > 0 Then
                 Return HelperFunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))

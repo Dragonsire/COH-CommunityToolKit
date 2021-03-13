@@ -84,6 +84,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
   </ItemGroup>
 

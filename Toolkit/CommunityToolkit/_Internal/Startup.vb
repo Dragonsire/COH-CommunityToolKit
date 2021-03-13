@@ -18,7 +18,7 @@ Public Module Startup
         Initialize_Controller()
     End Sub
     Public Sub Initialize_Controller()
-        sMainForm = New COH_Tools
+        'sMainForm = New COH_Tools
         Configure_RecordManager(sMainForm)
         Configure_Interface(sMainForm)
     End Sub

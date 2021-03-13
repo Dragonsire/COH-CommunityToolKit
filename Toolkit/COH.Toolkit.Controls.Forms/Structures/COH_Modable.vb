@@ -1,12 +1,11 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 Imports System.Xml.Serialization
 Imports COH.CodeManagement.Enums.Structures
 Imports COH.CodeManagement.Interfaces.Structures
 Imports COH.GameContent
 Imports COH.GameContent.Internal.Events
 Imports COH.GameContent.Structures
-Imports COH.GameContent.Structures.COH_FileStructure
-Imports COH.GameContent.Utilities
 Imports COH.Storage.Serialization
 Imports COH.Storage.Serialization.Configuration
 Imports COH.Storage.Structures
@@ -110,9 +109,9 @@ Public NotInheritable Class COH_ModableContent
 #Region "Clone"
     Public Overloads Sub CloneTo(ByRef Destination As COH_ModableContent)
         With Destination
-            .mFullName = Helperfunctions.StringsAndThings.CloneString(mFullName)
-            .mFilePath_Relative_Current = Helperfunctions.StringsAndThings.CloneString(mFilePath_Relative_Current)
-            .mFilePath_Reference_Original = Helperfunctions.StringsAndThings.CloneString(mFilePath_Reference_Original)
+            .mFullName = HelperFunctions.StringsAndThings.CloneString(mFullName)
+            .mFilePath_Relative_Current = HelperFunctions.StringsAndThings.CloneString(mFilePath_Relative_Current)
+            .mFilePath_Reference_Original = HelperFunctions.StringsAndThings.CloneString(mFilePath_Reference_Original)
             .mIsCustom = mIsCustom
             .mWasModified_FromSource = mWasModified_FromSource
         End With
@@ -146,7 +145,7 @@ Public NotInheritable Class COH_ModableContent
         Return ImportResult
     End Function
     Public Shared Function Export_ToXMLFile(Filepath As String, Source As Object) As Boolean
-        Dim NewPath As String = Helperfunctions.XML.COH_HelperFunctions_XML.CleanupFileName(Filepath)
+        Dim NewPath As String = HelperFunctions.XML.COH_HelperFunctions_XML.CleanupFileName(Filepath)
         If IO.Directory.Exists(IO.Path.GetDirectoryName(NewPath)) = False Then IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(NewPath))
         Dim XMlString As String = ""
         Dim ExportResult As Boolean = Export_ToXMLFile_String(Source, XMlString, New COH_Serialization_Settings(True, COH_ExportFormat.XML))

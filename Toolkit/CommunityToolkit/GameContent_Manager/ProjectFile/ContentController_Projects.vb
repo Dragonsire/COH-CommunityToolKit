@@ -4,6 +4,7 @@ Imports COH.GameContent.Structures.MeshRelated
 Imports COH.GameContent.Structures.Shared
 Imports COH.HelperClasses.Wrappers
 Imports COH.Storage.Controllers
+Imports COH.Storage.Structures.Wrappers
 Imports COH.Toolkit.CodeManagement.Interfaces
 Imports COH.Toolkit.Enums
 Imports COH.Toolkit.ProjectFiles

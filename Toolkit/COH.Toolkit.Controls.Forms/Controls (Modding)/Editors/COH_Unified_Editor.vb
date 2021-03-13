@@ -1,7 +1,5 @@
-﻿Imports COH.GameContent.Enums
-Imports COH.Toolkit.CodeManagement.Interfaces
+﻿Imports COH.Toolkit.CodeManagement.Interfaces
 Imports COH.Toolkit.Enums
-Imports COH.Tools.Modding.HelperFunctions.Structs
 
 Namespace Toolkit.Modding.Editors
     Public Class COH_EditModdableContent
@@ -31,12 +29,12 @@ Namespace Toolkit.Modding.Editors
             With ImageList1
                 .Images.Clear()
                 .ImageSize = New Size(16, 16)
-                .Images.Add(My.Resources.Unknown)
-                .Images.Add(COH_ProjectContent.PowerCategory.ToString, My.Resources.PowerCategory)
-                .Images.Add(COH_ProjectContent.Powers.ToString, My.Resources.Powers)
-                .Images.Add(COH_ProjectContent.PowerSets.ToString, My.Resources.PowerSets)
-                .Images.Add(COH_ProjectContent.CharacterClasses_PlayerClasses.ToString, My.Resources.CharacterClasses_PlayerClasses)
-                .Images.Add(COH_ProjectContent.CharacterClasses_EnemyClass.ToString, My.Resources.CharacterClasses_EnemyClass)
+                '.Images.Add(global.COH.Toolkit.Resources.Unknown)
+                '.Images.Add(COH_ProjectContent.PowerCategory.ToString, My.Resources.PowerCategory)
+                '.Images.Add(COH_ProjectContent.Powers.ToString, My.Resources.Powers)
+                '.Images.Add(COH_ProjectContent.PowerSets.ToString, My.Resources.PowerSets)
+                '.'Images.Add(COH_ProjectContent.CharacterClasses_PlayerClasses.ToString, My.Resources.CharacterClasses_PlayerClasses)
+                '.Images.Add(COH_ProjectContent.CharacterClasses_EnemyClass.ToString, My.Resources.CharacterClasses_EnemyClass)
             End With
         End Sub
         Public Overrides Sub Finish()

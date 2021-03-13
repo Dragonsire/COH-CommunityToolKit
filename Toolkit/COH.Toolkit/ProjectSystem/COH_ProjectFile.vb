@@ -1,4 +1,5 @@
 ﻿Imports COH.HelperClasses.Wrappers
+Imports COH.Storage.Structures.Wrappers
 Imports COH.Toolkit.Enums
 
 Namespace ProjectFiles

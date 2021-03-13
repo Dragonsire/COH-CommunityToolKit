@@ -31,7 +31,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
             Me.TabPage1 = New System.Windows.Forms.TabPage()
             Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
             Me.ElementHost2 = New System.Windows.Forms.Integration.ElementHost()
-            Me.CoH_3DModelViewer1 = New COH.Toolkit.Controls.WPF.COH_ModelViewer()
+            Me.CoH_3DModelViewer1 = New COH_ModelViewer()
             Me.TabControl2 = New System.Windows.Forms.TabControl()
             Me.TabPage3 = New System.Windows.Forms.TabPage()
             Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
@@ -816,7 +816,7 @@ Namespace Toolkit.Controls.WinForms.Dialogs
 
         End Sub
         Friend WithEvents ElementHost2 As Integration.ElementHost
-        Friend CoH_3DModelViewer1 As WPF.COH_ModelViewer
+        Friend CoH_3DModelViewer1 As COH_ModelViewer
         Friend WithEvents TabControl1 As TabControl
         Friend WithEvents TabPage1 As TabPage
         Friend WithEvents TabPage2 As TabPage

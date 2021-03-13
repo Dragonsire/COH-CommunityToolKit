@@ -23,7 +23,7 @@ Namespace Storage.Containers.PIGG.Structures
 #Region "Create New Instance"
         Sub New()
         End Sub
-        Private Function BuildFromStream(ByRef CurrentReader As COH_BinaryReader, ByRef Source As Structures.COH_Pigg_Info) As Boolean
+        Private Function BuildFromStream(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container) As Boolean
             sSlotTableMarker = CurrentReader.ReadUInt32
             If Not sSlotTableMarker = 39612 Then Return False
             sCount = CurrentReader.ReadUInt32
@@ -44,7 +44,7 @@ Namespace Storage.Containers.PIGG.Structures
             End If
             Return True
         End Function
-        Private Function FindName_FromSlotIndex(Index As Integer, ByRef Source As Structures.COH_Pigg_Info) As String
+        Private Function FindName_FromSlotIndex(Index As Integer, ByRef Source As PIGG_Container) As String
             For X = 0 To Source.Directories.Count - 1
                 If Source.Directories(X).SecondarySlotIndex = Index Then Return Source.StringTable.Items(X)
             Next
@@ -67,7 +67,7 @@ Namespace Storage.Containers.PIGG.Structures
 #End Region
 
 #Region "Shared Function"
-        Public Shared Function CreateFromStream(ByRef CurrentReader As COH_BinaryReader, ByRef Source As Structures.COH_Pigg_Info, ByRef Result As COH_PIGG_SlotTable) As Boolean
+        Public Shared Function CreateFromStream(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container, ByRef Result As COH_PIGG_SlotTable) As Boolean
             Dim Valid As Boolean = False
             Result = New COH_PIGG_SlotTable
             Valid = Result.BuildFromStream(CurrentReader, Source)

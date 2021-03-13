@@ -1,32 +1,31 @@
 ﻿Imports COH.Storage.Containers.PIGG
-Imports COH.Tools.Internal.Enums
 
-Namespace Internal.ContentController
-    Partial Public NotInheritable Class COH_ContentController
+Namespace Toolkit
+    Partial Public NotInheritable Class ToolkitController
 
 #Region "Private Properties"
-        Private WithEvents mCurrentPiggReader As Storage.Containers.PIGG.PIGG_Container
+        Private WithEvents pCurrentReader_PIGG As PIGG_Container
 #End Region
 
 #Region "Import & Rebuild Sources From Defs"
         Public Function ExtractPigg_MainBin(Optional ShowMessage As Boolean = False) As Boolean
-            Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24) & "bin.pigg"
-            Dim Destination As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24)
-            Return ExtractPigg_File("bin.pigg", FileSource, Destination, ShowMessage)
+            ' Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24) & "bin.pigg"
+            ' Dim Destination As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24)
+            ' Return ExtractPigg_File("bin.pigg", FileSource, Destination, ShowMessage)
         End Function
         Public Function ExtractPiggs_FreshInstall(Optional ShowMessage As Boolean = False, Optional ProcessRecords As Boolean = False) As Boolean
             Dim Succeeded As Boolean = True
             If ExtractPigg_MainBin(False) = False Then Succeeded = False
-            If ShowQuestion_Simple("Do You Wish To Extract all Additional Supported Piggs?") = MsgBoxResult.Yes Then
+            If WindowManager.ShowQuestion_YesNo("Do You Wish To Extract all Additional Supported Piggs?") = MsgBoxResult.Yes Then
                 If ExtractPiggs_AllTextures(False, ProcessRecords) = False Then Succeeded = False
                 If ExtractPiggs_AllGEO(False, ProcessRecords) = False Then Succeeded = False
                 If ExtractPiggs_AllAnimations(False, ProcessRecords) = False Then Succeeded = False
             End If
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    ShowMessage_Simple("Extract Piggs Complete")
+                    WindowManager.ShowMessage("Extract Piggs Complete")
                 Else
-                    ShowMessage_Simple("Not Piggs Extracted Completly **NEED LOG**")
+                    WindowManager.ShowMessage("Not Piggs Extracted Completly **NEED LOG**")
                 End If
             End If
             Return True
@@ -39,12 +38,12 @@ Namespace Internal.ContentController
             If ExtractPiggs_AllAnimations(False, ProcessRecords) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    ShowMessage_Simple("Extract All Piggs Complete")
+                    WindowManager.ShowMessage("Extract All Piggs Complete")
                 Else
-                    ShowMessage_Simple("Not All Piggs Extracted Complete **NEED LOG**")
+                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
             End If
-            Prepare_AssetsController()
+            ' Prepare_AssetsController()
             Return True
         End Function
         Public Function ExtractPiggs_AllTextures(Optional ShowMessage As Boolean = False, Optional ProcessRecords As Boolean = False) As Boolean
@@ -56,11 +55,11 @@ Namespace Internal.ContentController
             If ExtractPigg_MainTextures(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    ShowMessage_Simple("Extract All Piggs Textures Complete")
+                    WindowManager.ShowMessage("Extract All Piggs Textures Complete")
                 Else
-                    ShowMessage_Simple("Not All Piggs Extracted Complete **NEED LOG**")
+                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
-                Prepare_AssetsController()
+                ' Prepare_AssetsController()
             End If
             Return True
         End Function
@@ -69,11 +68,11 @@ Namespace Internal.ContentController
             If ExtractPigg_MainGEOs(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    ShowMessage_Simple("Extract All Piggs GEOs Complete")
+                    WindowManager.ShowMessage("Extract All Piggs GEOs Complete")
                 Else
-                    ShowMessage_Simple("Not All Piggs Extracted Complete **NEED LOG**")
+                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
-                Prepare_AssetsController()
+                ' Prepare_AssetsController()
             End If
             Return True
         End Function
@@ -82,11 +81,11 @@ Namespace Internal.ContentController
             If ExtractPigg_Animations(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    ShowMessage_Simple("Extract All Piggs ANIMs Complete")
+                    WindowManager.ShowMessage("Extract All Piggs ANIMs Complete")
                 Else
-                    ShowMessage_Simple("Not All Piggs Extracted Complete **NEED LOG**")
+                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
-                Prepare_AssetsController()
+                ' Prepare_AssetsController()
             End If
             Return True
         End Function
@@ -94,9 +93,9 @@ Namespace Internal.ContentController
 
 #Region "Extract Bins - Single Files"
         Public Function ExtractPigg_Test(Optional ShowMessage As Boolean = False) As Boolean
-            Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24) & "texWorldBuildings.pigg"
-            Dim Destination As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24)
-            Return ExtractPigg_File("texWorldBuildings.pigg", FileSource, Destination, ShowMessage)
+            ' Dim FileSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24) & "texWorldBuildings.pigg"
+            ' Dim Destination As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Bins_i24)
+            'Return ExtractPigg_File("texWorldBuildings.pigg", FileSource, Destination, ShowMessage)
         End Function
         Public Function ExtractPigg_Animations(Optional ProcessRecord As Boolean = False, Optional DeleteAllFiles As Boolean = True, Optional ShowMessage As Boolean = False) As Boolean
             Return ExtractPigg_Files(Retrieve_ListPiggs_TexturesAssets_Animation, ProcessRecord, DeleteAllFiles, ShowMessage)
@@ -120,8 +119,8 @@ Namespace Internal.ContentController
             Return ExtractPigg_Files(Retrieve_ListPiggs_GEOAssets_Main, ProcessRecord, DeleteAllFiles, ShowMessage)
         End Function
         Public Function ExtractPigg_Files(Files As List(Of String), Optional ProcessRecord As Boolean = False, Optional DeleteAllFiles As Boolean = True, Optional ShowMessage As Boolean = False) As Boolean
-            Dim FolderSource As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24)
-            Dim Destination As String = ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Assets)
+            Dim FolderSource As String '= ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_PIGG_i24)
+            Dim Destination As String '= ProgramFolders.LookupFolder(COH_ProgramPaths.Resources_Import_Assets)
             Dim Result As Boolean = True
             Dim Succeeded As Integer = 0
             For Each File In Files
@@ -133,9 +132,9 @@ Namespace Internal.ContentController
             Next
             If ShowMessage = True Then
                 If Result = True Then
-                    ShowMessage_Simple("Successfully Extracted All " & Files.Count & " PIGG Files")
+                    WindowManager.ShowMessage("Successfully Extracted All " & Files.Count & " PIGG Files")
                 Else
-                    ShowMessage_Simple("Extracted " & Succeeded & " of " & Files.Count)
+                    WindowManager.ShowMessage("Extracted " & Succeeded & " of " & Files.Count)
                 End If
             End If
             Return Result
@@ -147,20 +146,20 @@ Namespace Internal.ContentController
             Dim Found As Boolean = False
             Dim FileLocation As String = FileSource
             If IO.File.Exists(FileSource) = True Then Found = True
-            If Found = False Then FileLocation = mLastLocated & "\" & Name : If IO.File.Exists(FileLocation) = True Then Found = True
+            ' If Found = False Then FileLocation = mLastLocated & "\" & Name : If IO.File.Exists(FileLocation) = True Then Found = True
             If Found = False Then
-                ShowMessage_SimpleError(Name & " - Not Found")
-                If LocateFile(Name, FileSource) = False Then Return False
+                ' WindowManager.ShowMessageError(Name & " - Not Found")
+                ' If LocateFile(Name, FileSource) = False Then Return False
             ElseIf IO.File.Exists(FileSource) = False Then
                 IO.File.Copy(FileLocation, FileSource)
             End If
-            If DeleteAllFiles = True Then Delete_AllFiles_InDirectory(Destination, False, IO.SearchOption.AllDirectories)
-            mCurrentPiggReader = New PIGG_Container
-            mCurrentPiggReader.OpenExisting_PiggFile(FileSource)
-            mCurrentPiggReader.ExtractAllFiles_ToDirectory(Destination, ProcessRecord, True)
-            mCurrentPiggReader.Dispose()
-            mCurrentPiggReader = Nothing
-            If ShowMessage = True Then ShowMessage_Simple("Successfully Extracted " & Name)
+            ' If DeleteAllFiles = True Then Delete_AllFiles_InDirectory(Destination, False, IO.SearchOption.AllDirectories)
+            pCurrentReader_PIGG = New PIGG_Container
+            pCurrentReader_PIGG.OpenExisting_PiggFile(FileSource)
+            pCurrentReader_PIGG.ExtractAllFiles_ToDirectory(Destination, ProcessRecord, True)
+            pCurrentReader_PIGG.Dispose()
+            pCurrentReader_PIGG = Nothing
+            If ShowMessage = True Then WindowManager.ShowMessage("Successfully Extracted " & Name)
             Return True
         End Function
 #End Region
