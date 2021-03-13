@@ -63,6 +63,7 @@
 
         XML_SpecialCase_Bone = 100
 
+        ResourceContainer_PIGG = 150
 
         Unknown = 255
     End Enum

@@ -1,20 +1,127 @@
 ﻿Imports System.Drawing
+Imports COH.CodeManagement.Enums.Structures
 
 Namespace Toolkit.ControllerModules
     Partial Public NotInheritable Class ControllerModule_WindowManager
 
 #Region "Locate Files"
-        Public Function LocateFilePath_Open(Title As String, Filter As String, ByRef Result As String) As Boolean
-            Dim InitialDirectory As String = ""
-            If String.IsNullOrEmpty(Result) = False Then
-                InitialDirectory = IO.Path.GetDirectoryName(Result)
-                If IO.Directory.Exists(InitialDirectory) = False Then InitialDirectory = ""
+        Private pLastLocated As String
+        Public Function LocateFile_CopyTo(DesiredType As COH_Supported_ContentType, ByRef FileName As String, Destination As String) As Boolean
+            If LocateFile(DesiredType, FileName) = True Then
+                IO.File.Copy(FileName, Destination)
+                pLastLocated = IO.Path.GetDirectoryName(FileName)
+                Return True
+            Else
+                Return False
             End If
-            ' Return Dialogs.LocateFilePath_Open(Title, Filter, Result, InitialDirectory)
         End Function
-        Public Function LocateRecordPath_Open(InitialFolder As String, ByRef Result As String) As Boolean
-            ' Dim Filter As String = Dialogs.GenerateFilter("XRS Record", "Records")
-            ' Return Dialogs.LocateFilePath_Open("Open Record Container", Filter, Result, InitialFolder)
+        Public Function LocateFile(DesiredType As COH_Supported_ContentType, ByRef FileName As String) As Boolean
+            Select Case DesiredType
+                Case COH_Supported_ContentType.ResourceContainer_PIGG
+                    Return LocateFileType_PIGG(FileName)
+                Case COH_Supported_ContentType.Resource_BIN_CrypticS
+                    Return LocateFileType_BIN(FileName)
+                Case COH_Supported_ContentType.Resource_GEO
+                    Return LocateFileType_GEO(FileName)
+                Case COH_Supported_ContentType.Resource_Texture
+                    Return LocateFileType_Texture(FileName)
+                Case COH_Supported_ContentType.Resource_BIN_MessageStore
+                    '//Return LocateFileType_(FileName)
+                Case COH_Supported_ContentType.Resource_TGA
+                    '//Return LocateFileType_(FileName)
+                Case COH_Supported_ContentType.Resource_ANIMATION
+                    '//Return LocateFileType_(FileName)
+                Case Else
+                    Return False
+            End Select
+        End Function
+        Public Function LocateFileType_PIGG(ByRef FileName As String) As Boolean
+            Dim Dialog = New OpenFileDialog()
+            With Dialog
+                .CheckFileExists = True
+                .CheckPathExists = True
+                .DefaultExt = "pigg"
+                .FileName = FileName
+                .Filter = "PIGG (*.pigg)|*.pigg"
+                .FilterIndex = 0
+                If String.IsNullOrEmpty(pLastLocated) = False Then
+                    .InitialDirectory = IO.Path.GetDirectoryName(pLastLocated)
+                Else
+                    .InitialDirectory = ""
+                End If
+                .Title = "Select File to Continue"
+            End With
+            Return LocateFileType(Dialog, FileName)
+        End Function
+        Public Function LocateFileType_BIN(ByRef FileName As String) As Boolean
+            Dim Dialog = New OpenFileDialog()
+            With Dialog
+                .CheckFileExists = True
+                .CheckPathExists = True
+                .DefaultExt = "bin"
+                .FileName = FileName
+                .Filter = "BIN (*.bin)|*.bin"
+                .FilterIndex = 0
+                If String.IsNullOrEmpty(pLastLocated) = False Then
+                    .InitialDirectory = IO.Path.GetDirectoryName(pLastLocated)
+                Else
+                    .InitialDirectory = ""
+                End If
+                .Title = "Select File to Continue"
+            End With
+            Return LocateFileType(Dialog, FileName)
+        End Function
+        Public Function LocateFileType_GEO(ByRef FileName As String) As Boolean
+            Dim Dialog = New OpenFileDialog()
+            With Dialog
+                .CheckFileExists = True
+                .CheckPathExists = True
+                .DefaultExt = "geo"
+                .FileName = FileName
+                .Filter = "GEO (*.geo)|*.geo"
+                .FilterIndex = 0
+                If String.IsNullOrEmpty(pLastLocated) = False Then
+                    .InitialDirectory = IO.Path.GetDirectoryName(pLastLocated)
+                Else
+                    .InitialDirectory = ""
+                End If
+                .Title = "Select File to Continue"
+            End With
+            Return LocateFileType(Dialog, FileName)
+        End Function
+        Public Function LocateFileType_Texture(ByRef FileName As String) As Boolean
+            Dim Dialog = New OpenFileDialog()
+            With Dialog
+                .CheckFileExists = True
+                .CheckPathExists = True
+                .DefaultExt = "Textue"
+                .FileName = FileName
+                .Filter = "Texture (*.Texture)|*.texture"
+                .FilterIndex = 0
+                If String.IsNullOrEmpty(pLastLocated) = False Then
+                    .InitialDirectory = IO.Path.GetDirectoryName(pLastLocated)
+                Else
+                    .InitialDirectory = ""
+                End If
+                .Title = "Select File to Continue"
+            End With
+            Return LocateFileType(Dialog, FileName)
+        End Function
+        Public Function LocateFileType(ByRef Dialog As OpenFileDialog, Found As String) As Boolean
+            Do
+                Select Case Dialog.ShowDialog()
+                    Case DialogResult.OK
+                        If IO.File.Exists(Dialog.FileName) Then
+                            If IO.File.Exists(Dialog.FileName) = True Then
+                                Found = Dialog.FileName
+                                Return True
+                                Exit Do
+                            End If
+                        End If
+                    Case Else
+                        Return False
+                End Select
+            Loop
         End Function
 #End Region
 
