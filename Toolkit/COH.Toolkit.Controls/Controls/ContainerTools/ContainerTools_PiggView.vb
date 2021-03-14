@@ -48,7 +48,7 @@ Namespace Toolkit.Controls.ContainerTools
         End Sub
         Private Sub DisplayInfo()
             Changes_Locked = True
-            '// HelperFunctions.Toolkit.Controls.TreeViews.Fill_TreeView(Me.TreeView1, pCurrentPIGG.StringTable.Items, "/", "Root", ".")
+            HelperFunctions.Controls.TreeViews.Fill_TreeView(TreeView1, pCurrentPIGG.StringTable.Items, "/", "Root", ".")
             For Each node As TreeNode In Me.TreeView1.Nodes(0).Nodes(0).Nodes
                 Dim TheType As COH_FSI_Entry = Nothing
                 'If ContentController.TheController_SupportedStructures.Retrieve_SupportedType(node.Text, TheType) = False Then

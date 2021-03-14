@@ -74,7 +74,7 @@
 
 
   <ItemGroup>
-    <Compile Update="ContainerTools\ContainerTools_PiggView.vb" />
+    <Compile Update="Controls\ContainerTools\ContainerTools_PiggView.vb" />
     <Compile Update="_Internal\UserControl_Template.vb" />
   </ItemGroup>
 
