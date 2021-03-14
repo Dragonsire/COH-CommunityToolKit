@@ -49,29 +49,30 @@ Namespace Toolkit.Controls.ContainerTools
         Private Sub DisplayInfo()
             Changes_Locked = True
             HelperFunctions.Controls.TreeViews.Fill_TreeView(TreeView1, pCurrentPIGG.StringTable.Items, "/", "Root", ".")
+            Exit Sub
             For Each node As TreeNode In Me.TreeView1.Nodes(0).Nodes(0).Nodes
                 Dim TheType As COH_FSI_Entry = Nothing
                 'If ContentController.TheController_SupportedStructures.Retrieve_SupportedType(node.Text, TheType) = False Then
                 If node.Text.ToUpper.Contains(".GEO") Then
-                        node.ForeColor = Color.Green
-                    Else
-                        node.ForeColor = Color.Red
-                    End If
+                    node.ForeColor = Color.Green
+                Else
+                    node.ForeColor = Color.Red
+                End If
                 'Else
                 Select Case TheType.ContentType
-                        Case COH_Supported_ContentType.Resource_BIN_CrypticS
-                            node.ForeColor = Color.Black
-                        Case COH_Supported_ContentType.Resource_BIN_MessageStore
-                            node.ForeColor = Color.DarkOrange
-                        Case COH_Supported_ContentType.Resource_GEO
-                            node.ForeColor = Color.Green
-                        Case COH_Supported_ContentType.Resource_Texture
-                            node.ForeColor = Color.Blue
-                        Case COH_Supported_ContentType.Resource_TGA
-                            node.ForeColor = Color.BlueViolet
-                        Case COH_Supported_ContentType.Unknown
-                            node.ForeColor = Color.Gray
-                    End Select
+                    Case COH_Supported_ContentType.Resource_BIN_CrypticS
+                        node.ForeColor = Color.Black
+                    Case COH_Supported_ContentType.Resource_BIN_MessageStore
+                        node.ForeColor = Color.DarkOrange
+                    Case COH_Supported_ContentType.Resource_GEO
+                        node.ForeColor = Color.Green
+                    Case COH_Supported_ContentType.Resource_Texture
+                        node.ForeColor = Color.Blue
+                    Case COH_Supported_ContentType.Resource_TGA
+                        node.ForeColor = Color.BlueViolet
+                    Case COH_Supported_ContentType.Unknown
+                        node.ForeColor = Color.Gray
+                End Select
                 ' End If
             Next
             DisplayInfo_ContentDetails()

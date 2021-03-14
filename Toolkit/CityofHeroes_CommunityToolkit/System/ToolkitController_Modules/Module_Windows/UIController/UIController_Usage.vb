@@ -3,6 +3,17 @@
 Namespace Toolkit.ControllerModules.WindowForms
     Partial Public NotInheritable Class UIController
 
+#Region "New Create Window For Control"
+        Public Function CreateToolWindow_ForControl(ByRef SelectedControl As Controls.UserControl_Template) As Form
+        End Function
+#End Region
+
+
+
+
+
+
+
 #Region "Open/Create WindowForm From Configuration"
         Public Sub OpenWindow(ByRef SelectedForm As Form)
             'Handle_Event_WindowAdded(SelectedForm)
