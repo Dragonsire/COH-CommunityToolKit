@@ -32,6 +32,7 @@ Namespace Toolkit
         End Property
         Private WithEvents rPathways As ControllerModule_Pathways
         Private WithEvents rWindowManager As ControllerModule_WindowManager
+        Private WithEvents rContentController As ControllerModule_ContentManager
         Private WithEvents pSettings As ApplicationController_Settings
         Private Shared sInstance As ToolkitController
 #End Region
@@ -52,6 +53,7 @@ Namespace Toolkit
             ConfigureSettings(StartupFolder)
             UpdateSplashScreen("Configuring Folders", 10, True)
             ConfigurePathways(StartupFolder)
+            ConfigureContent()
             UpdateSplashScreen("Configuring UI", 20, True)
         End Sub
         Private Sub PerformStartup_ConfigureMainWindow()
@@ -81,6 +83,10 @@ Namespace Toolkit
         Protected Sub ConfigurePathways(ByRef StartupFolder As String)
             rPathways = New ControllerModule_Pathways(Me)
             rPathways.ConfigureModule(StartupFolder)
+        End Sub
+        Protected Sub ConfigureContent()
+            rContentController = New ControllerModule_ContentManager(Me)
+            rContentController.ConfigureModule()
         End Sub
         Protected Sub ConfigureSettings(StartupFolder As String)
             Dim ExpectedFileLocation As String = IO.Path.Combine(StartupFolder, "Settings.xml")

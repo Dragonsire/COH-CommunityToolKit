@@ -1,76 +1,65 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>COH.Tools</RootNamespace>
+    <RootNamespace>COH</RootNamespace>
 	<TargetFramework>net5.0-windows</TargetFramework>
     <Authors>DragonSire</Authors>
     <Company>DragonSire Software</Company>
     <Copyright>2020 - 2021</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-	<OutputType>EXE</OutputType>
+	<OutputType>Library</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
 	<UseWPF>true</UseWPF>
     <NeutralLanguage>en</NeutralLanguage>
     <Platforms>AnyCPU</Platforms>
-    <Configurations>Debug_Toolkit;Release_Toolkit;Release_Client;Release_GameServer</Configurations>
+    <Configurations>Debug_Toolkit;Release_Toolkit</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Toolkit|AnyCPU'">
-    <OutputPath>..\..\..\_Compiled Code\Toolkit\Debug\CommunityToolkit</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\Toolkit\Debug\COH.Toolkit.Controls</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Toolkit|AnyCPU'">
-    <OutputPath>..\..\..\_Compiled Code\ToolKit\Release\CommunityToolkit</OutputPath>
+    <OutputPath>..\..\..\_Compiled Code\ToolKit\Release\COH.Toolkit.Controls</OutputPath>
 	<DefineConstants>EDITOR=True,SERVER=False,CLIENT=False</DefineConstants>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_GameServer|AnyCPU'">
-    <OutputPath>..\..\..\_Compiled Code\Server\Release\CommunityToolkit</OutputPath>
-    <DefineConstants>EDITOR=False,SERVER=True,CLIENT=False</DefineConstants>
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Client|AnyCPU'">
-    <OutputPath>..\..\..\_Compiled Code\GameClient\Release\CommunityToolkit</OutputPath>
-	<DefineConstants>EDITOR=False,SERVER=False,CLIENT=True</DefineConstants>
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-  </PropertyGroup>
-
   <ItemGroup>
-    <Compile Remove="_Internal\Constants\**" />
-    <EmbeddedResource Remove="_Internal\Constants\**" />
-    <None Remove="_Internal\Constants\**" />
-    <Page Remove="_Internal\Constants\**" />
+    <Compile Remove="My Project\**" />
+    <EmbeddedResource Remove="My Project\**" />
+    <None Remove="My Project\**" />
+    <Page Remove="My Project\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Import Include="COH.CodeManagement.Attributes" />
-    <Import Include="COH.CodeManagement.Enums" />
     <Import Include="COH.CodeManagement.Enums.Structures" />
     <Import Include="COH.CodeManagement.Enums.Toks" />
     <Import Include="COH.CodeManagement.Extentions" />
     <Import Include="COH.CodeManagement.Interfaces" />
     <Import Include="COH.CodeManagement.Interfaces.Structures" />
     <Import Include="COH.CodeManagement.Interfaces.TOKs" />
-    <Import Include="COH.GameContent.Enums" />
+    <Import Include="COH.GameContent.Structures.Resources" />
     <Import Include="COH.Storage.Serialization" />
     <Import Include="COH.Storage.Serialization.Configuration" />
     <Import Include="COH.Storage.Structures" />
     <Import Include="COH.Storage.Structures.CrypticsS" />
     <Import Include="COH.Storage.Structures.Generics" />
-    <Import Include="System.ComponentModel" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Drawing.Imaging" />
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
-    <PackageReference Include="System.Data.Odbc" Version="5.0.0" />
+    <PackageReference Include="FCTB" Version="2.16.24" />
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="2.15.0" />
+    <PackageReference Include="SharpDX" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
   </ItemGroup>
 
 
@@ -80,8 +69,13 @@
     <ProjectReference Include="..\..\Common\COH.GameContent.Structures\COH.GameContent.Structures.vbproj" />
     <ProjectReference Include="..\..\Common\COH.GameContent\COH.vbproj" />
     <ProjectReference Include="..\..\Common\COH.Storage.PiggyBin\COH.Storage.Containers.PiggyBin.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit.Controls.Forms\COH.Toolkit.Controls_OLD.vbproj" />
-    <ProjectReference Include="..\COH.Toolkit\COH.Toolkit.vbproj" />
+    <ProjectReference Include="..\..\Common\COH.Storage.Structures\COH.Storage.Serialize.vbproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="ContainerTools\ContainerTools_PiggView.vb" />
+    <Compile Update="_Internal\UserControl_Template.vb" />
   </ItemGroup>
 
 </Project>

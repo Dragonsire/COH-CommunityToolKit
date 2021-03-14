@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toolkit", "Toolkit", "{2416
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Community ToolKit", "Toolkit\CommunityToolkit\Community ToolKit.vbproj", "{AAE6E2C5-544B-452D-97DF-59390BD0047F}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.Toolkit.Controls", "Toolkit\COH.Toolkit.Controls.Forms\COH.Toolkit.Controls.vbproj", "{A81A7080-229B-4651-B255-C764D086C201}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.Toolkit.Controls_OLD", "Toolkit\COH.Toolkit.Controls.Forms\COH.Toolkit.Controls_OLD.vbproj", "{A81A7080-229B-4651-B255-C764D086C201}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameServers", "GameServers", "{99500218-E608-4FD6-B8D6-C6AD3EECD1BA}"
 EndProject
@@ -47,9 +47,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage.Databases", "Storag
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.Storage.Databases.XML", "Common\COH.Storage.Databases.XML\COH.Storage.Databases.XML.vbproj", "{7593C641-8ABF-42E7-97DE-9F8346745608}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OLD SOURCES", "OLD SOURCES", "{734AEF3C-DA42-49DA-ACBE-A4C5DA4913D0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__OLD SOURCES", "__OLD SOURCES", "{734AEF3C-DA42-49DA-ACBE-A4C5DA4913D0}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CityofHeroes_CommunityToolkit", "Toolkit\CityofHeroes_CommunityToolkit\CityofHeroes_CommunityToolkit.vbproj", "{A277CE7E-E6C3-4882-9D97-5F9739C10FD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Frameworks", "_Frameworks", "{7BC6A52A-603D-40CD-B3DC-44330B255DFD}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "COH.Toolkit.Controls", "Toolkit\COH.Toolkit.Controls\COH.Toolkit.Controls.vbproj", "{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -351,6 +355,22 @@ Global
 		{A277CE7E-E6C3-4882-9D97-5F9739C10FD9}.Release_Toolkit|Any CPU.Build.0 = Release_Toolkit|Any CPU
 		{A277CE7E-E6C3-4882-9D97-5F9739C10FD9}.Release_Toolkit|x64.ActiveCfg = Release_Toolkit|x64
 		{A277CE7E-E6C3-4882-9D97-5F9739C10FD9}.Release_Toolkit|x64.Build.0 = Release_Toolkit|x64
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Debug_Toolkit|Any CPU.ActiveCfg = Debug_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Debug_Toolkit|Any CPU.Build.0 = Debug_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Debug_Toolkit|x64.ActiveCfg = Debug_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Debug_Toolkit|x64.Build.0 = Debug_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Client|Any CPU.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Client|Any CPU.Build.0 = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Client|x64.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Client|x64.Build.0 = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_GameServer|Any CPU.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_GameServer|Any CPU.Build.0 = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_GameServer|x64.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_GameServer|x64.Build.0 = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Toolkit|Any CPU.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Toolkit|Any CPU.Build.0 = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Toolkit|x64.ActiveCfg = Release_Toolkit|Any CPU
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676}.Release_Toolkit|x64.Build.0 = Release_Toolkit|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -377,6 +397,8 @@ Global
 		{7593C641-8ABF-42E7-97DE-9F8346745608} = {C7DF3DE8-FE40-4925-87C6-67ABF2CBAA22}
 		{734AEF3C-DA42-49DA-ACBE-A4C5DA4913D0} = {2416DC8F-B0E6-43B8-A9A5-391D66B2A809}
 		{A277CE7E-E6C3-4882-9D97-5F9739C10FD9} = {2416DC8F-B0E6-43B8-A9A5-391D66B2A809}
+		{7BC6A52A-603D-40CD-B3DC-44330B255DFD} = {2416DC8F-B0E6-43B8-A9A5-391D66B2A809}
+		{8A53E4B1-10DE-4F70-8C20-F4D0CCEAE676} = {7BC6A52A-603D-40CD-B3DC-44330B255DFD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C5A425F-89BA-46F0-A17F-227524327FE5}

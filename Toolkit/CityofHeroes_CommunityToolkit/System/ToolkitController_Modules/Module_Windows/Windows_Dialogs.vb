@@ -107,7 +107,7 @@ Namespace Toolkit.ControllerModules
             End With
             Return LocateFileType(Dialog, FileName)
         End Function
-        Public Function LocateFileType(ByRef Dialog As OpenFileDialog, Found As String) As Boolean
+        Public Function LocateFileType(ByRef Dialog As OpenFileDialog, ByRef Found As String) As Boolean
             Do
                 Select Case Dialog.ShowDialog()
                     Case DialogResult.OK

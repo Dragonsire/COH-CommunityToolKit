@@ -1,11 +1,21 @@
-﻿Imports COH.Storage.Containers.PIGG
+﻿Imports COH.CodeManagement.Enums.Structures
+Imports COH.Storage.Containers.PIGG
 
-Namespace Toolkit
-    Partial Public NotInheritable Class ToolkitController
+Namespace Toolkit.ControllerModules
+    Partial Public NotInheritable Class ControllerModule_ContentManager
 
 #Region "Private Properties"
         Private WithEvents pCurrentReader_PIGG As PIGG_Container
 #End Region
+
+#Region "Open"
+        Public Sub OpenPigg_LocateFile()
+            Dim PiggSource As String = ""
+            If ParentController.WindowManager.LocateFile(COH_Supported_ContentType.ResourceContainer_PIGG, PiggSource) = False Then Exit Sub
+            ParentController.WindowManager.OpenContainer_PIGG(PiggSource)
+        End Sub
+#End Region
+
 
 #Region "Import & Rebuild Sources From Defs"
         Public Function ExtractPigg_MainBin(Optional ShowMessage As Boolean = False) As Boolean
@@ -16,16 +26,16 @@ Namespace Toolkit
         Public Function ExtractPiggs_FreshInstall(Optional ShowMessage As Boolean = False, Optional ProcessRecords As Boolean = False) As Boolean
             Dim Succeeded As Boolean = True
             If ExtractPigg_MainBin(False) = False Then Succeeded = False
-            If WindowManager.ShowQuestion_YesNo("Do You Wish To Extract all Additional Supported Piggs?") = MsgBoxResult.Yes Then
+            If ParentController.WindowManager.ShowQuestion_YesNo("Do You Wish To Extract all Additional Supported Piggs?") = MsgBoxResult.Yes Then
                 If ExtractPiggs_AllTextures(False, ProcessRecords) = False Then Succeeded = False
                 If ExtractPiggs_AllGEO(False, ProcessRecords) = False Then Succeeded = False
                 If ExtractPiggs_AllAnimations(False, ProcessRecords) = False Then Succeeded = False
             End If
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    WindowManager.ShowMessage("Extract Piggs Complete")
+                    ParentController.WindowManager.ShowMessage("Extract Piggs Complete")
                 Else
-                    WindowManager.ShowMessage("Not Piggs Extracted Completly **NEED LOG**")
+                    ParentController.WindowManager.ShowMessage("Not Piggs Extracted Completly **NEED LOG**")
                 End If
             End If
             Return True
@@ -38,9 +48,9 @@ Namespace Toolkit
             If ExtractPiggs_AllAnimations(False, ProcessRecords) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    WindowManager.ShowMessage("Extract All Piggs Complete")
+                    ParentController.WindowManager.ShowMessage("Extract All Piggs Complete")
                 Else
-                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
+                    ParentController.WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
             End If
             ' Prepare_AssetsController()
@@ -55,9 +65,9 @@ Namespace Toolkit
             If ExtractPigg_MainTextures(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    WindowManager.ShowMessage("Extract All Piggs Textures Complete")
+                    ParentController.WindowManager.ShowMessage("Extract All Piggs Textures Complete")
                 Else
-                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
+                    ParentController.WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
                 ' Prepare_AssetsController()
             End If
@@ -68,9 +78,9 @@ Namespace Toolkit
             If ExtractPigg_MainGEOs(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    WindowManager.ShowMessage("Extract All Piggs GEOs Complete")
+                    ParentController.WindowManager.ShowMessage("Extract All Piggs GEOs Complete")
                 Else
-                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
+                    ParentController.WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
                 ' Prepare_AssetsController()
             End If
@@ -81,9 +91,9 @@ Namespace Toolkit
             If ExtractPigg_Animations(ProcessRecords, False, False) = False Then Succeeded = False
             If ShowMessage = True Then
                 If Succeeded = True Then
-                    WindowManager.ShowMessage("Extract All Piggs ANIMs Complete")
+                    ParentController.WindowManager.ShowMessage("Extract All Piggs ANIMs Complete")
                 Else
-                    WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
+                    ParentController.WindowManager.ShowMessage("Not All Piggs Extracted Complete **NEED LOG**")
                 End If
                 ' Prepare_AssetsController()
             End If
@@ -132,9 +142,9 @@ Namespace Toolkit
             Next
             If ShowMessage = True Then
                 If Result = True Then
-                    WindowManager.ShowMessage("Successfully Extracted All " & Files.Count & " PIGG Files")
+                    ParentController.WindowManager.ShowMessage("Successfully Extracted All " & Files.Count & " PIGG Files")
                 Else
-                    WindowManager.ShowMessage("Extracted " & Succeeded & " of " & Files.Count)
+                    ParentController.WindowManager.ShowMessage("Extracted " & Succeeded & " of " & Files.Count)
                 End If
             End If
             Return Result
@@ -159,7 +169,7 @@ Namespace Toolkit
             pCurrentReader_PIGG.ExtractAllFiles_ToDirectory(Destination, ProcessRecord, True)
             pCurrentReader_PIGG.Dispose()
             pCurrentReader_PIGG = Nothing
-            If ShowMessage = True Then WindowManager.ShowMessage("Successfully Extracted " & Name)
+            If ShowMessage = True Then ParentController.WindowManager.ShowMessage("Successfully Extracted " & Name)
             Return True
         End Function
 #End Region
