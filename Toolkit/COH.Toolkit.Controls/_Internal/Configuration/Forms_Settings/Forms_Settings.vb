@@ -1,9 +1,9 @@
 ﻿Imports System.ComponentModel
-Imports System.IO
+Imports COH.HelperClasses.Wrappers
 
 Namespace Controls.Configuration
     <TypeConverter(GetType(ExpandableObjectConverter))>
-    Public Class WindowFormsConfiguration_Settings
+    Public Class FormsConfiguration_Settings
 
 #Region "Properties"
         Public Property Form_StartPosition_TopMost As Boolean
@@ -18,7 +18,7 @@ Namespace Controls.Configuration
         Public Property Form_Size As Size
         Public Property Form_Size_Minimal As Size
         Public Property Form_Size_Maximum As Size
-        Public Property Window_Font As Wrapped_Font
+        Public Property Window_Font As COH_XML_Font
 #End Region
 
 #Region "Create New Instance"
@@ -28,9 +28,6 @@ Namespace Controls.Configuration
         Public Sub New(ResetDefaults As Boolean)
             MyBase.New
             If ResetDefaults = True Then ResetToDefault()
-        End Sub
-        Public Sub New(ByRef CurrentReader As FlexStreamEditor)
-            Read_FromStream(CurrentReader)
         End Sub
 #End Region
 
@@ -88,21 +85,16 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Clone"
-        Public Function Clone() As Object Implements ICloneable.Clone
-            Dim Result As New WindowFormsConfiguration_Settings
-            CloneTo(Result)
-            Return Result
-        End Function
-        Public Overloads Function CreateClone() As WindowFormsConfiguration_Settings
-            Dim Destination As New WindowFormsConfiguration_Settings
+        Public Overloads Function CreateClone() As FormsConfiguration_Settings
+            Dim Destination As New FormsConfiguration_Settings
             CloneTo(Destination)
             Return Destination
         End Function
-        Public Overloads Sub CloneTo(ByRef Destination As WindowFormsConfiguration_Settings)
+        Public Overloads Sub CloneTo(ByRef Destination As FormsConfiguration_Settings)
             With Destination
                 .Form_StartPosition_TopMost = Form_StartPosition_TopMost
                 .Form_StartPosition = Form_StartPosition
-                .Form_Text = Form_Text.CloneString
+                .Form_Text = New String(Form_Text)
                 .Form_BorderStyle = Form_BorderStyle
                 .Form_Icon = Form_Icon
                 .ShowButton_Min = ShowButton_Min
@@ -111,61 +103,11 @@ Namespace Controls.Configuration
                 .Form_Size_Minimal = New Size(Form_Size_Minimal.Width, Form_Size_Minimal.Height)
                 .Form_Size_Maximum = New Size(Form_Size_Maximum.Width, Form_Size_Maximum.Height)
                 .Form_Size = New Size(Form_Size.Width, Form_Size.Height)
-                .Window_Font = Window_Font.Clone
+                .Window_Font = Window_Font.CreateClone
                 .Form_State = Form_State
             End With
         End Sub
 #End Region
 
-#Region "Export"
-        Function Export_ToStream_File(FilePath As String) As Boolean Implements IDS_ConvertTo_Binary.Export_ToStream_File
-            Dim File As New IO.FileStream(FilePath, IO.FileMode.Create, IO.FileAccess.Write)
-            Dim CurrentWriter As New FlexStreamEditor(File)
-            Return Write_ToStream(CurrentWriter)
-        End Function
-        Public Function Export_ToStream() As MemoryStream Implements IDS_Structure.Export_ToStream
-            Throw New NotImplementedException()
-        End Function
-        Public Function Write_ToStream(ByRef CurrentWriter As FlexStreamEditor) As Boolean Implements IDS_Structure.Write_ToStream
-            Dim Version As DS_CFS_IDent = DS_CFS_IDent.GetAttribute(GetType(WindowFormsConfiguration_Settings))
-            Version.WriteToStream(CurrentWriter)
-            CurrentWriter.Write(Form_StartPosition_TopMost)
-            CurrentWriter.Write(Form_StartPosition)
-            CurrentWriter.Write(Form_Text)
-            CurrentWriter.Write(Form_BorderStyle)
-            CurrentWriter.Write(Form_Icon)
-            CurrentWriter.Write(ShowButton_Min)
-            CurrentWriter.Write(ShowButton_Max)
-            CurrentWriter.Write(ShowButton_Help)
-            CurrentWriter.Write(Form_Size_Minimal)
-            CurrentWriter.Write(Form_Size_Maximum)
-            CurrentWriter.Write(Form_Size)
-            CurrentWriter.Write(Form_State)
-            Window_Font.Write_ToStream(CurrentWriter)
-            Return True
-        End Function
-#End Region
-
-#Region "Import"
-        Public Function Read_FromStream(ByRef CurrentReader As FlexStreamEditor) As Boolean Implements IDS_Structure.Read_FromStream
-            Dim Version As New DS_CFS_IDent(CurrentReader)
-            If DS_CFS_IDent.Validate(Version, DS_CFS_IDent.GetAttribute(GetType(WindowFormsConfiguration_Settings))) = False Then Return False
-            'ADD VERSION LOGIC
-            Form_StartPosition_TopMost = CurrentReader.ReadBoolean()
-            Form_StartPosition = CurrentReader.ReadInt32()
-            Form_Text = CurrentReader.ReadString()
-            Form_BorderStyle = CurrentReader.ReadInt32()
-            Form_Icon = CurrentReader.ReadIcon
-            ShowButton_Min = CurrentReader.ReadBoolean()
-            ShowButton_Max = CurrentReader.ReadBoolean()
-            ShowButton_Help = CurrentReader.ReadBoolean()
-            Form_Size_Minimal = CurrentReader.ReadSize()
-            Form_Size_Maximum = CurrentReader.ReadSize()
-            Form_Size = CurrentReader.ReadSize()
-            Form_State = CurrentReader.ReadInt32
-            Window_Font = New Wrapped_Font(CurrentReader)
-            Return True
-        End Function
-#End Region
     End Class
 End Namespace

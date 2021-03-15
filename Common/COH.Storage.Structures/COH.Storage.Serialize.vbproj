@@ -41,6 +41,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     <PackageReference Include="zlib.net" Version="1.0.4" />
   </ItemGroup>
 </Project>

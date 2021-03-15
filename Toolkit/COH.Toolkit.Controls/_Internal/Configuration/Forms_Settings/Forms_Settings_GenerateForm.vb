@@ -1,5 +1,6 @@
-﻿Namespace Controls.Configuration
-    Partial Public Class WindowFormsConfiguration_Settings
+﻿#If SKIN Then
+Namespace Controls.Configuration
+    Partial Public Class FormsConfiguration_Settings
         Public Function CreateForm_FromSettings(FormTemplate As WindowForms_Skin_FormTemplates) As Form
             Return CreateForm_FromSettings(Me, FormTemplate)
         End Function
@@ -9,17 +10,17 @@
         Public Function ModifyForm_FromSettings(ByRef SelectedForm As Form) As Form
             Return ModifyForm_FromSettings(Me, SelectedForm)
         End Function
-        Public Shared Function CreateForm_FromSettings(ByRef Settings As WindowFormsConfiguration_Settings, Optional FormTemplate As WindowForms_Skin_FormTemplates = WindowForms_Skin_FormTemplates.Standard) As Form
+        Public Shared Function CreateForm_FromSettings(ByRef Settings As FormsConfiguration_Settings, Optional FormTemplate As WindowForms_Skin_FormTemplates = WindowForms_Skin_FormTemplates.Standard) As Form
             Dim Template As Form = Nothing
             Select Case FormTemplate
                 Case WindowForms_Skin_FormTemplates.Standard
                     Template = New Form
                 Case WindowForms_Skin_FormTemplates.WindowForms_Standard
-                    Template = New WindowForms_Window
+                    Template = New FormWrapper
             End Select
             Return ModifyForm_FromSettings(Settings, Template)
         End Function
-        Public Shared Function ModifyForm_FromSettings(ByRef Settings As WindowFormsConfiguration_Settings, ByRef SelectedForm As Form) As Form
+        Public Shared Function ModifyForm_FromSettings(ByRef Settings As FormsConfiguration_Settings, ByRef SelectedForm As Form) As Form
             With SelectedForm
                 .SuspendLayout()
                 If SelectedForm Is GetType(ISupportInitialize) Then CType(SelectedForm, ISupportInitialize).BeginInit()
@@ -44,3 +45,4 @@
         End Function
     End Class
 End Namespace
+#End if

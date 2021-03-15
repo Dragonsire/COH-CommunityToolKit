@@ -2,8 +2,7 @@
 
 Namespace Controls.Configuration
     <TypeConverter(GetType(ExpandableObjectConverter))>
-    Public Class WindowFormsConfiguration_Parenting
-        Implements ICloneable
+    Public Class FormsConfiguration_Parenting
 
 #Region "Properties"
         Public Property ParentForm As Form '//Not Saved
@@ -47,7 +46,7 @@ Namespace Controls.Configuration
         Public Sub ModifyForm_FromSettings(ByRef SelectedForm As Form)
             ModifyForm_FromSettings(Me, SelectedForm)
         End Sub
-        Public Shared Sub ModifyForm_FromSettings(ByRef Settings As WindowFormsConfiguration_Parenting, ByRef SelectedForm As Form)
+        Public Shared Sub ModifyForm_FromSettings(ByRef Settings As FormsConfiguration_Parenting, ByRef SelectedForm As Form)
             If Settings Is Nothing Then Exit Sub
             If Settings.ParentForm Is Nothing Then Exit Sub
             With SelectedForm
@@ -72,17 +71,12 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Clone"
-        Public Function Clone() As Object Implements ICloneable.Clone
-            Dim Result As New WindowFormsConfiguration_Parenting
-            CloneTo(Result)
-            Return Result
-        End Function
-        Public Overloads Function CreateClone() As WindowFormsConfiguration_Parenting
-            Dim Destination As New WindowFormsConfiguration_Parenting
+        Public Overloads Function CreateClone() As FormsConfiguration_Parenting
+            Dim Destination As New FormsConfiguration_Parenting
             CloneTo(Destination)
             Return Destination
         End Function
-        Public Overloads Sub CloneTo(ByRef Destination As WindowFormsConfiguration_Parenting)
+        Public Overloads Sub CloneTo(ByRef Destination As FormsConfiguration_Parenting)
             With Destination
                 .ParentLocation = New Rectangle(ParentLocation.Location, ParentLocation.Size)
                 .ParentForm = ParentForm
