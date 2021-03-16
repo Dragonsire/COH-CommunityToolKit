@@ -7,7 +7,8 @@ Imports System.Linq
 Imports System.Runtime.InteropServices
 Imports System.Windows.Forms
 Imports COH.Controls
-Imports COH.Controls.FormRegion
+Imports COH.Controls.Configuration
+Imports COH.Controls.FormSkinRegion
 Imports COH.HelperFunctions.WindowsEnviroment
 
 Namespace MaterialSkin.Controls
@@ -15,17 +16,8 @@ Namespace MaterialSkin.Controls
         Inherits Form
 
 #Region "Properties"
-        Private pButton_Min As FormRegion_Button
-        Private pButton_Max As FormRegion_Button
-        Private pButton_Close As FormRegion_Button
-        Private rMouseLocation As Point
-        Private rIsMoving As Boolean
-        Private rIsResizing As Boolean
+        Private pFormSkin As FormSkin
         Private rRenderingEnabled As Boolean
-        Private rMouseLastPosition_WasOverButon As Boolean
-        Private rMouseLastPosition_WasOverDialogButon As Boolean
-        Private pAllowResize As Boolean
-        Private rMouseLastButon As FormRegion_Button
 #End Region
 
 
@@ -43,7 +35,6 @@ Namespace MaterialSkin.Controls
         Public Property Sizable As Boolean
         Private ReadOnly _resizeCursors As Cursor() = {Cursors.SizeNESW, Cursors.SizeWE, Cursors.SizeNWSE, Cursors.SizeWE, Cursors.SizeNS}
 
-        Private _actionBarBounds As Rectangle
         Private _statusBarBounds As Rectangle
         Private _maximized As Boolean
         Private _previousSize As Size
@@ -64,163 +55,45 @@ Namespace MaterialSkin.Controls
         End Sub
 #End Region
 
-#Region "Form Mouse Events"
-        Private Sub WindowEvent_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
-            If rRenderingEnabled = False Then Exit Sub
-            If rMouseLocation.Equals(e.Location) Then Exit Sub
-            If rIsMoving Or rIsResizing Then
-                If (MouseButtons.Left And e.Button) = MouseButtons.Left Then
-                    If rIsResizing Then
-                        'ControlledForm_Resize(e.Location)
-                    ElseIf rIsMoving Then
-                        'ControlledForm_Move(e.Location)
-                    End If
-                Else
-                    rMouseLocation = e.Location
-                    Process_MouseEvent_MovedOverButton(e.Location)
-                    Process_MouseEvent_MovedOverDialogButton(e.Location)
-                End If
-            Else
-                rMouseLocation = e.Location
-                Process_MouseEvent_MovedOverButton(e.Location)
-                Process_MouseEvent_MovedOverDialogButton(e.Location)
-            End If
-        End Sub
-        Private Sub WindowEvent_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
-            rMouseLocation = e.Location
-            If rRenderingEnabled = False Then Exit Sub
-            Dim Result As FormRegionArea
-            Dim Key As String = ""
-            Dim Button As FormRegion_Button = Nothing
-            If Check_MouseOverAnyButton(e.Location, Button) Then
-                Process_MouseEvent_PressedButton(Button, e.Location)
-            ElseIf Check_MouseOverAnyDialogButton(e.Location, Button) Then
-                Process_MouseEvent_PressedDialogButton(Key, Button, e.Location)
-            ElseIf Check_MouseOverMoveBar(e.Location) Then
-                If WindowState = FormWindowState.Maximized Then Exit Sub
-                rIsMoving = True
-            ElseIf pAllowResize = True AndAlso Check_MouseOverEdge(e.Location) Then
-                If WindowState = FormWindowState.Maximized Then Exit Sub
-                rIsResizing = True
-                Cursor.Current = Cursors.SizeAll
-            End If
-        End Sub
-        Private Sub WindowEvent_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
-            rMouseLocation = e.Location
-            If rRenderingEnabled = False Then Exit Sub
-            Dim WasMoving As Boolean = rIsMoving
-            rIsMoving = False : rIsResizing = False
-            Dim Button As FormRegion_Button = Nothing
-            Dim Key As String = ""
-            'pLoadedSkin.Update_Buttons_Unselected(WindowForms_WindowSkin_FormRegions.None)
-            'pLoadedSkin.Update_DialogButtons_Unselected("")
-            If Check_MouseOverAnyButton(e.Location, Button) = True Then
-                'InvalidateWindow()
-                'ControlledForm_Trigger_ButtonPressed(SelectedButton)
-                Exit Sub
-            End If
-            If Check_MouseOverAnyDialogButton(e.Location, Button) = True Then
-                'InvalidateWindow()
-                'ControlledForm_Trigger_DialogButtonPressed(Key)
-            End If
-        End Sub
-        Private Sub WindowEvent_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
-            If rRenderingEnabled = False Then Exit Sub
-            'pLoadedSkin.Update_Buttons_Unselected(WindowForms_WindowSkin_FormRegions.None)
-            'pLoadedSkin.Update_DialogButtons_Unselected("")
-            'InvalidateWindow()
-        End Sub
-        Private Sub WindowEvent_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
-            If rRenderingEnabled = False Then Exit Sub
-            Dim Button As FormRegion_Button = Nothing
-            If Check_MouseOverAnyButton(rMouseLocation, Button) = False Then Exit Sub
-            'ToolTip_Update(Button.UniqueKey, Button.ToolTip_String, rMouseLocation)
-        End Sub
-        Private Function Check_MouseOverAnyButton(MouseLocation As Point, ByRef ButtonSelected As FormRegion_Button) As Boolean
-            ButtonSelected = pButton_Min : If ButtonSelected.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
-            ButtonSelected = pButton_Max : If ButtonSelected.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
-            ButtonSelected = pButton_Close : If ButtonSelected.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
-            Return False
-        End Function
-        Private Function Check_MouseOverAnyDialogButton(MouseLocation As Point, ByRef ButtonSelected As FormRegion_Button) As Boolean
-        End Function
-        Private Function Check_MouseOverMoveBar(MouseLocation As Point) As Boolean
-        End Function
-        Private Function Check_MouseOverEdge(MouseLocation As Point) As Boolean
+#Region "Checks"
+        Private Function RenderingEnabled() As Boolean
+            If DesignMode Then Return False
+            If pFormSkin Is Nothing Then Return False
+            Return rRenderingEnabled
         End Function
 #End Region
 
-#Region "Process Mouse Events"
-        Private Sub Process_MouseEvent_PressedButton(Button As FormRegion_Button, Location As Point)
-            If rMouseLastPosition_WasOverButon = False Then
-                'pLoadedSkin.Update_Button_Pressed(SelectedButton)
-            Else
-                'pLoadedSkin.Update_Button_Pressed(SelectedButton)
-            End If
-            rMouseLastPosition_WasOverButon = True
-            rMouseLastButon = Button
-            'InvalidateRegion_Button(SelectedButton)
-        End Sub
-        Private Sub Process_MouseEvent_PressedDialogButton(SelectedButton As String, Button As FormRegion_Button, Location As Point)
-            If rMouseLastPosition_WasOverButon = False Then
-                'pLoadedSkin.Update_DialogButton_Pressed(SelectedButton)
-            Else
-                'pLoadedSkin.Update_DialogButton_Pressed(SelectedButton)
-            End If
-            rMouseLastPosition_WasOverButon = True
-            'rMouseLastButon = WindowForms_WindowSkin_FormRegions.DialogButtons
-            'InvalidateRegion_DialogButton(Button)
-        End Sub
-        Private Sub Process_MouseEvent_MovedOverButton(Location As Point)
-            Dim ShouldDraw As Boolean = False
-            Dim Button As FormRegion_Button = Nothing
-            If Check_MouseOverAnyButton(Location, Button) Then
-                If rMouseLastPosition_WasOverButon = False Then
-                    'pLoadedSkin.Update_Button_Hilited(SelectedButton)
-                    ShouldDraw = True
-                ElseIf Not (rMouseLastButon Is Button) Then
-                    'pLoadedSkin.Update_Button_Hilited(SelectedButton)
-                    ShouldDraw = True
-                End If
-                rMouseLastPosition_WasOverButon = True : rMouseLastButon = Button
-                rMouseLastPosition_WasOverDialogButon = False ': rMouseLastKey = String.Empty
-            Else
-                If rMouseLastPosition_WasOverButon = True Then
-                    'pLoadedSkin.Update_Buttons_Unselected(WindowForms_WindowSkin_FormRegions.None)
-                    ShouldDraw = True
-                    'SelectedButton = WindowForms_WindowSkin_FormRegions.ShowAll
-                End If
-                rMouseLastPosition_WasOverButon = False : rMouseLastButon = Button
-            End If
-            If ShouldDraw = True Then
-                'InvalidateRegion_Button(SelectedButton)
-                'ControlledForm_ResetMouseEventArgs()
-            End If
-        End Sub
-        Private Sub Process_MouseEvent_MovedOverDialogButton(Location As Point)
-            ' If pLoadedSkin.WindowSkin_DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.None Then Exit Sub
-            Dim ShouldDraw As Boolean = False
-            Dim Button As FormRegion_Button = Nothing
-            If Check_MouseOverAnyDialogButton(Location, Button) Then
-                If rMouseLastPosition_WasOverDialogButon = False Then
-                    ' pLoadedSkin.Update_DialogButton_Hilited(SelectedButton)
-                    ShouldDraw = True
-                    'ElseIf Not (rMouseLastKey = SelectedButton) Then
-                    '    pLoadedSkin.Update_DialogButton_Hilited(SelectedButton)
-                    '    ShouldDraw = True
-                End If
-                'rMouseLastPosition_WasOverButon = False : rMouseLastButon = WindowForms_WindowSkin_FormRegions.None
-                ' rMouseLastPosition_WasOverDialogButon = True : rMouseLastKey = SelectedButton
-            Else
-                'If rMouseLastPosition_WasOverDialogButon = True Then
-                'pLoadedSkin.Update_DialogButtons_Unselected(WindowForms_WindowSkin_FormRegions.None)
-                'ShouldDraw = True
-                'End If
-                'rMouseLastPosition_WasOverDialogButon = False : rMouseLastKey = String.Empty
-            End If
-            ' If ShouldDraw = True Then InvalidateRegion_DialogButton(Button)
+#Region "Form Events"
+        Protected Overrides Sub OnResize(ByVal e As EventArgs)
+            MyBase.OnResize(e)
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.Calculate_DrawableLocations(ClientRectangle)
         End Sub
 #End Region
+
+#Region "Mouse Events"
+        Private Sub WindowEvent_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.ProcessMouseEvent_MouseMove(Me, e)
+        End Sub
+        Private Sub WindowEvent_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.ProcessMouseEvent_MouseDown(Me, e)
+        End Sub
+        Private Sub WindowEvent_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.ProcessMouseEvent_MouseUp(Me, e)
+        End Sub
+        Private Sub WindowEvent_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.ProcessMouseEvent_MouseLeave(Me, e)
+        End Sub
+        Private Sub WindowEvent_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
+            If RenderingEnabled() = False Then Exit Sub
+            pFormSkin.ProcessMouseEvent_MouseHover(Me, e)
+        End Sub
+#End Region
+
 
 
 
@@ -367,7 +240,7 @@ Namespace MaterialSkin.Controls
 
             If m.Msg = WM_LBUTTONDBLCLK Then
                 MaximizeWindow(Not _maximized)
-            ElseIf m.Msg = WM_MOUSEMOVE AndAlso _maximized AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse _actionBarBounds.Contains(PointToClient(Cursor.Position))) AndAlso Not (pButton_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pButton_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pButton_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
+            ElseIf m.Msg = WM_MOUSEMOVE AndAlso _maximized AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse pFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
 
                 If _headerMouseDown Then
                     _maximized = False
@@ -384,7 +257,7 @@ Namespace MaterialSkin.Controls
                     ReleaseCapture()
                     SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
                 End If
-            ElseIf m.Msg = WM_LBUTTONDOWN AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse _actionBarBounds.Contains(PointToClient(Cursor.Position))) AndAlso Not (pButton_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pButton_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pButton_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
+            ElseIf m.Msg = WM_LBUTTONDOWN AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse pFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
 
                 If Not _maximized Then
                     ReleaseCapture()
@@ -395,7 +268,7 @@ Namespace MaterialSkin.Controls
             ElseIf m.Msg = WM_RBUTTONDOWN Then
                 Dim cursorPos As Point = PointToClient(Cursor.Position)
 
-                If _statusBarBounds.Contains(cursorPos) AndAlso Not pButton_Min.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pButton_Max.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pButton_Close.Check_MouseLocation_WithinDrawArea(cursorPos) Then
+                If _statusBarBounds.Contains(cursorPos) AndAlso Not pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(cursorPos) Then
                     Dim id = TrackPopupMenuEx(GetSystemMenu(Handle, False), TPM_LEFTALIGN Or TPM_RETURNCMD, Cursor.Position.X, Cursor.Position.Y, Handle, IntPtr.Zero)
                     SendMessage(Handle, WM_SYSCOMMAND, id, 0)
                 End If
@@ -437,14 +310,6 @@ Namespace MaterialSkin.Controls
             If dir <> -1 Then
                 SendMessage(Handle, WM_NCLBUTTONDOWN, dir, 0)
             End If
-        End Sub
-        Protected Overrides Sub OnResize(ByVal e As EventArgs)
-            MyBase.OnResize(e)
-            ' _minButtonBounds = New Rectangle((Width - SkinManager.FORM_PADDING / 2) - 3 * STATUS_BAR_BUTTON_WIDTH, 0, STATUS_BAR_BUTTON_WIDTH, STATUS_BAR_HEIGHT)
-            ' _maxButtonBounds = New Rectangle((Width - SkinManager.FORM_PADDING / 2) - 2 * STATUS_BAR_BUTTON_WIDTH, 0, STATUS_BAR_BUTTON_WIDTH, STATUS_BAR_HEIGHT)
-            '_xButtonBounds = New Rectangle((Width - SkinManager.FORM_PADDING / 2) - STATUS_BAR_BUTTON_WIDTH, 0, STATUS_BAR_BUTTON_WIDTH, STATUS_BAR_HEIGHT)
-            _statusBarBounds = New Rectangle(0, 0, Width, STATUS_BAR_HEIGHT)
-            _actionBarBounds = New Rectangle(0, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT)
         End Sub
 #End Region
 

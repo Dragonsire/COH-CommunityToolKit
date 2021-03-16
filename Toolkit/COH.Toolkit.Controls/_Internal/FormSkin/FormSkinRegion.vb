@@ -1,17 +1,8 @@
 ﻿Imports System.ComponentModel
 
 Namespace Controls
-    Public MustInherit Class FormRegion
+    Public MustInherit Class FormSkinRegion
         Inherits COH_ObservableObject
-
-#Region "Enums"
-        Public Enum FormRegionArea
-            Button_Min
-            Button_Max
-            Button_Close
-        End Enum
-#End Region
-
 
 #Region "Properties - Display"
         <DefaultValue(True)> Public Property Enabled As Boolean
@@ -150,7 +141,7 @@ Namespace Controls
 
 #Region "Clone/Write"
         Public MustOverride Function Clone() As Object
-        Protected Sub CloneTo(ByRef Destination As FormRegion)
+        Protected Sub CloneTo(ByRef Destination As FormSkinRegion)
             With Destination
                 .pEnabled = pEnabled
                 .pIsMouseRegion = pIsMouseRegion
