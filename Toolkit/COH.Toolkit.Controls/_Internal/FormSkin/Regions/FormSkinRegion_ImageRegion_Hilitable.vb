@@ -56,53 +56,7 @@ Namespace Controls
         End Sub
 #End Region
 
-#Region "Enabled Events"
-        Public Sub Update_ImageState_ReDraw()
-            pCurrentState = CurrentButtonState.None
-        End Sub
-        Public Sub Update_ImageState(NextState As CurrentButtonState)
-            pCurrentState = NextState
-        End Sub
-        Public Sub Update_ImageState_Hilited()
-            If Enabled = False Then
-                pCurrentState = CurrentButtonState.Disabled
-            ElseIf Visible = False Then
-                pCurrentState = CurrentButtonState.None
-            ElseIf pCurrentState = CurrentButtonState.Pressed Then
-                pCurrentState = CurrentButtonState.Pressed
-            Else
-                pCurrentState = CurrentButtonState.Hilited
-            End If
-        End Sub
-        Public Sub Update_ImageState_UnHilited()
-            If Enabled = False Then
-                pCurrentState = CurrentButtonState.Disabled
-            ElseIf Visible = False Then
-                pCurrentState = CurrentButtonState.None
-            ElseIf pCurrentState = CurrentButtonState.Hilited Then
-                pCurrentState = CurrentButtonState.Normal
-            Else
-                pCurrentState = CurrentButtonState.Normal
-            End If
-        End Sub
-        Public Sub Update_ImageState_Pressed()
-            If Enabled = False Then
-                pCurrentState = CurrentButtonState.Disabled
-            ElseIf Visible = False Then
-                pCurrentState = CurrentButtonState.None
-            ElseIf pCurrentState = CurrentButtonState.Hilited Then
-                pCurrentState = CurrentButtonState.Pressed
-            Else
-                pCurrentState = CurrentButtonState.Pressed
-            End If
-        End Sub
-        Public Sub Update_ImageState_Enabled()
-            pCurrentState = CurrentButtonState.Normal
-        End Sub
-        Public Sub Update_ImageState_Disabled()
-            pCurrentState = CurrentButtonState.Disabled
-        End Sub
-#End Region
+
 
 #Region "Generate Images"
         Private Function Generate_HilitedButton(Optional value As Drawing.Image = Nothing) As Drawing.Image
@@ -117,34 +71,7 @@ Namespace Controls
         End Function 'New 
 #End Region
 
-#Region "Retrieve Appropriate Image"
-        Public Function RetrieveImage_FromButtonState(Enabled As Boolean, SelectedState As CurrentButtonState) As Image
-            Select Case SelectedState
-                Case CurrentButtonState.None
-                    If Enabled = False Then
-                        Return ButtonState_Disabled
-                    Else
-                        Return ButtonState_Normal
-                    End If
-                Case CurrentButtonState.Disabled
-                    Return ButtonState_Disabled
-                Case CurrentButtonState.Hilited
-                    Return ImageState_Hilited
-                Case CurrentButtonState.Normal
-                    Return ButtonState_Normal
-                Case CurrentButtonState.Pressed
-                    If ButtonState_Pressed Is Nothing And Not ImageState_Hilited Is Nothing Then
-                        Return ImageState_Hilited
-                    ElseIf ButtonState_Pressed Is Nothing Then
-                        Return ButtonState_Normal
-                    Else
-                        Return ButtonState_Pressed
-                    End If
-                Case Else
-                    Return ButtonState_Normal
-            End Select
-        End Function
-#End Region
+
 
 #Region "Drawing"
         Public Overrides Function Draw(ByRef CurrentDrawing As Graphics, Optional Forced As Boolean = False) As Boolean
@@ -160,7 +87,7 @@ Namespace Controls
         End Function
         Protected Overloads Sub CloneTo(ByRef Destination As FormSkinRegion_ImageRegion_Hilitable)
             With Destination
-                MyBase.CloneTo(Destination)
+                'MyBase.CloneTo(Destination)
                 '.pImageState_Normal = pButtonState_Normal.CloneImage
                 '.pImageState_Disabled = pButtonState_Disabled.CloneImage
                 '.pImageState_Hilited = pButtonState_Hilited.CloneImage

@@ -102,9 +102,9 @@ Namespace Controls.Configuration
         End Sub
         Public Shared Function LoadTheme_FromFolder(Folder As String) As FormSkin
             Dim UsedFormat As Imaging.ImageFormat = Imaging.ImageFormat.Png
-            If IO.File.Exists(IO.Path.Combine(Folder, "Close.png")) = True Then
+            If IO.File.Exists(IO.Path.Combine(Folder, "Button_Close_Normal.png")) = True Then
                 UsedFormat = Imaging.ImageFormat.Png
-            ElseIf IO.File.Exists(IO.Path.Combine(Folder, "Close.bmp")) = True Then
+            ElseIf IO.File.Exists(IO.Path.Combine(Folder, "Button_Close_Normal.bmp")) = True Then
                 UsedFormat = Imaging.ImageFormat.Bmp
             Else
                 Return Nothing
@@ -299,17 +299,17 @@ Namespace Controls.Configuration
 
 #Region "Modifying - Button States"
         Public Sub Update_Buttons_Unselected(Except As FormSkinRegion_ImageRegion_Hilitable)
-            If (Except IsNot Button_Close) Then Button_Close.Update_ImageState_UnHilited()
-            If (Except IsNot Button_Min) Then Button_Min.Update_ImageState_UnHilited()
-            If (Except IsNot Button_Max) Then Button_Max.Update_ImageState_UnHilited()
+            'If (Except IsNot Button_Close) Then Button_Close.Update_ImageState_UnHilited()
+            'If (Except IsNot Button_Min) Then Button_Min.Update_ImageState_UnHilited()
+            'If (Except IsNot Button_Max) Then Button_Max.Update_ImageState_UnHilited()
             'HELP, ICON ETC
         End Sub
         Public Sub Update_Button_Hilited(Button As FormSkinRegion_ImageRegion_Hilitable)
-            Button.Update_ImageState_Hilited()
+            'Button.Update_ImageState_Hilited()
             Update_Buttons_Unselected(Button)
         End Sub
         Public Sub Update_Button_Pressed(Button As FormSkinRegion_ImageRegion_Hilitable)
-            Button.Update_ImageState_Pressed()
+            'Button.Update_ImageState_Pressed()
             Update_Buttons_Unselected(Button)
         End Sub
 #End Region

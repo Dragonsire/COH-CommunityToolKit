@@ -99,7 +99,7 @@ Namespace Controls
         Public Function Determine_FormRegion_FileName(Folder As String, Format As Imaging.ImageFormat, Optional Tag As String = "") As String
             Dim FileExt As String = HelperFunctions.Imaging.RetrieveFileExtention_ForFormat(Format)
             Dim Key As String = pFormRegionID.ToString
-            If String.IsNullOrEmpty(Tag) = False Then Key = (Key & Tag)
+            If String.IsNullOrEmpty(Tag) = False Then Key = (Key & "_" & Tag)
             Return IO.Path.Combine(Folder, Key & FileExt)
         End Function
         Public Function LoadImage(Folder As String, Format As Imaging.ImageFormat, Tag As CurrentImageState) As Image
