@@ -1,18 +1,11 @@
 ﻿Imports System.ComponentModel
+Imports COH.CodeManagement.Enums.Toolkit
 
 Namespace Controls
     Public MustInherit Class FormSkinRegion
         Inherits COH_ObservableObject
 
 #Region "Properties - Display"
-        <DefaultValue(True)> Public Property Enabled As Boolean
-            Get
-                Return pEnabled
-            End Get
-            Set(value As Boolean)
-                UpdatePrivateProperty(pEnabled, value)
-            End Set
-        End Property
         <DefaultValue(True)> Public Property Visible As Boolean
             Get
                 Return pVisible
@@ -21,12 +14,12 @@ Namespace Controls
                 UpdatePrivateProperty(pVisible, value)
             End Set
         End Property
-        <DefaultValue("")> Public Property UniqueKey As String
+        <DefaultValue("")> Public Property FormRegionID As FormRegions
             Get
-                Return pUniqueKey
+                Return pFormRegionID
             End Get
-            Set(value As String)
-                UpdatePrivateProperty(pUniqueKey, value)
+            Set(value As FormRegions)
+                UpdatePrivateProperty(pFormRegionID, value)
             End Set
         End Property
         <DefaultValue(False)> Public Property Is_MouseRegion As Boolean
@@ -51,8 +44,18 @@ Namespace Controls
                 Return rDrawingLocation
             End Get
         End Property
-        Private pUniqueKey As String
-        Private pEnabled As Boolean
+        Public ReadOnly Property CurrentState As CurrentImageState
+            Get
+                Return pCurrentState
+            End Get
+        End Property
+        <DefaultValue(True)> Public ReadOnly Property Enabled As Boolean
+            Get
+                Return (pCurrentState > CurrentImageState.None) AndAlso (pCurrentState < CurrentImageState.Disabled)
+            End Get
+        End Property
+        Private pCurrentState As CurrentImageState
+        Private pFormRegionID As FormRegions
         Private pVisible As Boolean
         Private pIsMouseRegion As Boolean
         Private pLocation As Rectangle
@@ -64,26 +67,20 @@ Namespace Controls
         Public Sub New()
             MyBase.New
         End Sub
-        Public Sub New(ResetDefaults As Boolean)
-            MyBase.New(ResetDefaults)
-        End Sub
-        Public Sub New(UniqueTag As String, IsEnabled As Boolean, IsVisible As Boolean, Optional IsMouseRegion As Boolean = True)
+        Public Sub New(ID As FormRegions, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
             MyBase.New
-            MyBase.Update_CurrentState(ObjectState_Enum.Modifying)
-            pUniqueKey = UniqueTag
-            pEnabled = IsEnabled
+            Update_CurrentState(ObjectState_Enum.Modifying)
+            pFormRegionID = ID
             pVisible = IsVisible
             pIsMouseRegion = IsMouseRegion
-            MyBase.Update_CurrentState(ObjectState_Enum.Ready)
-        End Sub
-        Public Overrides Sub ResetToDefault()
-            pUniqueKey = ""
-            pEnabled = True
-            pVisible = True
-            pIsMouseRegion = False
+            If IsEnabled = False Then
+                pCurrentState = CurrentImageState.Disabled
+            Else
+                pCurrentState = CurrentImageState.Normal
+            End If
             pLocation = New Rectangle(0, 0, 0, 0)
             rDrawingLocation = New Rectangle(0, 0, 0, 0)
-            MyBase.ResetToDefault()
+            Update_CurrentState(ObjectState_Enum.Ready)
         End Sub
 #End Region
 
@@ -94,6 +91,21 @@ Namespace Controls
         End Function
         Protected Function Check_ClientArea_ContainsDesiredArea(ByRef ClientArea As Rectangle) As Boolean
             Return ClientArea.Contains(pLocation)
+        End Function
+#End Region
+
+#Region "Drawing - Sources"
+        Public MustOverride Sub LoadImages_FromFolder(Folder As String, Format As Imaging.ImageFormat)
+        Public Function Determine_FormRegion_FileName(Folder As String, Format As Imaging.ImageFormat, Optional Tag As String = "") As String
+            Dim FileExt As String = HelperFunctions.Imaging.RetrieveFileExtention_ForFormat(Format)
+            Dim Key As String = pFormRegionID.ToString
+            If String.IsNullOrEmpty(Tag) = False Then Key = (Key & Tag)
+            Return IO.Path.Combine(Folder, Key & FileExt)
+        End Function
+        Public Function LoadImage(Folder As String, Format As Imaging.ImageFormat, Tag As CurrentImageState) As Image
+            Dim FilePath As String = Determine_FormRegion_FileName(Folder, Format, Tag.ToString)
+            If IO.File.Exists(FilePath) = False Then Return Nothing
+            Return HelperFunctions.Imaging.SafeLoadImage_FromFile(FilePath)
         End Function
 #End Region
 
@@ -143,9 +155,8 @@ Namespace Controls
         Public MustOverride Function Clone() As Object
         Protected Sub CloneTo(ByRef Destination As FormSkinRegion)
             With Destination
-                .pEnabled = pEnabled
                 .pIsMouseRegion = pIsMouseRegion
-                .pUniqueKey = New String(pUniqueKey)
+                .pFormRegionID = pFormRegionID
                 .pVisible = pVisible
                 .pLocation = New Rectangle(pLocation.Location, pLocation.Size)
             End With
