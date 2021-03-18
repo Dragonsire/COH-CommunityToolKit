@@ -25,11 +25,6 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Clone"
-        Public Function Clone() As Object
-            Dim Result As New FormsConfiguration_ColorScheme
-            CloneTo(Result)
-            Return Result
-        End Function
         Public Overloads Function CreateClone() As FormsConfiguration_ColorScheme
             Dim Destination As New FormsConfiguration_ColorScheme
             CloneTo(Destination)

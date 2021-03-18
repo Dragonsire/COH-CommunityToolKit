@@ -29,6 +29,10 @@ Namespace Controls.Configuration
             MyBase.New
             If ResetDefaults = True Then ResetToDefault()
         End Sub
+        Public Sub New(ByRef ParentControl As Control)
+            ResetToDefault()
+            UpdateSettings_FromControl(ParentControl)
+        End Sub
 #End Region
 
 #Region "Initialize"
@@ -82,6 +86,35 @@ Namespace Controls.Configuration
                 .Form_State = SourceControl.WindowState
             End With
         End Sub
+#End Region
+
+#Region "Create From Source"
+        Public Function ModifyForm_FromSettings(ByRef SelectedForm As Form) As Form
+            Return ModifyForm_FromSettings(Me, SelectedForm)
+        End Function
+        Public Shared Function ModifyForm_FromSettings(ByRef Settings As FormsConfiguration_Settings, ByRef SelectedForm As Form) As Form
+            With SelectedForm
+                .SuspendLayout()
+                If SelectedForm Is GetType(ISupportInitialize) Then CType(SelectedForm, ISupportInitialize).BeginInit()
+                .FormBorderStyle = Settings.Form_BorderStyle
+                .MinimumSize = Settings.Form_Size_Minimal
+                .ClientSize = Settings.Form_Size
+                .MaximumSize = Settings.Form_Size_Maximum
+                .TopMost = Settings.Form_StartPosition_TopMost
+                .HelpButton = Settings.ShowButton_Help
+                .MinimizeBox = Settings.ShowButton_Min
+                .MaximizeBox = Settings.ShowButton_Max
+                .Text = Settings.Form_Text
+                .Icon = Settings.Form_Icon
+                .Font = Settings.Window_Font.Return_Font
+                .ForeColor = Settings.Window_Font.FontColor.Color
+                .StartPosition = Settings.Form_StartPosition
+                .WindowState = Settings.Form_State
+                If SelectedForm Is GetType(ISupportInitialize) Then CType(SelectedForm, ISupportInitialize).EndInit()
+                .ResumeLayout()
+            End With
+            Return SelectedForm
+        End Function
 #End Region
 
 #Region "Clone"

@@ -6,7 +6,7 @@
         Button_Max
         Button_Close
         Button_Help
-        Button_Icon
+        Icon
         Edge_Left
         Edge_Right
         Edge_Bottom

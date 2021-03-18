@@ -1,6 +1,6 @@
 ﻿Imports COH.CodeManagement.Enums.Toolkit
 
-Namespace Controls
+Namespace Controls.Configuration
     Public NotInheritable Class FormSkinRegion_ImageRegion_Hilitable
         Inherits FormSkinRegion_ImageRegion
 

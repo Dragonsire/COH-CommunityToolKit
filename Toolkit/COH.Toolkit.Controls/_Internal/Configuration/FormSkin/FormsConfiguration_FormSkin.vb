@@ -1,7 +1,7 @@
 ﻿Imports COH.CodeManagement.Enums.Toolkit
 
 Namespace Controls.Configuration
-    Public NotInheritable Class FormSkin
+    Public NotInheritable Class FormsConfiguration_FormSkin
 
 #Region "Properties"
         Public ReadOnly Property TitleBar As FormSkinRegion_ImageRegion
@@ -9,9 +9,9 @@ Namespace Controls.Configuration
                 Return pFormSkinRegions(FormRegions.TitleBar)
             End Get
         End Property
-        Public ReadOnly Property Button_Icon As FormSkinRegion_ImageRegion_Hilitable
+        Public ReadOnly Property Icon As FormSkinRegion_ImageRegion
             Get
-                Return pFormSkinRegions(FormRegions.Button_Icon)
+                Return pFormSkinRegions(FormRegions.Icon)
             End Get
         End Property
         Public ReadOnly Property Button_Help As FormSkinRegion_ImageRegion_Hilitable
@@ -96,11 +96,21 @@ Namespace Controls.Configuration
         End Sub
         Public Sub ResetToDefault()
             pFormSkinRegions = New Dictionary(Of FormRegions, FormSkinRegion)
+            pFormSkinRegions.Add(FormRegions.TitleBar, New FormSkinRegion_ImageRegion(FormRegions.TitleBar))
             pFormSkinRegions.Add(FormRegions.Edge_Left, New FormSkinRegion_ImageRegion(FormRegions.Edge_Left))
             pFormSkinRegions.Add(FormRegions.Edge_Right, New FormSkinRegion_ImageRegion(FormRegions.Edge_Right))
             pFormSkinRegions.Add(FormRegions.Edge_Bottom, New FormSkinRegion_ImageRegion(FormRegions.Edge_Bottom))
+            pFormSkinRegions.Add(FormRegions.Corner_BottomLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomLeft))
+            pFormSkinRegions.Add(FormRegions.Corner_BottomRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomRight))
+            pFormSkinRegions.Add(FormRegions.Corner_TopLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopLeft))
+            pFormSkinRegions.Add(FormRegions.Corner_TopRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopRight))
+            pFormSkinRegions.Add(FormRegions.Button_Min, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Min))
+            pFormSkinRegions.Add(FormRegions.Button_Max, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Max))
+            pFormSkinRegions.Add(FormRegions.Button_Close, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Close))
+            pFormSkinRegions.Add(FormRegions.Icon, New FormSkinRegion_ImageRegion(FormRegions.Icon))
+            pFormSkinRegions.Add(FormRegions.Button_Help, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Help))
         End Sub
-        Public Shared Function LoadTheme_FromFolder(Folder As String) As FormSkin
+        Public Shared Function LoadTheme_FromFolder(Folder As String) As FormsConfiguration_FormSkin
             Dim UsedFormat As Imaging.ImageFormat = Imaging.ImageFormat.Png
             If IO.File.Exists(IO.Path.Combine(Folder, "Button_Close_Normal.png")) = True Then
                 UsedFormat = Imaging.ImageFormat.Png
@@ -111,8 +121,8 @@ Namespace Controls.Configuration
             End If
             Return LoadTheme_FromFolder(Folder, UsedFormat)
         End Function
-        Public Shared Function LoadTheme_FromFolder(Folder As String, Format As Imaging.ImageFormat) As FormSkin
-            Dim LoadedSkin As New FormSkin
+        Public Shared Function LoadTheme_FromFolder(Folder As String, Format As Imaging.ImageFormat) As FormsConfiguration_FormSkin
+            Dim LoadedSkin As New FormsConfiguration_FormSkin
             For Each SkinArea In LoadedSkin.SkinRegions
                 SkinArea.Value.LoadImages_FromFolder(Folder, Format)
             Next
@@ -145,7 +155,7 @@ Namespace Controls.Configuration
             Edge_Bottom.Update_DrawingLocation(New Rectangle(New Point(Corner_BottomLeft.ImageState_Normal.Width, ClientRectangle.Height - Edge_Bottom.ImageState_Normal.Height), New Size(ClientRectangle.Width - (Corner_BottomLeft.ImageState_Normal.Width + Corner_BottomLeft.ImageState_Normal.Width), Edge_Bottom.ImageState_Normal.Height)))
             Corner_BottomLeft.Update_DrawingLocation(New Rectangle(New Point(0, ClientRectangle.Height - Corner_BottomLeft.ImageState_Normal.Height), Corner_BottomLeft.ImageState_Normal.Size))
             Corner_BottomRight.Update_DrawingLocation(New Rectangle(New Point(ClientRectangle.Width - Corner_BottomRight.ImageState_Normal.Size.Width, ClientRectangle.Height - Corner_BottomRight.ImageState_Normal.Height), Corner_BottomRight.ImageState_Normal.Size))
-            Button_Icon.Update_DrawingLocation(New Rectangle(Corner_TopLeft.ImageState_Normal.Width, 0, TitleBar.ImageState_Normal.Height - 0, TitleBar.ImageState_Normal.Height))
+            Icon.Update_DrawingLocation(New Rectangle(Corner_TopLeft.ImageState_Normal.Width, 0, TitleBar.ImageState_Normal.Height - 0, TitleBar.ImageState_Normal.Height))
             Button_Close.Update_DrawingLocation(New Rectangle(New Point(Corner_TopRight.ClientLocation.Left - Button_Close.ImageState_Normal.Size.Width, 0), Button_Close.ImageState_Normal.Size))
             Button_Max.Update_DrawingLocation(New Rectangle(New Point(Button_Close.ClientLocation.Left - Button_Max.ImageState_Normal.Size.Width, 0), Button_Max.ImageState_Normal.Size))
             Button_Min.Update_DrawingLocation(New Rectangle(New Point(Button_Max.ClientLocation.Left - Button_Min.ImageState_Normal.Size.Width, 0), Button_Min.ImageState_Normal.Size))
@@ -314,5 +324,20 @@ Namespace Controls.Configuration
         End Sub
 #End Region
 
+#Region "Clone"
+        Public Function CreateClone() As FormsConfiguration_FormSkin
+            Dim Destination As New FormsConfiguration_FormSkin
+            CloneTo(Destination)
+            Return Destination
+        End Function
+        Public Overloads Sub CloneTo(ByRef Destination As FormsConfiguration_FormSkin)
+            With Destination
+                .pFormSkinRegions = New Dictionary(Of FormRegions, FormSkinRegion)
+                For Each Entry In .pFormSkinRegions
+                    .pFormSkinRegions.Add(Entry.Key, Entry.Value.Clone)
+                Next
+            End With
+        End Sub
+#End Region
     End Class
 End Namespace

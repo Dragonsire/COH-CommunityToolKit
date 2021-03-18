@@ -1,6 +1,6 @@
 ﻿Imports COH.CodeManagement.Enums.Toolkit
 
-Namespace Controls
+Namespace Controls.Configuration
     Public Class FormSkinRegion_ImageRegion
         Inherits FormSkinRegion
 

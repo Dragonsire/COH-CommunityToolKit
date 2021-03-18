@@ -1,24 +1,88 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Drawing
+﻿Imports System.ComponentModel
 Imports System.Drawing.Text
-Imports System.Linq
 Imports System.Runtime.InteropServices
-Imports System.Windows.Forms
-Imports COH.Controls
 Imports COH.Controls.Configuration
-Imports COH.Controls.FormSkinRegion
 Imports COH.HelperFunctions.WindowsEnviroment
 
-Namespace MaterialSkin.Controls
+Namespace Controls
     Public Class ToolkitForm
         Inherits Form
 
 #Region "Properties"
-        Private pFormSkin As FormSkin
+        Private rFormSkin As FormsConfiguration_FormSkin
         Private rRenderingEnabled As Boolean
 #End Region
+
+#Region "Update Configurations"
+        Public Sub ApplyConfiguration(ByRef Configuration As FormsConfiguration, Optional ApplySkin As Boolean = False, Optional ApplyColorScheme As Boolean = False)
+            If (Configuration.Settings IsNot Nothing) Then Configuration.Settings.ModifyForm_FromSettings(Me)
+            If (Configuration.Parenting IsNot Nothing) Then Configuration.Parenting.ModifyForm_FromSettings(Me)
+            If ApplyColorScheme = True AndAlso (Configuration.ColorScheme IsNot Nothing) Then Configuration.ColorScheme.ApplyColorScheme(Me)
+            If ApplySkin = True AndAlso (Configuration.WindowSkin IsNot Nothing) Then UpdateSkin(Configuration.WindowSkin, True)
+        End Sub
+        Public Sub UpdateSkin(ByRef SelectedSkin As FormsConfiguration_FormSkin, Optional Enabled As Boolean = True)
+            If SelectedSkin Is Nothing Then Exit Sub
+            rFormSkin = SelectedSkin
+            rRenderingEnabled = Enabled
+        End Sub
+        Public Overridable Function Return_DefaultFormConfiguration() As FormsConfiguration
+            Return New FormsConfiguration(Me)
+        End Function
+#End Region
+
+#Region "Create Window Shortcuts"
+        Public Sub ShowMe_AsForm(Optional ApplyDefaultSkin As Boolean = False, Optional ApplyColorScheme As Boolean = False)
+            ShowMe_AsForm(Return_DefaultFormConfiguration, ApplyDefaultSkin, ApplyColorScheme)
+        End Sub
+        Public Sub ShowMe_AsForm(ByRef Configuration As FormsConfiguration, Optional ApplySkin As Boolean = False, Optional ApplyColorScheme As Boolean = False)
+            ApplyConfiguration(Configuration, ApplySkin, ApplyColorScheme)
+            Show()
+        End Sub
+        Public Function ShowMe_AsDialog(Optional ApplyDefaultSkin As Boolean = False, Optional ApplyColorScheme As Boolean = False) As DialogResult
+            Return ShowMe_AsDialog(Return_DefaultFormConfiguration, ApplyDefaultSkin, ApplyColorScheme)
+        End Function
+        Public Function ShowMe_AsDialog(ByRef Configuration As FormsConfiguration, Optional ApplySkin As Boolean = False, Optional ApplyColorScheme As Boolean = False) As DialogResult
+            ApplyConfiguration(Configuration, ApplySkin, ApplyColorScheme)
+            Return ShowDialog()
+        End Function
+        Public Sub ShowMe_AsChildForm(Parent As FormsConfiguration_Parenting, Optional ApplyDefaultSkin As Boolean = False, Optional ApplyColorScheme As Boolean = False)
+            Dim Settings = Return_DefaultFormConfiguration()
+            Settings.Parenting = Parent
+            ShowMe_AsForm(Settings, ApplyDefaultSkin, ApplyColorScheme)
+        End Sub
+        Public Sub ShowMe_AsChildForm(ByRef MDIParent As Form, Optional Docking As DockStyle = DockStyle.Fill, Optional Location As Rectangle = Nothing, Optional ApplyDefaultSkin As Boolean = False, Optional ApplyColorScheme As Boolean = False)
+            Dim Settings = Return_DefaultFormConfiguration()
+            Settings.Parenting.ParentForm = MDIParent
+            Settings.Parenting.ParentFormDock = Docking
+            Settings.Parenting.ParentLocation = Location
+            Settings.Parenting.Form_StartPosition = FormStartPosition.CenterParent
+            If Not (MDIParent Is Nothing) Then
+                Settings.Parenting.ParentForm = MDIParent
+                Settings.Parenting.ParentFormDock = Docking
+                Settings.Parenting.Form_StartPosition = FormStartPosition.CenterParent
+            End If
+            If Not (Location = Nothing) Then
+                Settings.Parenting.ParentLocation = Location
+                Settings.Parenting.Form_StartPosition = FormStartPosition.Manual
+            End If
+            ShowMe_AsForm(Settings, ApplyDefaultSkin, ApplyColorScheme)
+        End Sub
+#End Region
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #Region "Properties"
@@ -58,7 +122,7 @@ Namespace MaterialSkin.Controls
 #Region "Checks"
         Private Function RenderingEnabled() As Boolean
             If DesignMode Then Return False
-            If pFormSkin Is Nothing Then Return False
+            If rFormSkin Is Nothing Then Return False
             Return rRenderingEnabled
         End Function
 #End Region
@@ -67,78 +131,32 @@ Namespace MaterialSkin.Controls
         Protected Overrides Sub OnResize(ByVal e As EventArgs)
             MyBase.OnResize(e)
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.Calculate_DrawableLocations(ClientRectangle)
+            rFormSkin.Calculate_DrawableLocations(ClientRectangle)
         End Sub
 #End Region
 
 #Region "Mouse Events"
         Private Sub WindowEvent_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.ProcessMouseEvent_MouseMove(Me, e)
+            rFormSkin.ProcessMouseEvent_MouseMove(Me, e)
         End Sub
         Private Sub WindowEvent_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.ProcessMouseEvent_MouseDown(Me, e)
+            rFormSkin.ProcessMouseEvent_MouseDown(Me, e)
         End Sub
         Private Sub WindowEvent_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.ProcessMouseEvent_MouseUp(Me, e)
+            rFormSkin.ProcessMouseEvent_MouseUp(Me, e)
         End Sub
         Private Sub WindowEvent_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.ProcessMouseEvent_MouseLeave(Me, e)
+            rFormSkin.ProcessMouseEvent_MouseLeave(Me, e)
         End Sub
         Private Sub WindowEvent_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
             If RenderingEnabled() = False Then Exit Sub
-            pFormSkin.ProcessMouseEvent_MouseHover(Me, e)
+            rFormSkin.ProcessMouseEvent_MouseHover(Me, e)
         End Sub
 #End Region
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -240,7 +258,7 @@ Namespace MaterialSkin.Controls
 
             If m.Msg = WM_LBUTTONDBLCLK Then
                 MaximizeWindow(Not _maximized)
-            ElseIf m.Msg = WM_MOUSEMOVE AndAlso _maximized AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse pFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
+            ElseIf m.Msg = WM_MOUSEMOVE AndAlso _maximized AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse rFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (rFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse rFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse rFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
 
                 If _headerMouseDown Then
                     _maximized = False
@@ -257,7 +275,7 @@ Namespace MaterialSkin.Controls
                     ReleaseCapture()
                     SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
                 End If
-            ElseIf m.Msg = WM_LBUTTONDOWN AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse pFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
+            ElseIf m.Msg = WM_LBUTTONDOWN AndAlso (_statusBarBounds.Contains(PointToClient(Cursor.Position)) OrElse rFormSkin.TitleBar.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) AndAlso Not (rFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse rFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position)) OrElse rFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(PointToClient(Cursor.Position))) Then
 
                 If Not _maximized Then
                     ReleaseCapture()
@@ -268,7 +286,7 @@ Namespace MaterialSkin.Controls
             ElseIf m.Msg = WM_RBUTTONDOWN Then
                 Dim cursorPos As Point = PointToClient(Cursor.Position)
 
-                If _statusBarBounds.Contains(cursorPos) AndAlso Not pFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not pFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(cursorPos) Then
+                If _statusBarBounds.Contains(cursorPos) AndAlso Not rFormSkin.Button_Min.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not rFormSkin.Button_Max.Check_MouseLocation_WithinDrawArea(cursorPos) AndAlso Not rFormSkin.Button_Close.Check_MouseLocation_WithinDrawArea(cursorPos) Then
                     Dim id = TrackPopupMenuEx(GetSystemMenu(Handle, False), TPM_LEFTALIGN Or TPM_RETURNCMD, Cursor.Position.X, Cursor.Position.Y, Handle, IntPtr.Zero)
                     SendMessage(Handle, WM_SYSCOMMAND, id, 0)
                 End If

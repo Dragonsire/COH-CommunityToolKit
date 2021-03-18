@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports COH.CodeManagement.Enums.Toolkit
 
-Namespace Controls
+Namespace Controls.Configuration
     Public MustInherit Class FormSkinRegion
         Inherits COH_ObservableObject
 
