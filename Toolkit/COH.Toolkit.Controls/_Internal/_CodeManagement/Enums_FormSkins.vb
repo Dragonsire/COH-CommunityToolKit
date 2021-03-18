@@ -22,4 +22,20 @@
         Pressed
         Disabled
     End Enum
+    <Flags> Public Enum FormRegions_DrawSections
+        None = 0
+        Window
+        TitleBar
+        DialogButtons
+        All = Int32.MaxValue
+    End Enum
+    Public Enum FormRegions_ImageScaling
+        MaintainOriginalSize = 0
+        FitToRectangle = 1
+        ClipToRectangle = 2
+        FillRectangle = 3
+        TiledDown = 4
+        TiledAcross = 5
+        ShowAll = Integer.MaxValue
+    End Enum
 End Namespace

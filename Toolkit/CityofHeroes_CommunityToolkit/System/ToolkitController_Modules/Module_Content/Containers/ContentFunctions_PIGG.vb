@@ -10,7 +10,13 @@ Namespace Toolkit.ControllerModules
 
 #Region "Open"
         Public Sub OpenPigg_LocateFile()
+
             Dim TEST = COH.Controls.Configuration.FormsConfiguration_FormSkin.LoadTheme_FromFolder("E:\Project_COH_ToolKit\Tools\Skins\DS_Skin_Default\")
+
+            Dim CreateTestForm As New COH.Controls.ToolkitForm
+            CreateTestForm.UpdateSkin(TEST, True)
+            CreateTestForm.ShowDialog()
+
 
 
 

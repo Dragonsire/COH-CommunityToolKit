@@ -45,7 +45,7 @@ Namespace Controls.Configuration
             With Destination
                 .ColorScheme = ColorScheme.CreateClone
                 .Settings = Settings.CreateClone
-                If Not (WindowSkin Is Nothing) Then .WindowSkin = WindowSkin.Clone
+                If Not (WindowSkin Is Nothing) Then .WindowSkin = WindowSkin.CreateClone
                 If Not (Parenting Is Nothing) Then .Parenting = Parenting.CreateClone
             End With
         End Sub

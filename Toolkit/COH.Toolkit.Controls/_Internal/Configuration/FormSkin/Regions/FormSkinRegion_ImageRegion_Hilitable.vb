@@ -20,8 +20,8 @@ Namespace Controls.Configuration
         Public Sub New()
             MyBase.New
         End Sub
-        Public Sub New(ID As FormRegions, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
-            MyBase.New(ID, IsVisible, IsEnabled, IsMouseRegion)
+        Public Sub New(ID As FormRegions, ImageScaling As FormRegions_ImageScaling, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
+            MyBase.New(ID, ImageScaling, IsVisible, IsEnabled, IsMouseRegion)
         End Sub
         Public Overrides Sub LoadImages_FromFolder(Folder As String, Format As ImageFormat)
             pImageState_Hilited = MyBase.LoadImage(Folder, Format, CurrentImageState.Hilited)
@@ -56,8 +56,6 @@ Namespace Controls.Configuration
         End Sub
 #End Region
 
-
-
 #Region "Generate Images"
         Private Function Generate_HilitedButton(Optional value As Drawing.Image = Nothing) As Drawing.Image
             If value Is Nothing Then Return Nothing
@@ -71,11 +69,20 @@ Namespace Controls.Configuration
         End Function 'New 
 #End Region
 
-
-
 #Region "Drawing"
-        Public Overrides Function Draw(ByRef CurrentDrawing As Graphics, Optional Forced As Boolean = False) As Boolean
-            Throw New NotImplementedException()
+        Public Overrides Function Draw(ByRef CurrentDrawing As Drawing.Graphics, Optional Forced As Boolean = False) As Boolean
+            Return MyBase.Draw(CurrentDrawing, Forced)
+        End Function
+        Public Overrides Function RetrieveImage_FromState() As Image
+            If CurrentState = CurrentImageState.Hilited Then
+                If ImageState_Hilited Is Nothing Then
+                    Return ImageState_Normal
+                Else
+                    Return ImageState_Hilited
+                End If
+            Else
+                Return MyBase.RetrieveImage_FromState
+            End If
         End Function
 #End Region
 

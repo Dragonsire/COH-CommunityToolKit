@@ -29,17 +29,29 @@ Namespace Controls.Configuration
                 UpdatePrivateProperty(pImageState_Pressed, Value)
             End Set
         End Property
+        Public Property ImageScaling As FormRegions_ImageScaling
+            Get
+                Return pImageScaling
+            End Get
+            Set(value As FormRegions_ImageScaling)
+                UpdatePrivateProperty(pImageScaling, value)
+            End Set
+        End Property
         Private pImageState_Normal As Image
         Private pImageState_Pressed As Image
         Private pImageState_Disabled As Image
+        Private pImageScaling As FormRegions_ImageScaling
+        Private pImageOpacity As Single
 #End Region
 
 #Region "Initialize"
         Public Sub New()
             MyBase.New
         End Sub
-        Public Sub New(ID As FormRegions, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
+        Public Sub New(ID As FormRegions, ImageScaling As FormRegions_ImageScaling, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
             MyBase.New(ID, IsVisible, IsEnabled, IsMouseRegion)
+            pImageScaling = ImageScaling
+            pImageOpacity = 1
         End Sub
         Public Overrides Sub LoadImages_FromFolder(Folder As String, Format As ImageFormat)
             pImageState_Normal = MyBase.LoadImage(Folder, Format, CurrentImageState.Normal)
@@ -95,15 +107,13 @@ Namespace Controls.Configuration
         End Function 'New 
 #End Region
 
-#Region "Retrieve Appropriate Image"
-        Public Function RetrieveImage_FromButtonState(Enabled As Boolean, SelectedState As CurrentImageState) As Image
-            Select Case SelectedState
-                Case CurrentImageState.None
-                    If Enabled = False Then
-                        Return ImageState_Disabled
-                    Else
-                        Return ImageState_Normal
-                    End If
+#Region "Drawing"
+        Public Overrides Function Draw(ByRef CurrentDrawing As Drawing.Graphics, Optional Forced As Boolean = False) As Boolean
+            Dim SourceImage = RetrieveImage_FromState()
+            Return DrawImage(SourceImage, CurrentDrawing, ClientLocation, Forced)
+        End Function
+        Public Overridable Function RetrieveImage_FromState() As Image
+            Select Case CurrentState
                 Case CurrentImageState.Disabled
                     Return ImageState_Disabled
                 Case CurrentImageState.Normal
@@ -118,26 +128,47 @@ Namespace Controls.Configuration
                     Return ImageState_Normal
             End Select
         End Function
-#End Region
-
-#Region "Should Serialize"
-        Public Function ShouldSerializeImageState_Normal() As Boolean
-            'If Not pTemplate_Background = "Current" Then Return False
-            Return Not (pImageState_Normal Is Nothing)
+        Private Function DrawImage(ByRef SelectedImage As Image, CurrentDrawing As Drawing.Graphics, Area As RectangleF, Optional Forced As Boolean = False) As Boolean
+            If pImageOpacity = 1 Then
+                Return DrawImage_Solid(SelectedImage, CurrentDrawing, Area, Forced)
+            Else
+                Return DrawImage_WithOpacity(SelectedImage, CurrentDrawing, Area, Forced)
+            End If
         End Function
-        Public Function ShouldSerializeImageState_Disabled() As Boolean
-            'If Not pTemplate_Background = "Current" Then Return False
-            Return Not (pImageState_Disabled Is Nothing)
+        Private Function DrawImage_Solid(ByRef SelectedImage As Image, CurrentDrawing As Drawing.Graphics, Area As RectangleF, Optional Forced As Boolean = False) As Boolean
+            If Visible = False Then Return True
+            Select Case pImageScaling
+                Case FormRegions_ImageScaling.MaintainOriginalSize
+                    HelperFunctions.Imaging.DrawImage_Unscaled(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.FillRectangle
+                    HelperFunctions.Imaging.DrawBackground_Repeated(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.TiledDown
+                    HelperFunctions.Imaging.DrawImage_Tiled_Down(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.TiledAcross
+                    HelperFunctions.Imaging.DrawImage_Tiled_Across(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.FitToRectangle
+                    HelperFunctions.Imaging.DrawBackground(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.ClipToRectangle
+                    HelperFunctions.Imaging.DrawImage_Clipped(CurrentDrawing, SelectedImage, Area)
+            End Select
+            Return True
         End Function
-        Public Function ShouldSerializeImageState_Pressed() As Boolean
-            'If Not pTemplate_Background = "Current" Then Return False
-            Return Not (pImageState_Pressed Is Nothing)
-        End Function
-#End Region
-
-#Region "Drawing"
-        Public Overrides Function Draw(ByRef CurrentDrawing As Graphics, Optional Forced As Boolean = False) As Boolean
-            Throw New NotImplementedException()
+        Private Function DrawImage_WithOpacity(ByRef SelectedImage As Image, CurrentDrawing As Drawing.Graphics, Area As RectangleF, Optional Forced As Boolean = False) As Boolean
+            If Visible = False Then Return True
+            Select Case pImageScaling
+                Case FormRegions_ImageScaling.MaintainOriginalSize
+                    HelperFunctions.Imaging.DrawImage_Unscaled(CurrentDrawing, SelectedImage, Area, pImageOpacity)
+                Case FormRegions_ImageScaling.FitToRectangle
+                    HelperFunctions.Imaging.DrawBackground(CurrentDrawing, SelectedImage, Area, pImageOpacity)
+                    '//NOT UPDATED YET
+                Case FormRegions_ImageScaling.FillRectangle
+                    HelperFunctions.Imaging.DrawBackground_Repeated(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.TiledDown
+                    HelperFunctions.Imaging.DrawImage_Tiled_Down(CurrentDrawing, SelectedImage, Area)
+                Case FormRegions_ImageScaling.TiledAcross
+                    HelperFunctions.Imaging.DrawImage_Tiled_Across(CurrentDrawing, SelectedImage, Area)
+            End Select
+            Return True
         End Function
 #End Region
 

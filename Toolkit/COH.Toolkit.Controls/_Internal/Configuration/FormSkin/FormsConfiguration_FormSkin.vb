@@ -1,4 +1,5 @@
 ﻿Imports COH.CodeManagement.Enums.Toolkit
+Imports COH.HelperClasses.Wrappers
 
 Namespace Controls.Configuration
     Public NotInheritable Class FormsConfiguration_FormSkin
@@ -79,6 +80,7 @@ Namespace Controls.Configuration
                 Return pFormSkinRegions
             End Get
         End Property
+        Public Property TitleBarFont As COH_XML_Font
         Private pAllowResize As Boolean
         Private rMouseLocation As Point
         Private rIsMoving As Boolean
@@ -95,20 +97,21 @@ Namespace Controls.Configuration
             ResetToDefault()
         End Sub
         Public Sub ResetToDefault()
+            TitleBarFont = New COH_XML_Font
             pFormSkinRegions = New Dictionary(Of FormRegions, FormSkinRegion)
-            pFormSkinRegions.Add(FormRegions.TitleBar, New FormSkinRegion_ImageRegion(FormRegions.TitleBar))
-            pFormSkinRegions.Add(FormRegions.Edge_Left, New FormSkinRegion_ImageRegion(FormRegions.Edge_Left))
-            pFormSkinRegions.Add(FormRegions.Edge_Right, New FormSkinRegion_ImageRegion(FormRegions.Edge_Right))
-            pFormSkinRegions.Add(FormRegions.Edge_Bottom, New FormSkinRegion_ImageRegion(FormRegions.Edge_Bottom))
-            pFormSkinRegions.Add(FormRegions.Corner_BottomLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomLeft))
-            pFormSkinRegions.Add(FormRegions.Corner_BottomRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomRight))
-            pFormSkinRegions.Add(FormRegions.Corner_TopLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopLeft))
-            pFormSkinRegions.Add(FormRegions.Corner_TopRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopRight))
-            pFormSkinRegions.Add(FormRegions.Button_Min, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Min))
-            pFormSkinRegions.Add(FormRegions.Button_Max, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Max))
-            pFormSkinRegions.Add(FormRegions.Button_Close, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Close))
-            pFormSkinRegions.Add(FormRegions.Icon, New FormSkinRegion_ImageRegion(FormRegions.Icon))
-            pFormSkinRegions.Add(FormRegions.Button_Help, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Help))
+            pFormSkinRegions.Add(FormRegions.TitleBar, New FormSkinRegion_ImageRegion(FormRegions.TitleBar, FormRegions_ImageScaling.TiledAcross))
+            pFormSkinRegions.Add(FormRegions.Edge_Left, New FormSkinRegion_ImageRegion(FormRegions.Edge_Left, FormRegions_ImageScaling.TiledDown))
+            pFormSkinRegions.Add(FormRegions.Edge_Right, New FormSkinRegion_ImageRegion(FormRegions.Edge_Right, FormRegions_ImageScaling.TiledDown))
+            pFormSkinRegions.Add(FormRegions.Edge_Bottom, New FormSkinRegion_ImageRegion(FormRegions.Edge_Bottom, FormRegions_ImageScaling.TiledAcross))
+            pFormSkinRegions.Add(FormRegions.Corner_BottomLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomLeft, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Corner_BottomRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_BottomRight, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Corner_TopLeft, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopLeft, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Corner_TopRight, New FormSkinRegion_ImageRegion(FormRegions.Corner_TopRight, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Button_Min, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Min, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Button_Max, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Max, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Button_Close, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Close, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Icon, New FormSkinRegion_ImageRegion(FormRegions.Icon, FormRegions_ImageScaling.MaintainOriginalSize))
+            pFormSkinRegions.Add(FormRegions.Button_Help, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Help, FormRegions_ImageScaling.MaintainOriginalSize))
         End Sub
         Public Shared Function LoadTheme_FromFolder(Folder As String) As FormsConfiguration_FormSkin
             Dim UsedFormat As Imaging.ImageFormat = Imaging.ImageFormat.Png
@@ -323,6 +326,62 @@ Namespace Controls.Configuration
             Update_Buttons_Unselected(Button)
         End Sub
 #End Region
+
+#Region "Drawing - Form Sections"
+        Public Sub Draw_Window(Text As String, CurrentDrawing As Graphics)
+            Edge_Bottom.Draw(CurrentDrawing)
+            Edge_Left.Draw(CurrentDrawing)
+            Edge_Right.Draw(CurrentDrawing)
+            Corner_BottomLeft.Draw(CurrentDrawing)
+            Corner_BottomRight.Draw(CurrentDrawing)
+            TitleBar.Draw(CurrentDrawing)
+            Corner_TopLeft.Draw(CurrentDrawing)
+            Corner_TopRight.Draw(CurrentDrawing)
+            Draw_Window_Buttons(CurrentDrawing)
+            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
+        End Sub
+        Public Sub Draw_Only_TitleBar(Text As String, CurrentDrawing As Drawing.Graphics)
+            TitleBar.Draw(CurrentDrawing)
+            Draw_Window_Buttons(CurrentDrawing)
+            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
+        End Sub
+        Public Sub Draw_WindowDialog(CurrentDrawing As Drawing.Graphics)
+            'If DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.DialogBar Then
+            ' Draw_DialogBar(CurrentDrawing)
+            'ElseIf DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.EditorBar Then
+            'Draw_EditorBar(CurrentDrawing)
+            'End If
+        End Sub
+        Public Sub Draw_DialogBar(CurrentDrawing As Drawing.Graphics)
+            'WindowSkin_Dialog_Bar.Draw(CurrentDrawing)
+            'Draw_Dialog_Buttons(CurrentDrawing)
+        End Sub
+        Public Sub Draw_EditorBar(CurrentDrawing As Drawing.Graphics)
+            'WindowSkin_Editor_Bar.Draw(CurrentDrawing)
+            'Draw_Dialog_Buttons(CurrentDrawing)
+        End Sub
+#End Region
+
+#Region "Drawing Buttons"
+        Public Sub Draw_Window_Buttons(CurrentDrawing As Drawing.Graphics)
+            If CurrentDrawing Is Nothing Then Exit Sub
+            Button_Close.Draw(CurrentDrawing, True)
+            Button_Help.Draw(CurrentDrawing, True)
+            Icon.Draw(CurrentDrawing, True)
+            Button_Max.Draw(CurrentDrawing, True)
+            Button_Min.Draw(CurrentDrawing, True)
+            '/Button_Special.Draw(CurrentDrawing, True)
+        End Sub
+        Public Sub Draw_Window_Button(ByRef CurrentDrawing As Drawing.Graphics, Button As FormSkinRegion_ImageRegion_Hilitable)
+            'Retrieve_FormButon(Button).Draw(CurrentDrawing, True)
+        End Sub
+        Public Sub Draw_Dialog_Buttons(CurrentDrawing As Drawing.Graphics)
+            'DialogButtons.Draw_Dialog_Buttons(CurrentDrawing)
+        End Sub
+#End Region
+
+
+
 
 #Region "Clone"
         Public Function CreateClone() As FormsConfiguration_FormSkin
