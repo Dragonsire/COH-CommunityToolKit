@@ -53,15 +53,15 @@ Namespace Controls.Configuration
             pImageScaling = ImageScaling
             pImageOpacity = 1
         End Sub
+#End Region
+
+#Region "Update Image Sources"
         Public Overrides Sub LoadImages_FromFolder(Folder As String, Format As ImageFormat)
             pImageState_Normal = MyBase.LoadImage(Folder, Format, CurrentImageState.Normal)
             pImageState_Pressed = MyBase.LoadImage(Folder, Format, CurrentImageState.Pressed)
             pImageState_Disabled = MyBase.LoadImage(Folder, Format, CurrentImageState.Disabled)
         End Sub
-#End Region
-
-#Region "Update Appearance"
-        Public Sub Update_ImageStates(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image)
+        Public Sub Update_ImageState_Images(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image)
             pImageState_Normal = Normal
             pImageState_Disabled = Disabled
             pImageState_Pressed = Pressed
@@ -94,7 +94,7 @@ Namespace Controls.Configuration
         End Sub
 #End Region
 
-#Region "Generate Images"
+#Region "Update Image Sources - Generate Missing Images"
         Private Function Generate_PressedButton(Optional value As Drawing.Image = Nothing) As Drawing.Image
             If value Is Nothing Then Return Nothing
             'Dim NewImage As Image = HelperFunctions.Imaging.ConvertImage_AdjustBrigtness(value, 2)

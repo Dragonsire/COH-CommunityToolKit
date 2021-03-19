@@ -30,8 +30,8 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Update Appearance"
-        Public Overloads Sub Update_ImageStates(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image, ByRef Hilited As Image)
-            Update_ImageStates(Normal, Disabled, Pressed)
+        Public Overloads Sub Update_ImageState_Images(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image, ByRef Hilited As Image)
+            Update_ImageState_Images(Normal, Disabled, Pressed)
             pImageState_Hilited = Hilited
             RebuildImages()
         End Sub

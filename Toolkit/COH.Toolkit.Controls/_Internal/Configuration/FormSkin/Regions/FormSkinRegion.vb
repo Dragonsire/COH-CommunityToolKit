@@ -69,7 +69,7 @@ Namespace Controls.Configuration
         End Sub
         Public Sub New(ID As FormRegions, Optional IsVisible As Boolean = True, Optional IsEnabled As Boolean = True, Optional IsMouseRegion As Boolean = True)
             MyBase.New
-            Update_CurrentState(ObjectState_Enum.Modifying)
+            MyBase.Update_CurrentState(ObjectState_Enum.Modifying)
             pFormRegionID = ID
             pVisible = IsVisible
             pIsMouseRegion = IsMouseRegion
@@ -80,10 +80,9 @@ Namespace Controls.Configuration
             End If
             pLocation = New Rectangle(0, 0, 0, 0)
             rDrawingLocation = New Rectangle(0, 0, 0, 0)
-            Update_CurrentState(ObjectState_Enum.Ready)
+            MyBase.Update_CurrentState(ObjectState_Enum.Ready)
         End Sub
 #End Region
-
 #Region "Check Location"
         Public Function Check_MouseLocation_WithinDrawArea(Location As Point) As Boolean
             If pIsMouseRegion = False Then Return False
@@ -92,6 +91,13 @@ Namespace Controls.Configuration
         Protected Function Check_ClientArea_ContainsDesiredArea(ByRef ClientArea As Rectangle) As Boolean
             Return ClientArea.Contains(pLocation)
         End Function
+#End Region
+
+#Region "Update Current State"
+        Public Sub Update_ImageState(NextState As CurrentImageState)
+            If pCurrentState = CurrentImageState.Pressed AndAlso NextState = CurrentImageState.Hilited Then Exit Sub
+            pCurrentState = NextState
+        End Sub
 #End Region
 
 #Region "Drawing - Sources"

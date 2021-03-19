@@ -81,20 +81,25 @@ Namespace Controls.Configuration
             End Get
         End Property
         Public Property TitleBarFont As COH_XML_Font
-        Private pAllowResize As Boolean
+        Private pAllowResize As Boolean = True
         Private rMouseLocation As Point
+        Private rMouseOffset As Point
         Private rIsMoving As Boolean
         Private rIsResizing As Boolean
         Private rMouseLastPosition_WasOverButon As Boolean
         Private rMouseLastPosition_WasOverDialogButon As Boolean
         Private rMouseLastButon As FormSkinRegion_ImageRegion_Hilitable
         Private pFormSkinRegions As Dictionary(Of FormRegions, FormSkinRegion)
+        Private rControlledForm As ToolkitForm
 #End Region
 
 #Region "Initialize"
         Public Sub New()
             MyBase.New
             ResetToDefault()
+        End Sub
+        Public Sub LinkForm(ByRef ParentForm As ToolkitForm)
+            rControlledForm = ParentForm
         End Sub
         Public Sub ResetToDefault()
             TitleBarFont = New COH_XML_Font
@@ -140,11 +145,17 @@ Namespace Controls.Configuration
             ButtonSelected = Button_Close : If ButtonSelected.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
             Return False
         End Function
-        Public Function Check_MouseOverAnyDialogButton(MouseLocation As Point, ByRef ButtonSelected As FormSkinRegion_ImageRegion_Hilitable) As Boolean
-        End Function
         Public Function Check_MouseOverMoveBar(MouseLocation As Point) As Boolean
+            If TitleBar.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
+            Return False
         End Function
         Public Function Check_MouseOverEdge(MouseLocation As Point) As Boolean
+            If Edge_Left.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
+            If Edge_Right.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
+            If Edge_Bottom.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
+            Return False
+        End Function
+        Public Function Check_MouseOverAnyDialogButton(MouseLocation As Point, ByRef ButtonSelected As FormSkinRegion_ImageRegion_Hilitable) As Boolean
         End Function
 #End Region
 
@@ -168,15 +179,84 @@ Namespace Controls.Configuration
         End Sub
 #End Region
 
+#Region "Modify Form"
+        Private Sub ControlledForm_Move(NewLocation As Point)
+            Dim Threshold As Integer = 1
+            Dim XChange As Integer = (NewLocation.X - rMouseLocation.X)
+            Dim YChange As Integer = (NewLocation.Y - rMouseLocation.Y)
+            Dim TXChange As Integer = If(XChange < 0, XChange * -1, XChange)
+            Dim TYChange As Integer = If(YChange < 0, YChange * -1, YChange)
+            If (TXChange < Threshold) AndAlso (TYChange < Threshold) Then
+                Exit Sub
+            Else
+                Dim Destination As Point = New Drawing.Point(rControlledForm.Location.X + XChange, rControlledForm.Location.Y + YChange)
+                rControlledForm.Location = Destination
+            End If
+        End Sub
+        Private Sub ControlledForm_Resize(NewLocation As Point)
+            Dim NewSize As Size = New Size(NewLocation.X + rMouseOffset.X, NewLocation.Y + rMouseOffset.Y)
+            rControlledForm.Size = NewSize
+        End Sub
+        Private Sub ControlledForm_Trigger_ButtonPressed(ByRef SelectedButton As FormSkinRegion_ImageRegion_Hilitable)
+            rMouseLastPosition_WasOverButon = False : rMouseLastPosition_WasOverDialogButon = False
+            '//ToolTip_Hide()
+            Select Case SelectedButton.FormRegionID
+                Case FormRegions.Button_Min
+                    PressedButton_Min()
+                Case FormRegions.Button_Max
+                    PressedButton_Max()
+                Case FormRegions.Button_Close
+                    PressedButton_Close()
+                Case FormRegions.Button_Help
+            End Select
+        End Sub
+        Private Sub ControlledForm_Trigger_DialogButtonPressed(Key As String)
+            '//ToolTip_Hide()
+            '// RaiseEvent DialogButtonPressed(Key)
+        End Sub
+#End Region
+
+#Region "Button Events"
+        Public Event DialogButtonPressed(Key As String)
+        Private Sub PressedButton_Close()
+            rControlledForm.Close()
+        End Sub
+        Private Sub PressedButton_Max()
+            If rControlledForm.WindowState = FormWindowState.Maximized Then
+                rControlledForm.WindowState = FormWindowState.Normal
+            Else
+                rControlledForm.WindowState = FormWindowState.Maximized
+            End If
+        End Sub
+        Private Sub PressedButton_Min()
+            If rControlledForm.WindowState = FormWindowState.Minimized Then
+                rControlledForm.WindowState = FormWindowState.Normal
+            Else
+                rControlledForm.WindowState = FormWindowState.Minimized
+            End If
+        End Sub
+        Private Sub SetMousePosition()
+            'Dim Currentposition As Drawing.Point = HelperFunctions.MousePointer.GetMousePosition
+            'HelperFunctions.MousePointer.SendClick()
+            ' HelperFunctions.MousePointer.SetMousePosition(Currentposition.X, Currentposition.Y)
+        End Sub
+#End Region
+
 #Region "Process Mouse Events"
-        Public Sub ProcessMouseEvent_MouseMove(ByRef Sender As Form, e As MouseEventArgs)
+        Public Sub ProcessMouseEvent_MouseLeave(e As EventArgs)
+            Update_Buttons_Unselected(Nothing)
+            'pLoadedSkin.Update_DialogButtons_Unselected("")
+            rControlledForm.InvalidateWindow()
+        End Sub
+        Public Sub ProcessMouseEvent_MouseMove(e As MouseEventArgs)
             If rMouseLocation.Equals(e.Location) Then Exit Sub
+            Dim ForceRedraw As Boolean = False
             If rIsMoving Or rIsResizing Then
                 If (MouseButtons.Left And e.Button) = MouseButtons.Left Then
                     If rIsResizing Then
-                        'ControlledForm_Resize(e.Location)
+                        ControlledForm_Resize(e.Location)
                     ElseIf rIsMoving Then
-                        'ControlledForm_Move(e.Location)
+                        ControlledForm_Move(e.Location)
                     End If
                 Else
                     rMouseLocation = e.Location
@@ -185,11 +265,18 @@ Namespace Controls.Configuration
                 End If
             Else
                 rMouseLocation = e.Location
-                'Process_MouseEvent_MovedOverButton(e.Location)
-                'Process_MouseEvent_MovedOverDialogButton(e.Location)
+                If ProcessButtonEvent_MovedOverButton(e.Location) = True Then
+                    ForceRedraw = True
+                ElseIf Check_MouseOverEdge(e.Location) Then
+                    If pAllowResize = True Then Cursor.Current = Cursors.SizeAll
+                Else
+                    Cursor.Current = Cursors.Default
+                End If
+                '// If Process_MouseEvent_MovedOverDialogButton(e.Location) = True Then ForceRedraw = True
             End If
+            If ForceRedraw = True Then rControlledForm.InvalidateWindow()
         End Sub
-        Public Sub ProcessMouseEvent_MouseDown(ByRef Sender As Form, e As MouseEventArgs)
+        Public Sub ProcessMouseEvent_MouseDown(e As MouseEventArgs)
             rMouseLocation = e.Location
             Dim Key As String = ""
             Dim Button As FormSkinRegion_ImageRegion_Hilitable = Nothing
@@ -198,15 +285,15 @@ Namespace Controls.Configuration
             ElseIf Check_MouseOverAnyDialogButton(e.Location, Button) Then
                 'Process_MouseEvent_PressedDialogButton(Key, Button, e.Location)
             ElseIf Check_MouseOverMoveBar(e.Location) Then
-                If Sender.WindowState = FormWindowState.Maximized Then Exit Sub
+                If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsMoving = True
             ElseIf pAllowResize = True AndAlso Check_MouseOverEdge(e.Location) Then
-                If Sender.WindowState = FormWindowState.Maximized Then Exit Sub
+                If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsResizing = True
                 Cursor.Current = Cursors.SizeAll
             End If
         End Sub
-        Public Sub ProcessMouseEvent_MouseUp(ByRef Sender As Form, e As MouseEventArgs)
+        Public Sub ProcessMouseEvent_MouseUp(e As MouseEventArgs)
             rMouseLocation = e.Location
             Dim WasMoving As Boolean = rIsMoving
             rIsMoving = False : rIsResizing = False
@@ -215,21 +302,15 @@ Namespace Controls.Configuration
             Update_Buttons_Unselected(Nothing)
             'pLoadedSkin.Update_DialogButtons_Unselected("")
             If Check_MouseOverAnyButton(e.Location, Button) = True Then
-                Sender.Invalidate()
-                'ControlledForm_Trigger_ButtonPressed(SelectedButton)
-                Exit Sub
+                rControlledForm.InvalidateWindow()
+                ControlledForm_Trigger_ButtonPressed(Button)
             End If
             If Check_MouseOverAnyDialogButton(e.Location, Button) = True Then
-                Sender.Invalidate()
+                rControlledForm.InvalidateWindow()
                 'ControlledForm_Trigger_DialogButtonPressed(Key)
             End If
         End Sub
-        Public Sub ProcessMouseEvent_MouseLeave(ByRef Sender As Form, e As EventArgs)
-            Update_Buttons_Unselected(Nothing)
-            'pLoadedSkin.Update_DialogButtons_Unselected("")
-            Sender.Invalidate()
-        End Sub
-        Public Sub ProcessMouseEvent_MouseHover(ByRef Sender As Form, e As EventArgs)
+        Public Sub ProcessMouseEvent_MouseHover(e As EventArgs)
             Dim Button As FormSkinRegion_ImageRegion_Hilitable = Nothing
             If Check_MouseOverAnyButton(rMouseLocation, Button) = False Then Exit Sub
             'ToolTip_Update(Button.UniqueKey, Button.ToolTip_String, rMouseLocation)
@@ -247,7 +328,7 @@ Namespace Controls.Configuration
             End If
             rMouseLastPosition_WasOverButon = True
             rMouseLastButon = Button
-            'InvalidateRegion_Button(SelectedButton)
+            rControlledForm.InvalidateButtons()
         End Sub
         Private Sub ProcessButtonEvent_PressedDialogButton(SelectedButton As String, Button As FormSkinRegion_ImageRegion_Hilitable, Location As Point)
             If rMouseLastPosition_WasOverButon = False Then
@@ -259,32 +340,28 @@ Namespace Controls.Configuration
             'rMouseLastButon = FormRegionArea.DialogButtons
             'InvalidateRegion_DialogButton(Button)
         End Sub
-        Private Sub ProcessButtonEvent_MovedOverButton(Location As Point)
+        Private Function ProcessButtonEvent_MovedOverButton(Location As Point) As Boolean
             Dim ShouldDraw As Boolean = False
             Dim Button As FormSkinRegion_ImageRegion_Hilitable = Nothing
             If Check_MouseOverAnyButton(Location, Button) Then
                 If rMouseLastPosition_WasOverButon = False Then
-                    'pLoadedSkin.Update_Button_Hilited(SelectedButton)
+                    Update_Button_Hilited(Button)
                     ShouldDraw = True
                 ElseIf Not (rMouseLastButon Is Button) Then
-                    'pLoadedSkin.Update_Button_Hilited(SelectedButton)
+                    Update_Button_Hilited(Button)
                     ShouldDraw = True
                 End If
                 rMouseLastPosition_WasOverButon = True : rMouseLastButon = Button
                 rMouseLastPosition_WasOverDialogButon = False ': rMouseLastKey = String.Empty
             Else
                 If rMouseLastPosition_WasOverButon = True Then
-                    'pLoadedSkin.Update_Buttons_Unselected(FormRegionArea.None)
+                    Update_Buttons_Unselected(Nothing)
                     ShouldDraw = True
-                    'SelectedButton = FormRegionArea.ShowAll
                 End If
                 rMouseLastPosition_WasOverButon = False : rMouseLastButon = Button
             End If
-            If ShouldDraw = True Then
-                'InvalidateRegion_Button(SelectedButton)
-                'ControlledForm_ResetMouseEventArgs()
-            End If
-        End Sub
+            Return ShouldDraw
+        End Function
         Private Sub ProcessButtonEvent_MovedOverDialogButton(Location As Point)
             ' If pLoadedSkin.WindowSkin_DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.None Then Exit Sub
             Dim ShouldDraw As Boolean = False
@@ -312,17 +389,16 @@ Namespace Controls.Configuration
 
 #Region "Modifying - Button States"
         Public Sub Update_Buttons_Unselected(Except As FormSkinRegion_ImageRegion_Hilitable)
-            'If (Except IsNot Button_Close) Then Button_Close.Update_ImageState_UnHilited()
-            'If (Except IsNot Button_Min) Then Button_Min.Update_ImageState_UnHilited()
-            'If (Except IsNot Button_Max) Then Button_Max.Update_ImageState_UnHilited()
-            'HELP, ICON ETC
+            If (Except IsNot Button_Close) Then Button_Close.Update_ImageState(CurrentImageState.Normal)
+            If (Except IsNot Button_Min) Then Button_Min.Update_ImageState(CurrentImageState.Normal)
+            If (Except IsNot Button_Max) Then Button_Max.Update_ImageState(CurrentImageState.Normal)
         End Sub
         Public Sub Update_Button_Hilited(Button As FormSkinRegion_ImageRegion_Hilitable)
-            'Button.Update_ImageState_Hilited()
+            Button.Update_ImageState(CurrentImageState.Hilited)
             Update_Buttons_Unselected(Button)
         End Sub
         Public Sub Update_Button_Pressed(Button As FormSkinRegion_ImageRegion_Hilitable)
-            'Button.Update_ImageState_Pressed()
+            Button.Update_ImageState(CurrentImageState.Pressed)
             Update_Buttons_Unselected(Button)
         End Sub
 #End Region
@@ -335,14 +411,16 @@ Namespace Controls.Configuration
             Corner_BottomLeft.Draw(CurrentDrawing)
             Corner_BottomRight.Draw(CurrentDrawing)
             TitleBar.Draw(CurrentDrawing)
+            Draw_Icon(CurrentDrawing)
             Corner_TopLeft.Draw(CurrentDrawing)
             Corner_TopRight.Draw(CurrentDrawing)
             Draw_Window_Buttons(CurrentDrawing)
             CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
         End Sub
-        Public Sub Draw_Only_TitleBar(Text As String, CurrentDrawing As Drawing.Graphics)
+        Public Sub Draw_TitleBar(Text As String, CurrentDrawing As Drawing.Graphics)
             TitleBar.Draw(CurrentDrawing)
             Draw_Window_Buttons(CurrentDrawing)
+            Draw_Icon(CurrentDrawing)
             CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
         End Sub
         Public Sub Draw_WindowDialog(CurrentDrawing As Drawing.Graphics)
@@ -363,17 +441,20 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Drawing Buttons"
+        Public Sub Draw_Icon(CurrentDrawing As Drawing.Graphics)
+            If CurrentDrawing Is Nothing Then Exit Sub
+            Icon.Draw(CurrentDrawing, True)
+            End Sub
         Public Sub Draw_Window_Buttons(CurrentDrawing As Drawing.Graphics)
             If CurrentDrawing Is Nothing Then Exit Sub
             Button_Close.Draw(CurrentDrawing, True)
             Button_Help.Draw(CurrentDrawing, True)
-            Icon.Draw(CurrentDrawing, True)
             Button_Max.Draw(CurrentDrawing, True)
             Button_Min.Draw(CurrentDrawing, True)
             '/Button_Special.Draw(CurrentDrawing, True)
         End Sub
         Public Sub Draw_Window_Button(ByRef CurrentDrawing As Drawing.Graphics, Button As FormSkinRegion_ImageRegion_Hilitable)
-            'Retrieve_FormButon(Button).Draw(CurrentDrawing, True)
+            Button.Draw(CurrentDrawing, True)
         End Sub
         Public Sub Draw_Dialog_Buttons(CurrentDrawing As Drawing.Graphics)
             'DialogButtons.Draw_Dialog_Buttons(CurrentDrawing)

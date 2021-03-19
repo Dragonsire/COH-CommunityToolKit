@@ -14,6 +14,7 @@ Namespace Toolkit.ControllerModules
             Dim TEST = COH.Controls.Configuration.FormsConfiguration_FormSkin.LoadTheme_FromFolder("E:\Project_COH_ToolKit\Tools\Skins\DS_Skin_Default\")
 
             Dim CreateTestForm As New COH.Controls.ToolkitForm
+            CreateTestForm.Text = "New Window"
             CreateTestForm.UpdateSkin(TEST, True)
             CreateTestForm.ShowDialog()
 

@@ -26,6 +26,7 @@
         None = 0
         Window
         TitleBar
+        WindowButtons
         DialogButtons
         All = Int32.MaxValue
     End Enum
