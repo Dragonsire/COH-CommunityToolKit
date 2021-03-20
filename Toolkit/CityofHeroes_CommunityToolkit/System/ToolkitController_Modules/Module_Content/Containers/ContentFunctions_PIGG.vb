@@ -10,21 +10,6 @@ Namespace Toolkit.ControllerModules
 
 #Region "Open"
         Public Sub OpenPigg_LocateFile()
-
-            Dim TEST = COH.Controls.Configuration.FormsConfiguration_FormSkin.LoadTheme_FromFolder("E:\Project_COH_ToolKit\Tools\Skins\DS_Skin_Default\")
-
-            Dim CreateTestForm As New COH.Controls.ToolkitForm
-            CreateTestForm.Text = "New Window"
-            CreateTestForm.UpdateSkin(TEST, True)
-            CreateTestForm.Show()
-            '//CreateTestForm.Enabled = False
-
-
-            Exit Sub
-
-
-
-
             Dim PiggSource As String = ""
             If ParentController.WindowManager.LocateFile(COH_Supported_ContentType.ResourceContainer_PIGG, PiggSource) = False Then Exit Sub
             ParentController.WindowManager.OpenContainer_PIGG(PiggSource)

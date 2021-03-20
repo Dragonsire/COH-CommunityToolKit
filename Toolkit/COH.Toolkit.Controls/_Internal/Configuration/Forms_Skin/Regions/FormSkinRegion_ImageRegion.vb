@@ -180,14 +180,13 @@ Namespace Controls.Configuration
         Protected Overloads Sub CloneTo(ByRef Destination As FormSkinRegion_ImageRegion)
             With Destination
                 MyBase.CloneTo(Destination)
-                '.pImageState_Normal = pButtonState_Normal.CloneImage
-                '.pImageState_Disabled = pButtonState_Disabled.CloneImage
-                '.pImageState_Hilited = pButtonState_Hilited.CloneImage
-                '.pImageState_Pressed = pButtonState_Pressed.CloneImage
+                .pImageState_Normal = HelperFunctions.Imaging.CloneImage(pImageState_Normal)
+                .pImageState_Disabled = HelperFunctions.Imaging.CloneImage(pImageState_Disabled)
+                .pImageState_Pressed = HelperFunctions.Imaging.CloneImage(pImageState_Pressed)
+                .pImageScaling = pImageScaling
+                .pImageOpacity = pImageOpacity
             End With
         End Sub
-
-
 #End Region
     End Class
 End Namespace

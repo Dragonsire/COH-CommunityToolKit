@@ -1,4 +1,5 @@
 ﻿Imports COH.ControllerModules
+Imports COH.Controls.Configuration
 
 Namespace Toolkit.ControllerModules.WindowForms
     Public NotInheritable Class UIController
@@ -16,9 +17,9 @@ Namespace Toolkit.ControllerModules.WindowForms
                 Return rFormsInUse
             End Get
         End Property
-        Public ReadOnly Property Default_WindowsFormsConfiguration 'As WindowFormsConfiguration
+        Public ReadOnly Property Default_WindowsFormsConfiguration As FormsConfiguration
             Get
-                ' Return rDefaultConfiguration
+                Return rDefaultConfiguration
             End Get
         End Property
         Public ReadOnly Property MainForm As Controls.COH_CommunityToolkit_Main
@@ -55,7 +56,7 @@ Namespace Toolkit.ControllerModules.WindowForms
         Private rFormsInUse As List(Of Form)
         Private rParentControl As Form
         Private rParentSettings 'As WindowFormsConfiguration_Parenting
-        Private rDefaultConfiguration 'As WindowFormsConfiguration
+        Private rDefaultConfiguration As FormsConfiguration
 #End Region
 
 #Region "Create New Instance"
@@ -71,9 +72,9 @@ Namespace Toolkit.ControllerModules.WindowForms
 #End Region
 
 #Region "Update"
-        ' Public Sub Update_Configuration(ByRef DefaultConfiguration As WindowFormsConfiguration)
-        '     rDefaultConfiguration = DefaultConfiguration
-        ' End Sub
+        Public Sub Update_Configuration(ByRef DefaultConfiguration As FormsConfiguration)
+            rDefaultConfiguration = DefaultConfiguration
+        End Sub
         Public Sub Update_FromSettings(ByRef Settings As ApplicationController_Settings)
 
         End Sub

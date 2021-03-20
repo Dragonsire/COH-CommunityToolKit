@@ -141,6 +141,7 @@ Namespace Controls.Configuration
                 .pIsMouseRegion = pIsMouseRegion
                 .pFormRegionID = pFormRegionID
                 .pLocation = New Rectangle(pLocation.Location, pLocation.Size)
+                .pCurrentState = pCurrentState
             End With
         End Sub
 #End Region

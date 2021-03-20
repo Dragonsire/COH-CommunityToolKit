@@ -41,6 +41,8 @@ Namespace Controls.Configuration
             '//pDialogButtons.Calculate_DrawableLocations(ClientRectangle, rUsableClientArea, Me)
             '//rUsableButtonArea = Rectangle.Union(Button_Min.ClientLocation, Button_Max.ClientLocation)
             '//rUsableButtonArea = Rectangle.Union(rUsableButtonArea, Button_Close.ClientLocation)
+            rUsableArea = New Rectangle(New Point(Edge_Left.Location.Width + 0, TitleBar.Location.Height + 0), New Size(Edge_Right.Location.Left - Edge_Left.Location.Right, Edge_Bottom.Location.Top - TitleBar.Location.Bottom))
+            rControlledForm.Padding = New Padding(rUsableArea.Left, rUsableArea.Top, rUsableArea.Left, rUsableArea.Height - rUsableArea.Bottom)
         End Sub
 #End Region
 

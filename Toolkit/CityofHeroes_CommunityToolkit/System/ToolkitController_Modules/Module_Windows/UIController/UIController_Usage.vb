@@ -1,18 +1,69 @@
 ﻿Imports System.Drawing
+Imports COH.CodeManagement.Enums.Binary
+Imports COH.Controls
+Imports COH.Controls.Configuration
 
 Namespace Toolkit.ControllerModules.WindowForms
     Partial Public NotInheritable Class UIController
 
 #Region "New Create Window For Control"
-        Public Function CreateToolWindow_ForControl(ByRef SelectedControl As Controls.UserControl_Template) As Form
+        Public Function CreateToolWindow_ForControl(ByRef SelectedControl As Control, Optional UseParentControl As Boolean = False) As ToolkitForm
+            Dim NewForm As New ToolkitForm()
+            Dim CurrentConfiguration As FormsConfiguration = Default_WindowsFormsConfiguration.CreateClone
+            '//CurrentConfiguration.Skin.WindowSkin_DialogButtons = TheWindow.Return_DefaultFormConfiguration.Skin_DialogButtons
+            ' CurrentConfiguration.UpdateFromControl(SelectedControl)
+            If UseParentControl = True Then AdjustConfiguration_ForParent(CurrentConfiguration)
+            NewForm.ApplyConfiguration(CurrentConfiguration, True, True)
+            '//NewForm.ApplyConfiguration(CurrentConfiguration, SkinningEnabled, AlwaysAplyColorScheme)
+            '///ADD CONTROL TO NEWFORM
+            SelectedControl.Dock = DockStyle.Fill
+            NewForm.Controls.Add(SelectedControl)
+            Return NewForm
         End Function
 #End Region
 
+#Region "Modify ToolkitForm"
+        Public Sub ModifyWindow(ByRef TheWindow As ToolkitForm, Optional AsDialog As COH_TriBoolean = COH_TriBoolean.Unknown)
+            ModifyWindow_CustomConfiguration(TheWindow, True, SkinningEnabled, AlwaysUseSkinnedForms, AlwaysAplyColorScheme, IIf(AsDialog = COH_TriBoolean.Unknown, AlwaysForceDock, (AsDialog = COH_TriBoolean.False)))
+        End Sub
+        Public Sub ModifyWindow_CustomConfiguration(ByRef TheWindow As ToolkitForm, UseControlDefaults As Boolean, ApplySkin As Boolean, OverrideSkin As Boolean, ApplyColorScheme As Boolean, Optional UseParentControl As Boolean = False)
+            Dim CurrentConfiguration As FormsConfiguration = Nothing
+            If UseControlDefaults = False Then
+                CurrentConfiguration = Default_WindowsFormsConfiguration.CreateClone
+                '//CurrentConfiguration.Skin.WindowSkin_DialogButtons = TheWindow.Return_DefaultFormConfiguration.Skin_DialogButtons
+                CurrentConfiguration.UpdateFromControl(TheWindow)
+            ElseIf UseControlDefaults = True Then
+                CurrentConfiguration = TheWindow.Return_DefaultFormConfiguration
+                If OverrideSkin = True Then
+                    CurrentConfiguration.WindowSkin = Default_WindowsFormsConfiguration.WindowSkin.CreateClone
+                    'CurrentConfiguration.WindowSkin.WindowSkin_DialogButtons = CurrentConfiguration.Skin_DialogButtons
+                End If
+            End If
+            If UseParentControl = True Then AdjustConfiguration_ForParent(CurrentConfiguration)
+            If SkinningEnabled = False Then ApplySkin = False
+            TheWindow.ApplyConfiguration(CurrentConfiguration, ApplySkin, ApplyColorScheme)
+        End Sub
+#End Region
 
-
-
-
-
+#Region "Make Adjustments"
+        Private Sub AdjustConfiguration_ForParent(ByRef CurrentConfiguration As FormsConfiguration)
+            CurrentConfiguration.Parenting = rParentSettings.Clone
+            If AlwaysForceDock = True Then
+                rParentSettings.Form_StartPosition = FormStartPosition.CenterParent
+                rParentSettings.ParentFormDock = DockStyle.Fill
+            End If
+        End Sub
+        Private Function AdjustFormToSize(S1 As Size, S2 As Size, S3 As Size) As Size
+            Dim W, H As Integer
+            W = (S1.Width - S2.Width) + 5
+            H = (S1.Height - S2.Height) + 5
+            Return New Size(S3.Width - W, S3.Height - H)
+        End Function
+        Private Function ShouldForceControlResize(S1 As Size, S2 As Size) As Boolean
+            If (S1.Width > S2.Width) Or (S1.Height > S2.Height) Then Return True
+            Return False
+        End Function
+#End Region
 
 #Region "Open/Create WindowForm From Configuration"
         Public Sub OpenWindow(ByRef SelectedForm As Form)
@@ -24,6 +75,18 @@ Namespace Toolkit.ControllerModules.WindowForms
             Return SelectedForm.ShowDialog
         End Function
 #End Region
+
+
+
+
+
+
+
+
+
+
+
+
 
 #If CONTROLFREAK_REMOVED Then
 #Region "Create Forms - Windows Standard"
@@ -61,43 +124,11 @@ Namespace Toolkit.ControllerModules.WindowForms
             Dim TheForm As WindowForms_Window = CurrentConfiguration.CreateSkinnedForm(SelectedControl)
             Return TheForm
         End Function
-        Public Function CreateWindow_ForControl(ByRef SelectedControl As Control, Optional UseParentControl As Boolean = False) As Form
-            Dim CurrentConfiguration As WindowFormsConfiguration = Default_WindowsFormsConfiguration.Clone
-            CurrentConfiguration.UpdateFromControl(SelectedControl)
-            If UseParentControl = True Then AdjustConfiguration_ForParent(CurrentConfiguration)
-            Return CreateWindow_ForControl_FromConfiguration(CurrentConfiguration, SelectedControl)
-        End Function
-        Public Function CreateWindow_ForControl_FromConfiguration(ByRef CurrentConfiguration As WindowFormsConfiguration, ByRef SelectedControl As Control) As Form
-            Dim TheForm As Form = Nothing
-            If AlwaysUseSkinnedForms = True Then
-                CurrentConfiguration.Skin_DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.None
-                TheForm = CurrentConfiguration.CreateSkinnedForm(SelectedControl)
-            Else
-                TheForm = CurrentConfiguration.CreateForm(SelectedControl)
-            End If
-            Return TheForm
-        End Function
+
+
 #End Region
 
-#Region "Make Adjustments"
-        Private Sub AdjustConfiguration_ForParent(ByRef CurrentConfiguration As WindowFormsConfiguration)
-            CurrentConfiguration.Parenting = rParentSettings.Clone
-            If AlwaysForceDock = True Then
-                rParentSettings.Form_StartPosition = FormStartPosition.CenterParent
-                rParentSettings.ParentFormDock = DockStyle.Fill
-            End If
-        End Sub
-        Private Function AdjustFormToSize(S1 As Size, S2 As Size, S3 As Size) As Size
-            Dim W, H As Integer
-            W = (S1.Width - S2.Width) + 5
-            H = (S1.Height - S2.Height) + 5
-            Return New Size(S3.Width - W, S3.Height - H)
-        End Function
-        Private Function ShouldForceControlResize(S1 As Size, S2 As Size) As Boolean
-            If (S1.Width > S2.Width) Or (S1.Height > S2.Height) Then Return True
-            Return False
-        End Function
-#End Region
+
 
 #Region "Open Windows Form - Generics"
         Public Sub OpenWindow(ByRef SelectedForm As Form, UseParentControl As Boolean, WindowState As ControlFreak_ParentControl_Location, Optional AlternativeParentControl As Control = Nothing, Optional ParentControlArea As Drawing.Rectangle = Nothing, Optional HideButtons As Boolean = False)

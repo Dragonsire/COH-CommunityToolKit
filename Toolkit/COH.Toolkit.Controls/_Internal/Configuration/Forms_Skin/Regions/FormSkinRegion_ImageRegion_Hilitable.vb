@@ -94,11 +94,8 @@ Namespace Controls.Configuration
         End Function
         Protected Overloads Sub CloneTo(ByRef Destination As FormSkinRegion_ImageRegion_Hilitable)
             With Destination
-                'MyBase.CloneTo(Destination)
-                '.pImageState_Normal = pButtonState_Normal.CloneImage
-                '.pImageState_Disabled = pButtonState_Disabled.CloneImage
-                '.pImageState_Hilited = pButtonState_Hilited.CloneImage
-                '.pImageState_Pressed = pButtonState_Pressed.CloneImage
+                MyBase.CloneTo(CType(Destination, FormSkinRegion_ImageRegion))
+                .pImageState_Hilited = HelperFunctions.Imaging.CloneImage(pImageState_Hilited)
             End With
         End Sub
 #End Region

@@ -6,6 +6,11 @@ Namespace Toolkit.ControllerModules
         Inherits ControllerModule
 
 #Region "Properties"
+        Public Enum ToolKit_Paths
+            Data
+            Resources
+            Resources_Skins
+        End Enum
         Public ReadOnly Property RootPath As String
             Get
                 Return pPaths.RootPath
@@ -64,11 +69,13 @@ Namespace Toolkit.ControllerModules
         End Function
         Private Function OnConfigurePathways() As List(Of DS_PathwaysCollectionEntry)
             Dim Result As New List(Of DS_PathwaysCollectionEntry)
-            '// Result.Add(New ControllerModule_PathwaysEntry(MBT_XRS_DataStructure.Data.ToString, "Data\", PathwayTypeEnum.Folder))
+            Result.Add(New DS_PathwaysCollectionEntry(ToolKit_Paths.Data.ToString, "Data\", CF_Enum_PathwayType.Folder))
+            Result.Add(New DS_PathwaysCollectionEntry(ToolKit_Paths.Resources.ToString, "Resources\", CF_Enum_PathwayType.Folder))
+            Result.Add(New DS_PathwaysCollectionEntry(ToolKit_Paths.Resources_Skins.ToString, "Resources\Skins\", CF_Enum_PathwayType.Folder))
             Return Result
         End Function
         Private Sub OnConfigurePathwaysResources()
-            '// AddAllFolderResources_FromFolder(RetrievePath(MBT_XRS_DataStructure.Resources_Skin.ToString), PathwayTypeEnum.Folder_Skin, "", IO.SearchOption.TopDirectoryOnly)
+            pPaths.AddAllFolderResources_FromFolder(RetrievePath(ToolKit_Paths.Resources_Skins.ToString), CF_Enum_PathwayType.Folder_Skin, "", IO.SearchOption.TopDirectoryOnly)
         End Sub
 #End Region
 

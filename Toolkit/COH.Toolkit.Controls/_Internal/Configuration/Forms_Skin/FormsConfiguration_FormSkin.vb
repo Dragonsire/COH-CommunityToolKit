@@ -91,6 +91,7 @@ Namespace Controls.Configuration
         Private rMouseLastButon As FormSkinRegion_ImageRegion_Hilitable
         Private pFormSkinRegions As Dictionary(Of FormRegions, FormSkinRegion)
         Private rControlledForm As ToolkitForm
+        Private rUsableArea As Rectangle
 #End Region
 
 #Region "Initialize"
@@ -218,7 +219,7 @@ Namespace Controls.Configuration
         Public Overloads Sub CloneTo(ByRef Destination As FormsConfiguration_FormSkin)
             With Destination
                 .pFormSkinRegions = New Dictionary(Of FormRegions, FormSkinRegion)
-                For Each Entry In .pFormSkinRegions
+                For Each Entry In pFormSkinRegions
                     .pFormSkinRegions.Add(Entry.Key, Entry.Value.Clone)
                 Next
             End With

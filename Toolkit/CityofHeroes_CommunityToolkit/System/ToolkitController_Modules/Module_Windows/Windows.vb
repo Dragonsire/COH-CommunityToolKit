@@ -29,15 +29,15 @@
         Public Sub ConfigureModule(ByRef DefaultParent As Control)
             rUIController = New WindowForms.UIController(DefaultParent)
             Dim DefaultConfiguration = ConfigureDefaultConfiguration_ChildForms()
-            'rUIController.Update_Configuration(DefaultConfiguration)
+            rUIController.Update_Configuration(DefaultConfiguration)
             rUIController.Update_FromSettings(ParentController.Settings)
         End Sub
         Private Function ConfigureDefaultConfiguration_ChildForms() 'As WindowFormsConfiguration
-            'Dim Skin As WindowFormsConfiguration_Skin = ParentController.Pathways.RetrieveResource_FormSkin(ParentController.Settings.Skinning_TemplateUsed)
-            'If Skin Is Nothing Then Skin = ParentController.Pathways.RetrieveResource_FormSkin_Default
-            'Dim Result As New WindowFormsConfiguration(True)
-            'Result.Skin = Skin
-            'Return Result
+            Dim Skin As COH.Controls.Configuration.FormsConfiguration_FormSkin '= ParentController.Pathways.RetrieveResource_FormSkin(ParentController.Settings.Skinning_TemplateUsed)
+            If Skin Is Nothing Then Skin = ParentController.Pathways.RetrieveResource_FormSkin_Default
+            Dim Result As New COH.Controls.Configuration.FormsConfiguration(True)
+            Result.WindowSkin = Skin
+            Return Result
         End Function
 #End Region
     End Class
