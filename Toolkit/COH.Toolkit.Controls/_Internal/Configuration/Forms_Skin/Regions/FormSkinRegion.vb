@@ -6,14 +6,6 @@ Namespace Controls.Configuration
         Inherits COH_ObservableObject
 
 #Region "Properties - Display"
-        <DefaultValue(True)> Public Property Visible As Boolean
-            Get
-                Return pVisible
-            End Get
-            Set(value As Boolean)
-                UpdatePrivateProperty(pVisible, value)
-            End Set
-        End Property
         <DefaultValue("")> Public Property FormRegionID As FormRegions
             Get
                 Return pFormRegionID
@@ -56,7 +48,6 @@ Namespace Controls.Configuration
         End Property
         Private pCurrentState As CurrentImageState
         Private pFormRegionID As FormRegions
-        Private pVisible As Boolean
         Private pIsMouseRegion As Boolean
         Private pLocation As Rectangle
         Private rDrawingLocation As Rectangle
@@ -71,7 +62,6 @@ Namespace Controls.Configuration
             MyBase.New
             MyBase.Update_CurrentState(ObjectState_Enum.Modifying)
             pFormRegionID = ID
-            pVisible = IsVisible
             pIsMouseRegion = IsMouseRegion
             If IsEnabled = False Then
                 pCurrentState = CurrentImageState.Disabled
@@ -163,7 +153,6 @@ Namespace Controls.Configuration
             With Destination
                 .pIsMouseRegion = pIsMouseRegion
                 .pFormRegionID = pFormRegionID
-                .pVisible = pVisible
                 .pLocation = New Rectangle(pLocation.Location, pLocation.Size)
             End With
         End Sub

@@ -136,7 +136,6 @@ Namespace Controls.Configuration
             End If
         End Function
         Private Function DrawImage_Solid(ByRef SelectedImage As Image, CurrentDrawing As Drawing.Graphics, Area As RectangleF, Optional Forced As Boolean = False) As Boolean
-            If Visible = False Then Return True
             Select Case pImageScaling
                 Case FormRegions_ImageScaling.MaintainOriginalSize
                     HelperFunctions.Imaging.DrawImage_Unscaled(CurrentDrawing, SelectedImage, Area)
@@ -154,7 +153,6 @@ Namespace Controls.Configuration
             Return True
         End Function
         Private Function DrawImage_WithOpacity(ByRef SelectedImage As Image, CurrentDrawing As Drawing.Graphics, Area As RectangleF, Optional Forced As Boolean = False) As Boolean
-            If Visible = False Then Return True
             Select Case pImageScaling
                 Case FormRegions_ImageScaling.MaintainOriginalSize
                     HelperFunctions.Imaging.DrawImage_Unscaled(CurrentDrawing, SelectedImage, Area, pImageOpacity)

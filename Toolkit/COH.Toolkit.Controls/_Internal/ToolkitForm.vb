@@ -1,9 +1,5 @@
-﻿Imports System.ComponentModel
-Imports System.Drawing.Text
-Imports System.Runtime.InteropServices
-Imports COH.CodeManagement.Enums.Toolkit
+﻿Imports COH.CodeManagement.Enums.Toolkit
 Imports COH.Controls.Configuration
-Imports COH.HelperFunctions.WindowsEnviroment
 
 Namespace Controls
     Public Class ToolkitForm
@@ -27,6 +23,32 @@ Namespace Controls
             If rFormSkin Is Nothing Then Return False
             Return rRenderingEnabled
         End Function
+#End Region
+
+#Region "External Commands"
+        Public Event DialogButtonPressed(Key As String)
+        Public Sub PressButton_Close()
+            Close()
+        End Sub
+        Public Sub PressButton_ToggleMax()
+            If WindowState = FormWindowState.Maximized Then
+                WindowState = FormWindowState.Normal
+            Else
+                WindowState = FormWindowState.Maximized
+            End If
+        End Sub
+        Public Sub PressButton_ToggleMin()
+            If WindowState = FormWindowState.Minimized Then
+                WindowState = FormWindowState.Normal
+            Else
+                WindowState = FormWindowState.Minimized
+            End If
+        End Sub
+        Public Sub SetMousePosition()
+            'Dim Currentposition As Drawing.Point = HelperFunctions.MousePointer.GetMousePosition
+            'HelperFunctions.MousePointer.SendClick()
+            ' HelperFunctions.MousePointer.SetMousePosition(Currentposition.X, Currentposition.Y)
+        End Sub
 #End Region
 
 #Region "Form Events"
@@ -89,8 +111,8 @@ Namespace Controls
             If rRenderSections = FormRegions_DrawSections.All Then
                 rFormSkin.Draw_Window(Me.Text, CurrentGraphics)
             Else
-                If rRenderSections.HasFlag(FormRegions_DrawSections.WindowButtons) Then rFormSkin.Draw_Window_Buttons(CurrentGraphics)
-                If rRenderSections.HasFlag(FormRegions_DrawSections.TitleBar) Then rFormSkin.Draw_TitleBar(Me.Text, CurrentGraphics)
+                'If rRenderSections.HasFlag(FormRegions_DrawSections.WindowButtons) Then rFormSkin.Draw_Window_Buttons(CurrentGraphics)
+                'If rRenderSections.HasFlag(FormRegions_DrawSections.TitleBar) Then rFormSkin.Draw_TitleBar(Me.Text, CurrentGraphics)
                 'If rRenderSections.HasFlag(FormRegions_DrawSections.TitleBar) Then Draw_TitleBar(Me.Text, CurrentGraphics)
                 '//If rRenderSections.HasFlag(FormRegions_DrawSections.DialogButtons) Then Draw_DialogButtons(Me.Text, CurrentGraphics)
             End If
@@ -166,96 +188,6 @@ Namespace Controls
                 Settings.Parenting.Form_StartPosition = FormStartPosition.Manual
             End If
             ShowMe_AsForm(Settings, ApplyDefaultSkin, ApplyColorScheme)
-        End Sub
-#End Region
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Region "Properties"
-        <Browsable(False)> Public Property Depth As Integer
-        <Browsable(False)> Public Property MouseState As MouseState
-        Public Overloads Property FormBorderStyle As FormBorderStyle
-            Get
-                Return MyBase.FormBorderStyle
-            End Get
-            Set(ByVal value As FormBorderStyle)
-                MyBase.FormBorderStyle = value
-            End Set
-        End Property
-        Public Property Sizable As Boolean
-        Private ReadOnly _resizeCursors As Cursor() = {Cursors.SizeNESW, Cursors.SizeWE, Cursors.SizeNWSE, Cursors.SizeWE, Cursors.SizeNS}
-
-        Private _statusBarBounds As Rectangle
-        Private _maximized As Boolean
-        Private _previousSize As Size
-        Private _previousLocation As Point
-        Private _headerMouseDown As Boolean
-        Private _resizeDir As ResizeDirection
-        Private _CurrentButtonState As CurrentButtonState = CurrentButtonState.None
-#End Region
-
-
-
-#Region "Drawing"
-        Protected Sub OnPaint2(ByVal e As PaintEventArgs)
-            Dim g = e.Graphics
-            g.TextRenderingHint = TextRenderingHint.AntiAlias
-            ' g.Clear(SkinManager.GetApplicationBackgroundColor())
-            'g.FillRectangle(SkinManager.ColorScheme.DarkPrimaryBrush, _statusBarBounds)
-            'g.FillRectangle(SkinManager.ColorScheme.PrimaryBrush, _actionBarBounds)
-
-            ' Using borderPen = New Pen(SkinManager.GetDividersColor(), 1)
-            ' g.DrawLine(borderPen, New Point(0, _actionBarBounds.Bottom), New Point(0, Height - 2))
-            ' g.DrawLine(borderPen, New Point(Width - 1, _actionBarBounds.Bottom), New Point(Width - 1, Height - 2))
-            ' g.DrawLine(borderPen, New Point(0, Height - 1), New Point(Width - 1, Height - 1))
-            ' End Using
-
-            Dim showMin As Boolean = MinimizeBox AndAlso ControlBox
-            Dim showMax As Boolean = MaximizeBox AndAlso ControlBox
-            ' Dim hoverBrush = SkinManager.GetFlatButtonHoverBackgroundBrush()
-            ' Dim downBrush = SkinManager.GetFlatButtonPressedBackgroundBrush()
-            ' If _CurrentButtonState = CurrentButtonState.MinOver AndAlso showMin Then g.FillRectangle(hoverBrush, If(showMax, _minButtonBounds, _maxButtonBounds))
-            ' If _CurrentButtonState = CurrentButtonState.MinDown AndAlso showMin Then g.FillRectangle(downBrush, If(showMax, _minButtonBounds, _maxButtonBounds))
-            ' If _CurrentButtonState = CurrentButtonState.MaxOver AndAlso showMax Then g.FillRectangle(hoverBrush, _maxButtonBounds)
-            ' If _CurrentButtonState = CurrentButtonState.MaxDown AndAlso showMax Then g.FillRectangle(downBrush, _maxButtonBounds)
-            ' If _CurrentButtonState = CurrentButtonState.XOver AndAlso ControlBox Then g.FillRectangle(hoverBrush, _xButtonBounds)
-            ' If _CurrentButtonState = CurrentButtonState.XDown AndAlso ControlBox Then g.FillRectangle(downBrush, _xButtonBounds)
-
-            ' Using formButtonsPen = New Pen(SkinManager.ACTION_BAR_TEXT_SECONDARY, 2)
-
-            If showMin Then
-                ' D 'im x As Integer = If(showMax, pButton_Min.X, pButton_Max.X)
-                ' Dim y As Integer = If(showMax, pButton_Min.Y, pButton_Max.Y)
-                ' g.DrawLine(formButtonsPen, x + CInt((_minButtonBounds.Width * 0.33)), y + CInt((_minButtonBounds.Height * 0.66)), x + CInt((_minButtonBounds.Width * 0.66)), y + CInt((_minButtonBounds.Height * 0.66)))
-            End If
-
-            If showMax Then
-                '  g.DrawRectangle(formButtonsPen, _maxButtonBounds.X + CInt((_maxButtonBounds.Width * 0.33)), _maxButtonBounds.Y + CInt((_maxButtonBounds.Height * 0.36)), CInt((_maxButtonBounds.Width * 0.39)), CInt((_maxButtonBounds.Height * 0.31)))
-            End If
-
-            If ControlBox Then
-                ' g.DrawLine(formButtonsPen, _xButtonBounds.X + CInt((_xButtonBounds.Width * 0.33)), _xButtonBounds.Y + CInt((_xButtonBounds.Height * 0.33)), _xButtonBounds.X + CInt((_xButtonBounds.Width * 0.66)), _xButtonBounds.Y + CInt((_xButtonBounds.Height * 0.66)))
-                ' g.DrawLine(formButtonsPen, _xButtonBounds.X + CInt((_xButtonBounds.Width * 0.66)), _xButtonBounds.Y + CInt((_xButtonBounds.Height * 0.33)), _xButtonBounds.X + CInt((_xButtonBounds.Width * 0.33)), _xButtonBounds.Y + CInt((_xButtonBounds.Height * 0.66)))
-            End If
-            '  End Using
-
-            '  g.DrawString(Text, SkinManager.ROBOTO_MEDIUM_12, SkinManager.ColorScheme.TextBrush, New Rectangle(SkinManager.FORM_PADDING, STATUS_BAR_HEIGHT, Width, ACTION_BAR_HEIGHT), New StringFormat With {
-            '  .LineAlignment = StringAlignment.Center
-            ' })
         End Sub
 #End Region
     End Class
