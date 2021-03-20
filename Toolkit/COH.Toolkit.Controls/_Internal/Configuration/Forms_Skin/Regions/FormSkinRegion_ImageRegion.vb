@@ -60,6 +60,7 @@ Namespace Controls.Configuration
             pImageState_Normal = MyBase.LoadImage(Folder, Format, CurrentImageState.Normal)
             pImageState_Pressed = MyBase.LoadImage(Folder, Format, CurrentImageState.Pressed)
             pImageState_Disabled = MyBase.LoadImage(Folder, Format, CurrentImageState.Disabled)
+            RebuildImages()
         End Sub
         Public Sub Update_ImageState_Images(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image)
             pImageState_Normal = Normal
@@ -81,8 +82,8 @@ Namespace Controls.Configuration
         End Sub
         Private Sub RebuildImages()
             If Not ImageState_Normal Is Nothing Then
-                If ImageState_Disabled Is Nothing Then pImageState_Disabled = Me.Generate_DisabledButton(pImageState_Normal)
-                If ImageState_Pressed Is Nothing Then pImageState_Pressed = pImageState_Normal
+                If ImageState_Disabled Is Nothing Then pImageState_Disabled = Generate_DisabledButton(pImageState_Normal)
+                If ImageState_Pressed Is Nothing Then pImageState_Pressed = Generate_PressedButton(pImageState_Normal)
             End If
             If Not pImageState_Normal Is Nothing Then ResizeImages(pImageState_Normal.Size)
         End Sub
@@ -97,14 +98,14 @@ Namespace Controls.Configuration
 #Region "Update Image Sources - Generate Missing Images"
         Private Function Generate_PressedButton(Optional value As Drawing.Image = Nothing) As Drawing.Image
             If value Is Nothing Then Return Nothing
-            'Dim NewImage As Image = HelperFunctions.Imaging.ConvertImage_AdjustBrigtness(value, 2)
-            'Return NewImage
+            Dim NewImage As Image = HelperFunctions.Imaging.ConvertImage_AdjustBrigtness(value, 2)
+            Return NewImage
         End Function
         Private Function Generate_DisabledButton(Optional value As Image = Nothing) As Image
             If value Is Nothing Then Return Nothing
-            'Dim NewImage As Image = HelperFunctions.Imaging.ConvertImage_GreyScale(value)
-            'Return NewImage
-        End Function 'New 
+            Dim NewImage As Image = HelperFunctions.Imaging.ConvertImage_GreyScale(value)
+            Return NewImage
+        End Function
 #End Region
 
 #Region "Drawing"

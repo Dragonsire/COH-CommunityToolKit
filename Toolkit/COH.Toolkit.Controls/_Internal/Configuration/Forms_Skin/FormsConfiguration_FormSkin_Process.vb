@@ -89,6 +89,8 @@ Namespace Controls.Configuration
             ElseIf Check_MouseOverMoveBar(e.Location) Then
                 If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsMoving = True
+                Update_Form_PressedState(True)
+                rControlledForm.InvalidateWindow()
             ElseIf pAllowResize = True AndAlso Check_MouseOverEdge(e.Location, True) Then
                 If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsResizing = True
@@ -97,7 +99,10 @@ Namespace Controls.Configuration
         End Sub
         Public Sub ProcessMouseEvent_MouseUp(e As MouseEventArgs)
             rMouseLocation = e.Location
-            Dim WasMoving As Boolean = rIsMoving
+            If rIsMoving Then
+                Update_Form_PressedState(False)
+                rControlledForm.InvalidateWindow()
+            End If
             rIsMoving = False : rIsResizing = False
             Dim Button As FormSkinRegion_ImageRegion_Hilitable = Nothing
             Dim Key As String = ""
@@ -205,6 +210,22 @@ Namespace Controls.Configuration
         Private Sub Update_Button_Pressed(Button As FormSkinRegion_ImageRegion_Hilitable)
             Button.Update_ImageState(CurrentImageState.Pressed)
             Update_Buttons_Unselected(Button)
+        End Sub
+#End Region
+
+#Region "Modifying - Form States"
+        Private Sub Update_Form_PressedState(IsPressed As Boolean)
+            Dim SetFormState As CurrentImageState = CurrentImageState.Pressed
+            If IsPressed = False Then SetFormState = CurrentImageState.Normal
+            Edge_Bottom.Update_ImageState(SetFormState)
+            Edge_Left.Update_ImageState(SetFormState)
+            Edge_Right.Update_ImageState(SetFormState)
+            Corner_TopRight.Update_ImageState(SetFormState)
+            Corner_TopLeft.Update_ImageState(SetFormState)
+            Corner_BottomRight.Update_ImageState(SetFormState)
+            Corner_BottomLeft.Update_ImageState(SetFormState)
+            TitleBar.Update_ImageState(SetFormState)
+            Update_Buttons_Unselected(Nothing)
         End Sub
 #End Region
 
