@@ -16,9 +16,11 @@ Namespace Toolkit.ControllerModules
             Dim CreateTestForm As New COH.Controls.ToolkitForm
             CreateTestForm.Text = "New Window"
             CreateTestForm.UpdateSkin(TEST, True)
-            CreateTestForm.ShowDialog()
+            CreateTestForm.Show()
+            '//CreateTestForm.Enabled = False
 
 
+            Exit Sub
 
 
 

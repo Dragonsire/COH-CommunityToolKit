@@ -129,6 +129,7 @@ Namespace Controls.Configuration
                     SkinArea.Value.Update_ImageState(CurrentImageState.Normal)
                 End If
             Next
+            rControlledForm.InvalidateWindow()
         End Sub
 #End Region
 

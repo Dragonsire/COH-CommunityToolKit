@@ -6,6 +6,15 @@ Namespace Controls
         Inherits Form
 
 #Region "Properties"
+        Public Shadows Property Enabled As Boolean
+            Get
+                Return MyBase.Enabled
+            End Get
+            Set(value As Boolean)
+                MyBase.Enabled = value
+                If RenderingEnabled() = True Then rFormSkin.UpdateFormEnabled(value)
+            End Set
+        End Property
         Private rFormSkin As FormsConfiguration_FormSkin
         Private rRenderingEnabled As Boolean
         Private rRenderSections As FormRegions_DrawSections
