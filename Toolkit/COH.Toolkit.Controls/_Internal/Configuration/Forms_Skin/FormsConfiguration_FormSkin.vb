@@ -118,6 +118,21 @@ Namespace Controls.Configuration
             pFormSkinRegions.Add(FormRegions.Icon, New FormSkinRegion_ImageRegion(FormRegions.Icon, FormRegions_ImageScaling.MaintainOriginalSize))
             pFormSkinRegions.Add(FormRegions.Button_Help, New FormSkinRegion_ImageRegion_Hilitable(FormRegions.Button_Help, FormRegions_ImageScaling.MaintainOriginalSize))
         End Sub
+#End Region
+
+#Region "General"
+        Public Sub UpdateFormEnabled(IsEnabled As Boolean)
+            For Each SkinArea In pFormSkinRegions
+                If IsEnabled = False Then
+                    SkinArea.Value.Update_ImageState(CurrentImageState.Disabled)
+                Else
+                    SkinArea.Value.Update_ImageState(CurrentImageState.Normal)
+                End If
+            Next
+        End Sub
+#End Region
+
+#Region "Theme"
         Public Shared Function LoadTheme_FromFolder(Folder As String) As FormsConfiguration_FormSkin
             Dim UsedFormat As Imaging.ImageFormat = Imaging.ImageFormat.Png
             If IO.File.Exists(IO.Path.Combine(Folder, "Button_Close_Normal.png")) = True Then
@@ -150,13 +165,13 @@ Namespace Controls.Configuration
             Corner_TopLeft.Draw(CurrentDrawing)
             Corner_TopRight.Draw(CurrentDrawing)
             Draw_Window_Buttons(CurrentDrawing)
-            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
+            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.Location.Right + 2, 0, TitleBar.Location.Width - Icon.Location.Width, TitleBar.Location.Height))
         End Sub
         Public Sub Draw_TitleBar(Text As String, CurrentDrawing As Drawing.Graphics)
             TitleBar.Draw(CurrentDrawing)
             Draw_Window_Buttons(CurrentDrawing)
             Draw_Icon(CurrentDrawing)
-            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.ClientLocation.Right + 2, 0, TitleBar.ClientLocation.Width - Icon.ClientLocation.Width, TitleBar.ClientLocation.Height))
+            CurrentDrawing.DrawString(Text, TitleBarFont, TitleBarFont.Return_Font_SolidBrush, New Rectangle(Icon.Location.Right + 2, 0, TitleBar.Location.Width - Icon.Location.Width, TitleBar.Location.Height))
         End Sub
         Public Sub Draw_WindowDialog(CurrentDrawing As Drawing.Graphics)
             'If DialogButtons.FormDialogStyle = WindowForms_WindowSkin_DialogStyle.DialogBar Then

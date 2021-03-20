@@ -31,11 +31,6 @@ Namespace Controls.Configuration
                 UpdatePrivateProperty(pLocation, value)
             End Set
         End Property
-        Public ReadOnly Property ClientLocation As Rectangle
-            Get
-                Return rDrawingLocation
-            End Get
-        End Property
         Public ReadOnly Property CurrentState As CurrentImageState
             Get
                 Return pCurrentState
@@ -50,8 +45,6 @@ Namespace Controls.Configuration
         Private pFormRegionID As FormRegions
         Private pIsMouseRegion As Boolean
         Private pLocation As Rectangle
-        Private rDrawingLocation As Rectangle
-        Private rDrawingLocation_Offset As Rectangle
 #End Region
 
 #Region "Initialize"
@@ -69,17 +62,14 @@ Namespace Controls.Configuration
                 pCurrentState = CurrentImageState.Normal
             End If
             pLocation = New Rectangle(0, 0, 0, 0)
-            rDrawingLocation = New Rectangle(0, 0, 0, 0)
             MyBase.Update_CurrentState(ObjectState_Enum.Ready)
         End Sub
 #End Region
 #Region "Check Location"
         Public Function Check_MouseLocation_WithinDrawArea(Location As Point) As Boolean
             If pIsMouseRegion = False Then Return False
-            Return rDrawingLocation.Contains(Location)
-        End Function
-        Protected Function Check_ClientArea_ContainsDesiredArea(ByRef ClientArea As Rectangle) As Boolean
-            Return ClientArea.Contains(pLocation)
+            If pCurrentState = CurrentImageState.Disabled Then Return False
+            Return pLocation.Contains(Location)
         End Function
 #End Region
 
@@ -111,17 +101,13 @@ Namespace Controls.Configuration
             Dim SelectedPen As New Pen(BorderColor, PenSize)
             CurrentDrawing.DrawRectangle(SelectedPen, DestinationArea.X, DestinationArea.Y, DestinationArea.Width, DestinationArea.Height)
         End Sub
-        Public Sub Update_DrawingLocation(DesiredLocation As Rectangle)
+        Public Sub Update_DrawingLocation(DesiredLocation As Rectangle, Optional Offset As Rectangle = Nothing)
             pLocation = DesiredLocation
-            Calculate_Final_DrawingLocation(rDrawingLocation_Offset)
-        End Sub
-        Public Sub Update_DrawingLocation_Offset(ByRef OffSet As Rectangle)
-            rDrawingLocation_Offset = OffSet
-            Calculate_Final_DrawingLocation(rDrawingLocation_Offset)
+            If Not (Offset = Nothing) Then Calculate_Final_DrawingLocation(Offset)
         End Sub
         Private Sub Calculate_Final_DrawingLocation(ByRef Offset As Rectangle)
-            rDrawingLocation = New Rectangle()
-            With rDrawingLocation
+            Dim TempLocation = New Rectangle()
+            With TempLocation
                 .X = Offset.X + Location.X
                 .Y = Offset.Y + Location.Y
                 If Offset.Width = 0 And Offset.Height = 0 Then
@@ -144,6 +130,7 @@ Namespace Controls.Configuration
                 .Width = Math.Round(.Width, 2)
                 .Height = Math.Round(.Height, 2)
             End With
+            pLocation = TempLocation
         End Sub
 #End Region
 

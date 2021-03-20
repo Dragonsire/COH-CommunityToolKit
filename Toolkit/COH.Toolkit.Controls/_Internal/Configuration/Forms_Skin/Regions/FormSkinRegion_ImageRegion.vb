@@ -110,7 +110,7 @@ Namespace Controls.Configuration
 #Region "Drawing"
         Public Overrides Function Draw(ByRef CurrentDrawing As Drawing.Graphics, Optional Forced As Boolean = False) As Boolean
             Dim SourceImage = RetrieveImage_FromState()
-            Return DrawImage(SourceImage, CurrentDrawing, ClientLocation, Forced)
+            Return DrawImage(SourceImage, CurrentDrawing, Location, Forced)
         End Function
         Public Overridable Function RetrieveImage_FromState() As Image
             Select Case CurrentState

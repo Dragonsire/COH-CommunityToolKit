@@ -14,8 +14,8 @@ Namespace Controls.Configuration
             If TitleBar.Check_MouseLocation_WithinDrawArea(MouseLocation) = True Then Return True
             Return False
         End Function
-        Public Function Check_MouseOverEdge(MouseLocation As Point) As Boolean
-            If Edge_Left.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
+        Public Function Check_MouseOverEdge(MouseLocation As Point, Optional ForResize As Boolean = True) As Boolean
+            If ForResize = False Then If Edge_Left.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
             If Edge_Right.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
             If Edge_Bottom.Check_MouseLocation_WithinDrawArea(MouseLocation) Then Return True
             Return False
@@ -35,9 +35,9 @@ Namespace Controls.Configuration
             Corner_BottomLeft.Update_DrawingLocation(New Rectangle(New Point(0, ClientRectangle.Height - Corner_BottomLeft.ImageState_Normal.Height), Corner_BottomLeft.ImageState_Normal.Size))
             Corner_BottomRight.Update_DrawingLocation(New Rectangle(New Point(ClientRectangle.Width - Corner_BottomRight.ImageState_Normal.Size.Width, ClientRectangle.Height - Corner_BottomRight.ImageState_Normal.Height), Corner_BottomRight.ImageState_Normal.Size))
             Icon.Update_DrawingLocation(New Rectangle(Corner_TopLeft.ImageState_Normal.Width, 0, TitleBar.ImageState_Normal.Height - 0, TitleBar.ImageState_Normal.Height))
-            Button_Close.Update_DrawingLocation(New Rectangle(New Point(Corner_TopRight.ClientLocation.Left - Button_Close.ImageState_Normal.Size.Width, 0), Button_Close.ImageState_Normal.Size))
-            Button_Max.Update_DrawingLocation(New Rectangle(New Point(Button_Close.ClientLocation.Left - Button_Max.ImageState_Normal.Size.Width, 0), Button_Max.ImageState_Normal.Size))
-            Button_Min.Update_DrawingLocation(New Rectangle(New Point(Button_Max.ClientLocation.Left - Button_Min.ImageState_Normal.Size.Width, 0), Button_Min.ImageState_Normal.Size))
+            Button_Close.Update_DrawingLocation(New Rectangle(New Point(Corner_TopRight.Location.Left - Button_Close.ImageState_Normal.Size.Width, 0), Button_Close.ImageState_Normal.Size))
+            Button_Max.Update_DrawingLocation(New Rectangle(New Point(Button_Close.Location.Left - Button_Max.ImageState_Normal.Size.Width, 0), Button_Max.ImageState_Normal.Size))
+            Button_Min.Update_DrawingLocation(New Rectangle(New Point(Button_Max.Location.Left - Button_Min.ImageState_Normal.Size.Width, 0), Button_Min.ImageState_Normal.Size))
             '//pDialogButtons.Calculate_DrawableLocations(ClientRectangle, rUsableClientArea, Me)
             '//rUsableButtonArea = Rectangle.Union(Button_Min.ClientLocation, Button_Max.ClientLocation)
             '//rUsableButtonArea = Rectangle.Union(rUsableButtonArea, Button_Close.ClientLocation)
@@ -69,7 +69,7 @@ Namespace Controls.Configuration
                 rMouseLocation = e.Location
                 If ProcessButtonEvent_MovedOverButton(e.Location) = True Then
                     ForceRedraw = True
-                ElseIf Check_MouseOverEdge(e.Location) Then
+                ElseIf Check_MouseOverEdge(e.Location, True) Then
                     If pAllowResize = True Then Cursor.Current = Cursors.SizeAll
                 Else
                     Cursor.Current = Cursors.Default
@@ -89,7 +89,7 @@ Namespace Controls.Configuration
             ElseIf Check_MouseOverMoveBar(e.Location) Then
                 If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsMoving = True
-            ElseIf pAllowResize = True AndAlso Check_MouseOverEdge(e.Location) Then
+            ElseIf pAllowResize = True AndAlso Check_MouseOverEdge(e.Location, True) Then
                 If rControlledForm.WindowState = FormWindowState.Maximized Then Exit Sub
                 rIsResizing = True
                 Cursor.Current = Cursors.SizeAll
