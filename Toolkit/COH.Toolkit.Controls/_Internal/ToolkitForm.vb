@@ -4,6 +4,7 @@ Imports COH.Controls.Configuration
 Namespace Controls
     Public Class ToolkitForm
         Inherits Form
+        Implements IDisposable
 
 #Region "Properties"
         Public Shadows Property Enabled As Boolean
@@ -15,14 +16,82 @@ Namespace Controls
                 If RenderingEnabled() = True Then rFormSkin.UpdateFormEnabled(value)
             End Set
         End Property
+        Protected Property CurrentEditMode As UserControls_EditMode
+        Protected Property IsLoaded As Boolean = False
+        Protected Property IsModified As Boolean = False
+        Protected Property Changes_Locked As Boolean
+        Friend WithEvents Content_FormTip As ToolTip
+        Protected ReadOnly Property ContentController As ISupport_ToolkitController
+            Get
+                Return rContentController
+            End Get
+        End Property
+        Private WithEvents rContentController As ISupport_ToolkitController
         Private rFormSkin As FormsConfiguration_FormSkin
         Private rRenderingEnabled As Boolean
+        Private components As System.ComponentModel.IContainer
         Private rRenderSections As FormRegions_DrawSections
 #End Region
 
 #Region "Create New Instance"
         Public Sub New()
-            MyBase.New
+            Me.New(Nothing)
+        End Sub
+        Public Sub New(ByRef TheContentController As ISupport_ToolkitController)
+            rContentController = TheContentController
+            Changes_Locked = True
+            InitializeComponent()
+            ConfigureUI_Defaults()
+        End Sub
+        Private Sub InitializeComponent()
+            Me.components = New System.ComponentModel.Container()
+            Me.Content_FormTip = New ToolTip(Me.components)
+            Me.SuspendLayout()
+            '
+            'ToolkitForm
+            '
+            Me.ClientSize = New System.Drawing.Size(284, 261)
+            Me.Name = "ToolkitForm"
+            Me.ResumeLayout(False)
+        End Sub
+#End Region
+
+#Region "Overridable Functions"
+        Protected Overridable Sub ConfigureUI_Defaults()
+            CurrentEditMode = UserControls_EditMode.ViewOnly
+            Changes_Locked = True
+            With Content_FormTip
+                .AutoPopDelay = 5000
+                .InitialDelay = 1000
+                .ReshowDelay = 200
+                .ShowAlways = True
+            End With
+        End Sub
+        Protected Overridable Sub ConfigureUI_Begin()
+            Changes_Locked = True
+        End Sub
+        Protected Overridable Sub ConfigureUI_Finish()
+            Changes_Locked = False
+        End Sub
+        Protected Overridable Sub DisposeAdditional()
+        End Sub
+        Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+            Try
+                If disposing AndAlso components IsNot Nothing Then
+                    components.Dispose()
+                    If rFormSkin IsNot Nothing Then rFormSkin.dispose
+                    DisposeAdditional()
+                End If
+            Finally
+                MyBase.Dispose(disposing)
+            End Try
+        End Sub
+#End Region
+
+#Region "Modified"
+        Public Overridable Sub ContentWasModified() Handles rContentController.ContentWasModified
+            If IsLoaded = False Then Exit Sub
+            IsModified = True
         End Sub
 #End Region
 
@@ -53,6 +122,18 @@ Namespace Controls
                 WindowState = FormWindowState.Minimized
             End If
         End Sub
+        Public Sub DockControl(ByRef TheControl As Control)
+            If RenderingEnabled() = True Then
+                TheControl.Font = Me.Font
+                TheControl.Size = rFormSkin.AvailableFormArea.Size
+                Controls.Add(TheControl)
+                TheControl.Location = rFormSkin.AvailableFormArea.Location
+            Else
+                TheControl.Font = Me.Font
+                TheControl.Dock = DockStyle.Fill
+                Controls.Add(TheControl)
+            End If
+        End Sub
         Public Sub SetMousePosition()
             'Dim Currentposition As Drawing.Point = HelperFunctions.MousePointer.GetMousePosition
             'HelperFunctions.MousePointer.SendClick()
@@ -61,6 +142,9 @@ Namespace Controls
 #End Region
 
 #Region "Form Events"
+        Private Sub UserControl_Loaded(sender As Object, e As EventArgs) Handles Me.Load
+            IsLoaded = True
+        End Sub
         Protected Overrides Sub OnResize(ByVal e As EventArgs)
             MyBase.OnResize(e)
             If RenderingEnabled() = False Then Exit Sub

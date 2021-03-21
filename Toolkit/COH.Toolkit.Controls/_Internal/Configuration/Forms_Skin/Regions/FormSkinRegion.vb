@@ -64,6 +64,8 @@ Namespace Controls.Configuration
             pLocation = New Rectangle(0, 0, 0, 0)
             MyBase.Update_CurrentState(ObjectState_Enum.Ready)
         End Sub
+        Public Overridable Sub ReleaseResources()
+        End Sub
 #End Region
 #Region "Check Location"
         Public Function Check_MouseLocation_WithinDrawArea(Location As Point) As Boolean

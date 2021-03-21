@@ -10,14 +10,9 @@ Namespace Toolkit.ControllerModules.WindowForms
         Public Function CreateToolWindow_ForControl(ByRef SelectedControl As Control, Optional UseParentControl As Boolean = False) As ToolkitForm
             Dim NewForm As New ToolkitForm()
             Dim CurrentConfiguration As FormsConfiguration = Default_WindowsFormsConfiguration.CreateClone
-            '//CurrentConfiguration.Skin.WindowSkin_DialogButtons = TheWindow.Return_DefaultFormConfiguration.Skin_DialogButtons
-            ' CurrentConfiguration.UpdateFromControl(SelectedControl)
             If UseParentControl = True Then AdjustConfiguration_ForParent(CurrentConfiguration)
-            NewForm.ApplyConfiguration(CurrentConfiguration, True, True)
-            '//NewForm.ApplyConfiguration(CurrentConfiguration, SkinningEnabled, AlwaysAplyColorScheme)
-            '///ADD CONTROL TO NEWFORM
-            SelectedControl.Dock = DockStyle.Fill
-            NewForm.Controls.Add(SelectedControl)
+            NewForm.ApplyConfiguration(CurrentConfiguration, AlwaysUseSkinnedForms, AlwaysAplyColorScheme)
+            NewForm.DockControl(SelectedControl)
             Return NewForm
         End Function
 #End Region

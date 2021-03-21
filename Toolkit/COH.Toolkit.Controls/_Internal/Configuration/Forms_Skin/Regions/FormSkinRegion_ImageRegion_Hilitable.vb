@@ -30,6 +30,10 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Update Appearance"
+        Public Overrides Sub ReleaseResources()
+            MyBase.ReleaseResources()
+            If pImageState_Hilited IsNot Nothing Then pImageState_Hilited.Dispose()
+        End Sub
         Public Overloads Sub Update_ImageState_Images(ByRef Normal As Image, ByRef Disabled As Image, ByRef Pressed As Image, ByRef Hilited As Image)
             Update_ImageState_Images(Normal, Disabled, Pressed)
             pImageState_Hilited = Hilited

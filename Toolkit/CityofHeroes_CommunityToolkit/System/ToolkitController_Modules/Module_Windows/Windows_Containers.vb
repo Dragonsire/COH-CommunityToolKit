@@ -3,11 +3,7 @@
 
 #Region "Containers - PIGGs"
         Public Sub OpenContainer_PIGG(FileSource As String)
-
-            Dim NewControl = New TextBox
-            NewControl.Text = "This is a test"
-
-            '''Dim NewControl = Create_Control_PiggView(FileSource)
+            Dim NewControl = Create_Control_PiggView(FileSource)
             Dim NewForm = UIController.CreateToolWindow_ForControl(NewControl, False)
             UIController.OpenDialog(NewForm)
 

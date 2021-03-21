@@ -3,6 +3,7 @@ Imports COH.HelperClasses.Wrappers
 
 Namespace Controls.Configuration
     Public NotInheritable Class FormsConfiguration_FormSkin
+        Implements IDisposable
 
 #Region "Properties"
         Public ReadOnly Property TitleBar As FormSkinRegion_ImageRegion
@@ -80,6 +81,11 @@ Namespace Controls.Configuration
                 Return pFormSkinRegions
             End Get
         End Property
+        Public ReadOnly Property AvailableFormArea() As Rectangle
+            Get
+                Return rUsableArea
+            End Get
+        End Property
         Public Property TitleBarFont As COH_XML_Font
         Private pAllowResize As Boolean = True
         Private rMouseLocation As Point
@@ -92,6 +98,7 @@ Namespace Controls.Configuration
         Private pFormSkinRegions As Dictionary(Of FormRegions, FormSkinRegion)
         Private rControlledForm As ToolkitForm
         Private rUsableArea As Rectangle
+        Private disposedValue As Boolean
 #End Region
 
 #Region "Initialize"
@@ -196,7 +203,7 @@ Namespace Controls.Configuration
         Public Sub Draw_Icon(CurrentDrawing As Drawing.Graphics)
             If CurrentDrawing Is Nothing Then Exit Sub
             Icon.Draw(CurrentDrawing, True)
-            End Sub
+        End Sub
         Public Sub Draw_Window_Buttons(CurrentDrawing As Drawing.Graphics)
             If CurrentDrawing Is Nothing Then Exit Sub
             Button_Close.Draw(CurrentDrawing, True)
@@ -223,6 +230,30 @@ Namespace Controls.Configuration
                     .pFormSkinRegions.Add(Entry.Key, Entry.Value.Clone)
                 Next
             End With
+        End Sub
+        Private Sub Dispose(disposing As Boolean)
+            If Not disposedValue Then
+                If disposing Then
+                    For Each item In pFormSkinRegions
+                        item.Value.ReleaseResources()
+                    Next
+                    ' TODO: dispose managed state (managed objects)
+                End If
+                ' TODO: free unmanaged resources (unmanaged objects) and override finalizer
+                ' TODO: set large fields to null
+                disposedValue = True
+            End If
+        End Sub
+        ' ' TODO: override finalizer only if 'Dispose(disposing As Boolean)' has code to free unmanaged resources
+        ' Protected Overrides Sub Finalize()
+        '     ' Do not change this code. Put cleanup code in 'Dispose(disposing As Boolean)' method
+        '     Dispose(disposing:=False)
+        '     MyBase.Finalize()
+        ' End Sub
+        Public Sub Dispose() Implements IDisposable.Dispose
+            ' Do not change this code. Put cleanup code in 'Dispose(disposing As Boolean)' method
+            Dispose(disposing:=True)
+            GC.SuppressFinalize(Me)
         End Sub
 #End Region
     End Class

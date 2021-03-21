@@ -28,10 +28,10 @@ Namespace Toolkit.Controls.ContainerTools
             ConfigureUI_Begin()
             ConfigureUI_Finish()
         End Sub
-        Public Overrides Sub ConfigureUI_Begin()
+        Protected Overrides Sub ConfigureUI_Begin()
             MyBase.ConfigureUI_Begin()
         End Sub
-        Public Overrides Sub ConfigureUI_Finish()
+        Protected Overrides Sub ConfigureUI_Finish()
             MyBase.ConfigureUI_Finish()
         End Sub
 #End Region

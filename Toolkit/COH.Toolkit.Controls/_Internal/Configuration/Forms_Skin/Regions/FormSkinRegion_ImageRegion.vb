@@ -56,6 +56,12 @@ Namespace Controls.Configuration
 #End Region
 
 #Region "Update Image Sources"
+        Public Overrides Sub ReleaseResources()
+            MyBase.ReleaseResources()
+            If pImageState_Normal IsNot Nothing Then pImageState_Normal.Dispose()
+            If pImageState_Pressed IsNot Nothing Then pImageState_Pressed.Dispose()
+            If pImageState_Disabled IsNot Nothing Then pImageState_Disabled.Dispose()
+        End Sub
         Public Overrides Sub LoadImages_FromFolder(Folder As String, Format As ImageFormat)
             pImageState_Normal = MyBase.LoadImage(Folder, Format, CurrentImageState.Normal)
             pImageState_Pressed = MyBase.LoadImage(Folder, Format, CurrentImageState.Pressed)

@@ -24,17 +24,7 @@ Namespace Toolkit.Controls
             pContentController = TheContentController
             Changes_Locked = True
             InitializeComponent()
-            SetDefaults()
-        End Sub
-        Private Sub SetDefaults()
-            CurrentEditMode = UserControls_EditMode.ViewOnly
-            Changes_Locked = True
-            With Content_FormTip
-                .AutoPopDelay = 5000
-                .InitialDelay = 1000
-                .ReshowDelay = 200
-                .ShowAlways = True
-            End With
+            ConfigureUI_Defaults()
         End Sub
         Private Sub UserControl_Loaded(sender As Object, e As EventArgs) Handles Me.Load
             IsLoaded = True
@@ -51,10 +41,20 @@ Namespace Toolkit.Controls
 #End Region
 
 #Region "Overridable Functions"
-        Public Overridable Sub ConfigureUI_Begin()
+        Protected Overridable Sub ConfigureUI_Defaults()
+            CurrentEditMode = UserControls_EditMode.ViewOnly
+            Changes_Locked = True
+            With Content_FormTip
+                .AutoPopDelay = 5000
+                .InitialDelay = 1000
+                .ReshowDelay = 200
+                .ShowAlways = True
+            End With
+        End Sub
+        Protected Overridable Sub ConfigureUI_Begin()
             Changes_Locked = True
         End Sub
-        Public Overridable Sub ConfigureUI_Finish()
+        Protected Overridable Sub ConfigureUI_Finish()
             Changes_Locked = False
         End Sub
 #End Region
