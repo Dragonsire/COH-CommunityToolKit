@@ -37,15 +37,15 @@ Namespace Storage.Containers.PIGG
 #End Region
 
 #Region "Extract All Files"
-        Event ProgressUpdate(EventType As COH_Event_ProgressUpdate.COH_ProgressEvent, UpdateAmount As Double, Message As String)
-        Private Sub ShowProgressUpdate(EventType As COH_Event_ProgressUpdate.COH_ProgressEvent, Optional UpdateAmount As Double = 0, Optional Message As String = Nothing)
+        Event ProgressUpdate(EventType As PIGG_EventTypes, UpdateAmount As Double, Message As String)
+        Private Sub ShowProgressUpdate(EventType As PIGG_EventTypes, Optional UpdateAmount As Double = 0, Optional Message As String = Nothing)
             RaiseEvent ProgressUpdate(EventType, UpdateAmount, Message)
         End Sub
         Private Function Extract_AllEntries_ToDirectory(RootPath As String, Optional ProcessEntry As Boolean = False) As Boolean
-            ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Directories.Count, "Extracting PIGG - " & FileName)
+            ShowProgressUpdate(PIGG_EventTypes.BeginExtract_Multiple, Directories.Count, "Extracting PIGG - " & FileName)
             rCurrentReader.Settings.Option_SelectedFormat = COH_ExportFormat.Binary
             For X = 0 To Directories.Count - 1
-                ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, "Extracting PIGG - " & StringTable.Items(X))
+                ShowProgressUpdate(PIGG_EventTypes.Update, 1, "Extracting PIGG - " & StringTable.Items(X))
                 Dim DestinationFile As String = DeterminePath(RootPath, X)
                 Dim Result As Byte() = Nothing
                 Dim ResultSlot As Contents.COH_PIGG_SlotTableEntry = Nothing
@@ -66,7 +66,7 @@ Namespace Storage.Containers.PIGG
                     ShowErrorOccured("Nothing Extracted : " & DestinationFile)
                 End If
             Next
-            ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Directories.Count, "Extracting PIGG - " & FileName)
+            ShowProgressUpdate(PIGG_EventTypes.FinishExtract_Multiple, Directories.Count, "Extracting PIGG - " & FileName)
             Return True
         End Function
         Private Function DeterminePath(RootPath As String, Index As Int32) As String
