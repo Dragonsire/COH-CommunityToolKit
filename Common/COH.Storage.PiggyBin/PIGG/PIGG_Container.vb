@@ -1,5 +1,6 @@
 ﻿Imports COH.Storage.Containers.PIGG.Structures
 Imports COH.Storage.Serialization
+Imports COH.Storage.Structures
 
 Namespace Storage.Containers.PIGG
     Public Class PIGG_Container
@@ -58,7 +59,7 @@ Namespace Storage.Containers.PIGG
         Private pStringTable As COH_PIGG_StringTable
         Private pSlotTable As COH_PIGG_SlotTable
         Private DisposedValue As Boolean
-        '// Private rCurrentReader As COH_BinaryReader
+        Private rCurrentReader As COH_BinaryReader
         Private pValid As Boolean
 #End Region
 
@@ -78,22 +79,20 @@ Namespace Storage.Containers.PIGG
                 Return False
             End If
             Dim CurrentStream As New IO.FileStream(FilePath, IO.FileMode.Open)
-            Using CurrentReader As New COH_BinaryReader(CurrentStream, Text.Encoding.ASCII)
-                pValid = OpenExisting_PiggFile_FromStream(CurrentReader)
-            End Using
-            CurrentStream = Nothing
+            rCurrentReader = New COH_BinaryReader(CurrentStream, Text.Encoding.ASCII)
+            pValid = OpenExisting_PiggFile_FromStream()
             Return pValid
         End Function
-        Private Function OpenExisting_PiggFile_FromStream(ByRef CurrentReader As COH_BinaryReader) As Boolean
-            If COH_PIGG_FileHeader.CreateFromStream(CurrentReader, pHeader) = False Then Return False
+        Private Function OpenExisting_PiggFile_FromStream() As Boolean
+            If COH_PIGG_FileHeader.CreateFromStream(rCurrentReader, pHeader) = False Then Return False
             pDirectories = New List(Of COH_PIGG_DirectoryEntry)
             Dim NewItem As COH_PIGG_DirectoryEntry = Nothing
             For X = 0 To pHeader.Number_DirectoryEntries - 1
-                If COH_PIGG_DirectoryEntry.CreateFromStream(CurrentReader, NewItem) = False Then Return False
+                If COH_PIGG_DirectoryEntry.CreateFromStream(rCurrentReader, NewItem) = False Then Return False
                 pDirectories.Add(NewItem)
             Next
-            If COH_PIGG_StringTable.CreateFromStream(CurrentReader, pStringTable) = False Then Return False
-            If COH_PIGG_SlotTable.CreateFromStream(CurrentReader, Me, pSlotTable) = False Then Return False
+            If COH_PIGG_StringTable.CreateFromStream(rCurrentReader, pStringTable) = False Then Return False
+            If COH_PIGG_SlotTable.CreateFromStream(rCurrentReader, Me, pSlotTable) = False Then Return False
             For X = 0 To pHeader.Number_DirectoryEntries - 1
                 pDirectories(X).EntryType = Identify_SlotType(pStringTable.Items(X))
             Next
@@ -105,17 +104,13 @@ Namespace Storage.Containers.PIGG
         End Function
 #End Region
 
-
-
-
 #Region "Extraction"
-        Public Function ExtractAllFiles_ToDirectory(RootPath As String, Optional ProcessRecord As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
-            'ExtractAllFiles_ToDirectory(mCurrentReader, RootPath, mPiggInfo, ProcessRecord, ShowProgress)
-            Return True
+        Public Function ExtractAllFiles_ToDirectory(RootPath As String, Optional ProcessRecord As Boolean = False) As Boolean
+            Return ExtractAllFiles_ToDirectory(RootPath, ProcessRecord)
         End Function
-        'Public Function ExtractEntry(Index As Integer, ByRef Result As COH_FileStructure) As Boolean
-        'Return Extract_Entry(mCurrentReader, mPiggInfo, Index, Result)
-        'End Function
+        Public Function ExtractEntry(Index As Integer, ByRef Result As COH_FileStructure) As Boolean
+            Return Extract_Entry(Index, Result)
+        End Function
 #End Region
 
 #Region "IDisposable Support"

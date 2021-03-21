@@ -13,8 +13,8 @@ Namespace Toolkit.Controls.ContainerTools
 #Region "Private Properties"
         Private pFileSource As String
         Private pCurrentPIGG As PIGG_Container
-        Private mPreviewControl As Control
-        Private mCurrentResource As COH_FileStructure
+        Private pCurrentResource As COH_FileStructure
+        Private rPreviewControl As Control
         Private CurrentlyPreviewing As COH_Supported_ContentType = COH_Supported_ContentType.Unknown
 #End Region
 
@@ -46,38 +46,15 @@ Namespace Toolkit.Controls.ContainerTools
             pCurrentPIGG = Source
             DisplayInfo()
         End Sub
+#End Region
+
+#Region "Display Info"
         Private Sub DisplayInfo()
             Changes_Locked = True
-            HelperFunctions.Controls.TreeViews.Fill_TreeView(TreeView1, pCurrentPIGG.StringTable.Items, "/", "Root", ".")
-            Exit Sub
-            For Each node As TreeNode In Me.TreeView1.Nodes(0).Nodes(0).Nodes
-                Dim TheType As COH_FSI_Entry = Nothing
-                'If ContentController.TheController_SupportedStructures.Retrieve_SupportedType(node.Text, TheType) = False Then
-                If node.Text.ToUpper.Contains(".GEO") Then
-                    node.ForeColor = Color.Green
-                Else
-                    node.ForeColor = Color.Red
-                End If
-                'Else
-                Select Case TheType.ContentType
-                    Case COH_Supported_ContentType.Resource_BIN_CrypticS
-                        node.ForeColor = Color.Black
-                    Case COH_Supported_ContentType.Resource_BIN_MessageStore
-                        node.ForeColor = Color.DarkOrange
-                    Case COH_Supported_ContentType.Resource_GEO
-                        node.ForeColor = Color.Green
-                    Case COH_Supported_ContentType.Resource_Texture
-                        node.ForeColor = Color.Blue
-                    Case COH_Supported_ContentType.Resource_TGA
-                        node.ForeColor = Color.BlueViolet
-                    Case COH_Supported_ContentType.Unknown
-                        node.ForeColor = Color.Gray
-                End Select
-                ' End If
-            Next
+            DisplayInfo_Pigg_InTree()
             DisplayInfo_ContentDetails()
             DisplayInfo_SlotDetails()
-            Dim CurrentNode As TreeNode = TreeView1.Nodes(0)
+            Dim CurrentNode As TreeNode = PiggTree.Nodes(0)
             Do
                 CurrentNode.Expand()
                 If CurrentNode.Nodes.Count = 1 Then
@@ -124,8 +101,83 @@ Namespace Toolkit.Controls.ContainerTools
         End Sub
 #End Region
 
+#Region "DisplayInfo - TreeView Details"
+        Private Sub DisplayInfo_Pigg_InTree()
+            Dim RootNode As TreeNode = Fill_TreeView_GetNodes(New TreeNode("Root"), pCurrentPIGG.StringTable.Items, "/", ".")
+            PiggTree.BeginUpdate()
+            PiggTree.Nodes.Clear()
+            PiggTree.Nodes.Add(RootNode)
+            PiggTree.EndUpdate()
+        End Sub
+        Private Function Fill_TreeView_GetNodes(ByVal parent As TreeNode, ByRef PathList As List(Of String), ByVal pathSeparator As Char, FileNameExt As String) As TreeNode
+            Dim Index As Integer = 0
+            For Each strPath In PathList
+                Dim thisParent As TreeNode = parent
+                For Each pathPart As String In strPath.Split(pathSeparator)
+                    Dim tn As TreeNode() = thisParent.Nodes.Find("_Folder_" & pathPart, False)
+                    If tn.Length = 0 Then
+                        If pathPart.ToLower.Contains(FileNameExt) Then
+                            thisParent = thisParent.Nodes.Add(Index, pathPart)
+                            Determine_NodeColor(thisParent)
+                            Index += 1
+                        Else
+                            thisParent = thisParent.Nodes.Add("_Folder_" & pathPart, pathPart)
+                        End If
+                    Else
+                        thisParent = tn(0)
+                    End If
+                Next
+            Next
+            Return parent
+        End Function
+        Private Sub Determine_NodeColor(ByRef Node As TreeNode)
+            Dim Result = PIGG_Container.Identify_SlotType(Node.Text)
+            Select Case Result
+                Case COH_Supported_ContentType.Resource_BIN_CrypticS
+                    Node.ForeColor = Color.Black
+                Case COH_Supported_ContentType.Resource_BIN_MessageStore
+                    Node.ForeColor = Color.DarkOrange
+                Case COH_Supported_ContentType.Resource_GEO
+                    Node.ForeColor = Color.Green
+                Case COH_Supported_ContentType.Resource_Texture
+                    Node.ForeColor = Color.Blue
+                Case COH_Supported_ContentType.Resource_TGA
+                    Node.ForeColor = Color.BlueViolet
+                Case COH_Supported_ContentType.Unknown
+                    Node.ForeColor = Color.Gray
+                Case Else
+                    Node.ForeColor = Color.Red
+            End Select
+        End Sub
+        Private Sub Determine_NodeColor2(ByRef Node As TreeNode) 'Identify_SlotType
+            Dim TheType As COH_FSI_Entry = Nothing
+            If COH_FSI_Entry.Retrieve_SupportedType(Nothing, Node.Text, TheType) = False Then
+                If Node.Text.ToUpper.Contains(".GEO") Then
+                    Node.ForeColor = Color.Green
+                Else
+                    Node.ForeColor = Color.Red
+                End If
+            Else
+                Select Case TheType.ContentType
+                    Case COH_Supported_ContentType.Resource_BIN_CrypticS
+                        Node.ForeColor = Color.Black
+                    Case COH_Supported_ContentType.Resource_BIN_MessageStore
+                        Node.ForeColor = Color.DarkOrange
+                    Case COH_Supported_ContentType.Resource_GEO
+                        Node.ForeColor = Color.Green
+                    Case COH_Supported_ContentType.Resource_Texture
+                        Node.ForeColor = Color.Blue
+                    Case COH_Supported_ContentType.Resource_TGA
+                        Node.ForeColor = Color.BlueViolet
+                    Case COH_Supported_ContentType.Unknown
+                        Node.ForeColor = Color.Gray
+                End Select
+            End If
+        End Sub
+#End Region
+
 #Region "Control Usage"
-        Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
+        Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles PiggTree.AfterSelect
             If Changes_Locked = True Then Exit Sub
             If e.Node.Name.Contains("_Folder_") = True Then Exit Sub
             If e.Node.Name = "" Then Exit Sub
@@ -133,8 +185,10 @@ Namespace Toolkit.Controls.ContainerTools
             Preview_Contents(Index, e.Node.Text)
         End Sub
         Private Sub Preview_Contents(Index As Integer, Name As String)
-            'mTool.ExtractEntry(Index, mCurrentResource)
-            Select Case mCurrentResource.EntryType
+            If pCurrentPIGG.ExtractEntry(Index, pCurrentResource) = False Then
+                Exit Sub
+            End If
+            Select Case pCurrentResource.EntryType
                 Case COH_Supported_ContentType.Resource_Texture
                     CreatePreviewControl_DDS()
                 Case COH_Supported_ContentType.Resource_TGA
@@ -160,14 +214,14 @@ Namespace Toolkit.Controls.ContainerTools
                 Tab_Preview.Controls.Add(PreviewControl)
                 PreviewControl.Dock = DockStyle.Fill
                 PreviewControl.Visible = True
-                mPreviewControl = PreviewControl
+                rPreviewControl = PreviewControl
             Else
-                PreviewControl = mPreviewControl
+                PreviewControl = rPreviewControl
             End If
-            PreviewControl.BackgroundImage = DirectCast(mCurrentResource, COH_Resource_Texture).Extract_Resource_Texture()
+            PreviewControl.BackgroundImage = DirectCast(pCurrentResource, COH_Resource_Texture).Extract_Resource_Texture()
             PreviewControl.BackgroundImageLayout = ImageLayout.Zoom
             CurrentlyPreviewing = COH_Supported_ContentType.Resource_Texture
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_Texture)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_Texture)
             If COH_DeveloperMode_AllowEdit = False Then TypeDescriptor.AddAttributes(Temp, New Attribute() {New ReadOnlyAttribute(True)})
             PropertyGrid1.SelectedObject = Temp
         End Sub
@@ -179,14 +233,14 @@ Namespace Toolkit.Controls.ContainerTools
                 Tab_Preview.Controls.Add(PreviewControl)
                 PreviewControl.Dock = DockStyle.Fill
                 PreviewControl.Visible = True
-                mPreviewControl = PreviewControl
+                rPreviewControl = PreviewControl
             Else
-                PreviewControl = mPreviewControl
+                PreviewControl = rPreviewControl
             End If
-            PreviewControl.BackgroundImage = DirectCast(mCurrentResource, COH_Resource_TGA).Extract_Resource_Texture()
+            PreviewControl.BackgroundImage = DirectCast(pCurrentResource, COH_Resource_TGA).Extract_Resource_Texture()
             PreviewControl.BackgroundImageLayout = ImageLayout.Zoom
             CurrentlyPreviewing = COH_Supported_ContentType.Resource_TGA
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_TGA)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_TGA)
             If COH_DeveloperMode_AllowEdit = False Then TypeDescriptor.AddAttributes(Temp, New Attribute() {New ReadOnlyAttribute(True)})
             PropertyGrid1.SelectedObject = Temp
         End Sub
@@ -202,7 +256,7 @@ Namespace Toolkit.Controls.ContainerTools
             Else
                 'PreviewControl = mPreviewControl
             End If
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_BIN)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_BIN)
             ' PreviewControl.LinkControllers(ContentController)
             ' PreviewControl.Prepare_Editor(Name, Temp.EntryType, Temp.RawBytes)
             CurrentlyPreviewing = COH_Supported_ContentType.Resource_BIN_CrypticS
@@ -222,7 +276,7 @@ Namespace Toolkit.Controls.ContainerTools
             Else
                 ' PreviewControl = mPreviewControl
             End If
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_BIN)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_BIN)
             ' PreviewControl.Prepare_Editor(Name, Temp.EntryType, Temp.RawBytes)
             CurrentlyPreviewing = COH_Supported_ContentType.Resource_BIN_MessageStore
 
@@ -243,7 +297,7 @@ Namespace Toolkit.Controls.ContainerTools
                 '  PreviewControl = mPreviewControl
             End If
 
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_GEO)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_GEO)
             If COH_DeveloperMode_AllowEdit = False Then TypeDescriptor.AddAttributes(Temp, New Attribute() {New ReadOnlyAttribute(True)})
             PropertyGrid1.SelectedObject = Temp
             ' PreviewControl.LoadModel(Temp)
@@ -261,7 +315,7 @@ Namespace Toolkit.Controls.ContainerTools
             Else
                 ' PreviewControl = mPreviewControl
             End If
-            Dim Temp = DirectCast(mCurrentResource, COH_Resource_Anim)
+            Dim Temp = DirectCast(pCurrentResource, COH_Resource_Anim)
             ' PreviewControl.Prepare_Editor(Name, Temp)
             CurrentlyPreviewing = COH_Supported_ContentType.Resource_ANIMATION
             If COH_DeveloperMode_AllowEdit = False Then TypeDescriptor.AddAttributes(Temp, New Attribute() {New ReadOnlyAttribute(True)})
@@ -270,8 +324,8 @@ Namespace Toolkit.Controls.ContainerTools
         Private Sub DestroyPreviewControl()
             If Tab_Preview.Controls.Count = 0 Then Exit Sub
             Tab_Preview.Controls.RemoveAt(0)
-            mPreviewControl.Dispose()
-            mPreviewControl = Nothing
+            rPreviewControl.Dispose()
+            rPreviewControl = Nothing
         End Sub
 #End Region
     End Class

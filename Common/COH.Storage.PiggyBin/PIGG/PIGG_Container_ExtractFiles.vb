@@ -16,7 +16,7 @@ Namespace Storage.Containers.PIGG
     Partial Public Class PIGG_Container
 
 #Region "Extract PiggInfo"
-        Private Shared Function Identify_SlotType(ByRef FileName As String) As COH_Supported_ContentType
+        Public Shared Function Identify_SlotType(ByRef FileName As String) As COH_Supported_ContentType
             Dim Result = PIGG_Container_SlotTypes.Unknown
             Dim EXT As String = IO.Path.GetExtension(FileName).ToUpper
             If EXT = ".TEXTURE" Or EXT = ".DDS" Then
@@ -36,25 +36,29 @@ Namespace Storage.Containers.PIGG
         End Function
 #End Region
 
-#Region "Extract Files"
-        Public Shared Function ExtractAllFiles_ToDirectory(ByRef CurrentReader As COH_BinaryReader, RootPath As String, ByRef Source As PIGG_Container, Optional ProcessEntry As Boolean = False, Optional ShowProgress As Boolean = False) As Boolean
-            If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
-            CurrentReader.Settings.Option_SelectedFormat = COH_ExportFormat.Binary
-            For X = 0 To Source.Directories.Count - 1
-                If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, "Extracting PIGG - " & Source.StringTable.Items(X))
-                Dim DestinationFile As String = DeterminePath(RootPath, Source, X)
+#Region "Extract All Files"
+        Event ProgressUpdate(EventType As COH_Event_ProgressUpdate.COH_ProgressEvent, UpdateAmount As Double, Message As String)
+        Private Sub ShowProgressUpdate(EventType As COH_Event_ProgressUpdate.COH_ProgressEvent, Optional UpdateAmount As Double = 0, Optional Message As String = Nothing)
+            RaiseEvent ProgressUpdate(EventType, UpdateAmount, Message)
+        End Sub
+        Private Function Extract_AllEntries_ToDirectory(RootPath As String, Optional ProcessEntry As Boolean = False) As Boolean
+            ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Begin, Directories.Count, "Extracting PIGG - " & FileName)
+            rCurrentReader.Settings.Option_SelectedFormat = COH_ExportFormat.Binary
+            For X = 0 To Directories.Count - 1
+                ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Update, 1, "Extracting PIGG - " & StringTable.Items(X))
+                Dim DestinationFile As String = DeterminePath(RootPath, X)
                 Dim Result As Byte() = Nothing
                 Dim ResultSlot As Contents.COH_PIGG_SlotTableEntry = Nothing
-                If Extract_Entry(CurrentReader, Source, X, Result, ResultSlot) = False Then Return False
+                If Extract_RawEntry(X, Result, ResultSlot) = False Then Return False
                 If Not Result Is Nothing Then
                     WriteData(Result, DestinationFile)
                     If ProcessEntry = True Then
                         Dim ResourceResult As COH_FileStructure = Nothing
-                        If Process_Entry(Result, Source, X, ResourceResult) = True Then
+                        If ConvertRawData_ToResource(Result, X, ResourceResult) = True Then
                             ResourceResult.Export_To_File(IO.Path.GetFileNameWithoutExtension(DestinationFile) & "." & ResourceResult.Default_BinaryExtention, IO.Path.GetDirectoryName(DestinationFile), COH_StreamFormat.Binary)
                         End If
                     End If
-                    If Source.Directories(X).SecondarySlotIndex >= 0 Then
+                    If Directories(X).SecondarySlotIndex >= 0 Then
                         Dim SlotFile As String = DestinationFile & "_Slot.raw"
                         WriteData_Slot(ResultSlot, SlotFile)
                     End If
@@ -62,99 +66,100 @@ Namespace Storage.Containers.PIGG
                     ShowErrorOccured("Nothing Extracted : " & DestinationFile)
                 End If
             Next
-            If ShowProgress = True Then COH_LibraryEventController.ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Source.Directories.Count, "Extracting PIGG - " & Source.FileName)
+            ShowProgressUpdate(COH_Event_ProgressUpdate.COH_ProgressEvent.Finish, Directories.Count, "Extracting PIGG - " & FileName)
             Return True
         End Function
-        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container, Index As Integer, ByRef Result As COH_FileStructure, Optional ShowProgress As Boolean = False) As Boolean
-            Dim RawBytes As Byte() = Nothing
-            Dim Slot As Contents.COH_PIGG_SlotTableEntry = Nothing
-            If Extract_Entry(CurrentReader, Source, Index, RawBytes, Slot) Then
-                Return Process_Entry(RawBytes, Source, Index, Result)
-            End If
-            Return True
-        End Function
-        Public Shared Function Process_Entry(ByRef RawBytes As Byte(), ByRef Source As PIGG_Container, Index As Integer, ByRef Result As COH_FileStructure) As Boolean
-            Select Case Source.Directories(Index).EntryType
-                Case COH_Supported_ContentType.Resource_Texture
-                    Return Extract_Entry_Resource_Texture(RawBytes, Result)
-                Case COH_Supported_ContentType.Resource_BIN_CrypticS
-                    Return Extract_Entry_Resource_BIN(RawBytes, Result)
-                Case COH_Supported_ContentType.Resource_GEO
-                    Return Extract_Entry_Resource_GEO(RawBytes, Result)
-                Case COH_Supported_ContentType.Resource_ANIMATION
-                    Return Extract_Entry_Resource_ANIM(RawBytes, Result)
-                Case COH_Supported_ContentType.Resource_TGA
-                    Return Extract_Entry_Resource_TGA(RawBytes, Result)
-                Case COH_Supported_ContentType.Unknown
-                    Return Extract_Entry_Resource_Unknown(RawBytes, Result)
-                Case Else
-                    Return False
-            End Select
-        End Function
-        Public Shared Function Extract_Entry(ByRef CurrentReader As COH_BinaryReader, ByRef Source As PIGG_Container, Index As Integer, ByRef Result As Byte(), ByRef Slot As Contents.COH_PIGG_SlotTableEntry) As Boolean
-            Result = Extract_RawData(CurrentReader, Index, Source, Source.Directories(Index).IsCompressed)
-            If Source.Directories(Index).SecondarySlotIndex >= 0 Then
-                Slot = Source.SlotTable.Items(Source.Directories(Index).SecondarySlotIndex)
-            Else
-                Slot = Nothing
-            End If
-            Return True
-        End Function
-        Private Shared Function DeterminePath(RootPath As String, ByRef Source As PIGG_Container, Index As Int32) As String
-            Dim FilePath As String = RootPath & Source.StringTable.Items(Source.Directories(Index).Index).ToString.Replace("/", "\")
+        Private Function DeterminePath(RootPath As String, Index As Int32) As String
+            Dim FilePath As String = RootPath & StringTable.Items(Directories(Index).Index).ToString.Replace("/", "\")
             FilePath = FilePath.Replace(ChrW(0), "")
             'Dim L1 As String = FilePath.Length
-
             If File.Exists(FilePath) = True Then IO.File.Delete(FilePath)
             Dim Folder As String = IO.Path.GetDirectoryName(FilePath)
             If IO.Directory.Exists(Folder) = False Then IO.Directory.CreateDirectory(Folder)
             Return FilePath
         End Function
-        Private Shared Function Extract_RawData(ByRef CurrentReader As COH_BinaryReader, Index As Int32, ByRef Source As PIGG_Container, Optional Decompress As Boolean = False) As Byte()
-            CurrentReader.BaseStream.Position = Source.Directories(Index).File_Offset
-            If Decompress = True And Source.Directories(Index).File_Size_Compressed > 0 Then
-                Return HelperFunctions.Compression.DecompressBytes(CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored))
+#End Region
+
+#Region "Extract Single Files"
+        Private Function Extract_Entry(Index As Integer, ByRef Result As COH_FileStructure) As Boolean
+            Dim RawBytes As Byte() = Nothing
+            Dim ResultSlot As COH_PIGG_SlotTableEntry = Nothing
+            If Extract_RawEntry(Index, RawBytes, ResultSlot) Then
+                Return ConvertRawData_ToResource(RawBytes, Index, Result)
+            End If
+            Return True
+        End Function
+        Private Function Extract_RawEntry(Index As Integer, ByRef Result As Byte(), ByRef Slot As COH_PIGG_SlotTableEntry) As Boolean
+            Result = Extract_RawData(Index, Directories(Index).IsCompressed)
+            If Directories(Index).SecondarySlotIndex >= 0 Then
+                Slot = SlotTable.Items(Directories(Index).SecondarySlotIndex)
             Else
-                '//HelperFunctions.Bytes.Write_BytesToFile(CurrentReader.ReadBytes(8000), "E:\SOURCE.RAW")
-                Return CurrentReader.ReadBytes(Source.Directories(Index).File_Size_Stored)
+                Slot = Nothing
+            End If
+            Return True
+        End Function
+        Private Function Extract_RawData(Index As Int32, Optional Decompress As Boolean = False) As Byte()
+            rCurrentReader.BaseStream.Position = Directories(Index).File_Offset
+            If Decompress = True And Directories(Index).File_Size_Compressed > 0 Then
+                Return HelperFunctions.Compression.DecompressBytes(rCurrentReader.ReadBytes(Directories(Index).File_Size_Stored))
+            Else
+                Return rCurrentReader.ReadBytes(Directories(Index).File_Size_Stored)
             End If
         End Function
 #End Region
 
-#Region "Extract Single Resources"
-        Public Shared Function Extract_Entry_Resource_TGA(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+#Region "Process Raw Data"
+        Private Function ConvertRawData_ToResource(ByRef RawBytes As Byte(), Index As Integer, ByRef Result As COH_FileStructure) As Boolean
+            Select Case Directories(Index).EntryType
+                Case COH_Supported_ContentType.Resource_Texture
+                    Return ConvertRawData_ToResource_Texture(RawBytes, Result)
+                Case COH_Supported_ContentType.Resource_BIN_CrypticS
+                    Return ConvertRawData_ToResource_BIN(RawBytes, Result)
+                Case COH_Supported_ContentType.Resource_GEO
+                    Return ConvertRawData_ToResource_GEO(RawBytes, Result)
+                Case COH_Supported_ContentType.Resource_ANIMATION
+                    Return ConvertRawData_ToResource_ANIM(RawBytes, Result)
+                Case COH_Supported_ContentType.Resource_TGA
+                    Return ConvertRawData_ToResource_TGA(RawBytes, Result)
+                Case COH_Supported_ContentType.Unknown
+                    Return ConvertRawData_ToResource_Unknown(RawBytes, Result)
+                Case Else
+                    Return False
+            End Select
+        End Function
+        Private Function ConvertRawData_ToResource_TGA(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_TGA()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_Unknown(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
-            Dim NewResource As New COH_Resource_Unknown()
-            NewResource.Update_FromBytes(RawBytes)
-            Result = NewResource
-            Return True
-        End Function
-        Public Shared Function Extract_Entry_Resource_Texture(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+        Private Function ConvertRawData_ToResource_Texture(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_Texture()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_BIN(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+        Private Function ConvertRawData_ToResource_BIN(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_BIN()
             NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_GEO(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+        Private Function ConvertRawData_ToResource_GEO(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_GEO()
             NewResource.Import_From_Buffer(RawBytes)
             Result = NewResource
             Return True
         End Function
-        Public Shared Function Extract_Entry_Resource_ANIM(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+        Private Function ConvertRawData_ToResource_ANIM(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
             Dim NewResource As New COH_Resource_Anim()
             NewResource.Import_From_Buffer(RawBytes)
+            Result = NewResource
+            Return True
+        End Function
+        Private Function ConvertRawData_ToResource_Unknown(ByRef RawBytes As Byte(), ByRef Result As COH_FileStructure) As Boolean
+            Dim NewResource As New COH_Resource_Unknown()
+            NewResource.Update_FromBytes(RawBytes)
             Result = NewResource
             Return True
         End Function

@@ -24,7 +24,7 @@
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Me.TreeView1 = New System.Windows.Forms.TreeView()
+            Me.PiggTree = New System.Windows.Forms.TreeView()
             Me.TabPage1 = New System.Windows.Forms.TabPage()
             Me.ListView1 = New System.Windows.Forms.ListView()
             Me.ColumnHeader1 = New System.Windows.Forms.ColumnHeader()
@@ -52,13 +52,13 @@
             '
             'TreeView1
             '
-            Me.TreeView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Me.PiggTree.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-            Me.TreeView1.HideSelection = False
-            Me.TreeView1.Location = New System.Drawing.Point(3, 2)
-            Me.TreeView1.Name = "TreeView1"
-            Me.TreeView1.Size = New System.Drawing.Size(319, 643)
-            Me.TreeView1.TabIndex = 30
+            Me.PiggTree.HideSelection = False
+            Me.PiggTree.Location = New System.Drawing.Point(3, 2)
+            Me.PiggTree.Name = "TreeView1"
+            Me.PiggTree.Size = New System.Drawing.Size(319, 643)
+            Me.PiggTree.TabIndex = 30
             '
             'TabPage1
             '
@@ -229,7 +229,7 @@
             Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.Controls.Add(Me.TabControl1)
-            Me.Controls.Add(Me.TreeView1)
+            Me.Controls.Add(Me.PiggTree)
             Me.Name = "ContainerTools_PiggView"
             Me.Size = New System.Drawing.Size(1219, 649)
             Me.TabPage1.ResumeLayout(False)
@@ -238,7 +238,7 @@
             Me.ResumeLayout(False)
 
         End Sub
-        Friend WithEvents TreeView1 As TreeView
+        Friend WithEvents PiggTree As TreeView
         Friend WithEvents TabPage1 As TabPage
         Friend WithEvents ListView1 As ListView
         Friend WithEvents ColumnHeader1 As ColumnHeader

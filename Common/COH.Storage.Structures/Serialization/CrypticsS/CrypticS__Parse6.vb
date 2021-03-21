@@ -1,8 +1,4 @@
-﻿Imports COH.GameContent.CodeManagement.Enums
-Imports COH.GameContent.CodeManagement.Enums.Structures
-Imports COH.GameContent.Storage.Controllers
-Imports COH.GameContent.Storage.Serialization
-Imports COH.Storage.Controllers
+﻿Imports COH.Storage.Controllers
 Imports COH.Storage.Serialization
 
 Namespace Storage.Structures.CrypticsS

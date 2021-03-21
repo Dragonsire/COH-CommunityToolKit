@@ -19,24 +19,10 @@
 
 #Region "Search"
         Public Function Retrieve_SupportedType(Search As String, ByRef SupportedType As COH_FSI_Entry) As Boolean
-            For Each Entry In RegisteredFileStructures
-                If String.Equals(Search, Entry.EntryName, StringComparison.CurrentCultureIgnoreCase) Then
-                    SupportedType = Entry
-                    Return True
-                End If
-            Next
-            Return False
+            Return COH_FSI_Entry.Retrieve_SupportedType(RegisteredFileStructures, Search, SupportedType)
         End Function
         Public Function Retrieve_SupportedType(search As Int32, ByRef SupportedType As COH_FSI_Entry) As Boolean
-            For Each Entry In RegisteredFileStructures
-                For Each BUild In Entry.BuildChecks
-                    If search = BUild Then
-                        SupportedType = Entry
-                        Return True
-                    End If
-                Next
-            Next
-            Return False
+            Return COH_FSI_Entry.Retrieve_SupportedType(RegisteredFileStructures, search, SupportedType)
         End Function
 #End Region
 
