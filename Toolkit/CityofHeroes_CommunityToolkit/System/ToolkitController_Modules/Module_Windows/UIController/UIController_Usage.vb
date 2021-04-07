@@ -62,14 +62,40 @@ Namespace Toolkit.ControllerModules.WindowForms
 
 #Region "Open/Create WindowForm From Configuration"
         Public Sub OpenWindow(ByRef SelectedForm As Form)
-            'Handle_Event_WindowAdded(SelectedForm)
+            Handle_Event_WindowAdded(SelectedForm)
             SelectedForm.Show()
         End Sub
         Public Function OpenDialog(ByRef SelectedForm As Form) As DialogResult
-            'Handle_Event_WindowAdded(SelectedForm)
+            Handle_Event_WindowAdded(SelectedForm)
             Return SelectedForm.ShowDialog
         End Function
+        Public Function Open(ByRef SelectedForm As Controls.Toolkit_Window, Optional AsDialog As COH_TriBoolean = COH_TriBoolean.Unknown) As DialogResult
+            If AsDialog = COH_TriBoolean.False Then
+                OpenWindow(SelectedForm)
+                Return DialogResult.OK
+            Else
+                Return OpenDialog(SelectedForm)
+            End If
+        End Function
 #End Region
+
+#Region "Events"
+        Event AllWindowsClosed()
+        Event PrimaryWindowsIsOpen()
+        Private Sub Handle_Event_WindowAdded(ByRef SelectedForm As Form)
+            If rFormsInUse Is Nothing Then rFormsInUse = New List(Of Form)
+            AddHandler SelectedForm.Disposed, AddressOf Handle_Event_WindowDisposed
+            rFormsInUse.Add(SelectedForm)
+            RaiseEvent PrimaryWindowsIsOpen()
+        End Sub
+        Private Sub Handle_Event_WindowDisposed(sender As Object, e As EventArgs)
+            Dim NewForm As Form = sender
+            RemoveHandler NewForm.Disposed, AddressOf Handle_Event_WindowDisposed
+            rFormsInUse.Remove(NewForm)
+            If rFormsInUse.Count = 0 Then RaiseEvent AllWindowsClosed()
+        End Sub
+#End Region
+
 
 
 
